@@ -12,7 +12,7 @@ var WebsiteSchema = new Schema({
 });
 var Website = mongoose.model('Website', WebsiteSchema);
 
-// methods
+/* example methods
 function getAll() {
   Blog.find()
 }
@@ -26,7 +26,7 @@ getOne(id).delete()
 function findAndUpdate(err, id) {
 
 }
-
+*/
 
 // make this available to our users in our Node applications
 module.exports = Website;
