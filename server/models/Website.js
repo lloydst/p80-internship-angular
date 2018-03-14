@@ -1,16 +1,16 @@
-/**
- * example of a very basic model with functions for retrival of documents from your db
- */
-// grab packageswe need
+
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 // create a schema
-var blogSchema = new Schema({
-  title: String,
-  body: String
+var WebsiteSchema = new Schema({
+  name: String,
+  url: String,
+  visable:{
+    type: Boolean,
+  default: false}
 });
-var Blog = mongoose.model('Blog', blogSchema);
+var Website = mongoose.model('Website', WebsiteSchema);
 
 // methods
 function getAll() {
@@ -29,4 +29,4 @@ function findAndUpdate(err, id) {
 
 
 // make this available to our users in our Node applications
-module.exports = Blog;
+module.exports = Website;

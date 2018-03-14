@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var Blog = require('../models/blog');
+// var Blog = require('../models/blog');
 var mongoose = require('mongoose')
 
 // below are example's of your basic CRUD functions and wont work
-router.route('/blogs') // <host>/api/blogs
+/* router.route('/blogs') // <host>/api/blogs
 
   // create a blog (accessed at POST http://localhost:3000/api/blogs)
   .post(function(req, res) {
@@ -28,7 +28,7 @@ router.route('/blogs') // <host>/api/blogs
 
           res.json(blogs);
       });
-  });
+    });*/
   router.route('/blogs/:blog_id')
 
     // get the bear with that id (accessed at GET http://localhost:8080/api/bears/:bear_id)
