@@ -8,9 +8,21 @@ import { EntranceComponent } from './channels/entrance/entrance.component';
 import { MeetingComponent } from './channels/meeting/meeting.component';
 
 const routes: Routes = [
-  {path:'admin', component: AdminComponent, children: [
-    {path:'algemeen', component: SettingComponent}
-  ]},
+  {
+    path: '',
+    redirectTo:'channels',
+    pathMatch: 'full'
+  }, // default
+  {
+    path:'admin', 
+    component: AdminComponent, 
+    children: [
+      {
+        path:'algemeen', 
+        component: SettingComponent
+      }
+    ]
+  },
   {path:'channels', component: ChannelsComponent, children: [
     {
       path: 'event', component: EventComponent

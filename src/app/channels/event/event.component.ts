@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./event.component.scss']
 })
 export class EventComponent implements OnInit {
+// test= window.open('https://google.com') works
 
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }
