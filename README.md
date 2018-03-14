@@ -1,21 +1,19 @@
-# MeanStack Boilerplate with angular 5
-[preview](https://boilerplate-preview.herokuapp.com/)
-## install
-after cloning `npm i` in the root directory.
-(this also builds the dist folder for the first time)
-
+# Poort80 internship assignment
+## getting started:
+`git clone https://github.com/lloydst/p80-internship-angular.git .` (replace the '.' with a directory if not in the current one)
 ### sources:
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
-and the [express-generator](https://github.com/expressjs/generator) version 4.15.5.
+This project was started up with [Mean-boilerplate](https://github.com/lloydst/mean-boilerplate)
+
+#prerequisites
+  -  node v ^8.10.0 (with matching npm)
+  -  mongodb or a mlab account (see data base for more information)
+  -  and lastly nodemon installed globally (`npm i nodemon -g`)
 ## Development server
 
-Run `ng serve` for a dev (frontend)server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-Run `node server.js` for your express server `http://localhost:3000/`
+run `ng build --watch` for rebuilding on changes to any of the angular part of the website.
+and run `npm run server` (in a other window)so that node restarts the express server on changes
 
-Because the node server also watches the dist folder, you could use `nodemon server.js` instead. if you then make changes to your angular app simply type `ng build` in another window and the server will automaticly restart.
-
-
-## Code scaffolding (angular cli)
+## quick component gen (angular cli)
 
 Run `ng generate component componentname` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
