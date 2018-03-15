@@ -1,8 +1,15 @@
 <section>
   <div *ngIf="time">
-    if time = true i am displayed (travel related stuff)
+      <h1>{{ title }}</h1>
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
   </div>
   <div *ngIf="!time">
+    should be looping through websites
     if time = false i am displayed (loop)
   </div>
   <div *ngIf="time === 'past 6'">
@@ -10,5 +17,5 @@
   </div>
   <p>if the time is right i will display google maps with a traffic layer 9292ov.nl and buien radar
    the rest of the time i will loop through a list of websites retrieved from the DB.</p>
-
+   <span id="urls" style="color: white;" *ngFor="let c of data">{{c.url}}</span>
 </section>
