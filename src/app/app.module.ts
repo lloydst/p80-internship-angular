@@ -8,8 +8,8 @@ import { EntranceComponent } from './channels/entrance/entrance.component';
 import { MeetingComponent } from './channels/meeting/meeting.component';
 import { EventComponent } from './channels/event/event.component';
 import { AdminComponent } from './admin/admin.component';
-import { SettingComponent } from './setting/setting.component';
-import { AdminSideNavComponent } from './admin-side-nav/admin-side-nav.component';
+import { SettingComponent } from './admin/setting/setting.component';
+import { AdminSideNavComponent } from './admin/admin-side-nav/admin-side-nav.component';
 
 @NgModule({
   declarations: [

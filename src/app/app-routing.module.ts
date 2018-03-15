@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 import { ChannelsComponent } from './channels/channels.component';
-import { SettingComponent } from './setting/setting.component';
+import { SettingComponent } from './admin/setting/setting.component';
 import { EventComponent } from './channels/event/event.component';
 import { EntranceComponent } from './channels/entrance/entrance.component';
 import { MeetingComponent } from './channels/meeting/meeting.component';

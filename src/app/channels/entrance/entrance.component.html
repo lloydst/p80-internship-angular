@@ -1,4 +1,13 @@
 <section>
+  <div *ngIf="time">
+    if time = true i am displayed (travel related stuff)
+  </div>
+  <div *ngIf="!time">
+    if time = false i am displayed (loop)
+  </div>
+  <div *ngIf="time === 'past 6'">
+    if it is past 6 i am shown (though the screen is most likely turned off)
+  </div>
   <p>if the time is right i will display google maps with a traffic layer 9292ov.nl and buien radar
    the rest of the time i will loop through a list of websites retrieved from the DB.</p>
 

@@ -10,7 +10,7 @@ This project was started up with [Mean-boilerplate](https://github.com/lloydst/m
   -  and lastly nodemon installed globally (`npm i nodemon -g`)
 ## Development server
 
-run `ng build --watch` for rebuilding on changes to any of the angular part of the website.
+run `npm run dev` for rebuilding on changes to any of the angular part of the website.
 and run `npm run server` (in a other window)so that node restarts the express server on changes
 
 ## quick component gen (angular cli)
