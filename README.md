@@ -1,13 +1,15 @@
 # Poort80 internship assignment
 ## getting started:
 `git clone https://github.com/lloydst/p80-internship-angular.git .` (replace the '.' with a directory if not in the current one)
+
 ### sources:
-This project was started up with [Mean-boilerplate](https://github.com/lloydst/mean-boilerplate)
+This project was started up with [Mean-boilerplate](https://github.com/lloydst/mean-boilerplate) , which is heavely based on the angular-cli and express-gen for the front and backend respectively.
 
 #prerequisites
   -  node v ^8.10.0 (with matching npm)
   -  mongodb or a mlab account (see data base for more information)
   -  and lastly nodemon installed globally (`npm i nodemon -g`)
+  
 ## Development server
 
 run `npm run dev` for rebuilding on changes to any of the angular part of the website.
@@ -25,4 +27,4 @@ server contains all server related stuff.
  - node
 
 ## database
-to connect to a database simple add a .env file in the root and type `MONGOURI = mongodb://localhost:27017/whatever_you_want_the_database_to_be_called` 
+to connect to a database simple add a .env file in the root and type `MONGOURI = connectionstring` this can either be a local db or a external one like mlab
