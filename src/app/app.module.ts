@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { AgmCoreModule } from '@agm/core'; // google maps
+
+import { NguiMapModule} from '@ngui/map';
+
 import { AppComponent } from './app.component';
 import { ChannelsComponent } from './channels/channels.component';
 import { EntranceComponent } from './channels/entrance/entrance.component';
@@ -29,10 +31,10 @@ import { Website } from './models/website';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAiwq2baNPL5vbU48dj6MIvbDUEjRpyiHk'
-    })
-  ],
+    NguiMapModule.forRoot(
+      {apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDB68aJIk7wVjjPvGa7nON_ngvlnRmoG98'}
+    )
+    ],
   providers: [
     DataService
   ],
