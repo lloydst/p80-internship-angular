@@ -22,36 +22,30 @@ export class EntranceComponent implements OnInit {
     public http: HttpClient
     
   ) {}
-    ngOnInit() {
-    this.getData()
-    this.checkTime()
-  }
-  
+ 
   getData() {
     this.dataService.getAll().subscribe(
       res => {this.data = res})
   }
   checkTime() {
+    console.log(this.hour)
     if(this.hour > 17) { // 16h = 4pm
       console.log('no 1 should be working')
       return this.time = 'past 6'
     } else if(this.hour > 15) {
-           
       console.log('display travel info')
       return this.time = true ;
-    } else if(this.hour < 15) { 
-      
-
+    } else if(this.hour <= 15) { 
+      console.log('loop')
       setTimeout(() => {
         this.openWindow()
-      }, 600);
-      
+      }, 400);
       return this.time = false;
     } 
   }
   openWindow() {
     var x = 0;
-    // console.log(this.data)
+    //console.log(this.data)
     var arrayOfUrls =[]
     var url = document.querySelectorAll('span#urls')
     for (let i = 0; i < url.length; i++) {
@@ -71,9 +65,15 @@ export class EntranceComponent implements OnInit {
         } else if(x == arrayOfUrls.length) {
           console.log('should be called last')
           myWindow.close()
-          location.reload()
+          // location.reload()
         }
       }
       go();
+  }
+  ngOnInit() {
+
+    this.getData()
+    this.checkTime()
+    // this.openWindow()
   }
 }
