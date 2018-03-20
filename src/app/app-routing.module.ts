@@ -6,6 +6,11 @@ import { SettingComponent } from './admin/setting/setting.component';
 import { EventComponent } from './channels/event/event.component';
 import { EntranceComponent } from './channels/entrance/entrance.component';
 import { MeetingComponent } from './channels/meeting/meeting.component';
+import { AdminChannelsComponent } from './admin/channels/channels.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { AdminEntranceComponent } from './admin/channels/entrance/entrance.component';
+import { AdminEventComponent } from './admin/channels/event/event.component';
+import { AdminMeetingComponent } from './admin/channels/meeting/meeting.component';
 
 const routes: Routes = [
   {
@@ -18,8 +23,21 @@ const routes: Routes = [
     component: AdminComponent, 
     children: [
       {
+        path:'', 
+        component: DashboardComponent
+      },
+      {
         path:'algemeen', 
         component: SettingComponent
+      },
+      {
+        path:'channels', 
+        component: AdminChannelsComponent,
+        children: [
+          {path: 'entrance', component: AdminEntranceComponent},
+          {path: 'events', component: AdminEventComponent},
+          {path: 'meeting', component: AdminMeetingComponent}
+        ]
       }
     ]
   },
@@ -37,7 +55,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes)
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

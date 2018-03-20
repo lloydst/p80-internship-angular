@@ -1,0 +1,13 @@
+<div class="main">
+  <table>
+    <th>company/client:</th><th>url:</th><th>edit</th><th>delete</th>
+    <tr *ngFor="let item of data">
+      <td>{{item.name}}</td>
+      <td>{{item.url}}</td>
+      <td>edit{{item._id}}</td>
+      <td>delete{{item._id}}</td>
+    </tr>
+  </table> 
+  <button>add</button>
+  todo: detail, on the api as well
+</div>
