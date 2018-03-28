@@ -7,7 +7,7 @@
       </ngui-map>
       
       <iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.36246&lng=4.97656&overname=2&zoom=13&naam=1086 XP&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no></iframe>
-      ov nog geen oplossing <br>
+      ov kan niet zolang er geen vaste host is <br>
       <p>checkt nog niet of de tijd veranderd is</p>
   </div>
   <div *ngIf="!time">
@@ -18,10 +18,8 @@
     <p>checkt nog niet of de tijd veranderd is</p>
   </div>
   <p>
-    temp:
-    if the time is right i will display google maps with a traffic layer 9292ov.nl and buien radar
-   the rest of the time i will loop through a list of websites retrieved from the DB.
+    
   </p>
     <!-- used for opening windows -->
-    <span id="urls" hidden="true" *ngFor="let c of data">{{c.url}}</span>
+    <span id="urls" hidden="true" *ngFor="let c of websites">{{c.url}}</span>
 </section>

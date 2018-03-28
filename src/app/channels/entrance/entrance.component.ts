@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { DataService} from '../../services/data.service';
 import { Website } from '../../models/website';
 import { Observable } from "rxjs/Rx"
+import * as $ from 'jquery';
 var x = 0;
 @Component({
   selector: 'app-entrance',
@@ -11,12 +12,13 @@ var x = 0;
 })
 export class EntranceComponent implements OnInit {
   today = new Date();
-  hour = this.today.getHours(); // returns a number between 0 and 23 (23:59 still returns only 23)
-  // hour = 16 // test variable  < 16 voor loop test >16 voor travel info > 17 what ya doin here
+  // hour = this.today.getHours(); // returns a number between 0 and 23 (23:59 still returns only 23)
+  hour = 16 // test variable  < 16 voor loop test >16 voor travel info > 17 what ya doin here
   time;
-  data: any
+  ovTimes: any
+  websites: any
   res:any
-  result: any
+  data: any
   constructor(
     private dataService: DataService,
     public http: HttpClient
@@ -25,7 +27,8 @@ export class EntranceComponent implements OnInit {
  
   getData() {
     this.dataService.getAll().subscribe(
-      res => {this.data = res})
+      res => {this.websites = res})
+         
   }
   checkTime() {
     console.log(this.hour)
@@ -70,10 +73,12 @@ export class EntranceComponent implements OnInit {
       }
       go();
   }
+
   ngOnInit() {
 
     this.getData()
     this.checkTime()
     // this.openWindow()
   }
+  
 }

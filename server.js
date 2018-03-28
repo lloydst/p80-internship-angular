@@ -3,6 +3,7 @@ const app = express();
 const path = require('path')
 const api = require('./server/routes/index') // route example
 const mongoose = require('mongoose')
+var cors = require('cors')
 const dotenv = require('dotenv').config()
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -12,7 +13,6 @@ const MONGOURI = process.env.MONGOURI || 'someback-upaddress';
 // this .env file should be added to .gitignore since it contains passwords
 mongoose.connect( MONGOURI, {useMongoClient: true})
 var db = mongoose.connection;
-
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.use(bodyParser.json());
