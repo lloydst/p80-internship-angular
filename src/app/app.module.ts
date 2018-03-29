@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-
 import { NguiMapModule} from '@ngui/map';
 
 import { AppComponent } from './app.component';
@@ -20,6 +19,9 @@ import { AdminMeetingComponent } from './admin/channels/meeting/meeting.componen
 import { DataService } from './services/data.service';
 import { Website } from './models/website';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { SupportComponent } from './channels/support/support.component';
+import { FinancialComponent } from './channels/financial/financial.component';
+import { BuildServersComponent } from './channels/build-servers/build-servers.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,10 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
     DashboardComponent,
     AdminEntranceComponent,
     AdminEventComponent,
-    AdminMeetingComponent
+    AdminMeetingComponent,
+    SupportComponent,
+    FinancialComponent,
+    BuildServersComponent
   ],
   imports: [
     BrowserModule,
