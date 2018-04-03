@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventComponent implements OnInit {
 // test= window.open('https://google.com') works
-
+message
   constructor() { }
 
   ngOnInit() {

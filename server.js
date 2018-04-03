@@ -32,8 +32,8 @@ http.listen(process.env.PORT||3000, function(){
 })
 
 function databaseStore(message) {
-  let storeData = { chatMessage: message, timestamp: new Date().getTime() }
-  db.collection('chatroom-chats').save(storeData, (err, result) => {
+  let storeData = { message: message, timestamp: new Date().getTime() }
+  db.collection('messages').save(storeData, (err, result) => {
       if (err) return console.log(err)
       console.log('saved to database')
   })
@@ -52,7 +52,7 @@ io.on('connection', (socket) => {
   socket.on('add-message', (message) => {
       io.emit('message', { type: 'new-message', text: message }); // i believe the object part is responsible for live reload
       // Function above that stores the message in the database
-      // databaseStore(message)         // this would store it in a db as well
+      databaseStore(message)         // this would store it in a db as well
   });
 
 });
