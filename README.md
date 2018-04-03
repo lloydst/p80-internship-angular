@@ -1,6 +1,6 @@
 # Poort80 internship assignment
 ## getting started:
-`git clone https://github.com/lloydst/p80-internship-angular.git .` (replace the '.' with a directory if not in the current one)
+`git clone https://github.com/lloydst/p80-internship-angular.git .` (replace the '.' with a directory if you would want it in a new folder)
 
 ### sources:
 This project was started up with [Mean-boilerplate](https://github.com/lloydst/mean-boilerplate) , which is heavely based on the angular-cli and express-gen for the front and backend respectively.
