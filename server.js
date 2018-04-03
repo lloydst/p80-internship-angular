@@ -38,7 +38,7 @@ function databaseStore(message) {
       console.log('saved to database')
   })
 }
-// socket io connections
+// socket io connections / setup
 const connections = [];
 
 io.on('connection', (socket) => {
@@ -52,7 +52,7 @@ io.on('connection', (socket) => {
   socket.on('add-message', (message) => {
       io.emit('message', { type: 'new-message', text: message }); // i believe the object part is responsible for live reload
       // Function above that stores the message in the database
-      databaseStore(message)
+      // databaseStore(message)         // this would store it in a db as well
   });
 
 });

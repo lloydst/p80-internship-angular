@@ -9,17 +9,17 @@ export class DataService {
   constructor(private http: HttpClient) { }
   
   getWebsite(id) {
-    return this.http.get('/api/'+id+'');
+    return this.http.get('/api/websites/'+id+'');
   }
   updatePage(id, newContent) {
-    return this.http.put('/api/'+id+'', newContent);
+    return this.http.put('/api/websites'+id+'', newContent);
   }
   getAll(){
-    return this.http.get('/api');
+    return this.http.get('/api/websites');
   }
   create(newPage){
     
-    return this.http.post('/api', newPage);
+    return this.http.post('/api/websites', newPage);
   }
-  
+  // crud message 
 }
