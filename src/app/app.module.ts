@@ -1,9 +1,19 @@
+/**
+ * angular module's and routing
+ */
+
 import { BrowserModule } from '@angular/platform-browser';
+// import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { NguiMapModule} from '@ngui/map';
+import { FormsModule } from '@angular/forms';
+// import { ToasterModule, ToasterService} from 'angular2-toaster';
 
+/**
+ * components
+ */
 import { AppComponent } from './app.component';
 import { ChannelsComponent } from './channels/channels.component';
 import { EntranceComponent } from './channels/entrance/entrance.component';
@@ -16,12 +26,21 @@ import { AdminSideNavComponent } from './admin/admin-side-nav/admin-side-nav.com
 import { AdminEntranceComponent } from './admin/channels/entrance/entrance.component';
 import { AdminEventComponent } from './admin/channels/event/event.component';
 import { AdminMeetingComponent } from './admin/channels/meeting/meeting.component';
-import { DataService } from './services/data.service';
-import { Website } from './models/website';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { SupportComponent } from './channels/support/support.component';
 import { FinancialComponent } from './channels/financial/financial.component';
 import { BuildServersComponent } from './channels/build-servers/build-servers.component';
+
+/**
+ * services
+ */
+import { SocketService } from './services/socket.service';
+import { DataService } from './services/data.service';
+/**
+ * models
+ */
+import { Website } from './models/website';
+
 
 @NgModule({
   declarations: [
@@ -44,14 +63,18 @@ import { BuildServersComponent } from './channels/build-servers/build-servers.co
   ],
   imports: [
     BrowserModule,
+    // BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    // ToasterModule.forRoot(),
     NguiMapModule.forRoot(
       {apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDB68aJIk7wVjjPvGa7nON_ngvlnRmoG98'}
     )
     ],
   providers: [
-    DataService
+    DataService,
+    SocketService
   ],
   bootstrap: [AppComponent]
 })

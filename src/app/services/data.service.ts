@@ -21,7 +21,5 @@ export class DataService {
     
     return this.http.post('/api', newPage);
   }
-  getOvData() {
-    return this.http.get('http://v0.ovapi.nl/stopareacode/08244/departures')
-  }
+  
 }

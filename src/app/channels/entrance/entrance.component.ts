@@ -18,7 +18,7 @@ export class EntranceComponent implements OnInit {
   ovTimes: any
   websites: any
   res:any
-  data: any
+  data: any = []
   constructor(
     private dataService: DataService,
     public http: HttpClient
@@ -28,7 +28,7 @@ export class EntranceComponent implements OnInit {
   getData() {
     this.dataService.getAll().subscribe(
       res => {this.websites = res})
-         
+    
   }
   checkTime() {
     console.log(this.hour)
@@ -73,7 +73,7 @@ export class EntranceComponent implements OnInit {
       }
       go();
   }
-
+  
   ngOnInit() {
 
     this.getData()
