@@ -12,8 +12,8 @@ var x = 0;
 })
 export class EntranceComponent implements OnInit {
   today = new Date();
-  // hour = this.today.getHours(); // returns a number between 0 and 23 (23:59 still returns only 23)
-  hour = 16 // test variable  < 16 voor loop test >16 voor travel info > 17 what ya doin here
+  hour = this.today.getHours(); // returns a number between 0 and 23 (23:59 still returns only 23)
+  //hour = 16 // test variable  < 16 voor loop test >16 voor travel info > 17 what ya doin here
   time;
   ovTimes: any
   websites: any
@@ -46,6 +46,7 @@ export class EntranceComponent implements OnInit {
       return this.time = false;
     } 
   }
+  
   openWindow() {
     var x = 0;
     //console.log(this.data)

@@ -2,9 +2,4 @@
   this paragraph gets hidden if a child is active
   /channels works!
 </p>
-<div *ngFor="let test of messages">
-  {{test}}
-</div>
-<input [(ngModel)]="message" (keyup)="$event.keyCode == 13 && sendMessage()" />
-<button (click)="sendMessage()">Send</button>
 <router-outlet></router-outlet>

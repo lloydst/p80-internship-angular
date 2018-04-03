@@ -40,6 +40,7 @@ import { DataService } from './services/data.service';
  * models
  */
 import { Website } from './models/website';
+import { ChatComponent } from './chat/chat.component';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { Website } from './models/website';
     AdminMeetingComponent,
     SupportComponent,
     FinancialComponent,
-    BuildServersComponent
+    BuildServersComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

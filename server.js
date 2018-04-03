@@ -7,8 +7,8 @@ const cors = require('cors');
 const dotenv = require('dotenv').config();
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const server = require('http').Server(app);
-const io = require('socket.io')(server);
+const http = require('http').Server(app);
+const io = require('socket.io')(http);
 
 // mongoose setup
 const MONGOURI = process.env.MONGOURI || 'someback-upaddress';
@@ -27,26 +27,32 @@ app.use('/api',api) // route example creates url's like: <host>/users/<routes fr
 app.use('*',express.static(path.join(__dirname, 'dist'))) //routes anything not caught by the routes above to your angular project if possible
 
 const port = process.env.PORT||3000; // PORT is another variable that can be placed in the .env file
-server.listen(process.env.PORT||3000, function(){
+http.listen(process.env.PORT||3000, function(){
   console.log('Example app listening on port ' + port +'!')
 })
 
+function databaseStore(message) {
+  let storeData = { chatMessage: message, timestamp: new Date().getTime() }
+  db.collection('chatroom-chats').save(storeData, (err, result) => {
+      if (err) return console.log(err)
+      console.log('saved to database')
+  })
+}
 // socket io connections
 const connections = [];
 
-io.on('connection',(socket) => {
-  connections.push(socket);
-  console.log(' %s sockets is connected', connections.length);
+io.on('connection', (socket) => {
 
-  socket.on('disconnect', () => {
-    connections.splice(connections.indexOf(socket), 1);
+  console.log('user connected');
+
+  socket.on('disconnect', function() {
+      console.log('user disconnected');
   });
-  socket.on('sending message', (message) => {
-    console.log('Message is received :', message);
-    
-    io.sockets.emit('new message', {message: message});
+
+  socket.on('add-message', (message) => {
+      io.emit('message', { type: 'new-message', text: message }); // i believe the object part is responsible for live reload
+      // Function above that stores the message in the database
+      databaseStore(message)
   });
-  socket.on('new-message', (message) => {
-    io.emit(message);
-  });
+
 });
