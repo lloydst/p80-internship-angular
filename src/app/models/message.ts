@@ -1,7 +1,9 @@
-export class Website {
+export class Message {
 
     constructor(
-      Message: string,
+      message: string,
+      showFrom:string,
+      showTill:string
     ) {  }
   
   }

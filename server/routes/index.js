@@ -14,25 +14,52 @@ router.get('/websites',function(req, res) {
   });
 });
 router.get('/websites/:id', function(req,res) {
-    Message.findByIdAndRemove(req.param.id)
-})
+        Website.findById(req.params.id, function(err, website) {
+            if (err)
+                res.send(err);
+            res.json(website);
+        });
+    });
+
 // MESSAGES
 //ALL
 
-// post to create messages 9or keep the websocket variant
 
 //SINGLE
 router.get('/messages/:id',function(req,res) {
-    Message.find(req.param.id, function(err, message) {
+    Message.findById(req.params.id, function(err, message) {
         if (err) {
             res.send(err);
         }
-       res.send(message)
+       res.json(message)
     })
 })
+//All
+router.get('/messages',function(req, res) {
+    Message.find(function(err, messages) {
+        if (err){
+            res.send(err);
+        }
+        res.json(messages);
+    });
+  });
+  router.post('/messages',function(req, res) {
+    var mssg = new Message();      // create a new instance of the Bear model
+    mssg.message = req.body.message;  // set the bears name (comes from the request)
+    mssg.showFrom = req.body.showFrom;
+    mssg.showTill = req.body.showTill;
+    // save the bear and check for errors
+    mssg.save(function(err) {
+        if (err){
+            res.send(err);
+        }
+        res.json({ message: 'message Created' });
+    });
+
+});
 // FIND AND UPDATE
 router.put('/messages/:id', function(req,res) {
-    Message.updateOne(req.param.id, {message:req.body.message},function(err, doc) {
+    Message.updateOne(req.params.id, {message:req.body.message},function(err, doc) {
         if(err) {
             res.send(err)
         }
@@ -40,13 +67,15 @@ router.put('/messages/:id', function(req,res) {
     })
 })
 // FIND AND DELETE
-router.delete('messages/:id', function(req, res) {
-    Message.remove(req.param.id, function(err, page){
+router.delete('/messages/:id', function(req, res) {
+    Message.remove({
+        _id: req.params.id
+    }, function(err, bear) {
         if (err) {
-            console.log(page)
-            res.send(err)
-            
+            res.send(err);
         }
+        res.json({ message: 'Successfully deleted' });
     })
 })
+
 module.exports = router;

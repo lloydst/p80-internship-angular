@@ -14,7 +14,7 @@ export class AdminEntranceComponent implements OnInit {
     this.getData()
   }
   getData() {
-    this.dataService.getAll().subscribe(
+    this.dataService.getAllWebsites().subscribe(
       res => {this.data = res})
   }
 }

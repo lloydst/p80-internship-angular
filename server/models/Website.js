@@ -12,13 +12,13 @@ var WebsiteSchema = new Schema({
 });
 var Website = mongoose.model('Website', WebsiteSchema);
 
-/* example methods
+/*
 function getAll() {
-  Blog.find()
+  Website.find()
 }
 function getOne(err, id) {
 if(err){throw err}
-  Blog.find(id)
+  Website.find(id)
 }
 function findAndDelete(err, id) {
 getOne(id).delete()

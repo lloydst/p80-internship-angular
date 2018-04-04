@@ -26,7 +26,7 @@ export class EntranceComponent implements OnInit {
   ) {}
  
   getData() {
-    this.dataService.getAll().subscribe(
+    this.dataService.getAllWebsites().subscribe(
       res => {this.websites = res})
     
   }

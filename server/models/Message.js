@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 
 const MessageSchema = new Schema({
   message: String,
-  timestamp: Number
+  showFrom: String,
+  showTill: String
 });
 const Message = mongoose.model('Message', MessageSchema);
 

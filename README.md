@@ -22,7 +22,7 @@ Run `ng generate component componentname` to generate a new component. You can a
 ## structure
 server contains all server related stuff.
  - "e2e"  Test related stuff. (for angular only )
- - "src" your angular project.
+ - "src" angular project.
  - "dist" the build version of your angular app (compressed)
  - node
 

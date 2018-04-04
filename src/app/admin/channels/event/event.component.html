@@ -1,4 +1,26 @@
 <div class="main">
-  the ability to add and delete a event (could also be a welcome/goodbye message to clients)
+  new:
   
+  <div class="container">
+      <form >
+          <input #message type="text">
+          <input type="date" name="showfrom" #showFrom>
+          <input type="date" name="showfrom" #showTill>
+        <button (click)="create(message.value, showFrom.value, showTill.value)">Add</button>
+      </form>
+  </div>
+  
+    <table>
+      <th>Message</th>
+      <th>show</th>
+      <th>update</th>
+      <th>delete</th>
+      <tr *ngFor="let message of data">
+        <td>{{message.message}}</td>
+        <td>{{message.showFrom}} untill: {{message.showTill}}</td>
+        <td><button action="update(message._id, message)">update</button></td>
+        <td><button (click)="delete(message)">delete</button></td>
+      </tr>
+    </table>
+    
 </div>
