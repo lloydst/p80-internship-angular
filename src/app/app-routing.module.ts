@@ -11,6 +11,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { AdminEntranceComponent } from './admin/channels/entrance/entrance.component';
 import { AdminEventComponent } from './admin/channels/event/event.component';
 import { AdminMeetingComponent } from './admin/channels/meeting/meeting.component';
+import { AdminEntranceDetailComponent } from './admin/channels/entrance/admin-entrance-detail/admin-entrance-detail.component';
 
 const routes: Routes = [
   {
@@ -35,6 +36,7 @@ const routes: Routes = [
         component: AdminChannelsComponent,
         children: [
           {path: 'entrance', component: AdminEntranceComponent},
+          {path: 'entrance/:id', component: AdminEntranceDetailComponent},
           {path: 'events', component: AdminEventComponent},
           {path: 'meeting', component: AdminMeetingComponent}
         ]

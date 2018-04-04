@@ -4,6 +4,14 @@ var Website = require('../models/Website')
 var Message = require('../models/Message')
 var status = require('http-status');
 /* GETs home page. full/all websites object*/
+router.put('/websites/:id', function(req,res) {
+    Website.findOneAndUpdate({name: req.params.id}, req.body,function(err, doc) {
+        if(err) {
+            res.send(err)
+        }
+        res.json({ message: 'Successfully updated' })
+    })
+})
 router.get('/websites',function(req, res) {
   Website.find(function(err, websites) {
       if (err)
@@ -14,13 +22,35 @@ router.get('/websites',function(req, res) {
   });
 });
 router.get('/websites/:id', function(req,res) {
-        Website.findById(req.params.id, function(err, website) {
+        Website.find({name: req.params.id}, function(err, website) {
             if (err)
                 res.send(err);
             res.json(website);
         });
     });
-
+    router.delete('/websites/:id', function(req, res) {
+        Website.remove({
+            _id: req.params.id
+        }, function(err, website) {
+            if (err) {
+                res.send(err);
+            }
+            res.json({ message: 'Successfully deleted' });
+        })
+    })
+    router.post('/websites',function(req, res) {
+        var site = new Website();      
+        site.name = req.body.name;  
+        site.url = req.body.url;
+        site.visable = req.body.visable;
+        // save the bear and check for errors
+        site.save(function(err) {
+            if (err){
+                res.send(err);
+            }
+            res.json({ message: 'site added' });
+        });
+    });
 // MESSAGES
 //ALL
 
@@ -70,7 +100,7 @@ router.put('/messages/:id', function(req,res) {
 router.delete('/messages/:id', function(req, res) {
     Message.remove({
         _id: req.params.id
-    }, function(err, bear) {
+    }, function(err, message) {
         if (err) {
             res.send(err);
         }

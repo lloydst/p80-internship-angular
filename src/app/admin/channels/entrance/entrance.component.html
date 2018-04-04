@@ -1,13 +1,23 @@
 <div class="main">
+    <div class="container">
+        <form >
+          <label for="client">client</label>
+          
+            <input #website name="client" type="text">
+            <label for="url">url</label>
+            <input type="text" name="url" #url>
+            <label for="visable">visable</label>
+            <input type="text" name="visable" default="false" #visable>
+          <button (click)="create(website.value, url.value, visable.value)">Add</button>
+        </form>
+    </div>
   <table>
     <th>company/client:</th><th>url:</th><th>edit</th><th>delete</th>
-    <tr *ngFor="let item of data">
+    <tr *ngFor="let item of data; let i = index">
       <td>{{item.name}}</td>
       <td>{{item.url}}</td>
-      <td>edit{{item._id}}</td>
-      <td>delete{{item._id}}</td>
+      <td> <a [routerLink]="item.name" ><button>update</button></a></td>
+      <td><button (click)="delete(item)">delete</button></td>
     </tr>
   </table> 
-  <button>add</button>
-  todo: detail, on the api as well
 </div>

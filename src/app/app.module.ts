@@ -41,6 +41,7 @@ import { DataService } from './services/data.service';
  */
 import { Website } from './models/website';
 import { ChatComponent } from './chat/chat.component';
+import { AdminEntranceDetailComponent } from './admin/channels/entrance/admin-entrance-detail/admin-entrance-detail.component';
 
 
 @NgModule({
@@ -61,7 +62,8 @@ import { ChatComponent } from './chat/chat.component';
     SupportComponent,
     FinancialComponent,
     BuildServersComponent,
-    ChatComponent
+    ChatComponent,
+    AdminEntranceDetailComponent
   ],
   imports: [
     BrowserModule,

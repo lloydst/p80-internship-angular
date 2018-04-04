@@ -12,15 +12,18 @@ export class DataService {
     return this.http.get('/api/websites/'+id+'');
   }
   updateWebsite(id, newContent) {
-    return this.http.put('/api/websites'+id+'', newContent);
+    return this.http.put('/api/websites/'+id+'', newContent);
   }
   getAllWebsites(){
     return this.http.get('/api/websites');
   }
   createWebsite(newPage){
-    
     return this.http.post('/api/websites', newPage);
   }
+  deleteWebsite(id) {
+    return this.http.delete('/api/websites/' + id)
+  }
+
   // crud message
   getMessage(id) {
     return this.http.get('/api/messages/'+id+'');
