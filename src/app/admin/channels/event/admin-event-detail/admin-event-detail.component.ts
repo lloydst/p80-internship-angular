@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataService } from '../../../../services/data.service';
-import { Website } from '../../../../models/website';
+import { Message } from '../../../../models/message';
 @Component({
-  selector: 'app-admin-entrance-detail',
-  templateUrl: './admin-entrance-detail.component.html',
-  styleUrls: ['./admin-entrance-detail.component.scss']
+  selector: 'app-admin-event-detail',
+  templateUrl: './admin-event-detail.component.html',
+  styleUrls: ['./admin-event-detail.component.scss']
 })
-export class AdminEntranceDetailComponent implements OnInit {
+export class AdminEventDetailComponent implements OnInit {
 data: any
 id
   constructor(
@@ -22,18 +22,18 @@ id
     this.getData()
   }
   getData() {
-    this.dataService.getWebsite(this.id).subscribe(
+    this.dataService.getMessage(this.id).subscribe(
       res => {this.data = res}
     )
   }
-  update(name, url) {
-    this.dataService.updateWebsite(this.id, {name: name, url: url}).subscribe()
-    console.log(this.id)
+  update(message, showFrom, showTill) {
+    this.dataService.updateMessage(this.id, {message: message, showFrom: showFrom, showTill: showTill}).subscribe()
+    
   }
   alertUser () {
     const redirect = window.confirm('updated do you wish to return?')
     if (redirect) {
-      this.router.navigate(['./admin/channels/entrance'])
+      this.router.navigate(['./admin/channels/events'])
     }
   }
 }

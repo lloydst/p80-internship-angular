@@ -5,7 +5,7 @@
       <input #name type="text" name="name" value="{{edit.name}}">
       <label for="url">url</label>
       <input type="text" name="url" #url value="{{edit.url}}" size="35">
-      <button (click)="update(name.value, url.value)">edit</button>
+      <button (click)="update(name.value, url.value); alertUser()">edit</button>
     </form>
 
     <p>all this information is used but there could easely be stuff added. like images and quotes</p>

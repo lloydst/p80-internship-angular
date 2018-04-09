@@ -3,6 +3,7 @@ import { DataService} from '../../../services/data.service';
 import { Website } from '../../../models/website';
 import { Observable } from 'rxjs/observable';
 import { Router } from '@angular/router';
+import { Validators, FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-entrance',
   templateUrl: './entrance.component.html',
@@ -14,6 +15,10 @@ export class AdminEntranceComponent implements OnInit {
     private dataService: DataService,
     private router: Router) { }
 
+    websiteForm = new FormGroup({
+      website: new FormControl(),
+      url: new FormControl()
+    });
   ngOnInit() {
     this.getData()
   }

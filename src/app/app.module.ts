@@ -8,7 +8,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { NguiMapModule} from '@ngui/map';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // import { ToasterModule, ToasterService} from 'angular2-toaster';
 
 /**
@@ -42,6 +42,7 @@ import { DataService } from './services/data.service';
 import { Website } from './models/website';
 import { ChatComponent } from './chat/chat.component';
 import { AdminEntranceDetailComponent } from './admin/channels/entrance/admin-entrance-detail/admin-entrance-detail.component';
+import { AdminEventDetailComponent } from './admin/channels/event/admin-event-detail/admin-event-detail.component';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { AdminEntranceDetailComponent } from './admin/channels/entrance/admin-en
     FinancialComponent,
     BuildServersComponent,
     ChatComponent,
-    AdminEntranceDetailComponent
+    AdminEntranceDetailComponent,
+    AdminEventDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -71,6 +73,7 @@ import { AdminEntranceDetailComponent } from './admin/channels/entrance/admin-en
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
     // ToasterModule.forRoot(),
     NguiMapModule.forRoot(
       {apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDB68aJIk7wVjjPvGa7nON_ngvlnRmoG98'}

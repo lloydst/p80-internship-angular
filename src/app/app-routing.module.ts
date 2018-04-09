@@ -12,6 +12,7 @@ import { AdminEntranceComponent } from './admin/channels/entrance/entrance.compo
 import { AdminEventComponent } from './admin/channels/event/event.component';
 import { AdminMeetingComponent } from './admin/channels/meeting/meeting.component';
 import { AdminEntranceDetailComponent } from './admin/channels/entrance/admin-entrance-detail/admin-entrance-detail.component';
+import { AdminEventDetailComponent } from './admin/channels/event/admin-event-detail/admin-event-detail.component';
 
 const routes: Routes = [
   {
@@ -38,6 +39,7 @@ const routes: Routes = [
           {path: 'entrance', component: AdminEntranceComponent},
           {path: 'entrance/:id', component: AdminEntranceDetailComponent},
           {path: 'events', component: AdminEventComponent},
+          {path: 'events/:id', component: AdminEventDetailComponent},
           {path: 'meeting', component: AdminMeetingComponent}
         ]
       }

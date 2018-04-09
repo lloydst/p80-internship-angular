@@ -61,9 +61,10 @@ router.get('/messages/:id',function(req,res) {
         if (err) {
             res.send(err);
         }
-       res.json(message)
+       res.json([message])
     })
 })
+
 //All
 router.get('/messages',function(req, res) {
     Message.find(function(err, messages) {
@@ -89,7 +90,7 @@ router.get('/messages',function(req, res) {
 });
 // FIND AND UPDATE
 router.put('/messages/:id', function(req,res) {
-    Message.updateOne(req.params.id, {message:req.body.message},function(err, doc) {
+    Message.updateOne({_id: req.params.id}, req.body,function(err, doc) {
         if(err) {
             res.send(err)
         }

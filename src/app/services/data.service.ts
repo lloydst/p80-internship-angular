@@ -29,7 +29,7 @@ export class DataService {
     return this.http.get('/api/messages/'+id+'');
   }
   updateMessage(id, newContent) {
-    return this.http.put('/api/messages'+id+'', newContent);
+    return this.http.put('/api/messages/'+id+'', newContent);
   }
   getAllMessage(){
     return this.http.get('/api/messages');

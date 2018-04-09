@@ -2,11 +2,15 @@
   new:
   
   <div class="container">
-      <form >
-          <input #message type="text">
-          <input type="date" name="showfrom" #showFrom>
-          <input type="date" name="showfrom" #showTill>
-        <button (click)="create(message.value, showFrom.value, showTill.value)">Add</button>
+      <form (ngSubmit)="create(message.value, showFrom.value, showTill.value); eventForm.reset()" [formGroup]="eventForm">
+          {{diagnostic}}
+          <input #message type="text" required formControlName="message">
+          <input type="datetime-local" name="showFrom" #showFrom id="showFrom" required formControlName="showFrom"> 
+          <span class="validity"></span> <!-- visual validation only-->
+          <input type="datetime-local" name="showTill" #showTill id="showTill" required formControlName="showTill">
+          <span class="validity"></span>
+        <button type="submit"
+        [disabled]="!eventForm.valid">Add</button>
       </form>
   </div>
   
@@ -18,7 +22,7 @@
       <tr *ngFor="let message of data">
         <td>{{message.message}}</td>
         <td>{{message.showFrom}} untill: {{message.showTill}}</td>
-        <td><button action="update(message._id, message)">update</button></td>
+        <td><a [routerLink]='message._id' ><button>update</button></a></td>
         <td><button (click)="delete(message)">delete</button></td>
       </tr>
     </table>

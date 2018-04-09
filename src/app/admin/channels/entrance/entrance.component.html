@@ -1,14 +1,12 @@
 <div class="main">
     <div class="container">
-        <form >
+        <form [formGroup]="websiteForm">
           <label for="client">client</label>
-          
-            <input #website name="client" type="text">
+            <input #website name="client" type="text" required formControlName="website">
             <label for="url">url</label>
-            <input type="text" name="url" #url>
+            <input type="text" name="url" #url required formControlName="url">
             <label for="visable">visable</label>
-            <input type="text" name="visable" default="false" #visable>
-          <button (click)="create(website.value, url.value, visable.value)">Add</button>
+          <button (click)="create(website.value, url.value)" [disabled]="!websiteForm.valid">Add</button>
         </form>
     </div>
   <table>

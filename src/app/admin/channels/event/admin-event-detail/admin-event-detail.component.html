@@ -1,0 +1,11 @@
+<div *ngFor="let edit of data" class="main">
+
+    <form >
+        <label for="message">Message</label>
+      <input #message type="text" name="message" value="{{edit.message}}">
+      <label for="show">show</label>
+      <input type="text" name="showFrom" #showFrom value="{{edit.showFrom}}" size="25">
+      <input type="text" name="showTill" #showTill value="{{edit.showTill}}" size="25">
+      <button (click)="update(message.value, showFrom.value, showTill.value); alertUser()">edit</button>
+    </form>
+</div>

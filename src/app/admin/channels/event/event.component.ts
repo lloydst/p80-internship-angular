@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../services/data.service';
 import { Message } from '../../../models/message';
 import { Observable } from 'rxjs/observable';
+import { Validators, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-event',
@@ -11,6 +12,11 @@ import { Observable } from 'rxjs/observable';
 export class AdminEventComponent implements OnInit {
 data
 model
+eventForm = new FormGroup({
+  message: new FormControl(),
+  showFrom: new FormControl(),
+  showTill: new FormControl()
+});
   constructor(private dataService: DataService) { }
   newMessage(mssg, from, untill) {
     this.model = new Message(mssg, from, untill);
@@ -18,7 +24,7 @@ model
   ngOnInit() {
     this.getData()
   }
-  create (mssg, from, untill) {
+  create (mssg, from, untill) { // need to add validator to from/untill fields
     this.dataService.createMessage({
       message: mssg,
       showFrom: from,
@@ -26,7 +32,6 @@ model
         data => {
           // refresh the list
           this.getData();
-          return true;
         },
         error => {
           console.error("Error creating message!");
