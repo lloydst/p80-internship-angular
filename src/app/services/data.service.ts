@@ -7,36 +7,77 @@ import { HttpClient } from '@angular/common/http';
 export class DataService {
  
   constructor(private http: HttpClient) { }
-  // crud websites
-  getWebsite(id) {
+  /**
+   * returns a single object or "website"
+   */
+  getWebsite(id: String) {
     return this.http.get('/api/websites/'+id+'');
   }
-  updateWebsite(id, newContent) {
+  /**
+   * updates a single "website" document
+   * @param id identifier for what document to update
+   * @param newContent content that should replace the old content 
+   * 
+   */
+  updateWebsite(id: String, newContent: Object) {
     return this.http.put('/api/websites/'+id+'', newContent);
   }
+  /**
+   * returns all "websites" from the db
+   */
   getAllWebsites(){
     return this.http.get('/api/websites');
   }
+  /**
+   * creates a new "website document"
+   * @param newPage contents of the new document
+   */
   createWebsite(newPage){
     return this.http.post('/api/websites', newPage);
   }
-  deleteWebsite(id) {
+  /**
+   * deletes a website
+   * @param id selector for what "website" to delete from the collection
+   * 
+   */
+  deleteWebsite(id: String) {
     return this.http.delete('/api/websites/' + id)
   }
 
-  // crud message
-  getMessage(id) {
+  /**
+   * returns a single message
+   * @param id selector for the "message to return"
+   * 
+   */
+  getMessage(id: String) {
     return this.http.get('/api/messages/'+id+'');
   }
-  updateMessage(id, newContent) {
+  /**
+   * updates a single message
+   * @param id message to update
+   * @param newContent content to update it with
+   * 
+   */
+  updateMessage(id: String, newContent: Object) {
     return this.http.put('/api/messages/'+id+'', newContent);
   }
+  /**
+   * returns all messages
+   */
   getAllMessage(){
     return this.http.get('/api/messages');
   }
+  /**
+   * creates a new message document
+   * @param newPage content that the new message will contain
+   */
   createMessage(newPage){
     return this.http.post('/api/messages', newPage);
   }
+  /**
+   * deletes a single message
+   * @param id selector for the message you want to delete
+   */
   deleteMessage(id) {
     return this.http.delete('/api/messages/' + id)
   }

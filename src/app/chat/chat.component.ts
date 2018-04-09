@@ -13,19 +13,29 @@ export class ChatComponent implements OnInit, OnDestroy {
   connection;
   message;
 
-  constructor(private chatService:SocketService) {}
-
+  constructor(
+    private chatService:SocketService
+  ) {}
+/**
+ * sends a message and clears the form on post
+ */
   sendMessage(){
     this.chatService.sendMessage(this.message);
     this.message = '';
   }
-
+/**
+ * 
+ * opens the socket connection on load
+ */
   ngOnInit() {
     this.connection = this.chatService.getMessages().subscribe(message => {
       this.messages.push(message);
     })
   }
   
+  /**
+   * closes the socket connection
+   */
   ngOnDestroy() {
     this.connection.unsubscribe();
   }

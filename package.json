@@ -14,7 +14,8 @@
     "postinstall": "ng build --aot -prod",
     "build": "ng build --aot -prod",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -s"
   },
   "private": true,
   "dependencies": {
@@ -57,6 +58,7 @@
     "@types/node": "~6.0.60",
     "@types/socket.io-client": "^1.4.32",
     "codelyzer": "^4.0.1",
+    "compodoc": "0.0.41",
     "jasmine-core": "~2.8.0",
     "jasmine-spec-reporter": "~4.1.0",
     "karma": "~1.7.0",
@@ -68,6 +70,7 @@
     "protractor": "~5.1.2",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
+    "typedoc": "^0.11.1",
     "typescript": "~2.5.2"
   }
 }

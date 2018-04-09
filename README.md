@@ -8,13 +8,14 @@ This project was started up with [Mean-boilerplate](https://github.com/lloydst/m
 #prerequisites
   -  node v ^8.10.0 (with matching npm)
   -  mongodb or a mlab account (see data base for more information)
+  -  typedoc installed globally if you wish to use it to generate a easy to navigate documentaion page
   -  and lastly nodemon installed globally (`npm i nodemon -g`)
   
-## Development server
+## Development
 
 run `npm run dev` for rebuilding on changes to any of the angular part of the website.
 and run `npm run server` (in a other window)so that node restarts the express server on changes
-
+run `npm run documentation` to "generate" docs (you ofc have to document in the ts files)
 ## quick component gen (angular cli)
 
 Run `ng generate component componentname` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
@@ -24,6 +25,7 @@ server contains all server related stuff.
  - "e2e"  Test related stuff. (for angular only )
  - "src" angular project.
  - "dist" the build version of your angular app (compressed)
+ - "docs" documentation generated using type doc
  - node
 
 ## database

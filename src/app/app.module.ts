@@ -43,6 +43,7 @@ import { Website } from './models/website';
 import { ChatComponent } from './chat/chat.component';
 import { AdminEntranceDetailComponent } from './admin/channels/entrance/admin-entrance-detail/admin-entrance-detail.component';
 import { AdminEventDetailComponent } from './admin/channels/event/admin-event-detail/admin-event-detail.component';
+import { SupportTicketsComponent } from './admin/channels/support-tickets/support-tickets.component';
 
 
 @NgModule({
@@ -65,7 +66,8 @@ import { AdminEventDetailComponent } from './admin/channels/event/admin-event-de
     BuildServersComponent,
     ChatComponent,
     AdminEntranceDetailComponent,
-    AdminEventDetailComponent
+    AdminEventDetailComponent,
+    SupportTicketsComponent
   ],
   imports: [
     BrowserModule,

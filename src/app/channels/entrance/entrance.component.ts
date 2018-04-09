@@ -24,12 +24,16 @@ export class EntranceComponent implements OnInit {
     public http: HttpClient
     
   ) {}
- 
+ /**
+  * gets all websites through the service
+  */
   getData() {
     this.dataService.getAllWebsites().subscribe(
       res => {this.websites = res})
-    
   }
+/**
+ * returns either a bloolean or string based on time of day so that its only visable at the right time
+ */
   checkTime() {
     console.log(this.hour)
     if(this.hour > 17) { // 16h = 4pm
@@ -46,7 +50,10 @@ export class EntranceComponent implements OnInit {
       return this.time = false;
     } 
   }
-  
+  /**
+   * gets all the "websites" from a hidden span so it gets saved in a array then it will loop
+   * through them opening each of them with window.open with 1 min interval
+   */
   openWindow() {
     var x = 0;
     //console.log(this.data)

@@ -1,9 +1,9 @@
 export class Message {
 
     constructor(
-      message: string,
-      showFrom:string,
-      showTill:string
+      public message: string,
+      public showFrom:string,
+      public showTill:string
     ) {  }
   
   }

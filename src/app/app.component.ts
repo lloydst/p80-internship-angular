@@ -6,5 +6,5 @@ import { ToasterService, IToasterConfig, ToasterConfig } from 'angular2-toaster'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    title: 'app'
+  
 }

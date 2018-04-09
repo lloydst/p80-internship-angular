@@ -10,6 +10,12 @@ import { Message } from '../../../../models/message';
 export class AdminEventDetailComponent implements OnInit {
 data: any
 id
+/**
+ * component constructor
+ * @param router for navigation
+ * @param route for param.id
+ * @param dataService crud events
+ */
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -21,15 +27,27 @@ id
     
     this.getData()
   }
+  /**
+   * gets a single message
+   */
   getData() {
     this.dataService.getMessage(this.id).subscribe(
       res => {this.data = res}
     )
   }
+  /**
+   * updates a message
+   * @param message message text to replace the old text with
+   * @param showFrom show from time/date
+   * @param showTill untill
+   */
   update(message, showFrom, showTill) {
     this.dataService.updateMessage(this.id, {message: message, showFrom: showFrom, showTill: showTill}).subscribe()
     
   }
+  /**
+   * prevents a user from acidently removeing a message
+   */
   alertUser () {
     const redirect = window.confirm('updated do you wish to return?')
     if (redirect) {

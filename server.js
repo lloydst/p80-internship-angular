@@ -21,8 +21,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/',express.static(path.join(__dirname, 'dist'))) // angular project
-// the app.use that's commented out below is for static file hosting: like images text file's music
-// app.use('/myuri', express.static(path.join(__dirname,'./file location relative to this file')));
+
+if (process.env != 'production') {
+  app.use('/docs', express.static(path.join(__dirname, 'docs')))
+}
 app.use('/api',api) // route example creates url's like: <host>/users/<routes from file>
 app.use('*',express.static(path.join(__dirname, 'dist'))) //routes anything not caught by the routes above to your angular project if possible
 

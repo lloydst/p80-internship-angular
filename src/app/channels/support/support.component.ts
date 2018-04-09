@@ -6,9 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./support.component.scss']
 })
 export class SupportComponent implements OnInit {
-
+/**
+ * some stuff goes here
+ */
   constructor() { }
-
+/**
+ * fill
+ */
   ngOnInit() {
   }
 

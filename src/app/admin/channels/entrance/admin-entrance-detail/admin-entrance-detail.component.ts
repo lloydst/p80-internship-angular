@@ -21,15 +21,28 @@ id
     
     this.getData()
   }
+  /**
+   * gets all the websites from the api and returns them 
+   * @method getData()
+   * returns a array
+   */
   getData() {
     this.dataService.getWebsite(this.id).subscribe(
       res => {this.data = res}
     )
   }
-  update(name, url) {
+  /**
+   * updates a website with its new content
+   * @param name the (new) name of the "website" that gets updated
+   * @param url the (new) url of the "website" that gets updated
+   */
+  update(name: String, url: String) {
     this.dataService.updateWebsite(this.id, {name: name, url: url}).subscribe()
     console.log(this.id)
   }
+  /**
+   * stops the user from accedently removing a "website"
+   */
   alertUser () {
     const redirect = window.confirm('updated do you wish to return?')
     if (redirect) {

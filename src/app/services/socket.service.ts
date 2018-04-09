@@ -6,13 +6,25 @@ import * as io from 'socket.io-client';
 
 @Injectable()
 export class SocketService {
-  private url = 'http://localhost:3000';  
+  /**
+   * base url
+   */
+  private url = 'http://localhost:3000';
+  /**
+   * defining socket
+   */
   private socket;
-  
-  sendMessage(message){
+  /**
+   * uses socket.io to listen to a post request
+   * @param message
+   * 
+   */
+  sendMessage(message: Object){
     this.socket.emit('add-message', message);    
   }
-  
+  /**
+   * gets all messages not sure if still in use
+   */
   getMessages() {
     let observable = new Observable(observer => {
       this.socket = io(this.url);

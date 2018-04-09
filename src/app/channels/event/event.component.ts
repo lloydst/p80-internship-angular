@@ -7,14 +7,23 @@ import { Message } from '../../models/message';
   styleUrls: ['./event.component.scss']
 })
 export class EventComponent implements OnInit {
-// test= window.open('https://google.com') works
 message
-  constructor(private dataService: DataService) { }
+  constructor(
+
+    private dataService: DataService) { }
 
   ngOnInit() {
+    /**
+     * implements get data on start
+     */
     this.getData()
   }
+
+  /**
+   * gets all messages using the service and returns then as object
+   */
   getData() {
+   
     this.dataService.getAllMessage().subscribe(
       res => {this.message = res})
     

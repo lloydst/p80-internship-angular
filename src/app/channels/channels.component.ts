@@ -7,8 +7,14 @@ import { Router } from "@angular/router";
   templateUrl: './channels.component.html',
   styleUrls: ['./channels.component.scss']
 })
+
 export class ChannelsComponent implements OnInit {
+  /**
+   * 
+   * @param router router gets imported to display content based on the url
+   */
   constructor (public router: Router) {}
+  
   ngOnInit () {
 
   }
