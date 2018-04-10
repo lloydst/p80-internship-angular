@@ -15,7 +15,7 @@ This project was started up with [Mean-boilerplate](https://github.com/lloydst/m
 
 run `npm run dev` for rebuilding on changes to any of the angular part of the website.
 and run `npm run server` (in a other window)so that node restarts the express server on changes
-run `npm run doc` to "generate" docs (only documents the angular app)
+run `npm run doc` to "generate" front end docs (only documents the angular app) since the back end can be found at ./api-docs
 
 ## quick component gen (angular cli)
 

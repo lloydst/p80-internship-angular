@@ -9,7 +9,26 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-
+const swaggerJSDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+// swagger definition
+var swaggerDefinition = {
+  info: {
+    title: 'Node Swagger API',
+    version: '1.0.0',
+    description: 'Demonstrating how to describe a RESTful API with Swagger',
+  },
+  host: `localhost`,
+  basePath: '/',
+};
+var swaggerOptions = {
+  // import swaggerDefinitions
+  swaggerDefinition: swaggerDefinition,
+  // path to the API docs
+  apis: ['./server/routes/index.js'],
+};
+const swaggerSpec = swaggerJSDoc(swaggerOptions);
 // mongoose setup
 const MONGOURI = process.env.MONGOURI || 'someback-upaddress';
 // this .env file should be added to .gitignore since it contains passwords
@@ -24,6 +43,15 @@ app.use('/',express.static(path.join(__dirname, 'dist'))) // angular project
 
 if (process.env != 'production') {
   app.use('/docs', express.static(path.join(__dirname, 'docs')))
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+  app.get('/swagger.json', function(req, res) {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(swaggerSpec);
+  });
+  app.get('/api-docs.json', function(req, res) { // line 41 
+    res.setHeader('Content-Type', 'application/json');
+    res.send(swaggerSpec);
+  });
 }
 app.use('/api',api) // route example creates url's like: <host>/users/<routes from file>
 app.use('*',express.static(path.join(__dirname, 'dist'))) //routes anything not caught by the routes above to your angular project if possible

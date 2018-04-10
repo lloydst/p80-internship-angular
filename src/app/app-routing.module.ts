@@ -22,28 +22,7 @@ const routes: Routes = [
   }, // default
   {
     path:'admin', 
-    component: AdminComponent, 
-    children: [
-      {
-        path:'', 
-        component: DashboardComponent
-      },
-      {
-        path:'algemeen', 
-        component: SettingComponent
-      },
-      {
-        path:'channels', 
-        component: AdminChannelsComponent,
-        children: [
-          {path: 'entrance', component: AdminEntranceComponent},
-          {path: 'entrance/:id', component: AdminEntranceDetailComponent},
-          {path: 'events', component: AdminEventComponent},
-          {path: 'events/:id', component: AdminEventDetailComponent},
-          {path: 'meeting', component: AdminMeetingComponent}
-        ]
-      }
-    ]
+    loadChildren: 'app/admin/admin.module#AdminModule'
   },
   {path:'channels', component: ChannelsComponent, children: [
     {
@@ -60,7 +39,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes,{ enableTracing: false }) // set to true for debugging
   ],
   exports: [RouterModule]
 })

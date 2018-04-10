@@ -3,7 +3,16 @@ var router = express.Router();
 var Website = require('../models/Website')
 var Message = require('../models/Message')
 var status = require('http-status');
-/* GETs home page. full/all websites object*/
+/**
+ *  @swagger
+ *  /:
+ *    get:
+ *      summary: says hi to the people
+ *      operationId: index
+ *      responses:
+ *        200:
+ *          description: hello world
+ */
 router.put('/websites/:id', function(req,res) {
     Website.findOneAndUpdate({name: req.params.id}, req.body,function(err, doc) {
         if(err) {
