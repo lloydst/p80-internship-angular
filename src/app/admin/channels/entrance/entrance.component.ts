@@ -4,6 +4,10 @@ import { Website } from '../../../models/website';
 import { Observable } from 'rxjs/observable';
 import { Router } from '@angular/router';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
+
+/**
+ * add or remove websites that are shown in the loop or navigate to the detail-page to edit a existing one
+ */
 @Component({
   selector: 'app-entrance',
   templateUrl: './entrance.component.html',

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * meeting component
+ */
 @Component({
   selector: 'app-meeting',
   templateUrl: './meeting.component.html',

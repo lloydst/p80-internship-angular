@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+/**
+ * side nav component
+ */
 @Component({
   selector: 'app-admin-side-nav',
   templateUrl: './admin-side-nav.component.html',

@@ -5,6 +5,11 @@ import { Website } from '../../models/website';
 import { Observable } from "rxjs/Rx"
 import * as $ from 'jquery';
 var x = 0;
+
+/**
+ * entrance component
+ */
+
 @Component({
   selector: 'app-entrance',
   templateUrl: './entrance.component.html',

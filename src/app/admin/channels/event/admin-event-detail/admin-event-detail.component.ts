@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataService } from '../../../../services/data.service';
 import { Message } from '../../../../models/message';
+
+/**
+ * message/event detail page
+ */
 @Component({
   selector: 'app-admin-event-detail',
   templateUrl: './admin-event-detail.component.html',

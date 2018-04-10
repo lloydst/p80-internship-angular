@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataService } from '../../../../services/data.service';
 import { Website } from '../../../../models/website';
+/**
+ * edit a "website", url, client name
+ */
 @Component({
   selector: 'app-admin-entrance-detail',
   templateUrl: './admin-entrance-detail.component.html',

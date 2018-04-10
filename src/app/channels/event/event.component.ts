@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { Message } from '../../models/message';
+
+/**
+ * event component
+ */
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
@@ -8,14 +12,15 @@ import { Message } from '../../models/message';
 })
 export class EventComponent implements OnInit {
 message
-  constructor(
 
+/**
+ * constructor to make data service available in this component
+ * @param dataService service for all crud requests to the api
+ */
+  constructor(
     private dataService: DataService) { }
 
   ngOnInit() {
-    /**
-     * implements get data on start
-     */
     this.getData()
   }
 

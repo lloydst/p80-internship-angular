@@ -4,6 +4,9 @@ import { Message } from '../../../models/message';
 import { Observable } from 'rxjs/observable';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 
+/**
+ * event component: here admin's can add and delete messages or go to the detail page to edit
+ */
 @Component({
   selector: 'app-event',
   templateUrl: './event.component.html',
@@ -13,6 +16,9 @@ import { Validators, FormGroup, FormControl } from '@angular/forms';
 export class AdminEventComponent implements OnInit {
 data
 model
+/**
+ * form group for data binding
+ */
 eventForm = new FormGroup({
   message: new FormControl(),
   showFrom: new FormControl(),
