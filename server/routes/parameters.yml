@@ -1,0 +1,10 @@
+# example these can be reused
+parameters:
+  id:
+    name: _id
+    description: id to use for GET, PUT, DELETE
+    in: formData
+    required: true
+    type: string
+#
+#
