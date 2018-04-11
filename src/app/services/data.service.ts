@@ -2,10 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 
-
+/**
+ * dataservice
+ */
 @Injectable()
 export class DataService {
- 
+ /**
+  * for http calls
+  * @param http http
+  */
   constructor(private http: HttpClient) { }
   /**
    * returns a single object or "website"

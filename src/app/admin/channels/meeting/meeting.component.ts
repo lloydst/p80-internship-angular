@@ -9,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./meeting.component.scss']
 })
 export class AdminMeetingComponent implements OnInit {
-
+/**
+ * constructor
+ */
   constructor() { }
-
+/**
+ * on load
+ */
   ngOnInit() {
   }
 

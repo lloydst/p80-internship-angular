@@ -9,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./support-tickets.component.scss']
 })
 export class SupportTicketsComponent implements OnInit {
- 
+ /**
+  * constructor
+  */
   constructor() { }
-
+/**
+ * on load
+ */
   ngOnInit() {
   }
 

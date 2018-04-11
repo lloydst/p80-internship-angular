@@ -4,26 +4,55 @@ import { DataService} from '../../services/data.service';
 import { Website } from '../../models/website';
 import { Observable } from "rxjs/Rx"
 import * as $ from 'jquery';
+/**
+ * just setting it once
+ */
 var x = 0;
 
 /**
  * entrance component
  */
-
 @Component({
   selector: 'app-entrance',
   templateUrl: './entrance.component.html',
   styleUrls: ['./entrance.component.scss']
 })
+
 export class EntranceComponent implements OnInit {
+  /**
+   * for binding
+   */
   today = new Date();
+  /**
+   * for binding
+   */
   hour = this.today.getHours(); // returns a number between 0 and 23 (23:59 still returns only 23)
   //hour = 16 // test variable  < 16 voor loop test >16 voor travel info > 17 what ya doin here
+  /**
+   * for binding
+   */
   time;
+  /**
+   * for binding
+   */
   ovTimes: any
+  /**
+   * for binding
+   */
   websites: any
+  /**
+   * for binding
+   */
   res:any
+  /**
+   * for binding
+   */
   data: any = []
+  /**
+   * 
+   * @param dataService crud requests to the api
+   * @param http http
+   */
   constructor(
     private dataService: DataService,
     public http: HttpClient
@@ -86,7 +115,9 @@ export class EntranceComponent implements OnInit {
       }
       go();
   }
-  
+  /**
+   * on load
+   */
   ngOnInit() {
 
     this.getData()

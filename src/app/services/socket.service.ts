@@ -4,20 +4,22 @@ import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import * as io from 'socket.io-client';
 
+/**
+ * Socket service
+ */
 @Injectable()
 export class SocketService {
   /**
-   * base url
+   * base url to observe
    */
   private url = 'http://localhost:3000';
   /**
-   * defining socket
+   * just defining it
    */
   private socket;
   /**
-   * uses socket.io to listen to a post request
-   * @param message
-   * 
+   * posts a message
+   * @param message posts a message
    */
   sendMessage(message: Object){
     this.socket.emit('add-message', message);    

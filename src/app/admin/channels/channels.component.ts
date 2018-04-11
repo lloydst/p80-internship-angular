@@ -15,7 +15,9 @@ export class AdminChannelsComponent implements OnInit {
  * @param router makes router available to ngIf
  */
   constructor(router: ActivatedRoute) { }
-  
+  /**
+   * runs on load
+   */
   ngOnInit() {
     
   }

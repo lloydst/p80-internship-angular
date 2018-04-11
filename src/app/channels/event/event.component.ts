@@ -10,7 +10,11 @@ import { Message } from '../../models/message';
   templateUrl: './event.component.html',
   styleUrls: ['./event.component.scss']
 })
+
 export class EventComponent implements OnInit {
+  /**
+   * for binding
+   */
 message
 
 /**
@@ -19,7 +23,9 @@ message
  */
   constructor(
     private dataService: DataService) { }
-
+/**
+ * on load
+ */
   ngOnInit() {
     this.getData()
   }

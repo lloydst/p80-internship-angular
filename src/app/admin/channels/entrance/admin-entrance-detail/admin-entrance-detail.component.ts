@@ -10,24 +10,40 @@ import { Website } from '../../../../models/website';
   templateUrl: './admin-entrance-detail.component.html',
   styleUrls: ['./admin-entrance-detail.component.scss']
 })
+/**
+ * admin version of entrance
+ */
 export class AdminEntranceDetailComponent implements OnInit {
+  /**
+   * for binding
+   */
 data: any
+/**
+ * for binding
+ */
 id
+/**
+ * constructor
+ * @param router used in alertUser()
+ * @param route to get the id param
+ * @param dataService does stuff with db
+ */
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private dataService: DataService
   ) { }
-
+/**
+ * gets the id param out of url and requests the corresponing document
+ */
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
-    
     this.getData()
   }
   /**
    * gets all the websites from the api and returns them 
    * @method getData()
-   * returns a array
+   * @returns a array
    */
   getData() {
     this.dataService.getWebsite(this.id).subscribe(

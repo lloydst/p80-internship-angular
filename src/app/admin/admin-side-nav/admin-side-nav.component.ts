@@ -9,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-side-nav.component.scss']
 })
 export class AdminSideNavComponent implements OnInit {
-
+/**
+ * constructor
+ */
   constructor() { }
-
+/**
+ * on load
+ */
   ngOnInit() {
   }
 

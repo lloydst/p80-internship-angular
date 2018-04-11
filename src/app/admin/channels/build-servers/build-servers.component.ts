@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 /**
  * build server component:
- * shows the status of the build servers
  */
 @Component({
   selector: 'app-build-servers',
@@ -10,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./build-servers.component.scss']
 })
 export class BuildServersComponent implements OnInit {
-
+/**
+ * constructor
+ */
   constructor() { }
-
+/**
+ * on init
+ */
   ngOnInit() {
   }
 

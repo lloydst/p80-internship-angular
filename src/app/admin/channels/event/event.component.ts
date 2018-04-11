@@ -14,20 +14,31 @@ import { Validators, FormGroup, FormControl } from '@angular/forms';
 })
 
 export class AdminEventComponent implements OnInit {
+  /**
+   * binding
+   */
 data
-model
 /**
- * form group for data binding
+ * binding
  */
+model
+
 eventForm = new FormGroup({
   message: new FormControl(),
   showFrom: new FormControl(),
   showTill: new FormControl()
 });
+/**
+ * constructor
+ * @param dataService for crud operations
+ */
   constructor(private dataService: DataService) { }
   newMessage(mssg, from, untill) {
     this.model = new Message(mssg, from, untill);
   }
+  /**
+   * on load
+   */
   ngOnInit() {
     this.getData()
   }

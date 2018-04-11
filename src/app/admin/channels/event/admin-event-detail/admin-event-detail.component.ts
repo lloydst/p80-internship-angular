@@ -12,7 +12,13 @@ import { Message } from '../../../../models/message';
   styleUrls: ['./admin-event-detail.component.scss']
 })
 export class AdminEventDetailComponent implements OnInit {
+  /**
+   * for binding
+   */
 data: any
+/**
+ * for binding
+ */
 id
 /**
  * component constructor
@@ -25,7 +31,9 @@ id
     private route: ActivatedRoute,
     private dataService: DataService
   ) { }
-
+/**
+ * on load
+ */
   ngOnInit() {
     this.id = this.route.snapshot.params.id;
     

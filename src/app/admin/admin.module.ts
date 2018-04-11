@@ -15,6 +15,7 @@ import { AdminMeetingComponent } from './channels/meeting/meeting.component';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { SupportTicketsComponent } from './channels/support-tickets/support-tickets.component';
+import { BuildServersComponent } from './channels/build-servers/build-servers.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { SupportTicketsComponent } from './channels/support-tickets/support-tick
     AdminChannelsComponent,
     DashboardComponent,
     SettingComponent,
+    BuildServersComponent,
     AdminComponent,
     AdminEntranceComponent,
     AdminEntranceDetailComponent,

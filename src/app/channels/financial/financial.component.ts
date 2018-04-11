@@ -8,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./financial.component.scss']
 })
 export class FinancialComponent implements OnInit {
-
-  constructor() { }
-
+/**
+ * constructor
+ */
+constructor() { }
+/**
+ * on init
+ */
   ngOnInit() {
   }
 

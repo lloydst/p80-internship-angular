@@ -14,7 +14,13 @@ import { Validators, FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./entrance.component.scss']
 })
 export class AdminEntranceComponent implements OnInit {
+  /**
+   * for binding
+   */
   data: any;
+  /**
+   * constructor
+   */
   constructor(
     private dataService: DataService,
     private router: Router) { }

@@ -24,7 +24,10 @@ const routes: Routes = [
     path:'admin', 
     loadChildren: 'app/admin/admin.module#AdminModule'
   },
-  {path:'channels', loadChildren: 'app/channels/channels.module#ChannelsModule'}
+  {
+    path:'channels',
+    loadChildren: 'app/channels/channels.module#ChannelsModule'
+  }
 ];
 
 @NgModule({

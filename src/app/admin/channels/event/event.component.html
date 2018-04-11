@@ -3,7 +3,6 @@
   
   <div class="container">
       <form (ngSubmit)="create(message.value, showFrom.value, showTill.value); eventForm.reset()" [formGroup]="eventForm">
-          {{diagnostic}}
           <input #message type="text" required formControlName="message">
           <input type="datetime-local" name="showFrom" #showFrom id="showFrom" required formControlName="showFrom"> 
           <span class="validity"></span> <!-- visual validation only-->

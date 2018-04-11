@@ -11,32 +11,35 @@ import { AdminEventComponent } from './channels/event/event.component';
 import { AdminEventDetailComponent } from './channels/event/admin-event-detail/admin-event-detail.component';
 import { AdminMeetingComponent } from './channels/meeting/meeting.component';
 
-const adminRoutes = [
+/**
+ * defining routes
+ */
+const routes = [
   { path: 'admin', component: AdminComponent, children:[
     {
-        path:'', 
-        component: DashboardComponent
-      },
-      {
-        path:'algemeen', 
-        component: SettingComponent
-      },
-      {
-        path:'channels', 
-        component: AdminChannelsComponent,
-        children: [
-          {path: 'entrance', component: AdminEntranceComponent},
-          {path: 'entrance/:id', component: AdminEntranceDetailComponent},
-          {path: 'events', component: AdminEventComponent},
-          {path: 'events/:id', component: AdminEventDetailComponent},
-          {path: 'meeting', component: AdminMeetingComponent}
-        ]
-      }
+      path:'', 
+      component: DashboardComponent
+    },
+    {
+      path:'algemeen', 
+      component: SettingComponent
+    },
+    {
+      path:'channels', 
+      component: AdminChannelsComponent,
+      children: [
+        {path: 'entrance', component: AdminEntranceComponent},
+        {path: 'entrance/:id', component: AdminEntranceDetailComponent},
+        {path: 'events', component: AdminEventComponent},
+        {path: 'events/:id', component: AdminEventDetailComponent},
+        {path: 'meeting', component: AdminMeetingComponent}
+      ]
+    }
   ]},
 ];
 
 @NgModule({
-  imports: [ RouterModule.forChild(adminRoutes) ],
+  imports: [ RouterModule.forChild(routes) ],
   exports: [ RouterModule ]
 })
 export class AdminRoutingModule {}
