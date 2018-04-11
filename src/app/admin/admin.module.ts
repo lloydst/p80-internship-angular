@@ -14,6 +14,7 @@ import { AdminEventDetailComponent } from './channels/event/admin-event-detail/a
 import { AdminMeetingComponent } from './channels/meeting/meeting.component';
 
 import { AdminRoutingModule } from './admin-routing.module';
+import { SupportTicketsComponent } from './channels/support-tickets/support-tickets.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { AdminRoutingModule } from './admin-routing.module';
     AdminEntranceDetailComponent,
     AdminEventComponent,
     AdminEventDetailComponent,
-    AdminMeetingComponent
+    AdminMeetingComponent,
+    SupportTicketsComponent
   ]
 })
 export class AdminModule { }

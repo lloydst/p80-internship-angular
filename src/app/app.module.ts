@@ -16,13 +16,8 @@ import { FormsModule } from '@angular/forms';
  */
 import { AppComponent } from './app.component';
 import { AdminModule } from './admin/admin.module';
-import { ChannelsComponent } from './channels/channels.component';
-import { EntranceComponent } from './channels/entrance/entrance.component';
-import { MeetingComponent } from './channels/meeting/meeting.component';
-import { EventComponent } from './channels/event/event.component';
-import { SupportComponent } from './channels/support/support.component';
-import { FinancialComponent } from './channels/financial/financial.component';
-import { BuildServersComponent } from './channels/build-servers/build-servers.component';
+import { ChannelsModule } from './channels/channels.module';
+
 
 /**
  * services
@@ -33,8 +28,7 @@ import { DataService } from './services/data.service';
  * models
  */
 import { Website } from './models/website';
-import { ChatComponent } from './chat/chat.component';
-import { SupportTicketsComponent } from './admin/channels/support-tickets/support-tickets.component';
+
 
 
 
@@ -42,25 +36,14 @@ import { SupportTicketsComponent } from './admin/channels/support-tickets/suppor
 @NgModule({
   declarations: [
     AppComponent,
-    ChannelsComponent,
-    EntranceComponent,
-    MeetingComponent,
-    EventComponent,
-    SupportComponent,
-    FinancialComponent,
-    BuildServersComponent,
-    ChatComponent,
-    SupportTicketsComponent
+
   ],
   imports: [
     BrowserModule,
-    
     HttpClientModule,
     FormsModule,
     AdminModule,
-    NguiMapModule.forRoot(
-      {apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDB68aJIk7wVjjPvGa7nON_ngvlnRmoG98'}
-    ),
+    ChannelsModule,
     AppRoutingModule,    
     ],
   providers: [
