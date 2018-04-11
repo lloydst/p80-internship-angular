@@ -5,9 +5,13 @@
       <ngui-map zoom="12" center="Amsterdam ijburg, Netherlands">
         <traffic-layer></traffic-layer>
       </ngui-map>
-      <iframe id="test" src="http://v0.ovapi.nl/stopareacode/08244/departures" frameborder="0"></iframe>
-      <iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.36246&lng=4.97656&overname=2&zoom=13&naam=1086 XP&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no></iframe>
-      ov kan niet zolang er geen vaste host is <br>
+      <div id="news" *ngFor="let last of news">
+        <p>{{last.title}} <br>
+          {{last.description}}
+        </p>
+      </div>
+      <!--<iframe src="https://gadgets.buienradar.nl/gadget/zoommap/?lat=52.36246&lng=4.97656&overname=2&zoom=13&naam=1086 XP&size=3&voor=1" scrolling=no width=550 height=512 frameborder=no></iframe>
+      -->ov kan niet zolang er geen vaste host is <br>
       <p>checkt nog niet of de tijd veranderd is</p>
   </div>
   <div *ngIf="!time">

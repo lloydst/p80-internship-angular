@@ -24,10 +24,10 @@ import { ChannelsModule } from './channels/channels.module';
  */
 import { SocketService } from './services/socket.service';
 import { DataService } from './services/data.service';
-/**
- * models
- */
-import { Website } from './models/website';
+
+import { NewsService } from './services/news.service';
+import { WeatherService } from './services/weather.service';
+
 
 
 
@@ -49,7 +49,9 @@ import { Website } from './models/website';
     ],
   providers: [
     DataService,
-    SocketService
+    SocketService,
+    NewsService,
+    WeatherService
   ],
   bootstrap: [AppComponent]
 })

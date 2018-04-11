@@ -4,6 +4,7 @@ import { DataService} from '../../services/data.service';
 import { Website } from '../../models/website';
 import { Observable } from "rxjs/Rx"
 import * as $ from 'jquery';
+import { NewsService } from '../../services/news.service';
 /**
  * just setting it once
  */
@@ -40,6 +41,10 @@ export class EntranceComponent implements OnInit {
    * for binding
    */
   websites: any
+   /**
+   * for binding
+   */
+  news:any
   /**
    * for binding
    */
@@ -49,11 +54,13 @@ export class EntranceComponent implements OnInit {
    */
   data: any = []
   /**
-   * 
+   * constructor
+   * @param newsService gets the latest news of nu.nl
    * @param dataService crud requests to the api
    * @param http http
    */
   constructor(
+    private newsService: NewsService,
     private dataService: DataService,
     public http: HttpClient
     
@@ -64,6 +71,11 @@ export class EntranceComponent implements OnInit {
   getData() {
     this.dataService.getAllWebsites().subscribe(
       res => {this.websites = res})
+  }
+  getNews() {
+    this.newsService.getNews().subscribe(
+      res => {this.news = res})
+      console.log(this.news)
   }
 /**
  * returns either a bloolean or string based on time of day so that its only visable at the right time
@@ -119,7 +131,7 @@ export class EntranceComponent implements OnInit {
    * on load
    */
   ngOnInit() {
-
+    this.getNews()
     this.getData()
     this.checkTime()
     // this.openWindow()

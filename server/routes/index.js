@@ -3,7 +3,7 @@ var router = express.Router();
 var Website = require('../models/Website')
 var Message = require('../models/Message')
 var status = require('http-status');
-
+var Feed = require('rss-to-json');
 /** #defines parameters
    * @swagger
    * definitions:
@@ -331,5 +331,16 @@ router.delete('/messages/:id', function(req, res) {
     })
 })
 
+router.get('/news', function(req,res) {
+    
+ 
+Feed.load('https://www.nu.nl/rss/Algemeen', function(err, rss){
+    if (err) {
+        res.send(err);
+    }
+    res.send(rss.items);
+});
+    
+})
 
 module.exports = router;

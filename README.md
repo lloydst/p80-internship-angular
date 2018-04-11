@@ -1,16 +1,28 @@
 # Poort80 internship assignment
+>prerequisites
+  -  node v ^8.10.0 (with matching npm)
+  -  mongodb or a mlab account (see data base for more information)
+  -  and lastly nodemon installed globally (`npm i nodemon -g`)
+  
+## contents
+ - [getting started](#getting-started-)
+ - [styling](#styling)
+ - [sources](#sources-)
+ - [Development](#development)
+ - [quick component gen (angular cli)](#quick-component-gen-angular-cli-)
+ - [structure](#structure)
+ - [database](#database)
+ - [usefull links](#usefull-links)
+
 ## getting started:
 `git clone https://github.com/lloydst/p80-internship-angular.git .` (replace the '.' with a directory if you would want it in a new folder)
 
-### sources:
+## styling
+scss goes into (or gets imported into) styles.scss in the src folder
+
+## sources:
 This project was started up with [Mean-boilerplate](https://github.com/lloydst/mean-boilerplate) , which is heavely based on the angular-cli and express-gen for the front and backend respectively.
 
-#prerequisites
-  -  node v ^8.10.0 (with matching npm)
-  -  mongodb or a mlab account (see data base for more information)
-  *  typedoc installed globally if you wish to use it to generate a easy to navigate documentaion page
-  -  and lastly nodemon installed globally (`npm i nodemon -g`)
-  
 ## Development
 
 run `npm run dev` for rebuilding on changes to any of the angular part of the website.
@@ -31,3 +43,11 @@ server contains all server related stuff.
 
 ## database
 to connect to a database simple add a .env file in the root and type `MONGOURI = connectionstring` this can either be a local db or a external one like mlab
+
+## usefull links
+dev: ${host}= localhost:3000
+prod: ${host}= example.com
+ - ${host}/ auto reroutes to channel
+ - ${host}/api-docs shows all possible api end points
+ - localhost:8080 is the angularapp documentation (see development )
+ - ${host}/api/{collection}/{?:id} possible api end points see api documentaion for more info
