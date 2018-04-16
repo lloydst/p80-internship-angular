@@ -23,12 +23,13 @@ label {
 input {
     width: 400px;
 }
-input:invalid+span:after {
-    content: '✖';
+input:invalid {
+    border-left: 8px solid red;
+    //content: '✖';
     padding-left: 5px;
 }
 
-input:valid+span:after {
-    content: '✓';
+input:valid {
+    border-left: 10px solid green;
     padding-left: 5px;
 }
