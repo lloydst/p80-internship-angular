@@ -1,13 +1,23 @@
 <div *ngFor="let edit of data" class="main">
 
     <form >
-        <label for="message">Message</label>
-      <input #message type="text" name="message" value="{{edit.message}}">
-      <label for="show">show</label>
-      <input type="text" name="showFrom" #showFrom value="{{edit.showFrom}}" size="25">
-      <input type="text" name="showTill" #showTill value="{{edit.showTill}}" size="25">
-      <input #imgUrl type="text" required  value="{{edit.imgLink}}">
-      <input (click)="check(event)" #imgBoolean checked="true" type="checkbox" >
-      <button (click)="update(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked); alertUser()">edit</button>
+        <div class="form-group">
+            <label for="message">Message</label> <br>
+            <input #message type="text" name="message" value="{{edit.message}}">
+        </div>
+        <div class="form-group">
+            <label for="show">show from</label> <br>
+            <input type="text" name="showFrom" #showFrom value="{{edit.showFrom}}" size="25">
+        </div>
+        <div class="form-group">
+            <label for="show">show untill</label> <br>
+            <input type="text" name="showTill" #showTill value="{{edit.showTill}}" size="25">
+        </div>
+        <div class="form-group">
+            <label for="show">img url</label> <br>
+            <input #imgUrl type="text" required  value="{{edit.imgLink}}">
+        </div>
+        <input (click)="check(event)" #imgBoolean checked="true" type="checkbox" >
+        <button (click)="update(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked); alertUser()">edit</button>
     </form>
 </div>
