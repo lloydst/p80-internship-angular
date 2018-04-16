@@ -9,32 +9,9 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
-const swaggerDocument = require('./swagger.json');
+const swaggerSpec = require('./server/config/swagger')
 
-/**
- * TODO:
- * move swagger definition to a seperate config file
- * same goes for sockets
- */
-// swagger definition
-var swaggerDefinition = {
-  info: { // API informations (required)
-    title: 'P80 api documentation', // Title (required)
-    version: '1.0.0', // Version (required)
-    description: 'api documentation for lloydst internship assignment angular/front end documentation can be found at http://localhost:8080 after `npm run doc` has been run', // Description (optional)
-  },
-  host: 'localhost:3000/', // Host (optional)
-  basePath: 'api', // Base path (optional)
-};
-var swaggerOptions = {
-  // import swaggerDefinitions
-  swaggerDefinition: swaggerDefinition,
-  // path to the API docs
-  apis: ['./server/routes/index.js'],
-};
-const swaggerSpec = swaggerJSDoc(swaggerOptions);
 // mongoose setup
 const MONGOURI = process.env.MONGOURI || 'someback-upaddress';
 // this .env file should be added to .gitignore since it contains passwords
@@ -84,9 +61,9 @@ io.on('connection', (socket) => {
   socket.on('disconnect', function() {
       console.log('user disconnected');
   });
-  /**
-   * socket.on( event to listen too:string, function(){return/do something})
-   */
+  
+   // socket.on( event to listen too:string, function(){return/do something})
+   
   socket.on('add-message', (message) => {
       io.emit('message', { type: 'new-message', text: message }); // i believe the object part is responsible for live reload
       // Function above that stores the message in the database
