@@ -13,18 +13,16 @@
 #showTill {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-form {
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
+.form-group {
+    display: block;
 }
-
 label {
   display: inline-block;
   width: 300px;
 }
-
+input {
+    width: 400px;
+}
 input:invalid+span:after {
     content: '✖';
     padding-left: 5px;

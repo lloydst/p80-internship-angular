@@ -1,5 +1,12 @@
 <p *ngIf="router.url == '/channels'">
-  this paragraph gets hidden if a child is active
-  /channels works!
+  <a routerLink='test'>go to manual</a>
+  <a routerLink='channel'>go to auto loop</a>
+  <a routerLink=''>go to auto finance</a>
+  <a routerLink=''>go to auto support</a>
+  <a routerLink=''>go to auto weather</a> <!-- need to split it of -->
+  <a routerLink='meeting'>go to auto meeting</a>
+  <a routerLink='event'>go to auto event</a>
+
+
 </p>
 <router-outlet></router-outlet>

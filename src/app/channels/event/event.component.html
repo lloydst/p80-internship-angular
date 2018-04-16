@@ -1,6 +1,10 @@
-<div *ngFor="let message of message" class="event">
-    {{message.message}}
+<div *ngFor="let m of message" class="event" >
+        {{m.imgLink}}
+    <div *ngIf="m.img === true" [ngStyle]="{'background-image': url(m.imgLink)}"> <!-- ./public/imgLink-->
+        {{m.imgLink}}
+    </div>
+    {{m.message}} {{m.img}}
 </div>
-        
+img  
 
 

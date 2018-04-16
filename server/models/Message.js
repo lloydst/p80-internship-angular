@@ -5,7 +5,9 @@ const Schema = mongoose.Schema;
 const MessageSchema = new Schema({
   message: String,
   showFrom: String,
-  showTill: String
+  showTill: String,
+  imgLink: String,
+  img: Boolean
 });
 const Message = mongoose.model('Message', MessageSchema);
 

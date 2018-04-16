@@ -3,7 +3,7 @@ import { DataService } from '../../../services/data.service';
 import { Message } from '../../../models/message';
 import { Observable } from 'rxjs/observable';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
-
+import * as $ from 'jquery';
 /**
  * event component: here admin's can add and delete messages or go to the detail page to edit
  */
@@ -26,15 +26,16 @@ model
 eventForm = new FormGroup({
   message: new FormControl(),
   showFrom: new FormControl(),
-  showTill: new FormControl()
+  showTill: new FormControl(),
+  imgUrl: new FormControl()
 });
 /**
  * constructor
  * @param dataService for crud operations
  */
   constructor(private dataService: DataService) { }
-  newMessage(mssg, from, untill) {
-    this.model = new Message(mssg, from, untill);
+  newMessage(mssg, from, untill, imgClass, imgBoolean:boolean) {
+    this.model = new Message(mssg, from, untill, imgClass, imgBoolean);
   }
   /**
    * on load
@@ -42,24 +43,27 @@ eventForm = new FormGroup({
   ngOnInit() {
     this.getData()
   }
+
   /**
    * creates a "message" document
    * @param mssg string shaped greeting
    * @param from time from when its shown
    * @param untill time untill it is no longer shown
    */
-  create (mssg: String, from: String, untill: String) { // need to add validator to from/untill fields
+  create (mssg: String, from: String, untill: String, iClass: String, iBoolean: Boolean) { // need to add validator to from/untill fields
     this.dataService.createMessage({
       message: mssg,
       showFrom: from,
-      showTill: untill}).subscribe(
+      showTill: untill,
+      imgLink: iClass, 
+      img:iBoolean}).subscribe(
         data => {
           // refresh the list
           this.getData();
         },
         error => {
           console.error("Error creating message!");
-          return Observable.throw(error);
+          return error//Observable.throw(error);
        }
     )
   }
@@ -69,6 +73,9 @@ eventForm = new FormGroup({
   getData() {
     this.dataService.getAllMessage().subscribe(
       res => {this.data = res})
+  }
+  check($event){
+    $('#imgBoolean').change(function(){ alert($('#imgBoolean').attr('checked'));})
   }
   /**
    * updates a old message with new contents and or more time

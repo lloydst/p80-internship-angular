@@ -34,8 +34,7 @@ message
    * gets all messages using the service and returns then as object
    */
   getData() {
-   
-    this.dataService.getAllMessage().subscribe(
+      this.dataService.getAllMessage().subscribe(
       res => {this.message = res})
     
   }

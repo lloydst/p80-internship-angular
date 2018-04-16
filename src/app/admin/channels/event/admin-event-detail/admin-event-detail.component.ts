@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataService } from '../../../../services/data.service';
 import { Message } from '../../../../models/message';
-
+import * as $ from 'jquery';
 /**
  * message/event detail page
  */
@@ -47,14 +47,19 @@ id
       res => {this.data = res}
     )
   }
+  check($event){
+    $('#imgBoolean').change(function(){ alert($('#imgBoolean').attr('checked'));})
+  }
   /**
    * updates a message
    * @param message message text to replace the old text with
    * @param showFrom show from time/date
    * @param showTill untill
+   * @param imgLink url img can be found at
+   * @param img boolean for visability of img
    */
-  update(message, showFrom, showTill) {
-    this.dataService.updateMessage(this.id, {message: message, showFrom: showFrom, showTill: showTill}).subscribe()
+  update(message, showFrom, showTill, imgLink, img) {
+    this.dataService.updateMessage(this.id, {message: message, showFrom: showFrom, showTill: showTill, imgLink:imgLink, img:img}).subscribe()
     
   }
   /**

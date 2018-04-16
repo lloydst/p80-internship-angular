@@ -259,6 +259,8 @@ router.get('/messages',function(req, res) {
     mssg.message = req.body.message;  // set the bears name (comes from the request)
     mssg.showFrom = req.body.showFrom;
     mssg.showTill = req.body.showTill;
+    mssg.imgLink = req.body.imgLink
+    mssg.img = req.body.img
     // save the bear and check for errors
     mssg.save(function(err) {
         if (err){

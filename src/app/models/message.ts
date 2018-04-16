@@ -1,5 +1,5 @@
 /**
- * a model
+ * message model
  */
 export class Message {
 /**
@@ -7,11 +7,15 @@ export class Message {
  * @param message string
  * @param showFrom string
  * @param showTill string
+ * @param imgLink string
+ * @param img boolean
  */
     constructor(
       public message: string,
       public showFrom:string,
-      public showTill:string
+      public showTill:string,
+      public imgLink:string,
+      public img: boolean
     ) {  }
   
   }

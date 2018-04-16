@@ -67,11 +67,15 @@ export class EntranceComponent implements OnInit {
   ) {}
  /**
   * gets all websites through the service
+  * 
   */
   getData() {
     this.dataService.getAllWebsites().subscribe(
       res => {this.websites = res})
   }
+  /**
+   * gets the nu.nl's rss feed
+   */
   getNews() {
     this.newsService.getNews().subscribe(
       res => {this.news = res})
