@@ -11,8 +11,9 @@ export class WeatherService {
  * ng http service
  * @param http for requests
  */
+
   constructor(private http: HttpClient) { }
   getWeather () {
-      return 'weather'
+    return this.http.get('api/weather')
   }
 }

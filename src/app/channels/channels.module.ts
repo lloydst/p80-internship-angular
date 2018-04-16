@@ -12,6 +12,7 @@ import { BuildServersComponent } from './build-servers/build-servers.component';
 import { ChatComponent } from '../chat/chat.component';
 import { NguiMapModule } from '@ngui/map';
 import { FormsModule } from '@angular/forms';
+import { WeatherComponent } from './weather/weather.component';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     SupportComponent,
     FinancialComponent,
     BuildServersComponent,
-    ChatComponent
+    ChatComponent,
+    WeatherComponent
   ]
 })
 export class ChannelsModule { }

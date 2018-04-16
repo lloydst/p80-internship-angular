@@ -1,0 +1,9 @@
+<div id="weather" >
+    weer van {{weatherjson[0].lastBuildDate}} in Amsterdam
+    wind: {{weatherjson[0].wind.direction}} {{weatherjson[0].wind.speed}}
+    <!--{{weatherjson[0].item.condition.code}} gives a code but using the text is easyer-->
+    <span class="{{weatherjson[0].item.condition.text}}">
+      gives this span the class {{weatherjson[0].item.condition.text}}
+    </span>   <!-- cloudy sunny etc-->
+    {{weatherjson[0].item.condition.temp}} C
+  </div>

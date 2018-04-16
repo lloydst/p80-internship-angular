@@ -5,6 +5,7 @@ import { Website } from '../../models/website';
 import { Observable } from "rxjs/Rx"
 import * as $ from 'jquery';
 import { NewsService } from '../../services/news.service';
+import { WeatherService } from '../../services/weather.service';
 /**
  * just setting it once
  */
@@ -28,7 +29,7 @@ export class EntranceComponent implements OnInit {
    * for binding
    */
   hour = this.today.getHours(); // returns a number between 0 and 23 (23:59 still returns only 23)
-  //hour = 16 // test variable  < 16 voor loop test >16 voor travel info > 17 what ya doin here
+  // hour = 16 // test variable  < 16 voor loop test >16 voor travel info > 17 what ya doin here
   /**
    * for binding
    */
@@ -45,6 +46,10 @@ export class EntranceComponent implements OnInit {
    * for binding
    */
   news:any
+  /**
+   * for binding
+   */
+  weatherjson:any
   /**
    * for binding
    */
@@ -79,8 +84,8 @@ export class EntranceComponent implements OnInit {
   getNews() {
     this.newsService.getNews().subscribe(
       res => {this.news = res})
-      console.log(this.news)
   }
+  
 /**
  * returns either a bloolean or string based on time of day so that its only visable at the right time
  */
@@ -122,14 +127,16 @@ export class EntranceComponent implements OnInit {
             console.log(x)
             go()
           // change this number to change the time it switches between websites
-          }, 60000);
+          }, 60000); // 1 min for each website this means it checks time every 17 min
         } else if(x == arrayOfUrls.length) {
           console.log('should be called last')
           myWindow.close()
-          // location.reload()
+          this.checkTime()
         }
       }
-      go();
+
+      go()
+      
   }
   /**
    * on load
@@ -138,7 +145,6 @@ export class EntranceComponent implements OnInit {
     this.getNews()
     this.getData()
     this.checkTime()
-    // this.openWindow()
   }
   
 }

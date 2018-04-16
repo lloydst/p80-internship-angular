@@ -12,6 +12,12 @@ const io = require('socket.io')(http);
 const swaggerJSDoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('./swagger.json');
+
+/**
+ * TODO:
+ * move swagger definition to a seperate config file
+ * same goes for sockets
+ */
 // swagger definition
 var swaggerDefinition = {
   info: { // API informations (required)
@@ -78,7 +84,9 @@ io.on('connection', (socket) => {
   socket.on('disconnect', function() {
       console.log('user disconnected');
   });
-
+  /**
+   * socket.on( event to listen too:string, function(){return/do something})
+   */
   socket.on('add-message', (message) => {
       io.emit('message', { type: 'new-message', text: message }); // i believe the object part is responsible for live reload
       // Function above that stores the message in the database

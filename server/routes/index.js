@@ -4,6 +4,7 @@ var Website = require('../models/Website')
 var Message = require('../models/Message')
 var status = require('http-status');
 var Feed = require('rss-to-json');
+var YQL = require('yql'); // yahoo query language
 /** #defines parameters
    * @swagger
    * definitions:
@@ -334,15 +335,19 @@ router.delete('/messages/:id', function(req, res) {
 })
 
 router.get('/news', function(req,res) {
-    
- 
-Feed.load('https://www.nu.nl/rss/Algemeen', function(err, rss){
-    if (err) {
-        res.send(err);
-    }
-    res.send(rss.items);
-});
-    
+    Feed.load('https://www.nu.nl/rss/Algemeen', function(err, rss){
+        if (err) {
+            res.send(err);
+        }
+        res.send(rss.items);
+    });  
 })
-
+router.get('/weather', function(req,res){
+    var query = new YQL('select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="amsterdam, nl")and u="c"');
+    query.exec(function(err, data) {
+        
+        
+        res.send([data.query.results.channel])
+      });
+})
 module.exports = router;
