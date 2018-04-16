@@ -9,7 +9,6 @@ import { EventComponent } from './event/event.component';
 import { SupportComponent } from './support/support.component';
 import { FinancialComponent } from './financial/financial.component';
 import { BuildServersComponent } from './build-servers/build-servers.component';
-import { ChatComponent } from '../chat/chat.component';
 import { NguiMapModule } from '@ngui/map';
 import { FormsModule } from '@angular/forms';
 import { WeatherComponent } from './weather/weather.component';
@@ -32,7 +31,6 @@ import { WeatherComponent } from './weather/weather.component';
     SupportComponent,
     FinancialComponent,
     BuildServersComponent,
-    ChatComponent,
     WeatherComponent
   ]
 })

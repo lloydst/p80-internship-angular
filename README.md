@@ -2,7 +2,6 @@
 >prerequisites
   -  node v ^8.10.0 (with matching npm)
   -  mongodb or a mlab account (see data base for more information)
-  -  and lastly nodemon installed globally (`npm i nodemon -g`)
   
 ## contents
  - [getting started](#getting-started-)
