@@ -70,6 +70,7 @@
     "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "nodemon": "^1.17.3",
     "protractor": "~5.1.2",
     "swagger-jsdoc": "^1.9.7",
     "swagger-ui-dist": "^3.13.3",
