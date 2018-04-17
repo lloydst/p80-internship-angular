@@ -15,8 +15,7 @@ export class EventComponent implements OnInit {
   /**
    * for binding
    */
-message
-
+message: any
 /**
  * constructor to make data service available in this component
  * @param dataService service for all crud requests to the api
@@ -38,4 +37,5 @@ message
       res => {this.message = res})
     
   }
+  
 }

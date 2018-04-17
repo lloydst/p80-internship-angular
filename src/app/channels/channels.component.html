@@ -1,5 +1,5 @@
-<div>
-  <p *ngIf="router.url == '/channels'">
+<div *ngIf="router.url == '/channels'">
+  <p>
   <a routerLink='test'>go to manual</a>
   <a routerLink='entrance'>go to auto loop</a>
   <a routerLink='finance'>go to auto finance</a>
@@ -30,9 +30,9 @@ manual links:
       </li>
       <li> can pull data from: 
         <ul>
-          <li>nu.nl</li>
-          <li>yahoo(weather api)</li>
-          <li>traffic jams (thanks to google maps)</li>
+          <li><span>✓</span>nu.nl</li>
+          <li><span>✓</span>yahoo(weather api)</li>
+          <li><span>✓</span>traffic jams (thanks to google maps)</li>
         </ul>
       </li>
     </ul>
@@ -41,7 +41,7 @@ manual links:
 auto links: 
 <ul>
   <li><span>✓</span> entrance(loop)
-    <p><span>✖</span> loops if no message to display (greeting)and when time is right but should include messages if it is a holiday <br> (does it allways)</p>
+    <p><span>-</span> loops if no message to display (greeting)and when time is right but should include messages if it is a holiday <br> (does it allways)</p>
   </li>
   <li></li>
 </ul>
@@ -49,5 +49,5 @@ auto links:
   TODO: 
   <li>many a thing</li>
 </ul>
-<router-outlet></router-outlet>
 </div>
+<router-outlet></router-outlet>

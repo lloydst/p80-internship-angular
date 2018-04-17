@@ -37,6 +37,7 @@ if (process.env != 'production') {
   });
 }
 app.use('/api',api) // route example creates url's like: <host>/users/<routes from file>
+app.use('/public', express.static(path.join(__dirname, 'server/public')))
 app.use('*',express.static(path.join(__dirname, 'dist'))) //routes anything not caught by the routes above to your angular project if possible
 
 const port = process.env.PORT||3000; // PORT is another variable that can be placed in the .env file

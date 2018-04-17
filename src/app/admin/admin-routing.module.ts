@@ -34,7 +34,7 @@ const routes = [
         {path: 'events/:id', component: AdminEventDetailComponent},
         {path: 'meeting', component: AdminMeetingComponent}
       ]
-    }
+    }    
   ]},
 ];
 
