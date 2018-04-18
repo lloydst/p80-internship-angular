@@ -5,6 +5,7 @@ var Message = require('../models/Message')
 var status = require('http-status');
 var Feed = require('rss-to-json');
 var YQL = require('yql'); // yahoo query language
+
 /** #defines parameters
    * @swagger
    * definitions:
@@ -350,4 +351,5 @@ router.get('/weather', function(req,res){
         res.send([data.query.results.channel])
       });
 })
+
 module.exports = router;

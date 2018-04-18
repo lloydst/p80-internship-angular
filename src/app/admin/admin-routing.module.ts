@@ -10,6 +10,7 @@ import { AdminEntranceDetailComponent } from './channels/entrance/admin-entrance
 import { AdminEventComponent } from './channels/event/event.component';
 import { AdminEventDetailComponent } from './channels/event/admin-event-detail/admin-event-detail.component';
 import { AdminMeetingComponent } from './channels/meeting/meeting.component';
+import { ImageUploadComponent } from './image-upload/image-upload.component';
 
 /**
  * defining routes
@@ -34,7 +35,11 @@ const routes = [
         {path: 'events/:id', component: AdminEventDetailComponent},
         {path: 'meeting', component: AdminMeetingComponent}
       ]
-    }    
+    },
+    {
+      path: 'upload',
+      component: ImageUploadComponent
+    } 
   ]},
 ];
 
