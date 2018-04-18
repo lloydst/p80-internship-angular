@@ -16,13 +16,18 @@ export class WeatherComponent implements OnInit {
 weatherjson
 /**
  * weather service
- * @param weather weatherservice
+ * @param weatherService weatherservice
  */
   constructor(private weatherService: WeatherService) { }
-
+/**
+ * get weather on page load
+ */
   ngOnInit() {
     this.getWeather()
   }
+  /**
+   * gets the weather from the api
+   */
   getWeather() {
     this.weatherService.getWeather().subscribe(
       res => {this.weatherjson = res})

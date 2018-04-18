@@ -47,6 +47,10 @@ id
       res => {this.data = res}
     )
   }
+  /**
+   * sees if checkbox is checked
+   * @param  $event
+   */
   check($event){
     $('#imgBoolean').change(function(){ alert($('#imgBoolean').attr('checked'));})
   }

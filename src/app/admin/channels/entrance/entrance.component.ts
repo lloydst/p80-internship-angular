@@ -20,6 +20,8 @@ export class AdminEntranceComponent implements OnInit {
   data: any;
   /**
    * constructor
+   * @param dataService gets website list from api
+   * @param router to navigate
    */
   constructor(
     private dataService: DataService,
@@ -31,6 +33,9 @@ export class AdminEntranceComponent implements OnInit {
       website: new FormControl(),
       url: new FormControl()
     });
+    /**
+     * runs on page load
+     */
   ngOnInit() {
     this.getData()
   }

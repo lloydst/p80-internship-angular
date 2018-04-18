@@ -3,13 +3,20 @@ import { Injectable } from "@angular/core";
 import 'rxjs/Rx';
 import {Observable} from 'rxjs';
 
-
+/**
+ * fileservice responsible for posting the file's to the server
+ */
 @Injectable()
 
 export class FileService {
-
+/**
+ * http property
+ * @param _http http prop
+ */
     constructor(private _http:HttpClient){}
-
+/**
+ * takes the file and puts it in the post request
+ */
     downloadFile(file:String){
         var body = {filename:file};
 

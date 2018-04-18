@@ -12,6 +12,9 @@ export class NewsService {
  * @param http for requests
  */
   constructor(private http: HttpClient) { }
+  /**
+   * gets rss feed from api
+   */
   getNews () {
     return this.http.get('/api/news')
     }
