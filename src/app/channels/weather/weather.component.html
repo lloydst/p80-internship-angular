@@ -1,9 +1,12 @@
-<div id="weather" >
-    weer van {{weatherjson[0].lastBuildDate}} in Amsterdam
-    wind: {{weatherjson[0].wind.direction}} {{weatherjson[0].wind.speed}}
-    <!--{{weatherjson[0].item.condition.code}} gives a code but using the text is easyer-->
-    <span class="{{weatherjson[0].item.condition.text}}">
-      gives this span the class {{weatherjson[0].item.condition.text}}
-    </span>   <!-- cloudy sunny etc-->
-    {{weatherjson[0].item.condition.temp}} C
+<div id="weather">
+    <div class="wi wi-yahoo-{{weatherjson[0].item.condition.code}}" id="today_icon"></div> 
+    <h1>Amsterdam {{weatherjson[0].lastBuildDate}}</h1>
+    <span class="wi wi-wind from-{{weatherjson[0].wind.direction}}-deg"></span>  {{weatherjson[0].wind.speed}} km/h
+       <!-- cloudy sunny etc-->
+    <span class="wi wi-thermometer"></span> {{weatherjson[0].item.condition.temp}} <span class="wi wi-celsius"></span>
+  
+    <div *ngFor="let cast of weatherjson[0].item.forecast">
+      <span class="wi wi-yahoo-{{cast.code}}"></span>
+      {{cast.day}} {{cast.date}} temperature high: {{cast.high}} <span class="wi wi-celsius"></span> temperature low: {{cast.low}} <span class="wi wi-celsius"></span>
+    </div>
   </div>

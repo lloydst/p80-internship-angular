@@ -16,6 +16,8 @@ import { AdminMeetingComponent } from './channels/meeting/meeting.component';
 import { AdminRoutingModule } from './admin-routing.module';
 import { SupportTicketsComponent } from './channels/support-tickets/support-tickets.component';
 import { BuildServersComponent } from './channels/build-servers/build-servers.component';
+import { ImageUploadComponent } from './image-upload/image-upload.component';
+import { FileUploadModule } from 'ng2-file-upload';
 
 
 @NgModule({
@@ -24,6 +26,7 @@ import { BuildServersComponent } from './channels/build-servers/build-servers.co
     FormsModule,
     ReactiveFormsModule,
     AdminRoutingModule,
+    FileUploadModule,
   ],
   declarations: [
     AdminSideNavComponent,
@@ -37,7 +40,8 @@ import { BuildServersComponent } from './channels/build-servers/build-servers.co
     AdminEventComponent,
     AdminEventDetailComponent,
     AdminMeetingComponent,
-    SupportTicketsComponent
+    SupportTicketsComponent,
+    ImageUploadComponent
   ]
 })
 export class AdminModule { }

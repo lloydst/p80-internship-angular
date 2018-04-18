@@ -27,6 +27,8 @@ import { DataService } from './services/data.service';
 
 import { NewsService } from './services/news.service';
 import { WeatherService } from './services/weather.service';
+import { FileService } from './services/file.service';
+import { FileUploadModule } from 'ng2-file-upload';
 
 
 
@@ -44,14 +46,16 @@ import { WeatherService } from './services/weather.service';
     FormsModule, 
     AdminModule,
     ChannelsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FileUploadModule
        
     ],
   providers: [
     DataService,
     SocketService,
     NewsService,
-    WeatherService
+    WeatherService,
+    FileService
   ],
   bootstrap: [AppComponent]
 })
