@@ -12,9 +12,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./build-servers.component.scss']
 })
 export class BuildServersComponent implements OnInit {
-
+/**
+ * constructor
+ */
   constructor() { }
-
+/**
+ * onload
+ */
   ngOnInit() {
   }
 
