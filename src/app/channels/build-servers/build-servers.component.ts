@@ -11,7 +11,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './build-servers.component.html',
   styleUrls: ['./build-servers.component.scss']
 })
+/**
+ * component
+ */
 export class BuildServersComponent implements OnInit {
+
 /**
  * constructor
  */

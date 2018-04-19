@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
+
 /**
  * defining where to POST too
  */

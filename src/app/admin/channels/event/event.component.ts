@@ -22,7 +22,13 @@ data
  * binding
  */
 model
-
+/**
+ * binding
+ */
+event
+/**
+ * form group
+ */
 eventForm = new FormGroup({
   message: new FormControl(),
   showFrom: new FormControl(),
@@ -34,6 +40,14 @@ eventForm = new FormGroup({
  * @param dataService for crud operations
  */
   constructor(private dataService: DataService) { }
+  /**
+   * function to create a new message/event
+   * @param mssg 
+   * @param from 
+   * @param untill 
+   * @param imgClass 
+   * @param imgBoolean 
+   */
   newMessage(mssg, from, untill, imgClass, imgBoolean:boolean) {
     this.model = new Message(mssg, from, untill, imgClass, imgBoolean);
   }
@@ -45,10 +59,12 @@ eventForm = new FormGroup({
   }
 
   /**
-   * creates a "message" document
-   * @param mssg string shaped greeting
-   * @param from time from when its shown
-   * @param untill time untill it is no longer shown
+   * 
+   * @param mssg message/events
+   * @param from time its shown from
+   * @param untill time its can be shown till
+   * @param iClass adds a background img if there
+   * @param iBoolean boolean whether it has a class
    */
   create (mssg: String, from: String, untill: String, iClass: String, iBoolean: Boolean) { // need to add validator to from/untill fields
     this.dataService.createMessage({
@@ -74,6 +90,10 @@ eventForm = new FormGroup({
     this.dataService.getAllMessage().subscribe(
       res => {this.data = res})
   }
+  /** 
+   * checks if the checkbox is checked
+   * @param checked
+   */
   check($event){
     $('#imgBoolean').change(function(){ alert($('#imgBoolean').attr('checked'));})
   }
