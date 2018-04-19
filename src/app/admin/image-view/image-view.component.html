@@ -1,0 +1,10 @@
+<div class="main">
+  <div *ngFor="let i of image">
+    <div *ngIf="image.length < 1">
+      no images currently in db
+    </div>
+    
+    use src="/images/{{i.filename}}" to display this image<br>
+    <img src="/images/{{i.filename}}" alt="image couldnt be loaded from db wich means the db is still online" srcset="">
+  </div>
+</div>

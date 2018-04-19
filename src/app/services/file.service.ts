@@ -9,7 +9,9 @@ import {Observable} from 'rxjs';
 @Injectable()
 
 export class FileService {
+
 /**
+ * allows for downloads * not currentl in use
  * http property
  * @param _http http prop
  */
@@ -24,5 +26,11 @@ export class FileService {
             responseType : 'blob',
             headers:new HttpHeaders().append('Content-Type','application/json')
         });
+    }
+    /**
+     * gets all files(images) out of db the component has to subscribe to this
+     */
+    getImages() {
+            return this._http.get('/images-all');
     }
 }

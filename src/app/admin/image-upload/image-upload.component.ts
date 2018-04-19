@@ -2,11 +2,11 @@ import { Component, OnInit} from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
 
 /**
- * base url in dev
+ * defining where to POST too
  */
-const URL = 'http://localhost:3000/upload';
+const URL = '/upload';
 /**
- * file upload component
+ * upload Component
  */
 @Component({
   selector: 'app-image-upload',
@@ -14,10 +14,9 @@ const URL = 'http://localhost:3000/upload';
   styleUrls: ['./image-upload.component.scss'],
   
 })
-
 export class ImageUploadComponent {
   /**
-   * setting it
+   * binding uploader to FileUploader from ng2-file-upload
    */
     public uploader:FileUploader = new FileUploader({url: URL});
     

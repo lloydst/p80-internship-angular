@@ -16,12 +16,12 @@ import { Component, OnInit } from '@angular/core';
  */
 export class BuildServersComponent implements OnInit {
 
-  /**
-   * not used
-   */
+/**
+ * constructor
+ */
   constructor() { }
 /**
- * not used
+ * onload
  */
   ngOnInit() {
   }

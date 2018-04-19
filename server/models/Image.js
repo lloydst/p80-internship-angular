@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const ImageSchema = new Schema({
   img: {data:Buffer,contentType: String}
 });
-const Image = mongoose.model('Image', ImageSchema);
+const Image = mongoose.model('Image', ImageSchema, 'fs.files');
 
 
 function getAll() {

@@ -18,6 +18,7 @@ import { SupportTicketsComponent } from './channels/support-tickets/support-tick
 import { BuildServersComponent } from './channels/build-servers/build-servers.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { FileUploadModule } from 'ng2-file-upload';
+import { ImageViewComponent } from './image-view/image-view.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { FileUploadModule } from 'ng2-file-upload';
     AdminEventDetailComponent,
     AdminMeetingComponent,
     SupportTicketsComponent,
-    ImageUploadComponent
+    ImageUploadComponent,
+    ImageViewComponent
   ]
 })
 export class AdminModule { }

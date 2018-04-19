@@ -1,13 +1,13 @@
 /**
- * image model
+ * used for bindings
  */
 export class Image {
     /**
-     * filename
+     * name of img
      */
     name: string;
     /**
-     * blob 
+     * img it self
      */
     image: string|any;
 }
