@@ -209,11 +209,11 @@ router.get('/websites/:id', function(req,res) {
    *           $ref: '#/definitions/message'
    */
 router.get('/messages/:id',function(req,res) {
-    Message.findById(req.params.id, function(err, message) {
+    Message.find({message: req.params.id,} , function(err, message) {
         if (err) {
             res.send(err);
         }
-       res.json([message])
+       res.json(message)
     })
 })
 

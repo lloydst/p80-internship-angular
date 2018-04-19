@@ -21,6 +21,7 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { ImageViewComponent } from './image-view/image-view.component';
 
 
+
 @NgModule({
   imports: [
     CommonModule,

@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AdminEventComponent } from './event.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { DataService } from '../../../services/data.service';
+import { HttpClient } from '@angular/common/http';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 describe('EventComponent', () => {
   let component: AdminEventComponent;
@@ -8,7 +13,14 @@ describe('EventComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminEventComponent ]
+      declarations: [ AdminEventComponent ],
+      imports:[ReactiveFormsModule,
+      RouterTestingModule,
+    HttpClientTestingModule],
+      providers:[
+        DataService,
+        HttpClient
+      ]
     })
     .compileComponents();
   }));

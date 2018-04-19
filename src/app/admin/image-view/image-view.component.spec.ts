@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ImageViewComponent } from './image-view.component';
+import { FileService } from '../../services/file.service';
+import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
+import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
 describe('ImageViewComponent', () => {
   let component: ImageViewComponent;
@@ -8,7 +11,14 @@ describe('ImageViewComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ImageViewComponent ]
+      declarations: [ ImageViewComponent ],
+      imports:[
+        HttpClientTestingModule
+      ],
+      providers:[
+        FileService,
+      
+    ]
     })
     .compileComponents();
   }));

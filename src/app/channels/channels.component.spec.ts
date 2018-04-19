@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { ChannelsComponent } from './channels.component';
+import { Component } from '@angular/core';
+
+@Component({selector: 'router-outlet', template: ''})
+class RouterOutletStubComponent { }
+
 
 describe('ChannelsComponent', () => {
   let component: ChannelsComponent;
@@ -8,7 +13,9 @@ describe('ChannelsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChannelsComponent ]
+      declarations: [ ChannelsComponent,
+      RouterOutletStubComponent ],
+      imports: [ RouterTestingModule ]
     })
     .compileComponents();
   }));

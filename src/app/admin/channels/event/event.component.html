@@ -42,7 +42,7 @@
         <td>{{message.showFrom}} untill: {{message.showTill}}</td>
         <td>{{message.imgLink}}</td>
         <td>{{message.img}}</td>
-        <td><a [routerLink]='message._id' ><button>update</button></a></td>
+        <td><a [routerLink]='message.message' ><button>update</button></a></td>
         <td><button (click)="delete(message)">delete</button></td>
       </tr>
     </table>

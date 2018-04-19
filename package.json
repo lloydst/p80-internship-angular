@@ -7,6 +7,7 @@
   },
   "license": "MIT",
   "scripts": {
+    "test":"ng e2e && ng test",
     "server": "nodemon server.js",
     "dev": "ng build --watch",
     "ng": "ng",
