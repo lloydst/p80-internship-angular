@@ -82,7 +82,14 @@ app.get("/images/:image", function(req, res){
 readstream.pipe(res) // returns the img
 })
 
-
+app.get("/images-all", function(req, res){
+  Image.find(function(err, images) {
+    if (err){
+        res.send(err);
+    }
+    res.json(images);
+});
+})
 
 app.use('/api',api) // route example creates url's like: <host>/users/<routes from file>
 // app.use('/file',files);

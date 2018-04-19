@@ -1,33 +1,15 @@
 <div class="main">
-    <div class="row">
-        <div class="col-md-3">
+    <div>
+        <div>
             <h3>Select files</h3>
-            <!--<div ng2FileDrop
-                 [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
-                 (fileOver)="fileOverBase($event)"
-                 [uploader]="uploader"
-                 class="well my-drop-zone">
-                Base drop zone
-            </div>
-
-            <div ng2FileDrop
-                 [ngClass]="{'another-file-over-class': hasAnotherDropZoneOver}"
-                 (fileOver)="fileOverAnother($event)"
-                 [uploader]="uploader"
-                 class="well my-drop-zone">
-                Another drop zone
-            </div>-->
             <label for="multiple">multiple</label>
             <input type="file" ng2FileSelect [uploader]="uploader" multiple name="multiple" />
             <br/>
             <label for="single">single</label>
             <input type="file" ng2FileSelect [uploader]="uploader" name="single"/><br/>
-            
-            
         </div>
 
-        <div class="col-md-9" style="margin-bottom: 40px">
-
+        <div style="margin-bottom: 40px">
             <h3>Upload queue</h3>
             <p>Queue length: {{ uploader?.queue?.length }}</p>
 
@@ -50,23 +32,23 @@
                             <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': item.progress + '%' }"></div>
                         </div>
                     </td>
+                    <!-- alerts user of status-->
                     <td class="text-center">
-                        <span *ngIf="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
-                        <span *ngIf="item.isCancel"><i class="glyphicon glyphicon-ban-circle"></i></span>
-                        <span *ngIf="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                        <span *ngIf="item.isSuccess">Succes</span>
+                        <span *ngIf="item.isCancel">Canceled</span>
+                        <span *ngIf="item.isError">Failed</span>
                     </td>
                     <td nowrap>
                         <button type="button" class="btn btn-success btn-xs"
                                 (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
-                            <span class="glyphicon glyphicon-upload"></span> Upload
+                            Upload
                         </button>
                         <button type="button" class="btn btn-warning btn-xs"
                                 (click)="item.cancel()" [disabled]="!item.isUploading">
-                            <span class="glyphicon glyphicon-ban-circle"></span> Cancel
+                                 Cancel
                         </button>
                         <button type="button" class="btn btn-danger btn-xs"
-                                (click)="item.remove()">
-                            <span class="glyphicon glyphicon-trash"></span> Remove
+                                (click)="item.remove()"> Remove
                         </button>
                     </td>
                 </tr>
@@ -98,3 +80,4 @@
 
     </div>
 </div>
+<app-image-view></app-image-view>

@@ -18,4 +18,7 @@ export class FileService {
             headers:new HttpHeaders().append('Content-Type','application/json')
         });
     }
+    getImages() {
+            return this._http.get('/images-all');
+    }
 }

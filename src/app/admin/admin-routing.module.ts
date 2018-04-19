@@ -11,6 +11,7 @@ import { AdminEventComponent } from './channels/event/event.component';
 import { AdminEventDetailComponent } from './channels/event/admin-event-detail/admin-event-detail.component';
 import { AdminMeetingComponent } from './channels/meeting/meeting.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
+import { ImageViewComponent } from './image-view/image-view.component';
 
 /**
  * defining routes
@@ -39,7 +40,11 @@ const routes = [
     {
       path: 'upload',
       component: ImageUploadComponent
-    } 
+    },
+    {
+      path: 'image',
+      component: ImageViewComponent
+    }
   ]},
 ];
 
