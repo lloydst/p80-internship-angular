@@ -1,6 +1,6 @@
 <!-- auto version -->
 <section>
-  <div > <!-- *ngIf="time"-->
+  <div *ngIf="time"> <!-- *ngIf="time"-->
     <!-- this creates a google map on the page with the given lat/lng from -->
     <!-- the component as the initial center of the map: -->
     <ngui-map zoom="12" center="Amsterdam ijburg, Netherlands">
@@ -16,16 +16,10 @@
       -->ov kan niet zolang er geen vaste host is <br>
       <p>checkt nog niet of de tijd veranderd is</p>
   </div>
-  <div *ngIf="!time">
-    should be looping through websites
+  <div *ngIf="!time"> <!-- overrides loop should be popup-->
+    <app-event></app-event>
   </div>
-  <div *ngIf="time === 'past 6'">
-    if it is past 6 i am shown (though the screen is most likely turned off)
-    <p>checkt nog niet of de tijd veranderd is</p>
-  </div>
-  <p>
-    
-  </p>
-    <!-- used for opening windows -->
+  
+    <!-- used for "loop" -->
     <span id="urls" hidden="true" *ngFor="let c of websites">{{c.url}}</span>
 </section>

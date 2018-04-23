@@ -21,6 +21,7 @@ var x = 0;
 })
 
 export class EntranceComponent implements OnInit {
+  
   /**
    * for binding
    */
@@ -29,7 +30,7 @@ export class EntranceComponent implements OnInit {
    * for binding
    */
   hour = this.today.getHours(); // returns a number between 0 and 23 (23:59 still returns only 23)
-  // hour = 16 // test variable  < 16 voor loop test >16 voor travel info > 17 what ya doin here
+   // hour = 16 // test variable  < 16 voor loop test >16 voor travel info > 17 what ya doin here
   /**
    * for binding
    */
@@ -92,13 +93,12 @@ export class EntranceComponent implements OnInit {
   checkTime() {
     console.log(this.hour)
     if(this.hour > 17) { // 16h = 4pm
-      console.log('no 1 should be working')
       return this.time = 'past 6'
     } else if(this.hour > 15) {
-      console.log('display travel info')
+      // console.log('display travel info')
       return this.time = true ;
     } else if(this.hour <= 15) { 
-      console.log('loop')
+      // console.log('loop')
       setTimeout(() => {
         this.openWindow()
       }, 400);
@@ -118,21 +118,23 @@ export class EntranceComponent implements OnInit {
       arrayOfUrls.push(url[i].innerHTML) 
     }
     // test array of urls
-    // arrayOfUrls = ['url1','url2','url3']
+    arrayOfUrls = ['https://youtube.com','https://facebook.com','https://google.com']
+    console.log(arrayOfUrls.length -1)
       function go() {
-        var myWindow = window.open(arrayOfUrls[x])
-        if (x++ < arrayOfUrls.length - 1) {
+        
+        var myWindow = window.open(arrayOfUrls[x]) // default = 0
+        if(x === arrayOfUrls.length ) {
+          // console.log('should be called last')
+          myWindow.close()
+          this.checkTime() // still trows error
+        } else if (x++ <= arrayOfUrls.length) {
           setTimeout(() => {
             myWindow.close()
-            console.log(x)
+            // console.log(x)
             go()
           // change this number to change the time it switches between websites
-          }, 60000); // 1 min for each website this means it checks time every 17 min
-        } else if(x == arrayOfUrls.length) {
-          console.log('should be called last')
-          myWindow.close()
-          this.checkTime()
-        }
+          }, 1000); // 1 min for each website this means it checks time every 17 min
+        } 
       }
 
       go()
