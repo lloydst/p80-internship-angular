@@ -4,6 +4,7 @@
   -  mongodb or a mlab account (see data base for more information)
   
 ## contents
+ - [git](#git)
  - [getting started](#getting-started-)
  - [styling](#styling)
  - [sources](#sources-)
@@ -28,6 +29,9 @@ This project was started up with [Mean-boilerplate](https://github.com/lloydst/m
 run `npm run dev` for rebuilding on changes to any of the angular part of the website.
 and run `npm run server` (in a other window)so that node restarts the express server on changes
 run `npm run doc` to "generate" front end docs (only documents the angular app) since the back end can be found at ./api-docs
+
+## git
+run ```npm run git -- Message``` to generate/update the docs folder before a push
 
 ## quick component gen (angular cli)
 
