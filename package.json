@@ -16,7 +16,7 @@
     "build": "ng build --aot -prod",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "doc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -s -w"
+    "doc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -s -w -d docs"
   },
   "private": true,
   "dependencies": {
