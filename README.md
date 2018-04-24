@@ -1,4 +1,5 @@
 # Poort80 internship assignment
+![Doc coverage](https://lloydst.github.io/p80-internship-angular/images/coverage-badge.svg)
 >prerequisites
   -  node v ^8.10.0 (with matching npm)
   -  mongodb or a mlab account (see data base for more information)
@@ -31,7 +32,7 @@ and run `npm run server` (in a other window)so that node restarts the express se
 run `npm run doc` to "generate" front end docs (only documents the angular app) since the back end can be found at ./api-docs
 
 ## git
-run ```npm run git -- Message``` to generate/update the docs folder before a push
+run ```npm run git -- Message``` OR ```npm run git -- "Message"``` to generate/update the docs folder before a push
 
 ## quick component gen (angular cli)
 
