@@ -21,7 +21,10 @@ var x = 0;
 })
 
 export class EntranceComponent implements OnInit {
-  
+  /**
+   * for binding
+   */
+  messages: any
   /**
    * for binding
    */
@@ -29,8 +32,8 @@ export class EntranceComponent implements OnInit {
   /**
    * for binding
    */
-  // hour = this.today.getHours(); // returns a number between 0 and 23 (23:59 still returns only 23)
-    hour = 16 // test variable  < 16 voor loop test >16 voor travel info > 17 what ya doin here
+  hour = this.today.getHours(); // returns a number between 0 and 23 (23:59 still returns only 23)
+  //  hour = 16 // test variable  < 16 voor loop test >16 voor travel info > 17 what ya doin here
  
   /**
    * for binding
@@ -39,7 +42,8 @@ export class EntranceComponent implements OnInit {
   /**
    * for binding
    */
-  month = this.today.getMonth() +1
+  month = this.getMonth()
+  
   /**
    * for binding
    */
@@ -102,12 +106,29 @@ export class EntranceComponent implements OnInit {
     this.dataService.getAllWebsites().subscribe(
       res => {this.websites = res})
   }
+  getMessages() {
+    this.dataService.getAllMessage().subscribe(
+    res => {this.messages = res})
+    
+}
   /**
    * gets the nu.nl's rss feed
    */
   getNews() {
     this.newsService.getNews().subscribe(
       res => {this.news = res})
+  }
+  /**
+   * makes sure this.today.getmonth() always returns 2 digits and never 
+   * just a single one even if the day is less then 10
+   */
+  getMonth() {
+    var tmp = this.today.getMonth() +1
+    if(Number(tmp)<10) {
+      return '0'+ tmp
+    } else {
+      return tmp
+    }
   }
 /**
  * returns either a boolean or string based on time of day so that its only visable at the right time
@@ -130,6 +151,8 @@ export class EntranceComponent implements OnInit {
    * through them opening each of them with window.open with 1 min interval
    */
   openWindow() {
+    var str = /([0-9])/g
+     
     var x = 0;
     var self = this // REQUIRED FOR CHECK TIME
     var arrayOfUrls =[]
@@ -140,21 +163,43 @@ export class EntranceComponent implements OnInit {
     
     // test array of urls
     // arrayOfUrls = ['https://youtube.com','https://facebook.com','https://google.com']
-    console.log(arrayOfUrls.length -1)
-      function go() {
+    
+    function go() {
+      for(let j = 0; j< self.messages.length; j++){
+        var now = self.timeNow.match(str)
+        var from = self.messages[j].showFrom.match(str)
+        var till = self.messages[j].showTill.match(str)
+        var newNow = ''
+        var newFrom = ''
+        var newTill = ''
+        for (let i =0; i < 12; i++) {
+          newNow = newNow+now[i]
+          newFrom = newFrom+from[i]
+          newTill =newTill+till[i]
+          
+        }
+        if(Number(newFrom) < Number(newNow) && Number(newNow) < Number(newTill)) {
+          console.log (self.messages[j].message + 'should be shown')
+        }else if(Number(newFrom) < Number(newNow) && Number(newNow) > Number(newTill)) {
+          console.log (self.messages[j].message + 'has expired')
+        }else if(Number(newFrom) >= Number(newNow) && Number(newNow) < Number(newTill)) {
+          console.log (self.messages[j].message + 'shouldnt be shown yet')
+        }
         
-        var myWindow = window.open(arrayOfUrls[x]) // default = 0
-        if(x === arrayOfUrls.length ) {
-          myWindow.close()
-          self.checkTime() 
-        } else if (x++ <= arrayOfUrls.length) {
-          setTimeout(() => {
-            myWindow.close()
-            go()
-          // change this number to change the time it switches between websites
-          }, 53000); // 53 sec for each website this means it checks time every 15.01 min
-        } 
       }
+      
+      var myWindow = window.open(arrayOfUrls[x]) // default = 0
+      if(x === arrayOfUrls.length ) {
+        myWindow.close()
+        self.checkTime() 
+      } else if (x++ <= arrayOfUrls.length) {
+        setTimeout(() => {
+          myWindow.close()
+          go()
+        // change this number to change the time it switches between websites
+        }, 53000); // 53 sec for each website this means it checks time every 15.01 min
+      } 
+    }
 
       go()
       
@@ -166,6 +211,7 @@ export class EntranceComponent implements OnInit {
     this.getNews()
     this.getData()
     this.checkTime()
+    this.getMessages()
   }
   
 }

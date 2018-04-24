@@ -61,9 +61,10 @@ id
    * @param showTill untill
    * @param imgLink url img can be found at
    * @param img boolean for visability of img
+   * @param id id to update by
    */
-  update(message, showFrom, showTill, imgLink, img) {
-    this.dataService.updateMessage(this.id, {message: message, showFrom: showFrom, showTill: showTill, imgLink:imgLink, img:img}).subscribe()
+  update(message, showFrom, showTill, imgLink, img, id) {
+    this.dataService.updateMessage(this.id, {message: message, showFrom: showFrom, showTill: showTill, imgLink:imgLink, img:img, identifier: id}).subscribe()
     
   }
   /**

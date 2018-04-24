@@ -33,7 +33,8 @@ eventForm = new FormGroup({
   message: new FormControl(),
   showFrom: new FormControl(),
   showTill: new FormControl(),
-  imgUrl: new FormControl()
+  imgUrl: new FormControl(),
+  identifier: new FormControl()
 });
 /**
  * constructor
@@ -47,9 +48,10 @@ eventForm = new FormGroup({
    * @param untill 
    * @param imgClass 
    * @param imgBoolean 
+   * @param id
    */
-  newMessage(mssg, from, untill, imgClass, imgBoolean:boolean) {
-    this.model = new Message(mssg, from, untill, imgClass, imgBoolean);
+  newMessage(mssg, from, untill, imgClass, imgBoolean:boolean, id) {
+    this.model = new Message(mssg, from, untill, imgClass, imgBoolean, id);
   }
   /**
    * on load
@@ -65,14 +67,16 @@ eventForm = new FormGroup({
    * @param untill time its can be shown till
    * @param iClass adds a background img if there
    * @param iBoolean boolean whether it has a class
+   * @param id identiefier to update/delete
    */
-  create (mssg: String, from: String, untill: String, iClass: String, iBoolean: Boolean) { // need to add validator to from/untill fields
+  create (mssg: String, from: String, untill: String, iClass: String, iBoolean: Boolean, id:String) { // need to add validator to from/untill fields
     this.dataService.createMessage({
       message: mssg,
       showFrom: from,
       showTill: untill,
       imgLink: iClass, 
-      img:iBoolean}).subscribe(
+      img:iBoolean,
+      identifier: id}).subscribe(
         data => {
           // refresh the list
           this.getData();
@@ -103,14 +107,14 @@ eventForm = new FormGroup({
    * @param newMessage new text
    */
   update( id, newMessage) {
-    return 'fake update'
+    return 'update'
   }
   /**
    * deletes a message
    * @param message message to delete
    */
   delete( message ) {
-    if (confirm("Are you sure you want to delete " + message.message + "?")) {
+    if (confirm("Are you sure you want to delete " + message.identifier + "?")) {
             this.dataService.deleteMessage(message._id).subscribe(
                data => {
                  // refresh the list

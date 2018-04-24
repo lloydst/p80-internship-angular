@@ -209,7 +209,7 @@ router.get('/websites/:id', function(req,res) {
    *           $ref: '#/definitions/message'
    */
 router.get('/messages/:id',function(req,res) {
-    Message.find({message: req.params.id,} , function(err, message) {
+    Message.find({identifier: req.params.id,} , function(err, message) {
         if (err) {
             res.send(err);
         }
@@ -258,11 +258,13 @@ router.get('/messages',function(req, res) {
    */
   router.post('/messages',function(req, res) {
     var mssg = new Message();      // create a new instance of the Bear model
+    console.log(req.body)
     mssg.message = req.body.message;  // set the bears name (comes from the request)
     mssg.showFrom = req.body.showFrom;
     mssg.showTill = req.body.showTill;
     mssg.imgLink = req.body.imgLink
     mssg.img = req.body.img
+    mssg.identifier = req.body.identifier
     // save the bear and check for errors
     mssg.save(function(err) {
         if (err){
@@ -295,7 +297,7 @@ router.get('/messages',function(req, res) {
    *           $ref: '#/definitions/message'
    */
 router.put('/messages/:id', function(req,res) {
-    Message.updateOne({_id: req.params.id}, req.body,function(err, doc) {
+    Message.updateOne({identifier: req.params.id}, req.body,function(err, doc) {
         if(err) {
             res.send(err)
         }

@@ -1,25 +1,19 @@
 <!-- auto version -->
 <section>
-  <div *ngIf="time"> <!-- *ngIf="time"-->
-    <!-- this creates a google map on the page with the given lat/lng from -->
-    <!-- the component as the initial center of the map: -->
+  <div *ngIf="time"> <!-- *ngIf="time" while between 4-6 pm--> 
     <ngui-map zoom="12" center="Amsterdam ijburg, Netherlands">
       <traffic-layer></traffic-layer>
     </ngui-map>
-    <div class="ticker-wrap">
+    <div class="ticker-wrap"> <!-- news cnn like banner aka ticket tape-->
         <div class="ticker" >
           <div class="ticker__item" *ngFor="let last of news">{{last.title}}</div>
         </div>
     </div>
     <app-weather></app-weather> <!-- weather component-->
-      
-      -->ov kan niet zolang er geen vaste host is <br>
-      <p>checkt nog niet of de tijd veranderd is</p>
   </div>
   <div *ngIf="!time"> <!-- overrides loop should be popup-->
-    <app-event></app-event>
+    <app-event></app-event> <!-- event component display's both events and messages -->
   </div>
-  
     <!-- used for "loop" -->
-    <span id="urls" hidden="true" *ngFor="let c of websites">{{c.url}}</span>
+  <span id="urls" hidden="true" *ngFor="let c of websites">{{c.url}}</span>
 </section>

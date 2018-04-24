@@ -5,3 +5,32 @@ div#today_icon {
 .wi-wind {
     font-size: 4em;
 }
+#forecast {
+    display: inline-block;
+    border: 1px solid black;
+    width: 11%;
+    text-align: center;
+    margin-top: 10px;
+    span:first-child{
+        width: 100%;
+        background-color: rgb(228, 18, 18);
+    }
+    div#date{
+        background-color: rgb(212, 202, 202);
+    }
+}
+#today {
+    width: 40%;
+    float: left;
+}
+.wi-custom {
+    padding-top: .25em;
+    padding-bottom: .25em;
+    font-size: 5em;
+}
+.wi-celsius {
+    font-size: 23px;
+}
+.wi-thermometer {
+    font-size: 23px;
+}

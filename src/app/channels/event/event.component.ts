@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { Message } from '../../models/message';
-
+import { Observable } from "rxjs/Rx"
 /**
  * event component
  */
@@ -15,7 +15,7 @@ export class EventComponent implements OnInit {
   /**
    * for binding
    */
-message: any
+message: any;
 /**
  * constructor to make data service available in this component
  * @param dataService service for all crud requests to the api

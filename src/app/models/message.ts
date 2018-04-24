@@ -9,13 +9,15 @@ export class Message {
  * @param showTill string
  * @param imgLink string
  * @param img boolean
+ * @param identifier string
  */
     constructor(
       public message: string,
       public showFrom:string,
       public showTill:string,
       public imgLink:string,
-      public img: boolean
+      public img: boolean,
+      public identifier: string
     ) {  }
   
   }
