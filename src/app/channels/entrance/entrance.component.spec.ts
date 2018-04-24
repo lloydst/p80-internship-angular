@@ -13,7 +13,8 @@ class TrafficLayerComponent {}
 class nguiMapComponent {}
 @Component({selector: 'app-weather', template: ''})
 class WeatherComponent {}
-
+@Component({selector: 'app-event', template: ''})
+class EventComponent {}
 describe('EntranceComponent', () => {
   let component: EntranceComponent;
   let fixture: ComponentFixture<EntranceComponent>;
@@ -25,6 +26,7 @@ describe('EntranceComponent', () => {
         EntranceComponent,
         TrafficLayerComponent,
         nguiMapComponent,
+        EventComponent,
       WeatherComponent ],
       providers:[NewsService,
         DataService,

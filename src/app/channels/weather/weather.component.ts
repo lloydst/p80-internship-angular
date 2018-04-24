@@ -13,7 +13,7 @@ export class WeatherComponent implements OnInit {
 /**
    * for binding
    */
-weatherjson
+weatherjson: any
 /**
  * weather service
  * @param weatherService weatherservice
