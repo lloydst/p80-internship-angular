@@ -84,7 +84,8 @@ describe('DataService', () => {
         showFrom: "2018-04-13T06:09",
         showTill: "2018-04-18T06:09",
         imgLink:"/images/generic-image-placeholder.png",
-        img: true  };
+        img: true,
+      identifier: 'some-simple-identifier'  };
     });
     it('should get single', ()=>{
      

@@ -34,7 +34,7 @@ eventForm = new FormGroup({
   showFrom: new FormControl(),
   showTill: new FormControl(),
   imgUrl: new FormControl(),
-  identifier: new FormControl()
+  id: new FormControl()
 });
 /**
  * constructor

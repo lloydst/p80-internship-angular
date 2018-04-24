@@ -106,6 +106,9 @@ export class EntranceComponent implements OnInit {
     this.dataService.getAllWebsites().subscribe(
       res => {this.websites = res})
   }
+  /**
+   * gets messages for logic
+   */
   getMessages() {
     this.dataService.getAllMessage().subscribe(
     res => {this.messages = res})

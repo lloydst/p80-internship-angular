@@ -258,7 +258,6 @@ router.get('/messages',function(req, res) {
    */
   router.post('/messages',function(req, res) {
     var mssg = new Message();      // create a new instance of the Bear model
-    console.log(req.body)
     mssg.message = req.body.message;  // set the bears name (comes from the request)
     mssg.showFrom = req.body.showFrom;
     mssg.showTill = req.body.showTill;
