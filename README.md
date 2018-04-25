@@ -1,4 +1,6 @@
 # Poort80 internship assignment
+[docs](https://lloydst.github.io/p80-internship-angular/)
+
 ![Doc coverage](https://lloydst.github.io/p80-internship-angular/images/coverage-badge.svg)
 >prerequisites
   -  node v ^8.10.0 (with matching npm)
