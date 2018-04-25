@@ -115,7 +115,7 @@ eventForm = new FormGroup({
    */
   delete( message ) {
     if (confirm("Are you sure you want to delete " + message.identifier + "?")) {
-            this.dataService.deleteMessage(message._id).subscribe(
+            this.dataService.deleteMessage(message.identifier).subscribe(
                data => {
                  // refresh the list
                  this.getData();

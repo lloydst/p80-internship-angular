@@ -1,10 +1,9 @@
-<div *ngFor="let m of message" class="event" >
-    <span *ngIf="m.showFrom > 20||m.img" [ngStyle]="{'background-image':'url( '+m.imgLink +')'}" > <!-- ./public/imgLink-->
-        {{m.message}} <!-- has a background img (toggled on)-->
-    </span>
-    <span *ngIf="!m.img" >
-        {{m.message}} <!-- doesn't have a background img (toggled on)-->
-    </span>
+<div *ngFor="let m of messages" class="event" >
+  
+    <div *ngIf="m.img" [ngStyle]="{'background-image':'url( '+m.imgLink +')'}">
+        <div class="tmp">{{m.message}}</div> <!-- has a background img (toggled on)-->
+    </div>
+
 </div>
  
 

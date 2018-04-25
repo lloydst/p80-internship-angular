@@ -327,7 +327,7 @@ router.put('/messages/:id', function(req,res) {
    */
 router.delete('/messages/:id', function(req, res) {
     Message.remove({
-        _id: req.params.id
+        identifier: req.params.id
     }, function(err, message) {
         if (err) {
             res.send(err);

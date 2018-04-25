@@ -123,7 +123,7 @@ export class EntranceComponent implements OnInit {
   }
   /**
    * makes sure this.today.getmonth() always returns 2 digits and never 
-   * just a single one even if the day is less then 10
+   * just a single one even if the month is less then 10
    */
   getMonth() {
     var tmp = this.today.getMonth() +1
@@ -182,13 +182,13 @@ export class EntranceComponent implements OnInit {
           
         }
         if(Number(newFrom) < Number(newNow) && Number(newNow) < Number(newTill)) {
-          console.log (self.messages[j].message + 'should be shown')
-        }else if(Number(newFrom) < Number(newNow) && Number(newNow) > Number(newTill)) {
-          console.log (self.messages[j].message + 'has expired')
-        }else if(Number(newFrom) >= Number(newNow) && Number(newNow) < Number(newTill)) {
-          console.log (self.messages[j].message + 'shouldnt be shown yet')
+          //TODO change the visablity of message if this returns something loop shouldnt go
+          setTimeout(() => {
+            go()
+          }, 60000); // checks after a minute if loop should start
+          return console.log('interupt loop') // interupts the loop succesfully
+          
         }
-        
       }
       
       var myWindow = window.open(arrayOfUrls[x]) // default = 0
