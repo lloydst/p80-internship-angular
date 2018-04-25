@@ -1,0 +1,22 @@
+<h1>TODO</h1>
+<!-- this file is a combination of html and md syntax due to -[ ] not working as a checkbox-->
+ - styling
+    - client <input type="checkbox" disabled>
+    - admin  <input type="checkbox" disabled>
+ - api
+    - documentation <input type="checkbox" checked disabled>
+    - routes <input type="checkbox" checked disabled>
+    - models <input type="checkbox" checked disabled>
+    - db connection <input type="checkbox" checked disabled>
+ - pages
+    - admin
+        - website CRUD <input type="checkbox" checked disabled>
+        - message CRUD <input type="checkbox" checked disabled>
+        - image CR <input type="checkbox" checked disabled>UD <input type="checkbox" disabled>
+    - client
+        - travel info <input type="checkbox" checked disabled>
+            - traffic <input type="checkbox" checked disabled>
+            - weather <input type="checkbox" checked disabled>
+            - ov <input type="checkbox" disabled> (requires a static ip)
+        - loop function through the websites <input type="checkbox" checked disabled>
+ - finish this <input type="checkbox" disabled>

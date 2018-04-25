@@ -74,11 +74,15 @@ export class AdminEntranceComponent implements OnInit {
   }
   /**
    * creates a new website document with the following contents
-   * @param site name of a site/ client
+   * @param site{String}  name of a site/ client
    * @param url the url of the corresponding client/site
    * @param visable a boolean i should delete
+   * @example
+   * // succes
+   * create(poort80, Https://poort80.nl, true);
+   * 
    */
-  create (site, url, visable) {
+  create (site:string, url:string, visable:boolean) {
     this.dataService.createWebsite({
       name: site,
       url: url,
