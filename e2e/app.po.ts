@@ -6,6 +6,6 @@ export class AppPage {
   }
 
   getParagraphText() {
-    return element(by.className('test')).getText();
+    return element(by.tagName('div')).getText();
   }
 }

@@ -82,7 +82,7 @@ export class AdminEntranceComponent implements OnInit {
    * create(poort80, Https://poort80.nl, true);
    * 
    */
-  create (site:string, url:string, visable:boolean) {
+  create (site:string, url:string, visable) {
     this.dataService.createWebsite({
       name: site,
       url: url,

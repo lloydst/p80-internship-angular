@@ -7,7 +7,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "test":"ng e2e && ng test",
+    "test": "ng e2e && ng test",
     "server": "nodemon server.js",
     "dev": "ng build --watch",
     "ng": "ng",
@@ -16,10 +16,10 @@
     "build": "ng build --aot -prod",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "doc":"./node_modules/.bin/compodoc -p src/tsconfig.app.json -d docs",
+    "doc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -d docs",
     "doc:watch": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -s -w -d docs --theme stripe",
     "git": "npm run doc && git add . && git commit -m ",
-    "postgit":"git push"
+    "postgit": "git push"
   },
   "private": true,
   "dependencies": {

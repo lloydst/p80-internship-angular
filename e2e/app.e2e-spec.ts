@@ -7,8 +7,8 @@ describe('boilerplate App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should have some navigation', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('✓');
+    expect(page.getParagraphText()).toContain('go to manual');
   });
 });
