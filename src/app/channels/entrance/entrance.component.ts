@@ -181,11 +181,13 @@ export class EntranceComponent implements OnInit {
           newTill =newTill+till[i]
           
         }
+        
         if(Number(newFrom) < Number(newNow) && Number(newNow) < Number(newTill)) {
           //TODO change the visablity of message if this returns something loop shouldnt go
           setTimeout(() => {
             go()
           }, 60000); // checks after a minute if loop should start
+          
           return console.log('interupt loop') // interupts the loop succesfully
           
         }
@@ -211,6 +213,7 @@ export class EntranceComponent implements OnInit {
    * on load
    */
   ngOnInit() {
+    
     this.getNews()
     this.getData()
     this.checkTime()

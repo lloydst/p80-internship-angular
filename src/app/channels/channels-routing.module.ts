@@ -5,6 +5,9 @@ import { EventComponent } from './event/event.component';
 import { MeetingComponent } from './meeting/meeting.component';
 import { EntranceComponent } from './entrance/entrance.component';
 import { WeatherComponent } from './weather/weather.component';
+import { BuildServersComponent } from './build-servers/build-servers.component';
+import { FinancialComponent } from './financial/financial.component';
+import { SupportComponent } from './support/support.component';
 
 const routes: Routes = [
   {path:'channels', component: ChannelsComponent, children: [
@@ -19,6 +22,15 @@ const routes: Routes = [
     },
     {
       path:'entrance/weather', component: WeatherComponent
+    },
+    {
+      path: 'build', component: BuildServersComponent
+    },
+    {
+      path: 'financial', component:FinancialComponent
+    },
+    {
+      path: 'support', component: SupportComponent
     }
   ]}
 ];
