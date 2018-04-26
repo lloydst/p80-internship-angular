@@ -27,7 +27,7 @@ const routes: Routes = [
       path: 'build', component: BuildServersComponent
     },
     {
-      path: 'financial', component:FinancialComponent
+      path: 'finance', component:FinancialComponent
     },
     {
       path: 'support', component: SupportComponent

@@ -1,3 +1,15 @@
-<p>
-research bitcoin tracking api
-</p>
+
+<div *ngFor="let bit of bitVal" class="info">
+    {{bit.rank}} {{bit.name}} &euro;{{bit.price_eur}} <br>
+    <table>
+            <th>&plusmn;% 1h</th>
+            <th>&plusmn;% 24h</th>
+            <th>&plusmn;% 7d</th>
+        <tr>
+            <td>{{bit.percent_change_1h}}</td>
+            <td>{{bit.percent_change_24h}}</td>
+            <td>{{bit.percent_change_7d}}</td>
+        </tr>
+    </table>
+</div>
+
