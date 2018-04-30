@@ -89,7 +89,7 @@ messages: any
         newTill =newTill+till[i]
 
       }
-      if(Number(newFrom) < Number(newNow) && Number(newNow) < Number(newTill)) {
+      if(Number(newFrom) < Number(newNow) && Number(newNow) < Number(newTill)) {  // while should be shown change it to shown
         this.dataService.updateMessage(this.messages[j].identifier, {"img":true}).subscribe()
         this.getMessages()
         // returning anything here wont interupt loop

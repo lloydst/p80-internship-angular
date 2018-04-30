@@ -181,18 +181,14 @@ export class EntranceComponent implements OnInit {
           newTill =newTill+till[i]
           
         }
-        
         if(Number(newFrom) < Number(newNow) && Number(newNow) < Number(newTill)) {
-          //TODO change the visablity of message if this returns something loop shouldnt go
+          // event component delete's messages that "expired"
           setTimeout(() => {
             go()
           }, 60000); // checks after a minute if loop should start
-          
           return console.log('interupt loop') // interupts the loop succesfully
-          
-        }
+        } 
       }
-      
       var myWindow = window.open(arrayOfUrls[x]) // default = 0
       if(x === arrayOfUrls.length ) {
         myWindow.close()

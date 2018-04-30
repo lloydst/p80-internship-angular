@@ -32,4 +32,13 @@ weatherjson: any
     this.weatherService.getWeather().subscribe(
       res => {this.weatherjson = res})
   }
+  /**
+   * updates weather every minute
+   */
+  updateWeather() {
+    setTimeout(() => {
+      this.updateWeather
+    }, 60000);
+    this.getWeather()
+  }
 }
