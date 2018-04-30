@@ -5,14 +5,19 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { DataService } from '../../../../services/data.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { HttpClient } from '@angular/common/http';
+import { Component } from '@angular/core';
 
 describe('AdminEventDetailComponent', () => {
   let component: AdminEventDetailComponent;
   let fixture: ComponentFixture<AdminEventDetailComponent>;
 
+  @Component({selector: 'app-image-view', template: ''})
+class ImageViewComponent {}
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AdminEventDetailComponent ],
+      declarations: [ AdminEventDetailComponent,
+        ImageViewComponent ],
       imports:[
         RouterTestingModule,
         HttpClientTestingModule],
