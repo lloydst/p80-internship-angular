@@ -31,6 +31,6 @@ export class FileService {
      * gets all files(images) out of db the component has to subscribe to this
      */
     getImages() {
-            return this._http.get('/images-all');
+            return this._http.get('/images/images-all');
     }
 }

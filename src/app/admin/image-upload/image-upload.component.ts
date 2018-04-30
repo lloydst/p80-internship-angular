@@ -4,7 +4,7 @@ import { FileUploader } from 'ng2-file-upload';
 /**
  * defining where to POST too
  */
-const URL = '/upload';
+const URL = '/images/upload';
 /**
  * upload Component
  */

@@ -11,7 +11,7 @@ const grid = require("gridfs-stream");
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 const swaggerUi = require('swagger-ui-express');
-const Image = require('./server/models/Image')
+const Images = require('./server/models/Image')
 
 // configs
 const swaggerSpec = require('./server/config/swagger')
@@ -19,7 +19,7 @@ const dotenv = require('dotenv').config();
 
 // routes
 const api = require('./server/routes/index'); //crud routes messages and websites
-
+const images = require('./server/routes/images')
 // mongoose setup
 const MONGOURI = process.env.MONGOURI || 'someback-upaddress';
 // this .env file should be added to .gitignore since it contains passwords
@@ -53,46 +53,9 @@ if (process.env != 'production') {
     res.send(swaggerSpec);
   });
 }
-app.post('/Upload', function (req, res) {
-  var form = new formidable.IncomingForm();
-  // form.uploadDir = __dirname+"/uploads"; // would write it to uploads folder but would also parse the name
-  form.keepExtensions = true;
-  form.parse(req, function (err, fields, files) {
-      if (!err) {
-          console.log('Files Uploaded: ' + files.file.path)
-          grid.mongo = mongoose.mongo;
-          var gfs = grid(db.db);
-          var writestream = gfs.createWriteStream({
-              filename: files.file.name
-          });
-          fs.createReadStream(files.file.path).pipe(writestream); // writes it to db
-      }
-  });
-  form.on('end', function () {
-      res.send('Completed ... go check fs.files & fs.chunks in mongodb');
-  });
-});
-app.get("/images/:image", function(req, res){
-  grid.mongo = mongoose.mongo;
-  var gfs = grid(db.db);
-  var readstream = gfs.createReadStream({
-    filename: req.params.image
- });
- 
-readstream.pipe(res) // returns the img
-})
-
-app.get("/images-all", function(req, res){
-  Image.find(function(err, images) {
-    if (err){
-        res.send(err);
-    }
-    res.json(images);
-});
-})
-
+app.use('/images',images) // post and read
 app.use('/api',api) // route example creates url's like: <host>/users/<routes from file>
-// app.use('/file',files);
+
 app.use('/public', express.static(path.join(__dirname, 'server/public')))
 app.use('*',express.static(path.join(__dirname, 'dist'))) //routes anything not caught by the routes above to your angular project if possible
 
@@ -130,3 +93,5 @@ io.on('connection', (socket) => {
 
 });
 
+module.exports = db
+module.exports = mongoose
