@@ -488,7 +488,7 @@ router.delete('/messages/:id', function(req, res) {
 })
 /**
    * @swagger
-   * news:
+   * /news:
    *   get:
    *     description: gets the rss feed of nu.nl
    *     tags: [News]

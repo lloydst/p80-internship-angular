@@ -33,4 +33,8 @@ export class FileService {
     getImages() {
             return this._http.get('/images/images-all');
     }
+    deleteImg(img) {
+        let done = true
+            return this._http.delete('/images/img/' + img)
+    }
 }

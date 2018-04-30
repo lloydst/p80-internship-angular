@@ -33,4 +33,10 @@ image;
       this.image = images
     })
   }
+  deleteImg(delete_me) {
+    let done = false
+    this.fileService.deleteImg(delete_me).subscribe(image => {
+      this.image = image
+    })    
+  }
 }

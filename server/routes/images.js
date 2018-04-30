@@ -98,6 +98,31 @@ router.post('/Upload', function (req, res) {
    
   readstream.pipe(res) // returns the img
   })
+  /**
+   * @swagger
+   * /img/:filename:
+   *   delete:
+   *     description: deletes the img with filename
+   *     tags: [Image]
+   *     responses:
+   *       200:
+   *         description: Delete
+   *         schema:
+   *           type: file/blob
+   *           $ref: '#definitions/image'
+   */
+  router.delete('/img/:image',function(req,res) {
+      grid.mongo = mongoose.mongo;
+      var gfs = grid(db.db);
+      gfs.remove({
+        filename: req.params.image
+        }, function (err) {
+          if (err) {
+              console.log(err)
+            };
+          console.log('success');
+        });
+  })
   
 
   module.exports = router;
