@@ -21,14 +21,159 @@ var YQL = require('yql'); // yahoo query language
    *         type: boolean
    *   message:
    *     properties:
-   *       message:
+   *       _id:
    *         type: string
-   *       showFrom:
+   *       identifier:
+   *         type: string
+   *       img:
+   *         type: boolean
+   *       imgLink:
    *         type: string
    *       showTill:
    *         type: string
-   */  
-
+   *       showFrom:
+   *         type: string
+   *       message:
+   *         type: string
+   *       __v:
+   *         type: string
+   *   image:
+   *     properties:
+   *       _id:
+   *         type: string
+   *       filename:
+   *         type: string
+   *       contentType:
+   *         type: string
+   *       lenth:
+   *         type: string
+   *       chunkSize:
+   *         type: string
+   *       uploadDate:
+   *         type: string
+   *       aliases:
+   *         type: string
+   *       metadata:
+   *         type: string
+   *       md5:
+   *         type: string
+   *   weather:
+   *     properties:
+   *       title:
+   *         type: string
+   *       link:
+   *         type: string
+   *       description:
+   *         type: string
+   *       language:
+   *         type: string
+   *       lastBuildDate:
+   *         type: string
+   *       ttl: 
+   *         type: string
+   *       units:
+   *            type: object
+   *            properties:
+   *                distance:
+   *                    type: string
+   *                pressure:
+   *                    type: string
+   *                speed:
+   *                    type: string
+   *                temperature:
+   *                    type: string
+   *       location:
+   *            type: object
+   *            properties:
+   *                city:
+   *                    type: string
+   *                country:
+   *                    type: string
+   *                region:
+   *                    type: string
+   *       wind:
+   *            type: object
+   *            properties:
+   *                chill:
+   *                    type: string
+   *                direction:
+   *                    type: string
+   *                speed:
+   *                    type: string
+   *       atmospere:
+   *            type: object
+   *            properties:
+   *                humidity:
+   *                    type: string
+   *                pressure:
+   *                    type: string
+   *                rising:
+   *                    type: string
+   *                visibility:
+   *                    type: string
+   *       astronomy:
+   *            type: object
+   *            properties:
+   *                sunrise:
+   *                    type: string
+   *                sunset:
+   *                    type: string
+   *       image:
+   *            type: object
+   *            properties:
+   *                title:
+   *                    type: string
+   *                width:
+   *                    type: string
+   *                height:
+   *                    type: string
+   *                link:
+   *                    type: string
+   *                url:
+   *                    type: string
+   *       item:
+   *            type: object
+   *            properties:
+   *                title:
+   *                    type: string
+   *                lat:
+   *                    type: string
+   *                long:
+   *                    type: string
+   *                link:
+   *                    type: string
+   *                pubDate:
+   *                    type: string
+   *                condition:
+   *                    type: object
+   *                    properties:
+   *                        code:
+   *                            type: string
+   *                        date:
+   *                            type: string
+   *                        temp:
+   *                            type: string
+   *                        text:
+   *                            type: string
+   *       forecast:
+   *            type: array
+   *            items:
+   *                type: object
+   *                properties:
+   *                    code:
+   *                        type: string
+   *                    date:
+   *                        type: string
+   *                    day:
+   *                        type: string
+   *                    high:
+   *                        type: string
+   *                    low:
+   *                        type: string
+   *                    text:
+   *                        type: string
+   */ 
+  
   /**
    * @swagger
    * tags:
@@ -36,6 +181,12 @@ var YQL = require('yql'); // yahoo query language
    *      description: Websites
    *    - name: Message
    *      description: Messages
+   *    - name: News
+   *      description: News
+   *    - name: Weather
+   *      description: Weather
+   *    - name: Image
+   *      description: Images
    */
 
   /**
@@ -335,7 +486,18 @@ router.delete('/messages/:id', function(req, res) {
         res.json({ message: 'Successfully deleted' });
     })
 })
-
+/**
+   * @swagger
+   * news:
+   *   get:
+   *     description: gets the rss feed of nu.nl
+   *     tags: [News]
+   *     produces:
+   *       - feed/rss
+   *     responses:
+   *       200:
+   *         description: GET
+   */
 router.get('/news', function(req,res) {
     Feed.load('https://www.nu.nl/rss/Algemeen', function(err, rss){
         if (err) {
@@ -344,6 +506,22 @@ router.get('/news', function(req,res) {
         res.send(rss.items);
     });  
 })
+
+  /**
+   * @swagger
+   * /weather:
+   *   get:
+   *     description: Gets weather from yahoo's weather api
+   *     tags: [Weather]
+   *     produces:
+   *       - application/json
+   *     responses:
+   *       200:
+   *         description: Get
+   *         schema:
+   *           type: object
+   *           $ref: '#/definitions/weather'
+   */
 router.get('/weather', function(req,res){
     var query = new YQL('select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="amsterdam, nl")and u="c"');
     query.exec(function(err, data) {

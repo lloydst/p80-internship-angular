@@ -14,7 +14,10 @@ var swaggerDefinition = {
     // import swaggerDefinitions
     swaggerDefinition: swaggerDefinition,
     // path to the API docs
-    apis: ['./server/routes/index.js'],
+    apis: [
+      './server/routes/index.js',
+      './server/routes/images.js'
+  ],
   };
   const swaggerSpec = swaggerJSDoc(swaggerOptions);
 

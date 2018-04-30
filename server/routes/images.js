@@ -14,49 +14,24 @@ router.use(function(req, res, next) {
   next();
 });
 
-
-/** 
-router.get("/:image", function(req, res){
-    grid.mongo = mongoose.mongo;
-    var gfs = grid(db.db);
-    var readstream = gfs.createReadStream({
-      filename: req.params.image
-   });
-   
-  readstream.pipe(res) // returns the img
-  })
-  router.get("/", function(req, res){
-    grid.mongo = mongoose.mongo;
-    var gfs = grid(db.db);
-    gfs.files.find({ filename: String }).toArray(function (err, files) {
-      if (err){
-      console.log(files);}
-      console.log(files)
-    })
-  })
-  router.post('/Upload', function (req, res) {
-    var form = new formidable.IncomingForm();
-    // form.uploadDir = __dirname+"/uploads"; // would write it to uploads folder but would also parse the name
-    form.keepExtensions = true;
-    form.parse(req, function (err, fields, files) {
-        if (!err) {
-            console.log('Files Uploaded: ' + files.file.path)
-            grid.mongo = mongoose.mongo;
-            var gfs = grid(db.db);
-            var writestream = gfs.createWriteStream({
-                filename: files.file.name
-            });
-            fs.createReadStream(files.file.path).pipe(writestream); // writes it to db
-        }
-    });
-    form.on('end', function () {
-        res.send('Completed ... go check fs.files & fs.chunks in mongodb');
-    });
-  });
-*/
 const MONGOURI = process.env.MONGOURI || 'someback-upaddress';
 // this .env file should be added to .gitignore since it contains passwords
 mongoose.connect( MONGOURI, {useMongoClient: true})
+ /**
+   * @swagger
+   * /Upload:
+   *   post:
+   *     description: uploads a image
+   *     tags: [Image]
+   *     produces:
+   *       - application/json
+   *     responses:
+   *       200:
+   *         description: Post
+   *         schema:
+   *           type: object
+   *           $ref: '#/definitions/image'
+   */
 router.post('/Upload', function (req, res) {
     var form = new formidable.IncomingForm();
     // form.uploadDir = __dirname+"/uploads"; // would write it to uploads folder but would also parse the name
@@ -73,9 +48,24 @@ router.post('/Upload', function (req, res) {
         }
     });
     form.on('end', function () {
-        res.send('Completed ... go check fs.files & fs.chunks in mongodb');
+        res.send('Completed');
     });
   });
+   /**
+   * @swagger
+   * /images-all:
+   *   get:
+   *     description: gets all images
+   *     tags: [Image]
+   *     produces:
+   *       - application/json
+   *     responses:
+   *       200:
+   *         description: Get
+   *         schema:
+   *           type: object
+   *           $ref: '#/definitions/image'
+   */
   router.get("/images-all", function(req, res){
     Image.find(function(err, images) {
       if (err){
@@ -84,6 +74,21 @@ router.post('/Upload', function (req, res) {
       res.json(images);
   });
   })
+   /**
+   * @swagger
+   * /img/:image_identifier:
+   *   get:
+   *     description: creates a message
+   *     tags: [Image]
+   *     produces:
+   *       - application/json
+   *     responses:
+   *       200:
+   *         description: Post
+   *         schema:
+   *           type: object
+   *           $ref: '#/definitions/image'
+   */
   router.get("/img/:image", function(req, res){
     grid.mongo = mongoose.mongo;
     var gfs = grid(db.db);
