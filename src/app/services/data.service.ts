@@ -86,4 +86,8 @@ export class DataService {
   deleteMessage(id) {
     return this.http.delete('/api/messages/' + id)
   }
+  // temp uses mail since my personal calendar = empty usually
+  getCalendar() {
+    return this.http.get('/api/mail')
+  }
 }

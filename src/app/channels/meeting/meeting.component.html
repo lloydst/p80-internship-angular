@@ -1,3 +1,10 @@
 <section>
-  <p>i will display any and all meetings in the meeting room (need to find out how to retrieve that info)</p>
+  <p>first go to api/test to login!</p>
+  <p>temp displays last recieved emails since my calendar is usually empty </p>
+  <p>usefull for knowing what paths to use: https://developer.microsoft.com/en-us/graph/graph-explorer</p>
 </section>
+<div *ngFor="let m of meeting">
+  {{m.receivedDateTime}}
+  {{m.subject}}
+  
+</div>

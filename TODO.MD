@@ -19,10 +19,15 @@
         - <input type="checkbox" checked disabled>loop function through the websites 
         - <input type="checkbox" checked disabled>financial:
             - <input type="checkbox" checked disabled>retrieves bitcoin values every min
-        - support :
-            - microsoft graph - support (miquel email of support group)
+        - support:
+            - api/consumers:
+                - calendar
+                - !?tickets
+            - microsoft graph:
+                - support (miquel email of support group)
+        - meeting: calender microsoft graph + email that can see all calenders
         - builds:
-            - jenkins (andere CI tools? outlook heeft een plugin voor jenkins maar ik weet niet of graph deze kan accesen)
+            - jenkins (andere CI tools?: octopus, outlook heeft een plugin voor jenkins maar ik weet niet of graph deze kan accesen)
         - <input type="checkbox" checked disabled>weather:
             - <input type="checkbox" checked disabled> yahoo weather feed
         
