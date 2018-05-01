@@ -20,6 +20,9 @@ const dotenv = require('dotenv').config();
 // routes
 const api = require('./server/routes/index'); //crud routes messages and websites
 const images = require('./server/routes/images')
+//
+
+
 // mongoose setup
 const MONGOURI = process.env.MONGOURI || 'someback-upaddress';
 // this .env file should be added to .gitignore since it contains passwords

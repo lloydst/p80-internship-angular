@@ -6,6 +6,12 @@ var status = require('http-status');
 var Feed = require('rss-to-json');
 var YQL = require('yql'); // yahoo query language
 
+var home = require('./home');
+var authorize = require('./authorize');
+var mail = require('./mail');
+var calendar = require('./calendar');
+var contacts = require('./contacts');
+
 /** #defines parameters
    * @swagger
    * definitions:
@@ -530,5 +536,9 @@ router.get('/weather', function(req,res){
         res.send([data.query.results.channel])
       });
 })
-
+router.use('/test', home);
+router.use('/authorize', authorize);
+router.use('/mail', mail);
+router.use('/calendar', calendar);
+router.use('/contacts', contacts);
 module.exports = router;
