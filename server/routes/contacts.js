@@ -32,12 +32,12 @@ router.get('/', async function(req, res, next) {
       .get();
 
       parms.contacts = result.value;
-      res.render('contacts', parms);
+      res.send(parms);
     } catch (err) {
       parms.message = 'Error retrieving contacts';
       parms.error = { status: `${err.code}: ${err.message}` };
       parms.debug = JSON.stringify(err.body, null, 2);
-      res.render('error', parms);
+      res.send(parms);
     }
     
   } else {

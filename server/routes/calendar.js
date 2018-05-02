@@ -36,14 +36,14 @@ router.get('/', async function(req, res, next) {
       .get();
 
       parms.events = result.value;
-      //res.render('calendar', parms);
-      console.log('i did something!')
+      res.send(parms);
+      
       res.send(parms)
     } catch (err) {
       parms.message = 'Error retrieving events';
       parms.error = { status: `${err.code}: ${err.message}` };
       parms.debug = JSON.stringify(err.body, null, 2);
-      res.render('error', parms);
+      res.send(parms);
     }
     
   } else {
