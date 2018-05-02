@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ToasterService, IToasterConfig, ToasterConfig } from 'angular2-toaster';
 /**
  * some documentation
  */
@@ -9,5 +8,5 @@ import { ToasterService, IToasterConfig, ToasterConfig } from 'angular2-toaster'
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
+ 
 }

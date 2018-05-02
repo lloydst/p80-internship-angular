@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
-
 /**
  * meeting component
  */
@@ -30,8 +29,8 @@ constructor(private data: DataService) { }
       this.loginStatus=res
     })
     this.data.getCalendar().subscribe(res=>{
-      this.meeting= res
+      this.meeting= [res]
     })
   }
-
+  
 }

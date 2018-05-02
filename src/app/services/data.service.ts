@@ -88,7 +88,7 @@ export class DataService {
   }
   // temp uses mail since my personal calendar = empty usually
   getCalendar() {
-    return this.http.get('/api/mail')
+    return this.http.get('/api/calendar')
   }
   getLoggedIn() {
     return this.http.get('/api/test')

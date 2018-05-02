@@ -9,7 +9,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { NguiMapModule} from '@ngui/map';
 import { FormsModule } from '@angular/forms';
-// import { ToasterModule, ToasterService} from 'angular2-toaster';
 
 /**
  * components
@@ -43,7 +42,7 @@ import { FileUploadModule } from 'ng2-file-upload';
     AdminModule,
     ChannelsModule,
     AppRoutingModule,
-    FileUploadModule
+    FileUploadModule,
        
     ],
   providers: [

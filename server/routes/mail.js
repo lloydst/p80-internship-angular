@@ -36,7 +36,7 @@ router.get('/', async function(req, res, next) {
       parms.message = 'Error retrieving messages';
       parms.error = { status: `${err.code}: ${err.message}` };
       parms.debug = JSON.stringify(err.body, null, 2);
-      res.send(parms);
+      res.json(parms)// .send('error',parms);
     }
     
   } else {
