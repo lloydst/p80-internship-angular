@@ -33,6 +33,10 @@ image;
       this.image = images
     })
   }
+  /**
+   * deletes a img
+   * @param delete_me filename of image too delete
+   */
   deleteImg(delete_me) {
     let done = false
     this.fileService.deleteImg(delete_me).subscribe(image => {

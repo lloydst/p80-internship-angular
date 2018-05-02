@@ -64,6 +64,9 @@ messages: any
     }, 400);
     
   }
+  /**
+   * gets the month and adds a 0 if below 10
+   */
   getMonth() {
     var tmp = this.today.getMonth() +1
     if(Number(tmp)<10) {
@@ -72,8 +75,10 @@ messages: any
       return tmp
     }
   }
+  /**
+   * interupts the loop
+   */
   interuptLoop() {
-    
     var str = /([0-9])/g
     //console.log(this.messages)
     for(let j = 0; j< this.messages.length; j++){

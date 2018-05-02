@@ -61,13 +61,13 @@ eventForm = new FormGroup({
   }
 
   /**
-   * 
+   * creates a message
    * @param mssg message/events
    * @param from time its shown from
    * @param untill time its can be shown till
    * @param iClass adds a background img if there
    * @param iBoolean boolean whether it has a class
-   * @param id identiefier to update/delete
+   * @param id identifier to update/delete
    */
   create (mssg: String, from: String, untill: String, iClass: String, iBoolean: Boolean, id:String) { // need to add validator to from/untill fields
     this.dataService.createMessage({

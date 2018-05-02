@@ -87,9 +87,15 @@ export class DataService {
     return this.http.delete('/api/messages/' + id)
   }
   // temp uses mail since my personal calendar = empty usually
+  /**
+   * gets calendar info
+   */
   getCalendar() {
     return this.http.get('/api/calendar')
   }
+  /**
+   * checks if logged in if not it displays a button that allows you too
+   */
   getLoggedIn() {
     return this.http.get('/api/test')
   }
