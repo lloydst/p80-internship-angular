@@ -90,4 +90,7 @@ export class DataService {
   getCalendar() {
     return this.http.get('/api/mail')
   }
+  getLoggedIn() {
+    return this.http.get('/api/test')
+  }
 }

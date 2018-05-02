@@ -60,4 +60,5 @@ prod: ${host}= example.com
  - ${host}/api/{collection}/{?:id} possible api end points see api documentaion for more info
 
 ## docs
-docs can be found at [https://lloydst.github.io/p80-internship-angular/](https://lloydst.github.io/p80-internship-angular/) though there is a big chance they are outdated to view the most recent you need to clone the project and run ```npm run doc``` (after the npm install ofc) this will generate it in the docs folder and server it on [localhost:8080](http://localhost:8080)
+docs can be found at [https://lloydst.github.io/p80-internship-angular/](https://lloydst.github.io/p80-internship-angular/) though there is a big chance they are outdated to view the most recent you need to clone the project and run ```npm run doc:watch``` (after the npm install ofc) this will generate it in the docs folder and server it on [localhost:8080](http://localhost:8080).
+Or you use ``` npm run doc ``` and if the server is running (both npm start and npm run server) you can acces it at (local)host(:port)/docs

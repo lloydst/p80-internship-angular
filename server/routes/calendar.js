@@ -37,8 +37,6 @@ router.get('/', async function(req, res, next) {
 
       parms.events = result.value;
       res.send(parms);
-      
-      res.send(parms)
     } catch (err) {
       parms.message = 'Error retrieving events';
       parms.error = { status: `${err.code}: ${err.message}` };

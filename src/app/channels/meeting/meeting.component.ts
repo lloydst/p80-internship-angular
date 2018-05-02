@@ -10,16 +10,28 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./meeting.component.scss']
 })
 export class MeetingComponent implements OnInit {
+  /**
+   * for binding
+   */
   meeting
+  /**
+   * for binding
+   */
+  loginStatus
 /**
  * constructor
  */
 constructor(private data: DataService) { }
 /**
- * on init
+ * on load
  */
   ngOnInit() {
-    this.data.getCalendar().subscribe(res=>{this.meeting= res})
+    this.data.getLoggedIn().subscribe(res=>{
+      this.loginStatus=res
+    })
+    this.data.getCalendar().subscribe(res=>{
+      this.meeting= res
+    })
   }
 
 }

@@ -18,7 +18,7 @@ const credentials = {
       redirect_uri: process.env.REDIRECT_URI,
       scope: process.env.APP_SCOPES
     });
-    console.log(`Generated auth url: ${returnVal}`);
+    //console.log(`Generated auth url: ${returnVal}`);
     return returnVal;
   }
   
@@ -30,7 +30,7 @@ const credentials = {
     });
   
     const token = oauth2.accessToken.create(result);
-    console.log('Token created: ', token.token);
+    //console.log('Token created: ', token.token);
   
     saveValuesToCookie(token, res);
   
@@ -75,7 +75,7 @@ const credentials = {
     res.cookie('graph_user_name', user.name, {maxAge: 3600000, httpOnly: true});
     // Save the refresh token in a cookie
     res.cookie('graph_refresh_token', token.token.refresh_token, {maxAge: 7200000, httpOnly: true});
-    // Save the token expiration tiem in a cookie
+    // Save the token expiration time in a cookie
     res.cookie('graph_token_expires', token.token.expires_at.getTime(), {maxAge: 3600000, httpOnly: true});
   }
   

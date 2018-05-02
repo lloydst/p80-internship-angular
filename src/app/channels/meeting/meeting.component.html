@@ -1,10 +1,16 @@
-<section>
-  <p>first go to api/test to login!</p>
-  <p>temp displays last recieved emails since my calendar is usually empty </p>
-  <p>usefull for knowing what paths to use: https://developer.microsoft.com/en-us/graph/graph-explorer</p>
-</section>
-<div *ngFor="let m of meeting">
-  {{m.receivedDateTime}}
-  {{m.subject}}
-  
+<div *ngIf="loginStatus.signInUrl"> <!-- signinurl is only there when a user isn't logged in-->
+    <button><a class="" href="{{loginStatus.signInUrl}}">Click here to login!</a></button>
+  <div >
+    <p>temp displays last recieved emails since my calendar is usually empty </p>
+    <p>usefull for knowing what paths to use: https://developer.microsoft.com/en-us/graph/graph-explorer</p>
+    <button>text</button>
+  </div>
+</div>
+
+<div *ngIf="!loginStatus.signInUrl">
+  Welcome {{loginStatus.user}}
+  <div *ngFor="let m of meeting">
+      {{m.receivedDateTime}}
+      {{m.subject}}
+  </div>
 </div>
