@@ -1,14 +1,12 @@
-.info{
+.info {
 display: inline-block;
-width: 12.5%;
+width: 12.4%;
     table{
-
-        td {
-background-color: blue;
+        .down {
+            background-color: orangered;
         }
-        
-        th {
-            background-color: red;
+        .up {
+            background-color: lime;
         }
     }
     

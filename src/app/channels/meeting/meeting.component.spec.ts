@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MeetingComponent } from './meeting.component';
+import { DataService } from '../../services/data.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClient } from '@angular/common/http';
 
 describe('MeetingComponent', () => {
   let component: MeetingComponent;
@@ -8,7 +11,9 @@ describe('MeetingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MeetingComponent ]
+      imports:[HttpClientTestingModule],
+      declarations: [ MeetingComponent ],
+      providers: [DataService, HttpClient]
     })
     .compileComponents();
   }));

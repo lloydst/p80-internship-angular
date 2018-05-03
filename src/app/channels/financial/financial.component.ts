@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,OnChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import * as $ from 'jquery';
 /**
  * financial component
  */
@@ -14,6 +15,9 @@ export class FinancialComponent implements OnInit {
  * binding
  */
 bitVal:any =[]
+percentChangeHour
+percentChangeDay
+percentChangeWeek
 /**
  * http client
  * @param http http client
@@ -24,7 +28,9 @@ constructor(private http: HttpClient) { }
  */
   ngOnInit() {
     this.getBitData()
+    
   }
+  
   /**
    * get data from end point every 10 s
    * @returns Object
@@ -52,10 +58,14 @@ constructor(private http: HttpClient) { }
   getBitData() {
     setTimeout(() => {
       this.getBitData()
-    }, 10000);
-    this.http.get('https://api.coinmarketcap.com/v1/ticker/?start=0&limit=40&convert=EUR').subscribe(
-      res=>{ this.bitVal = res}
+    }, 10000); // time it calls
+    this.http.get('https://api.coinmarketcap.com/v1/ticker/?start=0&limit=24&convert=EUR').subscribe(
+      res=>{ this.bitVal = res
+      }
     )
   }
-
+  
+  
+   
+   
 }

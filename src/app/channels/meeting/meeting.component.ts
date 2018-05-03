@@ -12,7 +12,8 @@ export class MeetingComponent implements OnInit {
   /**
    * for binding
    */
-  meeting
+  
+  meeting: any = []
   /**
    * for binding
    */
@@ -26,11 +27,11 @@ constructor(private data: DataService) { }
  */
   ngOnInit() {
     this.data.getLoggedIn().subscribe(res=>{
-      this.loginStatus=res
+      this.loginStatus= res
     })
-    this.data.getCalendar().subscribe(res=>{
-      this.meeting= [res]
-    })
+    //this.data.getCalendar().subscribe(res=>{
+    //  this.meeting= res
+    //})
   }
   
 }
