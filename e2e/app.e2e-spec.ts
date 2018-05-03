@@ -9,6 +9,6 @@ describe('boilerplate App', () => {
 
   it('should have some navigation', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toContain('go to manual');
+    expect(page.getParagraphText()).toContain('go to auto loop');
   });
 });
