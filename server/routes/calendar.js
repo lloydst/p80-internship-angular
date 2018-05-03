@@ -4,7 +4,43 @@ var router = express.Router();
 var authHelper = require('../helpers/auth');
 var graph = require('@microsoft/microsoft-graph-client');
 
+
+ /**
+ * @swagger
+ * definitions:
+ *  calendar:
+ *     properties:
+ *       title:
+ *         type: string
+ *       active:
+ *         type: boolean
+ *       user:
+ *         type: string
+ *       events:
+ *         type: array
+ *         items:
+ *                type: object
+ *                properties:
+ *                    unknown:
+ *                        type: string
+ *                    
+ */
 /* GET /calendar */
+/**
+  * @swagger
+  * /calendar:
+  *   get:
+  *     description: gets auth token
+  *     tags: [Calendar]
+  *     produces:
+  *       - application/json
+  *     responses:
+  *       200:
+  *         description: Get
+  *         schema:
+  *           type: object
+  *           $ref: '#/definitions/calendar'
+  */
 router.get('/', async function(req, res, next) {
   let parms = { title: 'Calendar', active: { calendar: true } };
 
@@ -51,7 +87,7 @@ router.get('/', async function(req, res, next) {
 });
 
 //https://graph.microsoft.com/beta/users/vergaderruimte@poort80.nl/events
-//the link above should work once we figure out the permissions of User.Read.All
+//the link above should work once i figure out the permissions of User.Read.All
 /* GET /calendar 
 router.get('/', async function(req, res, next) {
   let parms = { title: 'Calendar', active: { calendar: true } };

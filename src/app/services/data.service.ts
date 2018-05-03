@@ -97,6 +97,6 @@ export class DataService {
    * checks if logged in if not it displays a button that allows you too
    */
   getLoggedIn() {
-    return this.http.get('/api/test')
+    return this.http.get('/api/login')
   }
 }

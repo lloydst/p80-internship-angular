@@ -4,6 +4,27 @@ var router = express.Router();
 var authHelper = require('../helpers/auth');
 
 /* GET /authorize. */
+ /**
+   * @swagger
+   * /authorize:
+   *   get:
+   *     description: gets auth token
+   *     tags: [Authorize]
+   *     produces:
+   *       - token
+   *     responses:
+   *       200:
+   *         description: Get
+   */
+   /**
+ * @swagger
+ * definitions:
+ *  authorize:
+ *     properties:
+ *       token:
+ *         type: string
+ *                    
+ */
 router.get('/', async function(req, res, next) {
   // Get auth code
   const code = req.query.code;
@@ -27,6 +48,18 @@ router.get('/', async function(req, res, next) {
 });
 
 /* GET /authorize/signout */
+ /**
+   * @swagger
+   * /authorize/signout:
+   *   get:
+   *     description: Logs User out
+   *     tags: [Authorize]
+   *     produces:
+   *       - token
+   *     responses:
+   *       200:
+   *         description: Destroys token
+   */
 router.get('/signout', function(req, res, next) {
   authHelper.clearCookies(res);
 

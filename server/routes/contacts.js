@@ -24,6 +24,7 @@ router.get('/', async function(req, res, next) {
     try {
       // Get the first 10 contacts in alphabetical order
       // by given name
+      // creates client/api/me/contacts/10/givenName surname emailAddresses/givenName ASC [query]
       const result = await client
       .api('/me/contacts')
       .top(10)

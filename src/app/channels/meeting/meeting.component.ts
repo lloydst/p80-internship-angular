@@ -29,9 +29,9 @@ constructor(private data: DataService) { }
     this.data.getLoggedIn().subscribe(res=>{
       this.loginStatus= res
     })
-    //this.data.getCalendar().subscribe(res=>{
-    //  this.meeting= res
-    //})
+    this.data.getCalendar().subscribe(res=>{
+      this.meeting= res
+    })
   }
   
 }

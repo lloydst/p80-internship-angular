@@ -193,6 +193,10 @@ var contacts = require('./contacts');
    *      description: Weather
    *    - name: Image
    *      description: Images
+   *    - name: Calendar
+   *      description: Calendar
+   *    - name: Authorize
+   *      description: Authorize
    */
 
   /**
@@ -536,7 +540,7 @@ router.get('/weather', function(req,res){
         res.send([data.query.results.channel])
       });
 })
-router.use('/test', home);
+router.use('/login', home);
 router.use('/authorize', authorize);
 router.use('/mail', mail);
 router.use('/calendar', calendar);

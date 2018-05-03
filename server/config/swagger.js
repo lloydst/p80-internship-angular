@@ -16,6 +16,10 @@ var swaggerDefinition = {
     // path to the API docs
     apis: [
       './server/routes/index.js',
+      './server/routes/authorize.js',
+      './server/routes/calendar.js',
+      './server/routes/contacts.js',
+      './server/routes/index.js',
       './server/routes/images.js'
   ],
   };
