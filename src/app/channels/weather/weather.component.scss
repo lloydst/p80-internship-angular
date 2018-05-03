@@ -1,19 +1,18 @@
 div#today_icon {
     font-size: 7em;
     color: #924da3;
+    padding: 20px 0px 0px 0px;
 }
 .wi-wind {
     font-size: 4em;
 }
 #forecast {
     display: inline-block;
-    border: 1px solid black;
     width: 11%;
     text-align: center;
     margin-top: 10px;
     span:first-child{
         width: 100%;
-        background-color: rgb(228, 18, 18);
     }
     div#date{
         background-color: rgb(212, 202, 202);

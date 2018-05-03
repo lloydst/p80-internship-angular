@@ -10,7 +10,7 @@
     <div id="forecast-wrap">
       <div *ngFor="let cast of weatherjson[0].item.forecast" id="forecast">
         <span class="wi wi-yahoo-{{cast.code}} wi-custom"></span>
-        <div id="date">{{cast.day}} {{cast.date}}</div>
+        <div >{{cast.day}} {{cast.date}}</div>
         {{cast.low}}-{{cast.high}} <span class="wi wi-celsius"></span>
       </div>
     </div>
