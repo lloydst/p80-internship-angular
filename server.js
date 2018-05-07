@@ -22,10 +22,8 @@ const api = require('./server/routes/index'); //crud routes messages and website
 const images = require('./server/routes/images')
 //
 
-
 // mongoose setup
 const MONGOURI = process.env.MONGOURI || 'someback-upaddress';
-// this .env file should be added to .gitignore since it contains passwords
 mongoose.connect( MONGOURI, {useMongoClient: true})
 var db = mongoose.connection;
 
@@ -57,7 +55,7 @@ if (process.env != 'production') {
   });
 }
 app.use('/images',images) // post and read
-app.use('/api',api) // route example creates url's like: <host>/users/<routes from file>
+app.use('/api',api)
 
 app.use('/public', express.static(path.join(__dirname, 'server/public')))
 app.use('*',express.static(path.join(__dirname, 'dist'))) //routes anything not caught by the routes above to your angular project if possible

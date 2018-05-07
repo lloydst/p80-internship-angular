@@ -8,7 +8,7 @@ describe('admin-channels', () => {
         page = new AdminChannelPage();
         page.navigateTo('entrance');
     });
-
+    // these tests detect whether /channels has a navigation bar
     it('AdminChannelsComponent should have a secondary nav', () => {
         expect(page.getLinkText().count()).toEqual(3);
     });
