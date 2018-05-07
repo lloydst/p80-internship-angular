@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
+import { HttpClient } from '@angular/common/http';
+
 /**
  * meeting component
  */
@@ -9,6 +11,7 @@ import { DataService } from '../../services/data.service';
   styleUrls: ['./meeting.component.scss']
 })
 export class MeetingComponent implements OnInit {
+  
   /**
    * for binding
    */
@@ -21,7 +24,9 @@ export class MeetingComponent implements OnInit {
 /**
  * constructor
  */
-constructor(private data: DataService) { }
+constructor(
+  private data: DataService,
+  private http: HttpClient) { }
 /**
  * on load
  */
@@ -30,8 +35,29 @@ constructor(private data: DataService) { }
       this.loginStatus= res
     })
     this.data.getCalendar().subscribe(res=>{
-      this.meeting= res
+      this.meeting= [res]
     })
+    this.ifNotLoggedIn()
   }
-  
+  /**
+   * if the signInUrl is there it means no one is logged in so a window gets opened to login
+   */
+  ifNotLoggedIn() {
+    setTimeout(() => {
+      console.log(this.loginStatus)
+      if(this.loginStatus.signInUrl) {
+        console.log('not logged in')
+        var login = window.open(this.loginStatus.signInUrl,'login') 
+        // due to cross origin i cant do more then this need to find a way to auto login
+      } else {
+        console.log('logged in')
+      }
+    }, 200);
+  }
+  /**
+   * logout of graph witht he use of a button
+   */
+  logOut() {
+    this.data.logOut().subscribe()
+  }
 }

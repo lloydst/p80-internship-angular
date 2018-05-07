@@ -15,8 +15,17 @@ export class FinancialComponent implements OnInit {
  * binding
  */
 bitVal:any =[]
+/**
+ * binding
+ */
 percentChangeHour
+/**
+ * binding
+ */
 percentChangeDay
+/**
+ * binding
+ */
 percentChangeWeek
 /**
  * http client

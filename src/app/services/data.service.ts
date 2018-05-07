@@ -99,4 +99,10 @@ export class DataService {
   getLoggedIn() {
     return this.http.get('/api/login')
   }
+  /**
+   * logout of graph
+   */
+  logOut(){
+    return this.http.get('/api/authorize/signout')
+  }
 }

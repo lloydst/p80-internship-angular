@@ -86,7 +86,7 @@ const credentials = {
     res.clearCookie('graph_refresh_token', {maxAge: 7200000, httpOnly: true});
     res.clearCookie('graph_token_expires', {maxAge: 3600000, httpOnly: true});
   }
-  
+
   exports.getAuthUrl = getAuthUrl;
   exports.getTokenFromCode = getTokenFromCode;
   exports.getAccessToken = getAccessToken;

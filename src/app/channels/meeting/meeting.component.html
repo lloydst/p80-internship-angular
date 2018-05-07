@@ -1,15 +1,14 @@
-<div *ngIf="loginStatus?.signInUrl"> <!-- signinurl is only there when a user isn't logged in-->
-    <button><a href="{{loginStatus?.signInUrl}}">Click here to login!</a></button>
+<div *ngIf="loginStatus?.signInUrl"> 
   <div >
     <p>temp displays last recieved emails since my calendar is usually empty </p>
     <p>usefull for knowing what paths to use: https://developer.microsoft.com/en-us/graph/graph-explorer</p>
   </div>
 </div>
 
-<div *ngIf="!loginStatus?.signInUrl">
+<div *ngIf="!loginStatus?.signInUrl"> <!-- signinurl is only there when a user isn't logged in-->
   Welcome {{loginStatus?.user}}
   <div *ngFor="let m of meeting">
-      {{m.events}}
-      
+      {{m?.events}}
   </div>
+  <button (click)="logOut()">logout</button>
 </div>
