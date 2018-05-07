@@ -44,14 +44,10 @@ constructor(
    */
   ifNotLoggedIn() {
     setTimeout(() => {
-      console.log(this.loginStatus)
       if(this.loginStatus.signInUrl) {
-        console.log('not logged in')
         var login = window.open(this.loginStatus.signInUrl,'login') 
         // due to cross origin i cant do more then this need to find a way to auto login
-      } else {
-        console.log('logged in')
-      }
+      } 
     }, 200);
   }
   /**

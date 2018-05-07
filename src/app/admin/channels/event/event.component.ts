@@ -70,6 +70,22 @@ eventForm = new FormGroup({
    * @param id identifier to update/delete
    */
   create (mssg: String, from: String, untill: String, iClass: String, iBoolean: Boolean, id:String) { // need to add validator to from/untill fields
+    var str = /([0-9])/g
+    var untillStr = untill.match(str)
+    var fromStr = from.match(str)
+    console.log(untillStr, fromStr)
+    var newNow = ''
+      var newFrom = ''
+      var newTill = ''
+    for (let i =0; i <= 12; i++) {
+      
+      newFrom = newFrom+fromStr[i]
+      newTill =newTill+untillStr[i]
+      if(newTill<newFrom || i <= 12) {
+        console.log('de data klopen niet als je doorgaat zal de event component ze automatisch omdraaien waneer deze component geladen word')
+      }
+    }
+    
     this.dataService.createMessage({
       message: mssg,
       showFrom: from,

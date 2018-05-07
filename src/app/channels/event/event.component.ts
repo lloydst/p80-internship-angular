@@ -61,7 +61,7 @@ messages: any
     this.getMessages()
     setTimeout(() => {
       this.interuptLoop()
-    }, 400);
+    }, 900); // does need to be shorter then the window.open of entrance
     
   }
   /**

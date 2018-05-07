@@ -12,10 +12,9 @@ div{
     max-height: 100vh;
 }
 div.tmp {
-    padding: 45vh 0px 0px 0px;
+    padding: 45vh 0px 45vh 0px;
     min-width: 99vw;
     max-width: 100vw;
-    min-height: 12vh;
-    max-height: 15vh;
+    max-height: 10vh;// + 90vh (from padding)= 100vh
     
 }

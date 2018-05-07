@@ -164,9 +164,6 @@ export class EntranceComponent implements OnInit {
       arrayOfUrls.push(url[i].innerHTML) 
     }
     
-    // test array of urls
-    // arrayOfUrls = ['https://youtube.com','https://facebook.com','https://google.com']
-    
     function go() {
       for(let j = 0; j< self.messages.length; j++){
         var now = self.timeNow.match(str)
@@ -179,14 +176,13 @@ export class EntranceComponent implements OnInit {
           newNow = newNow+now[i]
           newFrom = newFrom+from[i]
           newTill =newTill+till[i]
-          
         }
         if(Number(newFrom) < Number(newNow) && Number(newNow) < Number(newTill)) {
-          // event component delete's messages that "expired"
+          // event component delete's messages that "expired" itself
           setTimeout(() => {
             go()
           }, 60000); // checks after a minute if loop should start
-          return console.log('interupt loop') // interupts the loop succesfully
+          return 'interupt' // interupts the loop succesfully
         } 
       }
       var myWindow = window.open(arrayOfUrls[x]) // default = 0
@@ -201,9 +197,7 @@ export class EntranceComponent implements OnInit {
         }, 53000); // 53 sec for each website this means it checks time every 15.01 min
       } 
     }
-
-      go()
-      
+    go()
   }
   /**
    * on load

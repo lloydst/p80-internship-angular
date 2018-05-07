@@ -9,11 +9,11 @@ import { WeatherService } from '../../services/weather.service';
   styleUrls: ['./weather.component.scss']
 })
 export class WeatherComponent implements OnInit {
-
+0;
 /**
    * for binding
    */
-weatherjson: any
+weatherjson: any =[]
 /**
  * weather service
  * @param weatherService weatherservice
