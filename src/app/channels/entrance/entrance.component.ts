@@ -32,7 +32,7 @@ export class EntranceComponent implements OnInit {
   /**
    * for binding
    */
-  hour = this.today.getHours(); // returns a number between 0 and 23 (23:59 still returns only 23)
+  hour = this.today.getHours().toString(); // returns a number between 0 and 23 (23:59 still returns only 23)
   //  hour = 16 // test variable  < 16 voor loop test >16 voor travel info > 17 what ya doin here
  
   /**
@@ -42,21 +42,21 @@ export class EntranceComponent implements OnInit {
   /**
    * for binding
    */
-  month = this.getMonth()
+  month = this.today.getMonth().toString()
   
   /**
    * for binding
    */
-  day = this.today.getDate() 
+  day = this.today.getDate().toString()
   /**
   * for binding
   */
-  min = this.today.getMinutes()
+  min = this.today.getMinutes().toString()
   /**
    * for binding
    */
    //matches message time from and untill date "2018-04-18T06:09"
-  timeNow = ""+this.year+"-"+this.month+"-"+this.day+"T"+this.hour+":"+this.min+""
+  timeNow = ""
   
   /**
    * for binding
@@ -122,26 +122,38 @@ export class EntranceComponent implements OnInit {
       res => {this.news = res})
   }
   /**
-   * makes sure this.today.getmonth() always returns 2 digits and never 
-   * just a single one even if the month is less then 10
+   * if either month, day, hour or min is 'x' vs 'xx' it converts it too 'xx'
    */
-  getMonth() {
-    var tmp = this.today.getMonth() +1
-    if(Number(tmp)<10) {
-      return '0'+ tmp
-    } else {
-      return tmp
+  setTimeNow () {
+    //month always 2 digits
+    if(Number(this.month)<10) {
+      this.month = "0" +(Number(this.month) +1)
+      console.log(this.month)
     }
+    //day always 2 digits
+    if(Number(this.day)<10) {
+      this.day = "0" +Number(this.day)
+      console.log(this.day)
+    }
+    //hour always 2 digits
+    if(Number(this.hour) < 10) {
+      this.hour = "0" + this.hour
+    }
+    //min always 2 digits
+    if(Number(this.min)<10) {
+      this.min = "0" +(Number(this.min) +1)
+    }
+    this.timeNow = ""+this.year+"-"+this.month+"-"+this.day+"T"+this.hour+":"+this.min+""
   }
 /**
  * returns either a boolean or string based on time of day so that its only visable at the right time
  */
   checkTime() {
-    if(this.hour > 17) { // past 6
+    if(Number(this.hour) > 17) { // past 6
       return this.time = 'past 6'
-    } else if(this.hour > 15) { // 5-6 pm
+    } else if(Number(this.hour) > 15) { // 5-6 pm
       return this.time = true ;
-    } else if(this.hour <= 15) { // loop
+    } else if(Number(this.hour) <= 15) { // loop
       setTimeout(() => {
         this.openWindow()
       }, 400);
@@ -165,6 +177,7 @@ export class EntranceComponent implements OnInit {
     }
     
     function go() {
+      self.setTimeNow()
       for(let j = 0; j< self.messages.length; j++){
         var now = self.timeNow.match(str)
         var from = self.messages[j].showFrom.match(str)
@@ -177,12 +190,16 @@ export class EntranceComponent implements OnInit {
           newFrom = newFrom+from[i]
           newTill =newTill+till[i]
         }
+        console.log(newFrom)
+        console.log(newNow)
+        console.log(newTill)
         if(Number(newFrom) < Number(newNow) && Number(newNow) < Number(newTill)) {
+          
           // event component delete's messages that "expired" itself
           setTimeout(() => {
             go()
           }, 60000); // checks after a minute if loop should start
-          return 'interupt' // interupts the loop succesfully
+            return 'interupt' // interupts the loop succesfully
         } 
       }
       var myWindow = window.open(arrayOfUrls[x]) // default = 0

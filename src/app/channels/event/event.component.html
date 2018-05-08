@@ -1,12 +1,10 @@
-
 <div *ngFor="let m of messages" class="event" >
-    <div *ngIf="!m.img"> <!-- currently being used as a boolean for visability rather then if it has a img-->
-        <div class="tmp" [ngStyle]="{'background-image':'url( '+m.imgLink +')'}">{{m.message}}</div>  <!-- shows only when no messages should be shown -->
+    <div *ngIf="messages.length == 0"> <!-- currently being used as a boolean for visability rather then if it has a img-->
+       no messages to display  <!-- shows only when no messages should be shown -->
     </div>
     <div *ngIf="m.img" [ngStyle]="{'background-image':'url( '+m.imgLink +')'}">
         <div class="tmp">{{m.message}}</div> <!-- has a background img (toggled on)-->
     </div>
-
 </div>
  
 

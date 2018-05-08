@@ -7,8 +7,28 @@
 
 <div *ngIf="!loginStatus?.signInUrl"> <!-- signinurl is only there when a user isn't logged in-->
   Welcome {{loginStatus?.user}}
-  <div *ngFor="let m of meeting">
-      {{m?.events}}
+  this block displays all events that are upcomming in the next week (from today 0:00)
+  example data can be found in responseExample.txt
+  <div *ngFor="let m of meeting; let i = index">
+    <p>
+      event starts at:
+      {{m?.events["0"].start.dateTime | date:'long'}}
+    </p>
+    <p>
+      event ends at:
+      {{m?.events["0"].end.dateTime| date:'long'}}
+    </p>
+    <p>
+      attendees are:
+      {{m?.events["0"].attendees["0"].emailAddress.name}}
+    </p>
+    <p>
+      it is about:
+      {{m?.events["0"].subject}}
+    </p>
+    <div *ngIf="m.events <= 1">
+      derp no events today
+    </div>
   </div>
   <button (click)="logOut()">logout</button>
 </div>
