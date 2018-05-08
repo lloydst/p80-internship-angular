@@ -9,7 +9,7 @@
   Welcome {{loginStatus?.user}}
   this block displays all events that are upcomming in the next week (from today 0:00)
   <div *ngFor="let m of meeting">
-    <div *ngFor="let e of m.events">
+    <div *ngFor="let e of m.events"> <!-- e is another array it has to move through-->
       <p>
         event starts at:
         {{e.start.dateTime | date:'long'}}

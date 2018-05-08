@@ -68,15 +68,16 @@ const credentials = {
   function saveValuesToCookie(token, res) {
     // Parse the identity token
     const user = jwt.decode(token.token.id_token);
-  
+    const max_age = 360000 // 1h
+    const age_refresh = 1000 *60 *60 *24 *7// 1 week (s,m,h,d,w)
     // Save the access token in a cookie
-    res.cookie('graph_access_token', token.token.access_token, {maxAge: 3600000, httpOnly: true});
+    res.cookie('graph_access_token', token.token.access_token, {maxAge: max_age, httpOnly: true});
     // Save the user's name in a cookie
-    res.cookie('graph_user_name', user.name, {maxAge: 3600000, httpOnly: true});
+    res.cookie('graph_user_name', user.name, {maxAge: max_age, httpOnly: true});
     // Save the refresh token in a cookie
-    res.cookie('graph_refresh_token', token.token.refresh_token, {maxAge: 7200000, httpOnly: true});
+    res.cookie('graph_refresh_token', token.token.refresh_token, {maxAge: age_refresh, httpOnly: true});
     // Save the token expiration time in a cookie
-    res.cookie('graph_token_expires', token.token.expires_at.getTime(), {maxAge: 3600000, httpOnly: true});
+    res.cookie('graph_token_expires', token.token.expires_at.getTime(), {maxAge: max_age, httpOnly: true});
   }
   
   function clearCookies(res) {
