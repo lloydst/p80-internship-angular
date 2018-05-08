@@ -51,7 +51,7 @@ constructor(
     }, 200);
   }
   /**
-   * logout of graph witht he use of a button
+   * logout of graph with the use of a button
    */
   logOut() {
     this.data.logOut().subscribe()

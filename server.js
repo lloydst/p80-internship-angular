@@ -56,7 +56,6 @@ if (process.env != 'production') {
 }
 app.use('/images',images) // post and read
 app.use('/api',api)
-
 app.use('/public', express.static(path.join(__dirname, 'server/public')))
 app.use('*',express.static(path.join(__dirname, 'dist'))) //routes anything not caught by the routes above to your angular project if possible
 
@@ -77,21 +76,16 @@ function databaseStore(message) {
 const connections = [];
 
 io.on('connection', (socket) => {
-
   console.log('user connected');
-
   socket.on('disconnect', function() {
       console.log('user disconnected');
   });
-  
    // socket.on( event to listen too:string, function(){return/do something})
-   
   socket.on('add-message', (message) => {
       io.emit('message', { type: 'new-message', text: message }); // i believe the object part is responsible for live reload
       // Function above that stores the message in the database
       databaseStore(message)         // this would store it in a db as well
   });
-
 });
 
 module.exports = db
