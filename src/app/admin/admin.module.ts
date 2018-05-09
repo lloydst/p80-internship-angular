@@ -19,6 +19,11 @@ import { BuildServersComponent } from './channels/build-servers/build-servers.co
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { ImageViewComponent } from './image-view/image-view.component';
+import { AdminChannelsContentsComponent } from './admin-channels-contents/admin-channels-contents.component';
+import { EntranceContentsComponent } from './entrance-contents/entrance-contents.component';
+import { MeetingContentsComponent } from './meeting-contents/meeting-contents.component';
+import { OtherContentsComponent } from './other-contents/other-contents.component';
+import { SupportContentsComponent } from './support-contents/support-contents.component';
 
 
 
@@ -44,7 +49,12 @@ import { ImageViewComponent } from './image-view/image-view.component';
     AdminMeetingComponent,
     SupportTicketsComponent,
     ImageUploadComponent,
-    ImageViewComponent
+    ImageViewComponent,
+    AdminChannelsContentsComponent,
+    EntranceContentsComponent,
+    MeetingContentsComponent,
+    OtherContentsComponent,
+    SupportContentsComponent
   ]
 })
 export class AdminModule { }
