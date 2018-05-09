@@ -7,14 +7,14 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-	      <link rel="stylesheet" href="./styles/style.css">
-        <link rel="stylesheet" href="./styles/stripe.css">
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/stripe.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">boilerplate documentation</a>
+            <a href="../" class="navbar-brand">boilerplate documentation</a>
             <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
@@ -708,72 +708,275 @@
 </nav>
                </div>
                <!-- START CONTENT -->
-               <div class="content getting-started">
+               <div class="content module">
                    <div class="content-data">
 
-<h1 id="poort80-internship-assignment">Poort80 internship assignment</h1>
-<p><a href="https://lloydst.github.io/p80-internship-angular/">docs</a></p>
-<p><img src="https://lloydst.github.io/p80-internship-angular/images/coverage-badge.svg" alt="Doc coverage" class="img-responsive"></p>
-<blockquote>
-<p>prerequisites</p>
-<ul>
-<li>node v ^8.10.0 (with matching npm)</li>
-<li>mongodb or a mlab account (see data base for more information)</li>
-</ul>
-</blockquote>
-<h2 id="contents">contents</h2>
-<ul>
-<li><a href="#git">git</a></li>
-<li><a href="#getting-started-">getting started</a></li>
-<li><a href="#styling">styling</a></li>
-<li><a href="#sources-">sources</a></li>
-<li><a href="#development">Development</a></li>
-<li><a href="#quick-component-gen-angular-cli-">quick component gen (angular cli)</a></li>
-<li><a href="#structure">structure</a></li>
-<li><a href="#database">database</a></li>
-<li><a href="#usefull-links">usefull links</a></li>
-<li><a href="#docs">docs</a></li>
-</ul>
-<h2 id="getting-started-">getting started:</h2>
-<p><code>git clone https://github.com/lloydst/p80-internship-angular.git .</code> (replace the &#39;.&#39; with a directory if you would want it in a new folder)</p>
-<h2 id="styling">styling</h2>
-<p>scss goes into (or gets imported into) styles.scss in the src folder</p>
-<h2 id="sources-">sources:</h2>
-<p>This project was started up with <a href="https://github.com/lloydst/mean-boilerplate">Mean-boilerplate</a> , which is heavely based on the angular-cli and express-gen for the front and backend respectively.</p>
-<h2 id="development">Development</h2>
-<p>run <code>npm run dev</code> for rebuilding on changes to any of the angular part of the website.
-and run <code>npm run server</code> (in a other window)so that node restarts the express server on changes
-run <code>npm run doc</code> to &quot;generate&quot; front end docs (only documents the angular app) since the back end can be found at ./api-docs</p>
-<h2 id="git">git</h2>
-<p>run <code>npm run git -- Message</code> OR <code>npm run git -- &quot;Message&quot;</code> to generate/update the docs folder before a push</p>
-<h2 id="quick-component-gen-angular-cli-">quick component gen (angular cli)</h2>
-<p>Run <code>ng generate component componentname</code> to generate a new component. You can also use <code>ng generate directive|pipe|service|class|guard|interface|enum|module</code>.</p>
-<h2 id="structure">structure</h2>
-<p>server contains all server related stuff.</p>
-<ul>
-<li>&quot;e2e&quot;  Test related stuff. (for angular only )</li>
-<li>&quot;src&quot; angular project.</li>
-<li>&quot;dist&quot; the build version of your angular app (compressed)</li>
-<li>&quot;docs&quot; documentation generated using type doc</li>
-<li>node</li>
-</ul>
-<h2 id="database">database</h2>
-<p>to connect to a database simple add a .env file in the root and type <code>MONGOURI = connectionstring</code> this can either be a local db or a external one like mlab</p>
-<h2 id="usefull-links">usefull links</h2>
-<p>dev: ${host}= localhost:3000
-prod: ${host}= example.com</p>
-<ul>
-<li>${host}/ auto reroutes to channel</li>
-<li>${host}/api-docs shows all possible api end points</li>
-<li>localhost:8080 is the angularapp documentation (see development )</li>
-<li>${host}/api/{collection}/{?:id} possible api end points see api documentaion for more info</li>
-</ul>
-<h2 id="docs">docs</h2>
-<p>docs can be found at <a href="https://lloydst.github.io/p80-internship-angular/">https://lloydst.github.io/p80-internship-angular/</a> though there is a big chance they are outdated to view the most recent you need to clone the project and run <code>npm run doc:watch</code> (after the npm install ofc) this will generate it in the docs folder and server it on <a href="http://localhost:8080">localhost:8080</a>.
-Or you use <code>npm run doc</code> and if the server is running (both npm start and npm run server) you can acces it at (local)host(:port)/docs</p>
 
 
+<ol class="breadcrumb">
+  <li>Modules</li>
+  <li>ComponentsModule</li>
+</ol>
 
+      <div class="text-center module-graph-container">
+          <div id="module-graph-svg">
+              <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: dependencies Pages: 1 -->
+<svg width="1393pt" height="211pt"
+ viewBox="0.00 0.00 1393.00 211.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 207)">
+<title>dependencies</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-207 1389,-207 1389,4 -4,4"/>
+<text text-anchor="start" x="671.5091" y="-42.4" font-family="sans-serif" font-weight="bold" font-size="14.00" fill="#000000">Legend</text>
+<polygon fill="#ffffb3" stroke="transparent" points="458.5,-10 458.5,-30 478.5,-30 478.5,-10 458.5,-10"/>
+<text text-anchor="start" x="482.129" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Declarations</text>
+<polygon fill="#8dd3c7" stroke="transparent" points="571.5,-10 571.5,-30 591.5,-30 591.5,-10 571.5,-10"/>
+<text text-anchor="start" x="595.2251" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Module</text>
+<polygon fill="#80b1d3" stroke="transparent" points="657.5,-10 657.5,-30 677.5,-30 677.5,-10 657.5,-10"/>
+<text text-anchor="start" x="681.2812" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Bootstrap</text>
+<polygon fill="#fdb462" stroke="transparent" points="754.5,-10 754.5,-30 774.5,-30 774.5,-10 754.5,-10"/>
+<text text-anchor="start" x="778.1732" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Providers</text>
+<polygon fill="#fb8072" stroke="transparent" points="850.5,-10 850.5,-30 870.5,-30 870.5,-10 850.5,-10"/>
+<text text-anchor="start" x="874.2258" y="-15.4" font-family="sans-serif" font-size="14.00" fill="#000000"> &#160;Exports</text>
+<g id="clust1" class="cluster">
+<title>cluster_ComponentsModule</title>
+<polygon fill="none" stroke="#000000" stroke-dasharray="1,5" points="8,-70 8,-195 1377,-195 1377,-70 8,-70"/>
+</g>
+<g id="clust2" class="cluster">
+<title>cluster_ComponentsModule_declarations</title>
+<polygon fill="none" stroke="#000000" points="16,-78 16,-130 1369,-130 1369,-78 16,-78"/>
+</g>
+<!-- ComponentsComponent -->
+<g id="node1" class="node">
+<title>ComponentsComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1361.1094,-122 1208.8906,-122 1208.8906,-86 1361.1094,-86 1361.1094,-122"/>
+<text text-anchor="middle" x="1285" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ComponentsComponent</text>
+</g>
+<!-- ComponentsModule -->
+<g id="node10" class="node">
+<title>ComponentsModule</title>
+<polygon fill="#8dd3c7" stroke="#000000" points="741.3272,-187 738.3272,-191 717.3272,-191 714.3272,-187 610.6728,-187 610.6728,-151 741.3272,-151 741.3272,-187"/>
+<text text-anchor="middle" x="676" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">ComponentsModule</text>
+</g>
+<!-- ComponentsComponent&#45;&gt;ComponentsModule -->
+<g id="edge1" class="edge">
+<title>ComponentsComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M1285,-122.0109C1285,-144.4852 1285,-180 1285,-180 1285,-180 751.1737,-180 751.1737,-180"/>
+<polygon fill="#000000" stroke="#000000" points="751.1737,-176.5001 741.1737,-180 751.1736,-183.5001 751.1737,-176.5001"/>
+</g>
+<!-- WebsiteLoopComponent -->
+<g id="node2" class="node">
+<title>WebsiteLoopComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1191.2548,-122 1034.7452,-122 1034.7452,-86 1191.2548,-86 1191.2548,-122"/>
+<text text-anchor="middle" x="1113" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">WebsiteLoopComponent</text>
+</g>
+<!-- WebsiteLoopComponent&#45;&gt;ComponentsModule -->
+<g id="edge2" class="edge">
+<title>WebsiteLoopComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M1113,-122.1289C1113,-142.5724 1113,-173 1113,-173 1113,-173 751.4233,-173 751.4233,-173"/>
+<polygon fill="#000000" stroke="#000000" points="751.4234,-169.5001 741.4233,-173 751.4233,-176.5001 751.4234,-169.5001"/>
+</g>
+<!-- MeetingComponent -->
+<g id="node3" class="node">
+<title>MeetingComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1016.9874,-122 889.0126,-122 889.0126,-86 1016.9874,-86 1016.9874,-122"/>
+<text text-anchor="middle" x="953" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">MeetingComponent</text>
+</g>
+<!-- MeetingComponent&#45;&gt;ComponentsModule -->
+<g id="edge3" class="edge">
+<title>MeetingComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M953,-122.2667C953,-140.5552 953,-166 953,-166 953,-166 751.2944,-166 751.2944,-166"/>
+<polygon fill="#000000" stroke="#000000" points="751.2944,-162.5001 741.2944,-166 751.2943,-169.5001 751.2944,-162.5001"/>
+</g>
+<!-- EventComponent -->
+<g id="node4" class="node">
+<title>EventComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="870.9902,-122 757.0098,-122 757.0098,-86 870.9902,-86 870.9902,-122"/>
+<text text-anchor="middle" x="814" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">EventComponent</text>
+</g>
+<!-- EventComponent&#45;&gt;ComponentsModule -->
+<g id="edge4" class="edge">
+<title>EventComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M814,-122.0091C814,-138.0494 814,-159 814,-159 814,-159 751.3628,-159 751.3628,-159"/>
+<polygon fill="#000000" stroke="#000000" points="751.3629,-155.5001 741.3628,-159 751.3628,-162.5001 751.3629,-155.5001"/>
+</g>
+<!-- SupportComponent -->
+<g id="node5" class="node">
+<title>SupportComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="738.6666,-122 613.3334,-122 613.3334,-86 738.6666,-86 738.6666,-122"/>
+<text text-anchor="middle" x="676" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">SupportComponent</text>
+</g>
+<!-- SupportComponent&#45;&gt;ComponentsModule -->
+<g id="edge5" class="edge">
+<title>SupportComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M676,-122.1061C676,-122.1061 676,-140.991 676,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="672.5001,-140.9909 676,-150.991 679.5001,-140.991 672.5001,-140.9909"/>
+</g>
+<!-- FinancialComponent -->
+<g id="node6" class="node">
+<title>FinancialComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="594.9313,-122 461.0687,-122 461.0687,-86 594.9313,-86 594.9313,-122"/>
+<text text-anchor="middle" x="528" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">FinancialComponent</text>
+</g>
+<!-- FinancialComponent&#45;&gt;ComponentsModule -->
+<g id="edge6" class="edge">
+<title>FinancialComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M528,-122.0091C528,-138.0494 528,-159 528,-159 528,-159 600.6542,-159 600.6542,-159"/>
+<polygon fill="#000000" stroke="#000000" points="600.6543,-162.5001 610.6542,-159 600.6542,-155.5001 600.6543,-162.5001"/>
+</g>
+<!-- BuildServersComponent -->
+<g id="node7" class="node">
+<title>BuildServersComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="443.4284,-122 288.5716,-122 288.5716,-86 443.4284,-86 443.4284,-122"/>
+<text text-anchor="middle" x="366" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">BuildServersComponent</text>
+</g>
+<!-- BuildServersComponent&#45;&gt;ComponentsModule -->
+<g id="edge7" class="edge">
+<title>BuildServersComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M366,-122.2667C366,-140.5552 366,-166 366,-166 366,-166 600.6358,-166 600.6358,-166"/>
+<polygon fill="#000000" stroke="#000000" points="600.6358,-169.5001 610.6358,-166 600.6357,-162.5001 600.6358,-169.5001"/>
+</g>
+<!-- WeatherComponent -->
+<g id="node8" class="node">
+<title>WeatherComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="270.2423,-122 141.7577,-122 141.7577,-86 270.2423,-86 270.2423,-122"/>
+<text text-anchor="middle" x="206" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">WeatherComponent</text>
+</g>
+<!-- WeatherComponent&#45;&gt;ComponentsModule -->
+<g id="edge8" class="edge">
+<title>WeatherComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M206,-122.1289C206,-142.5724 206,-173 206,-173 206,-173 600.6485,-173 600.6485,-173"/>
+<polygon fill="#000000" stroke="#000000" points="600.6485,-176.5001 610.6485,-173 600.6485,-169.5001 600.6485,-176.5001"/>
+</g>
+<!-- AllComponent -->
+<g id="node9" class="node">
+<title>AllComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="123.7204,-122 24.2796,-122 24.2796,-86 123.7204,-86 123.7204,-122"/>
+<text text-anchor="middle" x="74" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AllComponent</text>
+</g>
+<!-- AllComponent&#45;&gt;ComponentsModule -->
+<g id="edge9" class="edge">
+<title>AllComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M74,-122.0109C74,-144.4852 74,-180 74,-180 74,-180 600.7167,-180 600.7167,-180"/>
+<polygon fill="#000000" stroke="#000000" points="600.7168,-183.5001 610.7167,-180 600.7167,-176.5001 600.7168,-183.5001"/>
+</g>
+</g>
+</svg>
+
+          </div>
+          <i id="fullscreen" class="fa fa-expand module-graph-fullscreen-btn" aria-hidden="true"></i>
+          <div class="btn-group">
+              <button id="zoom-in" class="btn btn-default btn-sm">Zoom in</button>
+              <button id="reset" class="btn btn-default btn-sm">Reset</button>
+              <button id="zoom-out" class="btn btn-default btn-sm">Zoom out</button>
+          </div>
+      </div>
+      <script src="../js/libs/svg-pan-zoom.min.js"></script>
+      <script src="../js/svg-pan-zoom.controls.js"></script>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+
+
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/components/components.module.ts</code>
+        </p>
+
+
+        
+
+        <div class="container-fluid module">
+            <div class="row">
+                <div class="col-sm-3">
+                    <h3>Declarations<a href="https://angular.io/api/core/NgModule#declarations" target="_blank" title="Official documentation about module declarations"><span class="fa fa-info-circle"></span></a></h3>
+                    <ul class="list-group">
+                            <li class="list-group-item">
+                                <a href="../components/ComponentsComponent.html">ComponentsComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/WebsiteLoopComponent.html">WebsiteLoopComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/MeetingComponent.html">MeetingComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/EventComponent.html">EventComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/SupportComponent.html">SupportComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/FinancialComponent.html">FinancialComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/BuildServersComponent.html">BuildServersComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/WeatherComponent.html">WeatherComponent</a>
+                            </li>
+                            <li class="list-group-item">
+                                <a href="../components/AllComponent.html">AllComponent</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="tab-pane fade tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { NgModule } from &#x27;@angular/core&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+
+import { ComponentsRoutingModule } from &#x27;./components-routing.module&#x27;;
+import { ComponentsComponent } from &#x27;./components.component&#x27;;
+import { WebsiteLoopComponent } from &#x27;./website-loop/website-loop.component&#x27;;
+import { MeetingComponent } from &#x27;./meeting/meeting.component&#x27;;
+import { EventComponent } from &#x27;./event/event.component&#x27;;
+import { SupportComponent } from &#x27;./support/support.component&#x27;;
+import { FinancialComponent } from &#x27;./financial/financial.component&#x27;;
+import { BuildServersComponent } from &#x27;./build-servers/build-servers.component&#x27;;
+import { WeatherComponent } from &#x27;./weather/weather.component&#x27;;
+import { AllComponent } from &#x27;./all/all.component&#x27;;
+
+@NgModule({
+  imports: [
+    CommonModule,
+    ComponentsRoutingModule
+  ],
+  declarations: [
+    ComponentsComponent,
+    WebsiteLoopComponent,
+    MeetingComponent,
+    EventComponent,
+    SupportComponent,
+    FinancialComponent,
+    BuildServersComponent,
+    WeatherComponent,
+    AllComponent
+  ]
+})
+export class ComponentsModule { }
+</code></pre>
+    </div>
+</div>
 
 
 
@@ -800,29 +1003,29 @@ Or you use <code>npm run doc</code> and if the server is running (both npm start
            </div>
        </div>
 
-       <script src="./js/libs/bootstrap-native.js"></script>
+       <script src="../js/libs/bootstrap-native.js"></script>
 
-       <script src="./js/libs/es6-shim.min.js"></script>
-       <script src="./js/libs/EventDispatcher.js"></script>
-       <script src="./js/libs/promise.min.js"></script>
-       <script src="./js/libs/zepto.min.js"></script>
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
 
-       <script src="./js/compodoc.js"></script>
+       <script src="../js/compodoc.js"></script>
 
         <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
-            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_URL = 'ComponentsModule.html';
         </script>
 
-       <script src="./js/search/search.js"></script>
-       <script src="./js/search/lunr.min.js"></script>
-       <script src="./js/search/search-lunr.js"></script>
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
 
-       <script src="./js/tabs.js"></script>
-       <script src="./js/menu.js"></script>
-       <script src="./js/libs/prism.js"></script>
-       <script src="./js/sourceCode.js"></script>
-       <script src="./js/search/search_index.js"></script>
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/search/search_index.js"></script>
 
 
     </body>

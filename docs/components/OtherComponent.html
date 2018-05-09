@@ -7,14 +7,14 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
-	      <link rel="stylesheet" href="./styles/style.css">
-        <link rel="stylesheet" href="./styles/stripe.css">
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/stripe.css">
     </head>
     <body>
 
         <div class="navbar navbar-default navbar-fixed-top visible-xs">
-            <a href="./" class="navbar-brand">boilerplate documentation</a>
+            <a href="../" class="navbar-brand">boilerplate documentation</a>
             <button type="button" class="btn btn-default btn-menu fa fa-bars" id="btn-menu"></button>
         </div>
 
@@ -708,73 +708,243 @@
 </nav>
                </div>
                <!-- START CONTENT -->
-               <div class="content getting-started">
+               <div class="content component">
                    <div class="content-data">
 
-<h1 id="poort80-internship-assignment">Poort80 internship assignment</h1>
-<p><a href="https://lloydst.github.io/p80-internship-angular/">docs</a></p>
-<p><img src="https://lloydst.github.io/p80-internship-angular/images/coverage-badge.svg" alt="Doc coverage" class="img-responsive"></p>
-<blockquote>
-<p>prerequisites</p>
-<ul>
-<li>node v ^8.10.0 (with matching npm)</li>
-<li>mongodb or a mlab account (see data base for more information)</li>
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>OtherComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+    <li class="active">
+        <a href="#info" id="info-tab" role="tab" data-toggle="tab" data-link="info">Info</a>
+    </li>
+
+    <li>
+        <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+    </li>
+
+    <li>
+        <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+    </li>
+    <li>
+        <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+    </li>
 </ul>
-</blockquote>
-<h2 id="contents">contents</h2>
-<ul>
-<li><a href="#git">git</a></li>
-<li><a href="#getting-started-">getting started</a></li>
-<li><a href="#styling">styling</a></li>
-<li><a href="#sources-">sources</a></li>
-<li><a href="#development">Development</a></li>
-<li><a href="#quick-component-gen-angular-cli-">quick component gen (angular cli)</a></li>
-<li><a href="#structure">structure</a></li>
-<li><a href="#database">database</a></li>
-<li><a href="#usefull-links">usefull links</a></li>
-<li><a href="#docs">docs</a></li>
-</ul>
-<h2 id="getting-started-">getting started:</h2>
-<p><code>git clone https://github.com/lloydst/p80-internship-angular.git .</code> (replace the &#39;.&#39; with a directory if you would want it in a new folder)</p>
-<h2 id="styling">styling</h2>
-<p>scss goes into (or gets imported into) styles.scss in the src folder</p>
-<h2 id="sources-">sources:</h2>
-<p>This project was started up with <a href="https://github.com/lloydst/mean-boilerplate">Mean-boilerplate</a> , which is heavely based on the angular-cli and express-gen for the front and backend respectively.</p>
-<h2 id="development">Development</h2>
-<p>run <code>npm run dev</code> for rebuilding on changes to any of the angular part of the website.
-and run <code>npm run server</code> (in a other window)so that node restarts the express server on changes
-run <code>npm run doc</code> to &quot;generate&quot; front end docs (only documents the angular app) since the back end can be found at ./api-docs</p>
-<h2 id="git">git</h2>
-<p>run <code>npm run git -- Message</code> OR <code>npm run git -- &quot;Message&quot;</code> to generate/update the docs folder before a push</p>
-<h2 id="quick-component-gen-angular-cli-">quick component gen (angular cli)</h2>
-<p>Run <code>ng generate component componentname</code> to generate a new component. You can also use <code>ng generate directive|pipe|service|class|guard|interface|enum|module</code>.</p>
-<h2 id="structure">structure</h2>
-<p>server contains all server related stuff.</p>
-<ul>
-<li>&quot;e2e&quot;  Test related stuff. (for angular only )</li>
-<li>&quot;src&quot; angular project.</li>
-<li>&quot;dist&quot; the build version of your angular app (compressed)</li>
-<li>&quot;docs&quot; documentation generated using type doc</li>
-<li>node</li>
-</ul>
-<h2 id="database">database</h2>
-<p>to connect to a database simple add a .env file in the root and type <code>MONGOURI = connectionstring</code> this can either be a local db or a external one like mlab</p>
-<h2 id="usefull-links">usefull links</h2>
-<p>dev: ${host}= localhost:3000
-prod: ${host}= example.com</p>
-<ul>
-<li>${host}/ auto reroutes to channel</li>
-<li>${host}/api-docs shows all possible api end points</li>
-<li>localhost:8080 is the angularapp documentation (see development )</li>
-<li>${host}/api/{collection}/{?:id} possible api end points see api documentaion for more info</li>
-</ul>
-<h2 id="docs">docs</h2>
-<p>docs can be found at <a href="https://lloydst.github.io/p80-internship-angular/">https://lloydst.github.io/p80-internship-angular/</a> though there is a big chance they are outdated to view the most recent you need to clone the project and run <code>npm run doc:watch</code> (after the npm install ofc) this will generate it in the docs folder and server it on <a href="http://localhost:8080">localhost:8080</a>.
-Or you use <code>npm run doc</code> and if the server is running (both npm start and npm run server) you can acces it at (local)host(:port)/docs</p>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/channels/other/other.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
 
 
 
 
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-other</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>other.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./other.component.html</code></td>
+            </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor()</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/channels/other/other.component.ts:8</a></div>
+                            </td>
+                        </tr>
+
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+        <h3 id="methods">
+            Methods
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="ngOnInit"></a>
+                        <span class="name">
+                            <b>
+                            ngOnInit
+                            </b>
+                            <a href="#ngOnInit"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>ngOnInit()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/channels/other/other.component.ts:12</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+</div>
+
+
+    <div class="tab-pane fade tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+
+@Component({
+  selector: &#x27;app-other&#x27;,
+  templateUrl: &#x27;./other.component.html&#x27;,
+  styleUrls: [&#x27;./other.component.scss&#x27;]
+})
+export class OtherComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade" id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;p&gt;
+  other works! this one is a place holder
+&lt;/p&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade" id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><p>  other works! this one is a place holder</p></div>'
+    var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminMeetingComponent', 'selector': 'app-meeting'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EntranceComponent', 'selector': 'app-entrance'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'OtherComponent', 'selector': 'app-other'},{'name': 'SettingComponent', 'selector': 'app-setting'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'SupportTicketsComponent', 'selector': 'app-support-tickets'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'OtherComponent'};
+</script>
+<script src="../js/tree.js"></script>
 
 
 
@@ -800,29 +970,29 @@ Or you use <code>npm run doc</code> and if the server is running (both npm start
            </div>
        </div>
 
-       <script src="./js/libs/bootstrap-native.js"></script>
+       <script src="../js/libs/bootstrap-native.js"></script>
 
-       <script src="./js/libs/es6-shim.min.js"></script>
-       <script src="./js/libs/EventDispatcher.js"></script>
-       <script src="./js/libs/promise.min.js"></script>
-       <script src="./js/libs/zepto.min.js"></script>
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
 
-       <script src="./js/compodoc.js"></script>
+       <script src="../js/compodoc.js"></script>
 
         <script>
-            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
-            var COMPODOC_CURRENT_PAGE_URL = 'index.html';
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_URL = 'OtherComponent.html';
         </script>
 
-       <script src="./js/search/search.js"></script>
-       <script src="./js/search/lunr.min.js"></script>
-       <script src="./js/search/search-lunr.js"></script>
+       <script src="../js/search/search.js"></script>
+       <script src="../js/search/lunr.min.js"></script>
+       <script src="../js/search/search-lunr.js"></script>
 
-       <script src="./js/tabs.js"></script>
-       <script src="./js/menu.js"></script>
-       <script src="./js/libs/prism.js"></script>
-       <script src="./js/sourceCode.js"></script>
-       <script src="./js/search/search_index.js"></script>
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+       <script src="../js/search/search_index.js"></script>
 
 
     </body>
