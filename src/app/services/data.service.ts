@@ -104,5 +104,6 @@ export class DataService {
    */
   logOut(){
     return this.http.get('/api/authorize/signout')
+    
   }
 }

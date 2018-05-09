@@ -28,6 +28,7 @@ import { NewsService } from './services/news.service';
 import { WeatherService } from './services/weather.service';
 import { FileService } from './services/file.service';
 import { FileUploadModule } from 'ng2-file-upload';
+import { ComponentsModule } from './components/components.module';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { FileUploadModule } from 'ng2-file-upload';
     FormsModule, 
     AdminModule,
     ChannelsModule,
+    ComponentsModule,
     AppRoutingModule,
     FileUploadModule,
        

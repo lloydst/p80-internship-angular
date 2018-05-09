@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EntranceComponent } from './entrance.component';
+import { WebsiteLoopComponent } from './website-loop.component';
 
-describe('EntranceComponent', () => {
-  let component: EntranceComponent;
-  let fixture: ComponentFixture<EntranceComponent>;
+describe('WebsiteLoopComponent', () => {
+  let component: WebsiteLoopComponent;
+  let fixture: ComponentFixture<WebsiteLoopComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EntranceComponent ]
+      declarations: [ WebsiteLoopComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EntranceComponent);
+    fixture = TestBed.createComponent(WebsiteLoopComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -64,7 +64,7 @@ router.get('/signout', function(req, res, next) {
   authHelper.clearCookies(res);
 
   // Redirect to home
-  res.redirect('/');
+  res.redirect(200,'/channels/meeting');
 });
 
 module.exports = router;

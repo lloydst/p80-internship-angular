@@ -1,20 +1,3 @@
-<!-- auto version -->
-
-    <app-event></app-event>
-  <div *ngIf="time"> <!-- *ngIf="time" while between 4-6 pm--> 
-    <ngui-map zoom="12" center="Amsterdam ijburg, Netherlands">
-      <traffic-layer></traffic-layer>
-    </ngui-map>
-    <div class="ticker-wrap"> <!-- news cnn like banner aka ticket tape-->
-        <div class="ticker" >
-          <div class="ticker__item" *ngFor="let last of news">{{last.title}}</div>
-        </div>
-    </div>
-    <app-weather></app-weather> <!-- weather component-->
-  </div>
-  
-     <!-- event component display's both events and messages -->
-  
-    <!-- used for "loop" -->
-  <span id="urls" hidden="true" *ngFor="let c of websites">{{c.url}}</span>
-
+<p>
+  will now get pages to display from db
+</p>
