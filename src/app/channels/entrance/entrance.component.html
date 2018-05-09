@@ -1,3 +1,4 @@
-<p>
-  will now get pages to display from db
-</p>
+should get src from db
+<div *ngFor="let obj of testArray">
+    <iframe [src]="sanitizer.bypassSecurityTrustResourceUrl('/components/'+obj.url)" scrolling="no" ></iframe>
+</div>
