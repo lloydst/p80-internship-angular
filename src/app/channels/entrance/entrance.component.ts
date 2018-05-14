@@ -1,6 +1,8 @@
 import { Component, OnInit} from '@angular/core';
 
-
+/**
+ * entrance component
+ */
 @Component({
   selector: 'app-entrance',
   templateUrl: './entrance.component.html',
@@ -10,10 +12,14 @@ import { Component, OnInit} from '@angular/core';
 
 export class EntranceComponent implements OnInit  {
   
-
+/**
+ * constructor
+ */
 constructor(){}
   
-
+/**
+ * on load
+ */
   ngOnInit() {
     
   }

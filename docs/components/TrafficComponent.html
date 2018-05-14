@@ -764,7 +764,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>MeetingComponent</li>
+  <li>TrafficComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -789,14 +789,14 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/channels/meeting/meeting.component.ts</code>
+    <code>src/app/components/traffic/traffic.component.ts</code>
 </p>
 
     <p class="comment">
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>meeting &quot;channel&quot;</p>
+        <p>traffic component</p>
 
     </p>
 
@@ -826,19 +826,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-meeting</code></td>
+                <td class="col-md-9"><code>app-traffic</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>meeting.component.scss</code></td>
+                <td class="col-md-9"><code>traffic.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./meeting.component.html</code></td>
+                <td class="col-md-9"><code>./traffic.component.html</code></td>
             </tr>
 
 
@@ -885,7 +885,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/channels/meeting/meeting.component.ts:11</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/traffic/traffic.component.ts:11</a></div>
                             </td>
                         </tr>
 
@@ -930,13 +930,13 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/channels/meeting/meeting.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/components/traffic/traffic.component.ts:19</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>on load</p>
+                            <div class="io-description"><p>on init</p>
 </div>
 
                             <div class="io-description">
@@ -957,20 +957,20 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
 
 /**
- * meeting &quot;channel&quot;
+ * traffic component
  */
 @Component({
-  selector: &#x27;app-meeting&#x27;,
-  templateUrl: &#x27;./meeting.component.html&#x27;,
-  styleUrls: [&#x27;./meeting.component.scss&#x27;]
+  selector: &#x27;app-traffic&#x27;,
+  templateUrl: &#x27;./traffic.component.html&#x27;,
+  styleUrls: [&#x27;./traffic.component.scss&#x27;]
 })
-export class MeetingComponent implements OnInit {
+export class TrafficComponent implements OnInit {
 /**
  * constructor
  */
   constructor() { }
 /**
- * on load
+ * on init
  */
   ngOnInit() {
   }
@@ -980,9 +980,10 @@ export class MeetingComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade" id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;p&gt;
-  i should open a window and start looping based on urls
-&lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">&lt;!-- *ngIf&#x3D;&quot;time&quot; while between 4-6 pm--&gt; 
+  &lt;ngui-map zoom&#x3D;&quot;12&quot; center&#x3D;&quot;Amsterdam ijburg, Netherlands&quot;&gt;
+    &lt;traffic-layer&gt;&lt;/traffic-layer&gt;
+  &lt;/ngui-map&gt;
 </code></pre>
     </div>
 
@@ -1009,10 +1010,10 @@ export class MeetingComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><p>  i should open a window and start looping based on urls</p></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- *ngIf="time" while between 4-6 pm-->   <ngui-map zoom="12" center="Amsterdam ijburg, Netherlands">    <traffic-layer></traffic-layer>  </ngui-map></div>'
     var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminChannelsContentsComponent', 'selector': 'app-admin-channels-contents'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminMeetingComponent', 'selector': 'app-meeting'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'CustomComponent', 'selector': 'app-custom'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EntranceComponent', 'selector': 'app-entrance'},{'name': 'EntranceContentsComponent', 'selector': 'app-entrance-contents'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'MeetingContentsComponent', 'selector': 'app-meeting-contents'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'OtherComponent', 'selector': 'app-other'},{'name': 'OtherContentsComponent', 'selector': 'app-other-contents'},{'name': 'SettingComponent', 'selector': 'app-setting'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'SupportContentsComponent', 'selector': 'app-support-contents'},{'name': 'SupportTicketsComponent', 'selector': 'app-support-tickets'},{'name': 'TrafficComponent', 'selector': 'app-traffic'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'MeetingComponent-1'};
+    var ACTUAL_COMPONENT = {'name': 'TrafficComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -1051,7 +1052,7 @@ export class MeetingComponent implements OnInit {
 
         <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_URL = 'MeetingComponent-1.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'TrafficComponent.html';
         </script>
 
        <script src="../js/search/search.js"></script>

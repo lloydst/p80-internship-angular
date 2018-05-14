@@ -1,26 +1,65 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+/**
+ * displays one or more components based on properties
+ */
 @Component({
   selector: 'app-custom',
   templateUrl: './custom.component.html',
   styleUrls: ['./custom.component.scss']
 })
 export class CustomComponent implements OnInit {
+  /**
+   * displays the servers components based on url
+   */
   servers: boolean = false
+  /**
+   * displays the servers components based on url
+   */
   event: boolean = false
+  /**
+   * displays the servers components based on url
+   */
   financial: boolean = false
+  /**
+   * displays the servers components based on url
+   */
   meeting: boolean = false
+  /**
+   * displays the servers components based on url
+   */
   support: boolean = false
+  /**
+   * displays the servers components based on url
+   */
   weather: boolean = false
+  /**
+   * displays the servers components based on url
+   */
   loop: boolean = false
+  /**
+   * displays the servers components based on url
+   */
   news: boolean = false
+  /**
+   * displays the servers components based on url
+   */
   traffic: boolean = false
+  /**
+   * loads the angular router
+   * @param route checks the route
+   * @returns host/x
+   */
   constructor(private route: Router) { }
-
+  /**
+   * on load
+   */
   ngOnInit( ) {
     this.visability()
   }
+  /**
+   * sets a component to true if the urlArrayItem matches a string
+   */
   visability() {
     let urlArray 
     urlArray = this.route.url
@@ -71,8 +110,7 @@ export class CustomComponent implements OnInit {
            //statements; 
            break; 
         } 
-     } 
-      
+      } 
     }
   }
 }

@@ -9,6 +9,9 @@ import { WeatherService } from '../../services/weather.service';
   styleUrls: ['./weather.component.scss']
 })
 export class WeatherComponent implements OnInit {
+  /**
+   * would other wise complain about 0 not being defined
+   */
 0;
 /**
    * for binding
