@@ -1,3 +1,34 @@
-<p>
-  meeting works!
-</p>
+<div *ngIf="loginStatus?.signInUrl"> 
+      <div >
+        <p>temp displays last recieved emails since my calendar is usually empty </p>
+        <p>usefull for knowing what paths to use: https://developer.microsoft.com/en-us/graph/graph-explorer</p>
+      </div>
+    </div>
+    
+    <div *ngIf="!loginStatus?.signInUrl"> <!-- signinurl is only there when a user isn't logged in-->
+      this block displays all events that are upcomming in the next week (from today 0:00)
+      <div *ngFor="let m of meeting">
+        <div *ngFor="let e of m.events"> <!-- e is another array it has to move through-->
+          <p>
+            event starts at:
+            {{e.start.dateTime | date:'long'}}
+          </p>
+          <p>
+            event ends at:
+            {{e.end.dateTime| date:'long'}}
+          </p>
+          <p >
+            attendees are:
+            {{e.attendees[0].emailAddress.name}}
+          </p>
+          <p>
+            it is about:
+            {{e.subject}}
+          </p>
+        </div>
+        <div *ngIf="m.events <= 1"> <!-- when logged in but no meetings-->
+          derp no events/ meetings today
+        </div>
+      </div>
+      <button (click)="logOut()">logout</button>
+    </div>

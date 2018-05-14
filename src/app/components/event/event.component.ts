@@ -15,7 +15,7 @@ export class EventComponent implements OnInit {
   /**
    * for binding
    */
-messages: any
+  messages
   /**
    * for binding
    */

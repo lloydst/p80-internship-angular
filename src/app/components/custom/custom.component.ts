@@ -14,6 +14,8 @@ export class CustomComponent implements OnInit {
   support: boolean = false
   weather: boolean = false
   loop: boolean = false
+  news: boolean = false
+  traffic: boolean = false
   constructor(private route: Router) { }
 
   ngOnInit( ) {
@@ -28,7 +30,6 @@ export class CustomComponent implements OnInit {
     urlArray = urlArray[3].split("-")
     for(let i = 0; i<urlArray.length; i++){
       const urlArrayItem = urlArray[i].toString()
-      console.log(urlArrayItem)
       switch(urlArrayItem) { 
         case 'meeting': { 
           this.meeting = true
@@ -57,15 +58,21 @@ export class CustomComponent implements OnInit {
         case 'loop': { 
           this.loop = true
           break; 
-        } 
+        }
+        case 'news': { 
+          this.news = true
+          break; 
+        }
+        case 'traffic': { 
+          this.traffic = true
+          break; 
+        }
         default: { 
            //statements; 
            break; 
         } 
      } 
-      /*if(urlArray[i]){
-        this.meeting = true
-      } */
+      
     }
   }
 }

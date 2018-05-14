@@ -12,11 +12,16 @@ import { BuildServersComponent } from './build-servers/build-servers.component';
 import { WeatherComponent } from './weather/weather.component';
 import { AllComponent } from './all/all.component';
 import { CustomComponent } from './custom/custom.component';
-
+import { NewsComponent } from './news/news.component';
+import { TrafficComponent } from './traffic/traffic.component';
+import { NguiMapModule } from '@ngui/map';
 @NgModule({
   imports: [
     CommonModule,
-    ComponentsRoutingModule
+    ComponentsRoutingModule,
+    NguiMapModule.forRoot(
+      {apiUrl: 'https://maps.google.com/maps/api/js?key=AIzaSyDB68aJIk7wVjjPvGa7nON_ngvlnRmoG98'}
+    )
   ],
   declarations: [
     ComponentsComponent,
@@ -28,7 +33,9 @@ import { CustomComponent } from './custom/custom.component';
     BuildServersComponent,
     WeatherComponent,
     AllComponent,
-    CustomComponent
+    CustomComponent,
+    NewsComponent,
+    TrafficComponent
   ]
 })
 export class ComponentsModule { }

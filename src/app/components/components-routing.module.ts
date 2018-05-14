@@ -10,6 +10,8 @@ import { WeatherComponent } from './weather/weather.component';
 import { EventComponent } from './event/event.component';
 import { AllComponent } from './all/all.component';
 import { CustomComponent } from './custom/custom.component';
+import { TrafficComponent } from './traffic/traffic.component';
+import { NewsComponent } from './news/news.component';
 
 const routes: Routes = [
   {path:'components', component: ComponentsComponent, children: [
@@ -39,6 +41,12 @@ const routes: Routes = [
     },
     {
       path: 'custom/:componentList', component: CustomComponent
+    },
+    {
+      path: 'traffic', component: TrafficComponent
+    },
+    {
+      path: 'news', component: NewsComponent
     }
   ]}
 ];
