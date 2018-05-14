@@ -9,6 +9,7 @@ import { WebsiteLoopComponent } from './website-loop/website-loop.component';
 import { WeatherComponent } from './weather/weather.component';
 import { EventComponent } from './event/event.component';
 import { AllComponent } from './all/all.component';
+import { CustomComponent } from './custom/custom.component';
 
 const routes: Routes = [
   {path:'components', component: ComponentsComponent, children: [
@@ -35,6 +36,9 @@ const routes: Routes = [
     },
     {
       path: 'all', component: AllComponent
+    },
+    {
+      path: 'custom/:componentList', component: CustomComponent
     }
   ]}
 ];

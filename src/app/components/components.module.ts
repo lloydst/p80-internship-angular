@@ -11,6 +11,7 @@ import { FinancialComponent } from './financial/financial.component';
 import { BuildServersComponent } from './build-servers/build-servers.component';
 import { WeatherComponent } from './weather/weather.component';
 import { AllComponent } from './all/all.component';
+import { CustomComponent } from './custom/custom.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { AllComponent } from './all/all.component';
     FinancialComponent,
     BuildServersComponent,
     WeatherComponent,
-    AllComponent
+    AllComponent,
+    CustomComponent
   ]
 })
 export class ComponentsModule { }
