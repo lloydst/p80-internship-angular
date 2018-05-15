@@ -106,4 +106,13 @@ export class DataService {
     return this.http.get('/api/authorize/signout')
     
   }
+  getChannelContent() {
+    return this.http.get('/api/content')
+  }
+  saveContent(obj) {
+    return this.http.put('/api/content', obj)
+  }
+  getChannel(channel) {
+    return this.http.get('api/content/'+ channel)
+  }
 }

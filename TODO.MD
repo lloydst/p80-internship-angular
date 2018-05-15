@@ -1,5 +1,5 @@
 <h1>TODO</h1>
-<!-- this file is a combination of html and md syntax due to -[ ] not working as a checkbox-->
+<!-- this file is a combination of html and md syntax due to -[ ] not working as a checkbox thats a github thing-->
  - styling
     - <input type="checkbox" disabled>client -very basics
     - <input type="checkbox" disabled>admin  -very basics

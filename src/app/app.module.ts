@@ -8,7 +8,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { NguiMapModule} from '@ngui/map';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /**
  * components
@@ -45,7 +45,7 @@ import { ComponentsModule } from './components/components.module';
     ComponentsModule,
     AppRoutingModule,
     FileUploadModule,
-       
+    ReactiveFormsModule,
     ],
   providers: [
     DataService,
