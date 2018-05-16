@@ -27,9 +27,6 @@ export class OtherContentsComponent implements OnInit {
  * on load
  */
   ngOnInit() {
-    this.data.getChannel('other').subscribe(res=> {
-      this.channel = res
-    })
     this.getcontents()
     // we will initialize our form here
     this.form = this.fb.group({
@@ -42,9 +39,9 @@ export class OtherContentsComponent implements OnInit {
     }
     
 getcontents() {
-  this.data.getChannelContent().subscribe(
-    res => {this.contents = res})
-
+  this.data.getChannel('other').subscribe(res=> {
+    this.channel = res
+  })
 }
 initPath() {
         // initialize our address

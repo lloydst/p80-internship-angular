@@ -27,6 +27,13 @@
                     <input type="text" formControlName="description">
                   </div>
                   <div>
+                      <label>delay:</label>
+                      <input type="number" formControlName="delay">
+                      <small>
+                          1000 = 1 second, so 1 minute = 60000 etc.
+                      </small>
+                    </div>
+                  <div>
                         <label>component name:</label>
                         <input type="text" formControlName="componentName">
                       </div>
@@ -43,16 +50,7 @@
             </div>
         <div class="margin-20">
           <button type="submit" [disabled]="!form.valid">Submit</button>
+          <small *ngIf="message">{{message}}</small>
         </div>
-        
-        
     </form>
-    <div *ngFor="let c of channel">
-        channel: {{c.channel}} <br>
-        <div *ngFor="let item of c.path">
-          url: {{item.pathurl}} 
-          <p>description: {{item.description}}</p>
-          component name: {{item.componentName}}<br>
-        </div>
-      </div>
 </div>

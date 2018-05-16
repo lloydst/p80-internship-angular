@@ -1,11 +1,12 @@
 
 export interface Channel {
     channel: string; // required field with minimum 5 characters
-    path: Paths[]; // user can have one or more addresses
+    path: Paths[]; 
 }
 
 export interface Paths {
     pathurl: string;  // required field
     description: string;
-    componentName
+    componentName: string;
+    delay: number
 }

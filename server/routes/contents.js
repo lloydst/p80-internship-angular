@@ -23,8 +23,12 @@ router.get('/:channel',function(req,res){
 router.put('/',function(req,res){
     // checks if channel already exists
     check()
+    setTimeout(() => {
+        updateCreateGet()
+    }, 100);
     function check() {
         // check if "channel exists"
+        
         Content.find({channel: req.body.channel}, function(err,res){
             if (err){
                 console.log(err)
@@ -36,22 +40,24 @@ router.put('/',function(req,res){
         })
     }
     // if it exists it will update
-    if(exists){
-        Content.findOneAndUpdate({channel: req.body.channel}, req.body , function(err,doc){
-            if (err) {
-                console.log(err)
-            }
-            res.json({ message: 'channel updated' });
-        })
-        // if it doesn't it wil create
-    } else if(!exists){
-        Content.create(req.body, function(err,doc){
-            console.log(req.body + 'i am called in create')
-            if (err){
-                res.send(err)
-            }
-            res.json({ message: 'channel created' });
-        })
+    function updateCreateGet() {
+        if(exists){
+            Content.findOneAndUpdate({channel: req.body.channel}, req.body , function(err,doc){
+                if (err) {
+                    console.log(err)
+                }
+                res.json({ message: 'channel updated' });
+            })
+            // if it doesn't it wil create
+        } else if(!exists){
+            Content.create(req.body, function(err,doc){
+                console.log(req.body + 'i am called in create')
+                if (err){
+                    res.send(err)
+                }
+                res.json({ message: 'channel created' });
+            })
+        }
     }
     
 })

@@ -11,7 +11,8 @@ var ContentSchema = new Schema({
         type: Object,
         pathUrl: String,
         description: String,
-        componentName: String
+        componentName: String,
+        delay: Number
       }
     }
 });
