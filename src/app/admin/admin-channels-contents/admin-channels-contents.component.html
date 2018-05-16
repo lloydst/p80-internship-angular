@@ -1,8 +1,7 @@
-<div class="main nav">
-  <a routerLinkActive="active" routerLink="entrance">entrance Channel</a>
-  <a routerLinkActive="active" routerLink="meeting">meeting Channel</a>
-  <a routerLinkActive="active" routerLink="support">support Channel</a>
-  <a routerLinkActive="active" routerLink="other">other Channels</a>
+<div class="main nav" >
+  <a routerLinkActive="active" routerLink="new">new Channel</a>
+  <a *ngFor="let c of channel" routerLinkActive="active" (click)="redirectTo(c.channel)">{{c.channel}} Channel</a>
 </div>
+<!-- if on admin/contents display current Channels-->
 <router-outlet></router-outlet>
 <!-- just the template-->

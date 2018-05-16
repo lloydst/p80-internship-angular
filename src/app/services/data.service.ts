@@ -106,12 +106,21 @@ export class DataService {
     return this.http.get('/api/authorize/signout')
     
   }
+  /**
+   * gets all channels
+   */
   getChannelContent() {
     return this.http.get('/api/content')
   }
+  /**
+   * saves/ updates the object
+   */
   saveContent(obj) {
     return this.http.put('/api/content', obj)
   }
+  /**
+   * gets a single channel
+   */
   getChannel(channel) {
     return this.http.get('api/content/'+ channel)
   }

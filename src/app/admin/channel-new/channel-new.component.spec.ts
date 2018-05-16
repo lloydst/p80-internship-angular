@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OtherContentsComponent } from './other-contents.component';
+import { ChannelNewComponent } from './channel-new.component';
 
-describe('OtherContentsComponent', () => {
-  let component: OtherContentsComponent;
-  let fixture: ComponentFixture<OtherContentsComponent>;
+describe('ChannelNewComponent', () => {
+  let component: ChannelNewComponent;
+  let fixture: ComponentFixture<ChannelNewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OtherContentsComponent ]
+      declarations: [ ChannelNewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OtherContentsComponent);
+    fixture = TestBed.createComponent(ChannelNewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

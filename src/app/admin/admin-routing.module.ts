@@ -13,10 +13,9 @@ import { AdminMeetingComponent } from './channels/meeting/meeting.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { ImageViewComponent } from './image-view/image-view.component';
 import { AdminChannelsContentsComponent } from './admin-channels-contents/admin-channels-contents.component';
-import { EntranceContentsComponent } from './entrance-contents/entrance-contents.component';
-import { MeetingContentsComponent } from './meeting-contents/meeting-contents.component';
-import { OtherContentsComponent } from './other-contents/other-contents.component';
 import { SupportContentsComponent } from './support-contents/support-contents.component';
+import { ChannelNewComponent } from './channel-new/channel-new.component';
+import { ChannelContentComponent } from './channel-content/channel-content.component';
 
 /**
  * defining routes
@@ -47,10 +46,8 @@ const routes = [
       component: AdminChannelsContentsComponent,
       children: [
         // these need to become content specific
-        {path: 'entrance', component: EntranceContentsComponent},
-        {path: 'meeting', component: MeetingContentsComponent},
-        {path: 'other', component: OtherContentsComponent},
-        {path: 'support', component: SupportContentsComponent}
+        {path: 'new', component: ChannelNewComponent},
+        {path: ':channel', component: ChannelContentComponent}
       ]
     },
     {

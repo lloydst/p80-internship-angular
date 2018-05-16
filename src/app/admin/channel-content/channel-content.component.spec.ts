@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { EntranceComponent } from './entrance.component';
+import { ChannelContentComponent } from './channel-content.component';
 
-describe('EntranceComponent', () => {
-  let component: EntranceComponent;
-  let fixture: ComponentFixture<EntranceComponent>;
+describe('ChannelContentComponent', () => {
+  let component: ChannelContentComponent;
+  let fixture: ComponentFixture<ChannelContentComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EntranceComponent ]
+      declarations: [ ChannelContentComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(EntranceComponent);
+    fixture = TestBed.createComponent(ChannelContentComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -837,7 +837,7 @@
 
 <ol class="breadcrumb">
   <li>Components</li>
-  <li>MeetingComponent</li>
+  <li>ChannelContentComponent</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -862,14 +862,14 @@
     <h3>File</h3>
 </p>
 <p class="comment">
-    <code>src/app/components/meeting/meeting.component.ts</code>
+    <code>src/app/admin/channel-content/channel-content.component.ts</code>
 </p>
 
     <p class="comment">
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>meeting component</p>
+        <p>admin entrance contents components</p>
 
     </p>
 
@@ -899,19 +899,19 @@
 
             <tr>
                 <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-meeting</code></td>
+                <td class="col-md-9"><code>app-channel-content</code></td>
             </tr>
 
             <tr>
                 <td class="col-md-3">styleUrls</td>
-                <td class="col-md-9"><code>meeting.component.scss</code></td>
+                <td class="col-md-9"><code>channel-content.component.scss</code></td>
             </tr>
 
 
 
             <tr>
                 <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./meeting.component.html</code></td>
+                <td class="col-md-9"><code>./channel-content.component.html</code></td>
             </tr>
 
 
@@ -932,10 +932,16 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#loginStatus">loginStatus</a>
+                                <a href="#channel">channel</a>
                             </li>
                             <li>
-                                <a href="#meeting">meeting</a>
+                                <a href="#currentChannel">currentChannel</a>
+                            </li>
+                            <li>
+                                <a href="#form">form</a>
+                            </li>
+                            <li>
+                                <a href="#preloadPath">preloadPath</a>
                             </li>
                         </ul>
                     </td>
@@ -950,13 +956,31 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#ifNotLoggedIn">ifNotLoggedIn</a>
+                                <a href="#addPath">addPath</a>
                             </li>
                             <li>
-                                <a href="#logOut">logOut</a>
+                                <a href="#getCurrentChannel">getCurrentChannel</a>
+                            </li>
+                            <li>
+                                <a href="#initPath">initPath</a>
+                            </li>
+                            <li>
+                                <a href="#initSection">initSection</a>
                             </li>
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#preaddPath">preaddPath</a>
+                            </li>
+                            <li>
+                                <a href="#reloadData">reloadData</a>
+                            </li>
+                            <li>
+                                <a href="#removePath">removePath</a>
+                            </li>
+                            <li>
+                                <a href="#save">save</a>
                             </li>
                         </ul>
                     </td>
@@ -976,12 +1000,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(data: <a href="../injectables/DataService.html">DataService</a>, http: <a href="https://angular.io/api/common/http/HttpClient" target="_blank">HttpClient</a>)</code>
+<code>constructor(fb: <a href="https://angular.io/api/forms/FormBuilder" target="_blank">FormBuilder</a>, data: <a href="../injectables/DataService.html">DataService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/meeting/meeting.component.ts:22</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/admin/channel-content/channel-content.component.ts:31</a></div>
                             </td>
                         </tr>
 
@@ -997,9 +1021,26 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                                <tr>
+                                                    <td>fb</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="https://angular.io/api/forms/FormBuilder" target="_blank" >FormBuilder</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>formBuilder</p>
+</code>
+                                                        </td>
+                                                </tr>
                                                 <tr>
                                                     <td>data</td>
                                                   
@@ -1011,18 +1052,26 @@
                                                             no
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>dataService</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>http</td>
+                                                    <td>router</td>
                                                   
                                                         <td>
-                                                                    <code><a href="https://angular.io/api/common/http/HttpClient" target="_blank" >HttpClient</a></code>
+                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
                                                         </td>
                                                   
                                                     <td>
                                                             no
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>router</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -1046,31 +1095,31 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="ifNotLoggedIn"></a>
+                        <a name="addPath"></a>
                         <span class="name">
                             <b>
-                            ifNotLoggedIn
+                            addPath
                             </b>
-                            <a href="#ifNotLoggedIn"><span class="fa fa-link"></span></a>
+                            <a href="#addPath"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>ifNotLoggedIn()</code>
+<code>addPath()</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/components/meeting/meeting.component.ts:45</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">src/app/admin/channel-content/channel-content.component.ts:121</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>if the signInUrl is there it means no one is logged in so a window gets opened to login</p>
+                            <div class="io-description"><p>selects the path control</p>
 </div>
 
                             <div class="io-description">
@@ -1085,37 +1134,147 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="logOut"></a>
+                        <a name="getCurrentChannel"></a>
                         <span class="name">
                             <b>
-                            logOut
+                            getCurrentChannel
                             </b>
-                            <a href="#logOut"><span class="fa fa-link"></span></a>
+                            <a href="#getCurrentChannel"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-<code>logOut()</code>
+<code>getCurrentChannel()</code>
                     </td>
                 </tr>
 
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/components/meeting/meeting.component.ts:56</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/admin/channel-content/channel-content.component.ts:48</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>logout of graph with the use of a button</p>
+                            <div class="io-description"><p>gets the current url out of the router</p>
 </div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                             </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="initPath"></a>
+                        <span class="name">
+                            <b>
+                            initPath
+                            </b>
+                            <a href="#initPath"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>initPath()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="109" class="link-to-prism">src/app/admin/channel-content/channel-content.component.ts:109</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>adds a blanc path</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="initSection"></a>
+                        <span class="name">
+                            <b>
+                            initSection
+                            </b>
+                            <a href="#initSection"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>initSection(path: )</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="69" class="link-to-prism">src/app/admin/channel-content/channel-content.component.ts:69</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>adds a &#39;path&#39;</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>path</td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>used for preloading data as well as adding/removing paths</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
                     </td>
                 </tr>
             </tbody>
@@ -1142,19 +1301,279 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/components/meeting/meeting.component.ts:33</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/app/admin/channel-content/channel-content.component.ts:89</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>on load</p>
+                            <div class="io-description"><p>on init</p>
 </div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                             </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="preaddPath"></a>
+                        <span class="name">
+                            <b>
+                            preaddPath
+                            </b>
+                            <a href="#preaddPath"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>preaddPath(path: )</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="102" class="link-to-prism">src/app/admin/channel-content/channel-content.component.ts:102</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>will preload the form with data from service</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>path</td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>a single &#39;path&#39; returned by the service</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="reloadData"></a>
+                        <span class="name">
+                            <b>
+                            reloadData
+                            </b>
+                            <a href="#reloadData"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>reloadData()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/admin/channel-content/channel-content.component.ts:55</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>gets the channel settings from db and preloads the form for easy editing</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="removePath"></a>
+                        <span class="name">
+                            <b>
+                            removePath
+                            </b>
+                            <a href="#removePath"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>removePath(i: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="130" class="link-to-prism">src/app/admin/channel-content/channel-content.component.ts:130</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>removes a path</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>i</td>
+                                                        <td>
+                                                                    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>index</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="save"></a>
+                        <span class="name">
+                            <b>
+                            save
+                            </b>
+                            <a href="#save"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>save(model: <a href="../interfaces/Channel.html">Channel</a>)</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="139" class="link-to-prism">src/app/admin/channel-content/channel-content.component.ts:139</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>saves the contents of the form</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>model</td>
+                                                        <td>
+                                                                    <code><a href="../interfaces/Channel.html" target="_self" >Channel</a></code>
+                                                        </td>
+                                                    
+                                                    <td>
+                                                            no
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>uses the model to add it in the right shape</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code>{ message: string; }</code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
                     </td>
                 </tr>
             </tbody>
@@ -1170,30 +1589,30 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="loginStatus"></a>
+                        <a name="channel"></a>
                         <span class="name">
                             <b>
-                            loginStatus
+                            channel
                             </b>
-                            <a href="#loginStatus"><span class="fa fa-link"></span></a>
+                            <a href="#channel"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>loginStatus:     <code></code>
+                        <code>channel:     <code></code>
 </code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/meeting/meeting.component.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/admin/channel-content/channel-content.component.ts:23</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>for binding</p>
+                        <div class="io-description"><p>channel data</p>
 </div>
                     </td>
                 </tr>
@@ -1204,41 +1623,104 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="meeting"></a>
+                        <a name="currentChannel"></a>
                         <span class="name">
                             <b>
-                            meeting
+                            currentChannel
                             </b>
-                            <a href="#meeting"><span class="fa fa-link"></span></a>
+                            <a href="#currentChannel"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>meeting:     <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                        <code>currentChannel:     <code></code>
 </code>
                     </td>
                 </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>[]</code>
-                        </td>
-                    </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/meeting/meeting.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/admin/channel-content/channel-content.component.ts:19</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>for binding</p>
+                        <div class="io-description"><p>current channel</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="form"></a>
+                        <span class="name">
+                            <b>
+                            form
+                            </b>
+                            <a href="#form"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>form:     <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code><a href="https://angular.io/api/forms/FormGroup" target="_blank" >FormGroup</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/admin/channel-content/channel-content.component.ts:31</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>form</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="preloadPath"></a>
+                        <span class="name">
+                            <b>
+                            preloadPath
+                            </b>
+                            <a href="#preloadPath"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>preloadPath:     <code></code>
+</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/admin/channel-content/channel-content.component.ts:27</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>pathdata</p>
 </div>
                     </td>
                 </tr>
@@ -1251,102 +1733,210 @@
 
 
     <div class="tab-pane fade tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit, Inject,Input } from &#x27;@angular/core&#x27;;
+import { FormBuilder, FormGroup, Validators,FormArray, FormControl } from &#x27;@angular/forms&#x27;;
+import {Channel, Paths} from &#x27;../../models/channel.interface&#x27;
 import { DataService } from &#x27;../../services/data.service&#x27;;
-import { HttpClient } from &#x27;@angular/common/http&#x27;;
+import { Router } from &#x27;@angular/router&#x27;;
 
 /**
- * meeting component
+ * admin entrance contents components
  */
 @Component({
-  selector: &#x27;app-meeting&#x27;,
-  templateUrl: &#x27;./meeting.component.html&#x27;,
-  styleUrls: [&#x27;./meeting.component.scss&#x27;]
+  selector: &#x27;app-channel-content&#x27;,
+  templateUrl: &#x27;./channel-content.component.html&#x27;,
+  styleUrls: [&#x27;./channel-content.component.scss&#x27;]
 })
-export class MeetingComponent implements OnInit {
+export class ChannelContentComponent implements OnInit {
   /**
-   * for binding
+   * current channel
    */
+  currentChannel
+    /**
+     * channel data
+     */
+    channel
+    /**
+     * pathdata
+     */
+    preloadPath
+    /**
+     * form
+     */
+    form: FormGroup;
+    
   
-  meeting: any &#x3D; []
-  /**
-   * for binding
-   */
-  loginStatus
   /**
    * constructor
+   * @param fb formBuilder
+   * @param data dataService
+   * @param router router
    */
   constructor(
+    private fb: FormBuilder,
     private data: DataService,
-    private http: HttpClient) { }
+    private router: Router
+  ) {}
   /**
-   * on load
+   * gets the current url out of the router
    */
-
+  getCurrentChannel(){
+    var url &#x3D;this.router.url.split(&quot;/&quot;)
+    this.currentChannel &#x3D; url[3]
+  }
+  /**
+   * gets the channel settings from db and preloads the form for easy editing
+   */
+  reloadData() {
+    this.data.getChannel(this.currentChannel).subscribe(res&#x3D;&gt; {
+        this.channel &#x3D; res;
+        this.preloadPath &#x3D; res[0].path // loads all &#x27;paths&#x27;
+        for(let path of this.preloadPath){
+            //console.log(path)
+            this.preaddPath(path)
+          }
+    })
+  }
+  /**
+   * adds a &#x27;path&#x27;
+   * @param path used for preloading data as well as adding/removing paths
+   */
+  initSection(path) {
+    if (!path) {
+      var newpath &#x3D; {
+        pathurl: &quot;&quot;,
+        description: &quot;&quot;,
+        delay: 20000,
+        componentName: &quot;&quot;
+      }
+    }
+    // console.log(path.pathurl)
+    return new FormGroup({
+        pathurl: new FormControl(path.pathurl),
+        description: new FormControl(path.description),
+        delay: new FormControl(path.delay),
+        componentName:new FormControl(path.componentName)
+    });
+  }
+  /**
+   * on init
+   */
   ngOnInit() {
-    this.data.getLoggedIn().subscribe(res&#x3D;&gt;{
-      this.loginStatus&#x3D; res
-    })
-    this.data.getCalendar().subscribe(res&#x3D;&gt;{
-      this.meeting&#x3D; [res]
-    })
-    this.ifNotLoggedIn()
+    this.getCurrentChannel()
+    
+    this.form &#x3D; this.fb.group({
+        channel: [this.currentChannel],
+        path: this.fb.array([])
+    });
+    this.reloadData()
+    }
+    /**
+     * will preload the form with data from service
+     * @param path a single &#x27;path&#x27; returned by the service
+     */
+    preaddPath(path) {
+        const control &#x3D; &lt;FormArray&gt;this.form.get(&#x27;path&#x27;);;
+        control.push(this.initSection(path));
+      }
+/**
+ * adds a blanc path
+ */
+    initPath() {
+        // initialize our address
+        return this.fb.group({
+            pathurl: [&#x27;&#x27;],
+            description: [&#x27;&#x27;],
+            componentName:[&#x27;&#x27;],
+            delay:[20000]
+        });
+    }
+    /**
+     * selects the path control
+     */
+addPath() {
+    // add address to the list
+    const control &#x3D; &lt;FormArray&gt;this.form.controls[&#x27;path&#x27;];
+    control.push(this.initPath());
+}
+/**
+ * removes a path
+ * @param i index
+ */
+removePath(i: number) {
+    // remove address from the list
+    const control &#x3D; &lt;FormArray&gt;this.form.controls[&#x27;path&#x27;];
+    control.removeAt(i);
+}
+/**
+ * saves the contents of the form
+ * @param model uses the model to add it in the right shape
+ */
+  save(model: Channel) {
+    this.data.saveContent(this.form.value).subscribe(()&#x3D;&gt;{})
+    return {message: &#x27;Saved&#x27;}
   }
-  /**
-   * if the signInUrl is there it means no one is logged in so a window gets opened to login
-   */
-  ifNotLoggedIn() {
-    setTimeout(() &#x3D;&gt; {
-      if(this.loginStatus.signInUrl) {
-        var login &#x3D; window.open(this.loginStatus.signInUrl,&#x27;login&#x27;) 
-        // due to cross origin i cant do more then this need to find a way to auto login
-      } 
-    }, 200);
-  }
-  /**
-   * logout of graph with the use of a button
-   */
-  logOut() {
-    this.data.logOut().subscribe()
-       }
-     }</code></pre>
+}
+</code></pre>
     </div>
 
     <div class="tab-pane fade" id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div *ngIf&#x3D;&quot;loginStatus?.signInUrl&quot;&gt; 
-      &lt;div &gt;
-        &lt;p&gt;temp displays last recieved emails since my calendar is usually empty &lt;/p&gt;
-        &lt;p&gt;usefull for knowing what paths to use: https://developer.microsoft.com/en-us/graph/graph-explorer&lt;/p&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    
-    &lt;div *ngIf&#x3D;&quot;!loginStatus?.signInUrl&quot;&gt; &lt;!-- signinurl is only there when a user isn&#x27;t logged in--&gt;
-      this block displays all events that are upcomming in the next week (from today 0:00)
-      &lt;div *ngFor&#x3D;&quot;let m of meeting&quot;&gt;
-        &lt;div *ngFor&#x3D;&quot;let e of m.events&quot;&gt; &lt;!-- e is another array it has to move through--&gt;
-          &lt;p&gt;
-            event starts at:
-            {{e.start.dateTime | date:&#x27;long&#x27;}}
-          &lt;/p&gt;
-          &lt;p&gt;
-            event ends at:
-            {{e.end.dateTime| date:&#x27;long&#x27;}}
-          &lt;/p&gt;
-          &lt;p &gt;
-            attendees are:
-            {{e.attendees[0].emailAddress.name}}
-          &lt;/p&gt;
-          &lt;p&gt;
-            it is about:
-            {{e.subject}}
-          &lt;/p&gt;
+        <pre class="line-numbers"><code class="language-html">
+&lt;div class&#x3D;&quot;main&quot;&gt;
+    &lt;form [formGroup]&#x3D;&quot;form&quot; novalidate (ngSubmit)&#x3D;&quot;save(form)&quot;&gt;
+        &lt;div&gt;
+            &lt;label&gt;Channel name:&lt;/label&gt;
+            &lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;channel&quot; readonly&#x3D;&quot;readonly&quot;&gt;
+            &lt;small *ngIf&#x3D;&quot;!form.controls.channel.valid&quot; &gt;
+                Name is required (minimum 5 characters).
+            &lt;/small&gt;
         &lt;/div&gt;
-        &lt;div *ngIf&#x3D;&quot;m.events &lt;&#x3D; 1&quot;&gt; &lt;!-- when logged in but no meetings--&gt;
-          derp no events/ meetings today
+        &lt;!--paths--&gt;
+        &lt;div formArrayName&#x3D;&quot;path&quot;&gt;
+          &lt;div *ngFor&#x3D;&quot;let path of form.controls.path.controls; let i&#x3D;index&quot;&gt;
+            &lt;div&gt;
+              &lt;span&gt;path {{i + 1}}&lt;/span&gt;
+              &lt;span *ngIf&#x3D;&quot;form.controls.path.controls.length &gt; 1&quot; (click)&#x3D;&quot;removePath(i)&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div  [formGroupName]&#x3D;&quot;i&quot;&gt;
+              &lt;div&gt;
+                &lt;label&gt;path url:&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;pathurl&quot;&gt;
+                &lt;!--&lt;small [hidden]&#x3D;&quot;form.controls.path.controls[i].controls.pathurl.valid&quot;&gt;
+                    Street is required
+                &lt;/small&gt; --&gt;
+              &lt;/div&gt;
+              &lt;div&gt;
+                &lt;label&gt;description:&lt;/label&gt;
+                &lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;description&quot;&gt;
+              &lt;/div&gt;
+              &lt;div&gt;
+                  &lt;label&gt;delay:&lt;/label&gt;
+                  &lt;input type&#x3D;&quot;number&quot; formControlName&#x3D;&quot;delay&quot;&gt;
+                  &lt;small&gt;
+                      1000 &#x3D; 1 second, so 1 minute &#x3D; 60000 etc.
+                  &lt;/small&gt;
+                &lt;/div&gt;
+              &lt;div&gt;
+                    &lt;label&gt;component name:&lt;/label&gt;
+                    &lt;input type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;componentName&quot;&gt;
+                  &lt;/div&gt;
+                  &lt;a (click)&#x3D;&quot;removePath(i)&quot;&gt;
+                    &lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;removePath&quot;&gt;
+                  &lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
         &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;button (click)&#x3D;&quot;logOut()&quot;&gt;logout&lt;/button&gt;
+        &lt;div class&#x3D;&quot;margin-20&quot;&gt;
+              &lt;a (click)&#x3D;&quot;addPath()&quot; &gt;
+                    &lt;input type&#x3D;&quot;button&quot; value&#x3D;&quot;Add route&quot;&gt;
+              &lt;/a&gt;
+        &lt;/div&gt;
+    &lt;div class&#x3D;&quot;margin-20&quot;&gt;
+      &lt;button type&#x3D;&quot;submit&quot; [disabled]&#x3D;&quot;!form.valid&quot;&gt;Submit&lt;/button&gt;
+      &lt;small *ngIf&#x3D;&quot;message&quot;&gt;{{message}}&lt;/small&gt;
     &lt;/div&gt;
+&lt;/form&gt;
+&lt;/div&gt;
 </code></pre>
     </div>
 
@@ -1373,10 +1963,10 @@ export class MeetingComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div *ngIf="loginStatus?.signInUrl">       <div >        <p>temp displays last recieved emails since my calendar is usually empty </p>        <p>usefull for knowing what paths to use: https://developer.microsoft.com/en-us/graph/graph-explorer</p>      </div>    </div>        <div *ngIf="!loginStatus?.signInUrl"> <!-- signinurl is only there when a user isn\'t logged in-->      this block displays all events that are upcomming in the next week (from today 0:00)      <div *ngFor="let m of meeting">        <div *ngFor="let e of m.events"> <!-- e is another array it has to move through-->          <p>            event starts at:            {{e.start.dateTime | date:\'long\'}}          </p>          <p>            event ends at:            {{e.end.dateTime| date:\'long\'}}          </p>          <p >            attendees are:            {{e.attendees[0].emailAddress.name}}          </p>          <p>            it is about:            {{e.subject}}          </p>        </div>        <div *ngIf="m.events <= 1"> <!-- when logged in but no meetings-->          derp no events/ meetings today        </div>      </div>      <button (click)="logOut()">logout</button>    </div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="main">    <form [formGroup]="form" novalidate (ngSubmit)="save(form)">        <div>            <label>Channel name:</label>            <input type="text" formControlName="channel" readonly="readonly">            <small *ngIf="!form.controls.channel.valid" >                Name is required (minimum 5 characters).            </small>        </div>        <!--paths-->        <div formArrayName="path">          <div *ngFor="let path of form.controls.path.controls; let i=index">            <div>              <span>path {{i + 1}}</span>              <span *ngIf="form.controls.path.controls.length > 1" (click)="removePath(i)"></span>            </div>            <div  [formGroupName]="i">              <div>                <label>path url:</label>                <input type="text" formControlName="pathurl">                <!--<small [hidden]="form.controls.path.controls[i].controls.pathurl.valid">                    Street is required                </small> -->              </div>              <div>                <label>description:</label>                <input type="text" formControlName="description">              </div>              <div>                  <label>delay:</label>                  <input type="number" formControlName="delay">                  <small>                      1000 = 1 second, so 1 minute = 60000 etc.                  </small>                </div>              <div>                    <label>component name:</label>                    <input type="text" formControlName="componentName">                  </div>                  <a (click)="removePath(i)">                    <input type="button" value="removePath">                  </a>            </div>          </div>        </div>        <div class="margin-20">              <a (click)="addPath()" >                    <input type="button" value="Add route">              </a>        </div>    <div class="margin-20">      <button type="submit" [disabled]="!form.valid">Submit</button>      <small *ngIf="message">{{message}}</small>    </div></form></div></div>'
     var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminChannelsContentsComponent', 'selector': 'app-admin-channels-contents'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminMeetingComponent', 'selector': 'app-meeting'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelComponent', 'selector': 'app-channel'},{'name': 'ChannelContentComponent', 'selector': 'app-channel-content'},{'name': 'ChannelNewComponent', 'selector': 'app-channel-new'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'CustomComponent', 'selector': 'app-custom'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'SettingComponent', 'selector': 'app-setting'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'SupportContentsComponent', 'selector': 'app-support-contents'},{'name': 'SupportTicketsComponent', 'selector': 'app-support-tickets'},{'name': 'TrafficComponent', 'selector': 'app-traffic'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
     var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'MeetingComponent'};
+    var ACTUAL_COMPONENT = {'name': 'ChannelContentComponent'};
 </script>
 <script src="../js/tree.js"></script>
 
@@ -1415,7 +2005,7 @@ export class MeetingComponent implements OnInit {
 
         <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_URL = 'MeetingComponent.html';
+            var COMPODOC_CURRENT_PAGE_URL = 'ChannelContentComponent.html';
         </script>
 
        <script src="../js/search/search.js"></script>

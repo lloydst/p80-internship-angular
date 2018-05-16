@@ -1,0 +1,57 @@
+
+<div class="main">
+    <form [formGroup]="form" novalidate (ngSubmit)="save(form)">
+        <div>
+            <label>Channel name:</label>
+            <input type="text" formControlName="channel" readonly="readonly">
+            <small *ngIf="!form.controls.channel.valid" >
+                Name is required (minimum 5 characters).
+            </small>
+        </div>
+        <!--paths-->
+        <div formArrayName="path">
+          <div *ngFor="let path of form.controls.path.controls; let i=index">
+            <div>
+              <span>path {{i + 1}}</span>
+              <span *ngIf="form.controls.path.controls.length > 1" (click)="removePath(i)"></span>
+            </div>
+            <div  [formGroupName]="i">
+              <div>
+                <label>path url:</label>
+                <input type="text" formControlName="pathurl">
+                <!--<small [hidden]="form.controls.path.controls[i].controls.pathurl.valid">
+                    Street is required
+                </small> -->
+              </div>
+              <div>
+                <label>description:</label>
+                <input type="text" formControlName="description">
+              </div>
+              <div>
+                  <label>delay:</label>
+                  <input type="number" formControlName="delay">
+                  <small>
+                      1000 = 1 second, so 1 minute = 60000 etc.
+                  </small>
+                </div>
+              <div>
+                    <label>component name:</label>
+                    <input type="text" formControlName="componentName">
+                  </div>
+                  <a (click)="removePath(i)">
+                    <input type="button" value="removePath">
+                  </a>
+            </div>
+          </div>
+        </div>
+        <div class="margin-20">
+              <a (click)="addPath()" >
+                    <input type="button" value="Add route">
+              </a>
+        </div>
+    <div class="margin-20">
+      <button type="submit" [disabled]="!form.valid">Submit</button>
+      <small *ngIf="message">{{message}}</small>
+    </div>
+</form>
+</div>

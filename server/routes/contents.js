@@ -25,14 +25,22 @@ router.put('/',function(req,res){
     check()
     setTimeout(() => {
         updateCreateGet()
-    }, 100);
+    }, 200);
     function check() {
         // check if "channel exists"
         
-        Content.find({channel: req.body.channel}, function(err,res){
-            if (err){
-                console.log(err)
-            } else if(!err){
+        Content.find({channel: req.body.channel}, function(err,doc){
+            if(doc.length == 0){
+                console.log(doc +'!='+req.body.channel)
+                console.log(doc !== req.body.channel)
+                console.log('nope')
+                exists=false
+                return exists
+                //res.send(doc)
+            }else if (doc[0].channel === req.body.channel){
+                console.log(doc[0].channel +'='+req.body.channel)
+                console.log(doc[0].channel === req.body.channel)
+                console.log('jup')
                 exists = true
                 return exists
             }
@@ -41,6 +49,7 @@ router.put('/',function(req,res){
     }
     // if it exists it will update
     function updateCreateGet() {
+        console.log(req.body.channel)
         if(exists){
             Content.findOneAndUpdate({channel: req.body.channel}, req.body , function(err,doc){
                 if (err) {

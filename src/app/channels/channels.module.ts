@@ -3,11 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { ChannelsRoutingModule } from './channels-routing.module';
 import { ChannelsComponent } from './channels.component';
-import { EntranceComponent } from './entrance/entrance.component';
-import { MeetingComponent } from './meeting/meeting.component';
 import { NguiMapModule } from '@ngui/map';
 import { FormsModule } from '@angular/forms';
-import { OtherComponent } from './other/other.component';
+import { ChannelComponent } from './channel/channel.component';
 
 @NgModule({
   imports: [
@@ -21,9 +19,7 @@ import { OtherComponent } from './other/other.component';
   ],
   declarations: [
     ChannelsComponent,
-    EntranceComponent,
-    MeetingComponent,
-    OtherComponent
+    ChannelComponent
   ]
 })
 export class ChannelsModule { }

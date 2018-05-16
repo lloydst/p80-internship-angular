@@ -1,20 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject,Input } from '@angular/core';
+import { FormBuilder, FormGroup, Validators,FormArray, FormControl } from '@angular/forms';
+import {Channel, Paths} from '../../models/channel.interface'
 import { DataService } from '../../services/data.service';
-import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
-import { Channel } from '../../models/channel.interface';
 import { Router } from '@angular/router';
 
 /**
- * admin meeting contents component
+ * admin entrance contents components
  */
 @Component({
-  selector: 'app-meeting-contents',
-  templateUrl: './meeting-contents.component.html',
-  styleUrls: ['./meeting-contents.component.scss']
+  selector: 'app-channel-content',
+  templateUrl: './channel-content.component.html',
+  styleUrls: ['./channel-content.component.scss']
 })
-export class MeetingContentsComponent implements OnInit {
+export class ChannelContentComponent implements OnInit {
   /**
-     * channeldata
+   * current channel
+   */
+  currentChannel
+    /**
+     * channel data
      */
     channel
     /**
@@ -39,10 +43,17 @@ export class MeetingContentsComponent implements OnInit {
     private router: Router
   ) {}
   /**
+   * gets the current url out of the router
+   */
+  getCurrentChannel(){
+    var url =this.router.url.split("/")
+    this.currentChannel = url[3]
+  }
+  /**
    * gets the channel settings from db and preloads the form for easy editing
    */
   reloadData() {
-    this.data.getChannel('meeting').subscribe(res=> {
+    this.data.getChannel(this.currentChannel).subscribe(res=> {
         this.channel = res;
         this.preloadPath = res[0].path // loads all 'paths'
         for(let path of this.preloadPath){
@@ -76,11 +87,10 @@ export class MeetingContentsComponent implements OnInit {
    * on init
    */
   ngOnInit() {
-    this.data.getChannel('meeting').subscribe(res=> {
-        this.channel = res;
-    })
+    this.getCurrentChannel()
+    
     this.form = this.fb.group({
-        channel: ['meeting'],
+        channel: [this.currentChannel],
         path: this.fb.array([])
     });
     this.reloadData()
