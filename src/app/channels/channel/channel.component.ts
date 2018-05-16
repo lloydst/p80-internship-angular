@@ -2,6 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { Channel } from '../../models/channel.interface';
 import { Router } from '@angular/router';
+
 /**
  * can display every channel based on url
  */
@@ -64,16 +65,25 @@ export class ChannelComponent implements OnInit {
             var myWindow = window.open(self.do[0].path[x].pathurl) // default = 0
             if(x == self.do[0].path.length ) {
               myWindow.close()
-            } else if (x++ < self.do[0].path.length) {
+              console.log('done')
+            } else if (x++ < self.do[0].path.length) { // if should go next path go next path
               setTimeout(() => {
+                
                 myWindow.close()
                 go()
               }, self.do[0].path[x -1].delay);
               
               // because x gets incremented by 1 in the else if statement i have to subtract one to get the right delay
-            } 
+            }
+            if(x == self.do[0].path.length){
+              console.log('done')
+              self.getRoutes()
+              x=0
+              return x
+            }
           }
           go()
         }
+        
   }
  

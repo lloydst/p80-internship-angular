@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
+import { DataService } from '../services/data.service';
 
 /**
  * channel component
@@ -12,16 +13,31 @@ import { Router } from "@angular/router";
 
 export class ChannelsComponent implements OnInit {
   /**
+   * for template binding
+   */
+  channel
+  /**
    * constructor
    * @param router router gets imported to display content based on the url
    */
-  constructor (public router: Router) {}
+  constructor (
+    public router: Router,
+    private data: DataService
+  ) {}
   /**
    * on load
    */
-  ngOnInit () {
-
+  getRoutes() {
+    this.data.getChannelContent().subscribe(doc=> {
+      this.channel = doc
+    })
   }
+  ngOnInit () {
+    this.getRoutes()
+  }
+  redirectTo(uri:string){
+    this.router.navigateByUrl('/channels', {skipLocationChange: true}).then(()=>
+    this.router.navigate(['channels',uri]));}
 }
   
 
