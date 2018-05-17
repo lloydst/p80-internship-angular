@@ -2,7 +2,7 @@
 <div class="main">
     <form [formGroup]="form" novalidate (ngSubmit)="save(form)">
         <div>
-            <label>Channel name:</label>
+            <label>Channel name:</label><br>
             <input type="text" formControlName="channel" readonly="readonly">
             <small *ngIf="!form.controls.channel.valid" >
                 Name is required (minimum 5 characters).
@@ -17,36 +17,38 @@
             </div>
             <div  [formGroupName]="i">
               <div>
-                <label>path url:</label>
-                <input type="text" formControlName="pathurl">
+                <label>path url:</label><br>
+                <input type="url" formControlName="pathurl">
                 <!--<small [hidden]="form.controls.path.controls[i].controls.pathurl.valid">
                     Street is required
                 </small> -->
               </div>
               <div>
-                <label>description:</label>
-                <input type="text" formControlName="description">
+                <label>description:</label><br>
+                <textarea type="text" formControlName="description"></textarea>
+                
               </div>
               <div>
-                  <label>delay:</label>
+                  <label>delay:</label><br>
                   <input type="number" formControlName="delay">
                   <small>
                       1000 = 1 second, so 1 minute = 60000 etc.
                   </small>
                 </div>
               <div>
-                    <label>component name:</label>
+                    <label>component name:</label><br>
                     <input type="text" formControlName="componentName">
                   </div>
                   <a (click)="removePath(i)">
-                    <input type="button" value="removePath">
+                    <input type="button" value="remove Path">
                   </a>
             </div>
+            <br>
           </div>
-        </div>
+        </div><br>
         <div class="margin-20">
               <a (click)="addPath()" >
-                    <input type="button" value="Add route">
+                    <input type="button" value="Add Path">
               </a>
         </div>
     <div class="margin-20">

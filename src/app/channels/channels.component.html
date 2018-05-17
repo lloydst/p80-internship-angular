@@ -1,3 +1,5 @@
-<a (click)="redirectTo(c.channel)" *ngFor="let c of channel">{{c.channel}}</a>
+<a (click)="redirectTo(c.channel)" *ngFor="let c of channel">
+    <input type="button" value="{{c.channel}}">
+</a>
 <router-outlet></router-outlet>
 

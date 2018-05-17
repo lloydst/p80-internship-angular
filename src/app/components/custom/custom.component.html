@@ -1,17 +1,18 @@
+<!-- ORDER MATTERS-->
+<app-event *ngIf="event"></app-event>
+<app-traffic *ngIf="traffic"></app-traffic>
+<app-weather *ngIf="weather"></app-weather>
 <!-- build servers --> 
 <app-build-servers *ngIf="servers"></app-build-servers>
-<!-- event component -->
-<app-event *ngIf="event"></app-event>
 <!-- bitcoin stuff -->
 <app-financial *ngIf="financial"></app-financial>
 <!-- meeting (need to change email to be ReadAll) -->
 <app-meeting *ngIf="meeting"></app-meeting>
 <!-- jira support tickets -->
 <app-support *ngIf="support"></app-support>
-<!-- weer -->
-<app-weather *ngIf="weather"></app-weather>
+
+
 <!-- loop -->
 <app-website-loop *ngIf="loop"></app-website-loop>
 
 <app-news *ngIf="news"></app-news>
-<app-traffic *ngIf="traffic"></app-traffic>
