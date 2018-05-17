@@ -124,6 +124,9 @@ export class DataService {
   getChannel(channel) {
     return this.http.get('api/content/'+ channel)
   }
+  /**
+   * deletes a single channel
+   */
   deleteChannel(channelobj) {
     return this.http.delete('api/content/'+ channelobj.channel)
   }

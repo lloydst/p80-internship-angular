@@ -21,11 +21,16 @@ export class AdminChannelsContentsComponent implements OnInit {
   currentChannel
   /**
    * constructor
+   * @param data data service
+   * @param router the router
    */
   constructor(
     private data: DataService,
     private router: Router
   ) { }
+  /**
+   * checks url to see if a channel can get loaded
+   */
   getCurrentChannel(){
     var url =this.router.url.split("/")
     this.currentChannel = url[3]
@@ -37,6 +42,9 @@ export class AdminChannelsContentsComponent implements OnInit {
     this.getCurrentChannel()
     this.getChannels()
   }
+  /**
+   * gets the channels from the api
+   */
   getChannels(){
     this.data.getChannelContent().subscribe(data=>{
       this.channel = data
@@ -50,6 +58,10 @@ export class AdminChannelsContentsComponent implements OnInit {
     this.router.navigateByUrl('/admin', {skipLocationChange: true}).then(()=>
     this.router.navigate(['admin/contents',uri]));
   }
+  /**
+   * delete channel function
+   * @param obj channel to delete
+   */
   delete(obj) {
     this.data.deleteChannel(obj).subscribe(()=>{
       this.getChannels()

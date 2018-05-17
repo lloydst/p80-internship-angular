@@ -25,20 +25,31 @@ export class ChannelsComponent implements OnInit {
     private data: DataService
   ) {}
   /**
-   * on load
+   * gets the channels from db
    */
   getRoutes() {
     this.data.getChannelContent().subscribe(doc=> {
       this.channel = doc
     })
   }
+  /**
+   * on load
+   */
   ngOnInit () {
     this.getRoutes()
   }
+  /**
+   * force child reload
+   * @param uri will navigate too /channels/uri
+   */
   redirectTo(uri:string){
     this.router.navigateByUrl('/channels', {skipLocationChange: true}).then(()=>
     this.router.navigate(['channels',uri]));
   }
+  /**
+   * force child reload
+   * @param uri will navigate too /admin/contents/uri
+   */
   goToNewChannel(uri:string){
     this.router.navigateByUrl('/channels', {skipLocationChange: true}).then(()=>
     this.router.navigate(['admin','contents',uri]));

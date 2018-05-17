@@ -1,0 +1,18 @@
+label {
+    font-size: 14;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+textarea[formcontrolname="description"] {
+    min-width: 40%;
+    height: 75px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    resize: none;
+}
+
+input[type=text] {
+    border-radius: 5px
+ }

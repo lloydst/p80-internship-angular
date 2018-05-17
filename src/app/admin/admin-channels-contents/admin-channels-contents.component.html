@@ -11,11 +11,14 @@
   </span>
   
 </div>
-<div class="main" *ngIf="!currentChannel">
+<div *ngIf="!currentChannel">
   <p>
     Here you can create a new channel, or edit/delete a existing one
   </p>
 </div>
 <!-- if on admin/contents display current Channels-->
+<div class="wrapper">
 <router-outlet></router-outlet>
 <!-- just the template-->
+<app-listing-components *ngIf="currentChannel"></app-listing-components>
+</div>

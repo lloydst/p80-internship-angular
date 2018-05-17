@@ -45,6 +45,7 @@ export class CustomComponent implements OnInit {
    * displays the servers components based on url
    */
   traffic: boolean = false
+  
   /**
    * loads the angular router
    * @param route checks the route

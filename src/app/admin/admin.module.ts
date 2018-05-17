@@ -22,6 +22,7 @@ import { ImageViewComponent } from './image-view/image-view.component';
 import { AdminChannelsContentsComponent } from './admin-channels-contents/admin-channels-contents.component';
 import { ChannelContentComponent } from './channel-content/channel-content.component';
 import { ChannelNewComponent } from './channel-new/channel-new.component';
+import { ListingComponentsComponent } from './listing-components/listing-components.component';
 
 
 
@@ -50,7 +51,8 @@ import { ChannelNewComponent } from './channel-new/channel-new.component';
     ImageViewComponent,
     AdminChannelsContentsComponent,
     ChannelContentComponent,
-    ChannelNewComponent
+    ChannelNewComponent,
+    ListingComponentsComponent
   ]
 })
 export class AdminModule { }
