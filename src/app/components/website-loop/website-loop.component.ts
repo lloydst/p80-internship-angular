@@ -201,7 +201,7 @@ export class WebsiteLoopComponent implements OnInit {
             return 'interupt' // interupts the loop succesfully
         } 
       }
-      var myWindow = window.open(arrayOfUrls[x]) // default = 0
+      var myWindow = window.open(arrayOfUrls[x],'',"channelmode=yes,scrollbars=no,fullscreen=yes") // default = 0
       if(x === arrayOfUrls.length ) {
         myWindow.close()
         self.checkTime() 

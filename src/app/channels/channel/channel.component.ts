@@ -62,7 +62,7 @@ export class ChannelComponent implements OnInit {
           var self = this // REQUIRED FOR CHECK TIME
           function go() {
             //console.log(self.do[0].path[x].pathurl)
-            var myWindow = window.open(self.do[0].path[x].pathurl) // default = 0
+            var myWindow = window.open(self.do[0].path[x].pathurl,"channelmode=yes,scrollbars=no,fullscreen=yes") // default = 0
             if(x == self.do[0].path.length ) {
               myWindow.close()
               console.log('done')
