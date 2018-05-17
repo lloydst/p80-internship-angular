@@ -37,7 +37,13 @@ export class ChannelsComponent implements OnInit {
   }
   redirectTo(uri:string){
     this.router.navigateByUrl('/channels', {skipLocationChange: true}).then(()=>
-    this.router.navigate(['channels',uri]));}
+    this.router.navigate(['channels',uri]));
+  }
+  goToNewChannel(uri:string){
+    this.router.navigateByUrl('/channels', {skipLocationChange: true}).then(()=>
+    this.router.navigate(['admin','contents',uri]));
+  }
 }
+
   
 
