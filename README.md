@@ -7,7 +7,6 @@
   -  mongodb or a mlab account (see data base for more information)
   
 ## contents
- - [git](#git)
  - [getting started](#getting-started-)
  - [styling](#styling)
  - [sources](#sources-)
@@ -34,7 +33,7 @@ This project is my internship project at Poort80. The project is supposed to be 
   - admin
   - channels
   - components
-  
+
 In the admin module the content of the components can be changed as well as the order and time a components is displayed on a channel.
 The components module displays components based on the url. So will ${host}/components/weather display the current weather forecast and ${host}/components/weather-traffic-news will display 3 components(weather,traffic,news).
 The channels module, opens a extra tab to navigate to a 'custom' component and will display said component for the time defined for the path. After that time/deley is done it will close the tab and open a new one with the next tab and thus next component. once it has finished all the paths it will check the database for the paths to run again, and start all over again.
@@ -45,8 +44,6 @@ run `npm run dev` for rebuilding on changes to any of the angular part of the we
 and run `npm run server` (in a other window)so that node restarts the express server on changes
 run `npm run doc` to "generate" front end docs (only documents the angular app) since the back end can be found at ./api-docs
 
-## git
-run ```npm run git -- Message``` OR ```npm run git -- "Message"``` to generate/update the docs folder before a push
 
 ## quick component gen (angular cli)
 
