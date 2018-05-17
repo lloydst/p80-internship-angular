@@ -13,7 +13,6 @@ import { AdminMeetingComponent } from './channels/meeting/meeting.component';
 import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { ImageViewComponent } from './image-view/image-view.component';
 import { AdminChannelsContentsComponent } from './admin-channels-contents/admin-channels-contents.component';
-import { SupportContentsComponent } from './support-contents/support-contents.component';
 import { ChannelNewComponent } from './channel-new/channel-new.component';
 import { ChannelContentComponent } from './channel-content/channel-content.component';
 

@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Channel } from '../../models/channel.interface';
+import { Router } from '@angular/router';
 
 /**
  * place holder for a channel-contents component
@@ -30,7 +31,9 @@ export class ChannelNewComponent implements OnInit {
    */
   constructor(
     private fb: FormBuilder,
-    private data: DataService) { }
+    private data: DataService,
+    private router: Router
+) { }
 /**
  * on load
  */
@@ -73,12 +76,20 @@ removePath(i: number) {
     control.removeAt(i);
 }
 /**
+ * rerouting
+ * @param uri url to navigate too
+ */
+redirectTo(uri:string){
+    this.router.navigateByUrl('/admin', {skipLocationChange: true}).then(()=>
+    this.router.navigate(['admin/contents/',uri]));
+  }
+/**
  * just a function
  * @param model channel interface to save it in the right shape
  */
   save(model: Channel) {
     this.data.saveContent(this.form.value).subscribe(()=>{
-
+        this.redirectTo(this.form.value.channel)
     })
     
   }

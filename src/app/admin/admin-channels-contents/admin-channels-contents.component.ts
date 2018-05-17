@@ -16,18 +16,30 @@ export class AdminChannelsContentsComponent implements OnInit {
    */
   channel
   /**
+   * for binding
+   */
+  currentChannel
+  /**
    * constructor
    */
   constructor(
     private data: DataService,
     private router: Router
   ) { }
+  getCurrentChannel(){
+    var url =this.router.url.split("/")
+    this.currentChannel = url[3]
+  }
   /**
    * on load
    */
   ngOnInit() {
+    this.getCurrentChannel()
+    this.getChannels()
+  }
+  getChannels(){
     this.data.getChannelContent().subscribe(data=>{
-      this.channel=data
+      this.channel = data
     })
   }
   /**
@@ -36,5 +48,12 @@ export class AdminChannelsContentsComponent implements OnInit {
    */
   redirectTo(uri:string){
     this.router.navigateByUrl('/admin', {skipLocationChange: true}).then(()=>
-    this.router.navigate(['admin/contents',uri]));}
+    this.router.navigate(['admin/contents',uri]));
+  }
+  delete(obj) {
+    this.data.deleteChannel(obj).subscribe(()=>{
+      this.getChannels()
+      this.redirectTo('')
+    })
+  }
 }

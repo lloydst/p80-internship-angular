@@ -20,7 +20,6 @@ import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { FileUploadModule } from 'ng2-file-upload';
 import { ImageViewComponent } from './image-view/image-view.component';
 import { AdminChannelsContentsComponent } from './admin-channels-contents/admin-channels-contents.component';
-import { SupportContentsComponent } from './support-contents/support-contents.component';
 import { ChannelContentComponent } from './channel-content/channel-content.component';
 import { ChannelNewComponent } from './channel-new/channel-new.component';
 
@@ -50,7 +49,6 @@ import { ChannelNewComponent } from './channel-new/channel-new.component';
     ImageUploadComponent,
     ImageViewComponent,
     AdminChannelsContentsComponent,
-    SupportContentsComponent,
     ChannelContentComponent,
     ChannelNewComponent
   ]

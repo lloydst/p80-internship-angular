@@ -26,21 +26,15 @@ router.put('/',function(req,res){
     setTimeout(() => {
         updateCreateGet()
     }, 200);
-    function check() {
-        // check if "channel exists"
-        
+    function check() { // sets exists to true if it exists
         Content.find({channel: req.body.channel}, function(err,doc){
             if(doc.length == 0){
                 console.log(doc +'!='+req.body.channel)
-                console.log(doc !== req.body.channel)
-                console.log('nope')
                 exists=false
                 return exists
                 //res.send(doc)
             }else if (doc[0].channel === req.body.channel){
                 console.log(doc[0].channel +'='+req.body.channel)
-                console.log(doc[0].channel === req.body.channel)
-                console.log('jup')
                 exists = true
                 return exists
             }
@@ -68,7 +62,15 @@ router.put('/',function(req,res){
             })
         }
     }
-    
 })
-
+router.delete('/:channel', function(req,res) {
+    console.log(req.params.channel)
+    Content.findOneAndRemove({channel: req.params.channel}, function(err,doc){
+        if (err) {
+            console.log(err)
+        }
+        
+        res.json({ message: ' removed' });
+    })
+})
 module.exports = router;

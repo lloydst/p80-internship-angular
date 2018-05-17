@@ -1,6 +1,20 @@
 <div class="main nav" >
-  <a routerLinkActive="active" routerLink="new">new Channel</a>
-  <a *ngFor="let c of channel" routerLinkActive="active" (click)="redirectTo(c.channel)">{{c.channel}} Channel</a>
+  <a id ="link" routerLinkActive="active" routerLink="new">new Channel</a>
+  <span id="link" *ngFor="let c of channel">
+      <a 
+      routerLink="{{c.channel}}"
+      routerLinkActive="active"
+      (click)="redirectTo(c.channel)">
+      {{c.channel}} Channel </a>
+      <button class="button" (click)="delete(c)">x</button>
+      
+  </span>
+  
+</div>
+<div class="main" *ngIf="!currentChannel">
+  <p>
+    Here you can create a new channel, or edit/delete a existing one
+  </p>
 </div>
 <!-- if on admin/contents display current Channels-->
 <router-outlet></router-outlet>
