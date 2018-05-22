@@ -4,13 +4,13 @@
         <div>
             <label>Channel name:</label><br>
             <input type="text" formControlName="channel" readonly="readonly">
-            <small *ngIf="!form.controls.channel.valid" >
+            <small *ngIf="!form.controls.channelvalid" >
                 Name is required (minimum 5 characters).
             </small>
         </div>
         <!--paths-->
         <div formArrayName="path">
-          <div *ngFor="let path of form.controls.path.controls; let i=index">
+          <div *ngFor="let path of form['controls'].path['controls']; let i=index"> <!-- for prod err refer too https://github.com/angular/angular-cli/issues/6099 -->
             <div>
               <span>path {{i + 1}}</span>
               <span *ngIf="form.controls.path.controls.length > 1" (click)="removePath(i)"></span>
@@ -19,9 +19,7 @@
               <div>
                 <label>path url:</label><br>
                 <input type="url" formControlName="pathurl">
-                <!--<small [hidden]="form.controls.path.controls[i].controls.pathurl.valid">
-                    Street is required
-                </small> -->
+                
               </div>
               <div>
                 <label>description:</label><br>
@@ -53,7 +51,7 @@
         </div>
     <div class="margin-20">
       <button type="submit" [disabled]="!form.valid">Save</button>
-      <small *ngIf="message">{{message}}</small>
+      
     </div>
 </form>
 

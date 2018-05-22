@@ -9,7 +9,7 @@
         </div>
         <!--paths-->
         <div formArrayName="path">
-          <div *ngFor="let path of form.controls.path.controls; let i=index">
+          <div *ngFor="let path of form['controls'].path['controls']; let i=index">
             <div>
               <span>path {{i + 1}}</span>
               <span *ngIf="form.controls.path.controls.length > 1" (click)="removePath(i)"></span>

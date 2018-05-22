@@ -2,7 +2,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
-import { Channel } from '../../models/channel.interface';
+import { Channel } from '../../models/channel';
 import { Router } from '@angular/router';
 
 /**
@@ -87,10 +87,11 @@ redirectTo(uri:string){
  * just a function
  * @param model channel interface to save it in the right shape
  */
-  save(model: Channel) {
+  save(new_channel) {
     this.data.saveContent(this.form.value).subscribe(()=>{
         this.redirectTo(this.form.value.channel)
     })
     
   }
+  
 }

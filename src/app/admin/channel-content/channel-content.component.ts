@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject,Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators,FormArray, FormControl } from '@angular/forms';
-import {Channel, Paths} from '../../models/channel.interface'
+import {Channel, Paths} from '../../models/channel'
 import { DataService } from '../../services/data.service';
 import { Router } from '@angular/router';
 import { isNullOrUndefined } from 'util';
@@ -21,7 +21,7 @@ export class ChannelContentComponent implements OnInit {
     /**
      * channel data
      */
-    channel
+    channelData
     /**
      * pathdata
      */
@@ -30,7 +30,7 @@ export class ChannelContentComponent implements OnInit {
      * form
      */
     form: FormGroup;
-    
+    channel = new FormControl();
   
   /**
    * constructor
@@ -42,7 +42,15 @@ export class ChannelContentComponent implements OnInit {
     private fb: FormBuilder,
     private data: DataService,
     private router: Router
-  ) {}
+  ) {
+    this.createForm()
+  }
+  createForm() {
+    this.form = this.fb.group({
+      channel: this.fb.group({}),
+      path: this.fb.array([])
+    });
+  }
   /**
    * gets the current url out of the router
    */
@@ -55,7 +63,7 @@ export class ChannelContentComponent implements OnInit {
    */
   reloadData() {
     this.data.getChannel(this.currentChannel).subscribe(res=> {
-        this.channel = res;
+        this.channelData = res;
         this.preloadPath = res[0].path // loads all 'paths'
         for(let path of this.preloadPath){
             //console.log(path)
@@ -93,7 +101,7 @@ export class ChannelContentComponent implements OnInit {
     this.form = this.fb.group({
         channel: [this.currentChannel],
         path: this.fb.array([])
-    });
+    }); 
     this.reloadData()
     }
     /**
@@ -135,9 +143,10 @@ removePath(i: number) {
 }
 /**
  * saves the contents of the form
- * @param model uses the model to add it in the right shape
+ * @param channel_to_Update channel to update
  */
-  save(model: Channel) {
+  save(channel_to_Update) {
+    
     this.data.saveContent(this.form.value).subscribe(()=>{})
     return {message: 'Saved'}
   }

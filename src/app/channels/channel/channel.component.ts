@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { DataService } from '../../services/data.service';
-import { Channel } from '../../models/channel.interface';
+import { Channel } from '../../models/channel';
 import { Router } from '@angular/router';
 
 /**
