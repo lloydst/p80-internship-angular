@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../services/data.service';
 import { Message } from '../../../models/message';
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import * as $ from 'jquery';
 /**

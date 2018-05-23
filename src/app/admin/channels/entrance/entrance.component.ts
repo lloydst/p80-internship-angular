@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService} from '../../../services/data.service';
 import { Website } from '../../../models/website';
-import { Observable } from 'rxjs/observable';
+import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 
