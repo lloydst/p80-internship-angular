@@ -1,7 +1,7 @@
-.main {
-    margin-left: 200px; /* Same as the width of the sidenav */
+.nav {
     background-color: rgb(102, 94, 94);
     padding: 10px;
+    
 }
 a {
     border: 1px solid black;
@@ -14,3 +14,9 @@ a {
 a.active {
     color: white;
 }
+.grid {
+    display: grid;
+    //grid-template-columns: 100%;
+    grid-template-columns: 0 ;
+    grid-template-columns: 1fr;
+  }

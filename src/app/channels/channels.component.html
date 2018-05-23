@@ -1,6 +1,9 @@
 <a (click)="goToNewChannel('new')" >
     <button>new</button>
 </a>
+<a href="/channels" >
+    <button>stop</button>
+</a>
 <a (click)="redirectTo(c.channel)" *ngFor="let c of channel">
     <input type="button" value="{{c.channel}}">
 </a>

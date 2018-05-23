@@ -54,6 +54,9 @@ export class ChannelsComponent implements OnInit {
     this.router.navigateByUrl('/channels', {skipLocationChange: true}).then(()=>
     this.router.navigate(['admin','contents',uri]));
   }
+  stop(){
+    this.router.navigateByUrl('');
+  }
 }
 
   

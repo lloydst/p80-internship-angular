@@ -1,7 +1,10 @@
 body {
     font-family: "Lato", sans-serif;
 }
-
+.grid {
+  display: grid;
+  grid-template-columns: 200px 0 1fr;
+}
 
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}

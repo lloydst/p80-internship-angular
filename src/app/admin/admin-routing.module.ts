@@ -23,7 +23,7 @@ const routes = [
   { path: 'admin', component: AdminComponent, children:[
     {
       path:'', 
-      component: DashboardComponent
+      component: DashboardComponent // this one's grid had to be done seperate
     },
     {
       path:'algemeen', 

@@ -2,17 +2,12 @@
 //@import 'node_modules/angular2-toaster/src/toaster';
 body {
     margin: 0;
-}
-.main {
-    margin-left: 210px; /* Same as the width of the sidenav */
-    padding-top: 2em;
-}
-body {
     font-family: Arial, Helvetica, sans-serif;
 }
+.main {
+    padding: 2em 2em 2em 2em;
+}
 .form-group {
-    
-    
     input {
         font-family: Arial, Helvetica, sans-serif;
         height: 25px;
