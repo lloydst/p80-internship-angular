@@ -1,21 +1,29 @@
 <div class="main">
     <div class="container">
+      <h2>Loop Component</h2>
         <form [formGroup]="websiteForm">
-          <label for="client">client</label>
-            <input #website name="client" type="text" required formControlName="website">
-            <label for="url">url</label>
-            <input type="text" name="url" #url required formControlName="url">
-            <label for="visable">visable</label>
+          <label for="client">client:</label><br>
+            <input #website name="client" type="text" required formControlName="website"><br>
+            <label for="url">url:</label><br>
+            <input type="text" name="url" #url required formControlName="url"><br>
+            <br>
           <button (click)="create(website.value, url.value,{visable: true})" [disabled]="!websiteForm.valid">Add</button>
         </form>
     </div>
-  <table>
-    <th>company/client:</th><th>url:</th><th>edit</th><th>delete</th>
-    <tr *ngFor="let item of data; let i = index">
-      <td>{{item.name}}</td>
-      <td>{{item.url}}</td>
-      <td> <a [routerLink]="item.name" ><button>update</button></a></td>
-      <td><button (click)="delete(item)">delete</button></td>
-    </tr>
-  </table> 
+    <div id="title">
+      
+        <div><strong>company/client:</strong></div>
+        <div><strong>url:</strong></div>
+        <div><strong>edit</strong></div>
+        <div><strong>delete</strong></div>
+        
+    </div>
+    
+  <div id="table" *ngFor="let item of data; let i = index"> <!-- needs to be "gritty" (css grid)-->
+      <div>{{item.name}}</div>
+      <div>{{item.url}}</div>
+      <div> <a [routerLink]="item.name" ><button>update</button></a></div>
+      <div><button (click)="delete(item)">delete</button></div>
+   
+  </div>
 </div>

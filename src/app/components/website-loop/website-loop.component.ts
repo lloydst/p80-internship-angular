@@ -201,7 +201,7 @@ export class WebsiteLoopComponent implements OnInit {
             return 'interupt' // interupts the loop succesfully
         } 
       }
-      var myWindow = window.open(arrayOfUrls[x],'',"channelmode=yes,scrollbars=no,fullscreen=yes") // default = 0
+      var myWindow = window.open(arrayOfUrls[x],'') // default = 0
       if(x === arrayOfUrls.length ) {
         myWindow.close()
         self.checkTime() 
@@ -210,7 +210,7 @@ export class WebsiteLoopComponent implements OnInit {
           myWindow.close()
           go()
         // change this number to change the time it switches between websites
-        }, 53000); // 53 sec for each website this means it checks time every 15.01 min
+        }, 20000); // 20 sec for each website this means it checks time every 15.01 min
       } 
     }
     go()
