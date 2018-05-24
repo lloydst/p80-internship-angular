@@ -1,25 +1,68 @@
+@import '~styles.scss';
 
-.sidenav {
-    height: 100%;
-    width: 200px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 20px;
+@include respond-to(smallest) { 
+    .grid {
+      display: grid;
+      grid-template-columns: 0px;
+      visibility: hidden;
+    }
+  }
+@include respond-to(small) { 
+  .grid {
+    display: grid;
+    grid-template-columns: 0;
+    visibility: hidden;
+  }
+}
+@include respond-to(medium) { 
+  .grid {
+    display: grid;
+    grid-template-columns: 0;
+    visibility: hidden;
+  }
+}
+@include respond-to(large) { 
+    .grid {
+        height: 100%;
+        display: grid;
+        grid-template-rows:repeat(6,40px);
+        grid-template-columns: 200px;
+        position: fixed;
+        //z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        //overflow-x: hidden;
+        padding-top: 20px;
+        visibility: visible;
+    }
+    .grid a {
+        padding: 6px 6px 6px 32px;
+        text-decoration: none;
+        font-size: 20px;
+        font-family: fantasy; // temp
+        color: #818181;
+        display: block;
+    }
+    .grid a:hover {
+        color: #f1f1f1;
+    }
+}
+/*
+ .grid {
+    a {
+        padding: 6px 6px 6px 32px;
+        text-decoration: none;
+        font-size: 20px;
+        font-family: fantasy; // temp
+        color: #818181;
+        display: block;
+        
+    }
+    a:hover {
+        color: #f1f1f1;
+    }
 }
 
-.sidenav a {
-    padding: 6px 6px 6px 32px;
-    text-decoration: none;
-    font-size: 20px;
-    font-family: fantasy; // temp
-    color: #818181;
-    display: block;
-}
 
-.sidenav a:hover {
-    color: #f1f1f1;
-}
+*/

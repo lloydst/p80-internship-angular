@@ -1,3 +1,4 @@
+@import '~styles.scss';
 img {
     max-width: 300px;
 }
@@ -7,5 +8,30 @@ img {
 }
 #images {
     display: inline-flex;
-    max-width: 20%;
+    //max-width: 20%;
 }
+// grid-template-rows: auto;
+// grid-template-columns: repeat(4, 1fr);
+@include respond-to(small) { 
+    .grid {
+      display: grid;
+      grid-template-rows: auto;
+      //grid-template-columns: 1fr; // sidenav router view
+      
+    }
+  }
+  @include respond-to(medium) { 
+    .grid {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: repeat(2, 1fr); // sidenav router view
+    } 
+  }
+  @include respond-to(large) { 
+    .grid {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: repeat(3, 1fr);; // sidenav router view
+    }
+  }
+    
