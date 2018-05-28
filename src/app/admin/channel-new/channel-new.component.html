@@ -1,4 +1,4 @@
-<div class="main">
+<div class="margin">
     <form [formGroup]="form" novalidate (ngSubmit)="save(form)">
         <div>
             <label>Channel name:</label>
@@ -40,12 +40,12 @@
             </div>
           </div>
         </div>
-        <div class="margin-20">
+        <div>
               <a (click)="addPath()" >
                     <input type="button" value="Add route">
               </a>
         </div>
-    <div class="margin-20">
+    <div>
       <button type="submit" [disabled]="!form.valid">Create</button>
     </div>
     

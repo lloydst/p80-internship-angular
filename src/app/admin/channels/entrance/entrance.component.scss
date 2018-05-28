@@ -1,10 +1,14 @@
-#table {
+$cell-1: 9em;
+$cell-2: 15em;
+$cell-3: 4em;
+$cell-4: 4em;
+.table {
     display: grid;
-    grid-template-columns: repeat(4,228px);
-    
-}
-#title {
-    display: grid;
-    grid-template-columns: repeat(4, 228px)
-
-}
+    grid-template-columns: $cell-1 $cell-2 $cell-3 $cell-4;
+    grid-template-rows: auto;
+    overflow-x: auto;
+  }
+  #table{
+      display: grid;
+        grid-template-columns: $cell-1 $cell-2 $cell-3 $cell-4;
+    }

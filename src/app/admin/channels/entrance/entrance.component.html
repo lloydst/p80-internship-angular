@@ -10,13 +10,12 @@
           <button (click)="create(website.value, url.value,{visable: true})" [disabled]="!websiteForm.valid">Add</button>
         </form>
     </div>
-    <div id="title">
-      
+    <div style="overflow-x:auto;">
+    <div class="table">
         <div><strong>company/client:</strong></div>
         <div><strong>url:</strong></div>
         <div><strong>edit</strong></div>
         <div><strong>delete</strong></div>
-        
     </div>
     
   <div id="table" *ngFor="let item of data; let i = index"> <!-- needs to be "gritty" (css grid)-->
@@ -24,6 +23,7 @@
       <div>{{item.url}}</div>
       <div> <a [routerLink]="item.name" ><button>update</button></a></div>
       <div><button (click)="delete(item)">delete</button></div>
+   </div>
    
   </div>
 </div>

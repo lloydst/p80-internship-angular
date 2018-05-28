@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { Router } from '@angular/router';
-
+import * as $ from 'jquery';
 /**
  * admin channels content component
  */
@@ -68,4 +68,13 @@ export class AdminChannelsContentsComponent implements OnInit {
       this.redirectTo('')
     })
   }
+  
+  myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
 }
