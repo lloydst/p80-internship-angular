@@ -1,53 +1,50 @@
 @import '~styles.scss';
 
-@include respond-to(smallest) { 
-    .grid {
-      display: grid;
-      grid-template-columns: 0px;
-      visibility: hidden;
-    }
+  #link {
+    color: black;
   }
-@include respond-to(small) { 
   .grid {
+    height: 100vh;
     display: grid;
-    grid-template-columns: 0;
-    visibility: hidden;
+    max-width: 50px;
+    grid-template-rows: repeat(6, 50px);
+    text-align: center;
+    position: fixed;
+    background-color: #111;
   }
-}
-@include respond-to(medium) { 
-  .grid {
-    display: grid;
-    grid-template-columns: 0;
-    visibility: hidden;
+  .grid a {
+    // padding: 3px 3px 3px 3px;
+    min-width: 50px;
+    
+    text-decoration: none;
+    font-size: 20px;
+    font-family: fantasy; // temp
+    color: #818181;
+    display: block;
   }
-}
-@include respond-to(large) { 
-    .grid {
-        height: 100%;
-        display: grid;
-        grid-template-rows:repeat(6,40px);
-        grid-template-columns: 200px;
-        position: fixed;
-        //z-index: 1;
-        top: 0;
-        left: 0;
-        background-color: #111;
-        //overflow-x: hidden;
-        padding-top: 20px;
-        visibility: visible;
-    }
-    .grid a {
-        padding: 6px 6px 6px 32px;
-        text-decoration: none;
-        font-size: 20px;
-        font-family: fantasy; // temp
-        color: #818181;
-        display: block;
-    }
-    .grid a:hover {
-        color: #f1f1f1;
-    }
-}
-.toggle {
+  .grid a:hover {
+      color: #f1f1f1;
+  }
+  .tooltip {
+    position: relative;
     display: inline-block;
+    
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
 }

@@ -1,12 +1,9 @@
-<div class="grid">
-    <a routerLink="/admin">Dashboard</a>
-    <a [routerLink]="['algemeen']">Settings</a>
-    <a [routerLink]="['channels/entrance']">components</a>
-    <a [routerLink]="['contents']">channels</a>
-    <a [routerLink]="['upload']">images</a>
-    <a href="#">return too live</a>
+<div class="grid" #Nav>
+    <a routerLink="/admin" class="tooltip"><i class="fas fa-home"></i><span class="tooltiptext">dashboard</span></a>
+    <a [routerLink]="['algemeen']" class="tooltip"><i class="fas fa-cog"></i><span class="tooltiptext">Algemene settings</span></a>
+    <a [routerLink]="['channels/entrance']" class="tooltip"><i class="fas fa-book-open"></i><span class="tooltiptext">componenten</span></a>
+    <a [routerLink]="['contents']" class="tooltip"><i class="fas fa-code-branch"></i><span class="tooltiptext">kanalen</span></a>
+    <a [routerLink]="['upload']" class="tooltip"><i class="fas fa-images"></i><span class="tooltiptext">images</span></a>
+    <a href="#" class="tooltip"><i class="far fa-window-maximize"></i><span class="tooltiptext">kanaal select</span></a>
   </div>
-  <div class="toggle">
-      &#9655; open
-      &#9665; close
-  </div>
+  

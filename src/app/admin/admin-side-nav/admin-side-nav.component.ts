@@ -19,20 +19,12 @@ export class AdminSideNavComponent implements OnInit {
   ngOnInit() {
   }
   toggleMenu() {
-    /**
-     * functions
-     */
-    // detect screen size!
-    // detect menu.prop hidden: hidden or hidden: visable
-    /**
-     * logic
-     */
-    // check screen size (smaller then 1200 = true & menu visable)
-    // show the close then on click close it
-    /**
-     * logic
-     */
-    // check screen size (smaller then 1200 = true & menu hidden)
-    // show the open then on click open it
+    var x = document.getElementById("Nav");
+      if (x.className === "nav") {
+          x.className += " responsive";
+      } else {
+          x.className = "topnav";
+      }
+  
   }
 }
