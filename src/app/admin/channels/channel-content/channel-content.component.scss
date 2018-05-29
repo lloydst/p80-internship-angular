@@ -3,9 +3,9 @@ label {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 textarea[formcontrolname="description"] {
-    
+        width: 85vw; 
         //float:left;
-        width: stretch-content;
+        width: str;
         min-height: 75px;
         outline: none;
         resize: none;

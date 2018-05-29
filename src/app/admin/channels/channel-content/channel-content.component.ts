@@ -149,4 +149,7 @@ removePath(i: number) {
     this.data.saveContent(this.form.value).subscribe(()=>{})
     return {message: 'Saved'}
   }
+  get path(): FormArray {
+    return this.form.get('path') as FormArray;
+  };
 }

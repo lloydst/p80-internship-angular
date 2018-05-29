@@ -1,49 +1,49 @@
-
-
-<form [formGroup]="form" novalidate (ngSubmit)="save(form)">
-  <div>
-    <label>Channel name:</label><br>
-    <input type="text" formControlName="channel" readonly="readonly">
-    
-  </div>
-  <!--paths-->
-  <div class="grid" *ngFor="let path of form['controls'].path['controls']; let i=index"> <!-- for prod err refer too https://github.com/angular/angular-cli/issues/6099 -->
+<form [formGroup]="form" (ngSubmit)="save(form)">
+     
+    <!-- Hero Detail Controls -->
     <div>
-      <span>path {{i + 1}}</span>
-      <span *ngIf="form.controls.path.controls.length > 1" (click)="removePath(i)"></span>
+        <label>Channel:
+          <input formControlName="channel" readonly="readonly">
+        </label>
     </div>
-    <div  [formGroupName]="i">
-    <div>
-      <label>path url:</label><br>
-      <input type="url" formControlName="pathurl">
-    </div>
-    <div>
-      <label>description:</label><br>
-      <textarea type="text" formControlName="description"></textarea>
-    </div>
-    <div>
-      <label>delay:</label><br>
-      <input type="number" formControlName="delay">
-    </div>
-    <div>
-      <label>component name:</label><br>
-        <input type="text" formControlName="componentName">
+  
+    <div formArrayName="path">
+      <div *ngFor="let paths of path.controls; let i=index" [formGroupName]="i" >
+        <!-- The repeated path template -->
+        <h4>path #{{i + 1}}</h4>
+        <div>
+          <div>
+            <label>Url: <br>
+              <input formControlName="pathurl">
+            </label>
+          </div>
+          <div >
+            <label>Name:<br>
+              <input formControlName="componentName">
+            </label>
+          </div>
+          <div >
+              <label>Description:<br>
+                <textarea formControlName="description" class="description"></textarea>
+              </label>
+          </div>
+          <div >
+                <label>Delay:<br>
+                  <input formControlName="delay">
+                </label>
+          </div>
+        </div>
+        <br>
+        <!-- End of the repeated address template -->
       </div>
-      <a (click)="removePath(i)">
-        <input type="button" value="remove Path">
-      </a>
+      <div>
+          <button type="submit"
+                  [disabled]="form.pristine">Save</button> &nbsp;
+          <button type="button" (click)="revert()"
+                  [disabled]="form.pristine" class="btn btn-danger">Revert</button>
+        </div>
     </div>
-    <br>
-  </div>
-  <br>
-  <div class="margin-20">
-        <a (click)="addPath()" >
-              <input type="button" value="Add Path">
-        </a>
-  </div>
-  <div class="margin-20">
-    <button type="submit" [disabled]="!form.valid">Save</button>
-  </div>
-</form>
+  </form>
+  
 
 
