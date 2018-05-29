@@ -3,14 +3,14 @@ label {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 textarea[formcontrolname="description"] {
-    min-width: auto;
-    height: 75px;
-    padding: 12px 20px;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    background-color: #f8f8f8;
-    resize: none;
+    
+        //float:left;
+        width: stretch-content;
+        min-height: 75px;
+        outline: none;
+        resize: none;
+        border: 1px solid grey;
+        
 }
 
 input[type=text] {

@@ -4,9 +4,7 @@
   <div>
     <label>Channel name:</label><br>
     <input type="text" formControlName="channel" readonly="readonly">
-    <small *ngIf="!form.controls.channelvalid" >
-            Name is required (minimum 5 characters).
-    </small>
+    
   </div>
   <!--paths-->
   <div class="grid" *ngFor="let path of form['controls'].path['controls']; let i=index"> <!-- for prod err refer too https://github.com/angular/angular-cli/issues/6099 -->
@@ -21,7 +19,7 @@
     </div>
     <div>
       <label>description:</label><br>
-      <textarea type="text" formControlName="description" cols="40"></textarea>
+      <textarea type="text" formControlName="description"></textarea>
     </div>
     <div>
       <label>delay:</label><br>

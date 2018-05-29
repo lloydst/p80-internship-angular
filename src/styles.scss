@@ -5,15 +5,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 .main {
-    padding: 2em 2em 2em 2em;
+    padding: 1em 1em 1em 1em;
 }
-.form-group {
-    input {
-        font-family: Arial, Helvetica, sans-serif;
-        height: 25px;
-        border-radius: 5px;
-    }
-}
+
 
 $breakpoints: (
   'mobile-small': ( min-width: 240px ),
