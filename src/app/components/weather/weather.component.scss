@@ -7,8 +7,8 @@ div#today_icon {
     font-size: 4em;
 }
 #forecast {
-    display: inline-block;
-    width: 11%;
+    //display: inline-block;
+    //width: 11%;
     text-align: center;
     margin-top: 10px;
     span:first-child{
@@ -19,7 +19,7 @@ div#today_icon {
     }
 }
 #today {
-    width: 40%;
+    //width: 40%;
     float: left;
 }
 .wi-custom {
@@ -34,5 +34,12 @@ div#today_icon {
     font-size: 23px;
 }
 #weather {
-    min-height:50vh;
+    max-height:50vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#forecast-wrap {
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(2,1fr);
 }

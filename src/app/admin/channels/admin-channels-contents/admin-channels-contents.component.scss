@@ -98,4 +98,6 @@
 }
 .margin {
     margin: 1em;
+    display:grid;
+    grid-template-columns: 1fr;
 }

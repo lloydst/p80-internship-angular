@@ -3,18 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SettingComponent } from './setting/setting.component';
-import { AdminChannelsComponent } from './channels/channels.component';
 import { AdminComponent } from './admin.component';
-import { AdminEntranceComponent } from './channels/entrance/entrance.component';
-import { AdminEntranceDetailComponent } from './channels/entrance/admin-entrance-detail/admin-entrance-detail.component';
-import { AdminEventComponent } from './channels/event/event.component';
-import { AdminEventDetailComponent } from './channels/event/admin-event-detail/admin-event-detail.component';
-import { AdminMeetingComponent } from './channels/meeting/meeting.component';
-import { ImageUploadComponent } from './image-upload/image-upload.component';
-import { ImageViewComponent } from './image-view/image-view.component';
-import { AdminChannelsContentsComponent } from './admin-channels-contents/admin-channels-contents.component';
-import { ChannelNewComponent } from './channel-new/channel-new.component';
-import { ChannelContentComponent } from './channel-content/channel-content.component';
+
+import { AdminChannelsComponent } from './componenten/channels.component';
+import { AdminEntranceComponent } from './componenten/entrance/entrance.component';
+import { AdminEntranceDetailComponent } from './componenten/entrance/admin-entrance-detail/admin-entrance-detail.component';
+import { AdminEventComponent } from './componenten/event/event.component';
+import { AdminEventDetailComponent } from './componenten/event/admin-event-detail/admin-event-detail.component';
+import { AdminMeetingComponent } from './componenten/meeting/meeting.component';
+import { ImageUploadComponent } from './image/image-upload/image-upload.component';
+import { ImageViewComponent } from './image/image-view/image-view.component';
+import { AdminChannelsContentsComponent } from './channels/admin-channels-contents/admin-channels-contents.component';
+import { ChannelNewComponent } from './channels/channel-new/channel-new.component';
+import { ChannelContentComponent } from './channels/channel-content/channel-content.component';
 
 /**
  * defining routes

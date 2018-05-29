@@ -3,26 +3,26 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AdminSideNavComponent } from './admin-side-nav/admin-side-nav.component';
-import { AdminChannelsComponent } from './channels/channels.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SettingComponent } from './setting/setting.component';
 import { AdminComponent } from './admin.component';
-import { AdminEntranceComponent } from './channels/entrance/entrance.component';
-import { AdminEntranceDetailComponent } from './channels/entrance/admin-entrance-detail/admin-entrance-detail.component';
-import { AdminEventComponent } from './channels/event/event.component';
-import { AdminEventDetailComponent } from './channels/event/admin-event-detail/admin-event-detail.component';
-import { AdminMeetingComponent } from './channels/meeting/meeting.component';
 
 import { AdminRoutingModule } from './admin-routing.module';
-import { SupportTicketsComponent } from './channels/support-tickets/support-tickets.component';
-import { BuildServersComponent } from './channels/build-servers/build-servers.component';
-import { ImageUploadComponent } from './image-upload/image-upload.component';
 import { FileUploadModule } from 'ng2-file-upload';
-import { ImageViewComponent } from './image-view/image-view.component';
-import { AdminChannelsContentsComponent } from './admin-channels-contents/admin-channels-contents.component';
-import { ChannelContentComponent } from './channel-content/channel-content.component';
-import { ChannelNewComponent } from './channel-new/channel-new.component';
-import { ListingComponentsComponent } from './listing-components/listing-components.component';
+import { AdminChannelsComponent } from './componenten/channels.component';
+import { AdminEntranceComponent } from './componenten/entrance/entrance.component';
+import { AdminEntranceDetailComponent } from './componenten/entrance/admin-entrance-detail/admin-entrance-detail.component';
+import { AdminEventComponent } from './componenten/event/event.component';
+import { AdminEventDetailComponent } from './componenten/event/admin-event-detail/admin-event-detail.component';
+import { AdminMeetingComponent } from './componenten/meeting/meeting.component';
+import { SupportTicketsComponent } from './componenten/support-tickets/support-tickets.component';
+import { ImageUploadComponent } from './image/image-upload/image-upload.component';
+import { ImageViewComponent } from './image/image-view/image-view.component';
+import { BuildServersComponent } from './componenten/build-servers/build-servers.component';
+import { AdminChannelsContentsComponent } from './channels/admin-channels-contents/admin-channels-contents.component';
+import { ChannelContentComponent } from './channels/channel-content/channel-content.component';
+import { ChannelNewComponent } from './channels/channel-new/channel-new.component';
+import { ListingComponentsComponent } from './channels/listing-components/listing-components.component';
 
 
 

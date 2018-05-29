@@ -1,9 +1,8 @@
 
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/data.service';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
-import { Channel } from '../../models/channel';
 import { Router } from '@angular/router';
+import { DataService } from '../../../services/data.service';
 
 /**
  * place holder for a channel-contents component

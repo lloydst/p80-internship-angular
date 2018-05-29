@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../../services/data.service';
 import { Router } from '@angular/router';
 import * as $ from 'jquery';
+import { DataService } from '../../../services/data.service';
 /**
  * admin channels content component
  */

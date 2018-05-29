@@ -3,7 +3,7 @@ label {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 textarea[formcontrolname="description"] {
-    min-width: 40%;
+    min-width: auto;
     height: 75px;
     padding: 12px 20px;
     box-sizing: border-box;
@@ -20,3 +20,11 @@ input[type=text] {
      //padding: 2em 2em 2em 2em;
      display: block;
  }
+form {
+     display: grid;
+     grid-template-columns: 1fr;
+ }
+.grid {
+        display: grid;
+        grid-template-columns: 1fr;
+    }

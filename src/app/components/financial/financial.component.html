@@ -1,7 +1,7 @@
-
+<div class="grid">
 <div *ngFor="let bit of bitVal" class="info">
     <span>Rank: {{bit.rank}} Name: {{bit.name}} &euro;{{bit.price_eur}}</span> <br>
-    {{this.percentChangeDay}}<br>
+    
     <table>
             <th>&plusmn;% 1h</th>
             <th>&plusmn;% 24h</th>
@@ -15,5 +15,6 @@
             <td class="up" *ngIf="!bit.percent_change_7d.includes('-');">{{bit.percent_change_7d}}</td>
         </tr>
     </table>
+</div>
 </div>
 

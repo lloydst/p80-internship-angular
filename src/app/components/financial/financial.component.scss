@@ -1,7 +1,13 @@
+$third: 50vh/6; // component needs to be 50vh and has 6 rows;
 .info {
-display: inline-block;
-width: 12.4%;
+    display: grid;
+    grid-template-rows: auto 0 auto;
+    text-align: center;
+    span {
+        min-height: $third;
+    }
     table{
+        min-height: $third;
         .down {
             background-color: orangered;
         }
@@ -9,5 +15,8 @@ width: 12.4%;
             background-color: lime;
         }
     }
-    
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(8,1fr)
 }

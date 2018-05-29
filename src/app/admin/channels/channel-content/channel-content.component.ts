@@ -1,9 +1,8 @@
 import { Component, OnInit, Inject,Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators,FormArray, FormControl } from '@angular/forms';
-import {Channel, Paths} from '../../models/channel'
-import { DataService } from '../../services/data.service';
 import { Router } from '@angular/router';
 import { isNullOrUndefined } from 'util';
+import { DataService } from '../../../services/data.service';
 
 /**
  * admin entrance contents components

@@ -1,0 +1,51 @@
+
+
+<form [formGroup]="form" novalidate (ngSubmit)="save(form)">
+  <div>
+    <label>Channel name:</label><br>
+    <input type="text" formControlName="channel" readonly="readonly">
+    <small *ngIf="!form.controls.channelvalid" >
+            Name is required (minimum 5 characters).
+    </small>
+  </div>
+  <!--paths-->
+  <div class="grid" *ngFor="let path of form['controls'].path['controls']; let i=index"> <!-- for prod err refer too https://github.com/angular/angular-cli/issues/6099 -->
+    <div>
+      <span>path {{i + 1}}</span>
+      <span *ngIf="form.controls.path.controls.length > 1" (click)="removePath(i)"></span>
+    </div>
+    <div  [formGroupName]="i">
+    <div>
+      <label>path url:</label><br>
+      <input type="url" formControlName="pathurl">
+    </div>
+    <div>
+      <label>description:</label><br>
+      <textarea type="text" formControlName="description" cols="40"></textarea>
+    </div>
+    <div>
+      <label>delay:</label><br>
+      <input type="number" formControlName="delay">
+    </div>
+    <div>
+      <label>component name:</label><br>
+        <input type="text" formControlName="componentName">
+      </div>
+      <a (click)="removePath(i)">
+        <input type="button" value="remove Path">
+      </a>
+    </div>
+    <br>
+  </div>
+  <br>
+  <div class="margin-20">
+        <a (click)="addPath()" >
+              <input type="button" value="Add Path">
+        </a>
+  </div>
+  <div class="margin-20">
+    <button type="submit" [disabled]="!form.valid">Save</button>
+  </div>
+</form>
+
+
