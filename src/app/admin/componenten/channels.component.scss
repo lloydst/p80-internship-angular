@@ -1,8 +1,17 @@
+@import '~styles.scss';
 
+@include respond-to(mobile-small) { 
+  .grid {
+    display: grid;    
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  }
+}
+@include respond-to(tablet-small) { // min-width: 480
 .grid {
     display: grid;    
     grid-template-columns: 1fr;
   }
+}
   .topnav {
     background-color: #333;
     overflow: hidden;

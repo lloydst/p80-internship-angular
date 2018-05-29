@@ -1,5 +1,8 @@
 .grid {
     display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); 
+    // assuming 320px is the min-screen size 50 needs to be subtracted since its only the content not the full page
 }
 .topnav {
     overflow: hidden;
