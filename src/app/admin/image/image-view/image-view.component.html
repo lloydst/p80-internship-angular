@@ -3,7 +3,7 @@
     
     <div *ngIf="i.length > 0" >
       location: "/images/img/{{i.filename}}"<br>
-      <img src="/images/img/{{i.filename}}" alt="image couldnt be loaded from db wich means the db is still online" srcset="" id="thumbn">
+      <img src="/images/img/{{i.filename}}" alt="image couldnt be loaded from db wich means the db is still online" srcset="" id="thumbn"><br>
       <button (click)="deleteImg(i.filename)">delete</button>
     </div>
     <div *ngIf="image.length < 1">

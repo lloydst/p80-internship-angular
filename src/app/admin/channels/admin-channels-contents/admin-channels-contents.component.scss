@@ -1,8 +1,16 @@
+@import '~styles.scss';
+
+@include respond-to(mobile) { // max-width: 480
+  .grid {
+    display: grid;    
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  }
+}
+@include respond-to(tablet-and-up) { // min-width: 480
 .grid {
-    display: grid;
-    width: 100%;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); 
-    // assuming 320px is the min-screen size 50 needs to be subtracted since its only the content not the full page
+    display: grid;    
+    grid-template-columns: 1fr;
+  }
 }
 .topnav {
     overflow: hidden;

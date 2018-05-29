@@ -10,16 +10,20 @@ body {
 
 
 $breakpoints: (
+  'mobile': ( max-width: 480px ),
+  'tablet-and-up': ( min-width: 480px ),
+  'smallest': (max-width: 239px),
+  'small': ( min-width:  767px ),
+  'medium': ( min-width:  992px ),
+  'large': ( min-width: 1200px )/* ,
+
   'mobile-small': ( min-width: 240px ),
   'mobile-large':	(min-width: 320px),
   'tablet-small':	(min-width: 480px),
   'tablet-large':(min-width: 768px),
   'screen-small': (min-width: 1024),
   'screen-large': (min-width: 1280),
-  'smallest': (max-width: 239px),
-  'small': ( min-width:  767px ),
-  'medium': ( min-width:  992px ),
-  'large': ( min-width: 1200px )
+  */
 );
  /**
  used as follows:
