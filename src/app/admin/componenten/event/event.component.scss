@@ -24,9 +24,7 @@ label {
   display: inline-block;
   width: 300px;
 }
-input {
-    width: 400px;
-}
+
 input:invalid {
     border-left: 8px solid red;
     //content: '✖';
