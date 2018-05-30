@@ -1,9 +1,29 @@
-<div class="grid" id="Nav">
-    <a routerLink="/admin" class="tooltip"><i class="fas fa-home"></i><span class="tooltiptext">dashboard</span></a>
-    <a [routerLink]="['algemeen']" class="tooltip"><i class="fas fa-cog"></i><span class="tooltiptext">Algemene settings</span></a>
-    <a [routerLink]="['channels/entrance']" class="tooltip"><i class="fas fa-book-open"></i><span class="tooltiptext">componenten</span></a>
-    <a [routerLink]="['contents']" class="tooltip"><i class="fas fa-code-branch"></i><span class="tooltiptext">kanalen</span></a>
-    <a [routerLink]="['upload']" class="tooltip"><i class="fas fa-images"></i><span class="tooltiptext">images</span></a>
-    <a href="#" class="tooltip"><i class="far fa-window-maximize"></i><span class="tooltiptext">kanaal select</span></a>
+<div class="grid" id="Nav" style="width: 50px">
+    <a routerLink="/admin" class="tooltip">
+      <i class="fas fa-home"></i>
+      <span class="text"  style="display:none">dashboard</span>
+    </a>
+    <a [routerLink]="['algemeen']" class="menutext">
+      <i class="fas fa-cog"></i>
+      <span class="text"  style="display:none">Algemene settings</span>
+    </a>
+    <a [routerLink]="['channels/entrance']" class="menutext">
+      <i class="fas fa-book-open"></i>
+      <span class="text"  style="display:none">componenten</span>
+    </a>
+    <a [routerLink]="['contents']" class="menutext">
+      <i class="fas fa-code-branch"></i>
+      <span class="text"  style="display:none">kanalen</span>
+    </a>
+    <a [routerLink]="['upload']" class="menutext">
+      <i class="fas fa-images"></i>
+      <span class="text"  style="display:none">images</span>
+    </a>
+    <a href="" class="menutext"><i class="far fa-window-maximize"></i>
+      <span class="text"  style="display:none">kanaal select</span>
+    </a>
+    <a href="javascript:void(0);" class="menutext">
+      <i class="fas fa-exchange-alt" (click)="toggle()"></i>
+    </a>
   </div>
   

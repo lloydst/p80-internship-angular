@@ -6,12 +6,12 @@
   .grid {
     height: 100vh;
     display: grid;
-    max-width: 50px;
-    grid-template-rows: repeat(6, 50px);
+    // max-width: 50px;
+    grid-template-rows: repeat(7, 50px);
     text-align: center;
     position: fixed;
     background-color: #111;
-    padding-top: 1em;
+    
   }
   .grid a {
     // padding: 3px 3px 3px 3px;
@@ -20,17 +20,18 @@
     font-size: 20px;
     color: #818181;
     display: block;
+    padding-top: 1em;
   }
   
   .grid a:hover {
       color: #f1f1f1;
   }
-  .tooltip {
+  .menutext {
     position: relative;
     display: inline-block;
 }
 
-.tooltip .tooltiptext {
+.menutext .tooltiptext {
     visibility: hidden;
     width: 120px;
     background-color: black;
@@ -44,6 +45,9 @@
     z-index: 1;
 }
 
- .tooltip:active .tooltiptext { // .tooltip:hover .tooltiptext, ...
+ .menutext:active #tooltiptext { // .tooltip:hover .tooltiptext, ...
     visibility: visible;
+}
+.text {
+  color: white;
 }

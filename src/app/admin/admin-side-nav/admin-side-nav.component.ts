@@ -18,13 +18,36 @@ export class AdminSideNavComponent implements OnInit {
  */
   ngOnInit() {
   }
-  toggleMenu() {
-    var x = document.getElementById("Nav");
-      if (x.className === "nav") {
-          x.className += " responsive";
-      } else {
-          x.className = "topnav";
+  /**
+   * toggle's sidenav and hides red x's on channels
+   */
+  toggle() {
+    var navwidth = document.getElementById("Nav")
+    var visability = document.getElementsByClassName("text")
+    var tooltip = document.getElementsByClassName("tooltip")
+    var visabilityitem
+    var tooltipitem
+    
+    if(navwidth.style.width == "50px") {
+      navwidth.style.width = "100vw"
+      for(let i =0; i<visability.length; i++){
+      visabilityitem = visability[i]
+      visabilityitem.style.display = "inline-block"
       }
-  
-  }
+      for (let i=0; i<tooltip.length; i++) {
+        tooltipitem = tooltip[i]
+        tooltipitem.style.display = "none"
+      }
+    } else if(navwidth.style.width == "100vw") {
+      navwidth.style.width = "50px"
+      for(let i =0; i<visability.length; i++){
+        visabilityitem = visability[i]
+        visabilityitem.style.display = "none"
+      }
+      for (let i=0; i<tooltip.length; i++) {
+        tooltipitem = tooltip[i]
+        tooltipitem.style.display = "inline-block"
+      }
+    }
+  } 
 }

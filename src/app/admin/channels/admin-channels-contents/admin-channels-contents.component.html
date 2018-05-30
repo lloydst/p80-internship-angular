@@ -7,9 +7,9 @@
     routerLinkActive="active"
     (click)="redirectTo(c.channel)">
     {{c.channel}} Channel 
-      <div class="tooltip" (click)="delete(c)">
+      <div class="tooltip" style="display: inline-block" (click)="delete(c)">
         x
-        <span class="tooltiptext">delete</span>
+        <span class="tooltiptext" >delete</span>
       </div>
     </a>
     <a href="javascript:void(0);" class="icon" (click)="myFunction()">
