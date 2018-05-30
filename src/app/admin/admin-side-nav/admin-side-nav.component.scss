@@ -44,6 +44,6 @@
     z-index: 1;
 }
 
-.tooltip:hover .tooltiptext, .tooltip:active .tooltiptext {
+ .tooltip:active .tooltiptext { // .tooltip:hover .tooltiptext, ...
     visibility: visible;
 }
