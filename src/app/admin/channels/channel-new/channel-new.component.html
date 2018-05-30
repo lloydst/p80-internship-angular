@@ -16,22 +16,22 @@
             </div>
             <div  [formGroupName]="i">
               <div>
-                <label>path url:</label>
+                <label>path url:</label><br>
                 <input type="text" formControlName="pathurl">
                 
               </div>
               <div>
                   <label>description:</label><br>
-                  <textarea type="text" formControlName="description" cols="40"></textarea>
+                  <textarea type="text" formControlName="description" ></textarea>
                   
                 </div>
-              <label>delay:</label>
+              <label>delay:</label><br>
                   <input type="number" formControlName="delay">
                   <small>
                       1000 = 1 second, so 1 minute = 60000 etc.
                   </small>
               <div>
-                    <label>component name:</label>
+                    <label>component name:</label><br>
                     <input type="text" formControlName="componentName">
                   </div>
                   <a (click)="removePath(i)">
