@@ -1,12 +1,12 @@
 <div class="margin">
     <a (click)="goToNewChannel('new')" class="margin-right">
-        <button class="button">new</button>
+        <button class="button primary">new</button>
     </a> 
     <a href="/channels" class="margin-right">
-        <button class="button">stop</button>
+        <button class="button primary">stop</button>
     </a> 
     <a (click)="redirectTo(c.channel)" *ngFor="let c of channel" class="margin-right">
-        <input class="button" type="button" value="{{c.channel}}">
+        <button class="button primary" type="button">{{c.channel}}</button>
     </a> 
 </div>
 
