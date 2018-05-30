@@ -11,24 +11,23 @@
     text-align: center;
     position: fixed;
     background-color: #111;
+    padding-top: 1em;
   }
   .grid a {
     // padding: 3px 3px 3px 3px;
     min-width: 50px;
-    
     text-decoration: none;
     font-size: 20px;
-    font-family: fantasy; // temp
     color: #818181;
     display: block;
   }
+  
   .grid a:hover {
       color: #f1f1f1;
   }
   .tooltip {
     position: relative;
     display: inline-block;
-    
 }
 
 .tooltip .tooltiptext {
@@ -45,6 +44,6 @@
     z-index: 1;
 }
 
-.tooltip:hover .tooltiptext {
+.tooltip:hover .tooltiptext, .tooltip:active .tooltiptext {
     visibility: visible;
 }

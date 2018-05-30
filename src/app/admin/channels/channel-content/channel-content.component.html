@@ -14,12 +14,12 @@
         <div>
           <div>
             <label>Url: <br>
-              <input formControlName="pathurl">
+              <input type="text" formControlName="pathurl">
             </label>
           </div>
           <div >
             <label>Name:<br>
-              <input formControlName="componentName">
+              <input type="text" formControlName="componentName">
             </label>
           </div>
           <div >
@@ -29,18 +29,23 @@
           </div>
           <div >
                 <label>Delay:<br>
-                  <input formControlName="delay">
+                  <input type="number" formControlName="delay">
                 </label>
           </div>
         </div>
         <br>
+        <button class="button succes" type="submit" (click)="addPath()"
+                  >Add path</button> &nbsp;
+          <button class="button danger" type="button danger" (click)="removePath(i)"
+                   >Remove path</button> <br>
         <!-- End of the repeated address template -->
       </div>
       <div>
-          <button type="submit"
+        <br>
+          <button class="button primary" type="submit"
                   [disabled]="form.pristine">Save</button> &nbsp;
-          <button type="button" (click)="revert()"
-                  [disabled]="form.pristine" class="btn btn-danger">Revert</button>
+          <button class="button danger" type="button danger" (click)="revert()"
+                  [disabled]="form.pristine" >undo/reload</button>
         </div>
     </div>
   </form>

@@ -39,15 +39,15 @@
                         <span *ngIf="item.isError">Failed</span>
                     </td>
                     <td nowrap>
-                        <button type="button" class="btn btn-success btn-xs"
+                        <button type="button" class="button succes"
                                 (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
                             Upload
                         </button>
-                        <button type="button" class="btn btn-warning btn-xs"
+                        <button type="button" class="button warning"
                                 (click)="item.cancel()" [disabled]="!item.isUploading">
                                  Cancel
                         </button>
-                        <button type="button" class="btn btn-danger btn-xs"
+                        <button type="button" class="button danger"
                                 (click)="item.remove()"> Remove
                         </button>
                     </td>
@@ -62,15 +62,15 @@
                         <div class="progress-bar" role="progressbar" [ngStyle]="{ 'width': uploader.progress + '%' }"></div>
                     </div>
                 </div>
-                <button type="button" class="btn btn-success btn-s"
+                <button type="button" class="button succes"
                         (click)="uploader.uploadAll()" [disabled]="!uploader.getNotUploadedItems().length">
                     <span class="glyphicon glyphicon-upload"></span> Upload all
                 </button>
-                <button type="button" class="btn btn-warning btn-s"
+                <button type="button" class="button warning"
                         (click)="uploader.cancelAll()" [disabled]="!uploader.isUploading">
                     <span class="glyphicon glyphicon-ban-circle"></span> Cancel all
                 </button>
-                <button type="button" class="btn btn-danger btn-s"
+                <button type="button" class="button danger"
                         (click)="uploader.clearQueue()" [disabled]="!uploader.queue.length">
                     <span class="glyphicon glyphicon-trash"></span> Remove all
                 </button>

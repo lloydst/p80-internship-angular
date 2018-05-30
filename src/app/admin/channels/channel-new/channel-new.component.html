@@ -35,18 +35,18 @@
                     <input type="text" formControlName="componentName">
                   </div>
                   <a (click)="removePath(i)">
-                    <input type="button" value="removePath">
-                  </a>
-            </div>
+                    <input type="button" class="button warning" value="removePath">
+                  </a> 
+            </div><br>
           </div>
         </div>
         <div>
               <a (click)="addPath()" >
-                    <input type="button" value="Add route">
-              </a>
-        </div>
+                    <input class="button succes" type="button" value="Add route">
+              </a> 
+        </div><br>
     <div>
-      <button type="submit" [disabled]="!form.valid">Create</button>
+      <button class="button succes" type="submit" [disabled]="!form.valid">Create</button>
     </div>
     
     

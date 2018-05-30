@@ -7,7 +7,7 @@
             <label for="url">url:</label><br>
             <input type="text" name="url" #url required formControlName="url"><br>
             <br>
-          <button (click)="create(website.value, url.value,{visable: true})" [disabled]="!websiteForm.valid">Add</button>
+          <button class="button succes" (click)="create(website.value, url.value,{visable: true})" [disabled]="!websiteForm.valid">Add</button>
         </form>
     </div>
     <div style="overflow-x:auto;">
@@ -21,8 +21,8 @@
   <div id="table" *ngFor="let item of data; let i = index"> <!-- needs to be "gritty" (css grid)-->
       <div>{{item.name}}</div>
       <div>{{item.url}}</div>
-      <div> <a [routerLink]="item.name" ><button>update</button></a></div>
-      <div><button (click)="delete(item)">delete</button></div>
+      <div><a [routerLink]="item.name" ><button class="button warning">update</button></a></div>
+      <div><button class="button danger" (click)="delete(item)">delete</button></div>
    </div>
    
   </div>

@@ -8,33 +8,24 @@ body {
     padding: 1em 1em 1em 1em;
 }
 
-
-$breakpoints: (
-  'mobile': ( max-width: 480px ),
-  'tablet-and-up': ( min-width: 480px ),
-  'smallest': (max-width: 239px),
-  'small': ( min-width:  767px ),
-  'medium': ( min-width:  992px ),
-  'large': ( min-width: 1200px )/* ,
-
-  'mobile-small': ( min-width: 240px ),
-  'mobile-large':	(min-width: 320px),
-  'tablet-small':	(min-width: 480px),
-  'tablet-large':(min-width: 768px),
-  'screen-small': (min-width: 1024),
-  'screen-large': (min-width: 1280),
-  */
-);
  /**
  used as follows:
  @import '~styles.scss';
 
 @include respond-to($breakpoints.name) { 
-  .class {
+  selector {
     rules: ...
   }
 }
   */
+  $breakpoints: (
+  'mobile': ( max-width: 480px ),
+  'tablet-and-up': ( min-width: 480px ),
+  'smallest': (max-width: 239px),
+  'small': ( min-width:  767px ),
+  'medium': ( min-width:  992px ),
+  'large': ( min-width: 1200px )
+);
 @mixin respond-to($name) {
   // If the key exists in the map
   @if map-has-key($breakpoints, $name) {
@@ -49,4 +40,24 @@ $breakpoints: (
     @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
         + "Please make sure it is defined in `$breakpoints` map.";
   }
+}
+.button {
+  padding: 1em;
+  color: black;
+  border: none;
+  border-radius: 3px;
+   
+}
+.primary {
+  background-color: rgb(0, 89, 255);
+}
+
+.danger {
+  background-color: rgb(230, 25, 0);
+}
+.succes {
+  background-color: green;
+}
+.warning {
+  background-color: orangered;
 }

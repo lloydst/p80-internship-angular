@@ -152,4 +152,11 @@ removePath(i: number) {
   get path(): FormArray {
     return this.form.get('path') as FormArray;
   };
+  revert(){
+    this.form.reset({
+      channel: [this.currentChannel],
+      path: this.fb.array([])
+  });  
+    this.reloadData()
+  }
 }
