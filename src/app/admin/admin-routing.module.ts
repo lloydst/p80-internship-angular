@@ -31,7 +31,7 @@ const routes = [
       component: SettingComponent
     },
     {
-      path:'channels', 
+      path:'components', 
       component: AdminChannelsComponent,
       children: [
         {path: 'entrance', component: AdminEntranceComponent},
@@ -42,12 +42,16 @@ const routes = [
       ]
     },
     {
-      path:'contents', 
-      component: AdminChannelsContentsComponent,
-      children: [
+      path:'channels', component: AdminChannelsContentsComponent, children: [
         // these need to become content specific
+        {
+          path: '',
+          redirectTo:'new',
+          pathMatch: 'full'
+        }, // default
         {path: 'new', component: ChannelNewComponent},
         {path: ':channel', component: ChannelContentComponent}
+        
       ]
     },
     {

@@ -4,9 +4,19 @@ $cell-3: 4em;
 // setting cell spaces so they stay the same size (these could be changed based on viewports instead of hardcoded)
 .table {
     display: grid;
-      grid-template-columns: minmax(33%, $cell-1) minmax(33%, $cell-2) minmax(33%, $cell-3) ;
+      grid-template-columns: $cell-1 $cell-2 $cell-3;
   }
   #table{
       display: grid;
-      grid-template-columns: minmax(33%, $cell-1) minmax(33%, $cell-2) minmax(33%, $cell-3) ;
+      grid-template-columns: $cell-1 $cell-2 $cell-3;
     }
+.odd {
+    background-color: cyan;
+    min-width: $cell-3;
+    max-width: $cell-1*2;
+}
+.even {
+    background-color: rgba(0, 255, 255, 0.256);
+    min-width: $cell-3;
+    max-width: $cell-1*2;
+}

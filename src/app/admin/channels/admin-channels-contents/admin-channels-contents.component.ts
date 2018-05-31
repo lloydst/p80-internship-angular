@@ -56,7 +56,7 @@ export class AdminChannelsContentsComponent implements OnInit {
    */
   redirectTo(uri:string){
     this.router.navigateByUrl('/admin', {skipLocationChange: true}).then(()=>
-    this.router.navigate(['admin/contents',uri]));
+    this.router.navigate(['admin/channels',uri]));
   }
   /**
    * delete channel function

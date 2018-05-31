@@ -7,8 +7,8 @@
     routerLinkActive="active"
     (click)="redirectTo(c.channel)">
     {{c.channel}} Channel 
-      <div class="tooltip" style="display: inline-block" (click)="delete(c)">
-        x
+      <div class="tooltip" style="display: inline-block" >
+        <span (click)="delete(c)">x</span> 
         <span class="tooltiptext" >delete</span>
       </div>
     </a>
