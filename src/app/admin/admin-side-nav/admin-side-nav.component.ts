@@ -21,13 +21,50 @@ export class AdminSideNavComponent implements OnInit {
   /**
    * toggle's sidenav and hides red x's on channels
    */
-  toggle() {
+  toggle(opt?) {
     var navwidth = document.getElementById("Nav")
     var visability = document.getElementsByClassName("text")
     var tooltip = document.getElementsByClassName("tooltip")
     var visabilityitem
     var tooltipitem
-    
+    //console.log(opt)
+    if (opt === "close") { //string
+      if(navwidth.style.width == "100vw") {
+        navwidth.style.width = "50px"
+        for(let i =0; i<visability.length; i++){
+          visabilityitem = visability[i]
+          visabilityitem.style.display = "none"
+        }
+        for (let i=0; i<tooltip.length; i++) {
+          tooltipitem = tooltip[i]
+          tooltipitem.style.display = "inline-block"
+        }
+      }
+    }
+    if (opt !== "close") { // opt= "close" or undefined
+      if(navwidth.style.width == "50px") {
+        navwidth.style.width = "100vw"
+        for(let i =0; i<visability.length; i++){
+        visabilityitem = visability[i]
+        visabilityitem.style.display = "inline-block"
+        }
+        for (let i=0; i<tooltip.length; i++) {
+          tooltipitem = tooltip[i]
+          tooltipitem.style.display = "none"
+        }
+      } else if(navwidth.style.width == "100vw") {
+        navwidth.style.width = "50px"
+        for(let i =0; i<visability.length; i++){
+          visabilityitem = visability[i]
+          visabilityitem.style.display = "none"
+        }
+        for (let i=0; i<tooltip.length; i++) {
+          tooltipitem = tooltip[i]
+          tooltipitem.style.display = "inline-block"
+        }
+      }
+    }
+    /*
     if(navwidth.style.width == "50px") {
       navwidth.style.width = "100vw"
       for(let i =0; i<visability.length; i++){
@@ -48,6 +85,6 @@ export class AdminSideNavComponent implements OnInit {
         tooltipitem = tooltip[i]
         tooltipitem.style.display = "inline-block"
       }
-    }
+    } */
   } 
 }

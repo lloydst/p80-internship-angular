@@ -1,25 +1,25 @@
 <div class="grid" id="Nav" style="width: 50px">
-    <a routerLink="/admin" class="menutext">
+    <a routerLink="/admin" class="menutext" (click)="toggle('close')">
       <i class="fas fa-home"></i>
       <span class="text"  style="display:none">dashboard</span>
     </a>
-    <a [routerLink]="['algemeen']" class="menutext">
+    <a [routerLink]="['algemeen']" (click)="toggle('close')" class="menutext">
       <i class="fas fa-cog"></i>
       <span class="text"  style="display:none">Algemene settings</span>
     </a>
-    <a [routerLink]="['channels/entrance']" class="menutext">
+    <a [routerLink]="['channels/entrance']"  (click)="toggle('close')" class="menutext">
       <i class="fas fa-puzzle-piece"></i>
       <span class="text"  style="display:none">componenten</span>
     </a>
-    <a [routerLink]="['contents']" class="menutext">
+    <a [routerLink]="['contents']"  (click)="toggle('close')" class="menutext">
       <i class="fas fa-code-branch"></i>
       <span class="text"  style="display:none">kanalen</span>
     </a>
-    <a [routerLink]="['upload']" class="menutext">
+    <a [routerLink]="['upload']" (click)="toggle('close')" class="menutext">
       <i class="fas fa-images"></i>
       <span class="text"  style="display:none">images</span>
     </a>
-    <a href="" class="menutext"><i class="fas fa-desktop"></i>
+    <a href="" class="menutext" (click)="toggle('close')"><i class="fas fa-desktop"></i>
       <span class="text"  style="display:none">kanaal select</span>
     </a>
     <a href="javascript:void(0);" class="menutext">

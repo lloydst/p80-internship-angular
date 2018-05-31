@@ -12,18 +12,16 @@
     </div>
     <div style="overflow-x:auto;">
     <div class="table">
-        <div><strong>company/client:</strong></div>
-        
+        <div><strong>company/ client:</strong></div>
         <div><strong>edit</strong></div>
         <div><strong>delete</strong></div>
     </div>
     
-  <div id="table" *ngFor="let item of data; let i = index"> <!-- needs to be "gritty" (css grid)-->
+    <div id="table" *ngFor="let item of data; let i = index"> <!-- needs to be "gritty" (css grid)-->
       <div>{{item.name}}</div>
-      
       <div><a [routerLink]="item.name" ><button class="button warning">update</button></a></div>
       <div><button class="button danger" (click)="delete(item)">delete</button></div>
-   </div>
+    </div>
    
   </div>
 </div>

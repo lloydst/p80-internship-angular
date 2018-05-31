@@ -1,13 +1,20 @@
+
 <div class="margin">
     <a (click)="goToNewChannel('new')" class="margin-right">
-        <button class="button primary">new</button>
+        <button class="button primary">admin</button>
     </a> 
-    <a href="/channels" class="margin-right">
-        <button class="button primary">stop</button>
+    <a href="/channels" class="margin-right ">
+        <button class="button danger">stop</button>
     </a> 
+    <div class="margin">
+        channels:
     <a (click)="redirectTo(c.channel)" *ngFor="let c of channel" class="margin-right">
-        <button class="button primary" type="button">{{c.channel}}</button>
-    </a> 
+        <button class="button channels" type="button">{{c.channel}}</button>
+    </a>
 </div>
-
-<router-outlet></router-outlet>
+     
+</div>
+<div>
+    <p>If you wish to create a new channel click admin. if you wish to stop a active channel click stop</p>
+</div>
+<router-outlet></router-outlet> 

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from "@angular/router";
 import { DataService } from '../services/data.service';
-
+import { Title } from '@angular/platform-browser';
 /**
  * channel component
  */
@@ -12,6 +12,7 @@ import { DataService } from '../services/data.service';
 })
 
 export class ChannelsComponent implements OnInit {
+  title = "control"
   /**
    * for template binding
    */
@@ -22,7 +23,8 @@ export class ChannelsComponent implements OnInit {
    */
   constructor (
     public router: Router,
-    private data: DataService
+    private data: DataService,
+    private titleService: Title 
   ) {}
   /**
    * gets the channels from db
@@ -32,11 +34,18 @@ export class ChannelsComponent implements OnInit {
       this.channel = doc
     })
   }
+  setTitle( newTitle: string) {
+    this.titleService.setTitle( newTitle );
+  }
   /**
    * on load
    */
   ngOnInit () {
+    this.setTitle("Channel control")
     this.getRoutes()
+  }
+  ngOnDestroy() {
+    this.setTitle("p80 interschip assignment")
   }
   /**
    * force child reload
@@ -54,7 +63,7 @@ export class ChannelsComponent implements OnInit {
     this.router.navigateByUrl('/channels', {skipLocationChange: true}).then(()=>
     this.router.navigate(['admin','contents',uri]));
   }
-  stop(){
+  stop() {
     this.router.navigateByUrl('');
   }
 }

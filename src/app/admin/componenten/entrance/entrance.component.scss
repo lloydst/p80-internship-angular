@@ -4,10 +4,7 @@ $cell-3: 4em;
 // setting cell spaces so they stay the same size (these could be changed based on viewports instead of hardcoded)
 .table {
     display: grid;
-    max-width: 75vw;
-    grid-template-columns: minmax(33, $cell-1) minmax(33%, $cell-2) minmax(33%, $cell-3) ;
-    grid-template-rows: auto;
-    overflow-x: auto;
+      grid-template-columns: minmax(33%, $cell-1) minmax(33%, $cell-2) minmax(33%, $cell-3) ;
   }
   #table{
       display: grid;
