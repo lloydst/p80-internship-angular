@@ -96,7 +96,15 @@ export class WebsiteLoopComponent implements OnInit {
     private dataService: DataService,
     public http: HttpClient
     
-  ) {}
+  ) {
+    window.onbeforeunload = function(e) {
+      var myWindow = window.open('javascript:void window.focus()', 'loop');
+      myWindow.close()
+    return undefined
+    };
+  }
+    
+  
  /**
   * gets all websites through the service
   * 
@@ -201,7 +209,7 @@ export class WebsiteLoopComponent implements OnInit {
             return 'interupt' // interupts the loop succesfully
         } 
       }
-      var myWindow = window.open(arrayOfUrls[x],'') // default = 0
+      var myWindow = window.open(arrayOfUrls[x],'loop') // default = 0
       if(x === arrayOfUrls.length ) {
         myWindow.close()
         self.checkTime() 
