@@ -17,6 +17,7 @@
  - [database](#database)
  - [usefull links](#usefull-links)
  - [docs](#docs)
+ - [docker](#docker)
 
 ## getting started:
 `git clone https://github.com/lloydst/p80-internship-angular.git .` (replace the '.' with a directory if you would want it in a new folder)
@@ -71,3 +72,7 @@ prod: ${host}= example.com
 ## docs
 docs can be found at [https://lloydst.github.io/p80-internship-angular/](https://lloydst.github.io/p80-internship-angular/) though there is a big chance they are outdated to view the most recent you need to clone the project and run ```npm run doc:watch``` (after the npm install ofc) this will generate it in the docs folder and server it on [localhost:8080](http://localhost:8080).
 Or you use ``` npm run doc ``` and if the server is running (both npm start and npm run server) you can acces it at (local)host(:port)/docs
+
+## docker
+// not fully implemented
+``docker run -p process.env.PORT:3000 lloydst/p80-internship`` opens the last img on port:3000
