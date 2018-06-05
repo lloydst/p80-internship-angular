@@ -42,7 +42,7 @@ app.use(cookieParser());
 app.use('/',express.static(path.join(__dirname, 'dist'))) // angular project
 
 // available everywhere but while in production
-if (process.env != 'production') {
+if (process.env.NODE_ENV != 'production') {
   app.use('/docs', express.static(path.join(__dirname, 'docs')))
   app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
   app.get('/swagger.json', function(req, res) {
@@ -61,7 +61,7 @@ app.use('*',express.static(path.join(__dirname, 'dist'))) //routes anything not 
 
 const port = process.env.PORT||3000; // PORT is another variable that can be placed in the .env file
 http.listen(process.env.PORT||3000, function(){
-  console.log('Example app listening on port ' + port +'!')
+  console.log('Example app listening on port ' + port +'! in ' +process.env.NODE_ENV)
 })
 
 // socket io connections / setup
