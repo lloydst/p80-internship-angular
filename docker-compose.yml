@@ -1,0 +1,40 @@
+version: '3' # specify docker-compose version
+# this is for production  have to do dev version(or do i?)
+# Define the services/containers to be run
+services:
+  angular: # name of the first service
+    container_name: angular
+    image: angular
+    build:
+      context: .
+      dockerfile: .docker/angular.dockerfile
+    
+  node:
+    container_name: nodeapp
+    image: nodeapp
+    build:
+      context: .
+      dockerfile: .docker/node.dockerfile
+    volumes:
+      - .:/var/www/angularnoderestfulservice
+    environment:
+      - NODE_ENV=production
+    ports:
+      - "3000:3000"
+    depends_on: 
+      - mongodb
+    networks:
+      - nodeapp-network
+
+  mongodb:
+    container_name: mongodb
+    image: mongo
+    networks:
+      - nodeapp-network
+
+networks:
+  nodeapp-network:
+    driver: bridge
+
+  
+      

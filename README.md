@@ -75,4 +75,9 @@ Or you use ``` npm run doc ``` and if the server is running (both npm start and 
 
 ## docker
 // not fully implemented
-``docker run -p process.env.PORT:3000 lloydst/p80-internship`` opens the last img on port:3000
+build initial image (update front end)
+`docker-compose build`
+start containers
+`docker-compose up`
+when you have made changes force clean build of docker-images
+`docker-compose up --build` 
