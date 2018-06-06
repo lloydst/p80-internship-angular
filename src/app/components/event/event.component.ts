@@ -87,6 +87,7 @@ export class EventComponent implements OnInit {
    * interupts the loop
    */
   interuptLoop() {
+    
     this.setTimeNow()
     var str = /([0-9])/g
     for(let j = 0; j< this.messages.length; j++){
@@ -104,21 +105,31 @@ export class EventComponent implements OnInit {
       
       if(Number(newFrom) < Number(newNow) && Number(newNow) < Number(newTill)) {  // while should be shown change it to shown
 
-        this.dataService.updateMessage(this.messages[j].identifier, {"img":true}).subscribe()
-        this.getMessages()
+        this.dataService.updateMessage(this.messages[j].identifier, {"img":true}).subscribe( ()=> {
+          this.getMessages();
+          
+        })
+        
         // returning anything here wont interupt loop
-      }else if(Number(newFrom) < Number(newNow) && Number(newNow) > Number(newTill)) {
+      }else if(Number(newFrom) < Number(newNow) && Number(newNow) > Number(newTill)) { // while from < now & now > shown till delete
 
-        this.dataService.deleteMessage(this.messages[j].identifier).subscribe()
-        this.getMessages()
-      }else if(Number(newFrom) >= Number(newNow) && Number(newNow) < Number(newTill)) {
-
-        this.dataService.updateMessage(this.messages[j].identifier, {"img":false}).subscribe()
-        this.getMessages()
+        this.dataService.deleteMessage(this.messages[j].identifier).subscribe( ()=> {
+          this.getMessages();
+          
+        })
+        
+      }else if(Number(newFrom) >= Number(newNow) && Number(newNow) < Number(newTill)) { // shouldnt be shown yet
+        console.log('not yet shown')
+        this.dataService.updateMessage(this.messages[j].identifier, {"img":false}).subscribe( ()=> {
+          this.getMessages();
+        })
+        
       } else if(Number(newTill) < Number(newFrom)){ // showTill < showFrom need to write validation so this cannot happen for now it swaps them
 
-        this.dataService.updateMessage(this.messages[j].identifier, {"img":false, "showFrom":this.messages[j].showTill, "showTill":this.messages[j].showFrom}).subscribe()
-        this.getMessages()
+        this.dataService.updateMessage(this.messages[j].identifier, {"img":false, "showFrom":this.messages[j].showTill, "showTill":this.messages[j].showFrom}).subscribe( ()=> {
+          this.getMessages();
+        })
+        
       } 
       
     }
@@ -128,7 +139,9 @@ export class EventComponent implements OnInit {
    */
   getMessages() {
     this.dataService.getAllMessage().subscribe(
-    res => {this.messages = res})
+    res => {this.messages = res;
+    this.interuptLoop()
+    })
     
 }
   
