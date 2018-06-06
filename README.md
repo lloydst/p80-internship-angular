@@ -8,6 +8,7 @@
   
 ## contents
  - [getting started](#getting-started-)
+ - [docker](#docker)
  - [styling](#styling)
  - [sources](#sources-)
  - [description](#description)
@@ -17,7 +18,7 @@
  - [database](#database)
  - [usefull links](#usefull-links)
  - [docs](#docs)
- - [docker](#docker)
+
 
 ## getting started:
 `git clone https://github.com/lloydst/p80-internship-angular.git .` (replace the '.' with a directory if you would want it in a new folder)
@@ -74,10 +75,10 @@ docs can be found at [https://lloydst.github.io/p80-internship-angular/](https:/
 Or you use ``` npm run doc ``` and if the server is running (both npm start and npm run server) you can acces it at (local)host(:port)/docs
 
 ## docker
-// not fully implemented
-build initial image (update front end)
-`docker-compose build`
+tends to fail on npm install (due to it using the wrong dns - set this to 8.8.8.8 if you havn't) you need to restart docker to fix this
+build initial image (auto-updates front end for production)
+`docker-compose build` 
 start containers
-`docker-compose up`
+`docker-compose up` -d for detached mode run docker-compose down to close it
 when you have made changes force clean build of docker-images
 `docker-compose up --build` 
