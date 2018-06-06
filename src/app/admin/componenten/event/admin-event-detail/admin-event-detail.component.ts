@@ -73,7 +73,7 @@ id
   alertUser () {
     const redirect = window.confirm('updated do you wish to return?')
     if (redirect) {
-      this.router.navigate(['./admin/channels/events'])
+      this.router.navigate(['./admin/components/events'])
     }
   }
 }

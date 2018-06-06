@@ -82,7 +82,7 @@ eventForm = new FormGroup({
       newFrom = newFrom+fromStr[i]
       newTill =newTill+untillStr[i]
       if(newTill<newFrom || i <= 12) {
-        console.log('de data klopen niet als je doorgaat zal de event component ze automatisch omdraaien waneer deze component geladen word')
+        // console.log('de data klopen niet als je doorgaat zal de event component ze automatisch omdraaien waneer deze component geladen word')
       }
     }
     

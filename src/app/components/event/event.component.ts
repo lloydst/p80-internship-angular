@@ -19,30 +19,29 @@ export class EventComponent implements OnInit {
   /**
    * for binding
    */
-  today = new Date();
+  today
   /**
    * for binding
    */
-  hour = this.today.getHours().toString(); // returns a number between 0 and 23 (23:59 still returns only 23)
-  //  hour = 16 // test variable  < 16 voor loop test >16 voor travel info > 17 what ya doin here
+  hour
  
   /**
    * for binding
    */
-  year = this.today.getFullYear()
+  year
   /**
    * for binding
    */
-  month = this.today.getMonth().toString()
+  month
   
   /**
    * for binding
    */
-  day = this.today.getDate().toString()
+  day
   /**
   * for binding
   */
-  min = this.today.getMinutes().toString()
+  min
   /**
    * for binding 
    */
@@ -51,11 +50,17 @@ export class EventComponent implements OnInit {
    * makes shure that if either day month hour min is less then 10 it becomes 2 digits instead of one
    */
   setTimeNow () {
+    this.today = new Date();
+    this.hour = this.today.getHours().toString();
+    this.year = this.today.getFullYear()
+    this.month = this.today.getMonth().toString()
+    this.day = this.today.getDate().toString()
+    this.min = this.today.getMinutes().toString()
+
     if(Number(this.month) < 10) {
       var newDay = Number(this.month) + 1
       newDay.toString()
       this.month = "0"+ newDay
-      console.log(this.month)
     }
     if(Number(this.day) < 10) {
       this.day = '0' + this.day
@@ -67,6 +72,7 @@ export class EventComponent implements OnInit {
       this.min = '0' + this.min
     }
     this.timeNow = ""+this.year+"-"+this.month+"-"+this.day+"T"+this.hour+":"+this.min+""
+    
   }
   
  
@@ -82,12 +88,15 @@ export class EventComponent implements OnInit {
   ngOnInit() {
     this.getMessages()
     // does need to be shorter then the window.open of entrance
+    setTimeout(() => {
+      this.interuptLoop()
+    }, 500);
+    
   }
   /**
    * interupts the loop
    */
   interuptLoop() {
-    
     this.setTimeNow()
     var str = /([0-9])/g
     for(let j = 0; j< this.messages.length; j++){
@@ -95,43 +104,45 @@ export class EventComponent implements OnInit {
       var from = this.messages[j].showFrom.match(str)
       var till = this.messages[j].showTill.match(str)
       var newNow = ''
-      var newFrom = ''
-      var newTill = ''
-      for (let i =0; i < 12; i++) {
+      var start = ''
+      var end = ''
+      for (let i =0; i < 12; i++) { // 12 = timeNow.length
         newNow = newNow+now[i]
-        newFrom = newFrom+from[i]
-        newTill =newTill+till[i]
+        start = start+from[i]
+        end =end+till[i]
       }
       
-      if(Number(newFrom) < Number(newNow) && Number(newNow) < Number(newTill)) {  // while should be shown change it to shown
-
-        this.dataService.updateMessage(this.messages[j].identifier, {"img":true}).subscribe( ()=> {
+      
+      if(Number(start) < Number(newNow) && Number(newNow) < Number(end)) {  // while should be shown change it to shown
+        if(this.messages[j].img === true) {
+          setTimeout(() => {
+            this.interuptLoop()
+          }, 60000);
+        }else {
+          this.dataService.updateMessage(this.messages[j].identifier, {"img":true}).subscribe();
           this.getMessages();
-          
-        })
+        }
+      }else if(Number(start) < Number(newNow) && Number(newNow) > Number(end)) { // while from < now & now > shown till delete
+        console.log(Number(start) + '<' + Number(newNow) +"&" + Number(newNow) +'>'+ Number(end) +'both start and end time/date are less then now')
+        this.dataService.deleteMessage(this.messages[j].identifier).subscribe();
+        this.getMessages()
         
-        // returning anything here wont interupt loop
-      }else if(Number(newFrom) < Number(newNow) && Number(newNow) > Number(newTill)) { // while from < now & now > shown till delete
-
-        this.dataService.deleteMessage(this.messages[j].identifier).subscribe( ()=> {
+      }else if(Number(start) >= Number(newNow) && Number(newNow) < Number(end)) { // shouldnt be shown yet
+        if(this.messages[j].img === false) {
+          setTimeout(() => {
+            this.interuptLoop()
+          }, 60000);
+        } else {
+          this.dataService.updateMessage(this.messages[j].identifier, {"img":false}).subscribe();
           this.getMessages();
-          
-        })
+        }
         
-      }else if(Number(newFrom) >= Number(newNow) && Number(newNow) < Number(newTill)) { // shouldnt be shown yet
-        console.log('not yet shown')
-        this.dataService.updateMessage(this.messages[j].identifier, {"img":false}).subscribe( ()=> {
-          this.getMessages();
-        })
-        
-      } else if(Number(newTill) < Number(newFrom)){ // showTill < showFrom need to write validation so this cannot happen for now it swaps them
-
-        this.dataService.updateMessage(this.messages[j].identifier, {"img":false, "showFrom":this.messages[j].showTill, "showTill":this.messages[j].showFrom}).subscribe( ()=> {
-          this.getMessages();
-        })
+      } else if(Number(end) < Number(start)){ // showTill < showFrom need to write validation so this cannot happen for now it swaps them
+        console.log(Number(start) + '<' + Number(end) + " turning them around for you")
+        this.dataService.updateMessage(this.messages[j].identifier, {"img":false, "showFrom":this.messages[j].showTill, "showTill":this.messages[j].showFrom}).subscribe();
+        this.getMessages();
         
       } 
-      
     }
   }
   /**
@@ -139,9 +150,12 @@ export class EventComponent implements OnInit {
    */
   getMessages() {
     this.dataService.getAllMessage().subscribe(
-    res => {this.messages = res;
-    this.interuptLoop()
-    })
+    res => {
+      this.messages = res;
+      
+      })
+        
+    
     
 }
   

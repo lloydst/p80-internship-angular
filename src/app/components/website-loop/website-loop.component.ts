@@ -135,12 +135,12 @@ export class WebsiteLoopComponent implements OnInit {
     //month always 2 digits
     if(Number(this.month)<10) {
       this.month = "0" +(Number(this.month) +1)
-      console.log(this.month)
+      
     }
     //day always 2 digits
     if(Number(this.day)<10) {
       this.day = "0" +Number(this.day)
-      console.log(this.day)
+      
     }
     //hour always 2 digits
     if(Number(this.hour) < 10) {
@@ -153,7 +153,7 @@ export class WebsiteLoopComponent implements OnInit {
     this.timeNow = ""+this.year+"-"+this.month+"-"+this.day+"T"+this.hour+":"+this.min+""
   }
 /**
- * returns either a boolean or string based on time of day so that its only visable at the right time
+ * returns string based on time of day so that its only visable at the right time
  */
   checkTime() {
     if(Number(this.hour) > 17) { // past 6
@@ -197,9 +197,7 @@ export class WebsiteLoopComponent implements OnInit {
           newFrom = newFrom+from[i]
           newTill =newTill+till[i]
         }
-        console.log(newFrom)
-        console.log(newNow)
-        console.log(newTill)
+       
         if(Number(newFrom) < Number(newNow) && Number(newNow) < Number(newTill)) {
           
           // event component delete's messages that "expired" itself
