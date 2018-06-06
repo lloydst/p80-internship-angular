@@ -29,7 +29,10 @@
           </div>
           <div >
                 <label>Delay:<br>
-                  <input type="number" formControlName="delay">
+                  <input #delay type="number" formControlName="delay"> 
+                  {{delay.value / 1000 | number}} seconds
+                  {{delay.value / 1000 / 60 | number}} minutes
+                  {{delay.value /1000 / 60 / 60 | number}} hours
                 </label>
           </div>
         </div>
