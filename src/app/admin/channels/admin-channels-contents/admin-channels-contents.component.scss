@@ -1,4 +1,4 @@
-@import '~scss/styles.scss';
+@import '~scss/style.scss';
 
 @include respond-to(mobile) { // max-width: 480
   .grid {

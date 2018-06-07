@@ -21,7 +21,7 @@
               "src/favicon.ico"
             ],
             "styles": [
-              "src/scss/styles.scss"
+              "src/scss/style.scss"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js"
@@ -75,7 +75,7 @@
               "node_modules/jquery/dist/jquery.min.js"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/style.scss"
             ],
             "assets": [
               "src/assets",

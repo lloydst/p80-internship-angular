@@ -10,7 +10,7 @@ body {
 
  /**
  used as follows:
- @import '~styles.scss';
+ @import '~style.scss';
 
 @include respond-to($breakpoints.name) { 
   selector {
