@@ -1,0 +1,13 @@
+.forecast-wrapper {
+	@include flexbox;
+	@include flex-direction(row);
+	@include flex-wrap(wrap);
+}
+
+.forecast {
+	@include flex(0, 1, 20%);
+
+	.wi-custom {
+		font-size: 50px;
+	}
+}

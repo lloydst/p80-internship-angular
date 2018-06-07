@@ -1,0 +1,250 @@
+// ---------------------------------------------
+// Media Queries
+// ---------------------------------------------
+
+@mixin respond-to-max($value) {
+	@media(max-width: map-get($breakpoints, $value)) {
+		@content;
+	}
+}
+
+@mixin respond-to-min($value) {
+	@media(min-width: map-get($breakpoints, $value)) {
+		@content;
+	}
+}
+
+// ---------------------------------------------
+// CSS3 Transition 
+// Using a Sass 'vararg' the three dots make sure 
+// even comma separated values (like chaining CSS transitions) 
+// are passed along as one string
+//
+// Usage: @include transition(background 0.5s ease-out, color 0.3s ease-in);
+// ---------------------------------------------
+
+@mixin transition($val...) {
+	@include prefix-selector(transition, $val);
+}
+
+// ---------------------------------------------
+// Gradients
+// Alas, we can't use the prefix-selector mixin here
+//
+// Usage: @include bg-linear-gradient(#333, #3456ba);
+// ---------------------------------------------
+
+@mixin bg-linear-gradient($color1: #ccc, $color2: #000, $direction: 'vertical', $start: 0%, $end: 100%) {
+	background-color: $color2;
+
+	@if ($direction == 'vertical') {
+		// Check if CSS3 vendor prefixes are needed (see _config.scss)
+		@if -support-vendor-prefixes {
+			background-image: -webkit-linear-gradient($color1 $start, $color2 $end);
+			background-image: -o-linear-gradient($color1 $start, $color2 $end);
+			background-image: linear-gradient($color1 $start, $color2 $end);
+		}
+		// Standard W3C CSS3 variant
+		background-image: linear-gradient(to bottom, $color1, $color2);
+	}
+	@else {
+		// Horizontal
+
+		@if -support-vendor-prefixes {
+			background-image: -webkit-linear-gradient(left, $color1 $start, $color2 $end);
+			background-image: -o-linear-gradient(left, $color1 $start, $color2 $end);
+		}
+
+		background-image: linear-gradient(to right, $color1 $start, $color2 $end);
+	}
+}
+
+// ---------------------------------------------
+// @font-face
+// var $dir-font is listed in _config.scss
+// Don't forget to add the proper mime-types 
+// for these font files in the web server config
+//
+// Usage, @root: @include font-face('Proxima Nova', 'proxima-nova-std-0384586', 400, 'normal');
+// ---------------------------------------------
+
+@mixin font-face($font-name, $font-file, $font-weight: 400, $font-style: 'normal') {
+	@font-face {
+		font-family: '#{$font-name}';
+		src: url('#{$dir-font}/#{$font-file}.eot');
+		src: url('#{$dir-font}/#{$font-file}.eot?#iefix') format('embedded-opentype'),
+			 url('#{$dir-font}/#{$font-file}.woff') format('woff'),
+			 url('#{$dir-font}/#{$font-file}.ttf') format('truetype'),
+			 url('#{$dir-font}/#{$font-file}.svg##{$font-file}') format('svg');
+		font-weight: $font-weight;
+		font-style: $font-style;
+	}
+}
+
+// ---------------------------------------------
+// Convert font-size from pixels to rem unit
+// With pixel fallback for old web browsers
+//
+// Usage: @include font-size-rem(18);
+// ---------------------------------------------
+
+@mixin font-size-rem($size) {
+	font-size: 0px + $size; // Fallback		
+	font-size: 0rem + $size / $font-default-size; // Font-size you set on the HTML tag, see _config.scss
+}
+
+// ---------------------------------------------
+// Helper mixin
+// Vendor prefixes
+// var $vendor-prefixes is listed in _config.scss
+//
+// Usage: @include prefix-selector(border-radius, 5px);
+// ---------------------------------------------
+
+@mixin prefix-selector($property, $value) { 
+	// Check if CSS3 vendor prefixes are needed (see _config.scss)
+	@if $experimental-support-vendor-prefixes {		
+		@each $prefix in $vendor-prefixes {
+			#{$prefix}#{$property}: #{$value};
+		}
+	}
+
+	// Standard W3C CSS3 variant
+	#{$property}: $value;
+}
+
+@mixin prefix-value($property, $value) {
+	// Check if CSS3 vendor prefixes are needed (see _config.scss)
+	@if $experimental-support-vendor-prefixes {	
+		@each $prefix in $vendor-prefixes {
+			#{$property}: #{$prefix}#{$value};
+		}
+	}
+
+	// Standard W3C CSS3 variant
+	#{$property}: $value;
+}
+
+// ---------------------------------------------
+// Using a CSS3 MediaQuery for background images on
+// high-pixel-density screens with optional SVG version
+// using Modernizr feature detection
+//
+// IMPORTANT:
+// By default, the mixin uses the PNG image format
+// When only using the first (required) argument
+// don't add the image file extension
+//
+// Usage: @include background-adaptive(/img/logo);
+// Usage: @include background-adaptive(/img/logo, png, 220px 40px, true);
+// ---------------------------------------------
+
+@mixin background-adaptive($file-name, $file-extension: 'png', $background-size: 100% 100%, $svg: true) {
+	
+	background-size: $background-size;
+
+	@if $svg == false {
+		background-image: url($file-name + '.' + $file-extension);
+
+		// Target higher density screens
+		// By using a ratio of 1.5 instead of 2,
+		// you can target other non-Apple devices with the same query.
+		@media 	(min--moz-device-pixel-ratio: 1.5),
+			(-o-min-device-pixel-ratio: 3/2),
+			(-webkit-min-device-pixel-ratio: 1.5),
+			(min-device-pixel-ratio: 1.5),
+			(min-resolution: 144dpi),
+			(min-resolution: 1.5dppx) {
+
+			background-image: url($file-name + '@2x' + '.' + $file-extension);
+			@include prefix-selector('background-size', $background-size);
+		}
+	}
+	@else {
+		// Default background image
+		background-image: url($file-name + '.svg');
+	}
+}
+
+
+@mixin with-count($n) {
+  @if $n == 1 {
+    &:first-child:nth-last-child(1) {
+      @content;
+    }
+  }
+  @else {
+    &:first-child:nth-last-child(#{$n}),
+    &:first-child:nth-last-child(#{$n}) ~ & {
+      @content;
+    }
+  }
+}
+
+// ---------------------------------------------
+// Place overlay over element and use the width and height of the parent
+// without having to know the dimensions of the parent;
+// just make sure the parent has a position: relative;
+// use the offset to create a smaller overlay
+//
+// Usage: @include fillout(4px); or @include fillout();
+// ---------------------------------------------
+
+@mixin fillout($offset: 0px) {
+	bottom: $offset;
+	display: block;
+	left: $offset;
+	position: absolute;
+	right: $offset;
+	top: $offset;
+}
+
+// ---------------------------------------------
+// Box-shadow
+// Alas, we can't use the prefix-selector mixin here
+//
+// Usage: @include box-shadow(0, 10px, 5px, green);
+// Usage: @include box-shadow(0, 10px, 5px, #888, 0.4, inset);
+// ---------------------------------------------
+
+@mixin box-shadow($x: 0, $y: 5px, $spread: 5px, $color: #000000, $alpha: 0.5, $inset:"") {
+	// Check if CSS3 vendor prefixes are needed (see _config.scss)
+	@if $experimental-support-vendor-prefixes {
+		-webkit-box-shadow: #{$inset} $x $y $spread transparentize($color, 1 - $alpha);
+		   -moz-box-shadow: #{$inset} $x $y $spread transparentize($color, 1 - $alpha);
+			-ms-box-shadow: #{$inset} $x $y $spread transparentize($color, 1 - $alpha);
+			 -o-box-shadow: #{$inset} $x $y $spread transparentize($color, 1 - $alpha);
+	}
+
+	// Normal W3C CSS3 variant	
+	box-shadow: #{$inset} $x $y $spread transparentize($color, 1 - $alpha);
+}
+
+// ---------------------------------------------
+// Rotation
+//
+// Usage: @include rotate(23);
+// Usage: @include rotate(-49);
+// ---------------------------------------------
+
+@mixin rotate($deg: 0) {
+	@include prefix-selector(transform, rotate(#{$deg}deg));
+}
+
+// ---------------------------------------------
+// Fade Parallax
+// ---------------------------------------------
+@mixin fadeParallax($speed: 0.4) {
+	@if $speed > 0 {
+		top: 0;
+		opacity: 1;
+		position: relative;
+		transition-delay: 0.5s;
+		@include transition(opacity #{$speed}s ease-in-out, top #{$speed}s ease-in);
+
+		&.is-faded {
+			opacity: 0;
+			top: 56px;
+		}		
+	}
+}
