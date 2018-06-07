@@ -5,8 +5,7 @@ import { Component, OnInit } from '@angular/core';
  */
 @Component({
   selector: 'app-build-servers',
-  templateUrl: './build-servers.component.html',
-  styleUrls: ['./build-servers.component.scss']
+  templateUrl: './build-servers.component.html'
 })
 export class BuildServersComponent implements OnInit {
 /**

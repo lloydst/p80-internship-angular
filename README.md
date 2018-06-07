@@ -76,9 +76,19 @@ Or you use ``` npm run doc ``` and if the server is running (both npm start and 
 
 ## docker
 tends to fail on npm install (due to it using the wrong dns - set this to 8.8.8.8 if you havn't) you need to restart docker to fix this
+
 build initial image (auto-updates front end for production)
+
 `docker-compose build` 
-start containers
-`docker-compose up` -d for detached mode run docker-compose down to close it
-when you have made changes force clean build of docker-images
+
+start containers(local)
+
+`docker-compose up` -d for detached mode run & `docker-compose down` to close it
+
+when you have made changes force a clean build of docker-images
+
 `docker-compose up --build` 
+
+push images to their repository
+
+`docker compose push`

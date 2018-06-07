@@ -10,8 +10,7 @@ const URL = '/images/upload';
  */
 @Component({
   selector: 'app-image-upload',
-  templateUrl: './image-upload.component.html',
-  styleUrls: ['./image-upload.component.scss'],
+  templateUrl: './image-upload.component.html'
   
 })
 export class ImageUploadComponent {

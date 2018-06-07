@@ -7,8 +7,7 @@ import { HttpClient } from '@angular/common/http';
  */
 @Component({
   selector: 'app-meeting',
-  templateUrl: './meeting.component.html',
-  styleUrls: ['./meeting.component.scss']
+  templateUrl: './meeting.component.html'
 })
 export class MeetingComponent implements OnInit {
   /**

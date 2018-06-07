@@ -8,8 +8,7 @@ import { Router } from '@angular/router';
  */
 @Component({
   selector: 'app-channel',
-  templateUrl: './channel.component.html',
-  styleUrls: ['./channel.component.scss']
+  templateUrl: './channel.component.html'
 })
 export class ChannelComponent implements OnInit {
   /**

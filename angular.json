@@ -20,9 +20,7 @@
               "src/assets",
               "src/favicon.ico"
             ],
-            "styles": [
-              "src/scss/style.scss"
-            ],
+            
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js"
             ]
@@ -126,8 +124,7 @@
   "defaultProject": "boilerplate",
   "schematics": {
     "@schematics/angular:component": {
-      "prefix": "app",
-      "styleext": "scss"
+      "prefix": "app"
     },
     "@schematics/angular:directive": {
       "prefix": "app"

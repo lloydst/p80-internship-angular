@@ -7,8 +7,7 @@ import { Website } from '../../../../models/website';
  */
 @Component({
   selector: 'app-admin-entrance-detail',
-  templateUrl: './admin-entrance-detail.component.html',
-  styleUrls: ['./admin-entrance-detail.component.scss']
+  templateUrl: './admin-entrance-detail.component.html'
 })
 /**
  * admin version of entrance

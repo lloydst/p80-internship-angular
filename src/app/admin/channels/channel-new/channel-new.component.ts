@@ -9,8 +9,7 @@ import { DataService } from '../../../services/data.service';
  */
 @Component({
   selector: 'app-channel-new',
-  templateUrl: './channel-new.component.html',
-  styleUrls: ['./channel-new.component.scss']
+  templateUrl: './channel-new.component.html'
 })
 export class ChannelNewComponent implements OnInit {
   /**

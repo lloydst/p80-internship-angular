@@ -7,8 +7,7 @@ import { DataService } from '../../../services/data.service';
  */
 @Component({
   selector: 'app-admin-channels-contents',
-  templateUrl: './admin-channels-contents.component.html',
-  styleUrls: ['./admin-channels-contents.component.scss']
+  templateUrl: './admin-channels-contents.component.html'
 })
 export class AdminChannelsContentsComponent implements OnInit {
   /**

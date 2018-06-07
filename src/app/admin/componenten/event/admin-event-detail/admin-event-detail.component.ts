@@ -8,8 +8,7 @@ import * as $ from 'jquery';
  */
 @Component({
   selector: 'app-admin-event-detail',
-  templateUrl: './admin-event-detail.component.html',
-  styleUrls: ['./admin-event-detail.component.scss']
+  templateUrl: './admin-event-detail.component.html'
 })
 export class AdminEventDetailComponent implements OnInit {
   /**

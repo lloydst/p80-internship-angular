@@ -6,8 +6,7 @@ import { ActivatedRoute } from '@angular/router';
  */
 @Component({
   selector: 'app-channels',
-  templateUrl: './channels.component.html',
-  styleUrls: ['./channels.component.scss']
+  templateUrl: './channels.component.html'
 })
 export class AdminChannelsComponent implements OnInit {
 /**

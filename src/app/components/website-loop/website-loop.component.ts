@@ -16,8 +16,7 @@ var x = 0;
  */
 @Component({
   selector: 'app-website-loop',
-  templateUrl: './website-loop.component.html',
-  styleUrls: ['./website-loop.component.scss']
+  templateUrl: './website-loop.component.html'
 })
 export class WebsiteLoopComponent implements OnInit {
   /**

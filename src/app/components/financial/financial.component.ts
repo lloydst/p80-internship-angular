@@ -7,8 +7,7 @@ import * as $ from 'jquery';
  */
 @Component({
   selector: 'app-financial',
-  templateUrl: './financial.component.html',
-  styleUrls: ['./financial.component.scss']
+  templateUrl: './financial.component.html'
 })
 export class FinancialComponent implements OnInit {
 /**

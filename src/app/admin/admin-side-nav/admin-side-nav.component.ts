@@ -5,8 +5,7 @@ import { Component, OnInit } from '@angular/core';
  */
 @Component({
   selector: 'app-admin-side-nav',
-  templateUrl: './admin-side-nav.component.html',
-  styleUrls: ['./admin-side-nav.component.scss']
+  templateUrl: './admin-side-nav.component.html'
 })
 export class AdminSideNavComponent implements OnInit {
 /**

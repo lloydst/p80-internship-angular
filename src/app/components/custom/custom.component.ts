@@ -5,8 +5,7 @@ import { Router } from '@angular/router';
  */
 @Component({
   selector: 'app-custom',
-  templateUrl: './custom.component.html',
-  styleUrls: ['./custom.component.scss']
+  templateUrl: './custom.component.html'
 })
 export class CustomComponent implements OnInit {
   /**

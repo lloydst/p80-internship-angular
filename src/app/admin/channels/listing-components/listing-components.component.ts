@@ -4,8 +4,7 @@ import { Component, OnInit } from '@angular/core';
  */
 @Component({
   selector: 'app-listing-components',
-  templateUrl: './listing-components.component.html',
-  styleUrls: ['./listing-components.component.scss']
+  templateUrl: './listing-components.component.html'
 })
 export class ListingComponentsComponent implements OnInit {
 /**

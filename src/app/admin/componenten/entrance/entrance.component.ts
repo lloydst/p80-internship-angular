@@ -10,8 +10,7 @@ import { Validators, FormGroup, FormControl } from '@angular/forms';
  */
 @Component({
   selector: 'app-entrance',
-  templateUrl: './entrance.component.html',
-  styleUrls: ['./entrance.component.scss']
+  templateUrl: './entrance.component.html'
 })
 export class AdminEntranceComponent implements OnInit {
   /**

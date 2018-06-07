@@ -5,8 +5,7 @@ import { Component, OnInit } from '@angular/core';
  */
 @Component({
   selector: 'app-meeting',
-  templateUrl: './meeting.component.html',
-  styleUrls: ['./meeting.component.scss']
+  templateUrl: './meeting.component.html'
 })
 export class AdminMeetingComponent implements OnInit {
 /**

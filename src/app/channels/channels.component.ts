@@ -7,8 +7,7 @@ import { Title } from '@angular/platform-browser';
  */
 @Component({
   selector: 'app-channels',
-  templateUrl: './channels.component.html',
-  styleUrls: ['./channels.component.scss']
+  templateUrl: './channels.component.html'
 })
 
 export class ChannelsComponent implements OnInit {
