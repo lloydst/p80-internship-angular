@@ -4,7 +4,7 @@ import { ImageUploadComponent } from './image-upload.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Component } from '@angular/core';
 import { FileSelectDirective } from 'ng2-file-upload';
-import { FileService } from '../../services/file.service';
+import { FileService } from '../../../services/file.service';
 
 describe('ImageUploadComponent', () => {
   let component: ImageUploadComponent;

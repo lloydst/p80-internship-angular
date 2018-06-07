@@ -6,7 +6,7 @@ export class AdminChannelPage {
   }
 
   getLinkText() {
-    return element.all(by.tagName('.main a'));
+    return element.all(by.tagName('.topnav a'));
   }
   getUrl() {
       return browser.getCurrentUrl()

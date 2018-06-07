@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ChannelContentComponent } from './channel-content.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 describe('ChannelContentComponent', () => {
   let component: ChannelContentComponent;

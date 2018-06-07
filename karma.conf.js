@@ -28,6 +28,6 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: true // change this if test are failing
+    singleRun: false // change this if test are failing
   });
 };

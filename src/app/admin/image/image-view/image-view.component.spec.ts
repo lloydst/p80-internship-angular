@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ImageViewComponent } from './image-view.component';
-import { FileService } from '../../services/file.service';
+import { FileService } from '../../../services/file.service';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
@@ -16,7 +16,7 @@ describe('ImageViewComponent', () => {
         HttpClientTestingModule
       ],
       providers:[
-        FileService,
+        FileService, // should be mocked
       
     ]
     })
