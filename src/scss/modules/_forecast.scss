@@ -6,4 +6,8 @@
 
 .forecast {
 	@include flex(0, 1, 20%);
+
+	.wi-custom {
+		font-size: 50px;
+	}
 }
