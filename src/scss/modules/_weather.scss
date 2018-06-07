@@ -1,10 +1,13 @@
 .weather {
-
+	@include flexbox;
+	@include flex-direction(column);
+    min-height: 66vh;
 }
 
 .weather__highlight {
-	background-color: white;
 	text-align: center;
+	padding-bottom: 10px;
+	@include flex(2, 1, auto);
 }
 
 .weather__icon {
@@ -13,4 +16,21 @@
 
 .weather__title {
 	font-size: 50px;
+}
+
+.weather__forecast-wrapper {
+	@include flexbox;
+	@include flex-direction(row);
+	@include flex-wrap(wrap);
+	@include flex(0, 1, auto);
+}
+
+.weather__forecast {
+	@include flex(0, 1, 20%);
+	margin-bottom: 30px;
+	text-align: center;
+
+	.wi-custom {
+		font-size: 50px;
+	}
 }
