@@ -1,16 +1,19 @@
 <div class="weather" id="weather">
 	<div class="weather__highlight" id="today">
 		<div class="wi wi-yahoo-{{weatherjson[0]?.item.condition.code}} weather__icon" id="today_icon"></div> 
-		<h1 class="weather__title">Amsterdam {{weatherjson[0]?.lastBuildDate}}</h1>
+		<h1 class="weather__title"><div>Amsterdam</div> <div>{{date}}</div><div>{{time}}</div></h1>
 		<span class="wi wi-wind from-{{weatherjson[0]?.wind.direction}}-deg"></span>  {{weatherjson[0]?.wind.speed}} km/h
 		<!-- cloudy sunny etc-->
-		<span class="wi wi-thermometer"></span> {{weatherjson[0]?.item.condition.temp}} <span class="wi wi-celsius"></span>
+		<div>
+            <span class="wi wi-thermometer"></span> {{weatherjson[0]?.item.condition.temp}}
+            <span class="wi wi-celsius"></span>
+        </div>
 	</div >
 	<div class="forecast-wrapper" id="forecast-wrap">
 		<div *ngFor="let cast of weatherjson[0]?.item.forecast" class="forecast" id="forecast">
 			<span class="wi wi-yahoo-{{cast.code}} wi-custom"></span>
 			<div >{{cast.day}} {{cast.date}}</div>
-			{{cast.low}}-{{cast.high}} <span class="wi wi-celsius"></span>
+			<div>{{cast.low}}-{{cast.high}} <span class="wi wi-celsius"></span></div>
 		</div>
 	</div>
 </div>
