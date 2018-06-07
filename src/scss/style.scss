@@ -1,64 +1,40 @@
-/* You can add global styles to this file, and also import other style files */
-//@import 'node_modules/angular2-toaster/src/toaster';
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.main {
-    padding: 1em 1em 1em 1em;
-}
+// ---------------------------------------------
+//  Configuration
+// ---------------------------------------------
+@import
+  "helpers/config",
+  "helpers/mixins",
+  "helpers/flexbox",
+  "helpers/css-grid",
+  "helpers/font";
 
- /**
- used as follows:
- @import '~style.scss';
+// ---------------------------------------------
+//  Elements
+// ---------------------------------------------
+@import
+  "base/elements";
 
-@include respond-to($breakpoints.name) { 
-  selector {
-    rules: ...
-  }
-}
-  */
-  $breakpoints: (
-  'mobile': ( max-width: 480px ),
-  'tablet-and-up': ( min-width: 480px ),
-  'smallest': (max-width: 239px),
-  'small': ( min-width:  767px ),
-  'medium': ( min-width:  992px ),
-  'large': ( min-width: 1200px )
-);
-@mixin respond-to($name) {
-  // If the key exists in the map
-  @if map-has-key($breakpoints, $name) {
-    // Prints a media query based on the value
-    @media #{inspect(map-get($breakpoints, $name))} {
-      @content;
-    }
-  }
+// ---------------------------------------------
+//  Layout
+// ---------------------------------------------
+@import
+  "layout/header",
+  "layout/wrapper",
+  "layout/container",
+  "layout/section",
+  "layout/footer";
 
-  // If the key doesn't exist in the map
-  @else {
-    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-        + "Please make sure it is defined in `$breakpoints` map.";
-  }
-}
-.button {
-  padding: 1em;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  background-color: grey;
-}
-.primary {
-  background-color: rgb(0, 89, 255);
-}
+// ---------------------------------------------
+//  Modules
+// ---------------------------------------------
+@import
+  "modules/forecast",
+  "modules/icon";
 
-.danger {
-  background-color: rgb(230, 25, 0);
-}
-.succes {
-  background-color: green;
-}
-.warning {
-  background-color: orangered;
-}
+// ---------------------------------------------
+// Overrrides
+// ---------------------------------------------
+
+// @import
+//   "override/weather-icons";
+

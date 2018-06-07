@@ -1,0 +1,43 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+/* Heading
+================================================ */
+h1, h2, h3, h4, h5, h6 {
+	color: map-get($colors, 01);
+	font-family: map-get($fonts, heading);
+	font-weight: 400;
+	margin: 0;
+	line-height: 1;
+}
+
+/* Paragraph
+================================================ */
+div, p {
+	font-family: map-get($fonts, body);
+	font-size: 15px;
+	color: #000;
+	margin-top: 15px;
+	line-height: 1.5;
+
+	@include respond-to-min('tablet') {
+		font-size: 20px;
+	}
+}
+
+/* Links
+================================================ */
+a {
+	color: map-get($colors, 01);
+	font-family: map-get($fonts, heading);
+	outline: none;
+	font-size: 20px;
+	text-decoration: none;
+
+	&:hover,
+	&:active {
+	    text-decoration: none;
+	}
+}

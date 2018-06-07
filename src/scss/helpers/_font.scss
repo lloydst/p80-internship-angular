@@ -1,0 +1,14 @@
+// Sass @font-face(), by Poort80:: Frontend-team
+@include font-face('Supernormale', '348AA7_0_0', 400);
+@include font-face('Supernormale', '348AA7_1_0', 600);
+@include font-face('Supernormale', '348AA7_2_0', 400, italic);
+@include font-face('Supernormale', '348AA7_3_0', 700);
+
+@include font-face('Open Sans', 'OpenSans-Light-webfont', 300);
+@include font-face('Open Sans', 'OpenSans-LightItalic-webfont', 300, italic);
+@include font-face('Open Sans', 'OpenSans-Regular-webfont', 400);
+@include font-face('Open Sans', 'OpenSans-Italic-webfont', 400, italic);
+@include font-face('Open Sans', 'OpenSans-Semibold-webfont', 600);
+@include font-face('Open Sans', 'OpenSans-SemiboldItalic-webfont', 600, italic);
+@include font-face('Open Sans', 'OpenSans-Bold-webfont', 700);
+@include font-face('Open Sans', 'OpenSans-BoldItalic-webfont', 700, italic);
