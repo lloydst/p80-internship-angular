@@ -8,6 +8,9 @@ import { WeatherService } from '../../services/weather.service';
   templateUrl: './weather.component.html'
 })
 export class WeatherComponent implements OnInit {
+    date
+    time
+
   /**
    * would other wise complain about 0 not being defined
    */
@@ -32,7 +35,14 @@ weatherjson: any =[]
    */
   getWeather() {
     this.weatherService.getWeather().subscribe(
-      res => {this.weatherjson = res})
+        
+      res => {
+        var str = '/[^,]/g'
+          this.weatherjson = res
+          this.date = this.weatherjson[0].lastBuildDate.substring(0,15)
+          this.time =this.weatherjson[0].lastBuildDate.substring(18, 25)//.match(str)
+          console.log(this.time.substring(18, 25))
+        })
   }
   /**
    * updates weather every minute
@@ -43,4 +53,5 @@ weatherjson: any =[]
     }, 60000);
     this.getWeather()
   }
+
 }
