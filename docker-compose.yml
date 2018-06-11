@@ -1,3 +1,7 @@
+# it should build angular
+# then run pm2(server)
+# mongo (currently uses a mlab hosted db but one does get spun up)
+
 version: '3' # specify docker-compose version
 # this is for production  have to do dev version(or do i?)
 # Define the services/containers to be run
