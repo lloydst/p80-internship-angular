@@ -68,7 +68,7 @@ export class AdminChannelsContentsComponent implements OnInit {
     })
   }
   
-  myFunction() {
+  toggleTopNav() {
     var x = document.getElementById("myTopnav");
     if (x.className === "topnav") {
         x.className += " responsive";
