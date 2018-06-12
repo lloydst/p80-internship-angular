@@ -8,20 +8,5 @@ const ImageSchema = new Schema({
 const Image = mongoose.model('Image', ImageSchema, 'fs.files');
 
 
-function getAll() {
-    Image.find()
-}
-function getOne(err, id) {
-    if(err){
-        throw err
-    }
-    Image.find(id)
-}
-function findAndDelete(err, id) {
-    getOne(id).delete()
-    }
-    function findAndUpdate(err, id) {
-    
-    }
 
 module.exports = Image;

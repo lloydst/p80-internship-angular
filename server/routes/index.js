@@ -10,7 +10,8 @@ var home = require('./home');
 var authorize = require('./authorize');
 var calendar = require('./calendar');
 var content = require('./contents');
-var jira = require('./jira')
+var jira = require('./jira');
+var ip = require('./ip');
 /** #defines parameters
    * @swagger
    * definitions:
@@ -544,4 +545,5 @@ router.use('/authorize', authorize);
 router.use('/calendar', calendar);
 router.use('/content', content);
 router.use('/jira', jira);
+router.use('/ipconfig',ip)
 module.exports = router;
