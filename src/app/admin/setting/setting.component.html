@@ -1,3 +1,12 @@
-<section >
-  algemene settings, nog geen idee wat hier zal komen
-</section>
+<div> <!-- nav-->
+    <div><a [routerLink]="['../algemeen']">all</a></div>
+    <div><a [routerLink]="['add']">create</a></div>
+    
+</div>
+<div *ngFor="let c of configs">
+    {{c.name}}
+    {{c.ip}}
+    {{c.channel}}
+    <button (click)="deleteConfig(c.ip)">delete</button>
+</div>
+<router-outlet></router-outlet>
