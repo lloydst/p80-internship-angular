@@ -1,3 +1,13 @@
-<p>
-  get access to the support tickets. jira api - https://developer.atlassian.com/cloud/jira/platform/rest/ <- docs
-</p>
+<div *ngFor="let ticket of data?.issues">
+    <div>{{ticket.key}}</div><!-- issue title-->
+    <div>{{ticket.fields.created.substring(0,10)}}</div><!-- created date-->
+    <div>{{ticket.fields.assignee.displayName}}</div><!-- assignee-->
+    <div>{{ticket.fields.creator.displayName}}</div><!-- creator-->
+    <div>{{ticket.fields.duedate}}</div><!--duedate (can return null if not set)-->
+    <div>{{ticket.fields.issuetype.name}}</div> <!-- might be better to use ngfor on ticket.fields.labels-->
+    <div>{{ticket.fields.project.name}}</div> <!-- project pathe, evi etc.-->
+    <div>{{ticket.fields.status.name}}</div> <!-- ticket status -->
+
+</div>
+
+

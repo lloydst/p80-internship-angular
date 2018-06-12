@@ -10,7 +10,7 @@ var home = require('./home');
 var authorize = require('./authorize');
 var calendar = require('./calendar');
 var content = require('./contents');
-
+var jira = require('./jira')
 /** #defines parameters
    * @swagger
    * definitions:
@@ -542,5 +542,6 @@ router.get('/weather', function(req,res){
 router.use('/login', home);
 router.use('/authorize', authorize);
 router.use('/calendar', calendar);
-router.use('/content', content)
+router.use('/content', content);
+router.use('/jira', jira);
 module.exports = router;
