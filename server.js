@@ -2,20 +2,14 @@ const express =require('express')
 const app = require('express')();
 const path = require('path');
 const mongoose = require('mongoose');
-const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const formidable = require("formidable");
-const fs = require("fs");
-const grid = require("gridfs-stream");
 const http = require('http').Server(app);
-const io = require('socket.io')(http);
 const swaggerUi = require('swagger-ui-express');
-const Images = require('./server/models/Image')
 
 // configs
 const swaggerSpec = require('./server/config/swagger')
-const dotenv = require('dotenv').config();
+const dotenv = require('dotenv').config(); // not used in production
 
 // routes
 const api = require('./server/routes/index'); //crud routes messages and websites
@@ -63,30 +57,6 @@ const port = process.env.PORT||3000; // PORT is another variable that can be pla
 http.listen(process.env.PORT||3000, function(){
   console.log('Example app listening on port ' + port +'! in ' +process.env.NODE_ENV)
 })
-
-// socket io connections / setup
-function databaseStore(message) {
-  let storeData = { message: message, timestamp: new Date().getTime() }
-  db.collection('messages').save(storeData, (err, result) => {
-      if (err) return console.log(err)
-      console.log('saved to database')
-  })
-}
-
-const connections = [];
-
-io.on('connection', (socket) => {
-  console.log('user connected');
-  socket.on('disconnect', function() {
-      console.log('user disconnected');
-  });
-   // socket.on( event to listen too:string, function(){return/do something})
-  socket.on('add-message', (message) => {
-      io.emit('message', { type: 'new-message', text: message }); // i believe the object part is responsible for live reload
-      // Function above that stores the message in the database
-      databaseStore(message)         // this would store it in a db as well
-  });
-});
 
 module.exports = db
 module.exports = mongoose
