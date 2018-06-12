@@ -24,9 +24,9 @@ export class SupportComponent implements OnInit {
       this.getTickets()
   }
   getTickets() {
-    this.ticketservice.getTickets().subscribe(res=> {
-        this.data = res
-        
+    this.ticketservice.getTickets().subscribe(async (data) => {
+        this.data = data
     })
   }
+  
 }

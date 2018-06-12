@@ -5,11 +5,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class TicketService {
-
+    
   constructor(private http: HttpClient) { }
 
   getTickets() {
     return this.http.get('/api/jira');
     
   }
+  
 }

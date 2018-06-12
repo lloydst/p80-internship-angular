@@ -17,13 +17,19 @@ var jira = new JiraApi({
     apiVersion: '2',
     
     strictSSL: true});
-router.get('/',function (err,res){
-    jira.searchJira().then(function(issue) {
-
-        res.send(issue)
-    })
-        
-        .catch(function(err) { console.error(err);});
+    
+   router.get('/',function (err,res){
+    // placing a string in the search jira function makes it look for it
+    // (seems to default to status done so depending on what it is on the p80 jira this has to be changed)
+    jira.searchJira()
+        .then(issue => {
+            res.send(issue)
+        })
+        .catch(err => {
+        console.error(err);
     });
+    
+});
+
 
   module.exports = router
