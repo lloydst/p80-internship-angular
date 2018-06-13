@@ -1,2 +1,2 @@
 <h1>TODO</h1>
- - update api docs!
+ - remove every scss file from every component (but not untill michiel is done)
