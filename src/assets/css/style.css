@@ -162,6 +162,20 @@ section {
   display: flex;
 }
 
+div.wrapper-admin {
+  margin-top: 0px;
+}
+
+div.wrapper-admin section {
+  background-color: #ffffff;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .weather {
   display: -webkit-box;
   display: -webkit-flex;

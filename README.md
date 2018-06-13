@@ -25,6 +25,7 @@
 
 ## styling
 scss files are stored in the angular root (src folder) in a scss map and are being converted to css using grunt and then stored in the assets folder in the angular root.
+`grunt build-sass` builds it
 
 ## sources:
 This project was started up with [Mean-boilerplate](https://github.com/lloydst/mean-boilerplate) , which is heavely based on the angular-cli and express-gen for the front and backend respectively.
