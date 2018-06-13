@@ -17,6 +17,7 @@ export class ChannelsComponent implements OnInit {
     title = "control"
     ipAddress: string;
     ipConfig
+    singleIp
     /**
      * for template binding
      */
@@ -36,7 +37,8 @@ export class ChannelsComponent implements OnInit {
             .subscribe(data => {
 
                 this.ipAddress = data.ip
-                this.ipChannel()
+                console.log(this.ipAddress)
+                this.getSingleIp(data.ip)
             })
     }
     /**
@@ -85,24 +87,22 @@ export class ChannelsComponent implements OnInit {
      */
     ipChannel() {  // first setup for routing in production
         if (environment.production === true) {
-            switch (this.ipAddress) {
-                case "84.53.114.2":
-                    console.log("lloyd's pc")
-                    break;
-
-                default:
-                    console.log("some other pc")
-                    break;
+            if (this.singleIp.ip === this.ipAddress) { // if config exists got to channel
+                this.redirectTo(this.singleIp.channel);
             }
+            else {
+                return "this ip doesn't have a config yet"
+            }
+            
         }
     }
-    ipListFromDb () {
-        this.ipService.getIps().subscribe(Ip => {
-            this.ipConfig = Ip
+
+    getSingleIp(ip) {
+        this.ipService.selectByIp(ip).subscribe(ipFromDb => {
+            this.singleIp = ipFromDb
+            this.ipChannel()
         })
-        // needs to check if ip is in db
-        // if not add
-        // if true this.ipChannel(ip setup)
+
     }
 }
 

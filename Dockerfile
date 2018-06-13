@@ -1,6 +1,7 @@
 FROM node:latest
 
 LABEL author="Lloyd stumpel"
+# need to check if i can make it lighter by removing the angular stuff (including compodoc from the image) 
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

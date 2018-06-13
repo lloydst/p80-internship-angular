@@ -5,6 +5,8 @@ services:
     restart: always
     build: .
     image: lloydst/p80-tool
+    environment: 
+      - NODE_ENV=production
     ports:
       - "3000:3000"
     links:
