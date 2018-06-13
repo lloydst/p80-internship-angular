@@ -5,6 +5,8 @@
 /tmp
 /out-tsc
 
+# mongo data
+/data
 
 # dependencies
 /node_modules

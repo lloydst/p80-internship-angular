@@ -75,7 +75,7 @@ docs can be found at [https://lloydst.github.io/p80-internship-angular/](https:/
 Or you use ``` npm run doc ``` and if the server is running (both npm start and npm run server) you can acces it at (local)host(:port)/docs
 
 ## docker
-tends to fail on npm install (due to it using the wrong dns - set this to 8.8.8.8 if you havn't) you need to restart docker to fix this
+docker tends to fail on npm install scripts due to it starting up with the wrong proxy, set this to 8.8.8.8 if you havn't. if it is set to this port and still fails make shure to restart docker
 
 build initial image (auto-updates front-end for production)
 
@@ -91,4 +91,8 @@ when you have made changes force a clean build of docker-images
 
 push images to their repository
 
-`docker compose push`
+`docker-compose push`
+
+run the img on a port 
+`docker run -p 3000:3000 lloydst/p80-tool`
+

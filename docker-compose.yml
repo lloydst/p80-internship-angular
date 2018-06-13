@@ -1,52 +1,21 @@
-# it should build angular
-# then run pm2(server)
-# mongo (currently uses a mlab hosted db but one does get spun up)
-
-version: '3' # specify docker-compose version
-# this is for production  have to do dev version(or do i?)
-# Define the services/containers to be run
+version: "3"
 services:
-  angular: # name of the first service
-    
-    image: lloydst/angular
-    build:
-      context: .
-      dockerfile: .docker/angular.dockerfile
-    
-  node:
-    
-    image: lloydst/nodeapp
-    build:
-      context: .
-      dockerfile: .docker/node.dockerfile
-    volumes:
-      - .:/var/www/angularnoderestfulservice
-    environment:
-      - NODE_ENV=production
+  app:
+    container_name: p80-tool
+    restart: always
+    build: .
+    image: lloydst/p80-tool
     ports:
       - "3000:3000"
-    depends_on: 
-      - mongodb
-    deploy:
-      replicas: 5
-      resources:
-        limits:
-          cpus: "0.1"
-          memory: 50M
-      restart_policy:
-        condition: on-failure
-      networks:
-        - nodeapp-network
-
-  mongodb:
-    
+    links:
+      - mongo
+      # not yet used
+  mongo:
+    container_name: mongo
     image: mongo
-    networks:
-      - nodeapp-network
-
-networks:
-  nodeapp-network:
-    driver: bridge
-
+    # this is where data get persisted
+    volumes:
+      - ./data:/data/db
+    ports:
+      - "27017:27017"
   
-      
