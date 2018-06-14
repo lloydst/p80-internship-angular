@@ -94,6 +94,6 @@ push images to their repository
 
 `docker-compose push`
 
-run the img on a port 
+run the img on a port (3000 in example below)
 `docker run -p 3000:3000 lloydst/p80-tool`
 

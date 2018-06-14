@@ -3,12 +3,3 @@ section {
 	height: 100%;
 	@include flexbox;
 }
-// reset admin
-div.wrapper-admin {
-    margin-top:0px;
-    section {
-        background-color: #ffffff;
-        height: 100%;
-	    @include flexbox;
-    }
-}

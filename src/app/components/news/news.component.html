@@ -1,6 +1,11 @@
 <!-- the scss in the scss file shows how it should work (currently isn't referenced in the ts file so scss isn's applied)-->
-<div class="ticker-wrap"> <!-- news cnn like banner aka ticket tape-->
-  <div class="ticker" >
-    <div class="ticker__item" *ngFor="let last of news">{{last.title}}</div>
-  </div>
+<div class="ticker-wrap">
+    <!-- news cnn like banner aka ticket tape-->
+    <div class="ticker">
+        <div class="ticker__item" *ngFor="let last of news" style="background: white;border: 20px solid black">
+                <img src="{{last.enclosures[0].url}}" alt=""> <!-- deze src lijkt niet als background img te willen-->
+                <div style="background: black;color: white; font-size: 40px" class="ticker__item__title">{{last.title}}</div>
+                <div class="ticker__item__description">{{last.description}}</div>
+        </div>
+    </div>
 </div>
