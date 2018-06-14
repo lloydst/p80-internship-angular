@@ -321,6 +321,7 @@ section {
   -moz-flex: 1;
   -ms-flex: 1;
   flex: 1;
+  margin-top: 0px;
   min-height: 66vh;
 }
 
@@ -337,7 +338,7 @@ section {
   -ms-flex-direction: row;
   flex-direction: row;
   background: white;
-  max-height: 40vh;
+  border: 20px solid black;
 }
 
 .news__item .news__item__img {

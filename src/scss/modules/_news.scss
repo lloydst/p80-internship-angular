@@ -1,14 +1,14 @@
 .news {
     @include flex;
-	
+	margin-top: 0px;
     min-height: 66vh;
 }
 .news__item {
     @include inline-flex;
     @include flex-direction(row);
     background: white;
-    //border: 20px solid black;
-    max-height: 40vh;
+    border: 20px solid black;
+    //max-height: 40vh;
     .news__item__img {
         min-width: calc(1fr);
         margin-top: 0px;
