@@ -5,7 +5,7 @@
 /tmp
 /out-tsc
 
-# mongo data
+# mongo data (created by docker)
 /data
 
 # dependencies

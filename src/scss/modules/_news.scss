@@ -1,0 +1,26 @@
+.news {
+    @include flex;
+	
+    min-height: 66vh;
+}
+.news__item {
+    @include inline-flex;
+    @include flex-direction(row);
+    background: white;
+    border: 20px solid black;
+    max-height: 40vh;
+    .news__item__img {
+        min-width: calc(1fr);
+        margin-top: 0px;
+    }
+    
+}
+.news__item__title {
+    background: black;
+    color: white;
+    font-size: 40px;
+    margin-top: 0px;
+}
+.news__item__description {
+    overflow-y: hidden
+}
