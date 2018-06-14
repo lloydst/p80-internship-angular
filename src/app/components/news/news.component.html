@@ -3,11 +3,11 @@
 <div class="news">
     <!-- news cnn like banner aka ticket tape-->
 
-    <div class="news__item" *ngFor="let last of news">
-        <div>
+    <div class="news__item" *ngFor="let last of news;  let i=index" >
+        <div *ngIf="i<2"> <!-- Max of 2-->
             <img class="news__item__img" src="{{last.enclosures[0].url}}" alt="">
         </div>
-        <div>
+        <div *ngIf="i<2"> <!-- Max of 2-->
             <!-- deze src lijkt niet als background img te willen-->
             <div class="news__item__title" >{{last.title}}</div>
             <div class="news__item__description">{{last.description}}</div>

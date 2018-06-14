@@ -7,7 +7,7 @@
     @include inline-flex;
     @include flex-direction(row);
     background: white;
-    border: 20px solid black;
+    //border: 20px solid black;
     max-height: 40vh;
     .news__item__img {
         min-width: calc(1fr);
