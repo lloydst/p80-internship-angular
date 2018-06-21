@@ -49,8 +49,8 @@ if (process.env.NODE_ENV != 'production') {
   });
 }
 app.use('/images',images) // post and read
-app.use('/api',api)
-app.use('/public', express.static(path.join(__dirname, 'server/public')))
+app.use('/api', api)
+app.use('/public', express.static(path.join(__dirname, 'server/public'))) // css and the like
 app.use('*',express.static(path.join(__dirname, 'dist'))) //routes anything not caught by the routes above to your angular project if possible
 
 const port = process.env.PORT||3000; // PORT is another variable that can be placed in the .env file

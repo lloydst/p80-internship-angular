@@ -66,13 +66,9 @@ constructor(private http: HttpClient) { }
     setTimeout(() => {
       this.getBitData()
     }, 10000); // time it calls
-    this.http.get('https://api.coinmarketcap.com/v1/ticker/?start=0&limit=24&convert=EUR').subscribe(
+    this.http.get('https://api.coinmarketcap.com/v1/ticker/?start=0&limit=24&convert=EUR').subscribe( // change the limit amount to make it more or less
       res=>{ this.bitVal = res
       }
     )
   }
-  
-  
-   
-   
 }

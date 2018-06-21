@@ -38,9 +38,9 @@ router.delete('/:ip',function (req,res){
         if (err) {
             console.log(err)
         }
-        
+        // deleted
     })
-    res.send("deleted")
+    
 });
 router.put('/:ip',function (req,res){
     Ip.findOneAndUpdate({ip: req.params.ip},{
@@ -51,7 +51,7 @@ router.put('/:ip',function (req,res){
         if (err) {
             console.log(err)
         }
-        res.send(singleIp + "updated")
+        res.send(singleIp) //updated
     })
     
 });

@@ -5,6 +5,7 @@
 >prerequisites
   -  node v 8.10.0 (with matching npm)
   -  mongodb or a mlab account (see data base for more information)
+  -  angular cli 6+ installed globally
   
 ## contents
  - [getting started](#getting-started-)
@@ -21,7 +22,8 @@
 
 
 ## getting started:
-`git clone https://github.com/lloydst/p80-internship-angular.git .` (replace the '.' with a directory if you would want it in a new folder)
+`git clone https://github.com/lloydst/p80-internship-angular.git .` (replace the '.' with a directory if you would want it in a new folder).
+
 
 ## styling
 scss files are stored in the angular root (src folder) in a scss map and are being converted to css using grunt and then stored in the assets folder in the angular root.
