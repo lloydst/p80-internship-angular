@@ -4,31 +4,68 @@
     min-height: 66vh;
 }
 
+// ---------------------------------------------
+// Highlight
+// ---------------------------------------------
+
 .weather__highlight {
 	text-align: center;
 	padding-bottom: 10px;
 	@include flex(2, 1, auto);
 }
 
-.weather__icon {
+.weather__highlight-icon {
 	font-size: 50px;
 }
 
-.weather__title {
+.weather__highlight-title {
+}
+
+.weather__highlight-city {
+	display: block;
 	font-size: 50px;
 }
 
-.weather__forecast-wrapper {
+.weather__highlight-date {
+	display: block;
+	font-size: 30px;
+}
+
+.weather__highlight-time {
+	display: block;
+	font-size: 30px;
+}
+
+.weather__highlight-wind {
+	display: inline-block;
+	margin-right: 15px;
+}
+
+.weather__highlight-temperature {
+	display: inline-block;
+	margin-left: 15px;
+}
+
+
+// ---------------------------------------------
+// Forecast
+// ---------------------------------------------
+
+.weather__forecast {
 	@include flexbox;
 	@include flex-direction(row);
 	@include flex-wrap(wrap);
 	@include flex(0, 1, auto);
 }
 
-.weather__forecast {
+.weather__forecast-item {
 	@include flex(0, 1, 20%);
 	margin-bottom: 30px;
 	text-align: center;
+
+	> span {
+		display: block;
+	}
 
 	.wi-custom {
 		font-size: 50px;
