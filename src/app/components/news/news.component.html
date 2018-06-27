@@ -3,14 +3,14 @@
 <div class="news">
     <!-- news cnn like banner aka ticket tape-->
 
-    <div class="news__item {{i +1}}">
-        <div > <!-- Max of 2-->
-            <img class="news__item__img visable-{{i +1}}"  src="{{news[0].enclosures[0].url}}" alt="">
+    <div class="news__item">
+        <div >
+            <img class="news__item__img "  src="{{news[0].enclosures[0].url}}" alt="">
         </div>
         <div > <!-- Max of 1-->
             <!-- deze src lijkt niet als background img te willen-->
-            <div class="news__item__title visable-{{i +1}}" >{{news[0].title}}</div>
-            <div class="news__item__description visable-{{i+1}}" >{{news[0].description}}</div>
+            <div class="news__item__title" >{{news[0].title}}</div>
+            <div class="news__item__description" >{{news[0].description}}</div>
         </div>
     </div>
 

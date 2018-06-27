@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../../services/news.service';
-import * as $ from 'jquery';
+
 /**
  * news Component
  */
