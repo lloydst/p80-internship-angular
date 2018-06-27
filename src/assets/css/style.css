@@ -142,7 +142,6 @@ a:hover, a:active {
 .wrapper {
   margin: 0;
   padding: 0;
-  border: 20px solid #2A4161;
   height: calc(100vh - 40px);
 }
 
@@ -167,7 +166,7 @@ a:hover, a:active {
 }
 
 section {
-  background-color: #33BFEC;
+  background-color: #EEEEEE;
   height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -282,11 +281,12 @@ section {
   -ms-flex: 1;
   flex: 1;
   margin-top: 0px;
-  background-color: #022f50;
+  background-color: #EEEEEE;
   min-height: 66vh;
 }
 
 .news__item {
+  margin: 15px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -moz-inline-flex;
@@ -295,17 +295,29 @@ section {
   color: white;
 }
 
-.news__item .news__item-img {
-  min-width: calc(1fr);
-  margin: 10px;
+#article-1 {
+  background-color: #022f50;
 }
 
-.news__item-title h1 {
+#article-2 {
+  background-color: #00b0e9;
+}
+
+.news__item-content {
+  margin: 30px;
+}
+
+.news__item-img {
+  width: 30%;
+  object-fit: cover;
+}
+
+.news__item-title {
   color: white;
   font-size: 40px;
 }
 
-.news__item-description {
+.news__item-description p {
   color: white;
 }
 
