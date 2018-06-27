@@ -260,4 +260,24 @@ section {
   font-size: 50px;
 }
 
+.news {
+  display: flex;
+}
+
+.news__title {
+  color: white;
+  font-size: 50px;
+  width: 100%;
+}
+
+.news__image {
+  width: 250px;
+  height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: url("https://image.flaticon.com/icons/png/128/190/190553.png");
+  display: block;
+}
+
 /*# sourceMappingURL=style.css.map */

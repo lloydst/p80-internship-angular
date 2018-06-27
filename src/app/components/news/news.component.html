@@ -1,5 +1,16 @@
-<div class="ticker-wrap"> <!-- news cnn like banner aka ticket tape-->
-  <div class="ticker" >
-    <div class="ticker__item" *ngFor="let last of news">{{last.title}}</div>
-  </div>
+<div class="news"> <!-- news cnn like banner aka ticket tape-->
+    <div *ngFor="let last of news | slice:0:10; let i=index">
+        <div *ngIf="i==1">
+            <div class="news__title">
+                <h1>{{last.title}}</h1>
+            </div>
+            <div class="news__content">
+                <div class="news__image"></div>
+                <div class="news__description">
+                    <p>{{last.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="news__image"></div>
 </div>
