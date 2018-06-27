@@ -102,7 +102,7 @@ body {
 /* Heading
 ================================================ */
 h1, h2, h3, h4, h5, h6 {
-  color: #000000;
+  color: #2A4161;
   font-family: Supernormale, sans-serif;
   font-weight: 400;
   margin: 0;
@@ -128,7 +128,7 @@ div, p {
 /* Links
 ================================================ */
 a {
-  color: #000000;
+  color: #2A4161;
   font-family: Supernormale, sans-serif;
   outline: none;
   font-size: 20px;
@@ -188,15 +188,36 @@ section {
   flex: 2 1 auto;
 }
 
-.weather__icon {
+.weather__highlight-icon {
   font-size: 50px;
 }
 
-.weather__title {
+.weather__highlight-city {
+  display: block;
   font-size: 50px;
 }
 
-.weather__forecast-wrapper {
+.weather__highlight-date {
+  display: block;
+  font-size: 30px;
+}
+
+.weather__highlight-time {
+  display: block;
+  font-size: 30px;
+}
+
+.weather__highlight-wind {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.weather__highlight-temperature {
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.weather__forecast {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -220,7 +241,7 @@ section {
   flex: 0 1 auto;
 }
 
-.weather__forecast {
+.weather__forecast-item {
   -webkit-box-flex: 0;
   -webkit-flex: 0 1 20%;
   -moz-box-flex: 0;
@@ -231,7 +252,11 @@ section {
   text-align: center;
 }
 
-.weather__forecast .wi-custom {
+.weather__forecast-item > span {
+  display: block;
+}
+
+.weather__forecast-item .wi-custom {
   font-size: 50px;
 }
 
