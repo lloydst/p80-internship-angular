@@ -1,6 +1,21 @@
+// ---------------------------------------------
+//  channel & component wrapper
+// ---------------------------------------------
 .wrapper {
 	margin: 0;
 	padding: 0;
 	border: 20px solid #2A4161;
 	height: calc(100vh - 40px);
+}
+
+// ---------------------------------------------
+//  admin wrapper
+// ---------------------------------------------
+.wrapper-admin {
+    margin-top:0px;
+    section {
+        background-color: #ffffff;
+        height: 100%;
+	    @include flexbox;
+    }
 }

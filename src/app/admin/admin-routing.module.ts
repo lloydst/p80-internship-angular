@@ -16,6 +16,8 @@ import { ImageViewComponent } from './image/image-view/image-view.component';
 import { AdminChannelsContentsComponent } from './channels/admin-channels-contents/admin-channels-contents.component';
 import { ChannelNewComponent } from './channels/channel-new/channel-new.component';
 import { ChannelContentComponent } from './channels/channel-content/channel-content.component';
+import { UpdateComponent } from './setting/update/update.component';
+import { CreateComponent } from './setting/create/create.component';
 
 /**
  * defining routes
@@ -27,8 +29,10 @@ const routes = [
       component: DashboardComponent // this one's grid had to be done seperate
     },
     {
-      path:'algemeen', 
-      component: SettingComponent
+        path:'algemeen',component: SettingComponent ,children:[
+            {path:'add',component: CreateComponent},
+            {path:'detail/:id',component: UpdateComponent}
+        ]
     },
     {
       path:'components', 

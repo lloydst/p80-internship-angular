@@ -1,20 +1,26 @@
-.news{
-    display: flex;
+.news {
+    @include flex;
+	margin-top: 0px;
+    min-height: 66vh;
 }
-
-.news__title{
+.news__item {
+    @include inline-flex;
+    @include flex-direction(row);
+    background: white;
+    border: 20px solid black;
+    //max-height: 40vh;
+    .news__item__img {
+        min-width: calc(1fr);
+        margin-top: 0px;
+    }
+    
+}
+.news__item__title {
+    background: black;
     color: white;
-    font-size: 50px;
-    width: 100%
+    font-size: 40px;
+    margin-top: 0px;
 }
-
-.news__image{
-    width: 250px;
-    height: 250px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-image: url("https://image.flaticon.com/icons/png/128/190/190553.png");
-    display: block;
+.news__item__description {
+    overflow-y: hidden
 }
-

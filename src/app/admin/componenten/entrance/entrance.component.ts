@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService} from '../../../services/data.service';
-import { Website } from '../../../models/website';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { Validators, FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 
 /**
  * add or remove websites that are shown in the loop or navigate to the detail-page to edit a existing one
@@ -59,7 +58,7 @@ export class AdminEntranceComponent implements OnInit {
   delete( item ) {
     if (confirm("Are you sure you want to delete " + item.name + "?")) {
       this.dataService.deleteWebsite(item._id).subscribe(
-        data => {
+        () => {
           // refresh the list
           this.getData();
           return true;
@@ -86,7 +85,7 @@ export class AdminEntranceComponent implements OnInit {
       name: site,
       url: url,
       visable: visable}).subscribe(
-        data => {
+        () => {
           // refresh the list
           this.getData();
           return true;

@@ -39,7 +39,7 @@ weatherjson: any =[]
       res => {
         var str = '/[^,]/g'
           this.weatherjson = res
-          this.date = this.weatherjson[0].lastBuildDate.substring(0,15)
+          this.date = this.weatherjson[0].lastBuildDate.substring(0,16)
           this.time =this.weatherjson[0].lastBuildDate.substring(18, 25)//.match(str)
           console.log(this.time.substring(18, 25))
         })

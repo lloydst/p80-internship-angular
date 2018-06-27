@@ -21,7 +21,6 @@ import { ChannelsModule } from './channels/channels.module';
 /**
  * services
  */
-import { SocketService } from './services/socket.service';
 import { DataService } from './services/data.service';
 
 import { NewsService } from './services/news.service';
@@ -49,7 +48,6 @@ import { ComponentsModule } from './components/components.module';
     ],
   providers: [
     DataService,
-    SocketService,
     NewsService,
     WeatherService,
     FileService

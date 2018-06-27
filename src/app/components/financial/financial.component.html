@@ -7,6 +7,7 @@
             <th>&plusmn;% 24h</th>
             <th>&plusmn;% 7d</th>
         <tr>
+            <!-- class up down represents if it went up / down only one is visable each time -->
             <td class="down" *ngIf="bit.percent_change_1h.includes('-');">{{bit.percent_change_1h}}</td>
             <td class="up" *ngIf="!bit.percent_change_1h.includes('-');">{{bit.percent_change_1h}}</td>
             <td class="down" *ngIf="bit.percent_change_24h.includes('-');">{{bit.percent_change_24h}}</td>
@@ -17,4 +18,3 @@
     </table>
 </div>
 </div>
-

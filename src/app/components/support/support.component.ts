@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TicketService } from '../../services/ticket.service';
 
 /**
  * support component
@@ -8,14 +9,24 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './support.component.html'
 })
 export class SupportComponent implements OnInit {
+    /**
+     * binding
+     */
+    data
 /**
  * some stuff goes here
  */
-  constructor() { }
+  constructor(private ticketservice: TicketService) { }
 /**
  * fill
  */
   ngOnInit() {
+      this.getTickets()
   }
-
+  getTickets() {
+    this.ticketservice.getTickets().subscribe(async (data) => {
+        this.data = data
+    })
+  }
+  
 }

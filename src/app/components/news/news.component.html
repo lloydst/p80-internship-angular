@@ -1,16 +1,17 @@
-<div class="news"> <!-- news cnn like banner aka ticket tape-->
-    <div *ngFor="let last of news | slice:0:10; let i=index">
-        <div *ngIf="i==1">
-            <div class="news__title">
-                <h1>{{last.title}}</h1>
-            </div>
-            <div class="news__content">
-                <div class="news__image"></div>
-                <div class="news__description">
-                    <p>{{last.description}}</p>
-                </div>
-            </div>
+<!-- the scss in the scss file shows how it should work (currently isn't referenced in the ts file so scss isn's applied)-->
+
+<div class="news">
+    <!-- news cnn like banner aka ticket tape-->
+
+    <div class="news__item {{i +1}}" *ngFor="let last of news; let i=index" style="display: none;">
+        <div > <!-- Max of 2-->
+            <img class="news__item__img visable-{{i +1}}"  src="{{last.enclosures[0].url}}" alt="">
+        </div>
+        <div > <!-- Max of 1-->
+            <!-- deze src lijkt niet als background img te willen-->
+            <div class="news__item__title visable-{{i +1}}" >{{last.title}}</div>
+            <div class="news__item__description visable-{{i+1}}" >{{last.description}}</div>
         </div>
     </div>
-    <div class="news__image"></div>
+
 </div>

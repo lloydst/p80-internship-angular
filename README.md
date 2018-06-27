@@ -5,6 +5,7 @@
 >prerequisites
   -  node v 8.10.0 (with matching npm)
   -  mongodb or a mlab account (see data base for more information)
+  -  angular cli 6+ installed globally
   
 ## contents
  - [getting started](#getting-started-)
@@ -21,10 +22,12 @@
 
 
 ## getting started:
-`git clone https://github.com/lloydst/p80-internship-angular.git .` (replace the '.' with a directory if you would want it in a new folder)
+`git clone https://github.com/lloydst/p80-internship-angular.git .` (replace the '.' with a directory if you would want it in a new folder).
+
 
 ## styling
-styles.scss in the src folder are semi global styles as long as there arent too many partials you can store them here
+scss files are stored in the angular root (src folder) in a scss map and are being converted to css using grunt and then stored in the assets folder in the angular root.
+`grunt build-sass` builds it
 
 ## sources:
 This project was started up with [Mean-boilerplate](https://github.com/lloydst/mean-boilerplate) , which is heavely based on the angular-cli and express-gen for the front and backend respectively.
@@ -75,9 +78,9 @@ docs can be found at [https://lloydst.github.io/p80-internship-angular/](https:/
 Or you use ``` npm run doc ``` and if the server is running (both npm start and npm run server) you can acces it at (local)host(:port)/docs
 
 ## docker
-tends to fail on npm install (due to it using the wrong dns - set this to 8.8.8.8 if you havn't) you need to restart docker to fix this
+docker tends to fail on npm install scripts due to it starting up with the wrong proxy, set this to 8.8.8.8 if you havn't. if it is set to this port and still fails make shure to restart docker
 
-build initial image (auto-updates front end for production)
+build initial image (auto-updates front-end for production)
 
 `docker-compose build` 
 
@@ -91,4 +94,8 @@ when you have made changes force a clean build of docker-images
 
 push images to their repository
 
-`docker compose push`
+`docker-compose push`
+
+run the img on a port (3000 in example below)
+`docker run -p 3000:3000 lloydst/p80-tool`
+

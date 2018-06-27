@@ -63,27 +63,5 @@ export class AdminSideNavComponent implements OnInit {
         }
       }
     }
-    /*
-    if(navwidth.style.width == "50px") {
-      navwidth.style.width = "100vw"
-      for(let i =0; i<visability.length; i++){
-      visabilityitem = visability[i]
-      visabilityitem.style.display = "inline-block"
-      }
-      for (let i=0; i<tooltip.length; i++) {
-        tooltipitem = tooltip[i]
-        tooltipitem.style.display = "none"
-      }
-    } else if(navwidth.style.width == "100vw") {
-      navwidth.style.width = "50px"
-      for(let i =0; i<visability.length; i++){
-        visabilityitem = visability[i]
-        visabilityitem.style.display = "none"
-      }
-      for (let i=0; i<tooltip.length; i++) {
-        tooltipitem = tooltip[i]
-        tooltipitem.style.display = "inline-block"
-      }
-    } */
   } 
 }
