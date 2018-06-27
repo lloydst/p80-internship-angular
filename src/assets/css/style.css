@@ -273,6 +273,64 @@ section {
   font-size: 50px;
 }
 
+.financial {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-top: 0px;
+  min-height: 66vh;
+}
+
+.financial__currency-top {
+  background-color: white;
+  width: 30%;
+  height: 30%;
+}
+
+.financial__currency-top-title {
+  background-color: #2a4161;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: nowrap;
+  -moz-flex-wrap: nowrap;
+  -ms-flex-wrap: none;
+  flex-wrap: nowrap;
+  padding: 10px;
+}
+
+.financial__currency-top-title h1 {
+  color: #00afe7;
+}
+
+.financial__currency-top-title h1:last-child {
+  margin-left: auto;
+  color: white;
+}
+
+.news__item-content {
+  margin: 30px;
+}
+
+.news__item-img {
+  width: 30%;
+  object-fit: cover;
+}
+
+.news__item-title {
+  color: white;
+  font-size: 40px;
+}
+
+.news__item-description p {
+  color: white;
+}
+
 .news {
   -webkit-box-flex: 1;
   -webkit-flex: 1;

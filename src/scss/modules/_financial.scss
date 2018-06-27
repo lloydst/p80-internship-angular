@@ -1,0 +1,46 @@
+.financial {
+    @include flex;
+    margin-top: 0px;
+    min-height: 66vh;
+}
+
+.financial__currency-top {
+    background-color: white;
+    width: 30%;
+    height: 30%;
+}
+
+.financial__currency-top-title {
+    background-color: #2a4161;
+    @include flexbox;
+    @include flex-wrap(nowrap);
+    padding: 10px;
+    h1{
+        color: #00afe7;
+
+        &:last-child{
+            margin-left: auto;
+            color: white;
+        }   
+    } 
+}
+
+
+.news__item-content {
+    margin: 30px;
+}
+
+.news__item-img {
+    width: 30%;
+    object-fit: cover;
+}
+
+.news__item-title {
+    color: white;
+    font-size: 40px;
+}
+.news__item-description {
+    p{
+        color: white;
+    }
+}
