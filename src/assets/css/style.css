@@ -305,8 +305,20 @@ section {
 
 .financial__currency-top-tile-title {
   background-color: #2a4161;
-  padding: 20px;
   margin-top: 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.financial__currency-top-tile-title-icon i {
+  color: #f7f7f7;
+}
+
+.financial__currency-top-tile-title-content {
+  padding: 20px;
 }
 
 .financial__currency-top-tile-title-top {
@@ -350,8 +362,14 @@ section {
 }
 
 .financial__currency-top-tile-list-item-increase {
-  color: #00afe7;
+  color: #ADE25D;
   margin-left: auto;
+}
+
+.border-line {
+  width: 1px;
+  height: 350px;
+  background-color: #2a4161;
 }
 
 .financial__currency-bottom {
@@ -365,6 +383,7 @@ section {
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
+  justify-content: space-evenly;
 }
 
 .financial__currency-bottom-tile-list {
@@ -374,12 +393,41 @@ section {
   -moz-flex: 0 1 33%;
   -ms-flex: 0 1 33%;
   flex: 0 1 33%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
+  -moz-align-items: stretch;
+  align-items: stretch;
   margin: 15px;
   padding: 10px;
 }
 
 .financial__currency-bottom-tile-list li {
   list-style-type: none;
+}
+
+.financial__currency-bottom-tile-list-header {
+  list-style-type: none;
+}
+
+.financial__currency-bottom-tile-list-header span {
+  color: #2a4161;
+  font-weight: bold;
+}
+
+.financial__currency-bottom-tile-list-header span:last-child {
+  float: right;
 }
 
 .financial__currency-bottom-tile-list-item {
@@ -392,8 +440,8 @@ section {
 }
 
 .financial__currency-bottom-tile-list-item-rank {
-  margin-right: 15px;
   color: #2a4161;
+  margin-right: 15px;
 }
 
 .financial__currency-bottom-tile-list-item-name {
@@ -406,7 +454,7 @@ section {
 }
 
 .financial__currency-bottom-tile-list-item-increase {
-  color: #00afe7;
+  color: #ADE25D;
   margin-left: auto;
 }
 
@@ -456,6 +504,22 @@ section {
 
 .news__item-description p {
   color: white;
+}
+
+.icon {
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  text-align: center;
+  z-index: 10;
+  font-size: 0;
+}
+
+.icon--trend-down {
+  width: 32px;
+  height: 32px;
+  background-size: 100% auto;
+  background-image: url(../../public/assets/img/icon/trend-up-black.svg);
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -16,8 +16,17 @@
 
 .financial__currency-top-tile-title {
     background-color: #2a4161;
-    padding: 20px;
     margin-top: 0;
+    @include flexbox;
+}
+.financial__currency-top-tile-title-icon {
+    i{
+        color: #f7f7f7;
+    }
+}
+
+.financial__currency-top-tile-title-content {
+    padding: 20px;
 }
 
 .financial__currency-top-tile-title-top {
@@ -53,33 +62,53 @@
 }
 
 .financial__currency-top-tile-list-item-increase {
-    color: #00afe7; //maybe a green instead?
+    color: #ADE25D; //maybe a green instead?
     margin-left: auto;  
     &:before{
         //up arrow once icons are setup
     }
 }
 
-
+.border-line{
+    width: 1px;
+    height: 350px;
+    background-color:#2a4161;
+}
 
 .financial__currency-bottom{
     background-color: #f7f7f7;
     width: 100%;
 }
 
-.financial__currency-bottom-tile{
+.financial__currency-bottom-tile {
     @include flexbox;
+    justify-content: space-evenly;
 }
-.financial__currency-bottom-tile-list{
+.financial__currency-bottom-tile-list {
     @include flex(0, 1, 33%);
+    @include flexbox;
+    @include flex-direction(column);
+    @include align-items(stretch);
     margin: 15px;
     padding: 10px;
 
     li{
         list-style-type: none;
     }
-
 }
+
+.financial__currency-bottom-tile-list-header {
+    list-style-type: none;
+
+        span {
+            color: #2a4161;
+            font-weight: bold;
+            &:last-child {
+
+                float: right;
+            }
+        }
+    }
 
 .financial__currency-bottom-tile-list-item{
     @include flexbox;
@@ -87,8 +116,8 @@
 }
 
 .financial__currency-bottom-tile-list-item-rank{
-    margin-right: 15px;
     color: #2a4161;
+    margin-right: 15px;
 }
 
 .financial__currency-bottom-tile-list-item-name{
@@ -106,7 +135,7 @@
 }
 
 .financial__currency-bottom-tile-list-item-increase {
-    color: #00afe7; //maybe a green instead?
+    color: #ADE25D; //maybe a green instead?
     margin-left: auto;  
     &:before{
         //up arrow once icons are setup
