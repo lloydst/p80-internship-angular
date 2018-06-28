@@ -1,0 +1,18 @@
+your ip= {{ipAddress}}
+<form action="/api/config" method="post">
+    <div>
+        <label for="ip">ip</label>
+        <input #ip type="text">
+    </div>
+    <div>
+        <label for="channel">channel</label>
+        <input #channel type="text">
+    </div>
+    <div>
+        <label for="name">name</label>
+        <input #name type="text">
+    </div>
+    <button type="submit" (click)="addIpConfig(
+        {ip:ip.value, channel:channel.value,name:name.value}
+        )">submit</button>
+</form>

@@ -23,6 +23,8 @@ import { AdminChannelsContentsComponent } from './channels/admin-channels-conten
 import { ChannelContentComponent } from './channels/channel-content/channel-content.component';
 import { ChannelNewComponent } from './channels/channel-new/channel-new.component';
 import { ListingComponentsComponent } from './channels/listing-components/listing-components.component';
+import { UpdateComponent } from './setting/update/update.component';
+import { CreateComponent } from './setting/create/create.component';
 
 
 
@@ -52,7 +54,9 @@ import { ListingComponentsComponent } from './channels/listing-components/listin
     AdminChannelsContentsComponent,
     ChannelContentComponent,
     ChannelNewComponent,
-    ListingComponentsComponent
+    ListingComponentsComponent,
+    UpdateComponent,
+    CreateComponent,
   ]
 })
 export class AdminModule { }

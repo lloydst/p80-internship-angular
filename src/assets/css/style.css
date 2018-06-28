@@ -142,8 +142,21 @@ a:hover, a:active {
 .wrapper {
   margin: 0;
   padding: 0;
-  border: 20px solid #2A4161;
   height: calc(100vh - 40px);
+}
+
+.wrapper-admin {
+  margin-top: 0px;
+}
+
+.wrapper-admin section {
+  background-color: #ffffff;
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .container {
@@ -153,7 +166,7 @@ a:hover, a:active {
 }
 
 section {
-  background-color: #33BFEC;
+  background-color: #EEEEEE;
   height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
@@ -258,6 +271,115 @@ section {
 
 .weather__forecast-item .wi-custom {
   font-size: 50px;
+}
+
+.financial {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-top: 0px;
+  min-height: 66vh;
+}
+
+.financial__currency-top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.financial__currency-top-tile {
+  background-color: white;
+  margin: 15px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 30%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 1 30%;
+  -ms-flex: 0 1 30%;
+  flex: 0 1 30%;
+}
+
+.financial__currency-top-tile-title {
+  background-color: #2a4161;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  margin-top: 0;
+}
+
+.financial__currency-top-tile-title h1 {
+  color: #00afe7;
+}
+
+.financial__currency-top-tile-title h1:first-child {
+  margin-right: 15px;
+  color: #fff;
+}
+
+.financial__currency-top-tile-title h1:last-child {
+  margin-left: auto;
+  color: #fff;
+}
+
+.financial__currency-bottom {
+  background-color: #fff;
+  width: 100%;
+  height: 100px;
+}
+
+.news {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-top: 0px;
+  background-color: #EEEEEE;
+  min-height: 66vh;
+}
+
+.news__item {
+  margin: 15px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: white;
+}
+
+#article-1 {
+  background-color: #022f50;
+}
+
+#article-2 {
+  background-color: #00b0e9;
+}
+
+.news__item-content {
+  margin: 30px;
+}
+
+.news__item-img {
+  width: 30%;
+  object-fit: cover;
+}
+
+.news__item-title {
+  color: white;
+  font-size: 40px;
+}
+
+.news__item-description p {
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

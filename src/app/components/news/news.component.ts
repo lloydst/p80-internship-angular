@@ -9,6 +9,7 @@ import { NewsService } from '../../services/news.service';
   templateUrl: './news.component.html'
 })
 export class NewsComponent implements OnInit {
+
   /**
    * binding
    */
@@ -23,12 +24,17 @@ export class NewsComponent implements OnInit {
  */
   ngOnInit() {
     this.getNews()
+    
   }
   /**
    * gets the news from the api
    */
   getNews() {
     this.newsService.getNews().subscribe(
-      res => {this.news = res})
+      res => {
+          this.news = res
+        }
+       
+    )
   }
 }

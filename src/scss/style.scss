@@ -18,17 +18,17 @@
 //  Layout
 // ---------------------------------------------
 @import
-  "layout/header",
   "layout/wrapper",
   "layout/container",
-  "layout/section",
-  "layout/footer";
+  "layout/section";
 
 // ---------------------------------------------
 //  Modules
 // ---------------------------------------------
 @import
   "modules/weather",
+  "modules/financial",
+  "modules/news",
   "modules/forecast",
   "modules/icon";
 
