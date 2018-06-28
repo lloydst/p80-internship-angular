@@ -2,16 +2,25 @@
 
 <div class="news">
     <!-- news cnn like banner aka ticket tape-->
-
-    <div class="news__item">
-        <div >
-            <img class="news__item__img "  src="{{news[0].enclosures[0].url}}" alt="">
-        </div>
-        <div > <!-- Max of 1-->
+    <div class="news__item" id="article-1">
+        <img class="news__item-img"  src="{{news[0].enclosures[0].url}}" alt="">
+        <div class="news__item-content"> <!-- Max of 1-->
             <!-- deze src lijkt niet als background img te willen-->
-            <div class="news__item__title" >{{news[0].title}}</div>
-            <div class="news__item__description" >{{news[0].description}}</div>
+            <h1 class="news__item-title">{{news[0].title}}</h1>
+            <div class="news__item-description" >
+                <p>{{news[0].description}}</p>
+            </div>
         </div>
+    </div>
+
+    <div class="news__item" id="article-2">
+        <div class="news__item-content">
+            <h1 class="news__item-title">{{news[1].title}}</h1>
+            <div class="news__item-description">
+                <p>{{news[1].description}}</p>
+            </div>
+        </div>
+        <img class="news__item-img" src="{{news[1].enclosures[0].url}}" alt="">
     </div>
 
 </div>

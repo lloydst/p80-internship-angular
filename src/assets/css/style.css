@@ -142,7 +142,6 @@ a:hover, a:active {
 .wrapper {
   margin: 0;
   padding: 0;
-  border: 20px solid #2A4161;
   height: calc(100vh - 40px);
 }
 
@@ -167,78 +166,13 @@ a:hover, a:active {
 }
 
 section {
-  background-color: #33BFEC;
+  background-color: #EEEEEE;
   height: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-}
-
-.container-admin {
-  width: 100%;
-  margin-top: 0px;
-}
-
-.container-admin .main-admin-grid {
-  margin-top: 0px;
-  display: grid;
-  grid-template-columns: 50px 0 1fr;
-  min-height: 100vh;
-}
-
-.container-admin .sidenav #link {
-  color: black;
-}
-
-.container-admin .sidenav .grid-side-nav {
-  height: 100vh;
-  display: grid;
-  margin-top: 0px;
-  grid-template-rows: repeat(7, 50px);
-  text-align: center;
-  position: fixed;
-  background-color: #111;
-}
-
-.container-admin .sidenav .grid-side-nav a {
-  min-width: 50px;
-  text-decoration: none;
-  font-size: 20px;
-  color: #818181;
-  display: block;
-  padding-top: 1em;
-}
-
-.container-admin .sidenav .grid-side-nav a:hover {
-  color: #f1f1f1;
-}
-
-.container-admin .sidenav .menutext {
-  position: relative;
-  display: inline-block;
-}
-
-.container-admin .sidenav .menutext .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-}
-
-.container-admin .sidenav .menutext:active #tooltiptext {
-  visibility: visible;
-}
-
-.container-admin .sidenav .text {
-  color: white;
 }
 
 .weather {
@@ -339,7 +273,7 @@ section {
   font-size: 50px;
 }
 
-.news {
+.financial {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
   -moz-box-flex: 1;
@@ -350,34 +284,102 @@ section {
   min-height: 66vh;
 }
 
+.financial__currency-top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.financial__currency-top-tile {
+  background-color: white;
+  margin: 15px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 30%;
+  -moz-box-flex: 0;
+  -moz-flex: 0 1 30%;
+  -ms-flex: 0 1 30%;
+  flex: 0 1 30%;
+}
+
+.financial__currency-top-tile-title {
+  background-color: #2a4161;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  margin-top: 0;
+}
+
+.financial__currency-top-tile-title h1 {
+  color: #00afe7;
+}
+
+.financial__currency-top-tile-title h1:first-child {
+  margin-right: 15px;
+  color: #fff;
+}
+
+.financial__currency-top-tile-title h1:last-child {
+  margin-left: auto;
+  color: #fff;
+}
+
+.financial__currency-bottom {
+  background-color: #fff;
+  width: 100%;
+  height: 100px;
+}
+
+.news {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-top: 0px;
+  background-color: #EEEEEE;
+  min-height: 66vh;
+}
+
 .news__item {
+  margin: 15px;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -moz-inline-flex;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-direction: normal;
-  -webkit-box-orient: horizontal;
-  -webkit-flex-direction: row;
-  -moz-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  background: white;
-  border: 20px solid black;
+  color: white;
 }
 
-.news__item .news__item__img {
-  min-width: calc(1fr);
-  margin-top: 0px;
+#article-1 {
+  background-color: #022f50;
 }
 
-.news__item__title {
-  background: black;
+#article-2 {
+  background-color: #00b0e9;
+}
+
+.news__item-content {
+  margin: 30px;
+}
+
+.news__item-img {
+  width: 30%;
+  object-fit: cover;
+}
+
+.news__item-title {
   color: white;
   font-size: 40px;
-  margin-top: 0px;
 }
 
-.news__item__description {
-  overflow-y: hidden;
+.news__item-description p {
+  color: white;
 }
+
+/*# sourceMappingURL=style.css.map */
