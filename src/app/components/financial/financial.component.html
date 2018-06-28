@@ -4,93 +4,133 @@
 
         <div class="financial__currency-top-tile">
             <div class="financial__currency-top-tile-title">
-            <h1>#1 {{bit[0].rank}}</h1>
-            <h1>Bitcoin {{bit[0].name}}</h1>
-            <h1>&euro;6000{{bit[0].price_eur}}</h1>
+                <div class="financial__currency-top-tile-title-top">
+                    <h1>{{bitVal[0].rank}}</h1>
+                    <h1>{{bitVal[0].name}}</h1>
+                </div>
+                <div class="financial__currency-top-tile-title-bottom">
+                    <span>&euro;{{bitVal[0].price_eur}}</span>
+                    <span>arrow</span>
+                </div>
             </div>
-
-            <table>
+            <table class="financial__currency-top-tile-content">
                 <tr>
-                    <th>&plusmn;% 1h</th>
-                    <th>&plusmn;% 24h</th>
-                    <th>&plusmn;% 7d</th>
+                    <th> 1h</th>
+                    <th> 24h</th>
+                    <th> 7d</th>
                 </tr>
                 <tr>
-                    <!-- class up down represents if it went up / down only one is visable each time -->
-                    <td class="down" *ngIf="bit.percent_change_1h.includes('-');">1{{bit[0].percent_change_1h}}</td>
-                    <td class="up" *ngIf="!bit.percent_change_1h.includes('-');">2{{bit[0].percent_change_1h}}</td>
-                    <td class="down" *ngIf="bit.percent_change_24h.includes('-');">3{{bit[0].percent_change_24h}}</td>
-                    <td class="up" *ngIf="!bit.percent_change_24h.includes('-');">4{{bit[0].percent_change_24h}}</td>
-                    <td class="down" *ngIf="bit.percent_change_7d.includes('-');">5{{bit[0].percent_change_7d}}</td>
-                    <td class="up" *ngIf="!bit.percent_change_7d.includes('-');">6{{bit[0].percent_change_7d}}</td>
+                    <td class="financial__currency-top-tile-list-item-decrease" *ngIf="bitVal[0].percent_change_1h.includes('-');">{{bitVal[0].percent_change_1h}}</td>
+                    <td class="financial__currency-top-tile-list-item-increase" *ngIf="!bitVal[0].percent_change_1h.includes('-');">{{bitVal[0].percent_change_1h}}</td>
+                    <td class="financial__currency-top-tile-list-item-decrease" *ngIf="bitVal[0].percent_change_24h.includes('-');">{{bitVal[0].percent_change_24h}}</td>
+                    <td class="financial__currency-top-tile-list-item-increase" *ngIf="!bitVal[0].percent_change_24h.includes('-');">{{bitVal[0].percent_change_24h}}</td>
+                    <td class="financial__currency-top-tile-list-item-decrease" *ngIf="bitVal[0].percent_change_7d.includes('-');">{{bitVal[0].percent_change_7d}}</td>
+                    <td class="financial__currency-top-tile-list-item-increase" *ngIf="!bitVal[0].percent_change_7d.includes('-');">{{bitVal[0].percent_change_7d}}</td>
                 </tr>
             </table>
         </div>
 
         <div class="financial__currency-top-tile">
             <div class="financial__currency-top-tile-title">
-                <h1>#2 {{bit[1].rank}}</h1>
-                <h1>Ethereum {{bit[1].name}}</h1>
-                <h1>&euro;420{{bit[1].price_eur}}</h1>
+                <div class="financial__currency-top-tile-title-top">
+                    <h1>{{bitVal[1].rank}}</h1>
+                    <h1>{{bitVal[1].name}}</h1>
+                </div>
+                <div class="financial__currency-top-tile-title-bottom">
+                    <span>&euro;{{bitVal[1].price_eur}}</span>
+                    <span>arrow</span>
+                </div>
             </div>
-        
-            <table>
+            <table class="financial__currency-top-tile-content">
                 <tr>
-                    <th>&plusmn;% 1h</th>
-                    <th>&plusmn;% 24h</th>
-                    <th>&plusmn;% 7d</th>
+                    <th> 1h</th>
+                    <th> 24h</th>
+                    <th> 7d</th>
                 </tr>
                 <tr>
-                    <!-- class up down represents if it went up / down only one is visable each time -->
-                    <td class="down" *ngIf="bit.percent_change_1h.includes('-');">1{{bit[1].percent_change_1h}}</td>
-                    <td class="up" *ngIf="!bit.percent_change_1h.includes('-');">2{{bit[1].percent_change_1h}}</td>
-                    <td class="down" *ngIf="bit.percent_change_24h.includes('-');">3{{bit[1].percent_change_24h}}</td>
-                    <td class="up" *ngIf="!bit.percent_change_24h.includes('-');">4{{bit[1].percent_change_24h}}</td>
-                    <td class="down" *ngIf="bit.percent_change_7d.includes('-');">5{{bit[1].percent_change_7d}}</td>
-                    <td class="up" *ngIf="!bit.percent_change_7d.includes('-');">6{{bit[1].percent_change_7d}}</td>
+                    <td class="financial__currency-top-tile-list-item-decrease" *ngIf="bitVal[1].percent_change_1h.includes('-');">{{bitVal[1].percent_change_1h}}</td>
+                    <td class="financial__currency-top-tile-list-item-increase" *ngIf="!bitVal[1].percent_change_1h.includes('-');">{{bitVal[1].percent_change_1h}}</td>
+                    <td class="financial__currency-top-tile-list-item-decrease" *ngIf="bitVal[1].percent_change_24h.includes('-');">{{bitVal[1].percent_change_24h}}</td>
+                    <td class="financial__currency-top-tile-list-item-increase" *ngIf="!bitVal[1].percent_change_24h.includes('-');">{{bitVal[1].percent_change_24h}}</td>
+                    <td class="financial__currency-top-tile-list-item-decrease" *ngIf="bitVal[1].percent_change_7d.includes('-');">{{bitVal[1].percent_change_7d}}</td>
+                    <td class="financial__currency-top-tile-list-item-increase" *ngIf="!bitVal[1].percent_change_7d.includes('-');">{{bitVal[1].percent_change_7d}}</td>
                 </tr>
             </table>
         </div>
 
         <div class="financial__currency-top-tile">
             <div class="financial__currency-top-tile-title">
-                <h1>#3 {{bit[2].rank}}</h1>
-                <h1>Ripple {{bit[2].name}}</h1>
-                <h1>&euro;99{{bit[2].price_eur}}</h1>
+                <div class="financial__currency-top-tile-title-top">
+                    <h1>{{bitVal[2].rank}}</h1>
+                    <h1>{{bitVal[2].name}}</h1>
+                </div>
+                <div class="financial__currency-top-tile-title-bottom">
+                    <span>&euro;{{bitVal[2].price_eur}}</span>
+                    <span>arrow</span>
+                </div>
             </div>
-        
-            <table>
+            <table class="financial__currency-top-tile-content">
                 <tr>
-                    <th>&plusmn;% 1h</th>
-                    <th>&plusmn;% 24h</th>
-                    <th>&plusmn;% 7d</th>
+                    <th> 1h</th>
+                    <th> 24h</th>
+                    <th> 7d</th>
                 </tr>
                 <tr>
-                    <!-- class up down represents if it went up / down only one is visable each time -->
-                    <td class="down" *ngIf="bit.percent_change_1h.includes('-');">1{{bit[2].percent_change_1h}}</td>
-                    <td class="up" *ngIf="!bit.percent_change_1h.includes('-');">2{{bit[2].percent_change_1h}}</td>
-                    <td class="down" *ngIf="bit.percent_change_24h.includes('-');">3{{bit[2].percent_change_24h}}</td>
-                    <td class="up" *ngIf="!bit.percent_change_24h.includes('-');">4{{bit[2].percent_change_24h}}</td>
-                    <td class="down" *ngIf="bit.percent_change_7d.includes('-');">5{{bit[2].percent_change_7d}}</td>
-                    <td class="up" *ngIf="!bit.percent_change_7d.includes('-');">6{{bit[2].percent_change_7d}}</td>
+                    <td class="financial__currency-top-tile-list-item-decrease" *ngIf="bitVal[2].percent_change_1h.includes('-');">{{bitVal[2].percent_change_1h}}</td>
+                    <td class="financial__currency-top-tile-list-item-increase" *ngIf="!bitVal[2].percent_change_1h.includes('-');">{{bitVal[2].percent_change_1h}}</td>
+                    <td class="financial__currency-top-tile-list-item-decrease" *ngIf="bitVal[2].percent_change_24h.includes('-');">{{bitVal[2].percent_change_24h}}</td>
+                    <td class="financial__currency-top-tile-list-item-increase" *ngIf="!bitVal[2].percent_change_24h.includes('-');">{{bitVal[2].percent_change_24h}}</td>
+                    <td class="financial__currency-top-tile-list-item-decrease" *ngIf="bitVal[2].percent_change_7d.includes('-');">{{bitVal[2].percent_change_7d}}</td>
+                    <td class="financial__currency-top-tile-list-item-increase" *ngIf="!bitVal[2].percent_change_7d.includes('-');">{{bitVal[2].percent_change_7d}}</td>
                 </tr>
             </table>
         </div>
 
     </div>
-    <div *ngFor="let bit of bitVal" class="financial__currency-bottom">
+
+
+    <div class="financial__currency-bottom">
 
         <div class="financial__currency-bottom-tile">
-        <!--List of seven currencues here -->
-            list 1
-        </div>
-        <div class="financial__currency-bottom-tile">
-        <!-- the next seven currencies -->
-            list 2
-        </div>
-        <div class="financial__currency-bottom-tile">
-        <!--  the final seven currencies -->
-            list 3
+            <!--List of seven currencues here -->
+            <ul class="financial__currency-bottom-tile-list">
+                <li>
+                    <div *ngFor="let bit of bitVal; index as i">
+                        <div *ngIf="i>2 && i<10 " class="financial__currency-bottom-tile-list-item">
+                            <span class="financial__currency-bottom-tile-list-item-rank">#{{bitVal[i].rank}}</span>
+                            <span class="financial__currency-bottom-tile-list-item-name">{{bitVal[i].name}}</span>
+                            <span class="financial__currency-bottom-tile-list-item-decrease" *ngIf="bitVal[i].percent_change_24h.includes('-');">{{bitVal[i].percent_change_24h}}</span>
+                            <span class="financial__currency-bottom-tile-list-item-increase" *ngIf="!bitVal[i].percent_change_24h.includes('-');">{{bitVal[i].percent_change_24h}}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!-- the next seven currencies -->
+            <ul id="middle-list" class="financial__currency-bottom-tile-list">
+                <li>
+                    <div *ngFor="let bit of bitVal; index as i">
+                        <div *ngIf="i>9 && i<17 " class="financial__currency-bottom-tile-list-item">
+                            <span class="financial__currency-bottom-tile-list-item-rank">#{{bitVal[i].rank}}</span>
+                            <span class="financial__currency-bottom-tile-list-item-name">{{bitVal[i].name}}</span>
+                            <span class="financial__currency-bottom-tile-list-item-decrease" *ngIf="bitVal[i].percent_change_24h.includes('-');">{{bitVal[i].percent_change_24h}}</span>
+                            <span class="financial__currency-bottom-tile-list-item-increase" *ngIf="!bitVal[i].percent_change_24h.includes('-');">{{bitVal[i].percent_change_24h}}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!--  the final seven currencies -->
+            <ul class="financial__currency-bottom-tile-list">
+                <li>
+                    <div *ngFor="let bit of bitVal; index as i">
+                        <div *ngIf="i>16 && i<24 " class="financial__currency-bottom-tile-list-item">
+                            <span class="financial__currency-bottom-tile-list-item-rank">#{{bitVal[i].rank}}</span>
+                            <span class="financial__currency-bottom-tile-list-item-name">{{bitVal[i].name}}</span>
+                            <span class="financial__currency-bottom-tile-list-item-decrease" *ngIf="bitVal[i].percent_change_24h.includes('-');">{{bitVal[i].percent_change_24h}}</span>
+                            <span class="financial__currency-bottom-tile-list-item-increase" *ngIf="!bitVal[i].percent_change_24h.includes('-');">{{bitVal[i].percent_change_24h}}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
 
     </div>
