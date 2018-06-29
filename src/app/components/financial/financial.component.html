@@ -4,20 +4,28 @@
 
         <div class="financial__currency-top-tile">
             <div class="financial__currency-top-tile-title">
-                <div class="financial__currency-top-tile-title-icon">
-                    <i class="icon icon--trend-down"></i>
+                <!-- Show the bar increase or decrease icon depending on whether the amount is negative or positive -->
+                <div *ngIf="!bitVal[0].percent_change_24h.includes('-');" class="financial__currency-top-tile-title-icon">
+                    <i class="icon icon--trend-up-white">
+                        <span>24 hrs</span>
+                    </i>
+                </div>
+                <div *ngIf="bitVal[0].percent_change_24h.includes('-');" class="financial__currency-top-tile-title-icon">
+                    <i class="icon icon--trend-down-white">
+                        <span>24 hrs</span>
+                    </i>
                 </div>
                 <div class="financial__currency-top-tile-title-content">
-                    <div class="financial__currency-top-tile-title-top">
+                    <div class="financial__currency-top-tile-title-content-top">
                         <h1>{{bitVal[0].rank}}</h1>
                         <h1>{{bitVal[0].name}}</h1>
                     </div>
-                    <div class="financial__currency-top-tile-title-bottom">
+                    <div class="financial__currency-top-tile-title-content-bottom">
                         <span>&euro;{{bitVal[0].price_eur}}</span>
                     </div>
                 </div>
             </div>
-            <table class="financial__currency-top-tile-content">
+            <table class="financial__currency-top-tile-list">
                 <tr>
                     <th> 1h</th>
                     <th> 24h</th>
@@ -37,20 +45,28 @@
 
         <div class="financial__currency-top-tile">
             <div class="financial__currency-top-tile-title">
-                <div class="financial__currency-top-tile-title-icon">
-                    <i class="icon icon--trend-down"></i>
+                <!-- Show the bar increase or decrease icon depending on whether the amount is negative or positive -->
+                <div *ngIf="!bitVal[1].percent_change_24h.includes('-');" class="financial__currency-top-tile-title-icon">
+                    <i class="icon icon--trend-up-white">
+                        <span>24 hrs</span>
+                    </i>
+                </div>
+                <div *ngIf="bitVal[0].percent_change_24h.includes('-');" class="financial__currency-top-tile-title-icon">
+                    <i class="icon icon--trend-down-white">
+                        <span>24 hrs</span>
+                    </i>
                 </div>
                 <div class="financial__currency-top-tile-title-content">
-                    <div class="financial__currency-top-tile-title-top">
+                    <div class="financial__currency-top-tile-title-content-top">
                         <h1>{{bitVal[1].rank}}</h1>
                         <h1>{{bitVal[1].name}}</h1>
                     </div>
-                    <div class="financial__currency-top-tile-title-bottom">
+                    <div class="financial__currency-top-tile-title-content-bottom">
                         <span>&euro;{{bitVal[1].price_eur}}</span>
                     </div>
                 </div>
             </div>
-            <table class="financial__currency-top-tile-content">
+            <table class="financial__currency-top-tile-list">
                 <tr>
                     <th> 1h</th>
                     <th> 24h</th>
@@ -69,20 +85,28 @@
 
         <div class="financial__currency-top-tile">
             <div class="financial__currency-top-tile-title">
-                <div class="financial__currency-top-tile-title-icon">
-                    <i class="icon icon--trend-down"></i>
+                <!-- Show the bar increase or decrease icon depending on whether the amount is negative or positive -->
+                <div *ngIf="!bitVal[2].percent_change_24h.includes('-');" class="financial__currency-top-tile-title-icon">
+                    <i class="icon icon--trend-up-white">
+                        <span>24 hrs</span>
+                    </i>
+                </div>
+                <div *ngIf="bitVal[0].percent_change_24h.includes('-');" class="financial__currency-top-tile-title-icon">
+                    <i class="icon icon--trend-down-white">
+                        <span>24 hrs</span>
+                    </i>
                 </div>
                 <div class="financial__currency-top-tile-title-content">
-                    <div class="financial__currency-top-tile-title-top">
+                    <div class="financial__currency-top-tile-title-content-top">
                         <h1>{{bitVal[2].rank}}</h1>
                         <h1>{{bitVal[2].name}}</h1>
                     </div>
-                    <div class="financial__currency-top-tile-title-bottom">
+                    <div class="financial__currency-top-tile-title-content-bottom">
                         <span>&euro;{{bitVal[2].price_eur}}</span>
                     </div>
                 </div>
             </div>
-            <table class="financial__currency-top-tile-content">
+            <table class="financial__currency-top-tile-list">
                 <tr>
                     <th> 1h</th>
                     <th> 24h</th>

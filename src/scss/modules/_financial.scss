@@ -6,12 +6,12 @@
 
 .financial__currency-top {
     @include flexbox;
+    @include justify-content(space-between);
 }
 
 .financial__currency-top-tile {
     background-color: #f7f7f7;
-    margin: 15px;
-    @include flex(0, 1, 30%);
+    @include flex(0, 1, 33%);
 }
 
 .financial__currency-top-tile-title {
@@ -19,31 +19,40 @@
     margin-top: 0;
     @include flexbox;
 }
+
 .financial__currency-top-tile-title-icon {
+    margin-top: 0;
     i{
+        width: 150px;
+        height: 150px;
+    }
+    span{
         color: #f7f7f7;
+        font-size: 12px;
     }
 }
 
 .financial__currency-top-tile-title-content {
-    padding: 20px;
+     margin-left: auto;
+     margin-top: 0;
+     margin-right: 15px;
 }
 
-.financial__currency-top-tile-title-top {
+.financial__currency-top-tile-title-content-top {
     @include flexbox;
     margin-top: 0;
     h1{
         color: #00afe7;
-        font-size: 50px;
-
+        font-size: 60px;
+        
         &:last-child{
-            margin-left: auto;
+            margin-left: 10px;
             color: #f7f7f7;
         }
     }
 }
 
-.financial__currency-top-tile-title-bottom{
+.financial__currency-top-tile-title-content-bottom{
     @include flexbox;
     span{
         color: #f7f7f7;
@@ -53,20 +62,19 @@
     }
 }
 
+.financial__currency-top-tile-list{
+    font-size: 20px;
+    width: 100%;
+}
+
 .financial__currency-top-tile-list-item-decrease {
     color: #bf4e2f;
-    margin-left: auto;
-     &:before{
-        //up arrow once icons are setup
-    }
+    text-align: center;
 }
 
 .financial__currency-top-tile-list-item-increase {
-    color: #ADE25D; //maybe a green instead?
-    margin-left: auto;  
-    &:before{
-        //up arrow once icons are setup
-    }
+    color: #ADE25D; 
+    text-align: center;
 }
 
 .border-line{
