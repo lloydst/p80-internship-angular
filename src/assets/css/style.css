@@ -531,6 +531,103 @@ section {
   color: white;
 }
 
+.meeting {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-top: 0px;
+  background-color: #2a4161;
+  min-height: 66vh;
+  padding: 50px;
+}
+
+.meeting__top {
+  margin-top: 0;
+  padding: 50px;
+  background-color: #EEEEEE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-direction: normal;
+  -webkit-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.meeting__top-heading {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  -moz-justify-content: space-evenly;
+  justify-content: space-evenly;
+  padding: 0 50px;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.meeting__top-heading-title {
+  font-size: 50px;
+}
+
+.border-line {
+  margin-top: 0;
+  width: 1px;
+  height: 100px;
+  background-color: #2a4161;
+}
+
+.meeting__top-heading-times {
+  margin-top: 0;
+}
+
+.meeting__top-attendees {
+  color: #2a4161;
+}
+
+.meeting__top-description {
+  color: #2a4161;
+}
+
+.meeting__bottom {
+  color: #2a4161;
+}
+
+.meeting__bottom-list {
+  width: 100%;
+}
+
+.meeting__bottom-list-item {
+  background-color: #EEEEEE;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 10px;
+  padding: 25px;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+  -moz-justify-content: space-between;
+  justify-content: space-between;
+}
+
+.meeting__bottom-list-item-title {
+  font-family: Supernormale, sans-serif;
+}
+
 .icon {
   background-repeat: no-repeat;
   background-position: center;

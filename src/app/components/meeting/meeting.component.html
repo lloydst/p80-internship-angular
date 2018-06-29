@@ -1,4 +1,4 @@
-<div *ngIf="loginStatus?.signInUrl"> 
+<!-- <div *ngIf="loginStatus?.signInUrl"> 
       <div>
           for production this will require User.Read.All permissions so it wont have to login
         
@@ -6,10 +6,10 @@
       </div>
     </div>
     
-    <div *ngIf="!loginStatus?.signInUrl"> <!-- signinurl is only there when a user isn't logged in-->
+    <div *ngIf="!loginStatus?.signInUrl"> 
       this block displays all events that are upcomming in the next week (from today 0:00)
       <div *ngFor="let m of meeting">
-        <div *ngFor="let e of m.events"> <!-- e is another array it has to move through-->
+        <div *ngFor="let e of m.events">
           <p>
             event starts at:
             {{e.start.dateTime | date:'long'}}
@@ -27,9 +27,67 @@
             {{e.subject}}
           </p>
         </div>
-        <div *ngIf="m.events <= 1"> <!-- when logged in but no meetings-->
+        <div *ngIf="m.events <= 1">
           derp no events/ meetings today
         </div>
       </div>
       <button (click)="logOut()">logout</button>
+    </div> -->
+
+<!-- ---------------------------- Dummy static data to work on styling ------------------------ -->
+
+
+<div class="meeting">
+    
+    <div class="meeting__top">
+
+        <div class="meeting__top-heading">
+            <h1 class="meeting__top-heading-title"> Meeting title </h1>
+            <div class="border-line"></div>
+            <div class="meeting__top-heading-times">
+                <h1> event starts at: 12pm, 12 Nov 2018 </h1>
+                <h1> event ends at: 1pm, 12 Nov 2018 </h1>
+            </div>
+        </div>
+        
+        <p class="meeting__top-attendees"> attendees are: user@poort80.nl, user2@poort80.nl, user3@poort80.nl </p>
+
+        <p class="meeting__top-description"> it is about: This meeting is about meetings and how the meetings can be more meetings meetings meetings </p>
     </div>
+
+    <div class="meeting__bottom">
+        <table class="meeting__bottom-list">
+            <tbody>
+                <tr>
+                    <td class="meeting__bottom-list-item">
+                        <span class="meeting__bottom-list-item-title">Meeting #2</span>
+                        <span class="meeting__bottom-list-item-description">this meeting is about blah</span>
+                        <span class="meeting__bottom-list-item-time">1pm</span>
+                        <span class="meeting__bottom-list-item-date">12 Nov 2018</span>
+                    </td>
+                    <td class="meeting__bottom-list-item">
+                        <span class="meeting__bottom-list-item-title">Meeting #3</span>
+                        <span class="meeting__bottom-list-item-description">this meeting is about blah</span>
+                        <span class="meeting__bottom-list-item-time">2pm</span>
+                        <span class="meeting__bottom-list-item-date">12 Nov 2018</span>
+                    </td>
+                    <td class="meeting__bottom-list-item">
+                        <span class="meeting__bottom-list-item-title">Meeting #4</span>
+                        <span class="meeting__bottom-list-item-description">this meeting is about blah</span>
+                        <span class="meeting__bottom-list-item-time">3pm</span>
+                        <span class="meeting__bottom-list-item-date">12 Nov 2018</span>
+                    </td>
+                    <td class="meeting__bottom-list-item">
+                        <span class="meeting__bottom-list-item-title">Meeting #5</span>
+                        <span class="meeting__bottom-list-item-description">this meeting is about blah</span>
+                        <span class="meeting__bottom-list-item-time">4pm</span>
+                        <span class="meeting__bottom-list-item-date">12 Nov 2018</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+

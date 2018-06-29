@@ -1,0 +1,66 @@
+.meeting {
+    @include flex;
+    margin-top: 0px;
+    background-color: #2a4161;
+    min-height: 66vh;
+    padding: 50px;
+}
+
+.meeting__top {
+    margin-top: 0;
+    padding: 50px;
+    background-color: #EEEEEE;
+    @include flexbox;
+    @include flex-direction(column);
+}
+
+.meeting__top-heading{
+    @include flexbox;
+    @include justify-content(space-evenly);   
+    padding: 0 50px;
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.meeting__top-heading-title{
+    font-size: 50px;
+}
+
+.border-line{
+    margin-top: 0;
+    width: 1px;
+    height: 100px;
+    background-color: #2a4161;
+}
+
+.meeting__top-heading-times{
+    margin-top: 0;
+}
+
+.meeting__top-attendees{
+    color: #2a4161;
+}
+
+.meeting__top-description{
+    color: #2a4161;
+}
+
+.meeting__bottom {
+    color: #2a4161
+}
+
+.meeting__bottom-list {
+    width: 100%;
+}
+
+.meeting__bottom-list-item {
+    background-color: #EEEEEE;
+    @include flexbox;
+    margin-bottom: 10px;
+    padding: 25px;
+    @include justify-content(space-between);
+}
+
+.meeting__bottom-list-item-title{
+    font-family: map-get($fonts, heading )
+}
