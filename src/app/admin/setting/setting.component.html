@@ -3,6 +3,9 @@
     <div><a [routerLink]="['add']">create</a></div>
     
 </div>
+<div *ngIf="configs.length < 1">
+    no configs have been set
+</div>
 <div *ngFor="let c of configs">
     {{c.name}}
     {{c.ip}}
