@@ -1,0 +1,42 @@
+.icon {
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    text-align: center;
+    z-index: 10;
+    font-size: 0;
+}
+
+.icon--trend-down-black {
+    width: 32px;
+    height: 32px;
+    @include background-adaptive(#{$dir-img}/icon/trend-down-black, png, 100% auto, $svg: true);
+}
+
+.icon--trend-up-black {
+    width: 32px;
+    height: 32px;
+    @include background-adaptive(#{$dir-img}/icon/trend-up-black, png, 100% auto, $svg: true);
+}
+.icon--trend-down-white {
+    width: 32px;
+    height: 32px;
+    @include background-adaptive(#{$dir-img}/icon/trend-down-white, png, 100% auto, $svg: true);
+}
+
+.icon--trend-up-white {
+    width: 32px;
+    height: 32px;
+    @include background-adaptive(#{$dir-img}/icon/trend-up-white, png, 100% auto, $svg: true);
+}
+.icon--bar-graph-increase-white {
+    width: 32px;
+    height: 32px;
+    @include background-adaptive(#{$dir-img}/icon/bar-graph-increase-white, png, 100% auto, $svg: true);
+}
+
+.bar-graph-increase-black {
+    width: 32px;
+    height: 32px;
+    @include background-adaptive(#{$dir-img}/icon/bar-graph-increase-black, png, 100% auto, $svg: true);
+}
