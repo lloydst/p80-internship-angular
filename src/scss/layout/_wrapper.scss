@@ -16,6 +16,8 @@
     section {
         background-color: #ffffff;
         height: 100%;
+        //Important! this was first build with css grid (before Michiel and Conner's help),
+        //the side nav still has code to 'expand' based on grid in the ts file
 	    @include flexbox;
     }
 }

@@ -15,7 +15,7 @@ services:
   mongo:
     container_name: mongo
     image: mongo
-    # this is where data get persisted
+    # this is where data should get persisted
     volumes:
       - ./data:/data/db
     ports:
