@@ -6,18 +6,26 @@
 
 .financial__currency-top {
     @include flexbox;
-    @include justify-content(space-between);
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include justify-content(flex-start);
+    @include align-items(flex-start);
+    @include align-content(center);
+    width: calc(100% + 30px);
+
 }
 
 .financial__currency-top-tile {
     background-color: #f7f7f7;
-    @include flex(0, 1, 31%);
+    @include flex(0, 1, 33.3%);
+    margin: 0px 15px;
 }
 
 .financial__currency-top-tile-title {
     background-color: #2a4161;
     margin-top: 0;
     padding: 10px;
+    box-sizing: border-box; 
     @include flexbox;
 }
 
@@ -45,7 +53,7 @@
     margin-top: 0;
     h1{
         color: #00afe7;
-        font-size: 60px;
+        font-size: 50px;
         
         &:last-child{
             margin-left: 10px;
@@ -79,28 +87,32 @@
     text-align: center;
 }
 
-.border-line{
+.financial__currency-bottom-border-line{
     width: 1px;
-    height: 450px;
+    height: 410px;
     background-color: #ebebeb;
 }
 
 .financial__currency-bottom{
     background-color: #f7f7f7;
-    width: 100%;
-
+    width: calc(100% + 30px);
 }
 
 .financial__currency-bottom-tile {
     @include flexbox;
-    justify-content: space-evenly;
+    @include flex-direction(row);
+    @include flex-wrap(nowrap);
+    @include justify-content(flex-start);
+    @include align-items(flex-start);
+    @include align-content(center);
 }
-.financial__currency-bottom-tile-list {
-    @include flex(0, 1, 33%);
-    @include flexbox;
-    @include flex-direction(column);
-    @include align-items(stretch);
-    margin: 15px;
+.financial__currency-bottom-tile-list { 
+    @include flex(0, 1, 33.3%); 
+    margin: 0px 15px;
+    // @include flexbox;
+    // @include flex-direction(column);
+    // @include align-items(stretch);
+     padding-left: 0;
 
     li{
         list-style-type: none;

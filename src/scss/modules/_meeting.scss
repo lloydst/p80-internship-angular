@@ -15,35 +15,85 @@
 }
 
 .meeting__top-heading{
+    @include flex(0, 1, 40%);
     @include flexbox;
-    @include justify-content(space-evenly);   
-    padding: 0 50px;
-    margin-bottom: 20px;
     margin-top: 0;
+}
+
+.meeting__top-details{
+    @include flex(0, 1, 60%);
+    @include flexbox;
 }
 
 .meeting__top-heading-title{
-    font-size: 50px;
-}
 
-.border-line{
+    h1{
+        font-size: 50px;
+    }
+
     margin-top: 0;
-    width: 1px;
-    height: 100px;
-    background-color: #2a4161;
+    padding-right: 30px;
+    @include flex(0, 1, 50%);
 }
 
 .meeting__top-heading-times{
     margin-top: 0;
+    background-color: #00b0e9;
+    @include flex(0, 1, 50%);
+    @include flexbox;
+    @include justify-content(space-evenly);
+    @include align-items(center);
+    padding: 30px;
+
+    h1{
+        font-size: 50px;
+        color: #fff;
+    }
+    p{
+        margin: 0;
+        color: #fff;
+    }
 }
 
-.meeting__top-attendees{
-    color: #2a4161;
+.event-between{
+    width: 25px;
+    background-color: white;
+    height: 5px;
+
 }
 
-.meeting__top-description{
-    color: #2a4161;
+.meeting__top-details-attendees{
+    margin-top: 0;
+    li{
+        color: #2a4161;
+        list-style-type: none;
+    }
+    @include flex(0, 1, 50%);
+    @include flexbox;
+    padding-right: 30px;
 }
+
+.meeting__top-details-attendees-first{
+    @include flex(0, 1, 50%);
+    padding-left: 0px;
+}
+
+.meeting__top-details-attendees-second{
+    padding-left: 0px;
+    @include flex(0, 1, 50%);
+}
+
+
+.meeting__top-details-description{
+    @include flex(0, 1, 50%);
+    padding: 30px;
+    color: #2a4161;
+    background-color: #fff;
+    border: 1px solid #2a4161;
+}
+
+
+
 
 .meeting__bottom {
     color: #2a4161
@@ -62,5 +112,14 @@
 }
 
 .meeting__bottom-list-item-title{
-    font-family: map-get($fonts, heading )
+    @include flex(0, 1, 10%);
+}
+.meeting__bottom-list-item-description{
+    @include flex(0, 1, 60%);
+}
+.meeting__bottom-list-item-time{
+    @include flex(0, 1, 10%);
+}
+.meeting__bottom-list-item-date{
+    @include flex(0, 1, 10%);
 }
