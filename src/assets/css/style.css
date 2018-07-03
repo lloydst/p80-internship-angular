@@ -473,6 +473,10 @@ section {
   color: #2a4161;
 }
 
+.financial__currency-bottom-tile-list-item-logic {
+  margin-left: auto;
+}
+
 .financial__currency-bottom-tile-list-item-decrease {
   color: #bf4e2f;
   margin-left: auto;

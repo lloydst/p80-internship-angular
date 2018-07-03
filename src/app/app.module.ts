@@ -28,7 +28,7 @@ import { WeatherService } from './services/weather.service';
 import { FileService } from './services/file.service';
 import { FileUploadModule } from 'ng2-file-upload';
 import { ComponentsModule } from './components/components.module';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -45,6 +45,7 @@ import { ComponentsModule } from './components/components.module';
     AppRoutingModule,
     FileUploadModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule
     ],
   providers: [
     DataService,
