@@ -24,7 +24,7 @@ export class MeetingComponent implements OnInit {
    */
   constructor(
     private data: DataService,
-    private http: HttpClient) { }
+    ) { }
   /**
    * on load
    */
@@ -35,7 +35,7 @@ export class MeetingComponent implements OnInit {
     })
     this.data.getCalendar().subscribe(res=>{
       this.meeting= [res]
-      console.log("MEETING", this.meeting, res)
+      
     })
     this.ifNotLoggedIn()
   }

@@ -1,50 +1,82 @@
-<!-- <div *ngIf="loginStatus?.signInUrl"> 
-      <div>
-          for production this will require User.Read.All permissions so it wont have to login
-        
-        <p>usefull for knowing what paths to use: https://developer.microsoft.com/en-us/graph/graph-explorer</p>
-      </div>
-    </div>
-    
-    <div *ngIf="!loginStatus?.signInUrl"> 
-      this block displays all events that are upcomming in the next week (from today 0:00)
-      <div *ngFor="let m of meeting">
-        <div *ngFor="let e of m.events">
-          <p>
-            event starts at:
-            {{e.start.dateTime | date:'long'}}
-          </p>
-          <p>
-            event ends at:
-            {{e.end.dateTime| date:'long'}}
-          </p>
-          <p >
-            attendees are:
-            {{e.attendees[0].emailAddress.name}}
-          </p>
-          <p>
-            it is about:
-            {{e.subject}}
-          </p>
-        </div>
-        <div *ngIf="m.events <= 1">
-          derp no events/ meetings today
-        </div>
-      </div>
-      <button (click)="logOut()">logout</button>
-    </div> -->
-
-<!-- ---------------------------- Dummy static data to work on styling ------------------------ -->
-
-
 <div class="meeting">
-    
+
     <div class="meeting__top">
 
         <div class="meeting__top-heading">
-            <div  class="meeting__top-heading-title">
-                <h1> 
-                    Meeting title 
+            <div class="meeting__top-heading-title">
+                <h1>
+                    Next Meeting
+                </h1>
+            </div>
+            <div class="meeting__top-heading-times">
+                <div class="event-start">
+                    <p>Event start:</p>
+                    <h1>{{meeting[0].events[0].start.dateTime.substring(11,16) }}</h1>
+                    <p>{{meeting[0].events[0].start.dateTime.substring(0,10) }} </p>
+                </div>
+                <div class="event-between"></div>
+                <div class="event-end">
+                    <p>Event end:</p>
+                    <h1>{{meeting[0].events[0].end.dateTime.substring(11,16)}}</h1>
+                    <p>{{meeting[0].events[0].end.dateTime.substring(0,10)}} </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="meeting__top-details">
+            <div class="meeting__top-details-attendees">
+                <!-- Here we need to have a list of attendees. the first list will load the first four 
+                and the second list will load the next. If there are four or less then only show the left
+                list-->
+                <ul class="meeting__top-details-attendees-first">
+                    <li *ngFor="let email of meeting[0].events[0].attendees; index as i">
+                        <span *ngIf="i<3">{{email.emailAddress.name}}</span>
+                        <!-- replacing name with address gives a email address instead of a name-->
+                    </li>
+
+                </ul>
+                <ul class="meeting__top-details-attendees-second">
+                    <li *ngFor="let email of meeting[0].events[0].attendees; index as i">
+                        <span *ngIf="i>3 && i <7">{{email.emailAddress.name}}</span><!-- displays name 4-8-->
+                    </li>
+                </ul>
+            </div>
+            <p class="meeting__top-details-description"> {{meeting[0].events[0].subject}} </p>
+        </div>
+    </div>
+
+    <div class="meeting__bottom">
+        <table class="meeting__bottom-list">
+            <tbody>
+                <tr *ngFor="let m of meeting;">
+                    <td class="meeting__bottom-list-item" *ngFor="let e of m.events|slice:1; index as i">
+                        <!--this one would 'overflow' if there are too many events-->
+                        <h1 class="meeting__bottom-list-item-title">Meeting #{{i+2}}</h1>
+                        <!--number from 2-->
+                        <span class="meeting__bottom-list-item-description">{{e.subject}}</span>
+                        <!-- gives a string (title of the event-->
+                        <span class="meeting__bottom-list-item-time">{{e.start.dateTime.substring(11,16)}}</span>
+                        <!-- gives time-->
+                        <span class="meeting__bottom-list-item-date">{{e.start.dateTime.substring(0,10)}}</span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- ---------------------------- Dummy static data to work on styling ------------------------ 
+
+
+<div class="meeting">
+
+    <div class="meeting__top">
+
+        <div class="meeting__top-heading">
+            <div class="meeting__top-heading-title">
+                <h1>
+                    Meeting title
                 </h1>
             </div>
             <div class="meeting__top-heading-times">
@@ -64,9 +96,9 @@
 
         <div class="meeting__top-details">
             <div class="meeting__top-details-attendees">
-                <!-- Here we need to have a list of attendees. the first list will load the first four 
-                and the second list will load the next. If there are four or less then only show the left
-                list-->
+                 Here we need to have a list of attendees. the first list will load the first four 
+                    and the second list will load the next. If there are four or less then only show the left
+                    list
                 <ul class="meeting__top-details-attendees-first">
                     <li>user@poort80.nl</li>
                     <li>user@poort80.nl</li>
@@ -118,5 +150,4 @@
     </div>
 
 </div>
-
-
+-->
