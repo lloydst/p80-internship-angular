@@ -175,6 +175,71 @@ section {
   display: flex;
 }
 
+.container-admin {
+  width: 100%;
+  margin-top: 0px;
+}
+
+.container-admin .main-admin-grid {
+  margin-top: 0px;
+  display: grid;
+  grid-template-columns: 50px 0 1fr;
+  min-height: 100vh;
+}
+
+.container-admin .sidenav #link {
+  color: black;
+}
+
+.container-admin .sidenav .grid-side-nav {
+  height: 100vh;
+  display: grid;
+  margin-top: 0px;
+  grid-template-rows: repeat(7, 50px);
+  text-align: center;
+  position: fixed;
+  background-color: #111;
+}
+
+.container-admin .sidenav .grid-side-nav a {
+  min-width: 50px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  padding-top: 1em;
+}
+
+.container-admin .sidenav .grid-side-nav a:hover {
+  color: #f1f1f1;
+}
+
+.container-admin .sidenav .menutext {
+  position: relative;
+  display: inline-block;
+}
+
+.container-admin .sidenav .menutext .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.container-admin .sidenav .menutext:active #tooltiptext {
+  visibility: visible;
+}
+
+.container-admin .sidenav .text {
+  color: white;
+}
+
 .weather {
   display: -webkit-box;
   display: -webkit-flex;
