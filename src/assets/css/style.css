@@ -518,34 +518,57 @@ section {
 }
 
 .event {
-  margin: 30px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  height: 100%;
 }
 
 .event-tile {
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: flex;
-  padding: 30px;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  margin-top: 0;
 }
 
-.event-tile__border-line {
-  margin: 30px;
-  background-color: #2a4161;
-  width: 1px;
+.event-tile__background-img {
+  background-image: url(/assets/img/test-image.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.4;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin-top: 0;
+  z-index: -1;
+}
+
+.event-tile__message {
+  background-color: #00afe7;
+  padding: 30px;
+  margin: 300px 50px;
 }
 
 .event-tile__message p {
+  color: #fff;
+  font-size: 30px;
+}
+
+.event-tile__title {
+  font-size: 60px;
+  padding-bottom: 30px;
   color: #2a4161;
+  border-bottom: 1px solid #fff;
 }
 
 .news {
@@ -765,10 +788,8 @@ section {
   -moz-flex: 0 1 50%;
   -ms-flex: 0 1 50%;
   flex: 0 1 50%;
-  padding: 30px;
+  padding: 30px 0;
   color: #2a4161;
-  background-color: #fff;
-  border: 1px solid #2a4161;
 }
 
 .meeting__bottom {
