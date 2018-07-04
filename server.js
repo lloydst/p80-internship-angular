@@ -17,7 +17,7 @@ const images = require('./server/routes/images')
 //
 
 // mongoose setup
-const MONGOURI = process.env.MONGOURI || 'someback-upaddress';
+const MONGOURI = process.env.MONGOURI ;
 mongoose.connect( MONGOURI, {useMongoClient: true})
 var db = mongoose.connection;
 

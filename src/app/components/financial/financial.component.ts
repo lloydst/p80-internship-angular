@@ -18,7 +18,7 @@ import { trigger, style, animate, transition } from '@angular/animations';
           ]
         )
       ],
-    
+      
 })
 export class FinancialComponent implements OnInit {
     refreshTime = 10000 // 10s

@@ -4,7 +4,7 @@
         <div>
             <label>Channel name:</label>
             <input type="text" formControlName="channel">
-            <small *ngIf="!form.controls.channel.valid" >
+            <small *ngIf="!form.controls.channel.valid">
                 Name is required (minimum 5 characters).
             </small>
         </div>
@@ -15,37 +15,45 @@
               <span>path {{i + 1}}</span>
               <span *ngIf="form.controls.path.controls.length > 1" (click)="removePath(i)"></span>
             </div>
-            <div  [formGroupName]="i">
+                <div [formGroupName]="i">
               <div>
-                <label>path url:</label><br>
-                <input type="text" formControlName="pathurl">
-                
+                    <select class="form-control" formControlName="pathurl">
+                            <option *ngFor="let state of Components" (change)="fake()" [value]="state.name">{{state.name}}</option>
+                        </select>
+                        
+                {{path.pathurl |json}}
+               
               </div>
               <div>
                   <label>description:</label><br>
-                  <textarea type="text" formControlName="description" ></textarea>
-                  
+                  <input type="text"  formControlName="description" value="Does this and that"/>
+                  {{form.value |json}}
                 </div>
-              <label>delay:</label><br>
+                    <label>delay:</label>
+                    <br>
                   <input type="number" formControlName="delay">
                   <small>
                       1000 = 1 second, so 1 minute = 60000 etc.
                   </small>
               <div>
-                    <label>component name:</label><br>
+                        <label>component name:</label>
+                        <br>
                     <input type="text" formControlName="componentName">
-                  </div><br>
+                    </div>
+                    <br>
                   <a (click)="removePath(i)">
                     <input type="button" class="button warning" value="removePath">
                   </a> 
-            </div><br>
+                </div>
+                <br>
           </div>
         </div>
         <div>
-              <a (click)="addPath()" >
+            <a (click)="addPath()">
                     <input class="button succes" type="button" value="Add route">
               </a> 
-        </div><br>
+        </div>
+        <br>
     <div>
       <button class="button succes" type="submit" [disabled]="!form.valid">Create</button>
     </div>

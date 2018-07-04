@@ -12,10 +12,18 @@ import { DataService } from '../../../services/data.service';
   templateUrl: './channel-content.component.html'
 })
 export class ChannelContentComponent implements OnInit {
+    Components = [
+        {
+            url: '/component/',
+            description: 'Does this and that',
+            name:'derp'
+        }
+    ]
   /**
    * current channel
    */
   currentChannel
+  channelName
     /**
      * channel data
      */
@@ -63,7 +71,10 @@ export class ChannelContentComponent implements OnInit {
     this.data.getChannel(this.currentChannel).subscribe(res=> {
         this.channelData = res;
         this.preloadPath = res[0].path // loads all 'paths'
+        
+        this.form.controls['channel'].setValue(res[0].channel, {onlySelf: true});
         for(let path of this.preloadPath){
+            
             //console.log(path)
             this.preaddPath(path)
           }
@@ -97,7 +108,7 @@ export class ChannelContentComponent implements OnInit {
     this.getCurrentChannel()
     
     this.form = this.fb.group({
-        channel: [this.currentChannel],
+        channel: [this.channelName],
         path: this.fb.array([])
     }); 
     this.reloadData()

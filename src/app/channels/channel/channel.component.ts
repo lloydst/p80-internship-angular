@@ -68,6 +68,7 @@ export class ChannelComponent implements OnInit {
           function go() {
             //console.log(self.do[0].path[x].pathurl)
             var myWindow = window.open(self.do[0].path[x].pathurl,"channel") // default = 0
+            
             if(x == self.do[0].path.length ) {
               myWindow.close()
               console.log('done')

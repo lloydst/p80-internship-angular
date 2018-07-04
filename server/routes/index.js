@@ -9,7 +9,7 @@ var YQL = require('yql'); // yahoo query language
 var home = require('./home');
 var authorize = require('./authorize');
 var calendar = require('./calendar');
-var content = require('./contents');
+var channels = require('./channels');
 var jira = require('./jira');
 var ip = require('./ip');
 /** #defines parameters
@@ -543,7 +543,7 @@ router.get('/weather', function(req,res){
 router.use('/login', home);
 router.use('/authorize', authorize);
 router.use('/calendar', calendar);
-router.use('/content', content);
+router.use('/content', channels);
 router.use('/jira', jira);
 router.use('/ipconfig',ip)
 module.exports = router;

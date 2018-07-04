@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../../../services/data.service';
+import { Paths } from '../../../models/channel';
 
 /**
  * place holder for a channel-contents component
@@ -12,6 +13,19 @@ import { DataService } from '../../../services/data.service';
   templateUrl: './channel-new.component.html'
 })
 export class ChannelNewComponent implements OnInit {
+    Components = [
+        {
+            url: '/component/',
+            description: 'Does this and that',
+            name:'derp'
+        },
+        {
+            url: '/component/event',
+            description: 'Displays a message',
+            name:'message component'
+        }
+    ]
+    componentPath: Paths
   /**
    * form data
    */
@@ -35,6 +49,9 @@ export class ChannelNewComponent implements OnInit {
 /**
  * on load
  */
+log(e) {
+    console.log(e)
+}
   ngOnInit() {
     
     // we will initialize our form here
