@@ -10,54 +10,49 @@
         </div>
         <!--paths-->
         <div formArrayName="path">
-          <div *ngFor="let path of form['controls'].path['controls']; let i=index">
-            <div>
-              <span>path {{i + 1}}</span>
-              <span *ngIf="form.controls.path.controls.length > 1" (click)="removePath(i)"></span>
-            </div>
-                <div [formGroupName]="i">
-              <div>
-                    <select class="form-control" formControlName="pathurl">
-                            <option *ngFor="let state of Components" (change)="fake()" [value]="state.name">{{state.name}}</option>
-                        </select>
-                        
-                {{path.pathurl |json}}
-               
-              </div>
-              <div>
-                  <label>description:</label><br>
-                  <input type="text"  formControlName="description" value="Does this and that"/>
-                  {{form.value |json}}
+            <div *ngFor="let path of form['controls'].path['controls']; let i=index">
+                <div>
+                    <span>path {{i + 1}}</span>
+                    <span *ngIf="form.controls.path.controls.length > 1" (click)="removePath(i)"></span>
                 </div>
+                <div [formGroupName]="i">
+                    <div>
+                        <label>path url</label>
+                        <input formControlName="pathurl" />
+                        <small> enter the component name after the /</small>
+                    </div>
+                    <div>
+                        <label>description:</label>
+                        <br>
+                        <input type="text" formControlName="description" value="Does this and that" />
+                    </div>
                     <label>delay:</label>
                     <br>
-                  <input type="number" formControlName="delay">
-                  <small>
-                      1000 = 1 second, so 1 minute = 60000 etc.
-                  </small>
-              <div>
+                    <input type="number" formControlName="delay">
+                    <small>
+                        1000 = 1 second, so 1 minute = 60000 etc.
+                    </small>
+                    <div>
                         <label>component name:</label>
                         <br>
-                    <input type="text" formControlName="componentName">
+                        <input type="text" formControlName="componentName">
                     </div>
                     <br>
-                  <a (click)="removePath(i)">
-                    <input type="button" class="button warning" value="removePath">
-                  </a> 
+                    <a (click)="removePath(i)">
+                        <input type="button" class="button warning" value="removePath">
+                    </a>
                 </div>
                 <br>
-          </div>
+            </div>
         </div>
         <div>
             <a (click)="addPath()">
-                    <input class="button succes" type="button" value="Add route">
-              </a> 
+                <input class="button succes" type="button" value="Add route">
+            </a>
         </div>
         <br>
-    <div>
-      <button class="button succes" type="submit" [disabled]="!form.valid">Create</button>
-    </div>
-    
-    
-</form>
+        <div>
+            <button class="button succes" type="submit" [disabled]="!form.valid">Create</button>
+        </div>
+    </form>
 </div>

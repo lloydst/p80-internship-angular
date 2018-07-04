@@ -49,9 +49,7 @@ export class ChannelNewComponent implements OnInit {
 /**
  * on load
  */
-log(e) {
-    console.log(e)
-}
+
   ngOnInit() {
     
     // we will initialize our form here
@@ -68,12 +66,13 @@ log(e) {
 initPath() {
         // initialize our address
         return this.fb.group({
-            pathurl: [''],
+            pathurl: ['/components/'],
             description: [''],
             componentName:[''],
             delay:[2000]
         });
     }
+    
 /**
  * just a function
  */

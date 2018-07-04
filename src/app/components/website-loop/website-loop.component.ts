@@ -85,7 +85,7 @@ export class WebsiteLoopComponent implements OnInit {
                     myWindow.close()
                     go()
                     // change this number to change the time it switches between websites
-                }, 20000); // 20 sec for each website this means it checks time every 15.01 min
+                }, 20000); // 20 sec for each website this means it checks time every 5.01 min
             }
         }
         go()
