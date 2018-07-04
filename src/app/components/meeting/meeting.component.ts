@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import { HttpClient } from '@angular/common/http';
 
 /**
  * meeting component
@@ -40,7 +39,7 @@ export class MeetingComponent implements OnInit {
     this.ifNotLoggedIn()
   }
   /**
-   * if the signInUrl is there it means no one is logged in so a window gets opened to login
+   * if the signInUrl is there it means no one is logged in, so a window gets opened to login
    */
   ifNotLoggedIn() {
     setTimeout(() => {
@@ -50,10 +49,5 @@ export class MeetingComponent implements OnInit {
       } 
     }, 200);
   }
-  /**
-   * logout of graph with the use of a button
-   */
-  logOut() {
-    this.data.logOut().subscribe()
-       }
+  
      }

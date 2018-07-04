@@ -49,7 +49,8 @@
         <table class="meeting__bottom-list">
             <tbody>
                 <tr *ngFor="let m of meeting;">
-                    <td class="meeting__bottom-list-item" *ngFor="let e of m.events|slice:1; index as i">
+                    <!--this following slice pipe is meant to limit the amount of meetings and has to be checked on a large screen-->
+                    <td class="meeting__bottom-list-item" *ngFor="let e of m.events| slice:1:3; index as i"> 
                         <!--this one would 'overflow' if there are too many events-->
                         <h1 class="meeting__bottom-list-item-title">Meeting #{{i+2}}</h1>
                         <!--number from 2-->
