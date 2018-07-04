@@ -42,17 +42,46 @@
     <div class="meeting__top">
 
         <div class="meeting__top-heading">
-            <h1 class="meeting__top-heading-title"> Meeting title </h1>
-            <div class="border-line"></div>
+            <div  class="meeting__top-heading-title">
+                <h1> 
+                    Meeting title 
+                </h1>
+            </div>
             <div class="meeting__top-heading-times">
-                <h1> event starts at: 12pm, 12 Nov 2018 </h1>
-                <h1> event ends at: 1pm, 12 Nov 2018 </h1>
+                <div class="event-start">
+                    <p>Event start:</p>
+                    <h1> 12pm </h1>
+                    <p>12 Nov 2018 </p>
+                </div>
+                <div class="event-between"></div>
+                <div class="event-end">
+                    <p>Event end:</p>
+                    <h1> 1pm</h1>
+                    <p>12 Nov 2018 </p>
+                </div>
             </div>
         </div>
-        
-        <p class="meeting__top-attendees"> attendees are: user@poort80.nl, user2@poort80.nl, user3@poort80.nl </p>
 
-        <p class="meeting__top-description"> it is about: This meeting is about meetings and how the meetings can be more meetings meetings meetings </p>
+        <div class="meeting__top-details">
+            <div class="meeting__top-details-attendees">
+                <!-- Here we need to have a list of attendees. the first list will load the first four 
+                and the second list will load the next. If there are four or less then only show the left
+                list-->
+                <ul class="meeting__top-details-attendees-first">
+                    <li>user@poort80.nl</li>
+                    <li>user@poort80.nl</li>
+                    <li>user@poort80.nl</li>
+                    <li>user@poort80.nl</li>
+                </ul>
+                <ul class="meeting__top-details-attendees-second">
+                    <li>user@poort80.nl</li>
+                    <li>user@poort80.nl</li>
+                    <li>user@poort80.nl</li>
+                    <li>user@poort80.nl</li>
+                </ul>
+            </div>
+            <p class="meeting__top-details-description"> This meeting is about meetings and how the meetings can be more meetings meetings meetings </p>
+        </div>
     </div>
 
     <div class="meeting__bottom">
@@ -60,25 +89,25 @@
             <tbody>
                 <tr>
                     <td class="meeting__bottom-list-item">
-                        <span class="meeting__bottom-list-item-title">Meeting #2</span>
+                        <h1 class="meeting__bottom-list-item-title">Meeting #2</h1>
                         <span class="meeting__bottom-list-item-description">this meeting is about blah</span>
                         <span class="meeting__bottom-list-item-time">1pm</span>
                         <span class="meeting__bottom-list-item-date">12 Nov 2018</span>
                     </td>
                     <td class="meeting__bottom-list-item">
-                        <span class="meeting__bottom-list-item-title">Meeting #3</span>
+                        <h1 class="meeting__bottom-list-item-title">Meeting #3</h1>
                         <span class="meeting__bottom-list-item-description">this meeting is about blah</span>
                         <span class="meeting__bottom-list-item-time">2pm</span>
                         <span class="meeting__bottom-list-item-date">12 Nov 2018</span>
                     </td>
                     <td class="meeting__bottom-list-item">
-                        <span class="meeting__bottom-list-item-title">Meeting #4</span>
+                        <h1 class="meeting__bottom-list-item-title">Meeting #4</h1>
                         <span class="meeting__bottom-list-item-description">this meeting is about blah</span>
                         <span class="meeting__bottom-list-item-time">3pm</span>
                         <span class="meeting__bottom-list-item-date">12 Nov 2018</span>
                     </td>
                     <td class="meeting__bottom-list-item">
-                        <span class="meeting__bottom-list-item-title">Meeting #5</span>
+                        <h1 class="meeting__bottom-list-item-title">Meeting #5</h1>
                         <span class="meeting__bottom-list-item-description">this meeting is about blah</span>
                         <span class="meeting__bottom-list-item-time">4pm</span>
                         <span class="meeting__bottom-list-item-date">12 Nov 2018</span>
