@@ -7,15 +7,23 @@
             <div class="event-tile__message">
                 <h1 class="event-tile__title"> {{m.identifier}} </h1>
                 <p> {{m.message}} </p>
-            </div> 
+            </div>
         </div>
-        <div *ngIf="!m.img"> <!-- when it has "messages" but shouldn't be shown yet-->
+        <div *ngIf="!m.img">
+            <!-- when it has "messages" but shouldn't be shown yet-->
             no messages to display
         </div>
     </div>
-    
+
 </div>
 
-<div *ngIf="messages?.length == 0"> <!-- only extends when the messages array = empty-->
-    Generic welcome message to the visitors of Poort80!  <!-- shows only when no messages! -->
-</div>
+<div class="event" *ngIf="messages?.length == 0">
+    <!-- only extends when the messages array = empty-->
+    <div class="event-tile">
+        <div class="event-tile__message">
+
+            <h1 class="event-tile__title"> Welcome </h1>
+            <p> To Poort80! </p>
+        </div>
+        <!-- shows only when no messages! -->
+    </div>
