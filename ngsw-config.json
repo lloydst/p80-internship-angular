@@ -1,5 +1,8 @@
 {
   "index": "/index.html",
+  "request-options": {
+    "credentials" : "include"
+  },
   "assetGroups": [{
     "name": "app",
     "installMode": "prefetch",
@@ -19,6 +22,18 @@
       "files": [
         "/assets/**"
       ]
+    }
+  }],
+  "dataGroups":[{
+      "name": "api-freshness",
+    "urls": [
+      "/api"
+    ],
+    "cacheConfig": {
+      "strategy": "freshness",
+      "maxSize": 100,
+      "maxAge": "3d",
+      "timeout": "10s"
     }
   }]
 }
