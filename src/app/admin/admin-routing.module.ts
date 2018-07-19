@@ -10,7 +10,6 @@ import { AdminEntranceComponent } from './componenten/entrance/entrance.componen
 import { AdminEntranceDetailComponent } from './componenten/entrance/admin-entrance-detail/admin-entrance-detail.component';
 import { AdminEventComponent } from './componenten/event/event.component';
 import { AdminEventDetailComponent } from './componenten/event/admin-event-detail/admin-event-detail.component';
-import { AdminMeetingComponent } from './componenten/meeting/meeting.component';
 import { ImageUploadComponent } from './image/image-upload/image-upload.component';
 import { ImageViewComponent } from './image/image-view/image-view.component';
 import { AdminChannelsContentsComponent } from './channels/admin-channels-contents/admin-channels-contents.component';
@@ -41,8 +40,7 @@ const routes = [
         {path: 'entrance', component: AdminEntranceComponent},
         {path: 'entrance/:id', component: AdminEntranceDetailComponent},
         {path: 'events', component: AdminEventComponent},
-        {path: 'events/:id', component: AdminEventDetailComponent},
-        {path: 'meeting', component: AdminMeetingComponent}
+        {path: 'events/:id', component: AdminEventDetailComponent}
       ]
     },
     {

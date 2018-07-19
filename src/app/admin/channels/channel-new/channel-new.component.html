@@ -1,58 +1,65 @@
-<div class="margin">
-    <p>channels can be made up from components as well as other channels (remember these have their own timings)</p>
-    <form [formGroup]="form" novalidate (ngSubmit)="save(form)">
+<div class="admin-channels-new">
+    <section>
         <div>
-            <label>Channel name:</label>
-            <input type="text" formControlName="channel">
-            <small *ngIf="!form.controls.channel.valid">
-                Name is required (minimum 5 characters).
-            </small>
-        </div>
-        <!--paths-->
-        <div formArrayName="path">
-            <div *ngFor="let path of form['controls'].path['controls']; let i=index">
+            <p>channels can be made up from components as well as other channels (remember these have their own timings)</p>
+            <form [formGroup]="form" novalidate (ngSubmit)="save(form)">
                 <div>
-                    <span>path {{i + 1}}</span>
-                    <span *ngIf="form.controls.path.controls.length > 1" (click)="removePath(i)"></span>
-                </div>
-                <div [formGroupName]="i">
-                    <div>
-                        <label>path url</label>
-                        <input formControlName="pathurl" />
-                        <small> enter the component name after the /</small>
-                    </div>
-                    <div>
-                        <label>description:</label>
-                        <br>
-                        <input type="text" formControlName="description" value="Does this and that" />
-                    </div>
-                    <label>delay:</label>
-                    <br>
-                    <input type="number" formControlName="delay">
-                    <small>
-                        1000 = 1 second, so 1 minute = 60000 etc.
+                    <label>Channel name:</label>
+                    <input type="text" formControlName="channel">
+                    <small *ngIf="!form.controls.channel.valid">
+                        Name is required (minimum 5 characters).
                     </small>
-                    <div>
-                        <label>component name:</label>
+                </div>
+                <!--paths-->
+                <div formArrayName="path">
+                    <div *ngFor="let path of form['controls'].path['controls']; let i=index">
+                        <div>
+                            <span>path {{i + 1}}</span>
+                            <span *ngIf="form.controls.path.controls.length > 1" (click)="removePath(i)"></span>
+                        </div>
+                        <div [formGroupName]="i">
+                            <div>
+                                <label>path url</label>
+                                <input formControlName="pathurl" />
+                                <small> enter the component name after the /</small>
+                            </div>
+                            <div>
+                                <label>description:</label>
+                                <br>
+                                <input type="text" formControlName="description" value="Does this and that" />
+                            </div>
+                            <label>delay:</label>
+                            <br>
+                            <input type="number" formControlName="delay">
+                            <small>
+                                1000 = 1 second, so 1 minute = 60000 etc.
+                            </small>
+                            <div>
+                                <label>component name:</label>
+                                <br>
+                                <input type="text" formControlName="componentName">
+                            </div>
+                            <br>
+                            <a (click)="removePath(i)">
+                                <input type="button" class="button warning" value="removePath">
+                            </a>
+                        </div>
                         <br>
-                        <input type="text" formControlName="componentName">
                     </div>
-                    <br>
-                    <a (click)="removePath(i)">
-                        <input type="button" class="button warning" value="removePath">
+                </div>
+                <div>
+                    <a (click)="addPath()">
+                        <input class="button succes" type="button" value="Add route">
                     </a>
                 </div>
                 <br>
-            </div>
+                <div>
+                    <button class="button succes" type="submit" [disabled]="!form.valid">Create</button>
+                </div>
+            </form>
         </div>
         <div>
-            <a (click)="addPath()">
-                <input class="button succes" type="button" value="Add route">
-            </a>
+            <app-listing-components></app-listing-components><!-- lists available components-->
         </div>
-        <br>
-        <div>
-            <button class="button succes" type="submit" [disabled]="!form.valid">Create</button>
-        </div>
-    </form>
+    </section>
 </div>

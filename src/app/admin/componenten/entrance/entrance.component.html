@@ -1,28 +1,35 @@
-<div class="main">
-    <div class="container">
-      <h2>Loop Component</h2>
-        <form [formGroup]="websiteForm">
-          <label for="client">client:</label><br>
-            <input #website name="client" type="text" required formControlName="website"><br>
-            <label for="url">url:</label><br>
-            <input type="text" name="url" #url required formControlName="url"><br>
-            <br>
-          <button class="button succes" (click)="create(website.value, url.value,{visable: true})" [disabled]="!websiteForm.valid">Add</button>
-        </form>
-    </div>
-    <div style="overflow-x:auto;">
-    <div class="table">
-        <div><strong>company/ client:</strong></div>
-        <div><strong>edit</strong></div>
-        <div><strong>delete</strong></div>
-    </div>
-    
-    <div id="table" *ngFor="let item of data; let i = index; let odd = odd; let even = even"
-    [class.odd]="odd" [class.even]="even"> <!-- needs to be "gritty" (css grid)-->
-      <div>{{item.name}}</div>
-      <div><a [routerLink]="item.name" ><button class="button warning">update</button></a></div>
-      <div><button class="button danger" (click)="delete(item)">delete</button></div>
-    </div>
-   
-  </div>
+<div class="admin-componenten-channels-entrance">
+    <section>
+        <div>
+            <h2>Loop Component</h2>
+            <form [formGroup]="websiteForm">
+                <label for="client">client:</label>
+                <br>
+                <input #website name="client" type="text" required formControlName="website">
+                <br>
+                <label for="url">url:</label>
+                <br>
+                <input type="text" name="url" #url required formControlName="url">
+                <br>
+                <br>
+                <button class="button succes" (click)="create(website.value, url.value,{visable: true})" [disabled]="!websiteForm.valid">Add</button>
+            </form>
+        </div>
+    </section>
+    <section>
+        <div *ngFor="let item of data; let i = index;">
+            <div class="admin-componenten-channels-entrance__top">
+                <strong>company/ client: {{item.name}}</strong>
+            </div>
+            <div class="admin-componenten-channels-entrance__bottom-left">
+                <a [routerLink]="item.name">
+                    <button class="button warning">update</button>
+                </a>
+            </div>
+            <div class="admin-componenten-channels-entrance__bottom-right">
+                <button class="button danger" (click)="delete(item)">delete</button>
+            </div>
+        </div>
+
+    </section>
 </div>

@@ -1,15 +1,20 @@
-<div> <!-- nav-->
-    <div><a [routerLink]="['../algemeen']">all</a></div>
-    <div><a [routerLink]="['add']">create</a></div>
-    
+<div class="admin-setting">
+        <div> <!-- nav-->
+            <button [routerLink]="['../algemeen']">all</button>
+            <button [routerLink]="['add']">create</button>
+            
+        </div>
+    <section>
+        
+        <div *ngIf="configs.length < 1">
+            no configs have been set
+        </div>
+        <div *ngFor="let c of configs">
+            {{c.name}}
+            {{c.ip}}
+            {{c.channel}}
+            <button (click)="deleteConfig(c.ip)">delete</button>
+        </div>
+    </section>
+    <router-outlet></router-outlet>
 </div>
-<div *ngIf="configs.length < 1">
-    no configs have been set
-</div>
-<div *ngFor="let c of configs">
-    {{c.name}}
-    {{c.ip}}
-    {{c.channel}}
-    <button (click)="deleteConfig(c.ip)">delete</button>
-</div>
-<router-outlet></router-outlet>

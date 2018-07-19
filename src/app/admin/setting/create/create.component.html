@@ -1,19 +1,29 @@
-<h1>if you use the following Ip address, any computer on your network will auto route, to the channel you have set</h1>
-your ip= {{ipAddress}}
-<form action="/api/config" method="post">
-    <div>
-        <label for="ip">ip</label>
-        <input #ip type="text">
-    </div>
-    <div>
-        <label for="channel">channel</label>
-        <input #channel type="text">
-    </div>
-    <div>
-        <label for="name">name</label>
-        <input #name type="text">
-    </div>
-    <button type="submit" (click)="addIpConfig(
-        {ip:ip.value, channel:channel.value,name:name.value}
-        )">submit</button>
-</form>
+<div class="admin-setting-create">
+    <section>
+        <div>
+            <div class="admin-setting-create__title">
+                <h1>if you use the following Ip address, any computer on your network will auto route, to the channel you have
+                    set</h1>
+                <p>your localNetworks ip ={{ipAddress}}</p>
+            </div>
+            <form class="admin-setting-create__form">
+                <div>
+                    <label for="ip">ip</label>
+                    <input #ip type="text">
+                </div>
+                <div>
+                    <label for="channel">channel</label>
+                    <input #channel type="text">
+                </div>
+                <div>
+                    <label for="name">name</label>
+                    <input #name type="text">
+                </div>
+                <button type="submit" (click)="addIpConfig(
+                    {ip:ip.value, channel:channel.value,name:name.value}
+                    )">submit</button>
+            </form>
+        </div>
+    </section>
+
+</div>

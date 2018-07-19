@@ -1,13 +1,18 @@
-<div class="grid">
-  <div *ngFor="let i of image" id="images">
-    
-    <div *ngIf="i.length > 0" >
-      location: "/images/img/{{i.filename}}"<br>
-      <img src="/images/img/{{i.filename}}" alt="image couldnt be loaded from db wich means the db is still online" srcset="" id="thumbn"><br>
-      <button class="button warning" (click)="deleteImg(i.filename)">delete</button>
-    </div>
-    <div *ngIf="image.length < 1">
-      no images currently in db
-    </div>
-  </div>
+<div class="admin-image-view">
+    <section>
+        <div *ngFor="let i of image" id="images">
+
+            <div *ngIf="i.length > 0">
+                location: "/images/img/{{i.filename}}"
+                <br>
+                <img src="/images/img/{{i.filename}}" alt="image couldnt be loaded from db wich means the db is still online" srcset="" style="width:125px; height:125px">
+                <br>
+                <button class="button warning" (click)="deleteImg(i.filename)">delete</button>
+            </div>
+            <div *ngIf="image.length < 1">
+                no images currently in db
+            </div>
+        </div>
+    </section>
+
 </div>

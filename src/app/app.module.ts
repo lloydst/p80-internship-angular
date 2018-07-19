@@ -17,7 +17,6 @@ import { AppComponent } from './app.component';
 import { AdminModule } from './admin/admin.module';
 import { ChannelsModule } from './channels/channels.module';
 
-
 /**
  * services
  */
@@ -30,12 +29,10 @@ import { FileUploadModule } from 'ng2-file-upload';
 import { ComponentsModule } from './components/components.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { environment } from '../environments/environment';
-
+import { environment } from '../environments/environment.prod';
 @NgModule({
   declarations: [
     AppComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -48,7 +45,8 @@ import { environment } from '../environments/environment';
     FileUploadModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    
     ],
   providers: [
     DataService,

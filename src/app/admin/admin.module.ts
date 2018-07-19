@@ -14,11 +14,8 @@ import { AdminEntranceComponent } from './componenten/entrance/entrance.componen
 import { AdminEntranceDetailComponent } from './componenten/entrance/admin-entrance-detail/admin-entrance-detail.component';
 import { AdminEventComponent } from './componenten/event/event.component';
 import { AdminEventDetailComponent } from './componenten/event/admin-event-detail/admin-event-detail.component';
-import { AdminMeetingComponent } from './componenten/meeting/meeting.component';
-import { SupportTicketsComponent } from './componenten/support-tickets/support-tickets.component';
 import { ImageUploadComponent } from './image/image-upload/image-upload.component';
 import { ImageViewComponent } from './image/image-view/image-view.component';
-import { BuildServersComponent } from './componenten/build-servers/build-servers.component';
 import { AdminChannelsContentsComponent } from './channels/admin-channels-contents/admin-channels-contents.component';
 import { ChannelContentComponent } from './channels/channel-content/channel-content.component';
 import { ChannelNewComponent } from './channels/channel-new/channel-new.component';
@@ -41,14 +38,11 @@ import { CreateComponent } from './setting/create/create.component';
     AdminChannelsComponent,
     DashboardComponent,
     SettingComponent,
-    BuildServersComponent,
     AdminComponent,
     AdminEntranceComponent,
     AdminEntranceDetailComponent,
     AdminEventComponent,
     AdminEventDetailComponent,
-    AdminMeetingComponent,
-    SupportTicketsComponent,
     ImageUploadComponent,
     ImageViewComponent,
     AdminChannelsContentsComponent,

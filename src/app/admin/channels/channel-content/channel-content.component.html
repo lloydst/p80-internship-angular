@@ -1,53 +1,56 @@
-<form [formGroup]="form" (ngSubmit)="save(form)">
-
-
-    <div>
-        <label>Channel:
-            <input formControlName="channel" readonly="readonly">
-        </label>
-    </div>
-
-    <div formArrayName="path">
-        <div *ngFor="let paths of path.controls; let i=index" [formGroupName]="i">
-            <!-- The repeated path template -->
-            <h4>path #{{i + 1}}</h4>
-            <div>
-                <div>
-                    <label>Url:
-                        <br>
-                        <input type="text" formControlName="pathurl">
-                    </label>
-                </div>
-                <div>
-                    <label>Name:
-                        <br>
-                        <input type="text" formControlName="componentName">
-                    </label>
-                </div>
-                <div>
-                    <label>Description:
-                        <br>
-                        <textarea formControlName="description" class="description"></textarea>
-                    </label>
-                </div>
-                <div>
-                    <label>Delay:
-                        <br>
-                        <input #delay type="number" formControlName="delay"> {{delay.value / 1000 | number}} seconds {{delay.value / 1000 / 60 | number}} minutes {{delay.value
-                        /1000 / 60 / 60 | number}} hours
-                    </label>
-                </div>
-            </div>
-            <br>
-            <button class="button succes" type="submit" (click)="addPath()">Add path</button> &nbsp;
-            <button class="button danger" type="button danger" (click)="removePath(i)">Remove path</button>
-            <br>
-            <!-- End of the repeated path template -->
-        </div>
+<div class="admin-channels-content">
+    <section>
         <div>
-            <br>
-            <button class="button primary" type="submit" [disabled]="form.pristine">Save</button> &nbsp;
-            <button class="button danger" type="button danger" (click)="revert()" [disabled]="form.pristine">undo/reload</button>
+            <form [formGroup]="form" (ngSubmit)="save(form)">
+                <div>
+                    <label>Channel:
+                        <input formControlName="channel" readonly="readonly">
+                    </label>
+                </div>
+
+                <div formArrayName="path">
+                    <div *ngFor="let paths of path.controls; let i=index" [formGroupName]="i"> <!-- accordeon-->
+                        <!-- The repeated path template -->
+                        <h4>path #{{i + 1}}</h4>
+                        <div>
+                            <div>
+                                <label>Url:
+                                    <br>
+                                    <input type="text" formControlName="pathurl">
+                                </label>
+                            </div>
+                            <div>
+                                <label>Name:
+                                    <br>
+                                    <input type="text" formControlName="componentName">
+                                </label>
+                            </div>
+                            <div>
+                                <label>Description:
+                                    <br>
+                                    <textarea formControlName="description" class="description"></textarea>
+                                </label>
+                            </div>
+                            <div>
+                                <label>Delay:
+                                    <br>
+                                    <input #delay type="number" formControlName="delay"> {{delay.value / 1000 | number}} seconds 
+                                </label>
+                            </div>
+                        </div>
+                        <br>
+                        <button class="button succes" type="submit" (click)="addPath()">Add path</button> &nbsp;
+                        <button class="button danger" type="button danger" (click)="removePath(i)">Remove path</button>
+                        <br>
+                        <!-- End of the repeated path template -->
+                    </div>
+                    <div>
+                        <br>
+                        <button class="button primary" type="submit" [disabled]="form.pristine">Save</button> &nbsp;
+                        <button class="button danger" type="button danger" (click)="revert()" [disabled]="form.pristine">undo/reload</button>
+                    </div>
+                </div>
+            </form>
         </div>
-    </div>
-</form>
+    </section>
+</div>

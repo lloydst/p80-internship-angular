@@ -14,13 +14,9 @@
 // ---------------------------------------------
 
 .wrapper-admin {
-    margin-top:0px;
-    section {
-        background-color: #ffffff;
-        height: 100%;
-        //Important! this was first build with css grid (before Michiel and Conner's help),
-        //the side nav still has code to 'expand' based on grid in the ts file
-        @include flexbox;
-        
-    }
+    margin: 0;
+	padding: 0;
+//	border: 20px solid #2A4161;
+	// height: calc(100vh - 40px);
+	height: 100vh;
 }

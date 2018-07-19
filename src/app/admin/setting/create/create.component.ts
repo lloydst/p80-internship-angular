@@ -18,14 +18,17 @@ otherIps: any = []
         this.otherIps = configs
         console.log(configs)
     })
+    this.getIp()
+  }
+  addIpConfig (obj) {
+        this.ipService.addIp(obj).subscribe()
+  }
+  getIp() {
     this.http.get<{ ip: string }>('https://jsonip.com')
     .subscribe(data => {
 
         this.ipAddress = data.ip
         
     })
-  }
-  addIpConfig (obj) {
-        this.ipService.addIp(obj).subscribe()
   }
 }
