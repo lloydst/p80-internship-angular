@@ -228,6 +228,21 @@ section {
   color: white;
 }
 
+.container-admin .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.container-admin .card__title {
+  min-height: 1em;
+  background-color: blue;
+  color: white;
+}
+
+.container-admin .card-container {
+  padding: 2px 16px;
+}
+
 .weather {
   display: -webkit-box;
   display: -webkit-flex;
