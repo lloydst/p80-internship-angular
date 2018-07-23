@@ -1,6 +1,6 @@
 {
-  "name": "boilerplate",
-  "short_name": "boilerplate",
+  "name": "poort 80 tool",
+  "short_name": "p80tool",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
@@ -9,7 +9,7 @@
   "icons": [
     
     {
-      "src": "assets/icons/icon-512x512.png",
+      "src": "public/assets/img/icon/trend-up-black.svg",
       "sizes": "512x512",
       "type": "image/png"
     }
