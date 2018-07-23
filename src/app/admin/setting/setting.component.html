@@ -5,9 +5,8 @@
             
         </div>
     <section>
-        
         <div *ngIf="configs.length < 1">
-            no configs have been set
+            no ip configs have been set
         </div>
         <div *ngFor="let c of configs">
             {{c.name}}
@@ -17,5 +16,5 @@
         </div>
     </section>
     <router-outlet></router-outlet>
-    <div id="ip"></div>
+    
 </div>

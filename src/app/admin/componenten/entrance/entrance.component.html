@@ -1,13 +1,13 @@
 <div class="admin-componenten-channels-entrance">
     <section>
         <div>
-            <h2>Loop Component</h2>
+            <h2>add a new client to the loop</h2>
             <form [formGroup]="websiteForm">
                 <label for="client">client:</label>
                 <br>
                 <input #website name="client" type="text" required formControlName="website">
                 <br>
-                <label for="url">url:</label>
+                <label for="url">Website's url:</label>
                 <br>
                 <input type="text" name="url" #url required formControlName="url">
                 <br>
@@ -16,20 +16,50 @@
             </form>
         </div>
     </section>
-    <section>
-        <div *ngFor="let item of data; let i = index;">
-            <div class="admin-componenten-channels-entrance__top">
-                <strong>company/ client: {{item.name}}</strong>
-            </div>
-            <div class="admin-componenten-channels-entrance__bottom-left">
-                <a [routerLink]="item.name">
-                    <button class="button warning">update</button>
-                </a>
-            </div>
-            <div class="admin-componenten-channels-entrance__bottom-right">
-                <button class="button danger" (click)="delete(item)">delete</button>
+    <!-- this bit should be better-->
+    <section class="list">
+        <div *ngFor="let item of data; let i = index;" class="list">
+            <div *ngIf="i<=7" class="admin-componenten-channels-entrance-list">
+                <div class="admin-componenten-channels-entrance__top">
+                    <strong>company/ client: {{item.name}}</strong>
+                </div>
+                <div class="admin-componenten-channels-entrance__bottom-left">
+                    <a [routerLink]="item.name">
+                        <button class="button warning">update</button>
+                        <button class="button danger" (click)="delete(item)">delete</button>
+                    </a>
+                </div>
             </div>
         </div>
-
     </section>
+    <section>
+        <div *ngFor="let item of data; let i = index;">
+            <div *ngIf="i>7 && i<16" class="admin-componenten-channels-entrance-list">
+                <div class="admin-componenten-channels-entrance__top">
+                    <strong>company/ client: {{item.name}}</strong>
+                </div>
+                <div class="admin-componenten-channels-entrance__bottom-left">
+                    <a [routerLink]="item.name">
+                        <button class="button warning">update</button>
+                        <button class="button danger" (click)="delete(item)">delete</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+            <div *ngFor="let item of data; let i = index;">
+                <div *ngIf="i>16 && i<data.length" class="admin-componenten-channels-entrance-list">
+                    <div class="admin-componenten-channels-entrance__top">
+                        <strong>company/ client: {{item.name}}</strong>
+                    </div>
+                    <div class="admin-componenten-channels-entrance__bottom">
+                        <a [routerLink]="item.name">
+                            <button>update</button>
+                            <button style="align-content: flex-end;"  (click)="delete(item)">delete</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 </div>

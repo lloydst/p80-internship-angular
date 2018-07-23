@@ -11,14 +11,14 @@
             <div class="meeting__top-heading-times">
                 <div class="event-start">
                     <p>Event start:</p>
-                    <h1>{{meeting[0].events[0].start.dateTime.substring(11,16) }}</h1>
-                    <p>{{meeting[0].events[0].start.dateTime.substring(0,10) }} </p>
+                    <h1>{{meeting[0].events[2].start.dateTime.substring(11,16) }}</h1>
+                    <p>{{meeting[0].events[2].start.dateTime.substring(0,10) }} </p>
                 </div>
                 <div class="event-between"></div>
                 <div class="event-end">
                     <p>Event end:</p>
-                    <h1>{{meeting[0].events[0].end.dateTime.substring(11,16)}}</h1>
-                    <p>{{meeting[0].events[0].end.dateTime.substring(0,10)}} </p>
+                    <h1>{{meeting[0].events[2].end.dateTime.substring(11,16)}}</h1>
+                    <p>{{meeting[0].events[2].end.dateTime.substring(0,10)}} </p>
                 </div>
             </div>
         </div>
@@ -29,19 +29,19 @@
                 and the second list will load the next. If there are four or less then only show the left
                 list-->
                 <ul class="meeting__top-details-attendees-first">
-                    <li *ngFor="let email of meeting[0].events[0].attendees; index as i">
+                    <li *ngFor="let email of meeting[0].events[2].attendees; index as i">
                         <span *ngIf="i<3">{{email.emailAddress.name}}</span>
                         <!-- replacing name with address gives a email address instead of a name-->
                     </li>
 
                 </ul>
                 <ul class="meeting__top-details-attendees-second">
-                    <li *ngFor="let email of meeting[0].events[0].attendees; index as i">
+                    <li *ngFor="let email of meeting[0].events[2].attendees; index as i">
                         <span *ngIf="i>3 && i <7">{{email.emailAddress.name}}</span><!-- displays name 4-8-->
                     </li>
                 </ul>
             </div>
-            <p class="meeting__top-details-description"> {{meeting[0].events[0].subject}} </p>
+            <p class="meeting__top-details-description"> {{meeting[0].events[2].subject}} </p>
         </div>
     </div>
 
@@ -50,7 +50,8 @@
             <tbody>
                 <tr *ngFor="let m of meeting;">
                     <!--this following slice pipe is meant to limit the amount of meetings and has to be checked on a large screen-->
-                    <td class="meeting__bottom-list-item" *ngFor="let e of m.events| slice:1:3; index as i"> 
+                    <!-- .slice creates a new array from 0-> 2 then reverses it because the order returned form the api is wrong (returns the last first)-->
+                    <td class="meeting__bottom-list-item" *ngFor="let e of m.events.slice(0,2).reverse(); index as i"> 
                         <!--this one would 'overflow' if there are too many events-->
                         <h1 class="meeting__bottom-list-item-title">Meeting #{{i+2}}</h1>
                         <!--number from 2-->
@@ -66,89 +67,3 @@
     </div>
 
 </div>
-
-<!-- ---------------------------- Dummy static data to work on styling ------------------------ 
-
-
-<div class="meeting">
-
-    <div class="meeting__top">
-
-        <div class="meeting__top-heading">
-            <div class="meeting__top-heading-title">
-                <h1>
-                    Meeting title
-                </h1>
-            </div>
-            <div class="meeting__top-heading-times">
-                <div class="event-start">
-                    <p>Event start:</p>
-                    <h1> 12pm </h1>
-                    <p>12 Nov 2018 </p>
-                </div>
-                <div class="event-between"></div>
-                <div class="event-end">
-                    <p>Event end:</p>
-                    <h1> 1pm</h1>
-                    <p>12 Nov 2018 </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="meeting__top-details">
-            <div class="meeting__top-details-attendees">
-                 Here we need to have a list of attendees. the first list will load the first four 
-                    and the second list will load the next. If there are four or less then only show the left
-                    list
-                <ul class="meeting__top-details-attendees-first">
-                    <li>user@poort80.nl</li>
-                    <li>user@poort80.nl</li>
-                    <li>user@poort80.nl</li>
-                    <li>user@poort80.nl</li>
-                </ul>
-                <ul class="meeting__top-details-attendees-second">
-                    <li>user@poort80.nl</li>
-                    <li>user@poort80.nl</li>
-                    <li>user@poort80.nl</li>
-                    <li>user@poort80.nl</li>
-                </ul>
-            </div>
-            <p class="meeting__top-details-description"> This meeting is about meetings and how the meetings can be more meetings meetings meetings </p>
-        </div>
-    </div>
-
-    <div class="meeting__bottom">
-        <table class="meeting__bottom-list">
-            <tbody>
-                <tr>
-                    <td class="meeting__bottom-list-item">
-                        <h1 class="meeting__bottom-list-item-title">Meeting #2</h1>
-                        <span class="meeting__bottom-list-item-description">this meeting is about blah</span>
-                        <span class="meeting__bottom-list-item-time">1pm</span>
-                        <span class="meeting__bottom-list-item-date">12 Nov 2018</span>
-                    </td>
-                    <td class="meeting__bottom-list-item">
-                        <h1 class="meeting__bottom-list-item-title">Meeting #3</h1>
-                        <span class="meeting__bottom-list-item-description">this meeting is about blah</span>
-                        <span class="meeting__bottom-list-item-time">2pm</span>
-                        <span class="meeting__bottom-list-item-date">12 Nov 2018</span>
-                    </td>
-                    <td class="meeting__bottom-list-item">
-                        <h1 class="meeting__bottom-list-item-title">Meeting #4</h1>
-                        <span class="meeting__bottom-list-item-description">this meeting is about blah</span>
-                        <span class="meeting__bottom-list-item-time">3pm</span>
-                        <span class="meeting__bottom-list-item-date">12 Nov 2018</span>
-                    </td>
-                    <td class="meeting__bottom-list-item">
-                        <h1 class="meeting__bottom-list-item-title">Meeting #5</h1>
-                        <span class="meeting__bottom-list-item-description">this meeting is about blah</span>
-                        <span class="meeting__bottom-list-item-time">4pm</span>
-                        <span class="meeting__bottom-list-item-date">12 Nov 2018</span>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-</div>
--->

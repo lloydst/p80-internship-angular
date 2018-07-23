@@ -73,7 +73,7 @@
     }
 
     .card__title {
-        min-height: 1em;
+        
         background-color:blue;
         color:white;
     }
@@ -81,5 +81,9 @@
     
     .card-container {
         padding: 2px 16px;
+    }
+    .card-content {
+        background-color: #fff;
+        margin-top: 0;
     }
 }
