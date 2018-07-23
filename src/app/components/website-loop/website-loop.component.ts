@@ -1,11 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from '../../services/data.service';
-import { Website } from '../../models/website';
-import { Observable } from "rxjs/Rx"
-import * as $ from 'jquery';
-import { NewsService } from '../../services/news.service';
-import { WeatherService } from '../../services/weather.service';
+
 /**
  * just setting it once
  */
