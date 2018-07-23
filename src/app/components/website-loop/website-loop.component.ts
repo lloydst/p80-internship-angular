@@ -45,12 +45,20 @@ export class WebsiteLoopComponent implements OnInit {
 
     ) {
         window.onbeforeunload = function (e) {
+            // try to take controll of window with name 'loop' and close it
             var myWindow = window.open('javascript:void window.focus()', 'loop');
             myWindow.close()
             return undefined
+            // doesnt always work
         };
     }
-
+    OnDestroy() {
+// try to take controll of window with name 'loop' and close it
+var myWindow = window.open('javascript:void window.focus()', 'loop');
+myWindow.close()
+return undefined
+// doesnt always work
+    }
 
     /**
      * gets all websites through the service

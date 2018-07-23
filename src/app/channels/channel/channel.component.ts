@@ -134,7 +134,7 @@ export class ChannelComponent implements OnInit {
             var path = self.do[0].path[x].pathurl
             var myWindow = window.open(path, "channel") // default = 0
             
-            // @overrule the loop if a event should get shown
+            // @overrule the loop if a message should get shown
             if (path == '/components/loop') {
                 if (messageArray.length > 0) {
                     self.setTimeNow()
