@@ -9,7 +9,7 @@
   "icons": [
     
     {
-      "src": "public/assets/img/icon/trend-up-black.svg",
+      "src": "assets/icons/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
