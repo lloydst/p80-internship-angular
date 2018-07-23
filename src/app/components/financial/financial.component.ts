@@ -31,7 +31,7 @@ export class FinancialComponent implements OnInit {
     /**
      * binding
      */
-    bitVal: any = []
+    bitVal: any = [];
     /**
      * binding
      */
