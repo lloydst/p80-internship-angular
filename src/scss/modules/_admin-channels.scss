@@ -3,3 +3,15 @@
     margin-top: 0px;
     
 }
+.admin-channels-contents__nav {
+    a {
+        border: 1px solid black;
+        
+    }
+    a span {
+        color: red;
+    }
+}
+app-admin-channels-contents {
+    margin-left: 15px;
+}

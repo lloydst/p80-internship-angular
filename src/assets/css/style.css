@@ -988,18 +988,26 @@ section {
   margin-left: 15px;
 }
 
-.admin-componenten-channels-entrance-list {
-  border: 1px solid black;
+.card-w {
   max-width: 12.4vw;
+  margin: 5px;
 }
 
-.admin-componenten-channels-entrance-list .list {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -moz-box-flex: 1;
-  -moz-flex: 1;
-  -ms-flex: 1;
-  flex: 1;
+.form-group {
+  background-color: #ffffff;
+  border-radius: 2px;
+  width: 400px;
+}
+
+.form-group input {
+  border-radius: 4px;
+  width: 300px;
+  align-self: right;
+}
+
+.admin-image-upload section {
+  margin: 15px;
+  background-color: #fff;
 }
 
 .admin-channels {

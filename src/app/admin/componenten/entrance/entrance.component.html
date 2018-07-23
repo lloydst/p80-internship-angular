@@ -1,4 +1,4 @@
-<div class="admin-componenten-channels-entrance">
+<div class="admin-componenten-channels__entrance">
     <section>
         <div>
             <h2>add a new client to the loop</h2>
@@ -19,11 +19,14 @@
     <!-- this bit should be better-->
     <section class="list">
         <div *ngFor="let item of data; let i = index;" class="list">
-            <div *ngIf="i<=7" class="admin-componenten-channels-entrance-list">
-                <div class="admin-componenten-channels-entrance__top">
-                    <strong>company/ client: {{item.name}}</strong>
+            <div *ngIf="i<=6" class="card card-w">
+                <div>
+                    <div class="card card__title ">
+                        <strong>company/ client:</strong>
+                    </div>
+                    <strong> {{item.name}}</strong>
                 </div>
-                <div class="admin-componenten-channels-entrance__bottom-left">
+                <div class="card">
                     <a [routerLink]="item.name">
                         <button class="button warning">update</button>
                         <button class="button danger" (click)="delete(item)">delete</button>
@@ -34,11 +37,14 @@
     </section>
     <section>
         <div *ngFor="let item of data; let i = index;">
-            <div *ngIf="i>7 && i<16" class="admin-componenten-channels-entrance-list">
-                <div class="admin-componenten-channels-entrance__top">
-                    <strong>company/ client: {{item.name}}</strong>
+            <div *ngIf="i>6 && i<14" class="card card-w">
+                <div>
+                    <div class="card card__title ">
+                        <strong>company/ client:</strong>
+                    </div>
+                    <strong> {{item.name}}</strong>
                 </div>
-                <div class="admin-componenten-channels-entrance__bottom-left">
+                <div class="card">
                     <a [routerLink]="item.name">
                         <button class="button warning">update</button>
                         <button class="button danger" (click)="delete(item)">delete</button>
@@ -48,18 +54,21 @@
         </div>
     </section>
     <section>
-            <div *ngFor="let item of data; let i = index;">
-                <div *ngIf="i>16 && i<data.length" class="admin-componenten-channels-entrance-list">
-                    <div class="admin-componenten-channels-entrance__top">
-                        <strong>company/ client: {{item.name}}</strong>
+        <div *ngFor="let item of data; let i = index;">
+            <div *ngIf="i>14 && i<data.length" class="card card-w">
+                <div>
+                    <div class="card card__title ">
+                        <strong>company/ client:</strong>
                     </div>
-                    <div class="admin-componenten-channels-entrance__bottom">
-                        <a [routerLink]="item.name">
-                            <button>update</button>
-                            <button style="align-content: flex-end;"  (click)="delete(item)">delete</button>
-                        </a>
-                    </div>
+                    <strong> {{item.name}}</strong>
+                </div>
+                <div class="card">
+                    <a [routerLink]="item.name">
+                        <button>update</button>
+                        <button style="align-content: flex-end;" (click)="delete(item)">delete</button>
+                    </a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 </div>
