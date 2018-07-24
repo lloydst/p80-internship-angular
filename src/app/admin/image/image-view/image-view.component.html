@@ -1,18 +1,18 @@
-<div class="admin-image-view">
-    <section>
-        <div *ngFor="let i of image" id="images">
+<div class="admin-wrapper-main__card--fullwidth">
 
-            <div *ngIf="i.length > 0">
-                location: "/images/img/{{i.filename}}"
-                <br>
-                <img src="/images/img/{{i.filename}}" alt="image couldnt be loaded from db wich means the db is still online" srcset="" style="width:125px; height:125px">
-                <br>
-                <button class="button warning" (click)="deleteImg(i.filename)">delete</button>
+    <div *ngFor="let i of image" id="images" class="admin-wrapper-main__card-tiny">
+        <div *ngIf="i.length > 0">
+            <img style="display: inline-block" src="/images/img/{{i.filename}}" alt="image couldnt be loaded from db wich means the db is still online"
+                srcset="" style="width:125px; height:125px">
+            <div style="display: inline-block">
+                original filename: {{i.filename}},
+                <br> location: "/images/img/{{i.filename}}"
+                <br><button class="button warning" (click)="deleteImg(i.filename)">delete</button>
             </div>
-            <div *ngIf="image.length < 1">
-                no images currently in db
-            </div>
+            <br>
         </div>
-    </section>
-
+        <div *ngIf="image.length < 1">
+            no images currently in db
+        </div>
+    </div>
 </div>

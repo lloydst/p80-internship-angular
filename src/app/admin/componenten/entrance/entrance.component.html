@@ -1,74 +1,79 @@
-<div class="admin-componenten-channels__entrance">
-    <section>
-        <div>
-            <h2>add a new client to the loop</h2>
-            <form [formGroup]="websiteForm">
-                <label for="client">client:</label>
-                <br>
-                <input #website name="client" type="text" required formControlName="website">
-                <br>
-                <label for="url">Website's url:</label>
-                <br>
-                <input type="text" name="url" #url required formControlName="url">
-                <br>
+<div class="admin-wrapper-main">
+    <section >
+        <div class="admin-wrapper-main__card--fullwidth">
+            <h2 class="admin-wrapper-main__card--title">add a new client to the loop</h2>
+            <form [formGroup]="websiteForm" class="admin-wrapper-main__card--form">
+                <div class="admin-wrapper-main__card--form-group">
+                    <label for="client">client:</label>
+                    <br>
+                    <input class="admin-wrapper-main__card--form-input" #website name="client" type="text" required formControlName="website">
+                </div>
+
+                <div>
+                    <label for="url">Website's url:</label>
+
+                    <input class="admin-wrapper-main__card--form-input" type="text" name="url" #url required formControlName="url">
+                </div>
                 <br>
                 <button class="button succes" (click)="create(website.value, url.value,{visable: true})" [disabled]="!websiteForm.valid">Add</button>
             </form>
         </div>
     </section>
-    <!-- this bit should be better-->
-    <section class="list">
-        <div *ngFor="let item of data; let i = index;" class="list">
-            <div *ngIf="i<=6" class="card card-w">
-                <div>
-                    <div class="card card__title ">
-                        <strong>company/ client:</strong>
+    <div class="admin-wrapper-main__card--fullwidth">
+            <div class="admin-wrapper-main__card--title">Current websites in loop:</div>
+        <section>
+            <div *ngFor="let item of data; let i = index;">
+                <div *ngIf="i<=5" class="admin-wrapper-main__card-tiny">
+                    <div >
+                        <div class="admin-wrapper-main__card--title">
+                            <strong>company/ client:</strong>
+                        </div>
+                        <strong class="admin-wrapper-main__card--content"> {{item.name}}</strong>
                     </div>
-                    <strong> {{item.name}}</strong>
-                </div>
-                <div class="card">
-                    <a [routerLink]="item.name">
-                        <button class="button warning">update</button>
-                        <button class="button danger" (click)="delete(item)">delete</button>
-                    </a>
+                    <div class="admin-wrapper-main__card--content">
+                        <a [routerLink]="item.name">
+                            <button class="button warning">update</button>
+                            <button class="button danger" (click)="delete(item)">delete</button>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section>
-        <div *ngFor="let item of data; let i = index;">
-            <div *ngIf="i>6 && i<14" class="card card-w">
-                <div>
-                    <div class="card card__title ">
-                        <strong>company/ client:</strong>
+        </section>
+        <section>
+            <div *ngFor="let item of data; let i = index;">
+                <div *ngIf="i>5 && i<12" class="admin-wrapper-main__card-tiny">
+                    <div>
+                        <div class="admin-wrapper-main__card--title">
+                            <strong>company/ client:</strong>
+                        </div>
+                        <strong class="admin-wrapper-main__card--content"> {{item.name}}</strong>
                     </div>
-                    <strong> {{item.name}}</strong>
-                </div>
-                <div class="card">
-                    <a [routerLink]="item.name">
-                        <button class="button warning">update</button>
-                        <button class="button danger" (click)="delete(item)">delete</button>
-                    </a>
+                    <div class="admin-wrapper-main__card--content">
+                        <a [routerLink]="item.name">
+                            <button class="button warning">update</button>
+                            <button class="button danger" (click)="delete(item)">delete</button>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section>
-        <div *ngFor="let item of data; let i = index;">
-            <div *ngIf="i>14 && i<data.length" class="card card-w">
-                <div>
-                    <div class="card card__title ">
-                        <strong>company/ client:</strong>
+        </section>
+        <section>
+            <div *ngFor="let item of data; let i = index;">
+                <div *ngIf="i>12 && i<data.length" class="admin-wrapper-main__card-tiny">
+                    <div>
+                        <div class="admin-wrapper-main__card--title">
+                            <strong>company/ client:</strong>
+                        </div>
+                        <strong class="admin-wrapper-main__card--content"> {{item.name}}</strong>
                     </div>
-                    <strong> {{item.name}}</strong>
-                </div>
-                <div class="card">
-                    <a [routerLink]="item.name">
-                        <button>update</button>
-                        <button style="align-content: flex-end;" (click)="delete(item)">delete</button>
-                    </a>
+                    <div class="admin-wrapper-main__card--content">
+                        <a [routerLink]="item.name">
+                            <button class="button warning">update</button>
+                            <button class="button danger" (click)="delete(item)">delete</button>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 </div>

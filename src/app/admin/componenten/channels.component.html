@@ -1,11 +1,12 @@
 <!-- Important! classes and id's are used in the ts file -->
-<div class="admin-channels">
-    <section>
-        <div>
+
+   
+        <div class="admin-wrapper-main__topnav">
             <!-- remove margin to to be more like navigation-->
-            <a routerLinkActive="active" routerLink="entrance">entrance </a>
-            <a routerLinkActive="active" routerLink="events">event </a>
+            <a class="admin-wrapper-main__topnav--link" routerLinkActive="active" routerLink="entrance">entrance </a>
+            <a class="admin-wrapper-main__topnav--link" routerLinkActive="active" routerLink="events">event </a>
         </div>
-    </section>
-    <router-outlet></router-outlet>
-</div>
+        <div class="admin-wrapper-main">
+            <router-outlet></router-outlet>
+        </div>
+    

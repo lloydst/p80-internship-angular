@@ -1,33 +1,32 @@
-<div class="admin-channels-contents">
-    <section>
-        <div>
-            <div class="admin-channels-contents__nav">
-                <!-- the first link only appears when on a other channel-->
-                <a *ngIf="!currentChannel" routerLink="" id="link" routerLinkActive="active">kanaal-home</a>
-                <a routerLinkActive="active" routerLink="new">new Channel</a>
-                <a *ngFor="let c of channel" routerLink="{{c.channel}}" routerLinkActive="active" (click)="redirectTo(c.channel)">
-                    {{c.channel}} Channel
-                    <span (click)="delete(c)">X</span>
-                </a>
+<div class="admin-wrapper-main">
+    
+        <div class="admin-wrapper-main__topnav">
 
-            </div>
-            
-            
+            <!-- the first link only appears when on a other channel-->
+            <a class="admin-wrapper-main__topnav--link" *ngIf="!currentChannel" routerLink="" id="link" routerLinkActive="active">kanaal-home</a>
+            <a routerLinkActive="active" class="admin-wrapper-main__topnav--link" routerLink="new">new Channel</a>
+            <a *ngFor="let c of channel" class="admin-wrapper-main__topnav--link" routerLink="{{c.channel}}" routerLinkActive="active"
+                (click)="redirectTo(c.channel)">
+                {{c.channel}} Channel
+                <span class="admin-wrapper-main__topnav--link-remove" (click)="delete(c)">X</span>
+            </a>
+
         </div>
 
 
-        <div *ngIf="!currentChannel">
+        <div *ngIf="!currentChannel" class="admin-wrapper-main__card">
             <!-- wont set nav to active-->
-            <p>
+            <div class="admin-wrapper-main__card--title"></div>
+            <p class="admin-wrapper-main__card--content">
                 Here you can create a new channel, or edit/delete a existing one
             </p>
         </div>
         <!-- if on admin/channels display current Channels-->
+        <div>
+            <router-outlet></router-outlet>
+            <!-- just the template-->
 
-    </section>
-    <div>
-        <router-outlet></router-outlet>
-        <!-- just the template-->
-        
-    </div>
+        </div>
+    
+
 </div>

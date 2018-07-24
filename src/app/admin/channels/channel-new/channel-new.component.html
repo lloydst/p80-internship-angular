@@ -1,65 +1,58 @@
-<div class="admin-channels-new">
-    <section>
-        <div>
-            <p>channels can be made up from components as well as other channels (remember these have their own timings)</p>
-            <form [formGroup]="form" novalidate (ngSubmit)="save(form)">
-                <div>
-                    <label>Channel name:</label>
-                    <input type="text" formControlName="channel">
-                    <small *ngIf="!form.controls.channel.valid">
-                        Name is required (minimum 5 characters).
-                    </small>
-                </div>
-                <!--paths-->
-                <div formArrayName="path">
-                    <div *ngFor="let path of form['controls'].path['controls']; let i=index">
-                        <div>
-                            <span>path {{i + 1}}</span>
-                            <span *ngIf="form.controls.path.controls.length > 1" (click)="removePath(i)"></span>
+<section>
+    <div class="admin-wrapper-main__card">
+        <h1 class="admin-wrapper-main__card--title">Create a channel</h1>
+        <p class="admin-wrapper-main__card--content">channels can be made up from components as well as other channels (remember these have their own timings)</p>
+        <form [formGroup]="form" novalidate (ngSubmit)="save(form)" class="admin-wrapper-main__card--form">
+            <div class="admin-wrapper-main__card--form-group">
+                <label>Channel name:</label>
+                <input type="text" formControlName="channel">
+
+            </div>
+            <!--paths-->
+            <div formArrayName="path">
+                <div *ngFor="let path of form['controls'].path['controls']; let i=index">
+                    <div>
+                        <span>path {{i + 1}}</span>
+                        <span *ngIf="form.controls.path.controls.length > 1" (click)="removePath(i)"></span>
+                    </div>
+                    <div [formGroupName]="i">
+                        <div class="admin-wrapper-main__card--form-group">
+                            <label>path url</label>
+                            <input formControlName="pathurl" class="admin-wrapper-main__card--form-input"/>
                         </div>
-                        <div [formGroupName]="i">
-                            <div>
-                                <label>path url</label>
-                                <input formControlName="pathurl" />
-                                <small> enter the component name after the /</small>
-                            </div>
-                            <div>
-                                <label>description:</label>
-                                <br>
-                                <input type="text" formControlName="description" value="Does this and that" />
-                            </div>
+                        <div class="admin-wrapper-main__card--form-group">
+                            <label>description:</label>
+                            <input type="text" formControlName="description" value="Does this and that"class="admin-wrapper-main__card--form-input" />
+                        </div>
+                        <div class="admin-wrapper-main__card--form-group">
                             <label>delay:</label>
-                            <br>
-                            <input type="number" formControlName="delay">
-                            <small>
-                                1000 = 1 second, so 1 minute = 60000 etc.
-                            </small>
-                            <div>
-                                <label>component name:</label>
-                                <br>
-                                <input type="text" formControlName="componentName">
-                            </div>
-                            <br>
-                            <a (click)="removePath(i)">
-                                <input type="button" class="button warning" value="removePath">
-                            </a>
+                            <input type="number" formControlName="delay" class="admin-wrapper-main__card--form-input">
+                        </div>
+                        <div class="admin-wrapper-main__card--form-group">
+                            <label>component name:</label>
+                            <input type="text" formControlName="componentName" class="admin-wrapper-main__card--form-input">
                         </div>
                         <br>
+                        <a (click)="removePath(i)">
+                            <input type="button" class="button warning" value="removePath">
+                        </a>
                     </div>
+                    <br>
                 </div>
-                <div>
-                    <a (click)="addPath()">
-                        <input class="button succes" type="button" value="Add route">
-                    </a>
-                </div>
-                <br>
-                <div>
-                    <button class="button succes" type="submit" [disabled]="!form.valid">Create</button>
-                </div>
-            </form>
-        </div>
-        <div>
-            <app-listing-components></app-listing-components><!-- lists available components-->
-        </div>
-    </section>
-</div>
+            </div>
+            <div>
+                <a (click)="addPath()">
+                    <input class="button succes" type="button" value="Add route">
+                </a>
+            </div>
+            <br>
+            <div>
+                <button class="button succes" type="submit" [disabled]="!form.valid">Create</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <app-listing-components style="margin-top:0;"></app-listing-components>
+        <!-- lists available components-->
+    </div>
+</section>
