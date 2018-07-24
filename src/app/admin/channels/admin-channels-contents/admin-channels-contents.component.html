@@ -4,10 +4,10 @@
 
             <!-- the first link only appears when on a other channel-->
             <a class="admin-wrapper-main__topnav--link" *ngIf="!currentChannel" routerLink="" id="link" routerLinkActive="active">kanaal-home</a>
-            <a routerLinkActive="active" class="admin-wrapper-main__topnav--link" routerLink="new">new Channel</a>
+            <a routerLinkActive="active" class="admin-wrapper-main__topnav--link" routerLink="new">NEW CHANNEL</a>
             <a *ngFor="let c of channel" class="admin-wrapper-main__topnav--link" routerLink="{{c.channel}}" routerLinkActive="active"
                 (click)="redirectTo(c.channel)">
-                {{c.channel}} Channel
+                {{c.channel.toUpperCase()}} CHANNEL
                 <span class="admin-wrapper-main__topnav--link-remove" (click)="delete(c)">X</span>
             </a>
 
