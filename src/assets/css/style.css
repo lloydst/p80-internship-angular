@@ -315,25 +315,6 @@ section {
   color: white;
 }
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s;
-}
-
-.card__title {
-  background-color: blue;
-  color: white;
-}
-
-.card-container {
-  padding: 2px 16px;
-}
-
-.card-content {
-  background-color: #fff;
-  margin-top: 0;
-}
-
 .weather {
   display: -webkit-box;
   display: -webkit-flex;
