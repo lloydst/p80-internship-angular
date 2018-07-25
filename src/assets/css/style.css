@@ -186,9 +186,13 @@ section {
 }
 
 .admin-wrapper-main__topnav {
+  position: fixed;
   background-color: #00b0e9;
   color: white;
   margin-top: 0;
+  top: 0;
+  width: 100%;
+  border: 1px solid black;
 }
 
 .admin-wrapper-main__topnav--link {
@@ -202,6 +206,7 @@ section {
 }
 
 .admin-wrapper-main__card {
+  border-radius: 5px;
   background-color: white;
   margin: 1em;
   margin-right: 0;
@@ -236,6 +241,7 @@ section {
 }
 
 .admin-wrapper-main__card--title {
+  border-radius: 5px 5px 0 0;
   margin: 0;
   background-color: #00b0e9;
   color: white;

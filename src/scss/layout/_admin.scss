@@ -21,9 +21,13 @@
     
 }
 .admin-wrapper-main__topnav {
+    position: fixed;
     background-color: #00b0e9; //temp
     color:white;//temp
     margin-top:0;
+    top:0;
+    width: 100%;
+    border: 1px solid black
 }
 .admin-wrapper-main__topnav--link {
     padding-left: 5px;
@@ -36,13 +40,13 @@
     
 }
 .admin-wrapper-main__card {
+    border-radius: 5px;
     background-color: white;
     margin:1em;
     margin-right: 0;
     //padding:1em;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-        //border-radius: 5px;
 }
 .admin-wrapper-main__card-tiny {
     background-color: white;
@@ -69,6 +73,7 @@
     padding:1em;
 }
 .admin-wrapper-main__card--title {
+    border-radius: 5px 5px 0 0;
     margin:0;
     background-color:#00b0e9;//temp
     color:white;

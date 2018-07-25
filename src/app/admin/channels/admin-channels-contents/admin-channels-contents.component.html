@@ -14,7 +14,7 @@
         </div>
 
 
-        <div *ngIf="!currentChannel" class="admin-wrapper-main__card">
+        <div style="margin-top:1em" *ngIf="!currentChannel" class="admin-wrapper-main__card">
             <!-- wont set nav to active-->
             <div class="admin-wrapper-main__card--title"></div>
             <p class="admin-wrapper-main__card--content">
@@ -22,7 +22,7 @@
             </p>
         </div>
         <!-- if on admin/channels display current Channels-->
-        <div>
+        <div style="margin-top:1em">
             <router-outlet></router-outlet>
             <!-- just the template-->
 
