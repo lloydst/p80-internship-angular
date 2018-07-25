@@ -8,17 +8,17 @@ RUN mkdir -p /p80tool
 
 # Change directory so that our commands run inside this new directory
 WORKDIR /p80tool
-
+RUN npm i -g @angular/cli
 # Copy dependency definitions
-COPY package.json /p80tool
-
-# Install dependencies using npm post install should handle ng build
-RUN npm i --save -g @angular/cli
-RUN npm install
-
-# Get all the code needed to run the app
 COPY . /p80tool
 
+# Install dependencies using npm post install should handle ng build
 
-#Build the app
+RUN npm install
+RUN ng build --prod --build-optimizer
+# Get all the code needed to run the app
+
+
+
+#start server
 RUN npm run start
