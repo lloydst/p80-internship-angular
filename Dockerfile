@@ -1,16 +1,21 @@
 #==================== Building Stage ================================================ 
 
-# Create the image based on the official Node 8.9.0 image from Dockerhub
-FROM node:8.9.0 as node
-WORKDIR /
+FROM node:8
+
+# Create app directory
+WORKDIR /usr/src/app
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package*.json ./
 RUN npm i -g @angular/cli
-# Copy dependency definitions
-
-# Install dependencies using npm post install should handle ng build
-
 RUN npm install
-RUN ng build --prod --build-optimizer
-# Get all the code needed to run the app
+# If you are building your code for production
+# RUN npm install --only=production
 
-#start server
-RUN npm run start
+# Bundle app source
+COPY . .
+
+EXPOSE 8080
+CMD [ "npm", "start" ]
