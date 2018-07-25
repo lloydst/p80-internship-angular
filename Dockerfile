@@ -1,19 +1,25 @@
-FROM node:latest
+#==================== Building Stage ================================================ 
 
-LABEL author="Lloyd stumpel"
-# need to check if i can make it lighter by removing the angular stuff (including compodoc from the image) 
+# Create the image based on the official Node 8.9.0 image from Dockerhub
+FROM node:8.9.0 as node
 
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-COPY . /usr/src/app/
-RUN npm install @angular/cli@6.0.0 -g
+# Create a directory where our app will be placed. This might not be necessary
+RUN mkdir -p /p80tool
+
+# Change directory so that our commands run inside this new directory
+WORKDIR /p80tool
+
+# Copy dependency definitions
+COPY package.json /p80tool
+
+# Install dependencies using npm
 RUN npm install
-RUN ng build --prod --aot
 
-COPY . /usr/src/app
+# Get all the code needed to run the app
+COPY . /p80tool
 
-RUN npm install pm2 -g 
+# Expose the port the app runs in
 
-EXPOSE 3000
 
-ENTRYPOINT ["pm2-runtime", "pm2config.yml"]
+#Build the app
+RUN npm run start
