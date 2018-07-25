@@ -1,26 +1,25 @@
-<div class="admin-setting-create">
+<div class="admin-wrapper-main">
     <section>
-        <div>
-            <div class="admin-setting-create__title">
-                <h1>if you use the following Ip address, any computer on your network will auto route, to the channel you have
-                    set</h1>
-                <p>your localNetworks ip ={{ipAddress}}</p>
+        <div class="admin-wrapper-main__card--fullwidth">
+            <div >
+                <h2 class="admin-wrapper-main__card--title">add a new 'device'</h2>
+                <p>your localNetwork ip ={{ipAddress}}</p>
             </div>
-            <form class="admin-setting-create__form">
+            <form class="admin-wrapper-main__card--form">
                 <div>
                     <label for="ip">ip</label>
-                    <input #ip type="text">
+                    <input #ip type="text" class="admin-wrapper-main__card--form-input">
                 </div>
                 <div>
                     <label for="channel">channel</label>
-                    <input #channel type="text">
+                    <input #channel type="text" class="admin-wrapper-main__card--form-input">
                 </div>
                 <div>
                     <label for="name">name</label>
-                    <input #name type="text">
+                    <input #name type="text" class="admin-wrapper-main__card--form-input">
                 </div>
                 <button type="submit" (click)="addIpConfig(
-                    {ip:ip.value, channel:channel.value,name:name.value}
+                    {ip:ip.value.trim(), channel:channel.value,name:name.value}
                     )">submit</button>
             </form>
         </div>

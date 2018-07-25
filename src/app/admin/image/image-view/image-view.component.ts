@@ -37,9 +37,14 @@ image;
    * @param delete_me filename of image too delete
    */
   deleteImg(delete_me) {
-    let done = false
+    //let done = false
     this.fileService.deleteImg(delete_me).subscribe(image => {
       this.image = image
+      console.log('marco')
+      
+    },()=>{
+        this.getAllImages()
+        console.log('polo')
     })    
   }
 }

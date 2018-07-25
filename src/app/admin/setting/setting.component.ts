@@ -26,7 +26,10 @@ iptest: string
     }
     
     deleteConfig(ip) {
-        this.ipservice.deleteIp(ip).subscribe()
+        this.ipservice.deleteIp(ip).subscribe(()=>{
+            console.log(''+ip+'')
+            this.getConfigs()
+        })
     }
     getConfigs() {
         this.ipservice.getIps().subscribe(config => {

@@ -1,27 +1,26 @@
 <div class="admin-wrapper-main">
-   
-        <div class="admin-wrapper-main__topnav"> <!-- nav-->
-            <a class="admin-wrapper-main__topnav--link" [routerLink]="['../algemeen']">all</a>
-            <a class="admin-wrapper-main__topnav--link" [routerLink]="['add']">create</a>
-            
-        </div>
-    
+
+    <div class="admin-wrapper-main__topnav">
+        <a class="admin-wrapper-main__topnav--link" [routerLink]="['../algemeen']">all</a>
+        <a class="admin-wrapper-main__topnav--link" [routerLink]="['add']">create</a>
+    </div>
+
     <section>
         <div *ngIf="configs.length < 1" class="admin-wrapper-main__card--fullwidth">
-           <div class="admin-wrapper-main__card--title">Current configs</div>
+            <div class="admin-wrapper-main__card--title">Current configs</div>
             <p class="admin-wrapper-main__card--content">no ip configs have been set</p>
         </div>
-        <div *ngIf="configs.length > 1" class="admin-wrapper-main__card--fullwidth">
-                <div class="admin-wrapper-main__card--title">Current configs</div>
-                <div *ngFor="let c of configs" class="admin-wrapper-main__card">
-                        {{c.name}}
-                        {{c.ip}}
-                        {{c.channel}}
-                        <button (click)="deleteConfig(c.ip)">delete</button>
-                    </div>
-             </div>
-        
+        <div *ngIf="configs.length > 0" class="admin-wrapper-main__card--fullwidth">
+            <div class="admin-wrapper-main__card--title">Current configs</div>
+            <div *ngFor="let c of configs">
+                <div>name:{{c.name}}</div><!-- easy to identify name: entrance screen ip-->
+                <div>ip addres(localip):{{c.ip}}</div><!-- local ip (aka) network ip-->
+                <div>channelname{{c.channel}}</div><!-- channel it should 'auto' navigate too-->
+                <button (click)="deleteConfig(c.ip)">delete</button>
+            </div>
+        </div>
+
     </section>
     <router-outlet></router-outlet>
-    
+
 </div>

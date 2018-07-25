@@ -116,11 +116,11 @@ router.post('/Upload', function (req, res) {
       var gfs = grid(db.db);
       gfs.remove({
         filename: req.params.image
-        }, function (err) {
+        }, function (err,succes) {
           if (err) {
               console.log(err)
             };
-          console.log('success');
+         res.send(succes)
         });
   })
   

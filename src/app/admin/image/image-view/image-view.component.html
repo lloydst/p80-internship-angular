@@ -1,20 +1,24 @@
-<div class="admin-wrapper-main__card--fullwidth" style="overflow-x: auto">
+<div class="admin-wrapper-main">
     <section>
-        <div *ngFor="let i of image" id="images" class="admin-wrapper-main__card--halvewidth" style="margin:1em">
-            <h2 style="margin:0;" class="admin-wrapper-main__card--title">{{i.filename}}</h2>
-            <div *ngIf="i.length > 0">
-                <img style="display: inline-block" src="/images/img/{{i.filename}}" alt="image couldnt be loaded from db wich means the db is still online"
-                    srcset="" style="width:125px; height:125px">
-                <div style="display: inline-block">
-                    
-                    <br> location: "/images/img/{{i.filename}}"
+        <div class="admin-wrapper-main__card--fullwidth" >
+            <h2 class="admin-wrapper-main__card--title" >images</h2>
+            <div *ngFor="let i of image" id="images" class="admin-wrapper-main__card-tiny" style="margin:1em; float: left;width:30%;">
+
+                <h2 style="margin:0;" class="admin-wrapper-main__card--title">{{i.filename}}</h2>
+                <div *ngIf="i.length > 0" style="float: left;"><!-- not fully responsive yet-->
+                    <div>
+                        <img src="/images/img/{{i.filename}}" alt="image couldnt be loaded from db wich means the db is still online" srcset="" style="width:125px; height:125px">
+                    </div>
+                    <div >
+                        <br> location: "/images/img/{{i.filename}}"
+                        <br>
+                        <button class="button warning" (click)="deleteImg(i.filename)">delete</button>
+                    </div>
                     <br>
-                    <button class="button warning" (click)="deleteImg(i.filename)">delete</button>
                 </div>
-                <br>
-            </div>
-            <div *ngIf="image.length < 1">
-                no images currently in db
+                <div *ngIf="image.length < 1">
+                    no images currently in db
+                </div>
             </div>
         </div>
     </section>

@@ -41,5 +41,6 @@ export class IpService {
    */
   deleteIp(ip: String){
     return this.http.delete('/api/ipconfig/'+ip+'')
+    
   }
 }

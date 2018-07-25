@@ -1,5 +1,5 @@
 <div class="admin-wrapper-main">
-    <section >
+    <section>
         <div class="admin-wrapper-main__card--fullwidth">
             <h2 class="admin-wrapper-main__card--title">add a new client to the loop</h2>
             <form [formGroup]="websiteForm" class="admin-wrapper-main__card--form">
@@ -20,11 +20,12 @@
         </div>
     </section>
     <div class="admin-wrapper-main__card--fullwidth">
-            <div class="admin-wrapper-main__card--title">Current websites in loop:</div>
+        <div class="admin-wrapper-main__card--title">Current websites in loop:</div>
         <section>
             <div *ngFor="let item of data; let i = index;">
+                
                 <div *ngIf="i<=5" class="admin-wrapper-main__card-tiny">
-                    <div >
+                    <div>
                         <div class="admin-wrapper-main__card--title">
                             <strong>company/ client:</strong>
                         </div>

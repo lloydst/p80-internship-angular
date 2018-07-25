@@ -34,11 +34,11 @@ router.get('/:ip',function (req,res){
     
 });
 router.delete('/:ip',function (req,res){
-    Ip.findOneAndRemove({ip: req.params.ip},function(err, res) {
+    Ip.findOneAndRemove({ip: req.params.ip},function(err, deletedIp) {
         if (err) {
             console.log(err)
         }
-        // deleted
+        res.send(deletedIp)
     })
     
 });

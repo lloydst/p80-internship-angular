@@ -1,51 +1,57 @@
 <!-- Important! classes and id's are used in the ts file -->
-<div class="admin-componenten-channels-events">
+<div class="admin-wrapper-main">
     <section>
-        <div>
-            <h2>Message's</h2>
-            <form (ngSubmit)="create(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, id.value); eventForm.reset()"
+        <div class="admin-wrapper-main__card">
+            <h2 class="admin-wrapper-main__card--title">Create a Message here</h2>
+            <form class="admin-wrapper-main__card--form" (ngSubmit)="create(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, id.value); eventForm.reset()"
                 [formGroup]="eventForm">
-                <div class="form-group">
+                <div class="admin-wrapper-main__card--form-group">
                     <label for="id">message name:</label>
-                    <input #id type="text" name="identifier" formControlName="id" required>
+                    <input class="admin-wrapper-main__card--form-input" #id type="text" name="identifier" formControlName="id" required>
                 </div>
-                <div class="form-group">
-                    <label for="message">message: </label><br>
-                    <input #message type="text" required formControlName="message">
+                <div class="admin-wrapper-main__card--form-group">
+                    <label for="message">message: </label>
+                    <br>
+                    <input class="admin-wrapper-main__card--form-input" #message type="text" required formControlName="message">
                 </div>
-                <div class="form-group">
+                <div class="admin-wrapper-main__card--form-group">
                     <label for="showFrom">zichtbaar van af:</label>
-                    <input class="validity" type="datetime-local" name="showFrom" #showFrom id="showFrom" required formControlName="showFrom">
-                    
+                    <input class="admin-wrapper-main__card--form-input" type="datetime-local" name="showFrom" #showFrom id="showFrom" required
+                        formControlName="showFrom">
                 </div>
-                <div class="form-group">
+                <div class="admin-wrapper-main__card--form-group">
                     <label for="showTill">zichtbaar tot:</label>
-                    <input type="datetime-local" name="showTill" #showTill id="showTill" required formControlName="showTill">
+                    <input class="admin-wrapper-main__card--form-input" type="datetime-local" name="showTill" #showTill id="showTill" required
+                        formControlName="showTill">
                 </div>
-                <div class="form-group">
+                <div class="admin-wrapper-main__card--form-group">
                     <label for="imgUrl">achtergrond img:</label>
-                    <input #imgUrl type="text" formControlName="imgUrl">
+                    <input class="admin-wrapper-main__card--form-input" #imgUrl type="text" formControlName="imgUrl">
                 </div>
-                <div class="form-group">
+                <div class="admin-wrapper-main__card--form-group">
                     <label for="imgBoolean">visable</label>
                     <input (click)="check(event)" #imgBoolean type="checkbox">
                 </div>
                 <button type="submit" class="button succes" [disabled]="!eventForm.valid">Add</button>
             </form>
         </div>
-        <div>
+        <div class="admin-wrapper-main__card" style="margin-right: 1em;">
             <table>
-                <th>identifier</th>
-                <th>Message</th>
-                <th>show (from-untill)</th>
-                <th>img url</th>
-                <th>visable</th>
-                <th>update</th>
-                <th>delete</th>
-                <tr *ngFor="let message of data">
+                <thead class="admin-wrapper-main__card--title">
+                    <th>identifier</th>
+                    <th>Message</th>
+                    <th>show (from-untill)</th>
+                    <th>img url</th>
+                    <th>visable</th>
+                    <th>update</th>
+                    <th>delete</th>
+                </thead>
+                <tr class="admin-wrapper-main__card--content" *ngFor="let message of data">
                     <td>{{message.identifier}}</td>
                     <td>{{message.message}}</td>
-                    <td>{{message.showFrom}} untill: {{message.showTill}}</td>
+                    <td>{{message.showFrom.substring(8, 10)}}-{{message.showFrom.substring(5, 7)}}({{message.showFrom.substring(11,
+                        16)}}) untill {{message.showTill.substring(8, 10)}}-{{message.showTill.substring(5, 7)}}({{message.showTill.substring(11,
+                        16)}})</td>
                     <td>{{message.imgLink}}</td>
                     <td>{{message.img}}</td>
                     <td>
