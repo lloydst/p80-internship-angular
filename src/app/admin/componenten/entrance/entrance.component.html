@@ -1,17 +1,15 @@
 <div class="admin-wrapper-main" style="margin-top:1em">
-    <section>
+    <section><!--acts like a row-->
         <div class="admin-wrapper-main__card--fullwidth" style="min-width: 18%;">
             <h2 class="admin-wrapper-main__card--title" >Add a new client to the loop</h2>
             <form [formGroup]="websiteForm" class="admin-wrapper-main__card--form">
                 <div class="admin-wrapper-main__card--form-group">
                     <label for="client">client:</label>
-                    <br>
                     <input class="admin-wrapper-main__card--form-input" #website name="client" type="text" required formControlName="website">
                 </div>
 
                 <div>
                     <label for="url">Website's url:</label>
-
                     <input class="admin-wrapper-main__card--form-input" type="text" name="url" #url required formControlName="url">
                 </div>
                 <br>
@@ -22,7 +20,7 @@
             <div class="admin-wrapper-main__card--title">Current websites in loop:</div>
 
             <div *ngFor="let item of data; let i = index;" class="admin-wrapper-main__card-tiny" style="margin:1em;  max-width: 80%;float:left">
-                <div class="admin-wrapper-main__card--title">
+                <div class="admin-wrapper-main__card--title-item">
                     <strong>company/ client:</strong>
                 </div>
                 <strong class="admin-wrapper-main__card--content"> {{item.name}}</strong>

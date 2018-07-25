@@ -20,9 +20,12 @@
     min-height: 100%;
     
 }
+//--------------------
+// admin topnav
+// -------------------
 .admin-wrapper-main__topnav {
     position: fixed;
-    background-color: #00b0e9; //temp
+    background-color: darkgrey; //temp
     color:white;//temp
     margin-top:0;
     top:0;
@@ -39,6 +42,9 @@
     color:red;//temp
     
 }
+//--------------------
+// admin card
+// -------------------
 .admin-wrapper-main__card {
     border-radius: 5px;
     background-color: white;
@@ -78,6 +84,12 @@
     background-color:#00b0e9;//temp
     color:white;
 }
+.admin-wrapper-main__card--title-item {
+    border-radius: 5px 5px 0 0;
+    margin:0;
+    background-color:grey;//temp
+    color:white;
+}
 .admin-wrapper-main__card--content {
     // background-color: white; //temp
     padding:1em;
@@ -107,6 +119,9 @@
     position: absolute;
     z-index: 1;
 }
+//--------------------
+// admin tooltip
+// -------------------
 .admin-wrapper-main__card--form--tooltip:hover .admin-wrapper-main__card--form--tooltiptext{
     visibility: visible;
 } 
@@ -118,7 +133,7 @@
     font-family: Supernormale, sans-serif;
 }
 //-------------------------------------
-//               side-navigation
+//               side-nav (uses grid)
 //-------------------------------------
 .sidenav{
     #link {
@@ -149,6 +164,5 @@
       .grid-side-nav a:hover {
           color: #f1f1f1;
       }
-      
 }
 
