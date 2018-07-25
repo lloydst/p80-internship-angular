@@ -12,13 +12,12 @@ WORKDIR /p80tool
 # Copy dependency definitions
 COPY package.json /p80tool
 
-# Install dependencies using npm
+# Install dependencies using npm post install should handle ng build
+RUN npm i --save -g @angular/cli
 RUN npm install
 
 # Get all the code needed to run the app
 COPY . /p80tool
-
-# Expose the port the app runs in
 
 
 #Build the app
