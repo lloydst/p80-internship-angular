@@ -2,7 +2,7 @@
 
 # Create the image based on the official Node 8.9.0 image from Dockerhub
 FROM node:8.9.0 as node
-
+WORKDIR /
 RUN npm i -g @angular/cli
 # Copy dependency definitions
 
