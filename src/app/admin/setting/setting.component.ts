@@ -24,13 +24,19 @@ iptest: string
         this.getConfigs()
         
     }
-    
+    /**
+     * delete ip function
+     * @param ip ip to delete
+     */
     deleteConfig(ip) {
         this.ipservice.deleteIp(ip).subscribe(()=>{
             console.log(''+ip+'')
             this.getConfigs()
         })
     }
+    /**
+     * get saved 'configs' from db
+     */
     getConfigs() {
         this.ipservice.getIps().subscribe(config => {
             this.configs = config

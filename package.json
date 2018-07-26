@@ -18,6 +18,7 @@
     "e2e": "ng e2e",
     "doc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -d docs --theme stripe",
     "doc:watch": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -s -w -d docs --theme stripe"
+    
   },
   "private": true,
   "dependencies": {
@@ -93,6 +94,22 @@
     "swagger-ui-express": "^3.0.9",
     "ts-node": "~4.1.0",
     "tslint": "~5.9.1",
-    "typescript": "<2.8.0"
+    "typescript": "<2.8.0",
+    "del": "^3.0.0",
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.9.2",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-if": "^2.0.2",
+    "gulp-replace": "^0.6.1",
+    "gulp-sass": "^3.1.0",
+    "path": "^0.12.7",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.54.0",
+    "run-sequence": "^2.2.1",
+    "sorcery": "^0.10.0",
+    "sync-json": "^1.0.2",
+    "through2": "^2.0.3",
+    "gulp-autoprefixer": "^5.0.0"
   }
 }

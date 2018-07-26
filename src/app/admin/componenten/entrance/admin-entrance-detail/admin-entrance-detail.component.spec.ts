@@ -21,7 +21,7 @@ describe('AdminEntranceDetailComponent', () => {
         RouterTestingModule,
         HttpClientModule,
         HttpClientTestingModule,
-      ReactiveFormsModule,
+        ReactiveFormsModule,
     FormsModule],
       providers:[
         DataService,

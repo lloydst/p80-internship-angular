@@ -1,5 +1,5 @@
 <!-- Important! classes and id's are used in the ts file -->
-<div class="admin-wrapper-main">
+<div class="admin-wrapper-main" style="margin-top: 1em">
     <section>
         <div class="admin-wrapper-main__card">
             <h2 class="admin-wrapper-main__card--title">Create a Message here</h2>
@@ -35,7 +35,7 @@
                 <button type="submit" class="button succes" [disabled]="!eventForm.valid">Add</button>
             </form>
         </div>
-        <div class="admin-wrapper-main__card" style="margin-right: 1em;">
+        <div class="admin-wrapper-main__card--fullwidth" style="margin-right: 1em;">
             <table>
                 <thead class="admin-wrapper-main__card--title">
                     <th>identifier</th>
@@ -51,7 +51,8 @@
                     <td>{{message.message}}</td>
                     <td>{{message.showFrom.substring(8, 10)}}-{{message.showFrom.substring(5, 7)}}({{message.showFrom.substring(11,
                         16)}}) untill {{message.showTill.substring(8, 10)}}-{{message.showTill.substring(5, 7)}}({{message.showTill.substring(11,
-                        16)}})</td>
+                        16)}})
+                    </td>
                     <td>{{message.imgLink}}</td>
                     <td>{{message.img}}</td>
                     <td>
