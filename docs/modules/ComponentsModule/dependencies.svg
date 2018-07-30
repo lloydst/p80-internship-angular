@@ -28,155 +28,155 @@
 <title>cluster_ComponentsModule_declarations</title>
 <polygon fill="none" stroke="#000000" points="16,-78 16,-130 1781,-130 1781,-78 16,-78"/>
 </g>
-<!-- ComponentsComponent -->
+<!-- AllComponent -->
 <g id="node1" class="node">
-<title>ComponentsComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="1773.1094,-122 1620.8906,-122 1620.8906,-86 1773.1094,-86 1773.1094,-122"/>
-<text text-anchor="middle" x="1697" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ComponentsComponent</text>
+<title>AllComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1772.7204,-122 1673.2796,-122 1673.2796,-86 1772.7204,-86 1772.7204,-122"/>
+<text text-anchor="middle" x="1723" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AllComponent</text>
 </g>
 <!-- ComponentsModule -->
 <g id="node13" class="node">
 <title>ComponentsModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="924.3272,-187 921.3272,-191 900.3272,-191 897.3272,-187 793.6728,-187 793.6728,-151 924.3272,-151 924.3272,-187"/>
-<text text-anchor="middle" x="859" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">ComponentsModule</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="961.3272,-187 958.3272,-191 937.3272,-191 934.3272,-187 830.6728,-187 830.6728,-151 961.3272,-151 961.3272,-187"/>
+<text text-anchor="middle" x="896" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">ComponentsModule</text>
+</g>
+<!-- AllComponent&#45;&gt;ComponentsModule -->
+<g id="edge1" class="edge">
+<title>AllComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M1723,-122.0908C1723,-145.1328 1723,-182 1723,-182 1723,-182 971.2385,-182 971.2385,-182"/>
+<polygon fill="#000000" stroke="#000000" points="971.2386,-178.5001 961.2385,-182 971.2385,-185.5001 971.2386,-178.5001"/>
+</g>
+<!-- BuildServersComponent -->
+<g id="node2" class="node">
+<title>BuildServersComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1655.4284,-122 1500.5716,-122 1500.5716,-86 1655.4284,-86 1655.4284,-122"/>
+<text text-anchor="middle" x="1578" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">BuildServersComponent</text>
+</g>
+<!-- BuildServersComponent&#45;&gt;ComponentsModule -->
+<g id="edge2" class="edge">
+<title>BuildServersComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M1578,-122.2843C1578,-143.3211 1578,-175 1578,-175 1578,-175 971.393,-175 971.393,-175"/>
+<polygon fill="#000000" stroke="#000000" points="971.3931,-171.5001 961.393,-175 971.393,-178.5001 971.3931,-171.5001"/>
+</g>
+<!-- ComponentsComponent -->
+<g id="node3" class="node">
+<title>ComponentsComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1483.1094,-122 1330.8906,-122 1330.8906,-86 1483.1094,-86 1483.1094,-122"/>
+<text text-anchor="middle" x="1407" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ComponentsComponent</text>
 </g>
 <!-- ComponentsComponent&#45;&gt;ComponentsModule -->
-<g id="edge1" class="edge">
-<title>ComponentsComponent&#45;&gt;ComponentsModule</title>
-<path fill="none" stroke="#000000" d="M1697,-122.0908C1697,-145.1328 1697,-182 1697,-182 1697,-182 934.4074,-182 934.4074,-182"/>
-<polygon fill="#000000" stroke="#000000" points="934.4074,-178.5001 924.4074,-182 934.4074,-185.5001 934.4074,-178.5001"/>
-</g>
-<!-- WebsiteLoopComponent -->
-<g id="node2" class="node">
-<title>WebsiteLoopComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="1603.2548,-122 1446.7452,-122 1446.7452,-86 1603.2548,-86 1603.2548,-122"/>
-<text text-anchor="middle" x="1525" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">WebsiteLoopComponent</text>
-</g>
-<!-- WebsiteLoopComponent&#45;&gt;ComponentsModule -->
-<g id="edge2" class="edge">
-<title>WebsiteLoopComponent&#45;&gt;ComponentsModule</title>
-<path fill="none" stroke="#000000" d="M1525,-122.2843C1525,-143.3211 1525,-175 1525,-175 1525,-175 934.3761,-175 934.3761,-175"/>
-<polygon fill="#000000" stroke="#000000" points="934.3762,-171.5001 924.3761,-175 934.3761,-178.5001 934.3762,-171.5001"/>
-</g>
-<!-- MeetingComponent -->
-<g id="node3" class="node">
-<title>MeetingComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="1428.9874,-122 1301.0126,-122 1301.0126,-86 1428.9874,-86 1428.9874,-122"/>
-<text text-anchor="middle" x="1365" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">MeetingComponent</text>
-</g>
-<!-- MeetingComponent&#45;&gt;ComponentsModule -->
 <g id="edge3" class="edge">
-<title>MeetingComponent&#45;&gt;ComponentsModule</title>
-<path fill="none" stroke="#000000" d="M1365,-122.1061C1365,-141.3391 1365,-169 1365,-169 1365,-169 934.3731,-169 934.3731,-169"/>
-<polygon fill="#000000" stroke="#000000" points="934.3732,-165.5001 924.3731,-169 934.3731,-172.5001 934.3732,-165.5001"/>
+<title>ComponentsComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M1407,-122.1061C1407,-141.3391 1407,-169 1407,-169 1407,-169 971.2375,-169 971.2375,-169"/>
+<polygon fill="#000000" stroke="#000000" points="971.2376,-165.5001 961.2375,-169 971.2375,-172.5001 971.2376,-165.5001"/>
+</g>
+<!-- CustomComponent -->
+<g id="node4" class="node">
+<title>CustomComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="1312.3948,-122 1187.6052,-122 1187.6052,-86 1312.3948,-86 1312.3948,-122"/>
+<text text-anchor="middle" x="1250" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CustomComponent</text>
+</g>
+<!-- CustomComponent&#45;&gt;ComponentsModule -->
+<g id="edge4" class="edge">
+<title>CustomComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M1250,-122.0225C1250,-139.3734 1250,-163 1250,-163 1250,-163 971.3416,-163 971.3416,-163"/>
+<polygon fill="#000000" stroke="#000000" points="971.3416,-159.5001 961.3416,-163 971.3416,-166.5001 971.3416,-159.5001"/>
 </g>
 <!-- EventComponent -->
-<g id="node4" class="node">
+<g id="node5" class="node">
 <title>EventComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="1282.9902,-122 1169.0098,-122 1169.0098,-86 1282.9902,-86 1282.9902,-122"/>
-<text text-anchor="middle" x="1226" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">EventComponent</text>
+<polygon fill="#ffffb3" stroke="#000000" points="1169.9902,-122 1056.0098,-122 1056.0098,-86 1169.9902,-86 1169.9902,-122"/>
+<text text-anchor="middle" x="1113" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">EventComponent</text>
 </g>
 <!-- EventComponent&#45;&gt;ComponentsModule -->
-<g id="edge4" class="edge">
-<title>EventComponent&#45;&gt;ComponentsModule</title>
-<path fill="none" stroke="#000000" d="M1226,-122.0225C1226,-139.3734 1226,-163 1226,-163 1226,-163 934.1894,-163 934.1894,-163"/>
-<polygon fill="#000000" stroke="#000000" points="934.1894,-159.5001 924.1894,-163 934.1893,-166.5001 934.1894,-159.5001"/>
-</g>
-<!-- SupportComponent -->
-<g id="node5" class="node">
-<title>SupportComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="1150.6666,-122 1025.3334,-122 1025.3334,-86 1150.6666,-86 1150.6666,-122"/>
-<text text-anchor="middle" x="1088" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">SupportComponent</text>
-</g>
-<!-- SupportComponent&#45;&gt;ComponentsModule -->
 <g id="edge5" class="edge">
-<title>SupportComponent&#45;&gt;ComponentsModule</title>
-<path fill="none" stroke="#000000" d="M1088,-122.2396C1088,-137.5706 1088,-157 1088,-157 1088,-157 934.3157,-157 934.3157,-157"/>
-<polygon fill="#000000" stroke="#000000" points="934.3158,-153.5001 924.3157,-157 934.3157,-160.5001 934.3158,-153.5001"/>
+<title>EventComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M1113,-122.2396C1113,-137.5706 1113,-157 1113,-157 1113,-157 971.4014,-157 971.4014,-157"/>
+<polygon fill="#000000" stroke="#000000" points="971.4015,-153.5001 961.4014,-157 971.4014,-160.5001 971.4015,-153.5001"/>
 </g>
 <!-- FinancialComponent -->
 <g id="node6" class="node">
 <title>FinancialComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="1006.9313,-122 873.0687,-122 873.0687,-86 1006.9313,-86 1006.9313,-122"/>
-<text text-anchor="middle" x="940" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">FinancialComponent</text>
+<polygon fill="#ffffb3" stroke="#000000" points="1037.9313,-122 904.0687,-122 904.0687,-86 1037.9313,-86 1037.9313,-122"/>
+<text text-anchor="middle" x="971" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">FinancialComponent</text>
 </g>
 <!-- FinancialComponent&#45;&gt;ComponentsModule -->
 <g id="edge6" class="edge">
 <title>FinancialComponent&#45;&gt;ComponentsModule</title>
-<path fill="none" stroke="#000000" d="M898.7241,-122.1061C898.7241,-122.1061 898.7241,-140.991 898.7241,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="895.2241,-140.9909 898.7241,-150.991 902.2241,-140.991 895.2241,-140.9909"/>
+<path fill="none" stroke="#000000" d="M932.7241,-122.1061C932.7241,-122.1061 932.7241,-140.991 932.7241,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="929.2241,-140.9909 932.7241,-150.991 936.2241,-140.991 929.2241,-140.9909"/>
 </g>
-<!-- BuildServersComponent -->
+<!-- MeetingComponent -->
 <g id="node7" class="node">
-<title>BuildServersComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="855.4284,-122 700.5716,-122 700.5716,-86 855.4284,-86 855.4284,-122"/>
-<text text-anchor="middle" x="778" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">BuildServersComponent</text>
+<title>MeetingComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="885.9874,-122 758.0126,-122 758.0126,-86 885.9874,-86 885.9874,-122"/>
+<text text-anchor="middle" x="822" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">MeetingComponent</text>
 </g>
-<!-- BuildServersComponent&#45;&gt;ComponentsModule -->
+<!-- MeetingComponent&#45;&gt;ComponentsModule -->
 <g id="edge7" class="edge">
-<title>BuildServersComponent&#45;&gt;ComponentsModule</title>
-<path fill="none" stroke="#000000" d="M824.5252,-122.1061C824.5252,-122.1061 824.5252,-140.991 824.5252,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="821.0253,-140.9909 824.5252,-150.991 828.0253,-140.991 821.0253,-140.9909"/>
-</g>
-<!-- WeatherComponent -->
-<g id="node8" class="node">
-<title>WeatherComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="682.2423,-122 553.7577,-122 553.7577,-86 682.2423,-86 682.2423,-122"/>
-<text text-anchor="middle" x="618" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">WeatherComponent</text>
-</g>
-<!-- WeatherComponent&#45;&gt;ComponentsModule -->
-<g id="edge8" class="edge">
-<title>WeatherComponent&#45;&gt;ComponentsModule</title>
-<path fill="none" stroke="#000000" d="M618,-122.2396C618,-137.5706 618,-157 618,-157 618,-157 783.7819,-157 783.7819,-157"/>
-<polygon fill="#000000" stroke="#000000" points="783.782,-160.5001 793.7819,-157 783.7819,-153.5001 783.782,-160.5001"/>
-</g>
-<!-- AllComponent -->
-<g id="node9" class="node">
-<title>AllComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="535.7204,-122 436.2796,-122 436.2796,-86 535.7204,-86 535.7204,-122"/>
-<text text-anchor="middle" x="486" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">AllComponent</text>
-</g>
-<!-- AllComponent&#45;&gt;ComponentsModule -->
-<g id="edge9" class="edge">
-<title>AllComponent&#45;&gt;ComponentsModule</title>
-<path fill="none" stroke="#000000" d="M486,-122.0225C486,-139.3734 486,-163 486,-163 486,-163 783.6015,-163 783.6015,-163"/>
-<polygon fill="#000000" stroke="#000000" points="783.6016,-166.5001 793.6015,-163 783.6015,-159.5001 783.6016,-166.5001"/>
-</g>
-<!-- CustomComponent -->
-<g id="node10" class="node">
-<title>CustomComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="418.3948,-122 293.6052,-122 293.6052,-86 418.3948,-86 418.3948,-122"/>
-<text text-anchor="middle" x="356" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">CustomComponent</text>
-</g>
-<!-- CustomComponent&#45;&gt;ComponentsModule -->
-<g id="edge10" class="edge">
-<title>CustomComponent&#45;&gt;ComponentsModule</title>
-<path fill="none" stroke="#000000" d="M356,-122.1061C356,-141.3391 356,-169 356,-169 356,-169 783.7572,-169 783.7572,-169"/>
-<polygon fill="#000000" stroke="#000000" points="783.7572,-172.5001 793.7572,-169 783.7572,-165.5001 783.7572,-172.5001"/>
+<title>MeetingComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M858.4152,-122.1061C858.4152,-122.1061 858.4152,-140.991 858.4152,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="854.9152,-140.9909 858.4152,-150.991 861.9152,-140.991 854.9152,-140.9909"/>
 </g>
 <!-- NewsComponent -->
-<g id="node11" class="node">
+<g id="node8" class="node">
 <title>NewsComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="275.705,-122 162.295,-122 162.295,-86 275.705,-86 275.705,-122"/>
-<text text-anchor="middle" x="219" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">NewsComponent</text>
+<polygon fill="#ffffb3" stroke="#000000" points="739.705,-122 626.295,-122 626.295,-86 739.705,-86 739.705,-122"/>
+<text text-anchor="middle" x="683" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">NewsComponent</text>
 </g>
 <!-- NewsComponent&#45;&gt;ComponentsModule -->
-<g id="edge11" class="edge">
+<g id="edge8" class="edge">
 <title>NewsComponent&#45;&gt;ComponentsModule</title>
-<path fill="none" stroke="#000000" d="M219,-122.2843C219,-143.3211 219,-175 219,-175 219,-175 783.8142,-175 783.8142,-175"/>
-<polygon fill="#000000" stroke="#000000" points="783.8142,-178.5001 793.8142,-175 783.8141,-171.5001 783.8142,-178.5001"/>
+<path fill="none" stroke="#000000" d="M683,-122.2396C683,-137.5706 683,-157 683,-157 683,-157 820.6454,-157 820.6454,-157"/>
+<polygon fill="#000000" stroke="#000000" points="820.6455,-160.5001 830.6454,-157 820.6454,-153.5001 820.6455,-160.5001"/>
+</g>
+<!-- SupportComponent -->
+<g id="node9" class="node">
+<title>SupportComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="608.6666,-122 483.3334,-122 483.3334,-86 608.6666,-86 608.6666,-122"/>
+<text text-anchor="middle" x="546" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">SupportComponent</text>
+</g>
+<!-- SupportComponent&#45;&gt;ComponentsModule -->
+<g id="edge9" class="edge">
+<title>SupportComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M546,-122.0225C546,-139.3734 546,-163 546,-163 546,-163 820.5783,-163 820.5783,-163"/>
+<polygon fill="#000000" stroke="#000000" points="820.5783,-166.5001 830.5783,-163 820.5782,-159.5001 820.5783,-166.5001"/>
 </g>
 <!-- TrafficComponent -->
-<g id="node12" class="node">
+<g id="node10" class="node">
 <title>TrafficComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="144.1867,-122 23.8133,-122 23.8133,-86 144.1867,-86 144.1867,-122"/>
-<text text-anchor="middle" x="84" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">TrafficComponent</text>
+<polygon fill="#ffffb3" stroke="#000000" points="465.1867,-122 344.8133,-122 344.8133,-86 465.1867,-86 465.1867,-122"/>
+<text text-anchor="middle" x="405" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">TrafficComponent</text>
 </g>
 <!-- TrafficComponent&#45;&gt;ComponentsModule -->
-<g id="edge12" class="edge">
+<g id="edge10" class="edge">
 <title>TrafficComponent&#45;&gt;ComponentsModule</title>
-<path fill="none" stroke="#000000" d="M84,-122.0908C84,-145.1328 84,-182 84,-182 84,-182 783.5919,-182 783.5919,-182"/>
-<polygon fill="#000000" stroke="#000000" points="783.5919,-185.5001 793.5919,-182 783.5918,-178.5001 783.5919,-185.5001"/>
+<path fill="none" stroke="#000000" d="M405,-122.1061C405,-141.3391 405,-169 405,-169 405,-169 820.799,-169 820.799,-169"/>
+<polygon fill="#000000" stroke="#000000" points="820.799,-172.5001 830.799,-169 820.799,-165.5001 820.799,-172.5001"/>
+</g>
+<!-- WeatherComponent -->
+<g id="node11" class="node">
+<title>WeatherComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="327.2423,-122 198.7577,-122 198.7577,-86 327.2423,-86 327.2423,-122"/>
+<text text-anchor="middle" x="263" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">WeatherComponent</text>
+</g>
+<!-- WeatherComponent&#45;&gt;ComponentsModule -->
+<g id="edge11" class="edge">
+<title>WeatherComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M263,-122.2843C263,-143.3211 263,-175 263,-175 263,-175 820.6421,-175 820.6421,-175"/>
+<polygon fill="#000000" stroke="#000000" points="820.6421,-178.5001 830.6421,-175 820.642,-171.5001 820.6421,-178.5001"/>
+</g>
+<!-- WebsiteLoopComponent -->
+<g id="node12" class="node">
+<title>WebsiteLoopComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="180.2548,-122 23.7452,-122 23.7452,-86 180.2548,-86 180.2548,-122"/>
+<text text-anchor="middle" x="102" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">WebsiteLoopComponent</text>
+</g>
+<!-- WebsiteLoopComponent&#45;&gt;ComponentsModule -->
+<g id="edge12" class="edge">
+<title>WebsiteLoopComponent&#45;&gt;ComponentsModule</title>
+<path fill="none" stroke="#000000" d="M102,-122.0908C102,-145.1328 102,-182 102,-182 102,-182 820.6863,-182 820.6863,-182"/>
+<polygon fill="#000000" stroke="#000000" points="820.6863,-185.5001 830.6863,-182 820.6862,-178.5001 820.6863,-185.5001"/>
 </g>
 </g>
 </svg>

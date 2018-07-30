@@ -7,7 +7,6 @@
   },
   "license": "MIT",
   "scripts": {
-    "test": "ng test",
     "server": "nodemon server.js",
     "dev": "ng build --watch",
     "postinstall": "npm run build",
@@ -15,7 +14,7 @@
     "start": "node server.js",
     "build": "ng build --aot --prod",
     "lint": "ng lint",
-    "e2e": "ng e2e",
+    "test": "ng e2e",
     "doc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -d docs --theme stripe",
     "doc:watch": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -s -w -d docs --theme stripe"
   },

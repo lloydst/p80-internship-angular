@@ -32,35 +32,35 @@
 <title>cluster_ChannelsModule_imports</title>
 <polygon fill="none" stroke="#000000" points="16,-78 16,-130 188,-130 188,-78 16,-78"/>
 </g>
-<!-- ChannelsComponent -->
+<!-- ChannelComponent -->
 <g id="node1" class="node">
-<title>ChannelsComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="483.9341,-122 350.0659,-122 350.0659,-86 483.9341,-86 483.9341,-122"/>
-<text text-anchor="middle" x="417" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ChannelsComponent</text>
+<title>ChannelComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="483.9888,-122 356.0112,-122 356.0112,-86 483.9888,-86 483.9888,-122"/>
+<text text-anchor="middle" x="420" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ChannelComponent</text>
 </g>
 <!-- ChannelsModule -->
 <g id="node3" class="node">
 <title>ChannelsModule</title>
-<polygon fill="#8dd3c7" stroke="#000000" points="323.6513,-187 320.6513,-191 299.6513,-191 296.6513,-187 212.3487,-187 212.3487,-151 323.6513,-151 323.6513,-187"/>
-<text text-anchor="middle" x="268" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">ChannelsModule</text>
-</g>
-<!-- ChannelsComponent&#45;&gt;ChannelsModule -->
-<g id="edge1" class="edge">
-<title>ChannelsComponent&#45;&gt;ChannelsModule</title>
-<path fill="none" stroke="#000000" d="M417,-122.1061C417,-141.3391 417,-169 417,-169 417,-169 333.906,-169 333.906,-169"/>
-<polygon fill="#000000" stroke="#000000" points="333.9061,-165.5001 323.906,-169 333.906,-172.5001 333.9061,-165.5001"/>
-</g>
-<!-- ChannelComponent -->
-<g id="node2" class="node">
-<title>ChannelComponent</title>
-<polygon fill="#ffffb3" stroke="#000000" points="331.9888,-122 204.0112,-122 204.0112,-86 331.9888,-86 331.9888,-122"/>
-<text text-anchor="middle" x="268" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ChannelComponent</text>
+<polygon fill="#8dd3c7" stroke="#000000" points="326.6513,-187 323.6513,-191 302.6513,-191 299.6513,-187 215.3487,-187 215.3487,-151 326.6513,-151 326.6513,-187"/>
+<text text-anchor="middle" x="271" y="-164.8" font-family="Times,serif" font-size="14.00" fill="#000000">ChannelsModule</text>
 </g>
 <!-- ChannelComponent&#45;&gt;ChannelsModule -->
-<g id="edge2" class="edge">
+<g id="edge1" class="edge">
 <title>ChannelComponent&#45;&gt;ChannelsModule</title>
-<path fill="none" stroke="#000000" d="M268,-122.1061C268,-122.1061 268,-140.991 268,-140.991"/>
-<polygon fill="#000000" stroke="#000000" points="264.5001,-140.9909 268,-150.991 271.5001,-140.991 264.5001,-140.9909"/>
+<path fill="none" stroke="#000000" d="M420,-122.1061C420,-141.3391 420,-169 420,-169 420,-169 336.906,-169 336.906,-169"/>
+<polygon fill="#000000" stroke="#000000" points="336.9061,-165.5001 326.906,-169 336.906,-172.5001 336.9061,-165.5001"/>
+</g>
+<!-- ChannelsComponent -->
+<g id="node2" class="node">
+<title>ChannelsComponent</title>
+<polygon fill="#ffffb3" stroke="#000000" points="337.9341,-122 204.0659,-122 204.0659,-86 337.9341,-86 337.9341,-122"/>
+<text text-anchor="middle" x="271" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">ChannelsComponent</text>
+</g>
+<!-- ChannelsComponent&#45;&gt;ChannelsModule -->
+<g id="edge2" class="edge">
+<title>ChannelsComponent&#45;&gt;ChannelsModule</title>
+<path fill="none" stroke="#000000" d="M271,-122.1061C271,-122.1061 271,-140.991 271,-140.991"/>
+<polygon fill="#000000" stroke="#000000" points="267.5001,-140.9909 271,-150.991 274.5001,-140.991 267.5001,-140.9909"/>
 </g>
 <!-- ChannelsRoutingModule -->
 <g id="node4" class="node">
@@ -71,8 +71,8 @@
 <!-- ChannelsRoutingModule&#45;&gt;ChannelsModule -->
 <g id="edge3" class="edge">
 <title>ChannelsRoutingModule&#45;&gt;ChannelsModule</title>
-<path fill="none" stroke="#000000" d="M102,-122.1061C102,-141.3391 102,-169 102,-169 102,-169 202.2626,-169 202.2626,-169"/>
-<polygon fill="#000000" stroke="#000000" points="202.2626,-172.5001 212.2626,-169 202.2626,-165.5001 202.2626,-172.5001"/>
+<path fill="none" stroke="#000000" d="M102,-122.1061C102,-141.3391 102,-169 102,-169 102,-169 205.1947,-169 205.1947,-169"/>
+<polygon fill="#000000" stroke="#000000" points="205.1947,-172.5001 215.1947,-169 205.1947,-165.5001 205.1947,-172.5001"/>
 </g>
 </g>
 </svg>

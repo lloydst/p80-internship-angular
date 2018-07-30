@@ -1,14 +1,14 @@
 <!-- the scss in the scss file shows how it should work (currently isn't referenced in the ts file so scss isn's applied)-->
 
-<div class="news">
+<div class="news" >
     <!-- news cnn like banner aka ticket tape-->
     <div class="news__item" id="article-1">
-        <img class="news__item-img"  src="{{news[0].enclosures[0].url}}" alt="">
+        <img class="news__item-img"  src="{{news[0].enclosures[0].url }}" alt="">
         <div class="news__item-content"> <!-- Max of 1-->
             <!-- deze src lijkt niet als background img te willen-->
-            <h1 class="news__item-title">{{news[0].title}}</h1>
+            <h1 class="news__item-title">{{news[0].title }}</h1>
             <div class="news__item-description" >
-                <p [innerHtml]="news[0].description"></p>
+                <p [innerHtml]="news[0]?.description"></p>
             </div>
         </div>
     </div>

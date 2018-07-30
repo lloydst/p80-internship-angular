@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../../services/news.service';
+import { News, Enclosures } from '../../models/news';
 
 /**
  * news Component
@@ -9,11 +10,14 @@ import { NewsService } from '../../services/news.service';
   templateUrl: './news.component.html'
 })
 export class NewsComponent implements OnInit {
-
+    
+    
   /**
    * binding
    */
-  news
+  news:any = News
+  
+  
   /**
    * constructor
    * @param newsService gets the news feed from the api

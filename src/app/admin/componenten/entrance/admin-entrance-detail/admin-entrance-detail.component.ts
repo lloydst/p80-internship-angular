@@ -16,7 +16,7 @@ export class AdminEntranceDetailComponent implements OnInit {
   /**
    * for binding
    */
-data: any
+data: any = []
 /**
  * for binding
  */

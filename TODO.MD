@@ -1,2 +1,6 @@
-<h1>TODO</h1>
- - remove every scss file from every component (but not untill michiel is done)
+<h1>Done</h1>
+
+<h1>Todo</h1>
+ - Styling of support(jira) component, and traffic component
+ - finish up tests
+ - 

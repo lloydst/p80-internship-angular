@@ -14,10 +14,11 @@ export class MeetingComponent implements OnInit {
    */
   
   meeting: any = []
+  
   /**
    * for binding
    */
-  loginStatus
+  loginStatus:any=[]
   /**
    * constructor
    */

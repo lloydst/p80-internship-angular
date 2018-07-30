@@ -14,15 +14,14 @@ export class SettingComponent implements OnInit {
      * constructor
      */
     constructor(private ipservice: IpService) { }
-    configs
+    configs: any =[]
 iptest: string
     /**
      * on init
      */
     ngOnInit() {
-        
         this.getConfigs()
-        
+    
     }
     /**
      * delete ip function
@@ -40,6 +39,9 @@ iptest: string
     getConfigs() {
         this.ipservice.getIps().subscribe(config => {
             this.configs = config
+            if(config = []) {
+                this.configs.length =0
+            }
         })
     }
 }
