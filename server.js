@@ -18,7 +18,7 @@ const images = require('./server/routes/images')
 
 // mongoose setup
 const MONGOURI = process.env.MONGOURI ;
-mongoose.connect( MONGOURI, {useMongoClient: true}) // future ready 
+mongoose.connect( MONGOURI, { useNewUrlParser: true }) // future ready 
 var db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
