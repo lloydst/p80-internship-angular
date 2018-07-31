@@ -1,9 +1,0 @@
-apps:
-  - script   : 'server.js'
-    name     : 'APP'
-    exec_mode: 'cluster'
-    instances: 2
-    env: 
-      NODE_ENV: "production"
-        
-  #- script   : 'worker.js'

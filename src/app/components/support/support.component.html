@@ -1,14 +1,42 @@
-
-<div *ngFor="let ticket of data?.issues;">
-    <div *ngIf="ticket.key != null">Ticket-id:     {{ticket?.key}}</div><!-- issue title-->
-    <div *ngIf="ticket.fields.created != null">Created on:    {{ticket?.fields.created.substring(0, 10)}}</div><!-- created date-->
-    <div *ngIf="ticket.fields.assignee != null">Assigned Too:  {{ticket?.fields.assignee.displayName}}</div><!-- assignee-->
-    <div>Created By:    {{ticket?.fields.creator.displayName}}</div><!-- creator-->
-    <div *ngIf="ticket.fields.duedate != null">Due on:        {{ticket?.fields.duedate}}</div><!--duedate (can return null if not set)-->
-    <div>Status:        {{ticket?.fields.issuetype.name}}</div> <!-- might be better to use ngfor on ticket.fields.labels-->
-    <div>Project:       {{ticket?.fields.project.name}}</div> <!-- project pathe, evi etc.-->
-    <!--<div>{{ticket.fields.status.name}}</div> <!-- ticket status -->
-
+<div id="support"> <!-- uses mock data-->
+    <div *ngFor="let ticket of issues;">
+        <div *ngIf="ticket.key != null">Ticket-id: {{ticket?.key}}</div>
+        <!-- issue title-->
+        <div *ngIf="ticket.fields.created != null">Created on: {{ticket?.fields.created.substring(0, 10)}}</div>
+        <!-- created date-->
+        <div *ngIf="ticket.fields.assignee != null">Assigned Too: {{ticket?.fields.assignee.displayName}}</div>
+        <!-- assignee-->
+        <div>Created By: {{ticket?.fields.creator.displayName}}</div>
+        <!-- creator-->
+        <div *ngIf="ticket.fields.duedate != null">Due on: {{ticket?.fields.duedate}}</div>
+        <!--duedate (can return null if not set)-->
+        <div>Status: {{ticket?.fields.issuetype.name}}</div>
+        <!-- might be better to use ngfor on ticket.fields.labels-->
+        <div>Project: {{ticket?.fields.project.name}}</div>
+        <!-- project pathe, evi etc.-->
+        <div>{{ticket.fields.status.name}}</div>
+        <!-- ticket status -->
+    </div>
 </div>
-
-
+<!--
+<div id="support">
+        <div *ngFor="let ticket of data?.issues;">
+            <div *ngIf="ticket.key != null">Ticket-id: {{ticket?.key}}</div>
+            
+            <div *ngIf="ticket.fields.created != null">Created on: {{ticket?.fields.created.substring(0, 10)}}</div>
+            
+            <div *ngIf="ticket.fields.assignee != null">Assigned Too: {{ticket?.fields.assignee.displayName}}</div>
+            
+            <div>Created By: {{ticket?.fields.creator.displayName}}</div>
+            
+            <div *ngIf="ticket.fields.duedate != null">Due on: {{ticket?.fields.duedate}}</div>
+           
+            <div>Status: {{ticket?.fields.issuetype.name}}</div>
+            
+            <div>Project: {{ticket?.fields.project.name}}</div>
+            
+            <div>{{ticket.fields.status.name}}</div>
+            
+        </div>
+    </div>
+-->
