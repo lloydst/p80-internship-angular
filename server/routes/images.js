@@ -16,7 +16,7 @@ router.use(function(req, res, next) {
 
 const MONGOURI = process.env.MONGOURI || 'someback-upaddress';
 // this .env file should be added to .gitignore since it contains passwords
-mongoose.connect( MONGOURI, { useMongoClient:true })
+mongoose.connect( MONGOURI)
  /**
    * @swagger
    * /Upload:
