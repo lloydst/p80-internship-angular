@@ -13,6 +13,7 @@ export class SupportComponent implements OnInit {
      * binding
      */
     data
+    
     issues = [
         {
         "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
