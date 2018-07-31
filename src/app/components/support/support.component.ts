@@ -336,7 +336,7 @@ export class SupportComponent implements OnInit {
  * fill
  */
   ngOnInit() {
-      //this.getTickets()
+      this.getTickets()
   }
   getTickets() {
     this.ticketservice.getTickets().subscribe(async (data) => {

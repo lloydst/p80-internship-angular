@@ -1,5 +1,12 @@
+<!-- this html file contains 2 near identical elements (only difference is in the for loop)the first uses mock data
+to review this mockdata and look into the objects structure refer to the ts file
+the 2nd element uses the real data from the api,
+conner once you are done styling please remove the issues array from the ts file
+-->
+
 <div id="support"> <!-- uses mock data-->
-    <div *ngFor="let ticket of issues;">
+    <!-- using <div *ngFor="let ticket of data?.issues;"> instead of what is below makes it use real data-->
+    <div *ngFor="let ticket of issues;"> 
         <div *ngIf="ticket.key != null">Ticket-id: {{ticket?.key}}</div>
         <!-- issue title-->
         <div *ngIf="ticket.fields.created != null">Created on: {{ticket?.fields.created.substring(0, 10)}}</div>
@@ -18,7 +25,8 @@
         <!-- ticket status -->
     </div>
 </div>
-<!--
+
+<!-- USES REAL DATA
 <div id="support">
         <div *ngFor="let ticket of data?.issues;">
             <div *ngIf="ticket.key != null">Ticket-id: {{ticket?.key}}</div>
