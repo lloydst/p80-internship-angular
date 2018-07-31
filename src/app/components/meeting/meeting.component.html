@@ -12,13 +12,18 @@
                 <div class="event-start">
                     <p>Event start:</p>
                     <h1>{{meeting[0].events[meeting[0].events.length -1].start.dateTime.substring(11,16) }}</h1>
-                    <p>{{meeting[0].events[meeting[0].events.length -1].start.dateTime.substring(0,10) }} </p>
+                    <p>
+                        {{meeting[0].events[meeting[0].events.length -1].start.dateTime.substring(8,10)}} -
+                        {{meeting[0].events[meeting[0].events.length -1].start.dateTime.substring(5,7)}} 
+                    </p>
                 </div>
                 <div class="event-between"></div>
                 <div class="event-end">
                     <p>Event end:</p>
                     <h1>{{meeting[0].events[meeting[0].events.length -1].end.dateTime.substring(11,16)}}</h1>
-                    <p>{{meeting[0].events[meeting[0].events.length -1].end.dateTime.substring(0,10)}} </p>
+                    <p>
+                        {{meeting[0].events[meeting[0].events.length -1].end.dateTime.substring(8,10)}} -
+                        {{meeting[0].events[meeting[0].events.length -1].end.dateTime.substring(5,7)}} </p>
                 </div>
             </div>
         </div>
@@ -33,7 +38,6 @@
                         <span *ngIf="i<3">{{email.emailAddress.name}}</span>
                         <!-- replacing name with address gives a email address instead of a name-->
                     </li>
-
                 </ul>
                 <ul class="meeting__top-details-attendees-second">
                     <li *ngFor="let email of meeting[0].events[meeting[0].events.length -1].attendees; index as i">
@@ -59,11 +63,10 @@
                         <!-- gives a string (title of the event-->
                         <span class="meeting__bottom-list-item-time">{{e.start.dateTime.substring(11,16)}}</span>
                         <!-- gives time-->
-                        <span class="meeting__bottom-list-item-date">{{e.start.dateTime.substring(0,10)}}</span>
+                        <span class="meeting__bottom-list-item-date">{{e.start.dateTime.substring(8,10)}}-{{e.start.dateTime.substring(5,7)}}</span>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
-
 </div>

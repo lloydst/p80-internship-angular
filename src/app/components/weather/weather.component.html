@@ -8,11 +8,14 @@
 			<div class="weather__highlight-title">
 				<h1 class="weather__highlight-city">Amsterdam</h1> 
 				<p class="weather__highlight-date">{{date}}</p>
-				<p class="weather__highlight-time">{{time}}</p>
+                <p class="weather__highlight-time">{{time}}</p>
+                <!-- the wind icon looks nicer here -->
+                <span style="font-size: 35px" class="wi wi-wind from-{{weatherjson[0]?.wind.direction}}-deg"></span>
 			</div>
 			
 			<div class="weather__highlight-wind">
-				<span class="wi wi-wind from-{{weatherjson[0]?.wind.direction}}-deg"></span>
+                <!--<span style="font-size: 60px" class="wi wi-wind from-{{weatherjson[0]?.wind.direction}}-deg"></span>
+                <span class="wi wi-wind from-{{weatherjson[0]?.wind.direction}}-deg"></span>-->
 				<p>{{weatherjson[0]?.wind.speed}} km/h</p>
 			</div>
 

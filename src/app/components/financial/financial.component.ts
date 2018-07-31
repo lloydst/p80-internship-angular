@@ -21,7 +21,7 @@ import { trigger, style, animate, transition } from '@angular/animations';
       
 })
 export class FinancialComponent implements OnInit {
-    refreshTime = 10000 // 10s
+    refreshTime = 20000 // 10s
     toggleTime = 20000 // switches between 1h, 1d and a week (up down)
     /**
      * used for toggling the bottom change
