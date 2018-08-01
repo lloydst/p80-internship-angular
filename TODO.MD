@@ -1,5 +1,5 @@
 <h1>Done</h1>
-
+ every thing else?
 <h1>Todo</h1>
  - Styling of support(jira) component, and traffic component
  - touch up meeting component (year has been removed)
