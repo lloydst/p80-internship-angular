@@ -14,18 +14,34 @@ import { IpService } from '../services/ip.service';
 })
 
 export class ChannelsComponent implements OnInit {
+    /**
+     * title to set
+     */
     title = "control"
+    /**
+     * ip to get from api
+     */
     ipAddress: string;
+    /**
+     * ip config from db
+     */
     ipConfig
+    /**
+     * if in production and a ip config exist navigate to the corresponding ip
+     */
     singleIp
     /**
      * for template binding
      */
     channel
-    /**
-     * constructor
-     * @param router router gets imported to display content based on the url
-     */
+   /**
+    * constructor
+    * @param http http client
+    * @param router angular router
+    * @param data dataservice
+    * @param titleService title service
+    * @param ipService ip service
+    */
     constructor(
         private http: HttpClient,
         public router: Router,
@@ -49,6 +65,10 @@ export class ChannelsComponent implements OnInit {
             this.channel = doc
         })
     }
+    /**
+     * change the title of the application
+     * @param newTitle title: string to change it too
+     */
     setTitle(newTitle: string) {
         this.titleService.setTitle(newTitle);
     }
@@ -59,6 +79,9 @@ export class ChannelsComponent implements OnInit {
         this.setTitle("Channel control")
         this.getRoutes()
     }
+    /**
+     * on navigation away
+     */
     ngOnDestroy() {
         this.setTitle("p80 interschip assignment")
     }
@@ -78,6 +101,9 @@ export class ChannelsComponent implements OnInit {
         this.router.navigateByUrl('/channels', { skipLocationChange: true }).then(() =>
             this.router.navigate(['admin', 'contents', uri]));
     }
+    /**
+     * navigate to reset the child component
+     */
     stop() {
         this.router.navigateByUrl('');
     }
@@ -96,7 +122,10 @@ export class ChannelsComponent implements OnInit {
             
         }
     }
-
+/**
+ * gets a single ip form the database and if the env. = production route to the channel related to it if it excists
+ * @param ip ip to get
+ */
     getSingleIp(ip) {
         this.ipService.selectByIp(ip).subscribe(ipFromDb => {
             this.singleIp = ipFromDb

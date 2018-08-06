@@ -1102,7 +1102,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/components/website-loop/website-loop.component.ts:63</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">src/app/components/website-loop/website-loop.component.ts:65</a></div>
                             </td>
                         </tr>
 
@@ -1182,13 +1182,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/components/website-loop/website-loop.component.ts:51</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/components/website-loop/website-loop.component.ts:54</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>before the window gets closed target window with tag loop and close it</p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
@@ -1220,7 +1222,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/components/website-loop/website-loop.component.ts:74</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/components/website-loop/website-loop.component.ts:76</a></div>
                             </td>
                         </tr>
 
@@ -1434,7 +1436,7 @@ var x &#x3D; 0;
     templateUrl: &#x27;./website-loop.component.html&#x27;
 })
 export class WebsiteLoopComponent implements OnInit {
-    
+
     /**
      * for binding
      */
@@ -1454,25 +1456,27 @@ export class WebsiteLoopComponent implements OnInit {
      * @param http http
      */
     constructor(
-        
+
         private dataService: DataService,
         public http: HttpClient
 
     ) {
         window.onbeforeunload &#x3D; function (e) {
-            // try to take controll of window with name &#x27;loop&#x27; and close it
+            // this one triggers on redirect
             var myWindow &#x3D; window.open(&#x27;javascript:void window.focus()&#x27;, &#x27;loop&#x27;);
             myWindow.close()
             return undefined
             // doesnt always work
         };
     }
+    /**
+     * before the window gets closed target window with tag loop and close it
+     */
     OnDestroy() {
-// try to take controll of window with name &#x27;loop&#x27; and close it
-var myWindow &#x3D; window.open(&#x27;javascript:void window.focus()&#x27;, &#x27;loop&#x27;);
-myWindow.close()
-return undefined
-// doesnt always work
+        // this one should trigger on close
+        var myWindow &#x3D; window.open(&#x27;javascript:void window.focus()&#x27;, &#x27;loop&#x27;);
+        myWindow.close()
+        return undefined
     }
 
     /**
@@ -1481,10 +1485,10 @@ return undefined
      */
     getData() {
         this.dataService.getAllWebsites().subscribe(
-            res &#x3D;&gt; { 
+            res &#x3D;&gt; {
                 this.websites &#x3D; res
                 this.openWindow()
-             })
+            })
     }
     /**
      * gets all the &quot;websites&quot; from a hidden span so it gets saved in a array then it will loop
@@ -1493,7 +1497,6 @@ return undefined
     openWindow() {
         var x &#x3D; 0;
         var arrayOfUrls &#x3D; []
-        // Loop in this file not on html
         for (let i &#x3D; 0; i &lt; this.websites.length; i++) {
             arrayOfUrls.push(this.websites[i].url)
         }
@@ -1507,8 +1510,7 @@ return undefined
                 setTimeout(() &#x3D;&gt; {
                     myWindow.close()
                     go()
-                    // change this number to change the time it switches between websites
-                }, 20000); // 20 sec for each website this means it checks time every 5.01 min
+                }, 20000); // might be better to set this time from the db
             }
         }
         go()

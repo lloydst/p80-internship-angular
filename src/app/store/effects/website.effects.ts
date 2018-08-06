@@ -6,9 +6,16 @@ import { Action } from '@ngrx/store';
 import * as websiteActions from '../actions/website.actions';
 import { switchMap, map } from 'rxjs/operators';
 
+/**
+ * effects
+ */
 @Injectable()
 export class WebsiteEffects {
-
+/**
+ * constructor
+ * @param actions$ action
+ * @param http http call
+ */
     constructor(private actions$: Actions,
         private http: HttpClient) { }
 

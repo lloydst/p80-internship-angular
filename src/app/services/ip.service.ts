@@ -1,11 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+/**
+ * ip service
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class IpService {
-
+/**
+ * constructor
+ * @param http http client
+ */
   constructor(private http: HttpClient) { }
   /**
    * gets all ip's with their config that have been set from db

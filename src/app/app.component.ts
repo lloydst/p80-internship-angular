@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 import { Website } from './models/website';
 
 /**
- * some documentation
+ * root component
  */
 
 @Component({
@@ -16,11 +16,20 @@ import { Website } from './models/website';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
-    website$ :Observable<Website>
-    constructor(private store: Store<fromRoot.RootState>) {}
+    // all the comments are store related
+    // website$ :Observable<Website>
+    /**
+     * constructor
+     */
+    constructor(/*private store: Store<fromRoot.RootState>*/) {}
  
+    /**
+     * on init wrapper function
+     */
     ngOnInit() {
+        /*
       this.store.dispatch(new websiteActions.LoadWebsites());
       this.website$ = this.store.select('websites');
+      */
     }
 }

@@ -21,7 +21,13 @@ import { trigger, style, animate, transition } from '@angular/animations';
       
 })
 export class FinancialComponent implements OnInit {
+    /**
+     * bitcoin refresh rate
+     */
     refreshTime = 60000 // 60s
+    /**
+     * time it takes to switch the lower section's data between 1h, 1d and a week
+     */
     toggleTime = 20000 // switches between 1h, 1d and a week (up down)
     /**
      * used for toggling the bottom change
@@ -71,6 +77,9 @@ export class FinancialComponent implements OnInit {
             }
         )
     }
+    /**
+     * switches between 1h,1d and 1 week
+     */
     toggleLowerTileList() {
 
         setTimeout(() => {

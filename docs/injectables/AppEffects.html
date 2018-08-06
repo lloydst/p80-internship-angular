@@ -885,6 +885,13 @@
             <code>src/app/store/effects/app.effects.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>changes made to the app state (crud changes)</p>
+
+            </p>
 
 
 
@@ -899,12 +906,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="6" class="link-to-prism">src/app/store/effects/app.effects.ts:6</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="8" class="link-to-prism">src/app/store/effects/app.effects.ts:8</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>needed a docblock</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -913,6 +922,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -927,6 +937,10 @@
                                                             no
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>action</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -946,10 +960,15 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { Actions, Effect } from &#x27;@ngrx/effects&#x27;;
 
-
+/**
+ * changes made to the app state (crud changes)
+ */
 @Injectable()
 export class AppEffects {
-
+/**
+ * needed a docblock
+ * @param actions$ action
+ */
   constructor(private actions$: Actions) {}
 }
 </code></pre>

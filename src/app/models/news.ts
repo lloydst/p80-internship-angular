@@ -3,7 +3,7 @@
  */
 export class News {
 /**
- * 
+ * news model
  * @param created date
  * @param description description
  * @param link link too article
@@ -18,8 +18,6 @@ export class News {
         public title: string,
         public url: string,
         public enclosures: [Enclosures]) {}
-    
-
 }
 /**
  * enclosure model

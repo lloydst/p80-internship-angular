@@ -889,6 +889,13 @@
             <code>src/app/store/reducers/website.reducer.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>interface to serve as a model for the shape of the website state</p>
+
+            </p>
 
 
         <section>
@@ -944,6 +951,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>defines the shape</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -952,31 +965,61 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import * as websiteActions from &#x27;../actions/website.actions&#x27;;
- import {Website} from &#x27;../../models/website&#x27;
+import {Website} from &#x27;../../models/website&#x27;
 
-
- 
+/**
+ * interface to serve as a model for the shape of the website state
+ */
 export interface WebsiteState {
+    /**
+     * defines the shape
+     */
     website: Array&lt;Website&gt;;
 }
-
+/**
+ * setting the initial website state to be a empty array
+ */
 export const initialState: WebsiteState &#x3D; {
     website: []
 };
-export const getSingle &#x3D; (state: WebsiteState, action:websiteActions.WebsiteActions, index) &#x3D;&gt; state.website[index];
-export const getSingleUrl &#x3D; (state: WebsiteState, index) &#x3D;&gt; state.website[index].url;
+/**
+ * function to get a single website from the state by way of a index
+ * @param state state of the application
+ * @param action to use
+ * @param index number to serve as a index
+ */
+export const getSingle &#x3D; (state: WebsiteState, action:websiteActions.WebsiteActions, index) &#x3D;&gt; {
+    state.website[index]
+};
+/**
+ * example function to get a single url out of a website
+ * @param state 
+ * @param index 
+ */
+export const getSingleUrl &#x3D; (state: WebsiteState, index) &#x3D;&gt; {
+    state.website[index].url
+};
 
+/**
+ * based on the action type it will use a diferent function
+ * @param state state of the application
+ * @param action action to handle
+ */
 export function reducer(state &#x3D; initialState, action: websiteActions.WebsiteActions): WebsiteState {
   switch (action.type) {
     case websiteActions.WebsiteActionTypes.SetWebsites:
-        return handleSetAuths(state, action);
+        return handleSetWebsites(state, action);
 
     default:
       return state;
   }
 }
-
-function handleSetAuths(state: WebsiteState, action: websiteActions.SetWebsites): WebsiteState {
+/**
+ * sets the websites in the state 
+ * @param state state of the application
+ * @param action action to undertake
+ */
+function handleSetWebsites(state: WebsiteState, action: websiteActions.SetWebsites): WebsiteState {
     return {
       ...state,
       website: action.payload

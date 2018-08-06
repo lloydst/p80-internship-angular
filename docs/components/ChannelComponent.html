@@ -1049,6 +1049,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -1063,6 +1064,10 @@
                                                             no
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>dataservice</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>router</td>
@@ -1075,6 +1080,10 @@
                                                             no
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>used to get the current url</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -1116,13 +1125,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">src/app/channels/channel/channel.component.ts:121</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="129" class="link-to-prism">src/app/channels/channel/channel.component.ts:129</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>get request</p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -1154,14 +1165,14 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="116" class="link-to-prism">src/app/channels/channel/channel.component.ts:116</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="121" class="link-to-prism">src/app/channels/channel/channel.component.ts:121</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>just a function</p>
+                            <div class="io-description"><p>just a routing function</p>
 </div>
 
                             <div class="io-description">
@@ -1194,7 +1205,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="72" class="link-to-prism">src/app/channels/channel/channel.component.ts:72</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/channels/channel/channel.component.ts:74</a></div>
                             </td>
                         </tr>
 
@@ -1234,7 +1245,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">src/app/channels/channel/channel.component.ts:80</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/channels/channel/channel.component.ts:82</a></div>
                             </td>
                         </tr>
 
@@ -1274,7 +1285,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="129" class="link-to-prism">src/app/channels/channel/channel.component.ts:129</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="137" class="link-to-prism">src/app/channels/channel/channel.component.ts:137</a></div>
                             </td>
                         </tr>
 
@@ -1314,13 +1325,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/app/channels/channel/channel.component.ts:89</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="94" class="link-to-prism">src/app/channels/channel/channel.component.ts:94</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>sets the &#39;time&#39; </p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -1757,6 +1770,8 @@ export class ChannelComponent implements OnInit {
     currentchannel: string
     /**
      * constructor
+     * @param data dataservice
+     * @param router used to get the current url
      */
     constructor(
         private data: DataService,
@@ -1788,6 +1803,9 @@ export class ChannelComponent implements OnInit {
         }, 200);
 
     }
+    /**
+     * sets the &#x27;time&#x27; 
+     */
     setTimeNow() {
         this.today &#x3D; new Date();
         this.hour &#x3D; this.today.getHours().toString();
@@ -1813,13 +1831,16 @@ export class ChannelComponent implements OnInit {
         this.timeNow &#x3D; &quot;&quot; + this.year + &quot;-&quot; + this.month + &quot;-&quot; + this.day + &quot;T&quot; + this.hour + &quot;:&quot; + this.min + &quot;&quot;
     }
     /**
-   * just a function
+   * just a routing function
    */
     getRoutes() {
         this.data.getChannel(this.currentchannel).subscribe(res &#x3D;&gt; {
             this.do &#x3D; res
         })
     }
+    /**
+     * get request
+     */
     getMessages() {
         this.data.getAllMessage().subscribe(result &#x3D;&gt; {
             this.messages &#x3D; result

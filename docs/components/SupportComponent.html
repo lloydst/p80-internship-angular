@@ -997,13 +997,13 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="330" class="link-to-prism">src/app/components/support/support.component.ts:330</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/components/support/support.component.ts:15</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>some stuff goes here</p>
+                            <div class="io-description"><p>constructor</p>
 </div>
                             <div>
                                     <b>Parameters :</b>
@@ -1013,6 +1013,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -1027,6 +1028,10 @@
                                                             no
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>ticket service</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -1068,13 +1073,15 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="342" class="link-to-prism">src/app/components/support/support.component.ts:342</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/support/support.component.ts:31</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>get request</p>
+</div>
 
                             <div class="io-description">
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
@@ -1106,14 +1113,14 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="339" class="link-to-prism">src/app/components/support/support.component.ts:339</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/support/support.component.ts:25</a></div>
                             </td>
                         </tr>
 
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>fill</p>
+                            <div class="io-description"><p>on init wrapper</p>
 </div>
 
                             <div class="io-description">
@@ -1510,10 +1517,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/support/support.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/support/support.component.ts:39</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>mockdata</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1539,6 +1552,28 @@ export class SupportComponent implements OnInit {
      */
     data
     
+    /**
+ * constructor
+ * @param ticketservice ticket service
+ */
+  constructor(private ticketservice: TicketService) { }
+  /**
+   * on init wrapper
+   */
+    ngOnInit() {
+        this.getTickets()
+    }
+    /**
+     * get request
+     */
+    getTickets() {
+      this.ticketservice.getTickets().subscribe(async (data) &#x3D;&gt; {
+          this.data &#x3D; data
+      })
+    }
+    /**
+     * mockdata
+     */
     issues &#x3D; [
         {
         &quot;expand&quot;: &quot;operations,versionedRepresentations,editmeta,changelog,renderedFields&quot;,
@@ -1854,21 +1889,7 @@ export class SupportComponent implements OnInit {
     }
 ]
     
-/**
- * some stuff goes here
- */
-  constructor(private ticketservice: TicketService) { }
-/**
- * fill
- */
-  ngOnInit() {
-      this.getTickets()
-  }
-  getTickets() {
-    this.ticketservice.getTickets().subscribe(async (data) &#x3D;&gt; {
-        this.data &#x3D; data
-    })
-  }
+
   
 }
 </code></pre>

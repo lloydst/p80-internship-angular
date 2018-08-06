@@ -888,6 +888,13 @@
             <code>src/app/store/actions/website.actions.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>defines the DeleteWebsites type and its response</p>
+
+            </p>
 
 
             <p class="comment">
@@ -942,12 +949,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/store/actions/website.actions.ts:38</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/store/actions/website.actions.ts:76</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constuctor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -956,6 +965,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -970,6 +980,10 @@
                                                             no
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>returns the id to delete</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -1013,10 +1027,15 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/store/actions/website.actions.ts:40</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/store/actions/website.actions.ts:81</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">returns the id to delete</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1047,10 +1066,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/store/actions/website.actions.ts:38</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="76" class="link-to-prism">src/app/store/actions/website.actions.ts:76</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>type</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1068,7 +1093,13 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Action } from &#x27;@ngrx/store&#x27;;
 
+/**
+ * all website types
+ */
 export enum WebsiteActionTypes {
+    /**
+     * Load function
+     */
     LoadWebsites &#x3D; &#x27;[Website] Load Websites&#x27;,
     SetWebsites &#x3D; &#x27;[Website] Set Websites&#x27;,
     LoadSingleWebsite &#x3D; &#x27;[Website] Load Single Website&#x27;,
@@ -1076,35 +1107,70 @@ export enum WebsiteActionTypes {
     DeleteWebsite &#x3D; &#x27;[Website] Delete Website&#x27;
 }
 
-//read
+/**
+ * defines the LoadWebsites type and its response
+ */
 export class LoadWebsites implements Action {
+    /**
+     * type
+     */
     readonly type &#x3D; WebsiteActionTypes.LoadWebsites;
 }
 
-// set in store
+/**
+ * defines the SetWebsites type and its response
+ */
 export class SetWebsites implements Action {
+    /**
+     * type
+     */
     readonly type &#x3D; WebsiteActionTypes.SetWebsites;
-
+/**
+ * constructor
+ * @param payload array of objects
+ */
     constructor(public payload: any) { }
 }
 
-// get by id
+/**
+ * defines the LoadSingleWebsite type and its response
+ */
 export class LoadSingleWebsite implements Action {
+    /**
+    * type
+    */
     readonly type &#x3D; WebsiteActionTypes.SetWebsites;
 
 }
 
-// update by id
+/**
+ * defines the UpdateWebsite type and its response
+ */
 export class UpdateWebsite implements Action {
+    /**
+     * type
+     */
     readonly type &#x3D; WebsiteActionTypes.SetWebsites;
-
+/**
+ * a docblock
+ * @param payload returns the object to update it wtith
+ */
     constructor(public payload: any) { }
 }
 
+/**
+ * defines the DeleteWebsites type and its response
+ */
 export class DeleteWebsite implements Action {
+    /**
+     * type
+     */
     readonly type &#x3D; WebsiteActionTypes.DeleteWebsite;
-
-  constructor(public payload: { id: string }) {}
+/**
+ * constuctor
+ * @param payload returns the id to delete
+ */
+    constructor(public payload: { id: string }) { }
 }
 
 export type WebsiteActions &#x3D; LoadWebsites | SetWebsites;</code></pre>

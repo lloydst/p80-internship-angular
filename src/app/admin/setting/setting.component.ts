@@ -12,24 +12,27 @@ export class SettingComponent implements OnInit {
 
     /**
      * constructor
+     * @param ipservice ipservice
      */
     constructor(private ipservice: IpService) { }
-    configs: any =[]
-iptest: string
+    /**
+     * for logic and binding
+     */
+    configs: any = []
+   
     /**
      * on init
      */
     ngOnInit() {
         this.getConfigs()
-    
     }
     /**
      * delete ip function
      * @param ip ip to delete
      */
     deleteConfig(ip) {
-        this.ipservice.deleteIp(ip).subscribe(()=>{
-            console.log(''+ip+'')
+        this.ipservice.deleteIp(ip).subscribe(() => {
+            console.log('' + ip + '')
             this.getConfigs()
         })
     }
@@ -39,8 +42,8 @@ iptest: string
     getConfigs() {
         this.ipservice.getIps().subscribe(config => {
             this.configs = config
-            if(config = []) {
-                this.configs.length =0
+            if (config = []) {
+                this.configs.length = 0
             }
         })
     }

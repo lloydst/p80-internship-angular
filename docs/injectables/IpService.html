@@ -885,6 +885,13 @@
             <code>src/app/services/ip.service.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>ip service</p>
+
+            </p>
 
 
             <section>
@@ -938,12 +945,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="7" class="link-to-prism">src/app/services/ip.service.ts:7</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/services/ip.service.ts:10</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -952,6 +961,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -966,6 +976,10 @@
                                                             no
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>http client</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -1003,7 +1017,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="35" class="link-to-prism">src/app/services/ip.service.ts:35</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/services/ip.service.ts:41</a></div>
                             </td>
                         </tr>
 
@@ -1074,7 +1088,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/services/ip.service.ts:42</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/services/ip.service.ts:48</a></div>
                             </td>
                         </tr>
 
@@ -1145,7 +1159,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/services/ip.service.ts:13</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/services/ip.service.ts:19</a></div>
                             </td>
                         </tr>
 
@@ -1185,7 +1199,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/services/ip.service.ts:20</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/services/ip.service.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -1256,7 +1270,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/services/ip.service.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/services/ip.service.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -1327,11 +1341,17 @@
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@angular/core&#x27;;
 import { HttpClient } from &#x27;@angular/common/http&#x27;;
 
+/**
+ * ip service
+ */
 @Injectable({
   providedIn: &#x27;root&#x27;
 })
 export class IpService {
-
+/**
+ * constructor
+ * @param http http client
+ */
   constructor(private http: HttpClient) { }
   /**
    * gets all ip&#x27;s with their config that have been set from db

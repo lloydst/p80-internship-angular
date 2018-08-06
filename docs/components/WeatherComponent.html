@@ -1006,7 +1006,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/weather/weather.component.ts:21</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/components/weather/weather.component.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -1082,7 +1082,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/components/weather/weather.component.ts:36</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/components/weather/weather.component.ts:42</a></div>
                             </td>
                         </tr>
 
@@ -1122,7 +1122,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/weather/weather.component.ts:30</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/components/weather/weather.component.ts:36</a></div>
                             </td>
                         </tr>
 
@@ -1162,7 +1162,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/components/weather/weather.component.ts:50</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/components/weather/weather.component.ts:56</a></div>
                             </td>
                         </tr>
 
@@ -1208,7 +1208,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/components/weather/weather.component.ts:17</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/components/weather/weather.component.ts:23</a></div>
                             </td>
                         </tr>
 
@@ -1242,10 +1242,16 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="11" class="link-to-prism">src/app/components/weather/weather.component.ts:11</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/weather/weather.component.ts:14</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>binding (uses substring later on)</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1270,10 +1276,16 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="12" class="link-to-prism">src/app/components/weather/weather.component.ts:12</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/weather/weather.component.ts:18</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>binding (uses substring later on)</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1309,7 +1321,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/components/weather/weather.component.ts:21</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/components/weather/weather.component.ts:27</a></div>
                             </td>
                         </tr>
 
@@ -1338,7 +1350,13 @@ import { WeatherService } from &#x27;../../services/weather.service&#x27;;
   templateUrl: &#x27;./weather.component.html&#x27;
 })
 export class WeatherComponent implements OnInit {
+    /**
+     * binding (uses substring later on)
+     */
     date
+    /**
+     * binding (uses substring later on)
+     */
     time
 
   /**
@@ -1371,7 +1389,7 @@ weatherjson: any &#x3D;[]
           this.weatherjson &#x3D; res
           this.date &#x3D; this.weatherjson[0].lastBuildDate.substring(0,16)
           this.time &#x3D;this.weatherjson[0].lastBuildDate.substring(18, 25)//.match(str)
-          console.log(this.time.substring(18, 25))
+          
         })
   }
   /**

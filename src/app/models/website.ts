@@ -3,12 +3,15 @@
  */
 export interface Website {
 /**
- * website model
- * @param name string
- * @param url string
- * @param visable string
+ * name
  */
      name: string,
+     /**
+      * url
+      */
      url: string,
+     /**
+      * visable
+      */
      visable: boolean
   }

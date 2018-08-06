@@ -885,6 +885,13 @@
             <code>src/app/store/effects/website.effects.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>effects</p>
+
+            </p>
 
 
             <section>
@@ -926,12 +933,14 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="10" class="link-to-prism">src/app/store/effects/website.effects.ts:10</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">src/app/store/effects/website.effects.ts:13</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
+                            <div class="io-description"><p>constructor</p>
+</div>
                             <div>
                                     <b>Parameters :</b>
                                     <table class="params">
@@ -940,6 +949,7 @@
                                                 <td>Name</td>
                                                     <td>Type</td>
                                                 <td>Optional</td>
+                                                    <td>Description</td>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -954,6 +964,10 @@
                                                             no
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>action</p>
+</code>
+                                                        </td>
                                                 </tr>
                                                 <tr>
                                                         <td>http</td>
@@ -966,6 +980,10 @@
                                                             no
                                                     </td>
                                                     
+                                                        <td>
+                                                                <code><p>http call</p>
+</code>
+                                                        </td>
                                                 </tr>
                                         </tbody>
                                     </table>
@@ -1029,7 +1047,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/store/effects/website.effects.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/store/effects/website.effects.ts:26</a></div>
                             </td>
                         </tr>
 
@@ -1056,9 +1074,16 @@ import { Action } from &#x27;@ngrx/store&#x27;;
 import * as websiteActions from &#x27;../actions/website.actions&#x27;;
 import { switchMap, map } from &#x27;rxjs/operators&#x27;;
 
+/**
+ * effects
+ */
 @Injectable()
 export class WebsiteEffects {
-
+/**
+ * constructor
+ * @param actions$ action
+ * @param http http call
+ */
     constructor(private actions$: Actions,
         private http: HttpClient) { }
 

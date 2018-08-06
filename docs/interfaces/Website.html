@@ -959,7 +959,7 @@
 
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-description"><p>website model</p>
+                                    <div class="io-description"><p>name</p>
 </div>
                                 </td>
                             </tr>
@@ -992,6 +992,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>url</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <table class="table table-sm table-bordered">
@@ -1021,6 +1027,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>visable</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -1030,13 +1042,16 @@
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export interface Website {
 /**
- * website model
- * @param name string
- * @param url string
- * @param visable string
+ * name
  */
      name: string,
+     /**
+      * url
+      */
      url: string,
+     /**
+      * visable
+      */
      visable: boolean
   }</code></pre>
     </div>

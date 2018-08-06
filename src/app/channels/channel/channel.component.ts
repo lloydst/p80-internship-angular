@@ -55,6 +55,8 @@ export class ChannelComponent implements OnInit {
     currentchannel: string
     /**
      * constructor
+     * @param data dataservice
+     * @param router used to get the current url
      */
     constructor(
         private data: DataService,
@@ -86,6 +88,9 @@ export class ChannelComponent implements OnInit {
         }, 200);
 
     }
+    /**
+     * sets the 'time' 
+     */
     setTimeNow() {
         this.today = new Date();
         this.hour = this.today.getHours().toString();

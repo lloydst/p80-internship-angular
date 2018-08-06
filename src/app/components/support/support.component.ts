@@ -14,6 +14,28 @@ export class SupportComponent implements OnInit {
      */
     data
     
+    /**
+ * constructor
+ * @param ticketservice ticket service
+ */
+  constructor(private ticketservice: TicketService) { }
+  /**
+   * on init wrapper
+   */
+    ngOnInit() {
+        this.getTickets()
+    }
+    /**
+     * get request
+     */
+    getTickets() {
+      this.ticketservice.getTickets().subscribe(async (data) => {
+          this.data = data
+      })
+    }
+    /**
+     * mockdata
+     */
     issues = [
         {
         "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
@@ -329,20 +351,6 @@ export class SupportComponent implements OnInit {
     }
 ]
     
-/**
- * some stuff goes here
- */
-  constructor(private ticketservice: TicketService) { }
-/**
- * fill
- */
-  ngOnInit() {
-      this.getTickets()
-  }
-  getTickets() {
-    this.ticketservice.getTickets().subscribe(async (data) => {
-        this.data = data
-    })
-  }
+
   
 }

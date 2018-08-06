@@ -1035,10 +1035,18 @@ sets it to false</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>(state: WebsiteState, action:websiteActions.WebsiteActions, index) &#x3D;&gt; state.website[index]</code>
+                            <i>Default value : </i><code>(state: WebsiteState, action:websiteActions.WebsiteActions, index) &#x3D;&gt; {
+    state.website[index]
+}</code>
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>function to get a single website from the state by way of a index</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1063,10 +1071,18 @@ sets it to false</p>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>(state: WebsiteState, index) &#x3D;&gt; state.website[index].url</code>
+                            <i>Default value : </i><code>(state: WebsiteState, index) &#x3D;&gt; {
+    state.website[index].url
+}</code>
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>example function to get a single url out of a website</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1103,6 +1119,12 @@ sets it to false</p>
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>setting the initial website state to be a empty array</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1140,6 +1162,12 @@ sets it to false</p>
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>meta reducer hooks every thing together</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1176,6 +1204,12 @@ sets it to false</p>
                         </td>
                     </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>what reducer to use</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>

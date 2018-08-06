@@ -889,6 +889,13 @@
             <code>src/app/store/reducers/index.ts</code>
         </p>
 
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>root state descibes every array of objects that can be in there</p>
+
+            </p>
 
 
         <section>
@@ -944,6 +951,12 @@
 
 
 
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-description"><p>website is a array</p>
+</div>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
             </section>
@@ -961,17 +974,26 @@
 import { environment } from &#x27;../../../environments/environment&#x27;;
 import * as fromWebsite from &#x27;./website.reducer&#x27;;
 
+/**
+ * root state descibes every array of objects that can be in there
+ */
 export interface RootState {
+    /**
+     * website is a array
+     */
   website: fromWebsite.WebsiteState;
 }
 
+/**
+ * what reducer to use
+ */
 export const reducers: ActionReducerMap&lt;RootState&gt; &#x3D; {
   website: fromWebsite.reducer,
 };
 
-
-
-
+/**
+ * meta reducer hooks every thing together
+ */
 export const metaReducers: MetaReducer&lt;RootState&gt;[] &#x3D; !environment.production ? [] : [];
 </code></pre>
     </div>

@@ -8,7 +8,13 @@ import { WeatherService } from '../../services/weather.service';
   templateUrl: './weather.component.html'
 })
 export class WeatherComponent implements OnInit {
+    /**
+     * binding (uses substring later on)
+     */
     date
+    /**
+     * binding (uses substring later on)
+     */
     time
 
   /**
@@ -41,7 +47,7 @@ weatherjson: any =[]
           this.weatherjson = res
           this.date = this.weatherjson[0].lastBuildDate.substring(0,16)
           this.time =this.weatherjson[0].lastBuildDate.substring(18, 25)//.match(str)
-          console.log(this.time.substring(18, 25))
+          
         })
   }
   /**
