@@ -19,7 +19,10 @@ const routes: Routes = [
   {
     path:'components',
     loadChildren: 'app/components/components.module#ComponentsModule'
-  }
+  },
+  {
+      path:'**', redirectTo:'channels' // backup route
+    }
 ];
 
 @NgModule({

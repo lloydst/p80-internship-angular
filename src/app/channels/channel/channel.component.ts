@@ -111,13 +111,16 @@ export class ChannelComponent implements OnInit {
         this.timeNow = "" + this.year + "-" + this.month + "-" + this.day + "T" + this.hour + ":" + this.min + ""
     }
     /**
-   * just a function
+   * just a routing function
    */
     getRoutes() {
         this.data.getChannel(this.currentchannel).subscribe(res => {
             this.do = res
         })
     }
+    /**
+     * get request
+     */
     getMessages() {
         this.data.getAllMessage().subscribe(result => {
             this.messages = result

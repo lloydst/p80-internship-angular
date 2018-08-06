@@ -15,7 +15,7 @@ var x = 0;
     templateUrl: './website-loop.component.html'
 })
 export class WebsiteLoopComponent implements OnInit {
-    
+
     /**
      * for binding
      */
@@ -35,25 +35,27 @@ export class WebsiteLoopComponent implements OnInit {
      * @param http http
      */
     constructor(
-        
+
         private dataService: DataService,
         public http: HttpClient
 
     ) {
         window.onbeforeunload = function (e) {
-            // try to take controll of window with name 'loop' and close it
+            // this one triggers on redirect
             var myWindow = window.open('javascript:void window.focus()', 'loop');
             myWindow.close()
             return undefined
             // doesnt always work
         };
     }
+    /**
+     * before the window gets closed target window with tag loop and close it
+     */
     OnDestroy() {
-// try to take controll of window with name 'loop' and close it
-var myWindow = window.open('javascript:void window.focus()', 'loop');
-myWindow.close()
-return undefined
-// doesnt always work
+        // this one should trigger on close
+        var myWindow = window.open('javascript:void window.focus()', 'loop');
+        myWindow.close()
+        return undefined
     }
 
     /**
@@ -62,10 +64,10 @@ return undefined
      */
     getData() {
         this.dataService.getAllWebsites().subscribe(
-            res => { 
+            res => {
                 this.websites = res
                 this.openWindow()
-             })
+            })
     }
     /**
      * gets all the "websites" from a hidden span so it gets saved in a array then it will loop
@@ -74,7 +76,6 @@ return undefined
     openWindow() {
         var x = 0;
         var arrayOfUrls = []
-        // Loop in this file not on html
         for (let i = 0; i < this.websites.length; i++) {
             arrayOfUrls.push(this.websites[i].url)
         }
@@ -88,8 +89,7 @@ return undefined
                 setTimeout(() => {
                     myWindow.close()
                     go()
-                    // change this number to change the time it switches between websites
-                }, 20000); // 20 sec for each website this means it checks time every 5.01 min
+                }, 20000); // might be better to set this time from the db
             }
         }
         go()
