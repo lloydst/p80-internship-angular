@@ -12,7 +12,7 @@
     "postinstall": "npm run build",
     "ng": "ng",
     "start": "pm2-runtime start ecosystem.config.js --env production",
-    "build": "ng build --prod",
+    "build": "ng build --aot --prod",
     "build:prod": "ng build --aot --prod --build-optimizer --vendor-chunk",
     "lint": "ng lint",
     "test": "ng e2e --browser ChromeHeadless --single-run",
