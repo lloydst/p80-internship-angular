@@ -21,18 +21,18 @@ after this command you will need to fix the following line in app.module (point 
 unfortunatly the ngrx schematics arent the smartest thing
 
 # generate
-auth is just a place holder it should also not a plural; so book but not books
+name is just a place holder it should also not a plural; so book as a 'name' is good but 'books' is bad
 
 ## action
-action definitions
-`ng generate action store/actions/auth --actions index.ts`
+action (definitions)
+`ng generate action store/actions/name --actions index.ts`
 ## reducer
 state, initial state, state functions
-`ng generate reducer store/reducers/auth --reducers index.ts`
+`ng generate reducer store/reducers/name --reducers index.ts`
 ## effects
 http request for instance
-`ng generate effect store/effects/auth --module app.module --root true`
-needs the following imports : 
+`ng generate effect store/effects/name --module app.module --root true`
+needs the following imports on a component if you want to make http calls too/from the state: 
 
 `import { Injectable } from '@angular/core';`
 
@@ -42,7 +42,7 @@ needs the following imports :
 
 `import { HttpClient } from '@angular/common/http';`
 
-`import * as authActions from '../actions/auth.actions';` (this one has to be changed ofc)
+`import * as nameActions from '../actions/name.actions';` (name is just a placeholder)
 
 `import { Action } from '@ngrx/store';`
 
@@ -57,7 +57,7 @@ src
  - app
      - store
         - actions
-             - auth.actions.ts
+             - name.actions.ts
         - effects
              - name.effects.ts
         - reducers

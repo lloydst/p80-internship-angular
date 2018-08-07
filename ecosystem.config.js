@@ -1,3 +1,4 @@
+// used by pm2
 module.exports = {
     apps : [{
       name: "app",
