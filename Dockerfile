@@ -1,24 +1,23 @@
+#==================== Building Stage ================================================ 
 
-# Client App
-FROM lloydst/p80-tool
-LABEL authors="Lloyd Stumpel"
-WORKDIR src/app
-COPY ["package.json", "npm-shrinkwrap.json*", "./"]
-RUN npm install --silent
+FROM node:8
+
+# Create app directory
+RUN mkdir /app
+WORKDIR /app
+# Install app dependencies
+
+# where available (npm@5+)
+COPY package.json /app
+RUN npm install
+COPY . /app
+RUN npm i -g @angular/cli
+
+# If you are building your code for production
+RUN npm install --only=production
+
+# Bundle app source
 COPY . .
-RUN ng build --prod
 
-# Node server
-FROM node:8.11-alpine as node-server
-WORKDIR /usr/src/app
-COPY ["package.json", "npm-shrinkwrap.json*", "./"]
-RUN npm install --production --silent && mv node_modules ../
-COPY /src/server /usr/src/app
-
-# Final image
-FROM node:8.11-alpine
-WORKDIR /usr/src/app
-COPY --from=node-server /usr/src /usr/src
-COPY --from=client-app /usr/src/app ./
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD [ "npm", "start" ]
