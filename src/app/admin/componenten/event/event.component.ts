@@ -16,7 +16,7 @@ export class AdminEventComponent implements OnInit {
   /**
    * binding
    */
-data
+messages
 /**
  * binding
  */
@@ -107,7 +107,7 @@ eventForm = new FormGroup({
    */
   getData() {
     this.dataService.getAllMessage().subscribe(
-      res => {this.data = res})
+      res => {this.messages = res})
   }
   /** 
    * checks if the checkbox is checked

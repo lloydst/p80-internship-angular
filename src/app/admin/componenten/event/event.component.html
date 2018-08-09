@@ -35,7 +35,7 @@
                 <button type="submit" class="button succes" [disabled]="!eventForm.valid">Add</button>
             </form>
         </div>
-        <div class="admin-wrapper-main__card--fullwidth" style="margin-right: 1em;">
+        <div class="admin-wrapper-main__card--fullwidth" style="margin-right: 1em;" *ngIf="messages.length > 0">
             <table>
                 <thead class="admin-wrapper-main__card--title">
                     <th>identifier</th>
@@ -46,7 +46,7 @@
                     <th>update</th>
                     <th>delete</th>
                 </thead>
-                <tr class="admin-wrapper-main__card--content" *ngFor="let message of data">
+                <tr class="admin-wrapper-main__card--content" *ngFor="let message of messages">
                     <td>{{message.identifier}}</td>
                     <td>{{message.message}}</td>
                     <td>{{message.showFrom.substring(8, 10)}}-{{message.showFrom.substring(5, 7)}}({{message.showFrom.substring(11,
