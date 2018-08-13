@@ -63,7 +63,7 @@ export class ChannelComponent implements OnInit {
         private router: Router
     ) {
         window.onbeforeunload = function (e) {
-            var myWindow = window.open('javascript:void window.focus()', 'channel','scrollbars=no');
+            var myWindow = window.open('javascript:void window.focus()', 'channel', 'scrollbars=no');
             myWindow.close()
             return undefined
         };
@@ -116,8 +116,8 @@ export class ChannelComponent implements OnInit {
         this.timeNow = "" + this.year + "-" + this.month + "-" + this.day + "T" + this.hour + ":" + this.min + ""
     }
     /**
-   * just a routing function
-   */
+     * just a routing function
+     */
     getRoutes() {
         this.data.getChannel(this.currentchannel).subscribe(res => {
             this.do = res
@@ -138,54 +138,57 @@ export class ChannelComponent implements OnInit {
         var x = 0;
         var self = this // REQUIRED FOR CHECK TIME
         var messageArray = this.messages
+        let offline = !window.navigator.onLine
         function go() {
             var path = self.do[0].path[x].pathurl
             var myWindow = window.open(path, "channel") // default = 0
-            
-            // @overrule the loop if a message should get shown
-            if (path == '/components/loop') {
-                if (messageArray.length > 0) {
-                    self.setTimeNow()
-                    var str = /([0-9])/g
-                    for (let j = 0; j < messageArray.length; j++) {
-                        var now = self.timeNow.match(str)
-                        var from = messageArray[j].showFrom.match(str)
-                        var till = messageArray[j].showTill.match(str)
-                        var newNow = ''
-                        var start = ''
-                        var end = ''
-                        for (let i = 0; i < 12; i++) { // 12 = timeNow.length
-                            newNow = newNow + now[i]
-                            start = start + from[i]
-                            end = end + till[i]
-                        }
-                        if (Number(start) < Number(newNow) && Number(newNow) < Number(end)) {
-                            path = '/components/event'
-                            myWindow.location.href = path
+            // offline overrule
+            if (!window.navigator.onLine) {
+                path = '/components/event'
+                myWindow.location.href = path
+                // if offline see if the browser is online in a min
+                setTimeout(() => {
+                    go()
+                }, 60000);
+            } else {
+                // @overrule the loop if a message should get shown
+                if (path == '/components/loop') {
+                    if (messageArray.length > 0) {
+                        self.setTimeNow()
+                        const str = /([0-9])/g
+                        for (let j = 0; j < messageArray.length; j++) {
+                            let now = self.timeNow.match(str)
+                            let from = messageArray[j].showFrom.match(str)
+                            let till = messageArray[j].showTill.match(str)
+                            let newNow = ''
+                            let start = ''
+                            let end = ''
+                            for (let i = 0; i < 12; i++) { // 12 = timeNow.length
+                                newNow = newNow + now[i]
+                                start = start + from[i]
+                                end = end + till[i]
+                            }
+                            if (Number(start) < Number(newNow) && Number(newNow) < Number(end)) {
+                                path = '/components/event'
+                                myWindow.location.href = path
+                            }
                         }
                     }
                 }
-            }
-
-            if (x == self.do[0].path.length) {
-                myWindow.close()
-                console.log('done')
-            } else if (x++ < self.do[0].path.length) { // if should go next path go next path
-                setTimeout(() => {
-
+                // if x = the last path
+                if (x == self.do[0].path.length) {
                     myWindow.close()
-                    go()
-                }, self.do[0].path[x - 1].delay);
-
-                // because x gets incremented by 1 in the else if statement i have to subtract one to get the right delay
+                    console.log('done')
+                    self.getRoutes()
+                    x = 0
+                    return x
+                } else if (x++ < self.do[0].path.length) { // if x < then last path increase x by 1
+                    setTimeout(() => {
+                        myWindow.close()
+                        go()
+                    }, self.do[0].path[x - 1].delay); // x is already increased by 1 so x -1 = the delay that should be used
+                }
             }
-            if (x == self.do[0].path.length) {
-                console.log('done')
-                self.getRoutes()
-                x = 0
-                return x
-            }
-            
         }
         go()
     }
