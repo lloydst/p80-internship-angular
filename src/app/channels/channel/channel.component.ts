@@ -151,7 +151,7 @@ export class ChannelComponent implements OnInit {
                     go()
                 }, 60000);
             } else {
-                // @overrule the loop if a message should get shown
+                // @overrule the loop if a message should get shown but will only over ride the loop route
                 if (path == '/components/loop') {
                     if (messageArray.length > 0) {
                         self.setTimeNow()
@@ -176,13 +176,12 @@ export class ChannelComponent implements OnInit {
                     }
                 }
                 // if x = the last path
-                if (x == self.do[0].path.length) {
+                if (x == self.do[0].path.length - 1) {
                     myWindow.close()
-                    console.log('done')
                     self.getRoutes()
                     x = 0
-                    return x
-                } else if (x++ < self.do[0].path.length) { // if x < then last path increase x by 1
+                }
+                if (x++ < self.do[0].path.length) { // if x < then the last path increase x by 1
                     setTimeout(() => {
                         myWindow.close()
                         go()

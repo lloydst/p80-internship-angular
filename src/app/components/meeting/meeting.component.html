@@ -34,7 +34,7 @@
                 and the second list will load the next. If there are four or less then only show the left
                 list-->
                 <ul class="meeting__top-details-attendees-first">
-                    <li *ngFor="let email of meeting[0]?.events[meeting[0]?.events?.length -1].attendees; index as i; async as async">
+                    <li *ngFor="let email of meeting[0].events[meeting[0].events?.length -1]?.attendees; index as i">
                         <span *ngIf="i<3">{{email.emailAddress.name}}</span>
                         <!-- replacing name with address gives a email address instead of a name-->
                     </li>

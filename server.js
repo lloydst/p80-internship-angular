@@ -1,4 +1,5 @@
 const express = require('express')
+const morgan = require('morgan');
 const app = require('express')();
 const path = require('path');
 const mongoose = require('mongoose');
@@ -36,7 +37,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use('/', express.static(path.join(__dirname, 'dist'))) // angular project
+app.use(morgan('common', {
+    skip: function (req, res) {
+        return res.statusCode < 400
+    }, stream: process.stderr
+}));
 
+app.use(morgan('common', {
+    skip: function (req, res) {
+        return res.statusCode >= 400
+    }, stream: process.stdout
+}));
 // dev only
 if (process.env.NODE_ENV != 'production') {
     app.use('/docs', express.static(path.join(__dirname, 'docs')))
@@ -56,6 +67,9 @@ app.use('/public', express.static(path.join(__dirname, 'server/public'))) // css
 app.use('*', express.static(path.join(__dirname, 'dist'))) //routes anything not caught by the routes above to your angular project if possible
 
 const port = process.env.PORT || 3000; // PORT is another variable that can be placed in the .env file hosting networks usually set it themselfs
+if(process.env.NODE_ENV == undefined) {
+    process.env.NODE_ENV = 'development'
+}
 http.listen(process.env.PORT || 3000, function () {
     console.log('Example app listening on port ' + port + '! in ' + process.env.NODE_ENV)
 })

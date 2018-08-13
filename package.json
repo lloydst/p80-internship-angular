@@ -7,7 +7,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "server": "nodemon server.js --production",
+    "server": "nodemon server.js",
     "dev": "ng build --watch",
     "postinstall": "npm run build",
     "ng": "ng",

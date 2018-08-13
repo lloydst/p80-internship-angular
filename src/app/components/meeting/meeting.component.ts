@@ -1,19 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NO_ERRORS_SCHEMA } from '@angular/core';
 import { DataService } from '../../services/data.service';
+import { Meeting } from '../../models/meeting';
+
 
 /**
  * meeting component
  */
 @Component({
   selector: 'app-meeting',
-  templateUrl: './meeting.component.html'
+  templateUrl: './meeting.component.html',
+  //schemas: [NO_ERRORS_SCHEMA]
 })
 export class MeetingComponent implements OnInit {
   /**
    * for binding
    */
   
-  meeting: any = []
+  meeting:Meeting[] |any =[0]
+  //firstEvent = this.meeting[0].events[(this.meeting[0].events.length -1)]
   
   /**
    * for binding
@@ -36,6 +40,7 @@ export class MeetingComponent implements OnInit {
         this.meeting= [res]
         
       })
+      
     })
     
     this.ifNotLoggedIn()
