@@ -151,14 +151,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        data-target="#xs-components-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        id="xs-components-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
                                     >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -167,14 +167,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-injectables-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        data-target="#xs-injectables-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
                                     >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-injectables-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        id="xs-injectables-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
                                     >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -570,14 +570,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        data-target="#components-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        id="components-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
 >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -586,14 +586,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#injectables-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        data-target="#injectables-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
 >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="injectables-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        id="injectables-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
 >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -1308,10 +1308,10 @@ image;
     &lt;section&gt;
         &lt;div class&#x3D;&quot;admin-wrapper-main__card--fullwidth&quot; &gt;
             &lt;h2 class&#x3D;&quot;admin-wrapper-main__card--title&quot; &gt;images&lt;/h2&gt;
-            &lt;div *ngFor&#x3D;&quot;let i of image&quot; id&#x3D;&quot;images&quot; class&#x3D;&quot;admin-wrapper-main__card-tiny&quot; style&#x3D;&quot;margin:1em; float: left;width:30%;&quot;&gt;
+            &lt;div *ngFor&#x3D;&quot;let i of image&quot; id&#x3D;&quot;images&quot; class&#x3D;&quot;admin-wrapper-main__card-tiny&quot; &gt;
 
-                &lt;h2 style&#x3D;&quot;margin:0;&quot; class&#x3D;&quot;admin-wrapper-main__card--title&quot;&gt;{{i.filename}}&lt;/h2&gt;
-                &lt;div *ngIf&#x3D;&quot;i.length &gt; 0&quot; style&#x3D;&quot;float: left;&quot;&gt;&lt;!-- not fully responsive yet--&gt;
+                &lt;h2 class&#x3D;&quot;admin-wrapper-main__card--title&quot;&gt;{{i.filename}}&lt;/h2&gt;
+                &lt;div *ngIf&#x3D;&quot;i.length &gt; 0&quot; class&#x3D;&quot;admin-wrapper-main__card-tiny--contents&quot;&gt;&lt;!-- not fully responsive yet--&gt;
                     &lt;div&gt;
                         &lt;img src&#x3D;&quot;/images/img/{{i.filename}}&quot; alt&#x3D;&quot;image couldnt be loaded from db wich means the db is still online&quot; srcset&#x3D;&quot;&quot; style&#x3D;&quot;width:125px; height:125px&quot;&gt;
                     &lt;/div&gt;
@@ -1356,7 +1356,7 @@ image;
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="admin-wrapper-main">    <section>        <div class="admin-wrapper-main__card--fullwidth" >            <h2 class="admin-wrapper-main__card--title" >images</h2>            <div *ngFor="let i of image" id="images" class="admin-wrapper-main__card-tiny" style="margin:1em; float: left;width:30%;">                <h2 style="margin:0;" class="admin-wrapper-main__card--title">{{i.filename}}</h2>                <div *ngIf="i.length > 0" style="float: left;"><!-- not fully responsive yet-->                    <div>                        <img src="/images/img/{{i.filename}}" alt="image couldnt be loaded from db wich means the db is still online" srcset="" style="width:125px; height:125px">                    </div>                    <div >                        <br> location: "/images/img/{{i.filename}}"                        <br>                        <button class="button warning" (click)="deleteImg(i.filename)">delete</button>                    </div>                    <br>                </div>                <div *ngIf="image.length < 1">                    no images currently in db                </div>            </div>        </div>    </section></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="admin-wrapper-main">    <section>        <div class="admin-wrapper-main__card--fullwidth" >            <h2 class="admin-wrapper-main__card--title" >images</h2>            <div *ngFor="let i of image" id="images" class="admin-wrapper-main__card-tiny" >                <h2 class="admin-wrapper-main__card--title">{{i.filename}}</h2>                <div *ngIf="i.length > 0" class="admin-wrapper-main__card-tiny--contents"><!-- not fully responsive yet-->                    <div>                        <img src="/images/img/{{i.filename}}" alt="image couldnt be loaded from db wich means the db is still online" srcset="" style="width:125px; height:125px">                    </div>                    <div >                        <br> location: "/images/img/{{i.filename}}"                        <br>                        <button class="button warning" (click)="deleteImg(i.filename)">delete</button>                    </div>                    <br>                </div>                <div *ngIf="image.length < 1">                    no images currently in db                </div>            </div>        </div>    </section></div></div>'
     var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminChannelsContentsComponent', 'selector': 'app-admin-channels-contents'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelComponent', 'selector': 'app-channel'},{'name': 'ChannelContentComponent', 'selector': 'app-channel-content'},{'name': 'ChannelNewComponent', 'selector': 'app-channel-new'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'CreateComponent', 'selector': 'app-create'},{'name': 'CustomComponent', 'selector': 'app-custom'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'ListingComponentsComponent', 'selector': 'app-listing-components'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'SettingComponent', 'selector': 'app-setting'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TrafficComponent', 'selector': 'app-traffic'},{'name': 'UpdateComponent', 'selector': 'app-update'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ImageViewComponent'};

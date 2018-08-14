@@ -1,5 +1,5 @@
 //--------------------------------------------------------------------
-// admin layout
+// admin layout (uses grid)
 // -------------------------------------------------------------------
 
 .container-admin {
@@ -26,6 +26,7 @@
     margin-top: 0;
     min-height: 100%;
 }
+
 //--------------------
 // admin topnav
 // -------------------
@@ -46,8 +47,8 @@
 .admin-wrapper-main__topnav--link-remove {
     padding-left: 5px;
     color:red;//temp
-    
 }
+
 //--------------------
 // admin card
 // -------------------
@@ -57,7 +58,6 @@
     background-color: white;
     margin:1em;
     margin-right: 0;
-    //padding:1em;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
 }
@@ -148,7 +148,7 @@
     font-family: Supernormale, sans-serif;
 }
 //-------------------------------------
-//               side-nav (uses grid)
+// side-nav (uses grid)
 //-------------------------------------
 .sidenav{
     #link {

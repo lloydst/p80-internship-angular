@@ -151,14 +151,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        data-target="#xs-components-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        id="xs-components-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
                                     >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -167,14 +167,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-injectables-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        data-target="#xs-injectables-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
                                     >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-injectables-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        id="xs-injectables-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
                                     >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -570,14 +570,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        data-target="#components-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        id="components-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
 >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -586,14 +586,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#injectables-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        data-target="#injectables-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
 >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="injectables-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        id="injectables-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
 >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -2201,9 +2201,7 @@ export class ChannelContentComponent implements OnInit {
         &lt;h2 class&#x3D;&quot;admin-wrapper-main__card--title&quot;&gt;Edit channel&lt;/h2&gt;
         &lt;form [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;save(form)&quot; class&#x3D;&quot;admin-wrapper-main__card--form&quot;&gt;
             &lt;div class&#x3D;&quot;admin-wrapper-main__card--form-group&quot;&gt;
-                &lt;label&gt;Channel
-
-                &lt;/label&gt;
+                &lt;label&gt;Channel: &lt;/label&gt;
                 &lt;input style&#x3D;&quot;border:none&quot; formControlName&#x3D;&quot;channel&quot; readonly&#x3D;&quot;readonly&quot;&gt;
                 
             &lt;/div&gt;
@@ -2272,6 +2270,7 @@ export class ChannelContentComponent implements OnInit {
             &lt;/div&gt;
         &lt;/form&gt;
     &lt;/div&gt;
+    &lt;app-listing-components&gt;&lt;/app-listing-components&gt;
 &lt;/section&gt;</code></pre>
     </div>
 
@@ -2300,7 +2299,7 @@ export class ChannelContentComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><section>    <div class="admin-wrapper-main__card--fullwidth">        <h2 class="admin-wrapper-main__card--title">Edit channel</h2>        <form [formGroup]="form" (ngSubmit)="save(form)" class="admin-wrapper-main__card--form">            <div class="admin-wrapper-main__card--form-group">                <label>Channel                </label>                <input style="border:none" formControlName="channel" readonly="readonly">                            </div>            <div formArrayName="path">                <div *ngFor="let paths of path.controls; let i=index" [formGroupName]="i" >                    <!-- The repeated path template -->                    <h4>path #{{i + 1}}</h4>                    <div>                        <div class="admin-wrapper-main__card--form-group">                            <label>Url:                                    <span class="admin-wrapper-main__card--form--tooltip">                                            &#9432;                                             <div class="admin-wrapper-main__card--form--tooltiptext">                                                the current paths relative url to the selected component                                            </div>                                        </span>                            </label><br>                            <input type="text" formControlName="pathurl" class="admin-wrapper-main__card--form-input">                        </div>                        <div class="admin-wrapper-main__card--form-group">                            <label>Name:                                    <span class="admin-wrapper-main__card--form--tooltip">                                            &#9432;                                             <div class="admin-wrapper-main__card--form--tooltiptext">                                                custom set name                                            </div>                                        </span>                            </label>                            <input type="text" formControlName="componentName" class="admin-wrapper-main__card--form-input">                        </div>                        <div class="admin-wrapper-main__card--form-group">                            <label>Description:                                    <span class="admin-wrapper-main__card--form--tooltip">                                            &#9432;                                             <div class="admin-wrapper-main__card--form--tooltiptext">                                                a description of what the component does                                            </div>                                        </span>                            </label>                            <textarea formControlName="description" class="admin-wrapper-main__card--form-input"></textarea>                        </div>                        <div class="admin-wrapper-main__card--form-group">                            <label>Delay:                                    <span class="admin-wrapper-main__card--form--tooltip">                                            &#9432;                                             <div class="admin-wrapper-main__card--form--tooltiptext">                                                time it takes in ticks to move to the next path                                            </div>                                        </span>                            </label>                            <input #delay type="number" formControlName="delay" class="admin-wrapper-main__card--form-input"><br>                            <small>{{delay.value / 1000 | number}} seconds</small>                        </div>                    </div>                    <br>                    <button class="button succes" type="submit" (click)="addPath()">Add path</button> &nbsp;                    <button class="button danger" type="button danger" (click)="removePath(i)">Remove path</button>                    <br>                    <!-- End of the repeated path template -->                </div>                <div>                    <br>                    <button class="button primary" type="submit" [disabled]="form.pristine">Save</button> &nbsp;                    <button class="button danger" type="button danger" (click)="revert()" [disabled]="form.pristine">undo/reload</button>                </div>            </div>        </form>    </div></section></div>'
+        var COMPONENT_TEMPLATE = '<div><section>    <div class="admin-wrapper-main__card--fullwidth">        <h2 class="admin-wrapper-main__card--title">Edit channel</h2>        <form [formGroup]="form" (ngSubmit)="save(form)" class="admin-wrapper-main__card--form">            <div class="admin-wrapper-main__card--form-group">                <label>Channel: </label>                <input style="border:none" formControlName="channel" readonly="readonly">                            </div>            <div formArrayName="path">                <div *ngFor="let paths of path.controls; let i=index" [formGroupName]="i" >                    <!-- The repeated path template -->                    <h4>path #{{i + 1}}</h4>                    <div>                        <div class="admin-wrapper-main__card--form-group">                            <label>Url:                                    <span class="admin-wrapper-main__card--form--tooltip">                                            &#9432;                                             <div class="admin-wrapper-main__card--form--tooltiptext">                                                the current paths relative url to the selected component                                            </div>                                        </span>                            </label><br>                            <input type="text" formControlName="pathurl" class="admin-wrapper-main__card--form-input">                        </div>                        <div class="admin-wrapper-main__card--form-group">                            <label>Name:                                    <span class="admin-wrapper-main__card--form--tooltip">                                            &#9432;                                             <div class="admin-wrapper-main__card--form--tooltiptext">                                                custom set name                                            </div>                                        </span>                            </label>                            <input type="text" formControlName="componentName" class="admin-wrapper-main__card--form-input">                        </div>                        <div class="admin-wrapper-main__card--form-group">                            <label>Description:                                    <span class="admin-wrapper-main__card--form--tooltip">                                            &#9432;                                             <div class="admin-wrapper-main__card--form--tooltiptext">                                                a description of what the component does                                            </div>                                        </span>                            </label>                            <textarea formControlName="description" class="admin-wrapper-main__card--form-input"></textarea>                        </div>                        <div class="admin-wrapper-main__card--form-group">                            <label>Delay:                                    <span class="admin-wrapper-main__card--form--tooltip">                                            &#9432;                                             <div class="admin-wrapper-main__card--form--tooltiptext">                                                time it takes in ticks to move to the next path                                            </div>                                        </span>                            </label>                            <input #delay type="number" formControlName="delay" class="admin-wrapper-main__card--form-input"><br>                            <small>{{delay.value / 1000 | number}} seconds</small>                        </div>                    </div>                    <br>                    <button class="button succes" type="submit" (click)="addPath()">Add path</button> &nbsp;                    <button class="button danger" type="button danger" (click)="removePath(i)">Remove path</button>                    <br>                    <!-- End of the repeated path template -->                </div>                <div>                    <br>                    <button class="button primary" type="submit" [disabled]="form.pristine">Save</button> &nbsp;                    <button class="button danger" type="button danger" (click)="revert()" [disabled]="form.pristine">undo/reload</button>                </div>            </div>        </form>    </div>    <app-listing-components></app-listing-components></section></div>'
     var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminChannelsContentsComponent', 'selector': 'app-admin-channels-contents'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelComponent', 'selector': 'app-channel'},{'name': 'ChannelContentComponent', 'selector': 'app-channel-content'},{'name': 'ChannelNewComponent', 'selector': 'app-channel-new'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'CreateComponent', 'selector': 'app-create'},{'name': 'CustomComponent', 'selector': 'app-custom'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'ListingComponentsComponent', 'selector': 'app-listing-components'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'SettingComponent', 'selector': 'app-setting'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TrafficComponent', 'selector': 'app-traffic'},{'name': 'UpdateComponent', 'selector': 'app-update'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ChannelContentComponent'};

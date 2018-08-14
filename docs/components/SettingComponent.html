@@ -151,14 +151,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        data-target="#xs-components-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        id="xs-components-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
                                     >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -167,14 +167,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-injectables-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        data-target="#xs-injectables-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
                                     >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-injectables-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        id="xs-injectables-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
                                     >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -570,14 +570,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        data-target="#components-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        id="components-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
 >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -586,14 +586,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#injectables-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        data-target="#injectables-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
 >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="injectables-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        id="injectables-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
 >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -1321,17 +1321,26 @@ export class SettingComponent implements OnInit {
         &lt;a class&#x3D;&quot;admin-wrapper-main__topnav--link&quot; [routerLink]&#x3D;&quot;[&#x27;add&#x27;]&quot;&gt;create&lt;/a&gt;
     &lt;/div&gt;
 
-    &lt;section style&#x3D;&quot;margin-top:1.2em&quot;&gt;
+    &lt;section&gt;
         &lt;div *ngIf&#x3D;&quot;configs.length &lt; 1&quot; class&#x3D;&quot;admin-wrapper-main__card--fullwidth&quot;&gt;
             &lt;div class&#x3D;&quot;admin-wrapper-main__card--title&quot;&gt;Current configs&lt;/div&gt;
-            &lt;p class&#x3D;&quot;admin-wrapper-main__card--content&quot;&gt;no ip configs have been set&lt;/p&gt;
+            &lt;p class&#x3D;&quot;admin-wrapper-main__card--contents&quot;&gt;no ip configs have been set&lt;/p&gt;
+
+        &lt;/div&gt;
+        &lt;div style&#x3D;&quot;border: red dashed 2px; margin:1em; padding:.5em&quot;&gt;
+            &lt;h2 style&#x3D;&quot;color:red;&quot;&gt;!WARNING!&lt;/h2&gt;
+            &lt;p&gt;Current implementation would send every computer on the same network to the specified channel instead of using
+                the network ip. while that is what should be used&lt;/p&gt;
         &lt;/div&gt;
         &lt;div *ngIf&#x3D;&quot;configs.length &gt; 0&quot; class&#x3D;&quot;admin-wrapper-main__card--fullwidth&quot;&gt;
             &lt;div class&#x3D;&quot;admin-wrapper-main__card--title&quot;&gt;Current configs&lt;/div&gt;
             &lt;div *ngFor&#x3D;&quot;let c of configs&quot;&gt;
-                &lt;div&gt;name:{{c.name}}&lt;/div&gt;&lt;!-- easy to identify name: entrance screen ip--&gt;
-                &lt;div&gt;ip addres(localip):{{c.ip}}&lt;/div&gt;&lt;!-- local ip (aka) network ip--&gt;
-                &lt;div&gt;channelname{{c.channel}}&lt;/div&gt;&lt;!-- channel it should &#x27;auto&#x27; navigate too--&gt;
+                &lt;div&gt;name:{{c.name}}&lt;/div&gt;
+                &lt;!-- easy to identify name: entrance screen ip--&gt;
+                &lt;div&gt;ip addres(localip):{{c.ip}}&lt;/div&gt;
+                &lt;!-- local ip (aka) network ip--&gt;
+                &lt;div&gt;channelname{{c.channel}}&lt;/div&gt;
+                &lt;!-- channel it should &#x27;auto&#x27; navigate too--&gt;
                 &lt;button (click)&#x3D;&quot;deleteConfig(c.ip)&quot;&gt;delete&lt;/button&gt;
             &lt;/div&gt;
         &lt;/div&gt;
@@ -1367,7 +1376,7 @@ export class SettingComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="admin-wrapper-main">    <div class="admin-wrapper-main__topnav">        <a class="admin-wrapper-main__topnav--link" [routerLink]="[\'../algemeen\']">all</a>        <a class="admin-wrapper-main__topnav--link" [routerLink]="[\'add\']">create</a>    </div>    <section style="margin-top:1.2em">        <div *ngIf="configs.length < 1" class="admin-wrapper-main__card--fullwidth">            <div class="admin-wrapper-main__card--title">Current configs</div>            <p class="admin-wrapper-main__card--content">no ip configs have been set</p>        </div>        <div *ngIf="configs.length > 0" class="admin-wrapper-main__card--fullwidth">            <div class="admin-wrapper-main__card--title">Current configs</div>            <div *ngFor="let c of configs">                <div>name:{{c.name}}</div><!-- easy to identify name: entrance screen ip-->                <div>ip addres(localip):{{c.ip}}</div><!-- local ip (aka) network ip-->                <div>channelname{{c.channel}}</div><!-- channel it should \'auto\' navigate too-->                <button (click)="deleteConfig(c.ip)">delete</button>            </div>        </div>    </section>    <router-outlet></router-outlet></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="admin-wrapper-main">    <div class="admin-wrapper-main__topnav">        <a class="admin-wrapper-main__topnav--link" [routerLink]="[\'../algemeen\']">all</a>        <a class="admin-wrapper-main__topnav--link" [routerLink]="[\'add\']">create</a>    </div>    <section>        <div *ngIf="configs.length < 1" class="admin-wrapper-main__card--fullwidth">            <div class="admin-wrapper-main__card--title">Current configs</div>            <p class="admin-wrapper-main__card--contents">no ip configs have been set</p>        </div>        <div style="border: red dashed 2px; margin:1em; padding:.5em">            <h2 style="color:red;">!WARNING!</h2>            <p>Current implementation would send every computer on the same network to the specified channel instead of using                the network ip. while that is what should be used</p>        </div>        <div *ngIf="configs.length > 0" class="admin-wrapper-main__card--fullwidth">            <div class="admin-wrapper-main__card--title">Current configs</div>            <div *ngFor="let c of configs">                <div>name:{{c.name}}</div>                <!-- easy to identify name: entrance screen ip-->                <div>ip addres(localip):{{c.ip}}</div>                <!-- local ip (aka) network ip-->                <div>channelname{{c.channel}}</div>                <!-- channel it should \'auto\' navigate too-->                <button (click)="deleteConfig(c.ip)">delete</button>            </div>        </div>    </section>    <router-outlet></router-outlet></div></div>'
     var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminChannelsContentsComponent', 'selector': 'app-admin-channels-contents'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelComponent', 'selector': 'app-channel'},{'name': 'ChannelContentComponent', 'selector': 'app-channel-content'},{'name': 'ChannelNewComponent', 'selector': 'app-channel-new'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'CreateComponent', 'selector': 'app-create'},{'name': 'CustomComponent', 'selector': 'app-custom'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'ListingComponentsComponent', 'selector': 'app-listing-components'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'SettingComponent', 'selector': 'app-setting'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TrafficComponent', 'selector': 'app-traffic'},{'name': 'UpdateComponent', 'selector': 'app-update'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'SettingComponent'};

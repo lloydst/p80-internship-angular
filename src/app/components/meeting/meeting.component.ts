@@ -1,6 +1,6 @@
 import { Component, OnInit, NO_ERRORS_SCHEMA } from '@angular/core';
 import { DataService } from '../../services/data.service';
-import { Meeting } from '../../models/meeting';
+
 
 
 /**
@@ -16,7 +16,7 @@ export class MeetingComponent implements OnInit {
    * for binding
    */
   
-  meeting:Meeting[] |any =[0]
+  meeting:any =[0]
   //firstEvent = this.meeting[0].events[(this.meeting[0].events.length -1)]
   
   /**

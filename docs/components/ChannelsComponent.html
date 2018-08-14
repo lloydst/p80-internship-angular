@@ -151,14 +151,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        data-target="#xs-components-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        id="xs-components-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
                                     >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -167,14 +167,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-injectables-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        data-target="#xs-injectables-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
                                     >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-injectables-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        id="xs-injectables-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
                                     >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -570,14 +570,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        data-target="#components-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        id="components-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
 >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -586,14 +586,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#injectables-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        data-target="#injectables-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
 >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="injectables-links-module-AppModule-134b32a30f3699e618ae0640acc83a04"
+                                        id="injectables-links-module-AppModule-ac7cf3a8922e2e141598060358125b01"
 >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -1366,8 +1366,8 @@
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>routing based on ip in production
-currently only logs some other pc or lloyds pc</p>
+                            <div class="io-description"><p>only if the environment is undefined this function will run due it not being fully implemented
+(it doesn&#39;t get a computers network ip but gets the modem ip)</p>
 </div>
 
                             <div class="io-description">
@@ -1941,11 +1941,11 @@ export class ChannelsComponent implements OnInit {
         private titleService: Title,
         private ipService: IpService
     ) {
-        this.http.get&lt;{ ip: string }&gt;(&#x27;https://jsonip.com&#x27;)
+        this.http.get&lt;{ ip?: string }&gt;(&#x27;https://jsonip.com&#x27;)
             .subscribe(data &#x3D;&gt; {
 
                 this.ipAddress &#x3D; data.ip
-                console.log(this.ipAddress)
+                //console.log(this.ipAddress)
                 this.getSingleIp(data.ip)
             })
     }
@@ -2000,11 +2000,11 @@ export class ChannelsComponent implements OnInit {
         this.router.navigateByUrl(&#x27;&#x27;);
     }
     /**
-     * routing based on ip in production
-     * currently only logs some other pc or lloyds pc
+     * only if the environment is undefined this function will run due it not being fully implemented
+     * (it doesn&#x27;t get a computers network ip but gets the modem ip)
      */
     ipChannel() {  // first setup for routing in production
-        if (environment.production &#x3D;&#x3D;&#x3D; true) {
+        if (environment.production &#x3D;&#x3D;&#x3D; undefined) {
             if (this.singleIp.ip &#x3D;&#x3D;&#x3D; this.ipAddress) { // if config exists got to channel
                 this.redirectTo(this.singleIp.channel);
             }

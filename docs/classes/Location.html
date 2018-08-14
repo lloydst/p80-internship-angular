@@ -291,6 +291,12 @@
                     id="xs-classes-links"
                 >
                     <li class="link">
+                        <a href="classes/Active.html" data-type="entity-link">Active</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Attendee.html" data-type="entity-link">Attendee</a>
+                    </li>
+                    <li class="link">
                         <a href="classes/Channel.html" data-type="entity-link">Channel</a>
                     </li>
                     <li class="link">
@@ -300,6 +306,9 @@
                         <a href="classes/Enclosures.html" data-type="entity-link">Enclosures</a>
                     </li>
                     <li class="link">
+                        <a href="classes/Event.html" data-type="entity-link">Event</a>
+                    </li>
+                    <li class="link">
                         <a href="classes/Image.html" data-type="entity-link">Image</a>
                     </li>
                     <li class="link">
@@ -307,6 +316,12 @@
                     </li>
                     <li class="link">
                         <a href="classes/LoadWebsites.html" data-type="entity-link">LoadWebsites</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Location.html" data-type="entity-link">Location</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Meeting.html" data-type="entity-link">Meeting</a>
                     </li>
                     <li class="link">
                         <a href="classes/Message.html" data-type="entity-link">Message</a>
@@ -710,6 +725,12 @@
                     id="classes-links"
 >
                     <li class="link">
+                        <a href="classes/Active.html" data-type="entity-link">Active</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Attendee.html" data-type="entity-link">Attendee</a>
+                    </li>
+                    <li class="link">
                         <a href="classes/Channel.html" data-type="entity-link">Channel</a>
                     </li>
                     <li class="link">
@@ -719,6 +740,9 @@
                         <a href="classes/Enclosures.html" data-type="entity-link">Enclosures</a>
                     </li>
                     <li class="link">
+                        <a href="classes/Event.html" data-type="entity-link">Event</a>
+                    </li>
+                    <li class="link">
                         <a href="classes/Image.html" data-type="entity-link">Image</a>
                     </li>
                     <li class="link">
@@ -726,6 +750,12 @@
                     </li>
                     <li class="link">
                         <a href="classes/LoadWebsites.html" data-type="entity-link">LoadWebsites</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Location.html" data-type="entity-link">Location</a>
+                    </li>
+                    <li class="link">
+                        <a href="classes/Meeting.html" data-type="entity-link">Meeting</a>
                     </li>
                     <li class="link">
                         <a href="classes/Message.html" data-type="entity-link">Message</a>
@@ -854,15 +884,20 @@
 </nav>
                </div>
                <!-- START CONTENT -->
-               <div class="content component">
+               <div class="content class">
                    <div class="content-data">
 
 
 
 
+
+
+
+
+
 <ol class="breadcrumb">
-  <li>Components</li>
-  <li>CustomComponent</li>
+  <li>Classes</li>
+  <li>Location</li>
 </ol>
 
 <ul class="nav nav-tabs" role="tablist">
@@ -872,73 +907,22 @@
         <li >
             <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
         </li>
-        <li >
-            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
-        </li>
-        <li >
-            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
-        </li>
 </ul>
 
 <div class="tab-content">
-    <div class="tab-pane fade active in" id="c-info"><p class="comment">
-    <h3>File</h3>
-</p>
-<p class="comment">
-    <code>src/app/components/custom/custom.component.ts</code>
-</p>
-
-    <p class="comment">
-        <h3>Description</h3>
-    </p>
-    <p class="comment">
-        <p>displays one or more components based on properties</p>
-
-    </p>
-
-
-    <p class="comment">
-        <h3>Implements</h3>
-    </p>
-    <p class="comment">
-                <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
-    </p>
-
-
-<section>
-    <h3>Metadata</h3>
-    <table class="table table-sm table-hover">
-        <tbody>
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/models/meeting.ts</code>
+        </p>
 
 
 
 
 
-
-
-
-
-
-
-            <tr>
-                <td class="col-md-3">selector</td>
-                <td class="col-md-9"><code>app-custom</code></td>
-            </tr>
-
-
-
-
-            <tr>
-                <td class="col-md-3">templateUrl</td>
-                <td class="col-md-9"><code>./custom.component.html</code></td>
-            </tr>
-
-
-        </tbody>
-    </table>
-</section>
-
-    <section>
+            <section>
     <h3 id="index">Index</h3>
     <table class="table table-sm table-bordered index-table">
         <tbody>
@@ -951,53 +935,21 @@
                     <td class="col-md-4">
                         <ul class="index-list">
                             <li>
-                                <a href="#event">event</a>
+                                <a href="#displayName">displayName</a>
                             </li>
                             <li>
-                                <a href="#financial">financial</a>
+                                <a href="#locationType">locationType</a>
                             </li>
                             <li>
-                                <a href="#loop">loop</a>
+                                <a href="#uniqueId">uniqueId</a>
                             </li>
                             <li>
-                                <a href="#meeting">meeting</a>
-                            </li>
-                            <li>
-                                <a href="#news">news</a>
-                            </li>
-                            <li>
-                                <a href="#servers">servers</a>
-                            </li>
-                            <li>
-                                <a href="#support">support</a>
-                            </li>
-                            <li>
-                                <a href="#traffic">traffic</a>
-                            </li>
-                            <li>
-                                <a href="#weather">weather</a>
+                                <a href="#uniqueIdType">uniqueIdType</a>
                             </li>
                         </ul>
                     </td>
                 </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <h6><b>Methods</b></h6>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <ul class="index-list">
-                            <li>
-                                <a href="#ngOnInit">ngOnInit</a>
-                            </li>
-                            <li>
-                                <a href="#visability">visability</a>
-                            </li>
-                        </ul>
-                    </td>
-                </tr>
 
 
 
@@ -1007,154 +959,8 @@
     </table>
 </section>
 
-    <section>
-    <h3 id="constructor">Constructor</h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-<code>constructor(route: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>)</code>
-                    </td>
-                </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/components/custom/custom.component.ts:46</a></div>
-                            </td>
-                        </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>loads the angular router</p>
-</div>
-                            <div>
-                                    <b>Parameters :</b>
-                                    <table class="params">
-                                        <thead>
-                                            <tr>
-                                                <td>Name</td>
-                                                    <td>Type</td>
-                                                <td>Optional</td>
-                                                    <td>Description</td>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                                <tr>
-                                                        <td>route</td>
-                                                  
-                                                        <td>
-                                                                    <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
-                                                        </td>
-                                                  
-                                                    <td>
-                                                            no
-                                                    </td>
-                                                    
-                                                        <td>
-                                                                <code><p>checks the route</p>
-</code>
-                                                        </td>
-                                                </tr>
-                                        </tbody>
-                                    </table>
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
-
-
-
-
-
-    <section>
-    
-        <h3 id="methods">
-            Methods
-        </h3>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="ngOnInit"></a>
-                        <span class="name">
-                            <b>
-                            ngOnInit
-                            </b>
-                            <a href="#ngOnInit"><span class="fa fa-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>ngOnInit()</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/components/custom/custom.component.ts:57</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>on load</p>
-</div>
-
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="visability"></a>
-                        <span class="name">
-                            <b>
-                            visability
-                            </b>
-                            <a href="#visability"><span class="fa fa-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-<code>visability()</code>
-                    </td>
-                </tr>
-
-
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="63" class="link-to-prism">src/app/components/custom/custom.component.ts:63</a></div>
-                            </td>
-                        </tr>
-
-
-                <tr>
-                    <td class="col-md-4">
-                            <div class="io-description"><p>sets a component to true if the urlArrayItem matches a string</p>
-</div>
-
-                            <div class="io-description">
-                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
-
-                            </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-</section>
-
-    <section>
+            <section>
     
         <h3 id="inputs">
             Properties
@@ -1163,44 +969,33 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="event"></a>
+                        <a name="displayName"></a>
                         <span class="name">
                             <b>
-                            event
+                            displayName
                             </b>
-                            <a href="#event"><span class="fa fa-link"></span></a>
+                            <a href="#displayName"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>event:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                        <code>displayName:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/components/custom/custom.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="97" class="link-to-prism">src/app/models/meeting.ts:97</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>displays the servers components based on url</p>
-</div>
-                    </td>
-                </tr>
 
             </tbody>
         </table>
@@ -1208,44 +1003,33 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="financial"></a>
+                        <a name="locationType"></a>
                         <span class="name">
                             <b>
-                            financial
+                            locationType
                             </b>
-                            <a href="#financial"><span class="fa fa-link"></span></a>
+                            <a href="#locationType"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>financial:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                        <code>locationType:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="22" class="link-to-prism">src/app/components/custom/custom.component.ts:22</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">src/app/models/meeting.ts:98</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>displays the servers components based on url</p>
-</div>
-                    </td>
-                </tr>
 
             </tbody>
         </table>
@@ -1253,44 +1037,33 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="loop"></a>
+                        <a name="uniqueId"></a>
                         <span class="name">
                             <b>
-                            loop
+                            uniqueId
                             </b>
-                            <a href="#loop"><span class="fa fa-link"></span></a>
+                            <a href="#uniqueId"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>loop:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                        <code>uniqueId:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="38" class="link-to-prism">src/app/components/custom/custom.component.ts:38</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="99" class="link-to-prism">src/app/models/meeting.ts:99</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>displays the servers components based on url</p>
-</div>
-                    </td>
-                </tr>
 
             </tbody>
         </table>
@@ -1298,453 +1071,153 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-                        <a name="meeting"></a>
+                        <a name="uniqueIdType"></a>
                         <span class="name">
                             <b>
-                            meeting
+                            uniqueIdType
                             </b>
-                            <a href="#meeting"><span class="fa fa-link"></span></a>
+                            <a href="#uniqueIdType"><span class="fa fa-link"></span></a>
                         </span>
                     </td>
                 </tr>
                 <tr>
                     <td class="col-md-4">
-                        <code>meeting:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                        <code>uniqueIdType:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 </code>
                     </td>
                 </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/components/custom/custom.component.ts:26</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="100" class="link-to-prism">src/app/models/meeting.ts:100</a></div>
                             </td>
                         </tr>
 
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>displays the servers components based on url</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="news"></a>
-                        <span class="name">
-                            <b>
-                            news
-                            </b>
-                            <a href="#news"><span class="fa fa-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>news:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/components/custom/custom.component.ts:42</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>displays the servers components based on url</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="servers"></a>
-                        <span class="name">
-                            <b>
-                            servers
-                            </b>
-                            <a href="#servers"><span class="fa fa-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>servers:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/components/custom/custom.component.ts:14</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>displays the servers components based on url</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="support"></a>
-                        <span class="name">
-                            <b>
-                            support
-                            </b>
-                            <a href="#support"><span class="fa fa-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>support:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/custom/custom.component.ts:30</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>displays the servers components based on url</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="traffic"></a>
-                        <span class="name">
-                            <b>
-                            traffic
-                            </b>
-                            <a href="#traffic"><span class="fa fa-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>traffic:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/components/custom/custom.component.ts:46</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>displays the servers components based on url</p>
-</div>
-                    </td>
-                </tr>
-
-            </tbody>
-        </table>
-        <table class="table table-sm table-bordered">
-            <tbody>
-                <tr>
-                    <td class="col-md-4">
-                        <a name="weather"></a>
-                        <span class="name">
-                            <b>
-                            weather
-                            </b>
-                            <a href="#weather"><span class="fa fa-link"></span></a>
-                        </span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="col-md-4">
-                        <code>weather:     <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-</code>
-                    </td>
-                </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Type : </i>    <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="col-md-4">
-                            <i>Default value : </i><code>false</code>
-                        </td>
-                    </tr>
-                        <tr>
-                            <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/components/custom/custom.component.ts:34</a></div>
-                            </td>
-                        </tr>
-
-                <tr>
-                    <td class="col-md-4">
-                        <div class="io-description"><p>displays the servers components based on url</p>
-</div>
-                    </td>
-                </tr>
 
             </tbody>
         </table>
 </section>
 
-</div>
+
+
+
+
+
+
+    </div>
 
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
-        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { Router } from &#x27;@angular/router&#x27;;
-/**
- * displays one or more components based on properties
- */
-@Component({
-  selector: &#x27;app-custom&#x27;,
-  templateUrl: &#x27;./custom.component.html&#x27;
-})
-export class CustomComponent implements OnInit {
-  /**
-   * displays the servers components based on url
-   */
-  servers: boolean &#x3D; false
-  /**
-   * displays the servers components based on url
-   */
-  event: boolean &#x3D; false
-  /**
-   * displays the servers components based on url
-   */
-  financial: boolean &#x3D; false
-  /**
-   * displays the servers components based on url
-   */
-  meeting: boolean &#x3D; false
-  /**
-   * displays the servers components based on url
-   */
-  support: boolean &#x3D; false
-  /**
-   * displays the servers components based on url
-   */
-  weather: boolean &#x3D; false
-  /**
-   * displays the servers components based on url
-   */
-  loop: boolean &#x3D; false
-  /**
-   * displays the servers components based on url
-   */
-  news: boolean &#x3D; false
-  /**
-   * displays the servers components based on url
-   */
-  traffic: boolean &#x3D; false
-  
-  /**
-   * loads the angular router
-   * @param route checks the route
-   * @returns host/x
-   */
-  constructor(private route: Router) { }
-  /**
-   * on load
-   */
-  ngOnInit( ) {
-    this.visability()
-  }
-  /**
-   * sets a component to true if the urlArrayItem matches a string
-   */
-  visability() {
-    let urlArray 
-    urlArray &#x3D; this.route.url
-    // first cut off components/custom
-    urlArray &#x3D; urlArray.toString().split(&quot;/&quot;)
-    // then create array .split(&quot;-&quot;)
-    urlArray &#x3D; urlArray[3].split(&quot;-&quot;)
-    for(let i &#x3D; 0; i&lt;urlArray.length; i++){
-      const urlArrayItem &#x3D; urlArray[i].toString()
-      switch(urlArrayItem) { 
-        case &#x27;meeting&#x27;: { 
-          this.meeting &#x3D; true
-           break; 
-        } 
-        case &#x27;financial&#x27;: { 
-           this.financial &#x3D; true
-           break; 
-        } 
-        case &#x27;servers&#x27;: { 
-          this.servers &#x3D; true
-          break; 
-        } 
-        case &#x27;event&#x27;: { 
-          this.event &#x3D; true
-          break; 
-        }
-        case &#x27;support&#x27;: { 
-          this.support &#x3D; true
-          break; 
-        }
-        case &#x27;weather&#x27;: { 
-          this.weather &#x3D; true
-          break; 
-        } 
-        case &#x27;loop&#x27;: { 
-          this.loop &#x3D; true
-          break; 
-        }
-        case &#x27;news&#x27;: { 
-          this.news &#x3D; true
-          break; 
-        }
-        case &#x27;traffic&#x27;: { 
-          this.traffic &#x3D; true
-          break; 
-        }
-        default: { 
-           //statements; 
-           break; 
-        } 
-      } 
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">export class Meeting {
+    /**
+     * 
+     * @param active object
+     * @param events 
+     * @param title 
+     * @param user 
+     */
+    constructor(
+        public active: Active,
+        public events: [Event],
+        public title: string,
+        public user: string
+    ) {
     }
-  }
 }
+
+export class Active {
+    /**
+     * active object
+     * @param calendar boolean
+     */
+    constructor(
+        public calendar: true
+    ) { }
+}
+/**
+ * 
+ */
+export class Event {
+
+    constructor(
+        public attendees: [Attendee],
+        public body: {
+            content: string,
+            contenttype: string
+        },
+        public bodyPreview: string,
+        public categories: any,
+        public changeKey: string,
+        public createdDateTime: string,
+        public end: {
+            dateTime: string
+            timeZone: string
+        },
+        public hasAttachments: boolean,
+        public iCalUId: string,
+        public id: string,
+        public importance: string,
+        public isAllDay: boolean,
+        public isCancelled: boolean,
+        public isOrganizer: boolean,
+        public isReminderOn: boolean,
+        public lastModifiedDateTime: string,
+        public location: Location,
+        public locations: [Location],
+        public onlineMeetingUrl: string | null,
+        public organizer: {
+            Attendee,
+            originalEndTimeZone: string,
+            originalStartTimeZone: string,
+            reccurence: null,
+            reminderMinutesBeforeStart: number,
+            responseRequested: boolean,
+            responseStatus: {
+                response: string,
+                time: string,
+            },
+            sensitivity: string,
+            seriesMasterId: string
+            showAs: string
+            start: {
+                dateTime: string
+                timeZone: string
+            }
+            subject: string
+            type: string
+            weblink: string
+        }
+    ) { }
+
+}
+export class Attendee {
+    constructor(
+        public emailAddress: {
+            name: string,
+            address: string
+        },
+        public status: {
+            response: string,
+            time: string
+        },
+        public type: string
+    ) { }
+}
+export class Location {
+    displayName: string
+    locationType: string
+    uniqueId: string
+    uniqueIdType: string
+}
+
 </code></pre>
     </div>
-
-    <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;!-- ORDER MATTERS--&gt;
-&lt;app-event *ngIf&#x3D;&quot;event&quot;&gt;&lt;/app-event&gt;
-&lt;app-traffic *ngIf&#x3D;&quot;traffic&quot;&gt;&lt;/app-traffic&gt;
-&lt;app-weather *ngIf&#x3D;&quot;weather&quot;&gt;&lt;/app-weather&gt;
-&lt;!-- build servers --&gt; 
-&lt;app-build-servers *ngIf&#x3D;&quot;servers&quot;&gt;&lt;/app-build-servers&gt;
-&lt;!-- bitcoin stuff --&gt;
-&lt;app-financial *ngIf&#x3D;&quot;financial&quot;&gt;&lt;/app-financial&gt;
-&lt;!-- meeting (need to change email to be ReadAll) --&gt;
-&lt;app-meeting *ngIf&#x3D;&quot;meeting&quot;&gt;&lt;/app-meeting&gt;
-&lt;!-- jira support tickets --&gt;
-&lt;app-support *ngIf&#x3D;&quot;support&quot;&gt;&lt;/app-support&gt;
-&lt;!-- loop --&gt;
-&lt;app-website-loop *ngIf&#x3D;&quot;loop&quot;&gt;&lt;/app-website-loop&gt;
-
-&lt;app-news *ngIf&#x3D;&quot;news&quot;&gt;&lt;/app-news&gt;
-</code></pre>
-    </div>
-
-    <div class="tab-pane fade " id="c-tree">
-        <div id="tree-container"></div>
-        <div class="tree-legend">
-            <div class="title">
-                <b>Legend</b>
-            </div>
-            <div>
-                <div class="color htmlelement"></div><span>Html element</span>
-            </div>
-            <div>
-                <div class="color component"></div><span>Component</span>
-            </div>
-            <div>
-                <div class="color directive"></div><span>Html element with directive</span>
-            </div>
-        </div>
-    </div>
-
-    
 </div>
-
-<script src="../js/libs/vis.min.js"></script>
-<script src="../js/libs/htmlparser.js"></script>
-<script src="../js/libs/deep-iterator.js"></script>
-<script>
-        var COMPONENT_TEMPLATE = '<div><!-- ORDER MATTERS--><app-event *ngIf="event"></app-event><app-traffic *ngIf="traffic"></app-traffic><app-weather *ngIf="weather"></app-weather><!-- build servers --> <app-build-servers *ngIf="servers"></app-build-servers><!-- bitcoin stuff --><app-financial *ngIf="financial"></app-financial><!-- meeting (need to change email to be ReadAll) --><app-meeting *ngIf="meeting"></app-meeting><!-- jira support tickets --><app-support *ngIf="support"></app-support><!-- loop --><app-website-loop *ngIf="loop"></app-website-loop><app-news *ngIf="news"></app-news></div>'
-    var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminChannelsContentsComponent', 'selector': 'app-admin-channels-contents'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelComponent', 'selector': 'app-channel'},{'name': 'ChannelContentComponent', 'selector': 'app-channel-content'},{'name': 'ChannelNewComponent', 'selector': 'app-channel-new'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'CreateComponent', 'selector': 'app-create'},{'name': 'CustomComponent', 'selector': 'app-custom'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'ListingComponentsComponent', 'selector': 'app-listing-components'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'SettingComponent', 'selector': 'app-setting'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TrafficComponent', 'selector': 'app-traffic'},{'name': 'UpdateComponent', 'selector': 'app-update'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
-    var DIRECTIVES = [];
-    var ACTUAL_COMPONENT = {'name': 'CustomComponent'};
-</script>
-<script src="../js/tree.js"></script>
-
-
-
-
-
 
 
 
@@ -1776,8 +1249,8 @@ export class CustomComponent implements OnInit {
 
         <script>
             var COMPODOC_CURRENT_PAGE_DEPTH = 1;
-            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
-            var COMPODOC_CURRENT_PAGE_URL = 'CustomComponent.html';
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'Location.html';
         </script>
 
        <script src="../js/search/search.js"></script>

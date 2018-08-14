@@ -133,7 +133,7 @@ export class ChannelComponent implements OnInit {
         })
     }
     /**
-    * just a function
+    * opens tabs (needs refractoring)
     */
     openWindow() {
         var x = 0;
