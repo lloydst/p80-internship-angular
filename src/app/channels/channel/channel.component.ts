@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
     templateUrl: './channel.component.html'
 })
 export class ChannelComponent implements OnInit {
-    offline:boolean// = false
+    offline:boolean// set by events
     /**
      * for binding
      */
@@ -75,7 +75,6 @@ export class ChannelComponent implements OnInit {
     log() {
         var url = this.router.url.split('/')
         this.currentchannel = url[2]
-        console.log(this.currentchannel)
     }
     /**
      * on load
@@ -115,6 +114,7 @@ export class ChannelComponent implements OnInit {
             this.min = '0' + this.min
         }
         this.timeNow = "" + this.year + "-" + this.month + "-" + this.day + "T" + this.hour + ":" + this.min + ""
+        
     }
     /**
      * just a routing function
@@ -154,9 +154,7 @@ export class ChannelComponent implements OnInit {
                 x=0
                 self.offline = false
             });
-            
-            
-            
+
             // @overrule the loop if a message should get shown but will only over ride the loop route
             if (path == '/components/loop') {
                 if (messageArray.length > 0) {
@@ -194,8 +192,19 @@ export class ChannelComponent implements OnInit {
                 offlineWindow.close()
                 
             }
+             // if it is the loop component 
+            if (self.do[0].path.length == 1 && '/components/loop' === self.do[0].path[0].pathurl) {
+
+                setTimeout(() => {
+                    myWindow.close()
+                    x=0
+                    go()
+                }, 354000); //self.do[0].path.delay //websites *20000 +14s?
+            }
+            
             // if x = the last path
-            if (x == self.do[0].path.length - 1) {
+            if (x  == self.do[0].path.length - 1 && self.do[0].path.length >1) {
+                
                 myWindow.close()
                 self.getRoutes()
                 x = 0

@@ -1,3 +1,4 @@
+the store isnt really being used in this project
 ## redux store
 this file is mostly a how too for myself
 

@@ -3,16 +3,14 @@ module.exports = function(grunt) {
         config: './package.json',
         scope: 'devDependencies'
     });
-
-    grunt.initConfig({
+     grunt.initConfig({
         pkg: grunt.file.readJSON('./package.json'),
         config: {
             webroot: './src',
             scss: './src/scss',
             css: '<%= config.webroot %>/assets/css'
         },
-
-        watch: {
+         watch: {
             options: {
                 spawn: false
             },
@@ -21,8 +19,7 @@ module.exports = function(grunt) {
                 tasks: ['sass:dev']
             },
         },
-
-        sass: {
+         sass: {
             dev: {
                 options: {
                     outputStyle: 'expanded',
@@ -51,8 +48,7 @@ module.exports = function(grunt) {
             },
         }
     });
-
-    grunt.registerTask('build-sass', 'Compile Scss to CSS', [
+     grunt.registerTask('build-sass', 'Compile Scss to CSS', [
         'sass:dist'
     ]);
-};
+}; 

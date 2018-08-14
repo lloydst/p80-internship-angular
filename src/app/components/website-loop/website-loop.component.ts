@@ -42,8 +42,8 @@ export class WebsiteLoopComponent implements OnInit {
     ) {
         window.onbeforeunload = function (e) {
             // this one triggers on redirect
-            var myWindow = window.open('javascript:void window.focus()', 'loop');
-            myWindow.close()
+            var loopWindow = window.open('javascript:void window.focus()', 'loop');
+            loopWindow.close()
             return undefined
             // doesnt always work
         };
@@ -53,8 +53,8 @@ export class WebsiteLoopComponent implements OnInit {
      */
     OnDestroy() {
         // this one should trigger on close
-        var myWindow = window.open('javascript:void window.focus()', 'loop');
-        myWindow.close()
+        var loopWindow = window.open('javascript:void window.focus()', 'loop');
+        loopWindow.close()
         return undefined
     }
 
@@ -76,20 +76,22 @@ export class WebsiteLoopComponent implements OnInit {
     openWindow() {
         var x = 0;
         var arrayOfUrls = []
+        
         for (let i = 0; i < this.websites.length; i++) {
             arrayOfUrls.push(this.websites[i].url)
         }
 
         function go() {
-            var myWindow = window.open(arrayOfUrls[x], 'loop') // default = 0
-
+            var loopWindow = window.open(arrayOfUrls[x], 'loop') // default = 0
+            var actualLength = arrayOfUrls.length +1
+            console.log(actualLength)
             if (x === arrayOfUrls.length) {
-                myWindow.close()
+                loopWindow.close()
             } else if (x++ <= arrayOfUrls.length) {
                 setTimeout(() => {
-                    myWindow.close()
+                    loopWindow.close()
                     go()
-                }, 20000); // might be better to set this time from the db
+                }, 20000 ); // might be better to set this time from the db
             }
         }
         go()

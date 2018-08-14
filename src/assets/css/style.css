@@ -242,6 +242,7 @@ section {
 
 .admin-wrapper-main__card--title {
   border-radius: 5px 5px 0 0;
+  padding-left: 10px;
   margin: 0;
   background-color: #00b0e9;
   color: white;
