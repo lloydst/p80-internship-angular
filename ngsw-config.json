@@ -10,7 +10,9 @@
       "files": [
         "/favicon.ico",
         "/index.html",
-        "/*.css",
+        "/**/*.css",
+        "/assets/font/*",
+        "/assets/img/icon/*",
         "/*.js"
       ]
     }
@@ -21,7 +23,8 @@
     "resources": {
       "files": [
         "/assets/img/**",
-        "/images/img/*"
+        "/images/img/*",
+        "/public/assets"
       ]
     }
   }],

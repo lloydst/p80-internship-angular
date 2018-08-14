@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
     templateUrl: './channel.component.html'
 })
 export class ChannelComponent implements OnInit {
+    offline:boolean// = false
     /**
      * for binding
      */
@@ -136,58 +137,76 @@ export class ChannelComponent implements OnInit {
     */
     openWindow() {
         var x = 0;
-        var self = this // REQUIRED FOR CHECK TIME
+        var self = this
         var messageArray = this.messages
-        let offline = !window.navigator.onLine
         function go() {
+            self.offline = !window.navigator.onLine
             var path = self.do[0].path[x].pathurl
             var myWindow = window.open(path, "channel") // default = 0
-            // offline overrule
-            if (!window.navigator.onLine) {
-                path = '/components/event'
-                myWindow.location.href = path
-                // if offline see if the browser is online in a min
-                setTimeout(() => {
-                    go()
-                }, 60000);
-            } else {
-                // @overrule the loop if a message should get shown but will only over ride the loop route
-                if (path == '/components/loop') {
-                    if (messageArray.length > 0) {
-                        self.setTimeNow()
-                        const str = /([0-9])/g
-                        for (let j = 0; j < messageArray.length; j++) {
-                            let now = self.timeNow.match(str)
-                            let from = messageArray[j].showFrom.match(str)
-                            let till = messageArray[j].showTill.match(str)
-                            let newNow = ''
-                            let start = ''
-                            let end = ''
-                            for (let i = 0; i < 12; i++) { // 12 = timeNow.length
-                                newNow = newNow + now[i]
-                                start = start + from[i]
-                                end = end + till[i]
-                            }
-                            if (Number(start) < Number(newNow) && Number(newNow) < Number(end)) {
-                                path = '/components/event'
-                                myWindow.location.href = path
-                            }
+            
+            path = '/components/event'
+            var offlineWindow = window.open(path, 'offline')
+            
+            myWindow.addEventListener('offline', () => {
+                self.offline = true
+            });
+            myWindow.addEventListener('online', () => {
+                x=0
+                self.offline = false
+            });
+            
+            
+            
+            // @overrule the loop if a message should get shown but will only over ride the loop route
+            if (path == '/components/loop') {
+                if (messageArray.length > 0) {
+                    self.setTimeNow()
+                    const str = /([0-9])/g
+                    for (let j = 0; j < messageArray.length; j++) {
+                        let now = self.timeNow.match(str)
+                        let from = messageArray[j].showFrom.match(str)
+                        let till = messageArray[j].showTill.match(str)
+                        let newNow = ''
+                        let start = ''
+                        let end = ''
+                        for (let i = 0; i < 12; i++) { // 12 = timeNow.length
+                            newNow = newNow + now[i]
+                            start = start + from[i]
+                            end = end + till[i]
+                        }
+                        if (Number(start) < Number(newNow) && Number(newNow) < Number(end)) {
+                            path = '/components/event'
+                            myWindow.location.href = path
                         }
                     }
                 }
-                // if x = the last path
-                if (x == self.do[0].path.length - 1) {
-                    myWindow.close()
-                    self.getRoutes()
-                    x = 0
-                }
-                if (x++ < self.do[0].path.length) { // if x < then the last path increase x by 1
-                    setTimeout(() => {
-                        myWindow.close()
-                        go()
-                    }, self.do[0].path[x - 1].delay); // x is already increased by 1 so x -1 = the delay that should be used
-                }
             }
+            if(self.offline) {
+                x = 0
+                myWindow.close()
+                offlineWindow.open(path, 'offline')
+                // if offline see if the browser is online in a min
+                
+            }
+            if(!self.offline) {
+                // set to undefined so it will only run once
+                self.offline = undefined 
+                offlineWindow.close()
+                
+            }
+            // if x = the last path
+            if (x == self.do[0].path.length - 1) {
+                myWindow.close()
+                self.getRoutes()
+                x = 0
+            }
+            if (x++ < self.do[0].path.length) { // if x < then the last path increase x by 1
+                setTimeout(() => {
+                    myWindow.close()
+                    go()
+                }, self.do[0].path[x - 1].delay); // x is already increased by 1 so x -1 = the delay that should be used
+            }
+            
         }
         go()
     }

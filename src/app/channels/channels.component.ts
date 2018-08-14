@@ -49,11 +49,11 @@ export class ChannelsComponent implements OnInit {
         private titleService: Title,
         private ipService: IpService
     ) {
-        this.http.get<{ ip: string }>('https://jsonip.com')
+        this.http.get<{ ip?: string }>('https://jsonip.com')
             .subscribe(data => {
 
                 this.ipAddress = data.ip
-                console.log(this.ipAddress)
+                //console.log(this.ipAddress)
                 this.getSingleIp(data.ip)
             })
     }
@@ -108,11 +108,11 @@ export class ChannelsComponent implements OnInit {
         this.router.navigateByUrl('');
     }
     /**
-     * routing based on ip in production
-     * currently only logs some other pc or lloyds pc
+     * only if the environment is undefined this function will run due it not being fully implemented
+     * (it doesn't get a computers network ip but gets the modem ip)
      */
     ipChannel() {  // first setup for routing in production
-        if (environment.production === true) {
+        if (environment.production === undefined) {
             if (this.singleIp.ip === this.ipAddress) { // if config exists got to channel
                 this.redirectTo(this.singleIp.channel);
             }
