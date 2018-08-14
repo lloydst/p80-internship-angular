@@ -14,15 +14,15 @@
         </div>
 
 
-        <div style="margin-top:1em" *ngIf="!currentChannel" class="admin-wrapper-main__card">
+        <div *ngIf="!currentChannel" class="admin-wrapper-main__card">
             <!-- wont set nav to active-->
             <div class="admin-wrapper-main__card--title"></div>
-            <p class="admin-wrapper-main__card--content">
+            <p class="admin-wrapper-main__card--contents">
                 Here you can create a new channel, or edit/delete a existing one
             </p>
         </div>
         <!-- if on admin/channels display current Channels-->
-        <div style="margin-top:1em">
+        <div>
             <router-outlet></router-outlet>
             <!-- just the template-->
 

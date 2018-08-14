@@ -1,5 +1,5 @@
 <!-- Important! classes and id's are used in the ts file -->
-<div class="admin-wrapper-main" style="margin-top: 1em">
+<div class="admin-wrapper-main">
     <section>
         <div class="admin-wrapper-main__card">
             <h2 class="admin-wrapper-main__card--title">Create a Message here</h2>
@@ -35,7 +35,7 @@
                 <button type="submit" class="button succes" [disabled]="!eventForm.valid">Add</button>
             </form>
         </div>
-        <div class="admin-wrapper-main__card--fullwidth" style="margin-right: 1em;" *ngIf="messages.length > 0">
+        <div class="admin-wrapper-main__card--fullwidth" *ngIf="messages.length > 0">
             <table>
                 <thead class="admin-wrapper-main__card--title">
                     <th>identifier</th>
@@ -46,7 +46,7 @@
                     <th>update</th>
                     <th>delete</th>
                 </thead>
-                <tr class="admin-wrapper-main__card--content" *ngFor="let message of messages">
+                <tr class="admin-wrapper-main__card--contents" *ngFor="let message of messages">
                     <td>{{message.identifier}}</td>
                     <td>{{message.message}}</td>
                     <td>{{message.showFrom.substring(8, 10)}}-{{message.showFrom.substring(5, 7)}}({{message.showFrom.substring(11,

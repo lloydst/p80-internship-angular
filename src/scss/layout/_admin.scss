@@ -15,10 +15,16 @@
         background-color: #fff;
     }
     background-color: #fff;
-    margin: 0px;
-    
+    margin-top: 1em;
     min-height: 100%;
-    
+}
+.admin-wrapper-main--no-nav {
+    section {
+        background-color: #fff;
+    }
+    background-color: #fff;
+    margin-top: 0;
+    min-height: 100%;
 }
 //--------------------
 // admin topnav
@@ -46,6 +52,7 @@
 // admin card
 // -------------------
 .admin-wrapper-main__card {
+    
     border-radius: 5px;
     background-color: white;
     margin:1em;
@@ -54,20 +61,27 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
 }
+.admin-wrapper-main__card--contents {
+    padding: 10px
+}
 .admin-wrapper-main__card-tiny {
-    background-color: white;
     margin:1em;
-    margin-right: 1em;
+    min-width:30%;
+    max-width: 80%;
+    float:left;
+    background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     width: calc(100% / 6);
+}
+.admin-wrapper-main__card-tiny--contents {
+    padding-left: 10px
 }
 .admin-wrapper-main__card--fullwidth {
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     max-width:80%;//looks better then 100
-    //padding:1em;
     margin-top:1em;
     margin-left:1em;
 }
@@ -90,10 +104,6 @@
     margin:0;
     background-color:grey;//temp
     color:white;
-}
-.admin-wrapper-main__card--content {
-    
-    padding:1em;
 }
 .admin-wrapper-main__card--form {
     background-color: white; //temp

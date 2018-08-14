@@ -3,9 +3,7 @@
         <h2 class="admin-wrapper-main__card--title">Edit channel</h2>
         <form [formGroup]="form" (ngSubmit)="save(form)" class="admin-wrapper-main__card--form">
             <div class="admin-wrapper-main__card--form-group">
-                <label>Channel
-
-                </label>
+                <label>Channel: </label>
                 <input style="border:none" formControlName="channel" readonly="readonly">
                 
             </div>
@@ -74,5 +72,5 @@
             </div>
         </form>
     </div>
-    <app-listing-components style="margin-right:1em"></app-listing-components>
+    <app-listing-components></app-listing-components>
 </section>
