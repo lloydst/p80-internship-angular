@@ -33,6 +33,9 @@ export class SupportComponent implements OnInit {
         this.getTickets()
         this.geturl()
     }
+    /**
+     * gets current url and has some transformation happen so only the projectname is used
+     */
     geturl() {
         this.currentUrl = this.router.url.split('/')[3]
     }

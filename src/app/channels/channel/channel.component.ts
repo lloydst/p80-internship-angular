@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
     templateUrl: './channel.component.html'
 })
 export class ChannelComponent implements OnInit {
+    /**
+     * for binding
+     */
     offline:boolean// set by events
     /**
      * for binding
