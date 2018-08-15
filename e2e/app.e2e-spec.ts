@@ -1,6 +1,6 @@
 import { AppPage } from './app.po';
 
-describe('boilerplate App', () => {
+describe('Homepage', () => {
   let page: AppPage;
 
   beforeEach(() => {
@@ -9,6 +9,6 @@ describe('boilerplate App', () => {
 
   it('should have some navigation', () => {
     page.navigateTo();
-    // expect(page.getParagraphText()).toContain('go to auto loop'); old doesn' have navigation temporaraly
+    expect(page.getParagraphText()).toContain('admin');
   });
 });

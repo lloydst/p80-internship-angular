@@ -6,6 +6,6 @@ export class AdminPage {
   }
 
   getLinkText() {
-    return element(by.tagName('a')).getText()
+    return element(by.className('menutext')).getAttribute('routerlink')
   }
 }

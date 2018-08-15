@@ -6,6 +6,6 @@ export class AppPage {
   }
 
   getParagraphText() {
-    return element(by.tagName('div')).getText();
+    return element(by.className('margin-right')).getText();
   }
 }

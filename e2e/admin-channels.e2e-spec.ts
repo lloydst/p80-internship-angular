@@ -6,12 +6,12 @@ describe('admin-channels', () => {
 
     beforeEach(() => {
         page = new AdminChannelPage();
+        page.navigateTo()
         
     });
-    // these tests detect whether /channels has a navigation bar
-    /*
+   
     it('should navigate to /admin/channels/meeting', () => {
-        expect( page.getLinkText().get(2).click()).toEqual(page.navigateTo('meeting'))
+        expect( page.getLinkText()).toContain('/admin/channels/new')
     });
-    */
+    
 });

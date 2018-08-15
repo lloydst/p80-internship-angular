@@ -1,12 +1,12 @@
-import {browser, element, by, By, $, $$, ExpectedConditions} from 'protractor';
+import {browser, element, by} from 'protractor';
 
 export class AdminChannelPage {
-  navigateTo(str) {
-    return browser.get('/admin/channels/' +str);
+  navigateTo() {
+    return browser.get('/admin/channels/new');
   }
 
   getLinkText() {
-    return element.all(by.tagName('.topnav a'));
+    return element(by.className('admin-wrapper-main__topnav--link')).getAttribute('href') 
   }
   getUrl() {
       return browser.getCurrentUrl()

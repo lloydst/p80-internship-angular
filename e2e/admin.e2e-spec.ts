@@ -7,10 +7,10 @@ describe('boilerplate App', () => {
     page = new AdminPage();
   });
 
-  it('AdminNavComponent should have some Links', () => {
-    /*
+  it('AdminsideNavComponent should have some Links', () => {
+    
     page.navigateTo();
-    expect(page.getLinkText()).toContain('Dashboard');
-    */
+    expect(page.getLinkText()).toContain('/admin');
+    
   });
 });
