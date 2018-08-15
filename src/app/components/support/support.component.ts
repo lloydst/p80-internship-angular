@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TicketService } from '../../services/ticket.service';
+import { Router } from '@angular/router';
 
 /**
  * support component
@@ -13,17 +14,24 @@ export class SupportComponent implements OnInit {
      * binding
      */
     data
-    
+    currentUrl
     /**
  * constructor
  * @param ticketservice ticket service
  */
-  constructor(private ticketservice: TicketService) { }
+  constructor(private ticketservice: TicketService,
+private router: Router) { }
   /**
    * on init wrapper
    */
     ngOnInit() {
         this.getTickets()
+        this.geturl()
+    }
+    geturl () {
+
+        this.currentUrl = this.router.url.split('/')[3]
+        
     }
     /**
      * get request

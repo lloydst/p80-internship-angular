@@ -1074,4 +1074,53 @@ section {
   background-image: url(../../public/assets/img/icon/bar-graph-increase-black.svg);
 }
 
+.support {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -moz-box-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin-top: 0px;
+  background-color: #EEEEEE;
+}
+
+.support__item {
+  margin: 15px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.support__item--row {
+  margin-top: 15px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.support__item--column {
+  margin: 15px;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -moz-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
 /*# sourceMappingURL=style.css.map */

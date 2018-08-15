@@ -1,0 +1,32 @@
+.support {
+    @include flex;
+    margin-top: 0px;
+    background-color: #EEEEEE;
+    //min-height: 66vh;
+}
+.support__item {
+    margin: 15px;
+    @include inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.support__item--row {
+    margin-top: 15px;
+    @include inline-flex;
+    
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}
+.support__item--column {
+    margin: 15px;
+    @include inline-flex;
+    
+    flex-direction: column;
+    //flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+}

@@ -34,7 +34,7 @@ const routes: Routes = [
       path: 'financial', component: FinancialComponent
     },
     {
-      path: 'support', component: SupportComponent
+      path: 'support/:id', component: SupportComponent
     },
     {
       path: 'all', component: AllComponent
