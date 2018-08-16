@@ -1,13 +1,13 @@
 <div class="admin-wrapper-main">
-    <section><!--acts like a row-->
+    <!-- section acts like a row-->
+    <section>
         <div class="admin-wrapper-main__card--fullwidth">
-            <h2 class="admin-wrapper-main__card--title" >Add a new client to the loop</h2>
+            <h2 class="admin-wrapper-main__card--title">Add a new client to the loop</h2>
             <form [formGroup]="websiteForm" class="admin-wrapper-main__card--form">
                 <div class="admin-wrapper-main__card--form-group">
                     <label for="client">client:</label>
                     <input class="admin-wrapper-main__card--form-input" #website name="client" type="text" required formControlName="website">
                 </div>
-
                 <div>
                     <label for="url">Website's url:</label>
                     <input class="admin-wrapper-main__card--form-input" type="text" name="url" #url required formControlName="url">

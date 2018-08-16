@@ -1,16 +1,17 @@
 <section>
     <div class="admin-wrapper-main__card">
         <h2 class="admin-wrapper-main__card--title">Create a channel</h2>
-        <p class="admin-wrapper-main__card--contents">channels can be made up from components as well as other channels (remember these have their own timings)</p>
+        <p class="admin-wrapper-main__card--contents">channels can be made up from components as well as other channels (remember
+            these have their own timings)</p>
         <form [formGroup]="form" novalidate (ngSubmit)="save(form)" class="admin-wrapper-main__card--form">
             <div class="admin-wrapper-main__card--form-group">
                 <label>Channel name:
-                        <span class="admin-wrapper-main__card--form--tooltip">
-                                <span >&#9432;</span> 
-                                <div class="admin-wrapper-main__card--form--tooltiptext">
-                                    a easy to identify name
-                                </div>
-                            </span>
+                    <span class="admin-wrapper-main__card--form--tooltip">
+                        <span>&#9432;</span>
+                        <div class="admin-wrapper-main__card--form--tooltiptext">
+                            a easy to identify name
+                        </div>
+                    </span>
                 </label>
                 <input type="text" formControlName="channel" class="admin-wrapper-main__card--form-input">
 
@@ -25,45 +26,46 @@
                     <div [formGroupName]="i">
                         <div class="admin-wrapper-main__card--form-group">
                             <label>path url:
-                                    <span class="admin-wrapper-main__card--form--tooltip">
-                                            &#9432; 
-                                            <div class="admin-wrapper-main__card--form--tooltiptext">
-                                                requires a relative url to a component simply pick a component from the right and add its name after the second '/'
-                                            </div>
-                                        </span>
+                                <span class="admin-wrapper-main__card--form--tooltip">
+                                    &#9432;
+                                    <div class="admin-wrapper-main__card--form--tooltiptext">
+                                        requires a relative url to a component simply pick a component from the right and add its name after the second '/'
+                                    </div>
+                                </span>
                             </label>
-                            <input formControlName="pathurl" class="admin-wrapper-main__card--form-input"/>
+                            <input formControlName="pathurl" class="admin-wrapper-main__card--form-input" />
                         </div>
                         <div class="admin-wrapper-main__card--form-group">
-                            <label>description: 
+                            <label>description:
                                 <span class="admin-wrapper-main__card--form--tooltip">
-                                    &#9432; 
+                                    &#9432;
                                     <div class="admin-wrapper-main__card--form--tooltiptext">
                                         describe the component you chose
                                     </div>
                                 </span>
                             </label>
-                            <input type="text" formControlName="description" value="Does this and that"class="admin-wrapper-main__card--form-input" />
+                            <input type="text" formControlName="description" value="Does this and that" class="admin-wrapper-main__card--form-input"
+                            />
                         </div>
                         <div class="admin-wrapper-main__card--form-group">
                             <label>delay:
-                                    <span class="admin-wrapper-main__card--form--tooltip">
-                                            &#9432; 
-                                            <div class="admin-wrapper-main__card--form--tooltiptext">
-                                                this is the time the component is shown in ticks (1000=second)
-                                            </div>
-                                        </span>
+                                <span class="admin-wrapper-main__card--form--tooltip">
+                                    &#9432;
+                                    <div class="admin-wrapper-main__card--form--tooltiptext">
+                                        this is the time the component is shown in ticks (1000=second)
+                                    </div>
+                                </span>
                             </label>
                             <input type="number" formControlName="delay" class="admin-wrapper-main__card--form-input">
                         </div>
                         <div class="admin-wrapper-main__card--form-group">
                             <label>component name:
-                                    <span class="admin-wrapper-main__card--form--tooltip">
-                                            &#9432; 
-                                            <div class="admin-wrapper-main__card--form--tooltiptext">
-                                                allows you to customize the default name
-                                            </div>
-                                        </span>
+                                <span class="admin-wrapper-main__card--form--tooltip">
+                                    &#9432;
+                                    <div class="admin-wrapper-main__card--form--tooltiptext">
+                                        allows you to customize the default name
+                                    </div>
+                                </span>
                             </label>
                             <input type="text" formControlName="componentName" class="admin-wrapper-main__card--form-input">
                         </div>
@@ -86,8 +88,6 @@
             </div>
         </form>
     </div>
-    
-        <app-listing-components></app-listing-components>
-        <!-- lists available components-->
-    
+    <!-- lists available components-->
+    <app-listing-components></app-listing-components>
 </section>

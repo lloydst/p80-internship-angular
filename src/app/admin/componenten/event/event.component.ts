@@ -115,7 +115,9 @@ export class AdminEventComponent implements OnInit {
      * @param checked
      */
     check($event) {
-        $('#imgBoolean').change(function () { alert($('#imgBoolean').attr('checked')); })
+        $('#imgBoolean').change(function () {
+            alert($('#imgBoolean').attr('checked'));
+        })
     }
     /**
      * updates a old message with new contents and or more time

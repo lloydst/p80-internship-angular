@@ -5,54 +5,54 @@
             <div class="admin-wrapper-main__card--form-group">
                 <label>Channel: </label>
                 <input style="border:none" formControlName="channel" readonly="readonly">
-                
+
             </div>
             <div formArrayName="path">
-                <div *ngFor="let paths of path.controls; let i=index" [formGroupName]="i" >
-                    <!-- The repeated path template -->
+                <div *ngFor="let paths of path.controls; let i=index" [formGroupName]="i">
+                    <!-- path template -->
                     <h4>path #{{i + 1}}</h4>
                     <div>
                         <div class="admin-wrapper-main__card--form-group">
                             <label>Url:
-                                    <span class="admin-wrapper-main__card--form--tooltip">
-                                            &#9432; 
-                                            <div class="admin-wrapper-main__card--form--tooltiptext">
-                                                the current paths relative url to the selected component
-                                            </div>
-                                        </span>
+                                <span class="admin-wrapper-main__card--form--tooltip">
+                                    &#9432;
+                                    <div class="admin-wrapper-main__card--form--tooltiptext">
+                                        the current paths relative url to the selected component
+                                    </div>
+                                </span>
                             </label><br>
                             <input type="text" formControlName="pathurl" class="admin-wrapper-main__card--form-input">
                         </div>
                         <div class="admin-wrapper-main__card--form-group">
                             <label>Name:
-                                    <span class="admin-wrapper-main__card--form--tooltip">
-                                            &#9432; 
-                                            <div class="admin-wrapper-main__card--form--tooltiptext">
-                                                custom set name
-                                            </div>
-                                        </span>
+                                <span class="admin-wrapper-main__card--form--tooltip">
+                                    &#9432;
+                                    <div class="admin-wrapper-main__card--form--tooltiptext">
+                                        custom set name
+                                    </div>
+                                </span>
                             </label>
                             <input type="text" formControlName="componentName" class="admin-wrapper-main__card--form-input">
                         </div>
                         <div class="admin-wrapper-main__card--form-group">
                             <label>Description:
-                                    <span class="admin-wrapper-main__card--form--tooltip">
-                                            &#9432; 
-                                            <div class="admin-wrapper-main__card--form--tooltiptext">
-                                                a description of what the component does
-                                            </div>
-                                        </span>
+                                <span class="admin-wrapper-main__card--form--tooltip">
+                                    &#9432;
+                                    <div class="admin-wrapper-main__card--form--tooltiptext">
+                                        a description of what the component does
+                                    </div>
+                                </span>
                             </label>
                             <textarea formControlName="description" class="admin-wrapper-main__card--form-input"></textarea>
                         </div>
                         <div class="admin-wrapper-main__card--form-group">
                             <label>Delay:
-                                    <span class="admin-wrapper-main__card--form--tooltip">
-                                            &#9432; 
-                                            <div class="admin-wrapper-main__card--form--tooltiptext">
-                                                time it takes in ticks to move to the next path
-                                            </div>
-                                        </span>
+                                <span class="admin-wrapper-main__card--form--tooltip">
+                                    &#9432;
+                                    <div class="admin-wrapper-main__card--form--tooltiptext">
+                                        time it takes in ticks to move to the next path
+                                    </div>
+                                </span>
                             </label>
                             <input #delay type="number" formControlName="delay" class="admin-wrapper-main__card--form-input"><br>
                             <small>{{delay.value / 1000 | number}} seconds</small>
@@ -62,15 +62,15 @@
                     <button class="button succes" type="submit" (click)="addPath()">Add path</button> &nbsp;
                     <button class="button danger" type="button danger" (click)="removePath(i)">Remove path</button>
                     <br>
-                    <!-- End of the repeated path template -->
+                    <!-- End path template -->
                 </div>
                 <div>
-                    <br>
                     <button class="button primary" type="submit" [disabled]="form.pristine">Save</button> &nbsp;
                     <button class="button danger" type="button danger" (click)="revert()" [disabled]="form.pristine">undo/reload</button>
                 </div>
             </div>
         </form>
     </div>
+    <!-- listing component gives information on how to use the routes-->
     <app-listing-components></app-listing-components>
 </section>

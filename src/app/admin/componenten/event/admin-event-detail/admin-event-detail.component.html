@@ -1,10 +1,10 @@
 <!-- Important! classes and id's are used in the ts file -->
 <div *ngFor="let edit of data" class="main">
 
-    <form >
+    <form>
         <div class="form-group">
             <label for="id">id</label> <br>
-            <input #identifier type="text" name="identifier" required  value="{{edit.identifier}}">
+            <input #identifier type="text" name="identifier" required value="{{edit.identifier}}">
         </div>
         <div class="form-group">
             <label for="message">Message</label> <br>
@@ -20,14 +20,15 @@
         </div>
         <div class="form-group">
             <label for="imgLink">img url</label> <br>
-            <input #imgUrl type="text" name="imgLink" required  value="{{edit.imgLink}}">
+            <input #imgUrl type="text" name="imgLink" required value="{{edit.imgLink}}">
         </div>
         <div class="form-group">
             <label for="imgBoolean">visability</label> <br>
-            <input (click)="check(event)" #imgBoolean checked="{{edit.img}}" type="checkbox" >
+            <input (click)="check(event)" #imgBoolean checked="{{edit.img}}" type="checkbox">
         </div>
-        
+
         <button (click)="update(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, identifier.value); alertUser()">edit</button>
     </form>
 </div>
+<!-- images to choose from for the background-->
 <app-image-view></app-image-view>
