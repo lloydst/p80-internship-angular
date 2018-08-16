@@ -36,6 +36,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './store/effects/app.effects';
 import { WebsiteEffects } from './store/effects/website.effects';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,9 +53,9 @@ import { WebsiteEffects } from './store/effects/website.effects';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-    StoreModule.forRoot(reducers, { metaReducers }),
-    !environment.production ? StoreDevtoolsModule.instrument() : [],
-    EffectsModule.forRoot([AppEffects, WebsiteEffects]),
+    //StoreModule.forRoot(reducers, { metaReducers }),
+    //!environment.production ? StoreDevtoolsModule.instrument() : [],
+    //EffectsModule.forRoot([AppEffects, WebsiteEffects]),
     
     ],
   providers: [

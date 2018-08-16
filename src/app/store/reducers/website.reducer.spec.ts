@@ -1,7 +1,7 @@
 import { reducer, initialState } from './website.reducer';
 
 describe('Website Reducer', () => {
-  describe('unknown action', () => {
+  describe('a action', () => {
     it('should return the initial state', () => {
       const action = {} as any;
 

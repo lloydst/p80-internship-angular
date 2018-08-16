@@ -16,7 +16,7 @@ export class NewsComponent implements OnInit {
    * binding
    */
   news:any = News
-  
+  enclosures:any=[]
   
   /**
    * constructor

@@ -16,6 +16,7 @@ import { Website } from './models/website';
   templateUrl: './app.component.html'
 })
 export class AppComponent {
+    title = 'p80 interschip assignment'
     // all the comments are store related
     // website$ :Observable<Website>
     /**

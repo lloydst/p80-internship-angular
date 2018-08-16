@@ -50,6 +50,7 @@ export class FinancialComponent implements OnInit {
      * binding
      */
     percentChangeWeek
+   
     /**
      * http client
      * @param http http client

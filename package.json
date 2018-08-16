@@ -14,7 +14,7 @@
     "start": "pm2-runtime start ecosystem.config.js --env production",
     "build": "ng build --aot --prod --build-optimizer",
     "lint": "ng lint",
-    "test": "ng e2e --browser ChromeHeadless --single-run",
+    "test": "ng e2e && ng test",
     "doc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -d docs --theme stripe",
     "doc:watch": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -s -w -d docs --theme stripe"
   },
