@@ -14,9 +14,9 @@ describe('ChannelContentComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [ReactiveFormsModule, FormsModule,HttpClientTestingModule,RouterTestingModule],
+            imports: [ReactiveFormsModule, FormsModule, HttpClientTestingModule, RouterTestingModule],
             declarations: [ChannelContentComponent, ListingComponentsComponent],
-            providers:[DataService]
+            providers: [DataService]
         })
             .compileComponents();
     }));

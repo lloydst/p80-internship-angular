@@ -9,7 +9,7 @@ describe('AdminSideNavComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AdminSideNavComponent ],
-      imports:[RouterTestingModule]
+      imports: [RouterTestingModule]
     })
     .compileComponents();
   }));

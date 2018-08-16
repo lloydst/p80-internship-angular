@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
  * ticket service
  */
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 
 export class TicketService {
@@ -13,13 +13,11 @@ export class TicketService {
      * for http calls
      * @param http HttpClient
      */
-  constructor(private http: HttpClient) { }
-/**
- * the actual get call
- */
-  getTickets() {
-    return this.http.get('/api/jira');
-    
-  }
-  
+    constructor(private http: HttpClient) { }
+    /**
+     * the actual get call
+     */
+    getTickets() {
+        return this.http.get('/api/jira');
+    }
 }

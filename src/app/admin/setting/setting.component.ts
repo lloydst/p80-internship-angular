@@ -18,13 +18,12 @@ export class SettingComponent implements OnInit {
     /**
      * for logic and binding
      */
-    configs: any = []
-   
+    configs: any = [];
     /**
      * on init
      */
     ngOnInit() {
-        this.getConfigs()
+        this.getConfigs();
     }
     /**
      * delete ip function
@@ -32,19 +31,19 @@ export class SettingComponent implements OnInit {
      */
     deleteConfig(ip) {
         this.ipservice.deleteIp(ip).subscribe(() => {
-            console.log('' + ip + '')
-            this.getConfigs()
-        })
+            console.log('' + ip + '');
+            this.getConfigs();
+        });
     }
     /**
      * get saved 'configs' from db
      */
     getConfigs() {
         this.ipservice.getIps().subscribe(config => {
-            this.configs = config
+            this.configs = config;
             if (config = []) {
-                this.configs.length = 0
+                this.configs.length = 0;
             }
-        })
+        });
     }
 }

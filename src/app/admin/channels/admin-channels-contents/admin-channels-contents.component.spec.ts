@@ -7,27 +7,27 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 
 describe('AdminChannelsContentsComponent', () => {
-  let component: AdminChannelsContentsComponent;
-  let fixture: ComponentFixture<AdminChannelsContentsComponent>;
+    let component: AdminChannelsContentsComponent;
+    let fixture: ComponentFixture<AdminChannelsContentsComponent>;
 
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ AdminChannelsContentsComponent ],
-      imports: [HttpClientTestingModule, RouterTestingModule],
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [AdminChannelsContentsComponent],
+            imports: [HttpClientTestingModule, RouterTestingModule],
 
-      schemas:[NO_ERRORS_SCHEMA],
-      providers:[DataService]
-    })
-    .compileComponents();
-  }));
+            schemas: [NO_ERRORS_SCHEMA],
+            providers: [DataService]
+        })
+            .compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(AdminChannelsContentsComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(AdminChannelsContentsComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

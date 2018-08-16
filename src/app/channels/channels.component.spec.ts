@@ -13,7 +13,7 @@ describe('ChannelsComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ ChannelsComponent ],
       imports: [RouterTestingModule, HttpClientTestingModule],
-      providers:[DataService]
+      providers: [DataService]
     })
     .compileComponents();
   }));

@@ -1,7 +1,7 @@
 
-//import { Action } from '@ngrx/store';
+// import { Action } from '@ngrx/store';
 import * as websiteActions from '../actions/website.actions';
-import {Website} from '../../models/website'
+import { Website } from '../../models/website';
 
 /**
  * interface to serve as a model for the shape of the website state
@@ -24,17 +24,17 @@ export const initialState: WebsiteState = {
  * @param action to use
  * @param index number to serve as a index
  */
-export const getSingle = (state: WebsiteState, action:websiteActions.WebsiteActions, index) => {
-    state.website[index]
-};
+/*export const getSingle = (state: WebsiteState, action: websiteActions.WebsiteActions, index) => {
+    state.website[index];
+};*/
 /**
  * example function to get a single url out of a website
- * @param state 
- * @param index 
+ * @param state
+ * @param index
  */
-export const getSingleUrl = (state: WebsiteState, index) => {
-    state.website[index].url
-};
+/*export const getSingleUrl = (state: WebsiteState, index) => {
+    state.website[index].url;
+};*/
 
 /**
  * based on the action type it will use a diferent function
@@ -42,22 +42,22 @@ export const getSingleUrl = (state: WebsiteState, index) => {
  * @param action action to handle
  */
 export function reducer(state = initialState, action: websiteActions.WebsiteActions): WebsiteState {
-  switch (action.type) {
-    case websiteActions.WebsiteActionTypes.SetWebsites:
-        return handleSetWebsites(state, action);
+    switch (action.type) {
+        case websiteActions.WebsiteActionTypes.SetWebsites:
+            return handleSetWebsites(state, action);
 
-    default:
-      return state;
-  }
+        default:
+            return state;
+    }
 }
 /**
- * sets the websites in the state 
+ * sets the websites in the state
  * @param state state of the application
  * @param action action to undertake
  */
 function handleSetWebsites(state: WebsiteState, action: websiteActions.SetWebsites): WebsiteState {
     return {
-      ...state,
-      website: action.payload
+        ...state,
+        website: action.payload
     };
-  }
+}

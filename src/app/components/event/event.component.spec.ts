@@ -5,26 +5,25 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 
 describe('EventComponent', () => {
-  let component: EventComponent;
-  let fixture: ComponentFixture<EventComponent>;
+    let component: EventComponent;
+    let fixture: ComponentFixture<EventComponent>;
 
-  beforeEach(async(() => {
-      
-    TestBed.configureTestingModule({
-      declarations: [ EventComponent ],
-      providers:[DataService],
-      imports:[HttpClientTestingModule]
-    })
-    .compileComponents();
-  }));
+    beforeEach(async(() => {
+        TestBed.configureTestingModule({
+            declarations: [EventComponent],
+            providers: [DataService],
+            imports: [HttpClientTestingModule]
+        })
+            .compileComponents();
+    }));
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(EventComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(EventComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

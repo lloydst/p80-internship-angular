@@ -14,49 +14,48 @@ export class ChannelComponent implements OnInit {
     /**
      * for binding
      */
-    offline:boolean// set by events
+    offline: boolean; // set by events
     /**
      * for binding
      */
-    messages
+    messages;
     /**
      * for binding
      */
-    today
+    today;
     /**
      * for binding
      */
-    hour
+    hour;
 
     /**
      * for binding
      */
-    year
+    year;
     /**
      * for binding
      */
-    month
-
+    month;
     /**
      * for binding
      */
-    day
+    day;
     /**
     * for binding
     */
-    min
+    min;
     /**
-     * for binding 
+     * for binding
      */
-    timeNow = ""
-    /**
-     * binding
-     */
-    do
+    timeNow = '';
     /**
      * binding
      */
-    currentchannel: string
+    do;
+    /**
+     * binding
+     */
+    currentchannel: string;
     /**
      * constructor
      * @param data dataservice
@@ -67,160 +66,151 @@ export class ChannelComponent implements OnInit {
         private router: Router
     ) {
         window.onbeforeunload = function (e) {
-            var myWindow = window.open('javascript:void window.focus()', 'channel', 'scrollbars=no');
-            myWindow.close()
-            return undefined
+            const myWindow = window.open('javascript:void window.focus()', 'channel', 'scrollbars=no');
+            myWindow.close();
+            return undefined;
         };
     }
     /**
      * just a function
      */
     log() {
-        var url = this.router.url.split('/')
-        this.currentchannel = url[2]
+        const url = this.router.url.split('/');
+        this.currentchannel = url[2];
     }
     /**
      * on load
      */
     ngOnInit() {
-        this.log()
-        this.getRoutes()
-        this.getMessages()
+        this.log();
+        this.getRoutes();
+        this.getMessages();
         setTimeout(() => {
-            this.openWindow()
+            this.openWindow();
         }, 200);
 
     }
     /**
-     * sets the 'time' 
+     * sets the 'time'
      */
     setTimeNow() {
         this.today = new Date();
         this.hour = this.today.getHours().toString();
-        this.year = this.today.getFullYear()
-        this.month = this.today.getMonth().toString()
-        this.day = this.today.getDate().toString()
-        this.min = this.today.getMinutes().toString()
+        this.year = this.today.getFullYear();
+        this.month = this.today.getMonth().toString();
+        this.day = this.today.getDate().toString();
+        this.min = this.today.getMinutes().toString();
 
         if (Number(this.month) < 10) {
-            var newDay = Number(this.month) + 1
-            newDay.toString()
-            this.month = "0" + newDay
+            const newDay = Number(this.month) + 1;
+            newDay.toString();
+            this.month = '0' + newDay;
         }
         if (Number(this.day) < 10) {
-            this.day = '0' + this.day
+            this.day = '0' + this.day;
         }
         if (Number(this.hour) < 10) {
-            this.hour = '0' + this.hour
+            this.hour = '0' + this.hour;
         }
         if (Number(this.min) < 10) {
-            this.min = '0' + this.min
+            this.min = '0' + this.min;
         }
-        this.timeNow = "" + this.year + "-" + this.month + "-" + this.day + "T" + this.hour + ":" + this.min + ""
-        
+        this.timeNow = `${this.year}-${this.month}-${this.day}T${this.hour}:${this.min}`;
     }
     /**
      * just a routing function
      */
     getRoutes() {
         this.data.getChannel(this.currentchannel).subscribe(res => {
-            this.do = res
-        })
+            this.do = res;
+        });
     }
     /**
      * get request
      */
     getMessages() {
         this.data.getAllMessage().subscribe(result => {
-            this.messages = result
-        })
+            this.messages = result;
+        });
     }
     /**
     * opens tabs (needs refractoring)
     */
     openWindow() {
-        var x = 0;
-        var self = this
-        var messageArray = this.messages
+        let x = 0;
+        const self = this;
+        const messageArray = this.messages;
         function go() {
-            self.offline = !window.navigator.onLine
-            var path = self.do[0].path[x].pathurl
-            var myWindow = window.open(path, "channel") // default = 0
-            
-            path = '/components/event'
-            var offlineWindow = window.open(path, 'offline')
-            
+            self.offline = !window.navigator.onLine;
+            let path = self.do[0].path[x].pathurl;
+            const myWindow = window.open(path, 'channel'); // default = 0
+            path = '/components/event';
+            const offlineWindow = window.open(path, 'offline');
             myWindow.addEventListener('offline', () => {
-                self.offline = true
+                self.offline = true;
             });
             myWindow.addEventListener('online', () => {
-                x=0
-                self.offline = false
+                x = 0;
+                self.offline = false;
             });
 
             // @overrule the loop if a message should get shown but will only over ride the loop route
-            if (path == '/components/loop') {
+            if (path === '/components/loop') {
                 if (messageArray.length > 0) {
-                    self.setTimeNow()
-                    const str = /([0-9])/g
+                    self.setTimeNow();
+                    const str = /([0-9])/g;
                     for (let j = 0; j < messageArray.length; j++) {
-                        let now = self.timeNow.match(str)
-                        let from = messageArray[j].showFrom.match(str)
-                        let till = messageArray[j].showTill.match(str)
-                        let newNow = ''
-                        let start = ''
-                        let end = ''
+                        const now = self.timeNow.match(str);
+                        const from = messageArray[j].showFrom.match(str);
+                        const till = messageArray[j].showTill.match(str);
+                        let newNow = '';
+                        let start = '';
+                        let end = '';
                         for (let i = 0; i < 12; i++) { // 12 = timeNow.length
-                            newNow = newNow + now[i]
-                            start = start + from[i]
-                            end = end + till[i]
+                            newNow = newNow + now[i];
+                            start = start + from[i];
+                            end = end + till[i];
                         }
                         if (Number(start) < Number(newNow) && Number(newNow) < Number(end)) {
-                            path = '/components/event'
-                            myWindow.location.href = path
+                            path = '/components/event';
+                            myWindow.location.href = path;
                         }
                     }
                 }
             }
-            if(self.offline) {
-                x = 0
-                myWindow.close()
-                offlineWindow.open(path, 'offline')
+            if (self.offline) {
+                x = 0;
+                myWindow.close();
+                offlineWindow.open(path, 'offline');
                 // if offline see if the browser is online in a min
-                
             }
-            if(!self.offline) {
+            if (!self.offline) {
                 // set to undefined so it will only run once
-                self.offline = undefined 
-                offlineWindow.close()
-                
+                self.offline = undefined ;
+                offlineWindow.close();
             }
-             // if it is the loop component 
-            if (self.do[0].path.length == 1 && '/components/loop' === self.do[0].path[0].pathurl) {
-
+             // if it is the loop component
+            if (self.do[0].path.length === 1 && '/components/loop' === self.do[0].path[0].pathurl) {
                 setTimeout(() => {
-                    myWindow.close()
-                    x=0
-                    go()
-                }, 354000); //self.do[0].path.delay //websites *20000 +14s?
+                    myWindow.close();
+                    x = 0;
+                    go();
+                }, 354000); // self.do[0].path.delay //websites *20000 +14s?
             }
-            
             // if x = the last path
-            if (x  == self.do[0].path.length - 1 && self.do[0].path.length >1) {
-                
-                myWindow.close()
-                self.getRoutes()
-                x = 0
+            if (x  === self.do[0].path.length - 1 && self.do[0].path.length > 1) {
+                myWindow.close();
+                self.getRoutes();
+                x = 0;
             }
             if (x++ < self.do[0].path.length) { // if x < then the last path increase x by 1
                 setTimeout(() => {
-                    myWindow.close()
-                    go()
+                    myWindow.close();
+                    go();
                 }, self.do[0].path[x - 1].delay); // x is already increased by 1 so x -1 = the delay that should be used
             }
-            
         }
-        go()
+        go();
     }
 
 }

@@ -7,16 +7,16 @@ import { HttpClient } from '@angular/common/http';
  */
 @Injectable()
 export class WeatherService {
-/**
- * ng http service
- * @param http for requests
- */
+    /**
+     * ng http service
+     * @param http for requests
+     */
 
-  constructor(private http: HttpClient) { }
-  /**
-   * gets weather from api
-   */
-  getWeather () {
-    return this.http.get('api/weather')
-  }
+    constructor(private http: HttpClient) { }
+    /**
+     * gets weather from api
+     */
+    getWeather() {
+        return this.http.get('api/weather');
+    }
 }

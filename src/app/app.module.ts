@@ -7,7 +7,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-import { NguiMapModule} from '@ngui/map';
+import { NguiMapModule } from '@ngui/map';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 /**
@@ -38,32 +38,31 @@ import { AppEffects } from './store/effects/app.effects';
 import { WebsiteEffects } from './store/effects/website.effects';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule, 
-    AdminModule,
-    ChannelsModule,
-    ComponentsModule,
-    AppRoutingModule,
-    FileUploadModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-    //StoreModule.forRoot(reducers, { metaReducers }),
-    //!environment.production ? StoreDevtoolsModule.instrument() : [],
-    //EffectsModule.forRoot([AppEffects, WebsiteEffects]),
-    
+    declarations: [
+        AppComponent,
     ],
-  providers: [
-    DataService,
-    NewsService,
-    WeatherService,
-    FileService
-  ],
-  bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        FormsModule,
+        AdminModule,
+        ChannelsModule,
+        ComponentsModule,
+        AppRoutingModule,
+        FileUploadModule,
+        ReactiveFormsModule,
+        BrowserAnimationsModule,
+        ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+        StoreModule.forRoot(reducers, { metaReducers }),
+        !environment.production ? StoreDevtoolsModule.instrument() : [],
+        EffectsModule.forRoot([AppEffects, WebsiteEffects]),
+    ],
+    providers: [
+        DataService,
+        NewsService,
+        WeatherService,
+        FileService
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

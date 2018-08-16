@@ -22,53 +22,54 @@ import { CreateComponent } from './setting/create/create.component';
  * defining routes
  */
 const routes = [
-  { path: 'admin', component: AdminComponent, children:[
     {
-      path:'', 
-      component: DashboardComponent // this one's grid had to be done seperate
-    },
-    {
-        path:'algemeen',component: SettingComponent ,children:[
-            {path:'add',component: CreateComponent},
-            {path:'detail/:id',component: UpdateComponent}
+        path: 'admin', component: AdminComponent, children: [
+            {
+                path: '',
+                component: DashboardComponent // this one's grid had to be done seperate
+            },
+            {
+                path: 'algemeen', component: SettingComponent, children: [
+                    { path: 'add', component: CreateComponent },
+                    { path: 'detail/:id', component: UpdateComponent }
+                ]
+            },
+            {
+                path: 'components',
+                component: AdminChannelsComponent,
+                children: [
+                    { path: 'entrance', component: AdminEntranceComponent },
+                    { path: 'entrance/:id', component: AdminEntranceDetailComponent },
+                    { path: 'events', component: AdminEventComponent },
+                    { path: 'events/:id', component: AdminEventDetailComponent }
+                ]
+            },
+            {
+                path: 'channels', component: AdminChannelsContentsComponent, children: [
+                    // these need to become content specific
+                    {
+                        path: '',
+                        redirectTo: 'new',
+                        pathMatch: 'full'
+                    }, // default
+                    { path: 'new', component: ChannelNewComponent },
+                    { path: ':channel', component: ChannelContentComponent }
+                ]
+            },
+            {
+                path: 'upload',
+                component: ImageUploadComponent
+            },
+            {
+                path: 'image',
+                component: ImageViewComponent
+            }
         ]
     },
-    {
-      path:'components', 
-      component: AdminChannelsComponent,
-      children: [
-        {path: 'entrance', component: AdminEntranceComponent},
-        {path: 'entrance/:id', component: AdminEntranceDetailComponent},
-        {path: 'events', component: AdminEventComponent},
-        {path: 'events/:id', component: AdminEventDetailComponent}
-      ]
-    },
-    {
-      path:'channels', component: AdminChannelsContentsComponent, children: [
-        // these need to become content specific
-        {
-          path: '',
-          redirectTo:'new',
-          pathMatch: 'full'
-        }, // default
-        {path: 'new', component: ChannelNewComponent},
-        {path: ':channel', component: ChannelContentComponent}
-        
-      ]
-    },
-    {
-      path: 'upload',
-      component: ImageUploadComponent
-    },
-    {
-      path: 'image',
-      component: ImageViewComponent
-    }
-  ]},
 ];
 
 @NgModule({
-  imports: [ RouterModule.forChild(routes) ],
-  exports: [ RouterModule ]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
-export class AdminRoutingModule {}
+export class AdminRoutingModule { }

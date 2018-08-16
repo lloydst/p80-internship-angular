@@ -14,9 +14,9 @@ describe('ImageUploadComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ ImageUploadComponent, ImageViewComponent ],
-      schemas:[NO_ERRORS_SCHEMA],
-      providers:[FileService],
-      imports:[HttpClientTestingModule]
+      schemas: [NO_ERRORS_SCHEMA],
+      providers: [FileService],
+      imports: [HttpClientTestingModule]
     })
     .compileComponents();
   }));

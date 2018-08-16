@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
 
 /**
@@ -9,17 +9,15 @@ const URL = '/images/upload';
  * upload Component
  */
 @Component({
-  selector: 'app-image-upload',
-  templateUrl: './image-upload.component.html'
-  
+    selector: 'app-image-upload',
+    templateUrl: './image-upload.component.html'
+
 })
 export class ImageUploadComponent {
-  /**
-   * binding uploader to FileUploader from ng2-file-upload
-   */
-    public uploader:FileUploader = new FileUploader({url: URL});
-    
-  
+    /**
+     * binding uploader to FileUploader from ng2-file-upload
+     */
+    public uploader: FileUploader = new FileUploader({ url: URL });
 }
 
 

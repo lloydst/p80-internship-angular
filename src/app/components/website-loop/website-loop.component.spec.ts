@@ -12,7 +12,7 @@ describe('WebsiteLoopComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ WebsiteLoopComponent ],
-      providers:[DataService],
+      providers: [DataService],
       imports: [HttpClientTestingModule]
     })
     .compileComponents();

@@ -18,7 +18,5 @@ export class AdminChannelsComponent implements OnInit {
    * runs on load
    */
   ngOnInit() {
-    
   }
-  
 }

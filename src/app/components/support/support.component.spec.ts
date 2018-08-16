@@ -12,7 +12,7 @@ describe('SupportComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ SupportComponent ],
       imports: [HttpClientTestingModule, RouterTestingModule],
-      providers:[TicketService]
+      providers: [TicketService]
     })
     .compileComponents();
   }));

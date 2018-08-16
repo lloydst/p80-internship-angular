@@ -16,6 +16,6 @@ export class NewsService {
    * gets rss feed from api
    */
   getNews () {
-    return this.http.get('/api/news')
+    return this.http.get('/api/news');
     }
 }

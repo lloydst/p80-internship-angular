@@ -13,7 +13,7 @@ describe('AdminEntranceComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [  AdminEntranceComponent ],
-      imports: [RouterTestingModule,ReactiveFormsModule, FormsModule, HttpClientTestingModule],
+      imports: [RouterTestingModule, ReactiveFormsModule, FormsModule, HttpClientTestingModule],
       providers: [DataService]
     })
     .compileComponents();

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 /**
  * admin component
  */
@@ -17,7 +16,5 @@ export class AdminComponent implements OnInit {
  * component
  */
   ngOnInit() {
-   
   }
-  
 }

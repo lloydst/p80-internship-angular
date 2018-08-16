@@ -21,23 +21,23 @@ export class ChannelContentComponent implements OnInit {
             description: 'Does this and that',
             name: 'derp'
         }
-    ]
+    ];
     /**
      * current channel
      */
-    currentChannel
+    currentChannel;
     /**
      * binding for channelName
      */
-    channelName
+    channelName;
     /**
      * channel data
      */
-    channelData
+    channelData;
     /**
      * pathdata
      */
-    preloadPath
+    preloadPath;
     /**
      * form
      */
@@ -58,7 +58,7 @@ export class ChannelContentComponent implements OnInit {
         private data: DataService,
         private router: Router
     ) {
-        this.createForm()
+        this.createForm();
     }
     /**
      * creates the form
@@ -73,8 +73,8 @@ export class ChannelContentComponent implements OnInit {
      * gets the current url out of the router
      */
     getCurrentChannel() {
-        var url = this.router.url.split("/")
-        this.currentChannel = url[3]
+        const url = this.router.url.split('/');
+        this.currentChannel = url[3];
     }
     /**
      * gets the channel settings from db and preloads the form for easy editing
@@ -82,15 +82,13 @@ export class ChannelContentComponent implements OnInit {
     reloadData() {
         this.data.getChannel(this.currentChannel).subscribe(res => {
             this.channelData = res;
-            this.preloadPath = res[0].path // loads all 'paths'
-
+            this.preloadPath = res[0].path; // loads all 'paths'
             this.form.controls['channel'].setValue(res[0].channel, { onlySelf: true });
-            for (let path of this.preloadPath) {
-
-                //console.log(path)
-                this.preaddPath(path)
+            for (const path of this.preloadPath) {
+                // console.log(path)
+                this.preaddPath(path);
             }
-        })
+        });
     }
     /**
      * adds a 'path'
@@ -98,12 +96,12 @@ export class ChannelContentComponent implements OnInit {
      */
     initSection(path) {
         if (!path) {
-            var newpath = {
-                pathurl: "",
-                description: "",
+            const newpath = {
+                pathurl: '',
+                description: '',
                 delay: 20000,
-                componentName: ""
-            }
+                componentName: ''
+            };
         }
         // console.log(path.pathurl)
         return new FormGroup({
@@ -117,20 +115,19 @@ export class ChannelContentComponent implements OnInit {
      * on init
      */
     ngOnInit() {
-        this.getCurrentChannel()
-
+        this.getCurrentChannel();
         this.form = this.fb.group({
             channel: [this.channelName],
             path: this.fb.array([])
         });
-        this.reloadData()
+        this.reloadData();
     }
     /**
      * will preload the form with data from service
      * @param path a single 'path' returned by the service
      */
     preaddPath(path) {
-        const control = <FormArray>this.form.get('path');;
+        const control = <FormArray>this.form.get('path');
         control.push(this.initSection(path));
     }
     /**
@@ -167,14 +164,13 @@ export class ChannelContentComponent implements OnInit {
      * @param channel_to_Update channel to update
      */
     save(channel_to_Update) {
-
-        this.data.saveContent(this.form.value).subscribe(() => { })
-        return { message: 'Saved' }
+        this.data.saveContent(this.form.value).subscribe(() => { });
+        return { message: 'Saved' };
     }
-    
+
     get path(): FormArray {
         return this.form.get('path') as FormArray;
-    };
+    }
     /**
      * resets form to what it was
      */
@@ -183,7 +179,6 @@ export class ChannelContentComponent implements OnInit {
             channel: [this.currentChannel],
             path: this.fb.array([])
         });
-        this.reloadData()
+        this.reloadData();
     }
-
 }

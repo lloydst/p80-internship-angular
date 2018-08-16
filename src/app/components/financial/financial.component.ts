@@ -14,26 +14,24 @@ import { trigger, style, animate, transition } from '@angular/animations';
               style({ opacity: 0}),
               animate('500ms', style({ opacity: 1}))
             ]),
-            
           ]
         )
       ],
-      
 })
 export class FinancialComponent implements OnInit {
     /**
      * bitcoin refresh rate
      */
-    refreshTime = 60000 // 60s
+    refreshTime = 60000; // 60s
     /**
      * time it takes to switch the lower section's data between 1h, 1d and a week
      */
-    toggleTime = 20000 // switches between 1h, 1d and a week (up down)
+    toggleTime = 20000; // switches between 1h, 1d and a week (up down)
     /**
      * used for toggling the bottom change
      * default to 24h on start
      */
-    display = '1h'
+    display = '1h';
     /**
      * binding
      */
@@ -41,16 +39,15 @@ export class FinancialComponent implements OnInit {
     /**
      * binding
      */
-    percentChangeHour
+    percentChangeHour;
     /**
      * binding
      */
-    percentChangeDay
+    percentChangeDay;
     /**
      * binding
      */
-    percentChangeWeek
-   
+    percentChangeWeek;
     /**
      * http client
      * @param http http client
@@ -60,23 +57,23 @@ export class FinancialComponent implements OnInit {
      * on init
      */
     ngOnInit() {
-        this.getBitData()
-        this.toggleLowerTileList()
+        this.getBitData();
+        this.toggleLowerTileList();
     }
-
     /**
      * get data from end point every 10 s
      * @returns Object
      */
     getBitData() {
         setTimeout(() => {
-            this.getBitData()
+            this.getBitData();
         }, this.refreshTime); // time it calls
-        this.http.get('https://api.coinmarketcap.com/v1/ticker/?start=0&limit=24&convert=EUR').subscribe( // change the limit amount to make it more or less
+        this.http.get('https://api.coinmarketcap.com/v1/ticker/?start=0&limit=24&convert=EUR').subscribe(
+            // change the limit amount to make it more or less
             res => {
-                this.bitVal = res
+                this.bitVal = res;
             }
-        )
+        );
     }
     /**
      * switches between 1h,1d and 1 week
@@ -84,15 +81,15 @@ export class FinancialComponent implements OnInit {
     toggleLowerTileList() {
 
         setTimeout(() => {
-            this.toggleLowerTileList()
+            this.toggleLowerTileList();
         }, this.toggleTime);
 
-        if (this.display == '24h') {
-            this.display = '7d'
-        } else if (this.display == '1h') {
-            this.display = '24h'
-        } else if (this.display == '7d') {
-            this.display = '1h'
+        if (this.display === '24h') {
+            this.display = '7d';
+        } else if (this.display === '1h') {
+            this.display = '24h';
+        } else if (this.display === '7d') {
+            this.display = '1h';
         }
 
     }

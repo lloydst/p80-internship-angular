@@ -11,17 +11,17 @@ import { switchMap, map } from 'rxjs/operators';
  */
 @Injectable()
 export class WebsiteEffects {
-/**
- * constructor
- * @param actions$ action
- * @param http http call
- */
+    /**
+     * constructor
+     * @param actions$ action
+     * @param http http call
+     */
     constructor(private actions$: Actions,
         private http: HttpClient) { }
 
-/**
- * gets the websites from the api
- */
+    /**
+     * gets the websites from the api
+     */
     @Effect()
     loadWebsites$: Observable<Action> = this.actions$.pipe(
         ofType(websiteActions.WebsiteActionTypes.LoadWebsites),
@@ -31,7 +31,7 @@ export class WebsiteEffects {
                     map((res) => {
                         return new websiteActions.SetWebsites(res);
                     })
-                )
+                );
         })
     );
 }

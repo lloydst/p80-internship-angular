@@ -30,9 +30,9 @@ export class Enclosures {
     /**
      * img type
      */
-    type:String;
+    type: String;
     /**
      * img url
      */
-    url: String
+    url: String;
 }

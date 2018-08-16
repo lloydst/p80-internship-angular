@@ -81,4 +81,6 @@ export class DeleteWebsite implements Action {
     constructor(public payload: { id: string }) { }
 }
 
-export type WebsiteActions = LoadWebsites | SetWebsites;
+export type WebsiteActions =
+    LoadWebsites
+    | SetWebsites;

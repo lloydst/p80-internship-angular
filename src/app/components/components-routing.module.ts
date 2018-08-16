@@ -14,7 +14,7 @@ import { TrafficComponent } from './traffic/traffic.component';
 import { NewsComponent } from './news/news.component';
 
 const routes: Routes = [
-  {path:'components', component: ComponentsComponent, children: [
+  {path: 'components', component: ComponentsComponent, children: [
     {
       path: 'meeting', component: MeetingComponent
     },

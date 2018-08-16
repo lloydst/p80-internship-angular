@@ -5,29 +5,29 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo:'channels',
+    redirectTo: 'channels',
     pathMatch: 'full'
   }, // default
   {
-    path:'admin', 
+    path: 'admin',
     loadChildren: 'app/admin/admin.module#AdminModule'
   },
   {
-    path:'channels',
+    path: 'channels',
     loadChildren: 'app/channels/channels.module#ChannelsModule'
   },
   {
-    path:'components',
+    path: 'components',
     loadChildren: 'app/components/components.module#ComponentsModule'
   },
   {
-      path:'**', redirectTo:'channels' // backup route
+      path: '**', redirectTo: 'channels' // backup route
     }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes,{ enableTracing: false }) // set to true for debugging
+    RouterModule.forRoot(routes, { enableTracing: false }) // set to true for debugging
   ],
   exports: [RouterModule]
 })

@@ -16,15 +16,15 @@ export class AdminEventComponent implements OnInit {
     /**
      * binding
      */
-    messages
+    messages;
     /**
      * binding
      */
-    model
+    model;
     /**
      * binding
      */
-    event
+    event;
     /**
      * form group
      */
@@ -42,11 +42,11 @@ export class AdminEventComponent implements OnInit {
     constructor(private dataService: DataService) { }
     /**
      * function to create a new message/event
-     * @param mssg 
-     * @param from 
-     * @param untill 
-     * @param imgClass 
-     * @param imgBoolean 
+     * @param mssg
+     * @param from
+     * @param untill
+     * @param imgClass
+     * @param imgBoolean
      * @param id
      */
     newMessage(mssg, from, untill, imgClass, imgBoolean: boolean, id) {
@@ -56,9 +56,8 @@ export class AdminEventComponent implements OnInit {
      * on load
      */
     ngOnInit() {
-        this.getData()
+        this.getData();
     }
-
     /**
      * creates a message
      * @param mssg message/events
@@ -68,21 +67,17 @@ export class AdminEventComponent implements OnInit {
      * @param iBoolean boolean whether it has a class
      * @param id identifier to update/delete
      */
-    create(mssg: String, from: String, untill: String, iClass: String, iBoolean: Boolean, id: String) { // need to add validator to from/untill fields
-        var str = /([0-9])/g
-        var untillStr = untill.match(str)
-        var fromStr = from.match(str)
-        console.log(untillStr, fromStr)
-        var newNow = ''
-        var newFrom = ''
-        var newTill = ''
+    create(mssg: String, from: String, untill: String, iClass: String, iBoolean: Boolean, id: String) {
+        // need to add validator to from/untill fields
+        const str = /([0-9])/g;
+        const untillStr = untill.match(str);
+        const fromStr = from.match(str);
+        // console.log(untillStr, fromStr);
+        let newFrom = '';
+        let newTill = '';
         for (let i = 0; i <= 12; i++) {
-
-            newFrom = newFrom + fromStr[i]
-            newTill = newTill + untillStr[i]
-            if (newTill < newFrom || i <= 12) {
-                // console.log('de data klopen niet als je doorgaat zal de event component ze automatisch omdraaien waneer deze component geladen word')
-            }
+            newFrom = newFrom + fromStr[i];
+            newTill = newTill + untillStr[i];
         }
 
         this.dataService.createMessage({
@@ -98,26 +93,28 @@ export class AdminEventComponent implements OnInit {
                 this.getData();
             },
             error => {
-                console.error("Error creating message!");
-                return error//Observable.throw(error);
+                console.error('Error creating message!');
+                return error; // Observable.throw(error);
             }
-        )
+        );
     }
     /**
      * gets all messages
      */
     getData() {
         this.dataService.getAllMessage().subscribe(
-            res => { this.messages = res })
+            res => {
+                this.messages = res;
+            });
     }
-    /** 
+    /**
      * checks if the checkbox is checked
      * @param checked
      */
     check($event) {
         $('#imgBoolean').change(function () {
             alert($('#imgBoolean').attr('checked'));
-        })
+        });
     }
     /**
      * updates a old message with new contents and or more time
@@ -125,14 +122,14 @@ export class AdminEventComponent implements OnInit {
      * @param newMessage new text
      */
     update(id, newMessage) {
-        return 'update'
+        return 'update';
     }
     /**
      * deletes a message
      * @param message message to delete
      */
     delete(message) {
-        if (confirm("Are you sure you want to delete " + message.identifier + "?")) {
+        if (confirm(`Are you sure you want to delete ${message.identifier}?`)) {
             this.dataService.deleteMessage(message.identifier).subscribe(
                 data => {
                     // refresh the list
@@ -140,7 +137,7 @@ export class AdminEventComponent implements OnInit {
                     return true;
                 },
                 error => {
-                    console.error("Error deleting message!");
+                    console.error('Error deleting message!');
                     return Observable.throw(error);
                 }
             );

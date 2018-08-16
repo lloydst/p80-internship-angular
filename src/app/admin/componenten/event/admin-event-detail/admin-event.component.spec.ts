@@ -14,8 +14,8 @@ describe('AdminEventDetailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AdminEventDetailComponent, ImageViewComponent ],
-      imports:[RouterTestingModule,HttpClientTestingModule],
-      providers:[DataService,FileService]
+      imports: [RouterTestingModule, HttpClientTestingModule],
+      providers: [DataService, FileService]
     })
     .compileComponents();
   }));

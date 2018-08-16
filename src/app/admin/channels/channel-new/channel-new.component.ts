@@ -27,11 +27,11 @@ export class ChannelNewComponent implements OnInit {
             description: 'has a description of what the path does',
             name: 'name'
         }
-    ]
+    ];
     /**
      * binding
      */
-    componentPath: Paths
+    componentPath: Paths;
     /**
      * form data
      */
@@ -80,7 +80,6 @@ export class ChannelNewComponent implements OnInit {
             delay: [2000]
         });
     }
-
     /**
      * just a function
      */
@@ -112,9 +111,7 @@ export class ChannelNewComponent implements OnInit {
      */
     save(new_channel) {
         this.data.saveContent(this.form.value).subscribe(() => {
-            this.redirectTo(this.form.value.channel)
-        })
-
+            this.redirectTo(this.form.value.channel);
+        });
     }
-
 }

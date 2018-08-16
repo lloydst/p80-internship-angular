@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { Title } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
@@ -13,11 +13,11 @@ import { IpService } from '../services/ip.service';
     templateUrl: './channels.component.html'
 })
 
-export class ChannelsComponent implements OnInit {
+export class ChannelsComponent implements OnInit, OnDestroy {
     /**
      * title to set
      */
-    title = "control"
+    title = 'control';
     /**
      * ip to get from api
      */
@@ -25,15 +25,15 @@ export class ChannelsComponent implements OnInit {
     /**
      * ip config from db
      */
-    ipConfig
+    ipConfig;
     /**
      * if in production and a ip config exist navigate to the corresponding ip
      */
-    singleIp
+    singleIp;
     /**
      * for template binding
      */
-    channel
+    channel;
    /**
     * constructor
     * @param http http client
@@ -50,20 +50,19 @@ export class ChannelsComponent implements OnInit {
         private ipService: IpService
     ) {
         this.http.get<{ ip?: string }>('https://jsonip.com')
-            .subscribe(data => {
-
-                this.ipAddress = data.ip
-                //console.log(this.ipAddress)
-                this.getSingleIp(data.ip)
-            })
+            .subscribe(ipdata => {
+                this.ipAddress = ipdata.ip;
+                // console.log(this.ipAddress)
+                this.getSingleIp(ipdata.ip);
+            });
     }
     /**
      * gets the channels from db
      */
     getRoutes() {
         this.data.getChannelContent().subscribe(doc => {
-            this.channel = doc
-        })
+            this.channel = doc;
+        });
     }
     /**
      * change the title of the application
@@ -76,14 +75,14 @@ export class ChannelsComponent implements OnInit {
      * on load
      */
     ngOnInit() {
-        this.setTitle("Channel control")
-        this.getRoutes()
+        this.setTitle('Channel control');
+        this.getRoutes();
     }
     /**
      * on navigation away
      */
     ngOnDestroy() {
-        this.setTitle("p80 interschip assignment")
+        this.setTitle('p80 interschip assignment');
     }
     /**
      * force child reload
@@ -115,11 +114,9 @@ export class ChannelsComponent implements OnInit {
         if (environment.production === undefined) {
             if (this.singleIp.ip === this.ipAddress) { // if config exists got to channel
                 this.redirectTo(this.singleIp.channel);
+            } else {
+                return `this ip doesn't have a config yet`;
             }
-            else {
-                return "this ip doesn't have a config yet"
-            }
-            
         }
     }
 /**
@@ -128,9 +125,9 @@ export class ChannelsComponent implements OnInit {
  */
     getSingleIp(ip) {
         this.ipService.selectByIp(ip).subscribe(ipFromDb => {
-            this.singleIp = ipFromDb
-            this.ipChannel()
-        })
+            this.singleIp = ipFromDb;
+            this.ipChannel();
+        });
 
     }
 }

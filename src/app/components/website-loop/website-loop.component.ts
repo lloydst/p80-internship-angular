@@ -5,7 +5,7 @@ import { DataService } from '../../services/data.service';
 /**
  * just setting it once
  */
-var x = 0;
+const x = 0;
 
 /**
  * entrance component
@@ -15,19 +15,18 @@ var x = 0;
     templateUrl: './website-loop.component.html'
 })
 export class WebsiteLoopComponent implements OnInit {
-
     /**
      * for binding
      */
-    websites: any
+    websites: any;
     /**
      * for binding
      */
-    res: any
+    res: any;
     /**
      * for binding
      */
-    data: any = []
+    data: any = [];
     /**
      * constructor
      * @param newsService gets the latest news of nu.nl
@@ -42,9 +41,9 @@ export class WebsiteLoopComponent implements OnInit {
     ) {
         window.onbeforeunload = function (e) {
             // this one triggers on redirect
-            var loopWindow = window.open('javascript:void window.focus()', 'loop');
-            loopWindow.close()
-            return undefined
+            const loopWindow = window.open('javascript:void window.focus()', 'loop');
+            loopWindow.close();
+            return undefined;
             // doesnt always work
         };
     }
@@ -53,53 +52,51 @@ export class WebsiteLoopComponent implements OnInit {
      */
     OnDestroy() {
         // this one should trigger on close
-        var loopWindow = window.open('javascript:void window.focus()', 'loop');
-        loopWindow.close()
-        return undefined
+        const loopWindow = window.open('javascript:void window.focus()', 'loop');
+        loopWindow.close();
+        return undefined;
     }
 
     /**
      * gets all websites through the service
-     * 
      */
     getData() {
         this.dataService.getAllWebsites().subscribe(
             res => {
-                this.websites = res
-                this.openWindow()
-            })
+                this.websites = res;
+                this.openWindow();
+            });
     }
     /**
      * gets all the "websites" from a hidden span so it gets saved in a array then it will loop
      * through them opening each of them with window.open with 1 min interval
      */
     openWindow() {
-        var x = 0;
-        var arrayOfUrls = []
-        
+        let y = 0;
+        const arrayOfUrls = [];
         for (let i = 0; i < this.websites.length; i++) {
-            arrayOfUrls.push(this.websites[i].url)
+            arrayOfUrls.push(this.websites[i].url);
         }
 
         function go() {
-            var loopWindow = window.open(arrayOfUrls[x], 'loop') // default = 0
-            var actualLength = arrayOfUrls.length +1
-            console.log(actualLength)
-            if (x === arrayOfUrls.length) {
-                loopWindow.close()
-            } else if (x++ <= arrayOfUrls.length) {
+            const loopWindow = window.open(arrayOfUrls[y], 'loop'); // default = 0
+            const actualLength = arrayOfUrls.length + 1;
+            console.log(actualLength);
+            if (y === arrayOfUrls.length) {
+                loopWindow.close();
+            } else if (y++ <= arrayOfUrls.length) {
                 setTimeout(() => {
-                    loopWindow.close()
-                    go()
-                }, 20000 ); // might be better to set this time from the db
+                    loopWindow.close();
+                    go();
+                }, 20000); // might be better to set this time from the db
             }
         }
-        go()
+        go();
     }
     /**
      * on load
      */
     ngOnInit() {
-        this.getData()
+        this.getData();
     }
 }

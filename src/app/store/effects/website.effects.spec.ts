@@ -8,22 +8,22 @@ import {
 import { WebsiteEffects } from './website.effects';
 
 describe('WebsiteEffects', () => {
-  let actions$: Observable<any>;
-  let effects: WebsiteEffects;
+    // tslint:disable-next-line
+    let actions$: Observable<any>;
+    let effects: WebsiteEffects;
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            providers: [
+                WebsiteEffects,
+                provideMockActions(() => actions$)
+            ],
+            imports: [HttpClientTestingModule],
+        });
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      providers: [
-        WebsiteEffects,
-        provideMockActions(() => actions$)
-      ],
-      imports: [HttpClientTestingModule],
+        effects = TestBed.get(WebsiteEffects);
     });
 
-    effects = TestBed.get(WebsiteEffects);
-  });
-
-  it('should be created', () => {
-    expect(effects).toBeTruthy();
-  });
+    it('should be created', () => {
+        expect(effects).toBeTruthy();
+    });
 });

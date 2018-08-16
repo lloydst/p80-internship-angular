@@ -13,11 +13,11 @@ export class AdminChannelsContentsComponent implements OnInit {
     /**
      * for binding
      */
-    channel
+    channel;
     /**
      * for binding
      */
-    currentChannel
+    currentChannel;
     /**
      * constructor
      * @param data data service
@@ -31,23 +31,23 @@ export class AdminChannelsContentsComponent implements OnInit {
      * checks url to see if a channel can get loaded
      */
     getCurrentChannel() {
-        var url = this.router.url.split("/")
-        this.currentChannel = url[3]
+        const url = this.router.url.split('/');
+        this.currentChannel = url[3];
     }
     /**
      * on load
      */
     ngOnInit() {
-        this.getCurrentChannel()
-        this.getChannels()
+        this.getCurrentChannel();
+        this.getChannels();
     }
     /**
      * gets the channels from the api
      */
     getChannels() {
         this.data.getChannelContent().subscribe(data => {
-            this.channel = data
-        })
+            this.channel = data;
+        });
     }
     /**
      * forces reload of child component(wouldnt do that with routerlink)
@@ -63,10 +63,8 @@ export class AdminChannelsContentsComponent implements OnInit {
      */
     delete(obj) {
         this.data.deleteChannel(obj).subscribe(() => {
-            this.getChannels()
-            this.redirectTo('')
-        })
+            this.getChannels();
+            this.redirectTo('');
+        });
     }
-
-
 }
