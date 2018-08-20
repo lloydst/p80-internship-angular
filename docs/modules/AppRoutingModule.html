@@ -151,14 +151,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#xs-components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="xs-components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -167,14 +167,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#xs-injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="xs-injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -570,14 +570,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -586,14 +586,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -902,29 +902,29 @@ import { Routes, RouterModule } from &#x27;@angular/router&#x27;;
 const routes: Routes &#x3D; [
   {
     path: &#x27;&#x27;,
-    redirectTo:&#x27;channels&#x27;,
+    redirectTo: &#x27;channels&#x27;,
     pathMatch: &#x27;full&#x27;
   }, // default
   {
-    path:&#x27;admin&#x27;, 
+    path: &#x27;admin&#x27;,
     loadChildren: &#x27;app/admin/admin.module#AdminModule&#x27;
   },
   {
-    path:&#x27;channels&#x27;,
+    path: &#x27;channels&#x27;,
     loadChildren: &#x27;app/channels/channels.module#ChannelsModule&#x27;
   },
   {
-    path:&#x27;components&#x27;,
+    path: &#x27;components&#x27;,
     loadChildren: &#x27;app/components/components.module#ComponentsModule&#x27;
   },
   {
-      path:&#x27;**&#x27;, redirectTo:&#x27;channels&#x27; // backup route
+      path: &#x27;**&#x27;, redirectTo: &#x27;channels&#x27; // backup route
     }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes,{ enableTracing: false }) // set to true for debugging
+    RouterModule.forRoot(routes, { enableTracing: false }) // set to true for debugging
   ],
   exports: [RouterModule]
 })

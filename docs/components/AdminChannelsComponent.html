@@ -151,14 +151,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#xs-components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="xs-components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -167,14 +167,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#xs-injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="xs-injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -570,14 +570,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -586,14 +586,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -1098,9 +1098,7 @@ export class AdminChannelsComponent implements OnInit {
    * runs on load
    */
   ngOnInit() {
-    
   }
-  
 }
 </code></pre>
     </div>
@@ -1108,17 +1106,15 @@ export class AdminChannelsComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;!-- Important! classes and id&#x27;s are used in the ts file --&gt;
 
-   
-        &lt;div class&#x3D;&quot;admin-wrapper-main__topnav&quot;&gt;
-            &lt;!-- remove margin to to be more like navigation--&gt;
-            &lt;a class&#x3D;&quot;admin-wrapper-main__topnav--link&quot; routerLinkActive&#x3D;&quot;active&quot; routerLink&#x3D;&quot;entrance&quot;&gt;entrance &lt;/a&gt;
-            &lt;a class&#x3D;&quot;admin-wrapper-main__topnav--link&quot; routerLinkActive&#x3D;&quot;active&quot; routerLink&#x3D;&quot;events&quot;&gt;event &lt;/a&gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;admin-wrapper-main&quot; &gt;
-            &lt;router-outlet&gt;&lt;/router-outlet&gt;
-        &lt;/div&gt;
-    
-</code></pre>
+
+&lt;div class&#x3D;&quot;admin-wrapper-main__topnav&quot;&gt;
+    &lt;a class&#x3D;&quot;admin-wrapper-main__topnav--link&quot; routerLinkActive&#x3D;&quot;active&quot; routerLink&#x3D;&quot;entrance&quot;&gt;entrance &lt;/a&gt;
+    &lt;a class&#x3D;&quot;admin-wrapper-main__topnav--link&quot; routerLinkActive&#x3D;&quot;active&quot; routerLink&#x3D;&quot;events&quot;&gt;event &lt;/a&gt;
+&lt;/div&gt;
+&lt;div class&#x3D;&quot;admin-wrapper-main&quot;&gt;
+    &lt;!-- child routes--&gt;
+    &lt;router-outlet&gt;&lt;/router-outlet&gt;
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -1146,7 +1142,7 @@ export class AdminChannelsComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Important! classes and id\'s are used in the ts file -->           <div class="admin-wrapper-main__topnav">            <!-- remove margin to to be more like navigation-->            <a class="admin-wrapper-main__topnav--link" routerLinkActive="active" routerLink="entrance">entrance </a>            <a class="admin-wrapper-main__topnav--link" routerLinkActive="active" routerLink="events">event </a>        </div>        <div class="admin-wrapper-main" >            <router-outlet></router-outlet>        </div>    </div>'
+        var COMPONENT_TEMPLATE = '<div><!-- Important! classes and id\'s are used in the ts file --><div class="admin-wrapper-main__topnav">    <a class="admin-wrapper-main__topnav--link" routerLinkActive="active" routerLink="entrance">entrance </a>    <a class="admin-wrapper-main__topnav--link" routerLinkActive="active" routerLink="events">event </a></div><div class="admin-wrapper-main">    <!-- child routes-->    <router-outlet></router-outlet></div></div>'
     var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminChannelsContentsComponent', 'selector': 'app-admin-channels-contents'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelComponent', 'selector': 'app-channel'},{'name': 'ChannelContentComponent', 'selector': 'app-channel-content'},{'name': 'ChannelNewComponent', 'selector': 'app-channel-new'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'CreateComponent', 'selector': 'app-create'},{'name': 'CustomComponent', 'selector': 'app-custom'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'ListingComponentsComponent', 'selector': 'app-listing-components'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'SettingComponent', 'selector': 'app-setting'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TrafficComponent', 'selector': 'app-traffic'},{'name': 'UpdateComponent', 'selector': 'app-update'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AdminChannelsComponent'};

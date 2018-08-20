@@ -151,14 +151,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#xs-components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="xs-components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -167,14 +167,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#xs-injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="xs-injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -570,14 +570,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -586,14 +586,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -1162,7 +1162,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/components/weather/weather.component.ts:56</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/components/weather/weather.component.ts:54</a></div>
                             </td>
                         </tr>
 
@@ -1346,61 +1346,59 @@ import { WeatherService } from &#x27;../../services/weather.service&#x27;;
  * weather component
  */
 @Component({
-  selector: &#x27;app-weather&#x27;,
-  templateUrl: &#x27;./weather.component.html&#x27;
+    selector: &#x27;app-weather&#x27;,
+    templateUrl: &#x27;./weather.component.html&#x27;
 })
 export class WeatherComponent implements OnInit {
     /**
      * binding (uses substring later on)
      */
-    date
+    date;
     /**
      * binding (uses substring later on)
      */
-    time
+    time;
 
-  /**
-   * would other wise complain about 0 not being defined
-   */
-0;
-/**
-   * for binding
-   */
-weatherjson: any &#x3D;[]
-/**
- * weather service
- * @param weatherService weatherservice
- */
-  constructor(private weatherService: WeatherService) { }
-/**
- * get weather on page load
- */
-  ngOnInit() {
-    this.getWeather()
-  }
-  /**
-   * gets the weather from the api
-   */
-  getWeather() {
-    this.weatherService.getWeather().subscribe(
-        
-      res &#x3D;&gt; {
-        var str &#x3D; &#x27;/[^,]/g&#x27;
-          this.weatherjson &#x3D; res
-          this.date &#x3D; this.weatherjson[0].lastBuildDate.substring(0,16)
-          this.time &#x3D;this.weatherjson[0].lastBuildDate.substring(18, 25)//.match(str)
-          
-        })
-  }
-  /**
-   * updates weather every minute
-   */
-  updateWeather() {
-    setTimeout(() &#x3D;&gt; {
-      this.updateWeather
-    }, 60000);
-    this.getWeather()
-  }
+    /**
+     * would other wise complain about 0 not being defined
+     */
+    0;
+    /**
+       * for binding
+       */
+    weatherjson: any &#x3D; [];
+    /**
+     * weather service
+     * @param weatherService weatherservice
+     */
+    constructor(private weatherService: WeatherService) { }
+    /**
+     * get weather on page load
+     */
+    ngOnInit() {
+        this.getWeather();
+    }
+    /**
+     * gets the weather from the api
+     */
+    getWeather() {
+        this.weatherService.getWeather().subscribe(
+            res &#x3D;&gt; {
+                const str &#x3D; &#x27;/[^,]/g&#x27;;
+                this.weatherjson &#x3D; res;
+                this.date &#x3D; this.weatherjson[0].lastBuildDate.substring(0, 16);
+                this.time &#x3D; this.weatherjson[0].lastBuildDate.substring(18, 25); // .match(str)
+            });
+    }
+    /**
+     * updates weather every minute
+     */
+    updateWeather() {
+        setTimeout(() &#x3D;&gt; {
+            this.updateWeather();
+        }, 60000);
+        this.getWeather();
+    }
 
 }
 </code></pre>

@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import * as fromRoot from './store/reducers';
-import * as fromWebsite from './store/reducers/website.reducer';
-import * as websiteActions from './store/actions/website.actions';
-import { Observable } from 'rxjs';
-import { Website } from './models/website';
+/**
+ * these would be required for a ngrx store
+ * import { Store } from '@ngrx/store';
+ * import * as fromRoot from './store/reducers';
+ * import * as fromWebsite from './store/reducers/website.reducer';
+ * import * as websiteActions from './store/actions/website.actions';
+ * import { Observable } from 'rxjs';
+ * import { Website } from './models/website';
+ */
 
 /**
  * root component
@@ -15,6 +18,9 @@ import { Website } from './models/website';
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
+    /**
+     * only used so the test passes
+     */
     title = 'p80 interschip assignment';
     // all the comments are store related
     // website$ :Observable<Website>

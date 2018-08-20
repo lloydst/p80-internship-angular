@@ -151,14 +151,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#xs-components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="xs-components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -167,14 +167,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#xs-injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="xs-injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -570,14 +570,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -586,14 +586,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -865,7 +865,7 @@
 <ul>
 <li>node v 8.10.0 (with matching npm)</li>
 <li>mongodb or a mlab account (see data base for more information)</li>
-<li>angular cli 6+ installed globally</li>
+<li>angular cli 6.1 + installed globally</li>
 </ul>
 </blockquote>
 <h2 id="contents">contents</h2>
@@ -883,10 +883,11 @@
 <li><a href="#docs">docs</a></li>
 </ul>
 <h2 id="getting-started-">getting started:</h2>
-<p><code>git clone https://github.com/lloydst/p80-internship-angular.git .</code> (replace the &#39;.&#39; with a directory if you would want it in a new folder).</p>
+<p><code>git clone https://github.com/lloydst/p80-internship-angular.git .</code> (replace the &#39;.&#39; with a directory if you would want it in a new folder).
+then use <code>npm i</code> in the project root, this will install all the dependencies and do a single production-ready build,</p>
 <h2 id="styling">styling</h2>
 <p>scss files are stored in the angular root (src folder) in a scss map and are being converted to css using grunt and then stored in the assets folder in the angular root.
-<code>grunt build-sass</code> builds it</p>
+<code>grunt watch</code> watches the scss folder for changes and updates the assets/css with changes</p>
 <h2 id="sources-">sources:</h2>
 <p>This project was started up with <a href="https://github.com/lloydst/mean-boilerplate">Mean-boilerplate</a> , which is heavely based on the angular-cli and express-gen for the front and backend respectively.</p>
 <h2 id="description">Description</h2>
@@ -897,39 +898,40 @@
 <li>components</li>
 </ul>
 <p>In the admin module the content of the components can be changed as well as the order and time a components is displayed on a channel.
-The components module displays components based on the url. So will ${host}/components/weather display the current weather forecast and ${host}/components/weather-traffic-news will display 3 components(weather,traffic,news).
-The channels module, opens a extra tab to navigate to a &#39;custom&#39; component and will display said component for the time defined for the path. After that time/delay is done it will close the tab and open a new one with the next tab and thus next component. once it has finished all the paths it will check the database for changes will run again.</p>
+The components module displays components based on the url. So  ${host}/components/weather will display the current weather forecast --<em>depricated and ${host}/components/weather-traffic-news will display 3 components(weather,traffic,news) </em>depricated--.
+The channels module, opens a extra tab to navigate to a (custom) component and will display said component for the time defined for the path. After that time/delay is done it will close the tab and open a new one with the next tab and thus next component. once it has finished all the paths it will quickly check the database for changes and will start over again.</p>
 <h2 id="development">Development</h2>
 <p>run <code>ng build --watch</code> for rebuilding on changes to any of the angular part of the website.
-and run <code>npm run server</code> (in a other window)so that node restarts the express server on changes
+and run <code>npm run server</code> (in an other cmd)so that node restarts the express server on changes made to the server (this includes staticly server folders like dist)
 run <code>npm run doc</code> to &quot;generate&quot; front end docs (only documents the angular app) since the back end can be found at ./api-docs</p>
 <h2 id="quick-component-gen-angular-cli-">quick component gen (angular cli)</h2>
-<p>Run <code>ng generate component componentname</code> to generate a new component. You can also use <code>ng generate directive|pipe|service|class|guard|interface|enum|module</code>.</p>
+<p>Run <code>ng g c componentName</code> to generate a new component. You can use the angular scematics: module|directive|pipe|service|class|guard|interface|enum| as well as the ngrx schematics for effects reducers actions.</p>
 <h2 id="structure">structure</h2>
-<p>server contains all server related stuff.</p>
-<ul>
-<li>&quot;e2e&quot;  Test related stuff. (for angular only )</li>
-<li>&quot;src&quot; angular project.</li>
-<li>&quot;dist&quot; the build version of your angular app (generated after npm install or ng build commands)</li>
-<li>&quot;docs&quot; documentation generated using compodoc</li>
-<li>node</li>
+<p> -root</p>
+<div><pre class="line-numbers"><code class="language-none">- &quot;e2e&quot;  Test related stuff. (for angular only )
+- &quot;src&quot; angular project.
+- &quot;dist&quot; the build version of your angular app (generated after npm install or ng build commands)
+- &quot;docs&quot; documentation generated using compodoc
+- &quot;server&quot; server related files</code></pre></div><ul>
+<li>server.js server init/setup file</li>
+<li>package.json dependancies </li>
+<li>other files (mostly configs)</li>
 </ul>
 <h2 id="database">database</h2>
-<p>to connect to a database simply add a .env file in the root and type <code>MONGOURI = connectionstring</code> this can either be a local db or a external one like mlab</p>
+<p>to connect to a database simply create a .env file in the root and type <code>MONGOURI = connectionstring</code> this can either be a local db or a external one like mlab</p>
 <h2 id="usefull-links">usefull links</h2>
 <p>dev: ${host}= localhost:3000
 prod: ${host}= example.com</p>
 <ul>
 <li>${host}/ auto reroutes to channel</li>
 <li>${host}/api-docs shows all possible api end points</li>
-<li>localhost:8080 is the angularapp documentation (see development )</li>
+<li>${host}/docs is the angularapp documentation (see development )</li>
 <li>${host}/api/{collection}/{?:id} possible api end points see api documentation for more info</li>
 </ul>
 <h2 id="docs">docs</h2>
-<p>docs can be found at <a href="https://lloydst.github.io/p80-internship-angular/">https://lloydst.github.io/p80-internship-angular/</a> though there is a big chance they are outdated to view the most recent you need to clone the project and run <code>npm run doc:watch</code> (after the npm install ofc) this will generate it in the docs folder and server it on <a href="http://localhost:8080">localhost:8080</a>.
-Or you use <code>npm run doc</code> and if the server is running (both npm start and npm run server) you can acces it at (local)host(:port)/docs</p>
+<p>docs can be found at <a href="https://lloydst.github.io/p80-internship-angular/">https://lloydst.github.io/p80-internship-angular/</a> though there is a big chance they are outdated to view the most recent you need to clone the project and run <code>npm run doc:watch</code> (after the npm install ofc) this will generate it in the docs folder and you can acces it at (local)host(:port)/docs</p>
 <h2 id="docker">docker</h2>
-<p>docker tends to fail on npm install scripts due to it starting up with the wrong proxy, set this to 8.8.8.8 if you havn&#39;t. if it is set to this port and still fails make shure to restart docker</p>
+<p>docker tends to fail on npm install scripts due to it starting up with the wrong proxy, set this to 8.8.8.8 if you havn&#39;t. if it is set to this port and still fails make shure to restart docker. i currently have it setup so that docker cloud builds it since linux containers doesnt seem to be working.</p>
 <p>build initial image (auto-updates front-end for production)</p>
 <p><code>docker-compose build</code> </p>
 <p>start containers(local)</p>

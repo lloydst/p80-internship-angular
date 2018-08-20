@@ -14,7 +14,6 @@ export class NewsComponent implements OnInit {
      * binding
      */
     news: any = News;
-    enclosures: any = [];
     /**
      * constructor
      * @param newsService gets the news feed from the api

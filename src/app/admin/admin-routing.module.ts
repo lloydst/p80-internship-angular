@@ -26,7 +26,7 @@ const routes = [
         path: 'admin', component: AdminComponent, children: [
             {
                 path: '',
-                component: DashboardComponent // this one's grid had to be done seperate
+                component: DashboardComponent // default route
             },
             {
                 path: 'algemeen', component: SettingComponent, children: [
@@ -46,7 +46,6 @@ const routes = [
             },
             {
                 path: 'channels', component: AdminChannelsContentsComponent, children: [
-                    // these need to become content specific
                     {
                         path: '',
                         redirectTo: 'new',

@@ -151,14 +151,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#xs-components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="xs-components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -167,14 +167,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#xs-injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="xs-injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -570,14 +570,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -586,14 +586,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -1345,50 +1345,49 @@ import { HttpClient } from &#x27;@angular/common/http&#x27;;
  * ip service
  */
 @Injectable({
-  providedIn: &#x27;root&#x27;
+    providedIn: &#x27;root&#x27;
 })
 export class IpService {
-/**
- * constructor
- * @param http http client
- */
-  constructor(private http: HttpClient) { }
-  /**
-   * gets all ip&#x27;s with their config that have been set from db
-   */
-  getIps() {                                  
-    return this.http.get(&#x27;/api/ipconfig&#x27;);
-  } 
-  /**
-   * gets a single config based on the ip
-   * @param ip 
-   */
-  selectByIp(ip:String) {                       
-      return this.http.get(&#x27;/api/ipconfig/&#x27;+ip+&#x27;&#x27;);
-  }
-  /**
-   * updates a config based on the ip
-   * @param ip 
-   * @param updatedConfig 
-   */
-  updateIp(ip:String, updatedConfig:Object) {   //update 
-      return this.http.put(&#x27;/api/ipconfig/&#x27;+ip+&#x27;&#x27;, updatedConfig);
-  }
-  /**
-   * adds / creates a ip with its config
-   * @param newIp 
-   */
-  addIp(newIp: Object){                         //create
-    return this.http.post(&#x27;/api/ipconfig&#x27;, newIp)
-  }
-  /**
-   * delete&#x27;s a ip and its config
-   * @param ip 
-   */
-  deleteIp(ip: String){
-    return this.http.delete(&#x27;/api/ipconfig/&#x27;+ip+&#x27;&#x27;)
-    
-  }
+    /**
+     * constructor
+     * @param http http client
+     */
+    constructor(private http: HttpClient) { }
+    /**
+     * gets all ip&#x27;s with their config that have been set from db
+     */
+    getIps() {
+        return this.http.get(&#x27;/api/ipconfig&#x27;);
+    }
+    /**
+     * gets a single config based on the ip
+     * @param ip
+     */
+    selectByIp(ip: String) {
+        return this.http.get(&#x27;/api/ipconfig/&#x27; + ip + &#x27;&#x27;);
+    }
+    /**
+     * updates a config based on the ip
+     * @param ip
+     * @param updatedConfig
+     */
+    updateIp(ip: String, updatedConfig: Object) { // update
+        return this.http.put(&#x27;/api/ipconfig/&#x27; + ip + &#x27;&#x27;, updatedConfig);
+    }
+    /**
+     * adds / creates a ip with its config
+     * @param newIp
+     */
+    addIp(newIp: Object) { // create
+        return this.http.post(&#x27;/api/ipconfig&#x27;, newIp);
+    }
+    /**
+     * delete&#x27;s a ip and its config
+     * @param ip
+     */
+    deleteIp(ip: String) {
+        return this.http.delete(&#x27;/api/ipconfig/&#x27; + ip + &#x27;&#x27;);
+    }
 }
 </code></pre>
     </div>

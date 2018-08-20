@@ -151,14 +151,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#xs-components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="xs-components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -167,14 +167,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#xs-injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="xs-injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -570,14 +570,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -586,14 +586,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -2075,7 +2075,7 @@
                                                     
 
                                                         <td>
-                                                                <code><p>content that should replace the old content </p>
+                                                                <code><p>content that should replace the old content</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -2111,130 +2111,131 @@ import { HttpClient } from &#x27;@angular/common/http&#x27;;
  */
 @Injectable()
 export class DataService {
- /**
-  * for http calls
-  * @param http http
-  */
-  constructor(private http: HttpClient) { }
-  /**
-   * returns a single object or &quot;website&quot;
-   */
-  getWebsite(id: String) {
-    return this.http.get(&#x27;/api/websites/&#x27;+id+&#x27;&#x27;);
-  }
-  /**
-   * updates a single &quot;website&quot; document
-   * @param id identifier for what document to update
-   * @param newContent content that should replace the old content 
-   * 
-   */
-  updateWebsite(id: String, newContent: Object) {
-    return this.http.put(&#x27;/api/websites/&#x27;+id+&#x27;&#x27;, newContent);
-  }
-  /**
-   * returns all &quot;websites&quot; from the db
-   */
-  getAllWebsites(){
-    return this.http.get(&#x27;/api/websites&#x27;);
-  }
-  /**
-   * creates a new &quot;website document&quot;
-   * @param newPage contents of the new document
-   */
-  createWebsite(newPage){
-    return this.http.post(&#x27;/api/websites&#x27;, newPage);
-  }
-  /**
-   * deletes a website
-   * @param id selector for what &quot;website&quot; to delete from the collection
-   * 
-   */
-  deleteWebsite(id: String) {
-    return this.http.delete(&#x27;/api/websites/&#x27; + id)
-  }
+    /**
+     * for http calls
+     * @param http http
+     */
+    constructor(private http: HttpClient) { }
+    /**
+     * returns a single object or &quot;website&quot;
+     */
+    getWebsite(id: String) {
+        return this.http.get(&#x27;/api/websites/&#x27; + id + &#x27;&#x27;);
+    }
+    /**
+     * updates a single &quot;website&quot; document
+     * @param id identifier for what document to update
+     * @param newContent content that should replace the old content
+     *
+     */
+    updateWebsite(id: String, newContent: Object) {
+        return this.http.put(&#x27;/api/websites/&#x27; + id + &#x27;&#x27;, newContent);
+    }
+    /**
+     * returns all &quot;websites&quot; from the db
+     */
+    getAllWebsites() {
+        return this.http.get(&#x27;/api/websites&#x27;);
+    }
+    /**
+     * creates a new &quot;website document&quot;
+     * @param newPage contents of the new document
+     */
+    createWebsite(newPage) {
+        return this.http.post(&#x27;/api/websites&#x27;, newPage);
+    }
+    /**
+     * deletes a website
+     * @param id selector for what &quot;website&quot; to delete from the collection
+     *
+     */
+    deleteWebsite(id: String) {
+        return this.http.delete(&#x27;/api/websites/&#x27; + id);
+    }
 
-  /**
-   * returns a single message
-   * @param id selector for the &quot;message to return&quot;
-   * 
-   */
-  getMessage(id: String) {
-    return this.http.get(&#x27;/api/messages/&#x27;+id+&#x27;&#x27;);
-  }
-  /**
-   * updates a single message
-   * @param id message to update
-   * @param newContent content to update it with
-   * 
-   */
-  updateMessage(id: String, newContent: Object) {
-    return this.http.put(&#x27;/api/messages/&#x27;+id+&#x27;&#x27;, newContent);
-  }
-  /**
-   * returns all messages
-   */
-  getAllMessage(){
-    return this.http.get(&#x27;/api/messages&#x27;);
-  }
-  /**
-   * creates a new message document
-   * @param newPage content that the new message will contain
-   */
-  createMessage(newPage){
-    return this.http.post(&#x27;/api/messages&#x27;, newPage);
-  }
-  /**
-   * deletes a single message
-   * @param id selector for the message you want to delete
-   */
-  deleteMessage(id) {
-    return this.http.delete(&#x27;/api/messages/&#x27; + id)
-  }
-  // temp uses mail since my personal calendar &#x3D; empty usually
-  /**
-   * gets calendar info
-   */
-  getCalendar() {
-    return this.http.get(&#x27;/api/calendar&#x27;)
-  }
-  /**
-   * checks if logged in if not it displays a button that allows you too
-   */
-  getLoggedIn() {
-    return this.http.get(&#x27;/api/login&#x27;)
-  }
-  /**
-   * logout of graph
-   */
-  logOut(){
-    return this.http.get(&#x27;/api/authorize/signout&#x27;)
-    
-  }
-  /**
-   * gets all channels
-   */
-  getChannelContent() {
-    return this.http.get(&#x27;/api/content&#x27;)
-  }
-  /**
-   * saves/ updates the object
-   */
-  saveContent(obj) {
-    return this.http.put(&#x27;/api/content&#x27;, obj)
-  }
-  /**
-   * gets a single channel
-   */
-  getChannel(channel) {
-    return this.http.get(&#x27;api/content/&#x27;+ channel)
-  }
-  /**
-   * deletes a single channel
-   */
-  deleteChannel(channelobj) {
-    return this.http.delete(&#x27;api/content/&#x27;+ channelobj.channel)
-  }
-}</code></pre>
+    /**
+     * returns a single message
+     * @param id selector for the &quot;message to return&quot;
+     *
+     */
+    getMessage(id: String) {
+        return this.http.get(&#x27;/api/messages/&#x27; + id + &#x27;&#x27;);
+    }
+    /**
+     * updates a single message
+     * @param id message to update
+     * @param newContent content to update it with
+     *
+     */
+    updateMessage(id: String, newContent: Object) {
+        return this.http.put(&#x27;/api/messages/&#x27; + id + &#x27;&#x27;, newContent);
+    }
+    /**
+     * returns all messages
+     */
+    getAllMessage() {
+        return this.http.get(&#x27;/api/messages&#x27;);
+    }
+    /**
+     * creates a new message document
+     * @param newPage content that the new message will contain
+     */
+    createMessage(newPage) {
+        return this.http.post(&#x27;/api/messages&#x27;, newPage);
+    }
+    /**
+     * deletes a single message
+     * @param id selector for the message you want to delete
+     */
+    deleteMessage(id) {
+        return this.http.delete(&#x27;/api/messages/&#x27; + id);
+    }
+    // temp uses mail since my personal calendar &#x3D; empty usually
+    /**
+     * gets calendar info
+     */
+    getCalendar() {
+        return this.http.get(&#x27;/api/calendar&#x27;);
+    }
+    /**
+     * checks if logged in if not it displays a button that allows you too
+     */
+    getLoggedIn() {
+        return this.http.get(&#x27;/api/login&#x27;);
+    }
+    /**
+     * logout of graph
+     */
+    logOut() {
+        return this.http.get(&#x27;/api/authorize/signout&#x27;);
+
+    }
+    /**
+     * gets all channels
+     */
+    getChannelContent() {
+        return this.http.get(&#x27;/api/content&#x27;);
+    }
+    /**
+     * saves/ updates the object
+     */
+    saveContent(obj) {
+        return this.http.put(&#x27;/api/content&#x27;, obj);
+    }
+    /**
+     * gets a single channel
+     */
+    getChannel(channel) {
+        return this.http.get(&#x27;api/content/&#x27; + channel);
+    }
+    /**
+     * deletes a single channel
+     */
+    deleteChannel(channelobj) {
+        return this.http.delete(&#x27;api/content/&#x27; + channelobj.channel);
+    }
+}
+</code></pre>
     </div>
 
 </div>

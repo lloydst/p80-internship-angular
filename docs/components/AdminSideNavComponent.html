@@ -151,14 +151,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#xs-components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="xs-components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -167,14 +167,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#xs-injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="xs-injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -570,14 +570,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -586,14 +586,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -1123,66 +1123,66 @@
  * side nav component
  */
 @Component({
-  selector: &#x27;app-admin-side-nav&#x27;,
-  templateUrl: &#x27;./admin-side-nav.component.html&#x27;
+    selector: &#x27;app-admin-side-nav&#x27;,
+    templateUrl: &#x27;./admin-side-nav.component.html&#x27;
 })
 export class AdminSideNavComponent implements OnInit {
-/**
- * constructor
- */
-  constructor() { }
-/**
- * on load
- */
-  ngOnInit() {
-  }
-  /**
-   * toggle&#x27;s sidenav and hides red x&#x27;s on channels
-   */
-  toggle(opt?) {
-    var navwidth &#x3D; document.getElementById(&quot;Nav&quot;)
-    var visability &#x3D; document.getElementsByClassName(&quot;text&quot;)
-    var tooltip &#x3D; document.getElementsByClassName(&quot;tooltip&quot;)
-    var visabilityitem
-    var tooltipitem
-    //console.log(opt)
-    if (opt &#x3D;&#x3D;&#x3D; &quot;close&quot;) { //string
-      if(navwidth.style.width &#x3D;&#x3D; &quot;100vw&quot;) {
-        navwidth.style.width &#x3D; &quot;50px&quot;
-        for(let i &#x3D;0; i&lt;visability.length; i++){
-          visabilityitem &#x3D; visability[i]
-          visabilityitem.style.display &#x3D; &quot;none&quot;
-        }
-        for (let i&#x3D;0; i&lt;tooltip.length; i++) {
-          tooltipitem &#x3D; tooltip[i]
-          tooltipitem.style.display &#x3D; &quot;inline-block&quot;
-        }
-      }
+    /**
+     * constructor
+     */
+    constructor() { }
+    /**
+     * on load
+     */
+    ngOnInit() {
     }
-    if (opt !&#x3D;&#x3D; &quot;close&quot;) { // opt&#x3D; &quot;close&quot; or undefined
-      if(navwidth.style.width &#x3D;&#x3D; &quot;50px&quot;) {
-        navwidth.style.width &#x3D; &quot;100vw&quot;
-        for(let i &#x3D;0; i&lt;visability.length; i++){
-        visabilityitem &#x3D; visability[i]
-        visabilityitem.style.display &#x3D; &quot;inline-block&quot;
+    /**
+     * toggle&#x27;s sidenav and hides red x&#x27;s on channels
+     */
+    toggle(opt?) {
+        const navwidth &#x3D; document.getElementById(&#x27;Nav&#x27;);
+        const visability &#x3D; document.getElementsByClassName(&#x27;text&#x27;);
+        const tooltip &#x3D; document.getElementsByClassName(&#x27;tooltip&#x27;);
+        let visabilityitem;
+        let tooltipitem;
+        // console.log(opt)
+        if (opt &#x3D;&#x3D;&#x3D; &#x27;close&#x27;) { // string
+            if (navwidth.style.width &#x3D;&#x3D;&#x3D; &#x27;100vw&#x27;) {
+                navwidth.style.width &#x3D; &#x27;50px&#x27;;
+                for (let i &#x3D; 0; i &lt; visability.length; i++) {
+                    visabilityitem &#x3D; visability[i];
+                    visabilityitem.style.display &#x3D; &#x27;none&#x27;;
+                }
+                for (let i &#x3D; 0; i &lt; tooltip.length; i++) {
+                    tooltipitem &#x3D; tooltip[i];
+                    tooltipitem.style.display &#x3D; &#x27;inline-block&#x27;;
+                }
+            }
         }
-        for (let i&#x3D;0; i&lt;tooltip.length; i++) {
-          tooltipitem &#x3D; tooltip[i]
-          tooltipitem.style.display &#x3D; &quot;none&quot;
+        if (opt !&#x3D;&#x3D; &#x27;close&#x27;) { // opt&#x3D; &#x27;close&#x27; or undefined
+            if (navwidth.style.width &#x3D;&#x3D;&#x3D; &#x27;50px&#x27;) {
+                navwidth.style.width &#x3D; &#x27;100vw&#x27;;
+                for (let i &#x3D; 0; i &lt; visability.length; i++) {
+                    visabilityitem &#x3D; visability[i];
+                    visabilityitem.style.display &#x3D; &#x27;inline-block&#x27;;
+                }
+                for (let i &#x3D; 0; i &lt; tooltip.length; i++) {
+                    tooltipitem &#x3D; tooltip[i];
+                    tooltipitem.style.display &#x3D; &#x27;none&#x27;;
+                }
+            } else if (navwidth.style.width &#x3D;&#x3D;&#x3D; &#x27;100vw&#x27;) {
+                navwidth.style.width &#x3D; &#x27;50px&#x27;;
+                for (let i &#x3D; 0; i &lt; visability.length; i++) {
+                    visabilityitem &#x3D; visability[i];
+                    visabilityitem.style.display &#x3D; &#x27;none&#x27;;
+                }
+                for (let i &#x3D; 0; i &lt; tooltip.length; i++) {
+                    tooltipitem &#x3D; tooltip[i];
+                    tooltipitem.style.display &#x3D; &#x27;inline-block&#x27;;
+                }
+            }
         }
-      } else if(navwidth.style.width &#x3D;&#x3D; &quot;100vw&quot;) {
-        navwidth.style.width &#x3D; &quot;50px&quot;
-        for(let i &#x3D;0; i&lt;visability.length; i++){
-          visabilityitem &#x3D; visability[i]
-          visabilityitem.style.display &#x3D; &quot;none&quot;
-        }
-        for (let i&#x3D;0; i&lt;tooltip.length; i++) {
-          tooltipitem &#x3D; tooltip[i]
-          tooltipitem.style.display &#x3D; &quot;inline-block&quot;
-        }
-      }
     }
-  } 
 }
 </code></pre>
     </div>

@@ -151,14 +151,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#xs-components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="xs-components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -167,14 +167,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#xs-injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#xs-injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="xs-injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="xs-injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
                                     >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -570,14 +570,14 @@
                         <a href="modules/AppModule.html" data-type="entity-link">AppModule</a>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                     <span class="fa fa-fw fa-cogs"></span>
                                     <span>Components</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="components-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="components-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                         <li class="link">
                                             <a href="components/AppComponent.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules">AppComponent</a>
@@ -586,14 +586,14 @@
                             </li>
                             <li class="chapter inner">
                                 <div class="simple menu-toggler" data-toggle="collapse"
-                                        data-target="#injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        data-target="#injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                     <span class="fa fa-fw fa-long-arrow-down"></span>
                                     <span>Injectables</span>
                                     <span class="fa fa-angle-down"></span>
                                 </div>
                                 <ul class="links collapse"
-                                        id="injectables-links-module-AppModule-2851eb5f9bb446e94cb7716013232997"
+                                        id="injectables-links-module-AppModule-910a79663605bdfe4588a2f7b5ab95a5"
 >
                                         <li class="link">
                                             <a href="injectables/DataService.html" data-type="entity-link" data-context="sub-entity" data-context-id="modules"}>DataService</a>
@@ -1257,48 +1257,47 @@ import { FileService } from &#x27;../../../services/file.service&#x27;;
  * displays all images stored in db
  */
 @Component({
-  selector: &#x27;app-image-view&#x27;,
-  templateUrl: &#x27;./image-view.component.html&#x27;
+    selector: &#x27;app-image-view&#x27;,
+    templateUrl: &#x27;./image-view.component.html&#x27;
 })
 export class ImageViewComponent implements OnInit {
-  /**
-   * binding
-   */
-image;
-/**
- * constructor
- * @param fileService gets files (images) from the db
- */
-  constructor(private fileService: FileService) { }
-/**
- * on load
- */
-  ngOnInit() {
-    this.getAllImages()
-  }
-  /**
-   * gets all the images
-   */
-  getAllImages() {
-    this.fileService.getImages().subscribe(images&#x3D;&gt;{
-      this.image &#x3D; images
-    })
-  }
-  /**
-   * deletes a img
-   * @param delete_me filename of image too delete
-   */
-  deleteImg(delete_me) {
-    //let done &#x3D; false
-    this.fileService.deleteImg(delete_me).subscribe(image &#x3D;&gt; {
-      this.image &#x3D; image
-      console.log(&#x27;marco&#x27;)
-      
-    },()&#x3D;&gt;{
-        this.getAllImages()
-        console.log(&#x27;polo&#x27;)
-    })    
-  }
+    /**
+     * binding
+     */
+    image;
+    /**
+     * constructor
+     * @param fileService gets files (images) from the db
+     */
+    constructor(private fileService: FileService) { }
+    /**
+     * on load
+     */
+    ngOnInit() {
+        this.getAllImages();
+    }
+    /**
+     * gets all the images
+     */
+    getAllImages() {
+        this.fileService.getImages().subscribe(images &#x3D;&gt; {
+            this.image &#x3D; images;
+        });
+    }
+    /**
+     * deletes a img
+     * @param delete_me filename of image too delete
+     */
+    deleteImg(delete_me) {
+        // let done &#x3D; false
+        this.fileService.deleteImg(delete_me).subscribe(image &#x3D;&gt; {
+            this.image &#x3D; image;
+            console.log(&#x27;marco&#x27;);
+        }, () &#x3D;&gt; {
+            this.getAllImages();
+            console.log(&#x27;polo&#x27;);
+        });
+    }
 }
 </code></pre>
     </div>
