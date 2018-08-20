@@ -1,34 +1,39 @@
 <!-- Important! classes and id's are used in the ts file -->
-<div *ngFor="let edit of data" class="main">
+<div *ngFor="let edit of data" class="admin-wrapper-main">
+    <section>
+        <div class="admin-wrapper-main__card">
+            <h2 class="admin-wrapper-main__card--title">edit message</h2>
+            <form class="admin-wrapper-main__card--form">
 
-    <form>
-        <div class="form-group">
-            <label for="id">id</label> <br>
-            <input #identifier type="text" name="identifier" required value="{{edit.identifier}}">
-        </div>
-        <div class="form-group">
-            <label for="message">Message</label> <br>
-            <input #message type="text" name="message" value="{{edit.message}}">
-        </div>
-        <div class="form-group">
-            <label for="show">show from</label> <br>
-            <input type="text" name="showFrom" #showFrom value="{{edit.showFrom}}" size="25">
-        </div>
-        <div class="form-group">
-            <label for="showTill">show untill</label> <br>
-            <input type="text" name="showTill" #showTill value="{{edit.showTill}}" size="25">
-        </div>
-        <div class="form-group">
-            <label for="imgLink">img url</label> <br>
-            <input #imgUrl type="text" name="imgLink" required value="{{edit.imgLink}}">
-        </div>
-        <div class="form-group">
-            <label for="imgBoolean">visability</label> <br>
-            <input (click)="check(event)" #imgBoolean checked="{{edit.img}}" type="checkbox">
-        </div>
+                <div class="admin-wrapper-main__card--form-group">
+                    <label for="id">id</label> <br>
+                    <input #identifier type="text" name="identifier" required value="{{edit.identifier}}" class="admin-wrapper-main__card--form-input">
+                </div>
+                <div class="admin-wrapper-main__card--form-group">
+                    <label for="message">Message</label> <br>
+                    <input #message type="text" name="message" value="{{edit.message}}" class="admin-wrapper-main__card--form-input">
+                </div>
+                <div class="admin-wrapper-main__card--form-group">
+                    <label for="show">show from</label> <br>
+                    <input type="text" name="showFrom" #showFrom value="{{edit.showFrom}}" size="25" class="admin-wrapper-main__card--form-input">
+                </div>
+                <div class="admin-wrapper-main__card--form-group">
+                    <label for="showTill">show untill</label> <br>
+                    <input type="text" name="showTill" #showTill value="{{edit.showTill}}" size="25" class="admin-wrapper-main__card--form-input">
+                </div>
+                <div class="admin-wrapper-main__card--form-group">
+                    <label for="imgLink">img url</label> <br>
+                    <input #imgUrl type="text" name="imgLink" required value="{{edit.imgLink}}" class="admin-wrapper-main__card--form-input">
+                </div>
+                <div class="admin-wrapper-main__card--form-group">
+                    <label for="imgBoolean">visability</label> <br>
+                    <input (click)="check(event)" #imgBoolean checked="{{edit.img}}" type="checkbox">
+                </div>
 
-        <button (click)="update(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, identifier.value); alertUser()">edit</button>
-    </form>
+                <button (click)="update(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, identifier.value); alertUser()">edit</button>
+            </form>
+        </div>
+    </section>
+    <app-image-view></app-image-view>
 </div>
 <!-- images to choose from for the background-->
-<app-image-view></app-image-view>

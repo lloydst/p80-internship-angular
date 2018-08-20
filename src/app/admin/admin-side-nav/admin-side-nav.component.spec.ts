@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { AdminSideNavComponent } from './admin-side-nav.component';
 import { Router, RouterLink } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
-import { RouterLinkStubDirective } from '../../core/utlils/testing/router-stubs';
 import { By } from '@angular/platform-browser';
 
 

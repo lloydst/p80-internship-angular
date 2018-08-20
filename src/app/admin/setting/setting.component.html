@@ -7,7 +7,7 @@
 
     <section>
         <div *ngIf="configs.length < 1" class="admin-wrapper-main__card--fullwidth">
-            <div class="admin-wrapper-main__card--title">Current configs</div>
+            <h2 class="admin-wrapper-main__card--title">Current configs</h2>
             <p class="admin-wrapper-main__card--contents">no ip configs have been set</p>
 
         </div>
@@ -17,7 +17,7 @@
                 the network ip. while that is what should be used</p>
         </div>
         <div *ngIf="configs.length > 0" class="admin-wrapper-main__card--fullwidth">
-            <div class="admin-wrapper-main__card--title">Current configs</div>
+            <h2 class="admin-wrapper-main__card--title">Current configs</h2>
             <div *ngFor="let c of configs">
                 <div>name:{{c.name}}</div>
                 <!-- easy to identify name: entrance screen ip-->

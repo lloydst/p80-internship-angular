@@ -5,10 +5,11 @@
             <form class="admin-wrapper-main__card--form">
                 <div class="admin-wrapper-main__card--form-group">
                     <label for="name">company name</label>
-                    <input #name type="text" name="name" value="{{data[0]?.name}}">
+                    <input #name type="text" name="name" value="{{data[0]?.name}}" class="admin-wrapper-main__card--form-input">
                 </div>
                 <div class="admin-wrapper-main__card--form-group"><label for="url">url</label>
-                    <input type="text" name="url" #url value="{{data[0]?.url}}"></div>
+                    <input type="text" name="url" #url value="{{data[0]?.url}}" class="admin-wrapper-main__card--form-input">
+                </div>
 
                 <button (click)="update(name.value, url.value); alertUser()">edit</button>
             </form>

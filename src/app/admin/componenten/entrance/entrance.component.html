@@ -17,12 +17,12 @@
             </form>
         </div>
         <div class="admin-wrapper-main__card--fullwidth">
-            <div class="admin-wrapper-main__card--title">Current websites in loop:</div>
+            <h2 class="admin-wrapper-main__card--title">Current websites in loop:</h2>
 
             <div *ngFor="let item of data; let i = index;" class="admin-wrapper-main__card-tiny">
-                <div class="admin-wrapper-main__card--title-item">
+                <h2 class="admin-wrapper-main__card--title">
                     <strong>company/ client:</strong>
-                </div>
+                </h2>
                 <strong class="admin-wrapper-main__card--contents"> {{item.name}}</strong>
                 <div class="admin-wrapper-main__card--contents">
                     <a [routerLink]="item.name">
