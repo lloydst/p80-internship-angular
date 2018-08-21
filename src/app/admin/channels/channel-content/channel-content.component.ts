@@ -122,6 +122,9 @@ export class ChannelContentComponent implements OnInit {
         });
         this.reloadData();
     }
+    reloadPage() {
+        location.reload(true);
+    }
     /**
      * will preload the form with data from service
      * @param path a single 'path' returned by the service

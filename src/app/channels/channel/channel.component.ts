@@ -45,7 +45,7 @@ export class ChannelComponent implements OnInit {
     */
     min;
     /**
-     * for binding
+     * for binding 
      */
     timeNow = '';
     /**
@@ -82,11 +82,11 @@ export class ChannelComponent implements OnInit {
      * on load
      */
     ngOnInit() {
-        this.log();
-        this.getRoutes();
-        this.getMessages();
+        // this.log()
+        this.getRoutes()
+        this.getMessages()
         setTimeout(() => {
-            this.openWindow();
+            this.openWindow()
         }, 200);
 
     }
@@ -118,8 +118,8 @@ export class ChannelComponent implements OnInit {
         this.timeNow = `${this.year}-${this.month}-${this.day}T${this.hour}:${this.min}`;
     }
     /**
-     * just a routing function
-     */
+   * just a function
+   */
     getRoutes() {
         this.data.getChannel(this.currentchannel).subscribe(res => {
             this.do = res;
@@ -153,7 +153,7 @@ export class ChannelComponent implements OnInit {
                 x = 0;
                 self.offline = false;
             });
-
+            
             // @overrule the loop if a message should get shown but will only over ride the loop route
             if (path === '/components/loop') {
                 if (messageArray.length > 0) {
@@ -189,7 +189,7 @@ export class ChannelComponent implements OnInit {
                 self.offline = undefined ;
                 offlineWindow.close();
             }
-             // if it is the loop component
+            // if it is the loop component
             if (self.do[0].path.length === 1 && '/components/loop' === self.do[0].path[0].pathurl) {
                 setTimeout(() => {
                     myWindow.close();
@@ -209,6 +209,25 @@ export class ChannelComponent implements OnInit {
                     go();
                 }, self.do[0].path[x - 1].delay); // x is already increased by 1 so x -1 = the delay that should be used
             }
+            if (x === self.do[0].path.length) {
+                myWindow.close();
+                console.log('done');
+            } else if (x++ < self.do[0].path.length) { // if should go next path go next path
+                setTimeout(() => {
+
+                    myWindow.close();
+                    go();
+                }, self.do[0].path[x - 1].delay);
+
+                // because x gets incremented by 1 in the else if statement i have to subtract one to get the right delay
+            }
+            if (x == self.do[0].path.length) {
+                console.log('done');
+                self.getRoutes();
+                x = 0;
+                return x; // 
+            }
+            
         }
         go();
     }
