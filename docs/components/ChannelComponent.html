@@ -1175,7 +1175,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>just a routing function</p>
+                            <div class="io-description"><p>just a function</p>
 </div>
 
                             <div class="io-description">
@@ -1675,7 +1675,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>for binding</p>
+                        <div class="io-description"><p>for binding </p>
 </div>
                     </td>
                 </tr>
@@ -1803,7 +1803,7 @@ export class ChannelComponent implements OnInit {
     */
     min;
     /**
-     * for binding
+     * for binding 
      */
     timeNow &#x3D; &#x27;&#x27;;
     /**
@@ -1840,11 +1840,11 @@ export class ChannelComponent implements OnInit {
      * on load
      */
     ngOnInit() {
-        this.log();
-        this.getRoutes();
-        this.getMessages();
+        // this.log()
+        this.getRoutes()
+        this.getMessages()
         setTimeout(() &#x3D;&gt; {
-            this.openWindow();
+            this.openWindow()
         }, 200);
 
     }
@@ -1876,8 +1876,8 @@ export class ChannelComponent implements OnInit {
         this.timeNow &#x3D; &#x60;${this.year}-${this.month}-${this.day}T${this.hour}:${this.min}&#x60;;
     }
     /**
-     * just a routing function
-     */
+   * just a function
+   */
     getRoutes() {
         this.data.getChannel(this.currentchannel).subscribe(res &#x3D;&gt; {
             this.do &#x3D; res;
@@ -1911,7 +1911,7 @@ export class ChannelComponent implements OnInit {
                 x &#x3D; 0;
                 self.offline &#x3D; false;
             });
-
+            
             // @overrule the loop if a message should get shown but will only over ride the loop route
             if (path &#x3D;&#x3D;&#x3D; &#x27;/components/loop&#x27;) {
                 if (messageArray.length &gt; 0) {
@@ -1947,7 +1947,7 @@ export class ChannelComponent implements OnInit {
                 self.offline &#x3D; undefined ;
                 offlineWindow.close();
             }
-             // if it is the loop component
+            // if it is the loop component
             if (self.do[0].path.length &#x3D;&#x3D;&#x3D; 1 &amp;&amp; &#x27;/components/loop&#x27; &#x3D;&#x3D;&#x3D; self.do[0].path[0].pathurl) {
                 setTimeout(() &#x3D;&gt; {
                     myWindow.close();
@@ -1967,12 +1967,30 @@ export class ChannelComponent implements OnInit {
                     go();
                 }, self.do[0].path[x - 1].delay); // x is already increased by 1 so x -1 &#x3D; the delay that should be used
             }
+            if (x &#x3D;&#x3D;&#x3D; self.do[0].path.length) {
+                myWindow.close();
+                console.log(&#x27;done&#x27;);
+            } else if (x++ &lt; self.do[0].path.length) { // if should go next path go next path
+                setTimeout(() &#x3D;&gt; {
+
+                    myWindow.close();
+                    go();
+                }, self.do[0].path[x - 1].delay);
+
+                // because x gets incremented by 1 in the else if statement i have to subtract one to get the right delay
+            }
+            if (x &#x3D;&#x3D; self.do[0].path.length) {
+                console.log(&#x27;done&#x27;);
+                self.getRoutes();
+                x &#x3D; 0;
+                return x; // 
+            }
+            
         }
         go();
     }
 
-}
-</code></pre>
+}</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">

@@ -892,7 +892,13 @@
         <h3>Description</h3>
     </p>
     <p class="comment">
-        <p>root component</p>
+        <p>these would be required for a ngrx store
+import { Store } from &#39;@ngrx/store&#39;;
+import <em> as fromRoot from &#39;./store/reducers&#39;;
+import </em> as fromWebsite from &#39;./store/reducers/website.reducer&#39;;
+import * as websiteActions from &#39;./store/actions/website.actions&#39;;
+import { Observable } from &#39;rxjs&#39;;
+import { Website } from &#39;./models/website&#39;;</p>
 
     </p>
 
@@ -991,7 +997,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/app.component.ts:18</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/app.component.ts:24</a></div>
                             </td>
                         </tr>
 
@@ -1036,7 +1042,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/app.component.ts:28</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/app.component.ts:34</a></div>
                             </td>
                         </tr>
 
@@ -1093,10 +1099,16 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/app.component.ts:18</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/app.component.ts:24</a></div>
                             </td>
                         </tr>
 
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>only used so the test passes</p>
+</div>
+                    </td>
+                </tr>
 
             </tbody>
         </table>
@@ -1107,12 +1119,15 @@
 
     <div class="tab-pane fade  tab-source-code" id="c-source">
         <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
-import { Store } from &#x27;@ngrx/store&#x27;;
-import * as fromRoot from &#x27;./store/reducers&#x27;;
-import * as fromWebsite from &#x27;./store/reducers/website.reducer&#x27;;
-import * as websiteActions from &#x27;./store/actions/website.actions&#x27;;
-import { Observable } from &#x27;rxjs&#x27;;
-import { Website } from &#x27;./models/website&#x27;;
+/**
+ * these would be required for a ngrx store
+ * import { Store } from &#x27;@ngrx/store&#x27;;
+ * import * as fromRoot from &#x27;./store/reducers&#x27;;
+ * import * as fromWebsite from &#x27;./store/reducers/website.reducer&#x27;;
+ * import * as websiteActions from &#x27;./store/actions/website.actions&#x27;;
+ * import { Observable } from &#x27;rxjs&#x27;;
+ * import { Website } from &#x27;./models/website&#x27;;
+ */
 
 /**
  * root component
@@ -1123,6 +1138,9 @@ import { Website } from &#x27;./models/website&#x27;;
   templateUrl: &#x27;./app.component.html&#x27;
 })
 export class AppComponent implements OnInit {
+    /**
+     * only used so the test passes
+     */
     title &#x3D; &#x27;p80 interschip assignment&#x27;;
     // all the comments are store related
     // website$ :Observable&lt;Website&gt;

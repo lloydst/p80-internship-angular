@@ -1170,7 +1170,7 @@ sets it to false</p>
         path: &#x27;admin&#x27;, component: AdminComponent, children: [
             {
                 path: &#x27;&#x27;,
-                component: DashboardComponent // this one&#x27;s grid had to be done seperate
+                component: DashboardComponent // default route
             },
             {
                 path: &#x27;algemeen&#x27;, component: SettingComponent, children: [
@@ -1190,7 +1190,6 @@ sets it to false</p>
             },
             {
                 path: &#x27;channels&#x27;, component: AdminChannelsContentsComponent, children: [
-                    // these need to become content specific
                     {
                         path: &#x27;&#x27;,
                         redirectTo: &#x27;new&#x27;,

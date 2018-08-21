@@ -1591,39 +1591,44 @@ export class AdminEventDetailComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;!-- Important! classes and id&#x27;s are used in the ts file --&gt;
-&lt;div *ngFor&#x3D;&quot;let edit of data&quot; class&#x3D;&quot;main&quot;&gt;
+&lt;div *ngFor&#x3D;&quot;let edit of data&quot; class&#x3D;&quot;admin-wrapper-main&quot;&gt;
+    &lt;section&gt;
+        &lt;div class&#x3D;&quot;admin-wrapper-main__card&quot;&gt;
+            &lt;h2 class&#x3D;&quot;admin-wrapper-main__card--title&quot;&gt;edit message&lt;/h2&gt;
+            &lt;form class&#x3D;&quot;admin-wrapper-main__card--form&quot;&gt;
 
-    &lt;form&gt;
-        &lt;div class&#x3D;&quot;form-group&quot;&gt;
-            &lt;label for&#x3D;&quot;id&quot;&gt;id&lt;/label&gt; &lt;br&gt;
-            &lt;input #identifier type&#x3D;&quot;text&quot; name&#x3D;&quot;identifier&quot; required value&#x3D;&quot;{{edit.identifier}}&quot;&gt;
+                &lt;div class&#x3D;&quot;admin-wrapper-main__card--form-group&quot;&gt;
+                    &lt;label for&#x3D;&quot;id&quot;&gt;id&lt;/label&gt; &lt;br&gt;
+                    &lt;input #identifier type&#x3D;&quot;text&quot; name&#x3D;&quot;identifier&quot; required value&#x3D;&quot;{{edit.identifier}}&quot; class&#x3D;&quot;admin-wrapper-main__card--form-input&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;admin-wrapper-main__card--form-group&quot;&gt;
+                    &lt;label for&#x3D;&quot;message&quot;&gt;Message&lt;/label&gt; &lt;br&gt;
+                    &lt;input #message type&#x3D;&quot;text&quot; name&#x3D;&quot;message&quot; value&#x3D;&quot;{{edit.message}}&quot; class&#x3D;&quot;admin-wrapper-main__card--form-input&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;admin-wrapper-main__card--form-group&quot;&gt;
+                    &lt;label for&#x3D;&quot;show&quot;&gt;show from&lt;/label&gt; &lt;br&gt;
+                    &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;showFrom&quot; #showFrom value&#x3D;&quot;{{edit.showFrom}}&quot; size&#x3D;&quot;25&quot; class&#x3D;&quot;admin-wrapper-main__card--form-input&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;admin-wrapper-main__card--form-group&quot;&gt;
+                    &lt;label for&#x3D;&quot;showTill&quot;&gt;show untill&lt;/label&gt; &lt;br&gt;
+                    &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;showTill&quot; #showTill value&#x3D;&quot;{{edit.showTill}}&quot; size&#x3D;&quot;25&quot; class&#x3D;&quot;admin-wrapper-main__card--form-input&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;admin-wrapper-main__card--form-group&quot;&gt;
+                    &lt;label for&#x3D;&quot;imgLink&quot;&gt;img url&lt;/label&gt; &lt;br&gt;
+                    &lt;input #imgUrl type&#x3D;&quot;text&quot; name&#x3D;&quot;imgLink&quot; required value&#x3D;&quot;{{edit.imgLink}}&quot; class&#x3D;&quot;admin-wrapper-main__card--form-input&quot;&gt;
+                &lt;/div&gt;
+                &lt;div class&#x3D;&quot;admin-wrapper-main__card--form-group&quot;&gt;
+                    &lt;label for&#x3D;&quot;imgBoolean&quot;&gt;visability&lt;/label&gt; &lt;br&gt;
+                    &lt;input (click)&#x3D;&quot;check(event)&quot; #imgBoolean checked&#x3D;&quot;{{edit.img}}&quot; type&#x3D;&quot;checkbox&quot;&gt;
+                &lt;/div&gt;
+                &lt;button (click)&#x3D;&quot;update(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, identifier.value); alertUser()&quot;&gt;edit&lt;/button&gt;
+            &lt;/form&gt;
         &lt;/div&gt;
-        &lt;div class&#x3D;&quot;form-group&quot;&gt;
-            &lt;label for&#x3D;&quot;message&quot;&gt;Message&lt;/label&gt; &lt;br&gt;
-            &lt;input #message type&#x3D;&quot;text&quot; name&#x3D;&quot;message&quot; value&#x3D;&quot;{{edit.message}}&quot;&gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;form-group&quot;&gt;
-            &lt;label for&#x3D;&quot;show&quot;&gt;show from&lt;/label&gt; &lt;br&gt;
-            &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;showFrom&quot; #showFrom value&#x3D;&quot;{{edit.showFrom}}&quot; size&#x3D;&quot;25&quot;&gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;form-group&quot;&gt;
-            &lt;label for&#x3D;&quot;showTill&quot;&gt;show untill&lt;/label&gt; &lt;br&gt;
-            &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;showTill&quot; #showTill value&#x3D;&quot;{{edit.showTill}}&quot; size&#x3D;&quot;25&quot;&gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;form-group&quot;&gt;
-            &lt;label for&#x3D;&quot;imgLink&quot;&gt;img url&lt;/label&gt; &lt;br&gt;
-            &lt;input #imgUrl type&#x3D;&quot;text&quot; name&#x3D;&quot;imgLink&quot; required value&#x3D;&quot;{{edit.imgLink}}&quot;&gt;
-        &lt;/div&gt;
-        &lt;div class&#x3D;&quot;form-group&quot;&gt;
-            &lt;label for&#x3D;&quot;imgBoolean&quot;&gt;visability&lt;/label&gt; &lt;br&gt;
-            &lt;input (click)&#x3D;&quot;check(event)&quot; #imgBoolean checked&#x3D;&quot;{{edit.img}}&quot; type&#x3D;&quot;checkbox&quot;&gt;
-        &lt;/div&gt;
-
-        &lt;button (click)&#x3D;&quot;update(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, identifier.value); alertUser()&quot;&gt;edit&lt;/button&gt;
-    &lt;/form&gt;
+    &lt;/section&gt;
+    &lt;app-image-view&gt;&lt;/app-image-view&gt;
 &lt;/div&gt;
 &lt;!-- images to choose from for the background--&gt;
-&lt;app-image-view&gt;&lt;/app-image-view&gt;</code></pre>
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -1651,7 +1656,7 @@ export class AdminEventDetailComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Important! classes and id\'s are used in the ts file --><div *ngFor="let edit of data" class="main">    <form>        <div class="form-group">            <label for="id">id</label> <br>            <input #identifier type="text" name="identifier" required value="{{edit.identifier}}">        </div>        <div class="form-group">            <label for="message">Message</label> <br>            <input #message type="text" name="message" value="{{edit.message}}">        </div>        <div class="form-group">            <label for="show">show from</label> <br>            <input type="text" name="showFrom" #showFrom value="{{edit.showFrom}}" size="25">        </div>        <div class="form-group">            <label for="showTill">show untill</label> <br>            <input type="text" name="showTill" #showTill value="{{edit.showTill}}" size="25">        </div>        <div class="form-group">            <label for="imgLink">img url</label> <br>            <input #imgUrl type="text" name="imgLink" required value="{{edit.imgLink}}">        </div>        <div class="form-group">            <label for="imgBoolean">visability</label> <br>            <input (click)="check(event)" #imgBoolean checked="{{edit.img}}" type="checkbox">        </div>        <button (click)="update(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, identifier.value); alertUser()">edit</button>    </form></div><!-- images to choose from for the background--><app-image-view></app-image-view></div>'
+        var COMPONENT_TEMPLATE = '<div><!-- Important! classes and id\'s are used in the ts file --><div *ngFor="let edit of data" class="admin-wrapper-main">    <section>        <div class="admin-wrapper-main__card">            <h2 class="admin-wrapper-main__card--title">edit message</h2>            <form class="admin-wrapper-main__card--form">                <div class="admin-wrapper-main__card--form-group">                    <label for="id">id</label> <br>                    <input #identifier type="text" name="identifier" required value="{{edit.identifier}}" class="admin-wrapper-main__card--form-input">                </div>                <div class="admin-wrapper-main__card--form-group">                    <label for="message">Message</label> <br>                    <input #message type="text" name="message" value="{{edit.message}}" class="admin-wrapper-main__card--form-input">                </div>                <div class="admin-wrapper-main__card--form-group">                    <label for="show">show from</label> <br>                    <input type="text" name="showFrom" #showFrom value="{{edit.showFrom}}" size="25" class="admin-wrapper-main__card--form-input">                </div>                <div class="admin-wrapper-main__card--form-group">                    <label for="showTill">show untill</label> <br>                    <input type="text" name="showTill" #showTill value="{{edit.showTill}}" size="25" class="admin-wrapper-main__card--form-input">                </div>                <div class="admin-wrapper-main__card--form-group">                    <label for="imgLink">img url</label> <br>                    <input #imgUrl type="text" name="imgLink" required value="{{edit.imgLink}}" class="admin-wrapper-main__card--form-input">                </div>                <div class="admin-wrapper-main__card--form-group">                    <label for="imgBoolean">visability</label> <br>                    <input (click)="check(event)" #imgBoolean checked="{{edit.img}}" type="checkbox">                </div>                <button (click)="update(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, identifier.value); alertUser()">edit</button>            </form>        </div>    </section>    <app-image-view></app-image-view></div><!-- images to choose from for the background--></div>'
     var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminChannelsContentsComponent', 'selector': 'app-admin-channels-contents'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelComponent', 'selector': 'app-channel'},{'name': 'ChannelContentComponent', 'selector': 'app-channel-content'},{'name': 'ChannelNewComponent', 'selector': 'app-channel-new'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'CreateComponent', 'selector': 'app-create'},{'name': 'CustomComponent', 'selector': 'app-custom'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'ListingComponentsComponent', 'selector': 'app-listing-components'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'SettingComponent', 'selector': 'app-setting'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TrafficComponent', 'selector': 'app-traffic'},{'name': 'UpdateComponent', 'selector': 'app-update'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AdminEventDetailComponent'};

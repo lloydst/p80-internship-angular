@@ -122,6 +122,9 @@ export class ChannelContentComponent implements OnInit {
         });
         this.reloadData();
     }
+    /**
+     * reloads the page
+     */
     reloadPage() {
         location.reload(true);
     }

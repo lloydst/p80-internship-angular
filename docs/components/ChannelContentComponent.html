@@ -1008,6 +1008,9 @@
                                 <a href="#reloadData">reloadData</a>
                             </li>
                             <li>
+                                <a href="#reloadPage">reloadPage</a>
+                            </li>
+                            <li>
                                 <a href="#removePath">removePath</a>
                             </li>
                             <li>
@@ -1147,7 +1150,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="148" class="link-to-prism">src/app/admin/channels/channel-content/channel-content.component.ts:148</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="154" class="link-to-prism">src/app/admin/channels/channel-content/channel-content.component.ts:154</a></div>
                             </td>
                         </tr>
 
@@ -1267,7 +1270,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="136" class="link-to-prism">src/app/admin/channels/channel-content/channel-content.component.ts:136</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="142" class="link-to-prism">src/app/admin/channels/channel-content/channel-content.component.ts:142</a></div>
                             </td>
                         </tr>
 
@@ -1419,7 +1422,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="129" class="link-to-prism">src/app/admin/channels/channel-content/channel-content.component.ts:129</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="135" class="link-to-prism">src/app/admin/channels/channel-content/channel-content.component.ts:135</a></div>
                             </td>
                         </tr>
 
@@ -1513,6 +1516,46 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="reloadPage"></a>
+                        <span class="name">
+                            <b>
+                            reloadPage
+                            </b>
+                            <a href="#reloadPage"><span class="fa fa-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>reloadPage()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="128" class="link-to-prism">src/app/admin/channels/channel-content/channel-content.component.ts:128</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>reloads the page</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="removePath"></a>
                         <span class="name">
                             <b>
@@ -1531,7 +1574,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="157" class="link-to-prism">src/app/admin/channels/channel-content/channel-content.component.ts:157</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="163" class="link-to-prism">src/app/admin/channels/channel-content/channel-content.component.ts:163</a></div>
                             </td>
                         </tr>
 
@@ -1607,7 +1650,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="177" class="link-to-prism">src/app/admin/channels/channel-content/channel-content.component.ts:177</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="183" class="link-to-prism">src/app/admin/channels/channel-content/channel-content.component.ts:183</a></div>
                             </td>
                         </tr>
 
@@ -1647,7 +1690,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="166" class="link-to-prism">src/app/admin/channels/channel-content/channel-content.component.ts:166</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="172" class="link-to-prism">src/app/admin/channels/channel-content/channel-content.component.ts:172</a></div>
                             </td>
                         </tr>
 
@@ -1992,7 +2035,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="171" class="link-to-prism">src/app/admin/channels/channel-content/channel-content.component.ts:171</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="177" class="link-to-prism">src/app/admin/channels/channel-content/channel-content.component.ts:177</a></div>
                                 </td>
                             </tr>
 
@@ -2128,6 +2171,12 @@ export class ChannelContentComponent implements OnInit {
         this.reloadData();
     }
     /**
+     * reloads the page
+     */
+    reloadPage() {
+        location.reload(true);
+    }
+    /**
      * will preload the form with data from service
      * @param path a single &#x27;path&#x27; returned by the service
      */
@@ -2194,7 +2243,7 @@ export class ChannelContentComponent implements OnInit {
         <pre class="line-numbers"><code class="language-html">&lt;section&gt;
     &lt;div class&#x3D;&quot;admin-wrapper-main__card--fullwidth&quot;&gt;
         &lt;h2 class&#x3D;&quot;admin-wrapper-main__card--title&quot;&gt;Edit channel&lt;/h2&gt;
-        &lt;form [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;save(form)&quot; class&#x3D;&quot;admin-wrapper-main__card--form&quot;&gt;
+        &lt;form [formGroup]&#x3D;&quot;form&quot; (ngSubmit)&#x3D;&quot;save(form)&quot; class&#x3D;&quot;admin-wrapper-main__card--form&quot; #top&gt;
             &lt;div class&#x3D;&quot;admin-wrapper-main__card--form-group&quot;&gt;
                 &lt;label&gt;Channel: &lt;/label&gt;
                 &lt;input style&#x3D;&quot;border:none&quot; formControlName&#x3D;&quot;channel&quot; readonly&#x3D;&quot;readonly&quot;&gt;
@@ -2258,7 +2307,7 @@ export class ChannelContentComponent implements OnInit {
                     &lt;!-- End path template --&gt;
                 &lt;/div&gt;
                 &lt;div&gt;
-                    &lt;button class&#x3D;&quot;button primary&quot; type&#x3D;&quot;submit&quot; [disabled]&#x3D;&quot;form.pristine&quot;&gt;Save&lt;/button&gt; &amp;nbsp;
+                    &lt;button class&#x3D;&quot;button primary&quot; type&#x3D;&quot;submit&quot; [disabled]&#x3D;&quot;form.pristine&quot;(click)&#x3D;&quot;reloadPage()&quot;&gt;Save&lt;/button&gt; &amp;nbsp;
                     &lt;button class&#x3D;&quot;button danger&quot; type&#x3D;&quot;button danger&quot; (click)&#x3D;&quot;revert()&quot; [disabled]&#x3D;&quot;form.pristine&quot;&gt;undo/reload&lt;/button&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
@@ -2294,7 +2343,7 @@ export class ChannelContentComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><section>    <div class="admin-wrapper-main__card--fullwidth">        <h2 class="admin-wrapper-main__card--title">Edit channel</h2>        <form [formGroup]="form" (ngSubmit)="save(form)" class="admin-wrapper-main__card--form">            <div class="admin-wrapper-main__card--form-group">                <label>Channel: </label>                <input style="border:none" formControlName="channel" readonly="readonly">            </div>            <div formArrayName="path">                <div *ngFor="let paths of path.controls; let i=index" [formGroupName]="i">                    <!-- path template -->                    <h4>path #{{i + 1}}</h4>                    <div>                        <div class="admin-wrapper-main__card--form-group">                            <label>Url:                                <span class="admin-wrapper-main__card--form--tooltip">                                    &#9432;                                    <div class="admin-wrapper-main__card--form--tooltiptext">                                        the current paths relative url to the selected component                                    </div>                                </span>                            </label><br>                            <input type="text" formControlName="pathurl" class="admin-wrapper-main__card--form-input">                        </div>                        <div class="admin-wrapper-main__card--form-group">                            <label>Name:                                <span class="admin-wrapper-main__card--form--tooltip">                                    &#9432;                                    <div class="admin-wrapper-main__card--form--tooltiptext">                                        custom set name                                    </div>                                </span>                            </label>                            <input type="text" formControlName="componentName" class="admin-wrapper-main__card--form-input">                        </div>                        <div class="admin-wrapper-main__card--form-group">                            <label>Description:                                <span class="admin-wrapper-main__card--form--tooltip">                                    &#9432;                                    <div class="admin-wrapper-main__card--form--tooltiptext">                                        a description of what the component does                                    </div>                                </span>                            </label>                            <textarea formControlName="description" class="admin-wrapper-main__card--form-input"></textarea>                        </div>                        <div class="admin-wrapper-main__card--form-group">                            <label>Delay:                                <span class="admin-wrapper-main__card--form--tooltip">                                    &#9432;                                    <div class="admin-wrapper-main__card--form--tooltiptext">                                        time it takes in ticks to move to the next path                                    </div>                                </span>                            </label>                            <input #delay type="number" formControlName="delay" class="admin-wrapper-main__card--form-input"><br>                            <small>{{delay.value / 1000 | number}} seconds</small>                        </div>                    </div>                    <br>                    <button class="button succes" type="submit" (click)="addPath()">Add path</button> &nbsp;                    <button class="button danger" type="button danger" (click)="removePath(i)">Remove path</button>                    <br>                    <!-- End path template -->                </div>                <div>                    <button class="button primary" type="submit" [disabled]="form.pristine">Save</button> &nbsp;                    <button class="button danger" type="button danger" (click)="revert()" [disabled]="form.pristine">undo/reload</button>                </div>            </div>        </form>    </div>    <!-- listing component gives information on how to use the routes-->    <app-listing-components></app-listing-components></section></div>'
+        var COMPONENT_TEMPLATE = '<div><section>    <div class="admin-wrapper-main__card--fullwidth">        <h2 class="admin-wrapper-main__card--title">Edit channel</h2>        <form [formGroup]="form" (ngSubmit)="save(form)" class="admin-wrapper-main__card--form" #top>            <div class="admin-wrapper-main__card--form-group">                <label>Channel: </label>                <input style="border:none" formControlName="channel" readonly="readonly">            </div>            <div formArrayName="path">                <div *ngFor="let paths of path.controls; let i=index" [formGroupName]="i">                    <!-- path template -->                    <h4>path #{{i + 1}}</h4>                    <div>                        <div class="admin-wrapper-main__card--form-group">                            <label>Url:                                <span class="admin-wrapper-main__card--form--tooltip">                                    &#9432;                                    <div class="admin-wrapper-main__card--form--tooltiptext">                                        the current paths relative url to the selected component                                    </div>                                </span>                            </label><br>                            <input type="text" formControlName="pathurl" class="admin-wrapper-main__card--form-input">                        </div>                        <div class="admin-wrapper-main__card--form-group">                            <label>Name:                                <span class="admin-wrapper-main__card--form--tooltip">                                    &#9432;                                    <div class="admin-wrapper-main__card--form--tooltiptext">                                        custom set name                                    </div>                                </span>                            </label>                            <input type="text" formControlName="componentName" class="admin-wrapper-main__card--form-input">                        </div>                        <div class="admin-wrapper-main__card--form-group">                            <label>Description:                                <span class="admin-wrapper-main__card--form--tooltip">                                    &#9432;                                    <div class="admin-wrapper-main__card--form--tooltiptext">                                        a description of what the component does                                    </div>                                </span>                            </label>                            <textarea formControlName="description" class="admin-wrapper-main__card--form-input"></textarea>                        </div>                        <div class="admin-wrapper-main__card--form-group">                            <label>Delay:                                <span class="admin-wrapper-main__card--form--tooltip">                                    &#9432;                                    <div class="admin-wrapper-main__card--form--tooltiptext">                                        time it takes in ticks to move to the next path                                    </div>                                </span>                            </label>                            <input #delay type="number" formControlName="delay" class="admin-wrapper-main__card--form-input"><br>                            <small>{{delay.value / 1000 | number}} seconds</small>                        </div>                    </div>                    <br>                    <button class="button succes" type="submit" (click)="addPath()">Add path</button> &nbsp;                    <button class="button danger" type="button danger" (click)="removePath(i)">Remove path</button>                    <br>                    <!-- End path template -->                </div>                <div>                    <button class="button primary" type="submit" [disabled]="form.pristine"(click)="reloadPage()">Save</button> &nbsp;                    <button class="button danger" type="button danger" (click)="revert()" [disabled]="form.pristine">undo/reload</button>                </div>            </div>        </form>    </div>    <!-- listing component gives information on how to use the routes-->    <app-listing-components></app-listing-components></section></div>'
     var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminChannelsContentsComponent', 'selector': 'app-admin-channels-contents'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelComponent', 'selector': 'app-channel'},{'name': 'ChannelContentComponent', 'selector': 'app-channel-content'},{'name': 'ChannelNewComponent', 'selector': 'app-channel-new'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'CreateComponent', 'selector': 'app-create'},{'name': 'CustomComponent', 'selector': 'app-custom'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'ListingComponentsComponent', 'selector': 'app-listing-components'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'SettingComponent', 'selector': 'app-setting'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TrafficComponent', 'selector': 'app-traffic'},{'name': 'UpdateComponent', 'selector': 'app-update'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ChannelContentComponent'};
