@@ -14,45 +14,45 @@ export class ChannelComponent implements OnInit {
     /**
      * for binding
      */
-    messages
+    messages;
     /**
      * for binding
      */
-    today
+    today;
     /**
      * for binding
      */
-    hour
+    hour;
 
     /**
      * for binding
      */
-    year
+    year;
     /**
      * for binding
      */
-    month
+    month;
 
     /**
      * for binding
      */
-    day
+    day;
     /**
     * for binding
     */
-    min
+    min;
     /**
      * for binding 
      */
-    timeNow = ""
+    timeNow = '';
     /**
      * binding
      */
-    do
+    do;
     /**
      * binding
      */
-    currentchannel: string
+    currentchannel: string;
     /**
      * constructor
      * @param data dataservice
@@ -64,27 +64,26 @@ export class ChannelComponent implements OnInit {
     ) {
         window.onbeforeunload = function (e) {
             var myWindow = window.open('javascript:void window.focus()', 'channel', 'scrollbars=no');
-            myWindow.close()
-            return undefined
+            myWindow.close();
+            return undefined;
         };
     }
     /**
      * just a function
      */
     log() {
-        var url = this.router.url.split('/')
-        this.currentchannel = url[2]
-        //console.log(this.currentchannel)
+        var url = this.router.url.split('/');
+        this.currentchannel = url[2];
     }
     /**
      * on load
      */
     ngOnInit() {
-        this.log()
-        this.getRoutes()
-        this.getMessages()
+        this.log();
+        this.getRoutes();
+        this.getMessages();
         setTimeout(() => {
-            this.openWindow()
+            this.openWindow();
         }, 200);
 
     }
@@ -94,26 +93,26 @@ export class ChannelComponent implements OnInit {
     setTimeNow() {
         this.today = new Date();
         this.hour = this.today.getHours().toString();
-        this.year = this.today.getFullYear()
-        this.month = this.today.getMonth().toString()
-        this.day = this.today.getDate().toString()
-        this.min = this.today.getMinutes().toString()
+        this.year = this.today.getFullYear();
+        this.month = this.today.getMonth().toString();
+        this.day = this.today.getDate().toString();
+        this.min = this.today.getMinutes().toString();
 
         if (Number(this.month) < 10) {
-            var newDay = Number(this.month) + 1
-            newDay.toString()
-            this.month = "0" + newDay
+            var newDay = Number(this.month) + 1;
+            newDay.toString();
+            this.month = "0" + newDay;
         }
         if (Number(this.day) < 10) {
-            this.day = '0' + this.day
+            this.day = '0' + this.day;
         }
         if (Number(this.hour) < 10) {
-            this.hour = '0' + this.hour
+            this.hour = '0' + this.hour;
         }
         if (Number(this.min) < 10) {
-            this.min = '0' + this.min
+            this.min = '0' + this.min;
         }
-        this.timeNow = "" + this.year + "-" + this.month + "-" + this.day + "T" + this.hour + ":" + this.min + ""
+        this.timeNow = "" + this.year + "-" + this.month + "-" + this.day + "T" + this.hour + ":" + this.min + "";
     }
     /**
      * just a routing function
@@ -178,18 +177,18 @@ export class ChannelComponent implements OnInit {
                 // if x = the last path
                 if (x === self.do[0].path.length -1 ) {
                     setTimeout(() => {
-                        myWindow.close()
-                        self.getRoutes()
-                        console.log('done')
-                        x = 0
-                        go()
+                        myWindow.close();
+                        self.getRoutes();
+                        console.log('done');
+                        x = 0;
+                        go();
                     }, self.do[0].path[x].delay);
 
                 } else if (x++ < self.do[0].path.length-1 ) { // if x < then last path increase x by 1
                     setTimeout(() => {
-                        myWindow.close()
-                        go()
-                        console.log('increased by '+x)
+                        myWindow.close();
+                        go();
+                        console.log('increased by 1 ='+x);
                     }, self.do[0].path[x - 1].delay); // x is already increased by 1 so x -1 = the delay that should be used
                 }
             }

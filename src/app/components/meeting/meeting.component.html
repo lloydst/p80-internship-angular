@@ -1,6 +1,10 @@
 <div class="meeting">
-
-    <div class="meeting__top">
+    <!-- if no events say no more events-->
+    <div class="meeting__top" *ngIf="meeting[0].events.length === 0">
+            no more meetings this week
+        </div>
+    <!-- if any events show first-->
+    <div class="meeting__top" *ngIf="meeting[0].events.length >= 1">
 
         <div class="meeting__top-heading">
             <div class="meeting__top-heading-title">
@@ -14,8 +18,9 @@
                     <h1>{{meeting[0].events[meeting[0].events.length -1].start.dateTime.substring(11,16) }}</h1>
                     <p>
                         {{meeting[0].events[meeting[0].events.length -1].start.dateTime.substring(8,10)}} -
-                        {{meeting[0].events[meeting[0].events.length -1].start.dateTime.substring(5,7)}} 
+                        {{meeting[0].events[meeting[0].events.length -1].start.dateTime.substring(5,7)}}
                     </p>
+                    <p *ngIf="!meeting[0].events[0].location.displayName ==''">Location:</p>
                 </div>
                 <div class="event-between"></div>
                 <div class="event-end">
@@ -23,9 +28,14 @@
                     <h1>{{meeting[0].events[meeting[0].events.length -1].end.dateTime.substring(11,16)}}</h1>
                     <p>
                         {{meeting[0].events[meeting[0].events.length -1].end.dateTime.substring(8,10)}} -
-                        {{meeting[0].events[meeting[0].events.length -1].end.dateTime.substring(5,7)}} </p>
+                        {{meeting[0].events[meeting[0].events.length -1].end.dateTime.substring(5,7)}} 
+                    </p>
+                    <p>
+                        {{meeting[0].events[0].location.displayName}}
+                    </p>
                 </div>
             </div>
+            
         </div>
 
         <div class="meeting__top-details">
@@ -48,9 +58,9 @@
             <p class="meeting__top-details-description"> {{meeting[0].events[meeting[0].events.length -1].subject}} </p>
         </div>
     </div>
-
+    
     <div class="meeting__bottom">
-        <table class="meeting__bottom-list">
+        <table class="meeting__bottom-list" *ngIf="meeting[0].events.length > 1">
             <tbody>
                 <tr *ngFor="let m of meeting;">
                     <!--this following slice pipe is meant to limit the amount of meetings and has to be checked on a large screen-->
