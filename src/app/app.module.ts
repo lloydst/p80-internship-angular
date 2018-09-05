@@ -36,6 +36,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './store/effects/app.effects';
 import { WebsiteEffects } from './store/effects/website.effects';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
     declarations: [
@@ -61,7 +62,8 @@ import { WebsiteEffects } from './store/effects/website.effects';
         DataService,
         NewsService,
         WeatherService,
-        FileService
+        FileService,
+        AuthService
     ],
     bootstrap: [AppComponent]
 })

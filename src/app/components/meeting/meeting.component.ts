@@ -1,5 +1,6 @@
 import { Component, OnInit, NO_ERRORS_SCHEMA } from '@angular/core';
 import { DataService } from '../../services/data.service';
+import { AuthService } from '../../services/auth.service';
 
 /**
  * meeting component
@@ -24,13 +25,15 @@ export class MeetingComponent implements OnInit {
      */
     constructor(
         private data: DataService,
+        private auth: AuthService
     ) { }
     /**
      * on load
      */
     ngOnInit() {
-        this.data.getLoggedIn().subscribe(res => {
+        this.auth.getLoggedIn().subscribe(res => {
             this.loginStatus = res;
+            console.log(this.loginStatus)
             this.data.getCalendar().subscribe(resp => {
                 this.meeting = [resp];
             });

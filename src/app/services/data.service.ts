@@ -96,16 +96,7 @@ export class DataService {
     /**
      * checks if logged in if not it displays a button that allows you too
      */
-    getLoggedIn() {
-        return this.http.get('/api/login');
-    }
-    /**
-     * logout of graph
-     */
-    logOut() {
-        return this.http.get('/api/authorize/signout');
-
-    }
+   
     /**
      * gets all channels
      */
