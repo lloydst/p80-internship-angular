@@ -29,7 +29,8 @@ export class AdminEntranceComponent implements OnInit {
      */
     websiteForm = new FormGroup({
         website: new FormControl(),
-        url: new FormControl()
+        url: new FormControl(),
+        displayTime: new FormControl()
     });
     /**
      * runs on page load
@@ -81,11 +82,12 @@ export class AdminEntranceComponent implements OnInit {
      * // succes
      * create(poort80, Https://poort80.nl, true);
      */
-    create(site: string, url: string, visable) {
+    create(site: string, url: string, visable, displayTime) {
         this.dataService.createWebsite({
             name: site,
             url: url,
-            visable: visable
+            visable: visable,
+            displayTime: displayTime
         }).subscribe(
             () => {
                 // refresh the list

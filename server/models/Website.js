@@ -8,7 +8,8 @@ var WebsiteSchema = new Schema({
   url: String,
   visable:{
     type: Boolean,
-  default: false}
+  default: false},
+  displayTime: Number
 });
 
 var Website = mongoose.model('Website', WebsiteSchema);

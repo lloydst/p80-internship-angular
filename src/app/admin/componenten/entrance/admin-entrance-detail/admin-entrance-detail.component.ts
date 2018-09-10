@@ -33,7 +33,7 @@ export class AdminEntranceDetailComponent implements OnInit {
         private dataService: DataService
     ) { }
     /**
-     * gets the id param out of url and requests the corresponing document
+     * gets the id param out of url and requests the corresponding document
      */
     ngOnInit() {
         this.id = this.route.snapshot.params.id;
@@ -56,8 +56,8 @@ export class AdminEntranceDetailComponent implements OnInit {
      * @param name the (new) name of the "website" that gets updated
      * @param url the (new) url of the "website" that gets updated
      */
-    update(name: String, url: String) {
-        this.dataService.updateWebsite(this.id, { name: name, url: url }).subscribe();
+    update(name: String, url: String, displayTime: Number) {
+        this.dataService.updateWebsite(this.id, { name: name, url: url, displayTime: displayTime }).subscribe();
         // console.log(this.id);
     }
     /**
@@ -66,7 +66,7 @@ export class AdminEntranceDetailComponent implements OnInit {
     alertUser() {
         const redirect = window.confirm('updated do you wish to return?');
         if (redirect) {
-            this.router.navigate(['./admin/channels/entrance']);
+            this.router.navigate(['./admin/components/entrance']);
         }
     }
 }

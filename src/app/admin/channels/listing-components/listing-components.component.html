@@ -1,75 +1,74 @@
-<div class="admin-wrapper-main__card" >
-    <h2 class="admin-wrapper-main__card--title">the following components can be used:</h2>
-    <table class="admin-wrapper-main__card--contents">
-        <thead>
-            <tr>
-                <th>name:</th>
-                <th>components/x:</th>
-                <th>time required:</th>
-                <th>status</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>event</td>
-                <td>event</td>
-                <td>none</td>
-                <td>done</td>
-            </tr>
-            <tr>
-                <td>traffic</td>
-                <td>traffic</td>
-                <td>none</td>
-                <td>styling</td>
-            </tr>
-            <tr>
-                <td>weather</td>
-                <td>weather</td>
-                <td>none</td>
-                <td>done</td>
-            </tr>
-            
-            <tr>
-                <td>financial</td>
-                <td>financial</td>
-                <td>none</td>
-                <td>done</td>
-            </tr>
-            <tr>
-                <td>meeting</td>
-                <td>meeting</td>
-                <td>none</td>
-                <td>done</td>
-            </tr>
-            <tr>
-                <td>support/:project *2</td>
-                <td>support:project *2</td>
-                <td>none</td>
-                <td>styling</td>
-            </tr>
-            <tr>
-                <td>loop</td>
-                <td>loop</td>
-                <td>1*</td>
-                <td>done</td>
-            </tr>
-            <tr>
-                <td>news</td>
-                <td>news</td>
-                <td>none</td>
-                <td>done</td>
-            </tr>
-        </tbody>
+<div class="admin-wrapper-main__card">
+	<h2 class="admin-wrapper-main__card--title">the following components can be used:</h2>
+	<table class="admin-wrapper-main__card--contents">
+		<thead>
+			<tr>
+				<th>name:</th>
+				<th>components/x:</th>
+				<th>time required:</th>
+				<th>status</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>event</td>
+				<td>event</td>
+				<td>none</td>
+				<td>done</td>
+			</tr>
+			<tr>
+				<td>traffic</td>
+				<td>traffic</td>
+				<td>none</td>
+				<td>styling</td>
+			</tr>
+			<tr>
+				<td>weather</td>
+				<td>weather</td>
+				<td>none</td>
+				<td>done</td>
+			</tr>
 
-    </table>
-    <div>
-            <p class="admin-wrapper-main__card--contents">1*. <br>
-                the loop component takes 20 s * the amount of websites + roughly 15s to account for load times.
-            </p>
-            <p class="admin-wrapper-main__card--contents">2*. <br>
-                requires the name of a project after the support/ for instance a url could be: /components/support/pathe
-            </p>
-    </div>
-    
-    
+			<tr>
+				<td>financial</td>
+				<td>financial</td>
+				<td>none</td>
+				<td>done</td>
+			</tr>
+			<tr>
+				<td>meeting</td>
+				<td>meeting</td>
+				<td>none</td>
+				<td>done</td>
+			</tr>
+			<tr>
+				<td>support/:project <sup>*2</sup></td>
+				<td>support:project <sup>*2</sup></td>
+				<td>none</td>
+				<td>styling</td>
+			</tr>
+			<tr>
+				<td>loop</td>
+				<td>loop</td>
+				<td>{{websiteTime / 1000}} seconds <sup>*1</sup></td>
+				<td>done</td>
+			</tr>
+			<tr>
+				<td>news</td>
+				<td>news</td>
+				<td>none</td>
+				<td>done</td>
+			</tr>
+		</tbody>
+
+	</table>
+	<div>
+<p class="admin-wrapper-main__card--contents"><sup>*1</sup> -
+			This number most likely isn't enough since the number generated here calculates the time each website should be displayed but doesn't take in account the load times.
+		</p>
+<p class="admin-wrapper-main__card--contents"><sup>*2</sup> -
+			Requires the name of a project after the support/. So for instance a url could be: /components/support/pathe. then it would list the issue's of the the pathe jira project
+		</p>
+	</div>
+
 </div>

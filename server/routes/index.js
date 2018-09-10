@@ -335,6 +335,7 @@ router.get('/websites/:id', function(req,res) {
         site.name = req.body.name;  
         site.url = req.body.url;
         site.visable = req.body.visable;
+        site.displayTime = req.body.displayTime
         // save the bear and check for errors
         site.save(function(err) {
             if (err){
