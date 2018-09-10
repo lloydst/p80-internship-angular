@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../../services/data.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 /**
  * add or remove websites that are shown in the loop or navigate to the detail-page to edit a existing one
@@ -23,20 +23,28 @@ export class AdminEntranceComponent implements OnInit {
      */
     constructor(
         private dataService: DataService,
-        private router: Router) { }
+        private router: Router,
+        private formBuilder: FormBuilder) { }
     /**
      * bindings jai!
      */
-    websiteForm = new FormGroup({
-        website: new FormControl(),
-        url: new FormControl(),
-        displayTime: new FormControl()
-    });
+    form: FormGroup;
+    submitted = false;
+    validUrl = "/((\w+:\/\/)[-a-zA-Z0-9:@;?&=\/%\+\.\*!'\(\),\$_\{\}\^~\[\]`#|]+)/g"
     /**
      * runs on page load
      */
     ngOnInit() {
+
         this.getData();
+        this.form = new FormGroup({
+            name: new FormControl('', [Validators.minLength(5), Validators.required]),
+            url: new FormControl('', [Validators.required, Validators.pattern(this.validUrl)]),
+            displayTime: new FormControl('', [Validators.minLength(5), Validators.required]),
+        }, { updateOn: 'change' });
+    }
+    get f() { 
+        return this.form.controls; 
     }
     /**
      * gets all websites from the api

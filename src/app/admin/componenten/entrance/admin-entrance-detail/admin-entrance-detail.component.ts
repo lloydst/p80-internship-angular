@@ -58,7 +58,6 @@ export class AdminEntranceDetailComponent implements OnInit {
      */
     update(name: String, url: String, displayTime: Number) {
         this.dataService.updateWebsite(this.id, { name: name, url: url, displayTime: displayTime }).subscribe();
-        // console.log(this.id);
     }
     /**
      * stops the user from accedently removing a "website"

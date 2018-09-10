@@ -286,6 +286,11 @@ section {
   display: inline-block;
 }
 
+.admin-wrapper-main__card--form-error div {
+  color: red;
+  font-size: small;
+}
+
 .admin-wrapper-main__card--form--tooltiptext {
   visibility: hidden;
   max-width: 500px;
