@@ -80,15 +80,16 @@ export class WebsiteLoopComponent implements OnInit {
 
         function go() {
             const loopWindow = window.open(arrayOfUrls[y], 'loop'); // default = 0
-            const actualLength = arrayOfUrls.length + 1;
-            console.log(actualLength);
-            if (y === arrayOfUrls.length) {
+            if (y === arrayOfUrls.length) { // if at the last website too visit reset the loop (so it hits the else-if below)
+                y=0;
                 loopWindow.close();
-            } else if (y++ <= arrayOfUrls.length) {
+                go();
+            } else if (y++ <= arrayOfUrls.length -1) {
                 setTimeout(() => {
+                    console.log(y)
                     loopWindow.close();
                     go();
-                }, 20000); // might be better to set this time from the db
+                }, 10000); // might be better to set this time from the db
             }
         }
         go();
