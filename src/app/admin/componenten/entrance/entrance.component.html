@@ -1,56 +1,62 @@
 <div class="admin-wrapper-main">
-	<!-- section acts like a row-->
-	<section>
+    <!-- section acts like a row-->
+    <section>
 
-		<div class="admin-wrapper-main__card--fullwidth">
-			<h2 class="admin-wrapper-main__card--title">Add a new client to the loop</h2>
-			<form [formGroup]="form" class="admin-wrapper-main__card--form" (ngSubmit)="create(website.value, url.value, true, displayTime.value)">
-				<div class="admin-wrapper-main__card--form-group">
-					<label for="client">client:</label>
-					<input class="admin-wrapper-main__card--form-input" #website name="client" type="text" required formControlName="name">
-					<div *ngIf="f.name.touched && f.name.errors" class="admin-wrapper-main__card--form-error">
-						<div *ngIf="f.name.errors.required">First Name is required</div>
-						<div *ngIf="f.name.errors.minlength">Name must be at least 6 characters</div>
-					</div>
-				</div>
+        <div class="admin-wrapper-main__card--fullwidth">
+            <h2 class="admin-wrapper-main__card--title">Add a new client to the loop</h2>
+            <form [formGroup]="form" class="admin-wrapper-main__card--form" (ngSubmit)="create(website.value, url.value, true, displayTime.value)">
+                <div class="admin-wrapper-main__card--form-group">
+                    <label for="client">client:</label>
+                    <input class="admin-wrapper-main__card--form-input" #website name="client" type="text" required
+                        formControlName="name">
+                    <div *ngIf="f.name.touched && f.name.errors" class="admin-wrapper-main__card--form-error">
+                        <div *ngIf="f.name.errors.required">First Name is required</div>
+                        <div *ngIf="f.name.errors.minlength">Name must be at least 6 characters</div>
+                    </div>
+                </div>
 
-				<div>
-					<label for="url">Website's url:</label>
-					<input class="admin-wrapper-main__card--form-input" type="text" name="url" #url required formControlName="url">
-					<div *ngIf="f.url.touched && f.url.errors" class="admin-wrapper-main__card--form-error">
-						<div *ngIf="f.url.errors.required">Url is required</div>
-						<div *ngIf="f.url.errors.pattern">http(s)://www.example.com</div>
-					</div>
-				</div>
-				<div>
-					<label for="displayTime">Display Time:</label>
-					<input class="admin-wrapper-main__card--form-input" type="number" name="displayTime" #displayTime required
-					 formControlName="displayTime">
-					<div *ngIf="f.displayTime.touched && f.displayTime.errors" class="admin-wrapper-main__card--form-error">
-						<div *ngIf="f.displayTime.errors.required">A display Time is required</div>
-						<div *ngIf="f.displayTime.errors.minlength">The display time must be bigger then 1 second (1000 ticks)</div>
-					</div>
-				</div>
-				<br>
-				<button type="submit" class="button succes" [disabled]="!form.valid">Add</button>
-			</form>
-		</div>
-		<div class="admin-wrapper-main__card--fullwidth">
-			<h2 class="admin-wrapper-main__card--title">Current websites in loop:</h2>
+                <div>
+                    <label for="url">Website's url:</label>
+                    <input class="admin-wrapper-main__card--form-input" type="text" name="url" #url required
+                        formControlName="url">
 
-			<div *ngFor="let item of data; let i = index;" class="admin-wrapper-main__card-tiny">
-				<h2 class="admin-wrapper-main__card--title">
-					<strong>company/ client:</strong>
-				</h2>
-				<strong class="admin-wrapper-main__card--contents"> {{item.name}}</strong>
-				<div>displayed: {{item.displayTime /1000}}s</div>
-				<div class="admin-wrapper-main__card--contents">
-					<a [routerLink]="item.name">
-						<button class="button warning">update</button>
-						<button class="button danger" (click)="delete(item)">delete</button>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
+                    <div *ngIf="f.url.touched && f.url.errors" class="admin-wrapper-main__card--form-error">
+                        {{f.url.errors.pattern |json}}
+                        <div *ngIf="f.url.errors.required">Url is required</div>
+                        <div *ngIf="f.url.errors.pattern">http(s)://www.example.com</div>
+                    </div>
+                </div>
+                <div>
+                    <label for="displayTime">Display Time:</label>
+                    <input class="admin-wrapper-main__card--form-input" type="number" name="displayTime" #displayTime
+                        required formControlName="displayTime">
+                    <div *ngIf="f.displayTime.touched && f.displayTime.errors" class="admin-wrapper-main__card--form-error">
+                        <div *ngIf="f.displayTime.errors.required">A display Time is required</div>
+                        <div *ngIf="f.displayTime.errors.min">The display time must be bigger then 1 second (1000
+                            ticks)</div>
+                    </div>
+                </div>
+                <br>
+                <button type="submit" class="button succes" [disabled]="!form.valid">Add</button>
+            </form>
+        </div>
+        <div class="admin-wrapper-main__card--fullwidth">
+            <h2 class="admin-wrapper-main__card--title">Current websites in loop:</h2>
+
+            <div *ngFor="let item of data; let i = index;" class="admin-wrapper-main__card-tiny">
+                <h2 class="admin-wrapper-main__card--title">
+                    <strong>company/ client:</strong>
+                </h2>
+                <strong class="admin-wrapper-main__card--contents"> {{item.name}}</strong>
+                <div>displayed: {{item.displayTime /1000}}s</div>
+                <div class="admin-wrapper-main__card--contents">
+                    <a [routerLink]="item.name">
+                        <button class="button warning">update</button>
+                    </a>
+                    <button class="button danger" (click)="delete(item)">delete</button>
+
+                </div>
+            </div>
+        </div>
+    </section>
 </div>

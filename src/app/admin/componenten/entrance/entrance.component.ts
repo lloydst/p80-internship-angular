@@ -30,7 +30,7 @@ export class AdminEntranceComponent implements OnInit {
      */
     form: FormGroup;
     submitted = false;
-    validUrl = "/((\w+:\/\/)[-a-zA-Z0-9:@;?&=\/%\+\.\*!'\(\),\$_\{\}\^~\[\]`#|]+)/g"
+    validUrl = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
     /**
      * runs on page load
      */
@@ -40,7 +40,7 @@ export class AdminEntranceComponent implements OnInit {
         this.form = new FormGroup({
             name: new FormControl('', [Validators.minLength(5), Validators.required]),
             url: new FormControl('', [Validators.required, Validators.pattern(this.validUrl)]),
-            displayTime: new FormControl('', [Validators.minLength(5), Validators.required]),
+            displayTime: new FormControl('', [Validators.min(1000), Validators.required]),
         }, { updateOn: 'change' });
     }
     get f() { 
