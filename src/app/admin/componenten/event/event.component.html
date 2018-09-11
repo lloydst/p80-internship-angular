@@ -3,7 +3,7 @@
     <section>
         <div class="admin-wrapper-main__card">
             <h2 class="admin-wrapper-main__card--title">Create a Message here</h2>
-            <form class="admin-wrapper-main__card--form" (ngSubmit)="create(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, id.value); eventForm.reset()"
+            <form class="admin-wrapper-main__card--form" (ngSubmit)="create(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, id.value); form.reset()"
                 [formGroup]="form">
                 <div class="admin-wrapper-main__card--form-group">
                     <label for="id">message name:</label>

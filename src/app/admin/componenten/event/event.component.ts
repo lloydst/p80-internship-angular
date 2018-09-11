@@ -125,14 +125,7 @@ export class AdminEventComponent implements OnInit {
             alert($('#imgBoolean').attr('checked'));
         });
     }
-    /**
-     * updates a old message with new contents and or more time
-     * @param id message to update
-     * @param newMessage new text
-     */
-    update(id, newMessage) {
-        return 'update';
-    }
+
     /**
      * deletes a message
      * @param message message to delete

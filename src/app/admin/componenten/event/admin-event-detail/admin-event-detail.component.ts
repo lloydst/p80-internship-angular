@@ -3,6 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { DataService } from '../../../../services/data.service';
 import { Message } from '../../../../models/message';
 import * as $ from 'jquery';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 /**
  * message/event detail page
  */
@@ -19,6 +20,9 @@ export class AdminEventDetailComponent implements OnInit {
      * for binding
      */
     id;
+    form: FormGroup;
+    validUrl = '^\/(([A-z0-9\-\%]+\/)*[A-z0-9\-\%\.]+$)?'
+    validTime = '[0-9]{4}-([0-9]|0[0-9]|1[0-9])-([0-9][0-9]|[0-9])T([0-9]|0[0-9]|1[0-9]):[0-9]{2}'
     /**
      * component constructor
      * @param router for navigation
@@ -36,6 +40,19 @@ export class AdminEventDetailComponent implements OnInit {
     ngOnInit() {
         this.id = this.route.snapshot.params.id;
         this.getData();
+        this.form = new FormGroup({
+            message: new FormControl('', [Validators.required]),
+            showFrom: new FormControl('', [Validators.required, Validators.pattern(this.validTime)]),
+            showTill: new FormControl('', [Validators.required, Validators.pattern(this.validTime)]),
+            imgUrl: new FormControl('', [Validators.pattern(this.validUrl)]),
+            id: new FormControl('', [Validators.required, Validators.minLength(5)])
+        }, { updateOn: 'change' });
+    }
+    /**
+     * get form controls
+     */
+    get f() {
+        return this.form.controls;
     }
     /**
      * gets a single message
@@ -69,7 +86,9 @@ export class AdminEventDetailComponent implements OnInit {
         this.dataService.updateMessage(this.id, {
             message: message, showFrom: showFrom,
             showTill: showTill, imgLink: imgLink, img: img, identifier: id
-        }).subscribe();
+        }).subscribe( ()=>{
+            this.router.navigate(['./admin/components/events']);
+        });
     }
     /**
      * prevents a user from acidently removeing a message
