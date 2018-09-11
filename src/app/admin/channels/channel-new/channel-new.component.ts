@@ -61,32 +61,49 @@ export class ChannelNewComponent implements OnInit {
 
     ngOnInit() {
         // we will initialize our form here
+        
         this.form = this.fb.group({
             channel: ['', [Validators.required, Validators.minLength(5)]],
             path: this.fb.array([
-                this.initPath(),
+                this.getPath(),
             ])
         });
+        this.log()
+    }
+
+    /**
+     * form controls helper
+     */
+    get f() {
+        return this.form.controls;
+    }
+    /**
+     * path controls helper
+     */
+    log() {
+        console.log(this.f)
     }
     /**
      * adds a empty 'path'
      */
-    initPath() {
+    getPath() {
         // initialize our address
         return this.fb.group({
-            pathurl: ['/components/'],
-            description: [''],
-            componentName: [''],
-            delay: [2000]
+            pathurl: ['/components/', [Validators.required, Validators.minLength(16)]],
+            description: ['', [Validators.required, Validators.minLength(20)]],
+            componentName: ['', [Validators.required, Validators.minLength(4)]],
+            delay: [5000, [Validators.min(5000)]]
         });
     }
+    
     /**
      * just a function
      */
     addPath() {
         // add address to the list
         const control = <FormArray>this.form.controls['path'];
-        control.push(this.initPath());
+        control.push(this.getPath());
+        this.log()
     }
     /**
      * path to remove

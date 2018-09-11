@@ -14,14 +14,18 @@
                     </span>
                 </label>
                 <input type="text" formControlName="channel" class="admin-wrapper-main__card--form-input">
-
+                <div *ngIf="f.channel.touched && f.channel.errors" class="admin-wrapper-main__card--form-error">
+                    <div *ngIf="f.channel.errors.required"> A Channel name is required</div>
+                    <div *ngIf="f.channel.errors.minlength"> The channel name has to be atleast 5 characters long</div>
+                </div>
+                <!--{{f.channel.errors |json}}-->
             </div>
             <!--paths-->
             <div formArrayName="path">
-                <div *ngFor="let path of form['controls'].path['controls']; let i=index">
+                <div *ngFor="let path of f.path['controls']; let i=index">
                     <div>
                         <span>path {{i + 1}}</span>
-                        <span *ngIf="form.controls.path.controls.length > 1" (click)="removePath(i)"></span>
+                        <span *ngIf="f.path.controls.length > 1" (click)="removePath(i)"></span>
                     </div>
                     <div [formGroupName]="i">
                         <div class="admin-wrapper-main__card--form-group">
@@ -34,6 +38,11 @@
                                 </span>
                             </label>
                             <input formControlName="pathurl" class="admin-wrapper-main__card--form-input" />
+                            <div *ngIf="f.path['controls'][i].controls.pathurl.touched && f.path['controls'][i].controls.pathurl.errors" class="admin-wrapper-main__card--form-error">
+                                <div *ngIf="f.path['controls'][i].controls.pathurl.errors.required"> A Channel name is required</div>
+                                <div *ngIf="f.path['controls'][i].controls.pathurl.errors.minlength"> The channel name has to be atleast 20 characters long</div>
+                            </div>
+                           <!--{{f.path['controls'][i].controls.pathurl.errors |json}}-->
                         </div>
                         <div class="admin-wrapper-main__card--form-group">
                             <label>description:
@@ -44,8 +53,12 @@
                                     </div>
                                 </span>
                             </label>
-                            <input type="text" formControlName="description" value="Does this and that" class="admin-wrapper-main__card--form-input"
-                            />
+                            <input type="text" formControlName="description" value="Does this and that" class="admin-wrapper-main__card--form-input"/>
+                            <div *ngIf="f.path['controls'][i].controls.description.touched && f.path['controls'][i].controls.description.errors" class="admin-wrapper-main__card--form-error">
+                                <div *ngIf="f.path['controls'][i].controls.description.errors.required"> A Channel name is required</div>
+                                <div *ngIf="f.path['controls'][i].controls.description.errors.minlength"> The path description has to be atleast 20
+                                    characters long</div>
+                            </div>
                         </div>
                         <div class="admin-wrapper-main__card--form-group">
                             <label>delay:
@@ -68,6 +81,12 @@
                                 </span>
                             </label>
                             <input type="text" formControlName="componentName" class="admin-wrapper-main__card--form-input">
+                            <div *ngIf="f.path['controls'][i].controls.componentName.touched && f.path['controls'][i].controls.componentName.errors"
+                                class="admin-wrapper-main__card--form-error">
+                                <div *ngIf="f.path['controls'][i].controls.componentName.errors.required"> A Channel name is required</div>
+                                <div *ngIf="f.path['controls'][i].controls.componentName.errors.minlength"> The path description has to be atleast 20
+                                    characters long</div>
+                            </div>
                         </div>
                         <br>
                         <a (click)="removePath(i)">
@@ -84,6 +103,7 @@
             </div>
             <br>
             <div>
+                {{form.status}}
                 <button class="button succes" type="submit" [disabled]="!form.valid">Create</button>
             </div>
         </form>
