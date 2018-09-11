@@ -10,7 +10,7 @@
                     <input class="admin-wrapper-main__card--form-input" #website name="client" type="text" required
                         formControlName="name">
                     <div *ngIf="f.name.touched && f.name.errors" class="admin-wrapper-main__card--form-error">
-                        <div *ngIf="f.name.errors.required">First Name is required</div>
+                        <div *ngIf="f.name.errors.required">Name is required</div>
                         <div *ngIf="f.name.errors.minlength">Name must be at least 6 characters</div>
                     </div>
                 </div>
