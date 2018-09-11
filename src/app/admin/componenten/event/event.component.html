@@ -4,35 +4,53 @@
         <div class="admin-wrapper-main__card">
             <h2 class="admin-wrapper-main__card--title">Create a Message here</h2>
             <form class="admin-wrapper-main__card--form" (ngSubmit)="create(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, id.value); eventForm.reset()"
-                [formGroup]="eventForm">
+                [formGroup]="form">
                 <div class="admin-wrapper-main__card--form-group">
                     <label for="id">message name:</label>
                     <input class="admin-wrapper-main__card--form-input" #id type="text" name="identifier" formControlName="id" required>
+                    <div *ngIf="f.id.touched && f.id.errors" class="admin-wrapper-main__card--form-error">
+                        <div *ngIf="f.id.errors.required">A message name is required</div>
+                        <div *ngIf="f.id.errors.minlength">The message name must be longer then 5 characters</div>
+                    </div>
                 </div>
                 <div class="admin-wrapper-main__card--form-group">
                     <label for="message">message: </label>
                     <br>
                     <input class="admin-wrapper-main__card--form-input" #message type="text" required formControlName="message">
+                    <div *ngIf="f.message.touched && f.showFrom.errors" class="admin-wrapper-main__card--form-error">
+                        <div *ngIf="f.message.errors.required">A message has to be set</div>
+                    </div>
                 </div>
                 <div class="admin-wrapper-main__card--form-group">
                     <label for="showFrom">zichtbaar van af:</label>
                     <input class="admin-wrapper-main__card--form-input" type="datetime-local" name="showFrom" #showFrom id="showFrom" required
                         formControlName="showFrom">
+                        <div *ngIf="f.showFrom.touched && f.showFrom.errors" class="admin-wrapper-main__card--form-error">
+                            <div *ngIf="f.showFrom.errors.required">A start date/time has to be set</div>
+                            <div *ngIf="f.showFrom.errors.pattern">please fill in both time and date currently is {{showFrom.value}}</div>
+                        </div>
                 </div>
                 <div class="admin-wrapper-main__card--form-group">
                     <label for="showTill">zichtbaar tot:</label>
                     <input class="admin-wrapper-main__card--form-input" type="datetime-local" name="showTill" #showTill id="showTill" required
                         formControlName="showTill">
+                        <div *ngIf="f.showTill.touched && f.showTill.errors" class="admin-wrapper-main__card--form-error">
+                            <div *ngIf="f.showTill.errors.required">A end date/time has to be set</div>
+                            <div *ngIf="f.showTill.errors.pattern">please fill in both time and date</div>
+                        </div>
                 </div>
                 <div class="admin-wrapper-main__card--form-group">
                     <label for="imgUrl">achtergrond img:</label>
                     <input class="admin-wrapper-main__card--form-input" #imgUrl type="text" formControlName="imgUrl">
+                    <div *ngIf="f.imgUrl.touched && f.imgUrl.errors" class="admin-wrapper-main__card--form-error">
+                        <div *ngIf="f.imgUrl.errors.pattern">the img url has to be relative: /images/img/$name</div>
+                    </div>
                 </div>
                 <div class="admin-wrapper-main__card--form-group">
                     <label for="imgBoolean">visable</label>
                     <input (click)="check(event)" #imgBoolean type="checkbox">
                 </div>
-                <button type="submit" class="button succes" [disabled]="!eventForm.valid">Add</button>
+                <button type="submit" class="button succes" [disabled]="!form.valid">Add</button>
             </form>
         </div>
         <div class="admin-wrapper-main__card--fullwidth" *ngIf="messages?.length > 0">

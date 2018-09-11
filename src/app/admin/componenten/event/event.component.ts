@@ -28,13 +28,7 @@ export class AdminEventComponent implements OnInit {
     /**
      * form group
      */
-    eventForm = new FormGroup({
-        message: new FormControl(),
-        showFrom: new FormControl(),
-        showTill: new FormControl(),
-        imgUrl: new FormControl(),
-        id: new FormControl()
-    });
+    form: FormGroup
     /**
      * constructor
      * @param dataService for crud operations
@@ -52,11 +46,26 @@ export class AdminEventComponent implements OnInit {
     newMessage(mssg, from, untill, imgClass, imgBoolean: boolean, id) {
         this.model = new Message(mssg, from, untill, imgClass, imgBoolean, id);
     }
+    validUrl = '^\/(([A-z0-9\-\%]+\/)*[A-z0-9\-\%\.]+$)?'
+    validTime = '[0-9]{4}-([0-9]|0[0-9]|1[0-9])-([0-9][0-9]|[0-9])T([0-9]|0[0-9]|1[0-9]):[0-9]{2}'
     /**
      * on load
      */
     ngOnInit() {
         this.getData();
+        this.form = new FormGroup({
+            message: new FormControl('', [Validators.required]),
+            showFrom: new FormControl('', [Validators.required, Validators.pattern(this.validTime)]),
+            showTill: new FormControl('', [Validators.required, Validators.pattern(this.validTime)]),
+            imgUrl: new FormControl('',[Validators.pattern(this.validUrl)]),
+            id: new FormControl('', [Validators.required, Validators.minLength(5)])
+        }, { updateOn: 'change' });
+    }
+    /**
+     * get form controls
+     */
+    get f() {
+        return this.form.controls;
     }
     /**
      * creates a message
