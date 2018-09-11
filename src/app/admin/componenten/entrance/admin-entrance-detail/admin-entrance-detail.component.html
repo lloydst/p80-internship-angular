@@ -5,7 +5,14 @@
 			
             <form [formGroup]="form" class="admin-wrapper-main__card--form" (ngSubmit)="update(name.value, url.value, displayTime.value)">
                 <div class="admin-wrapper-main__card--form-group">
-                    <label for="client">client:</label>
+                    <label for="client">client:
+                        <span class="admin-wrapper-main__card--form--tooltip">
+                            &#9432;
+                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                               the clients name
+                            </div>
+                        </span>
+                    </label>
                     <input class="admin-wrapper-main__card--form-input" #name name="name" type="text" value="{{data[0]?.name}}" required formControlName="name">
                     <div *ngIf="f.name.touched && f.name.errors" class="admin-wrapper-main__card--form-error">
                         <div *ngIf="f.name.errors.required">Name is required</div>
@@ -14,7 +21,14 @@
                 </div>
 
                 <div>
-                    <label for="url">Website's url:</label>
+                    <label for="url">Website's url:
+                        <span class="admin-wrapper-main__card--form--tooltip">
+                            &#9432;
+                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                                The clients website url
+                            </div>
+                        </span>
+                    </label>
 
                     <input type="text" name="url" #url value="{{data[0]?.url}}" required formControlName="url" class="admin-wrapper-main__card--form-input">
                     <div *ngIf="f.url.touched && f.url.errors" class="admin-wrapper-main__card--form-error">
@@ -24,7 +38,14 @@
                     </div>
                 </div>
                 <div>
-                    <label for="displayTime">Display Time:</label>
+                    <label for="displayTime">Display Time:
+                        <span class="admin-wrapper-main__card--form--tooltip">
+                            &#9432;
+                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                                the time the clients website is displayed in the loop in ticks(1000 = 1 second)
+                            </div>
+                        </span>
+                    </label>
                     <input class="admin-wrapper-main__card--form-input" required formControlName="displayTime"type="number" name="displayTime" #displayTime value="{{data[0]?.displayTime}}">
 
                     <div *ngIf="f.displayTime.touched && f.displayTime.errors" class="admin-wrapper-main__card--form-error">

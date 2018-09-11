@@ -6,7 +6,14 @@
             <form class="admin-wrapper-main__card--form" (ngSubmit)="create(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, id.value); form.reset()"
                 [formGroup]="form">
                 <div class="admin-wrapper-main__card--form-group">
-                    <label for="id">message name:</label>
+                    <label for="id">message name:
+                        <span class="admin-wrapper-main__card--form--tooltip">
+                            &#9432;
+                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                                doubles as a title and identifier
+                            </div>
+                        </span>
+                    </label>
                     <input class="admin-wrapper-main__card--form-input" #id type="text" name="identifier" formControlName="id" required>
                     <div *ngIf="f.id.touched && f.id.errors" class="admin-wrapper-main__card--form-error">
                         <div *ngIf="f.id.errors.required">A message name is required</div>
@@ -14,7 +21,14 @@
                     </div>
                 </div>
                 <div class="admin-wrapper-main__card--form-group">
-                    <label for="message">message: </label>
+                    <label for="message">message:
+                        <span class="admin-wrapper-main__card--form--tooltip">
+                            &#9432;
+                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                                the actual message
+                            </div>
+                        </span>
+                    </label>
                     <br>
                     <input class="admin-wrapper-main__card--form-input" #message type="text" required formControlName="message">
                     <div *ngIf="f.message.touched && f.showFrom.errors" class="admin-wrapper-main__card--form-error">
@@ -22,7 +36,14 @@
                     </div>
                 </div>
                 <div class="admin-wrapper-main__card--form-group">
-                    <label for="showFrom">zichtbaar van af:</label>
+                    <label for="showFrom">zichtbaar van af:
+                        <span class="admin-wrapper-main__card--form--tooltip">
+                            &#9432;
+                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                                the start date/time the message is visable
+                            </div>
+                        </span>
+                    </label>
                     <input class="admin-wrapper-main__card--form-input" type="datetime-local" name="showFrom" #showFrom id="showFrom" required
                         formControlName="showFrom">
                         <div *ngIf="f.showFrom.touched && f.showFrom.errors" class="admin-wrapper-main__card--form-error">
@@ -31,7 +52,14 @@
                         </div>
                 </div>
                 <div class="admin-wrapper-main__card--form-group">
-                    <label for="showTill">zichtbaar tot:</label>
+                    <label for="showTill">zichtbaar tot:
+                        <span class="admin-wrapper-main__card--form--tooltip">
+                            &#9432;
+                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                                the end date/time the message is visable
+                            </div>
+                        </span>
+                    </label>
                     <input class="admin-wrapper-main__card--form-input" type="datetime-local" name="showTill" #showTill id="showTill" required
                         formControlName="showTill">
                         <div *ngIf="f.showTill.touched && f.showTill.errors" class="admin-wrapper-main__card--form-error">
@@ -40,14 +68,28 @@
                         </div>
                 </div>
                 <div class="admin-wrapper-main__card--form-group">
-                    <label for="imgUrl">achtergrond img:</label>
+                    <label for="imgUrl">achtergrond img:
+                        <span class="admin-wrapper-main__card--form--tooltip">
+                            &#9432;
+                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                                a optional background img
+                            </div>
+                        </span>
+                    </label>
                     <input class="admin-wrapper-main__card--form-input" #imgUrl type="text" formControlName="imgUrl">
                     <div *ngIf="f.imgUrl.touched && f.imgUrl.errors" class="admin-wrapper-main__card--form-error">
                         <div *ngIf="f.imgUrl.errors.pattern">the img url has to be relative: /images/img/$name</div>
                     </div>
                 </div>
                 <div class="admin-wrapper-main__card--form-group">
-                    <label for="imgBoolean">visable</label>
+                    <label for="imgBoolean">visable
+                        <span class="admin-wrapper-main__card--form--tooltip">
+                            &#9432;
+                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                                manually setting the component to be visable
+                            </div>
+                        </span>
+                    </label>
                     <input (click)="check(event)" #imgBoolean type="checkbox">
                 </div>
                 <button type="submit" class="button succes" [disabled]="!form.valid">Add</button>

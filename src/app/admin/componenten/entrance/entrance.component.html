@@ -6,7 +6,14 @@
             <h2 class="admin-wrapper-main__card--title">Add a new client to the loop</h2>
             <form [formGroup]="form" class="admin-wrapper-main__card--form" (ngSubmit)="create(website.value, url.value, true, displayTime.value)">
                 <div class="admin-wrapper-main__card--form-group">
-                    <label for="client">client:</label>
+                    <label for="client">client:
+                        <span class="admin-wrapper-main__card--form--tooltip">
+                            &#9432;
+                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                                client name
+                            </div>
+                        </span>
+                    </label>
                     <input class="admin-wrapper-main__card--form-input" #website name="client" type="text" required
                         formControlName="name">
                     <div *ngIf="f.name.touched && f.name.errors" class="admin-wrapper-main__card--form-error">
@@ -16,7 +23,14 @@
                 </div>
 
                 <div>
-                    <label for="url">Website's url:</label>
+                    <label for="url">Website's url:
+                        <span class="admin-wrapper-main__card--form--tooltip">
+                            &#9432;
+                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                                the clients website url
+                            </div>
+                        </span>
+                    </label>
                     <input class="admin-wrapper-main__card--form-input" type="text" name="url" #url required
                         formControlName="url">
 
@@ -27,7 +41,14 @@
                     </div>
                 </div>
                 <div>
-                    <label for="displayTime">Display Time:</label>
+                    <label for="displayTime">Display Time:
+                        <span class="admin-wrapper-main__card--form--tooltip">
+                            &#9432;
+                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                                time the clients website is shown 
+                            </div>
+                        </span>
+                    </label>
                     <input class="admin-wrapper-main__card--form-input" type="number" name="displayTime" #displayTime
                         required formControlName="displayTime">
                     <div *ngIf="f.displayTime.touched && f.displayTime.errors" class="admin-wrapper-main__card--form-error">
