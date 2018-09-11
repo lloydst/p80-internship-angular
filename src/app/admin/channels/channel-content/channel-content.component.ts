@@ -85,7 +85,6 @@ export class ChannelContentComponent implements OnInit {
             this.preloadPath = res[0].path; // loads all 'paths'
             this.form.controls['channel'].setValue(res[0].channel, { onlySelf: true });
             for (const path of this.preloadPath) {
-                // console.log(path)
                 this.preaddPath(path);
             }
         });
@@ -105,10 +104,16 @@ export class ChannelContentComponent implements OnInit {
         }
         // console.log(path.pathurl)
         return new FormGroup({
-            pathurl: new FormControl(path.pathurl),
-            description: new FormControl(path.description),
-            delay: new FormControl(path.delay),
-            componentName: new FormControl(path.componentName)
+            pathurl: new FormControl(path.pathurl, [Validators.required, Validators.minLength(16)]),
+            description: new FormControl(path.description, [Validators.required, Validators.minLength(20)]),
+            delay: new FormControl(path.delay, [Validators.min(5000)]),
+            componentName: new FormControl(path.componentName, [Validators.required, Validators.minLength(4)])
+        });
+        return this.fb.group({
+            pathurl: ['/components/', [Validators.required, Validators.minLength(16)]],
+            description: ['', [Validators.required, Validators.minLength(20)]],
+            componentName: ['', [Validators.required, Validators.minLength(4)]],
+            delay: [5000, [Validators.min(5000)]]
         });
     }
     /**
@@ -118,9 +123,20 @@ export class ChannelContentComponent implements OnInit {
         this.getCurrentChannel();
         this.form = this.fb.group({
             channel: [this.channelName],
-            path: this.fb.array([])
+            path: this.fb.array([
+                
+            ])
         });
         this.reloadData();
+    }
+    getPath() {
+        // initialize our address
+        return this.fb.group({
+            pathurl: ['/components/', [Validators.required, Validators.minLength(16)]],
+            description: ['', [Validators.required, Validators.minLength(20)]],
+            componentName: ['', [Validators.required, Validators.minLength(4)]],
+            delay: [5000, [Validators.min(5000)]]
+        });
     }
     /**
      * reloads the page
@@ -176,6 +192,9 @@ export class ChannelContentComponent implements OnInit {
 
     get path(): FormArray {
         return this.form.get('path') as FormArray;
+    }
+    get f() {
+        return this.form.controls;
     }
     /**
      * resets form to what it was

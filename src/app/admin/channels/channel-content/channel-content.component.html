@@ -12,6 +12,7 @@
                     <!-- path template -->
                     <h4>path #{{i + 1}}</h4>
                     <div>
+
                         <div class="admin-wrapper-main__card--form-group">
                             <label>Url:
                                 <span class="admin-wrapper-main__card--form--tooltip">
@@ -22,7 +23,16 @@
                                 </span>
                             </label><br>
                             <input type="text" formControlName="pathurl" class="admin-wrapper-main__card--form-input">
+                            <div *ngIf="f.path['controls'][i].controls.pathurl.touched && f.path['controls'][i].controls.pathurl.errors"
+                                class="admin-wrapper-main__card--form-error">
+                                <div *ngIf="f.path['controls'][i].controls.pathurl.errors.required"> A Channel name is
+                                    required</div>
+                                <div *ngIf="f.path['controls'][i].controls.pathurl.errors.minlength"> The channel name
+                                    has to be atleast 20
+                                    characters long</div>
+                            </div>
                         </div>
+
                         <div class="admin-wrapper-main__card--form-group">
                             <label>Name:
                                 <span class="admin-wrapper-main__card--form--tooltip">
@@ -33,6 +43,15 @@
                                 </span>
                             </label>
                             <input type="text" formControlName="componentName" class="admin-wrapper-main__card--form-input">
+                            <div *ngIf="f.path['controls'][i].controls.componentName.touched && f.path['controls'][i].controls.componentName.errors"
+                                class="admin-wrapper-main__card--form-error">
+                                <div *ngIf="f.path['controls'][i].controls.componentName.errors.required"> A Channel
+                                    name is required</div>
+                                <div *ngIf="f.path['controls'][i].controls.componentName.errors.minlength"> The path
+                                    description has to be atleast
+                                    20
+                                    characters long</div>
+                            </div>
                         </div>
                         <div class="admin-wrapper-main__card--form-group">
                             <label>Description:
@@ -44,6 +63,14 @@
                                 </span>
                             </label>
                             <textarea formControlName="description" class="admin-wrapper-main__card--form-input"></textarea>
+                            <div *ngIf="f.path['controls'][i].controls.description.touched && f.path['controls'][i].controls.description.errors"
+                                class="admin-wrapper-main__card--form-error">
+                                <div *ngIf="f.path['controls'][i].controls.description.errors.required"> A Channel name
+                                    is required</div>
+                                <div *ngIf="f.path['controls'][i].controls.description.errors.minlength"> The path
+                                    description has to be atleast 20
+                                    characters long</div>
+                            </div>
                         </div>
                         <div class="admin-wrapper-main__card--form-group">
                             <label>Delay:
@@ -54,7 +81,16 @@
                                     </div>
                                 </span>
                             </label>
-                            <input #delay type="number" formControlName="delay" class="admin-wrapper-main__card--form-input"><br>
+                            <input #delay type="number" formControlName="delay" class="admin-wrapper-main__card--form-input">
+                            <div *ngIf="f.path['controls'][i].controls.delay.touched && f.path['controls'][i].controls.delay.errors"
+                                class="admin-wrapper-main__card--form-error">
+                                <div *ngIf="f.path['controls'][i].controls.delay.errors.required"> A Delay name is
+                                    required</div>
+                                <div *ngIf="f.path['controls'][i].controls.delay.errors.min"> The delay has to be
+                                    atleast 5000 (5seconds)
+                                    20
+                                    characters long</div>
+                            </div>
                             <small>{{delay.value / 1000 | number}} seconds</small>
                         </div>
                     </div>
@@ -65,7 +101,8 @@
                     <!-- End path template -->
                 </div>
                 <div>
-                    <button class="button primary" type="submit" [disabled]="form.pristine"(click)="reloadPage()">Save</button> &nbsp;
+                    <button class="button primary" type="submit" [disabled]="form.pristine" (click)="reloadPage()">Save</button>
+                    &nbsp;
                     <button class="button danger" type="button danger" (click)="revert()" [disabled]="form.pristine">undo/reload</button>
                 </div>
             </div>

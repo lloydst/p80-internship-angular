@@ -10,7 +10,7 @@
                         <span>&#9432;</span>
                         <div class="admin-wrapper-main__card--form--tooltiptext">
                             a easy to identify name
-                        </div>
+                        </div> 
                     </span>
                 </label>
                 <input type="text" formControlName="channel" class="admin-wrapper-main__card--form-input">
@@ -70,6 +70,13 @@
                                 </span>
                             </label>
                             <input type="number" formControlName="delay" class="admin-wrapper-main__card--form-input">
+                            <div *ngIf="f.path['controls'][i].controls.delay.touched && f.path['controls'][i].controls.delay.errors"
+                                class="admin-wrapper-main__card--form-error">
+                                <div *ngIf="f.path['controls'][i].controls.delay.errors.required"> A Delay name is required</div>
+                                <div *ngIf="f.path['controls'][i].controls.delay.errors.min"> The delay has to be atleast 5000 (5seconds)
+                                    20
+                                    characters long</div>
+                            </div>
                         </div>
                         <div class="admin-wrapper-main__card--form-group">
                             <label>component name:
