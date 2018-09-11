@@ -31,7 +31,7 @@
                     </label>
                     <br>
                     <input class="admin-wrapper-main__card--form-input" #message type="text" required formControlName="message">
-                    <div *ngIf="f.message.touched && f.showFrom.errors" class="admin-wrapper-main__card--form-error">
+                    <div *ngIf="f.message.touched && f.message.errors" class="admin-wrapper-main__card--form-error">
                         <div *ngIf="f.message.errors.required">A message has to be set</div>
                     </div>
                 </div>
