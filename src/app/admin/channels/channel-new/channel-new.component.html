@@ -90,8 +90,8 @@
                             <input type="text" formControlName="componentName" class="admin-wrapper-main__card--form-input">
                             <div *ngIf="f.path['controls'][i].controls.componentName.touched && f.path['controls'][i].controls.componentName.errors"
                                 class="admin-wrapper-main__card--form-error">
-                                <div *ngIf="f.path['controls'][i].controls.componentName.errors.required"> A Channel name is required</div>
-                                <div *ngIf="f.path['controls'][i].controls.componentName.errors.minlength"> The path description has to be atleast 20
+                                <div *ngIf="f.path['controls'][i].controls.componentName.errors.required"> A component name is required</div>
+                                <div *ngIf="f.path['controls'][i].controls.componentName.errors.minlength"> The component name has to be atleast 4
                                     characters long</div>
                             </div>
                         </div>

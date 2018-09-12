@@ -25,10 +25,10 @@
                             <input type="text" formControlName="pathurl" class="admin-wrapper-main__card--form-input">
                             <div *ngIf="f.path['controls'][i].controls.pathurl.touched && f.path['controls'][i].controls.pathurl.errors"
                                 class="admin-wrapper-main__card--form-error">
-                                <div *ngIf="f.path['controls'][i].controls.pathurl.errors.required"> A Channel name is
+                                <div *ngIf="f.path['controls'][i].controls.pathurl.errors.required"> A path url is
                                     required</div>
-                                <div *ngIf="f.path['controls'][i].controls.pathurl.errors.minlength"> The channel name
-                                    has to be atleast 20
+                                <div *ngIf="f.path['controls'][i].controls.pathurl.errors.minlength"> The path url
+                                    has to be atleast 16
                                     characters long</div>
                             </div>
                         </div>
@@ -48,8 +48,8 @@
                                 <div *ngIf="f.path['controls'][i].controls.componentName.errors.required"> A Channel
                                     name is required</div>
                                 <div *ngIf="f.path['controls'][i].controls.componentName.errors.minlength"> The path
-                                    description has to be atleast
-                                    20
+                                    name has to be atleast
+                                    4
                                     characters long</div>
                             </div>
                         </div>
