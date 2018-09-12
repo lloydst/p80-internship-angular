@@ -5,6 +5,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { DataService } from '../../../../services/data.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { FileService } from '../../../../services/file.service';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 describe('AdminEventDetailComponent', () => {
@@ -14,7 +15,7 @@ describe('AdminEventDetailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AdminEventDetailComponent, ImageViewComponent ],
-      imports: [RouterTestingModule, HttpClientTestingModule],
+        imports: [RouterTestingModule, HttpClientTestingModule, ReactiveFormsModule, FormsModule,],
       providers: [DataService, FileService]
     })
     .compileComponents();

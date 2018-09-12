@@ -1,5 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ListingComponentsComponent } from './listing-components.component';
+import { DataService } from '../../../services/data.service';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 
 
 describe('ListingComponentsComponent', () => {
@@ -8,7 +10,9 @@ describe('ListingComponentsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListingComponentsComponent ]
+        declarations: [ListingComponentsComponent],
+        imports: [HttpClientTestingModule],
+        providers: [DataService]
     })
     .compileComponents();
   }));
