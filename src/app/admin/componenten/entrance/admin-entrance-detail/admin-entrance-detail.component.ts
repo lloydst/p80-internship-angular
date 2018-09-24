@@ -15,6 +15,25 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
  */
 export class AdminEntranceDetailComponent implements OnInit {
     /**
+     *  name: new FormControl('', [Validators.minLength(5), Validators.required]),
+            url: new FormControl('', [Validators.required, Validators.pattern(this.validUrl)]),
+            displayTime: new FormControl('', [Validators.min(1000), Validators.required]),
+     */
+    form_validation_messages ={
+        'name': [
+            {type:'required', message:'A client name is required please provide one'},
+            {type:'minlength',message:'The client name has to be atleast 3 characters long'}
+        ],
+        'url': [
+            { type: 'required', message: "A url is required" },
+            { type: 'pattern', message: "can match: https://www.example.com/route but can also be used without 'https://www.'" }
+        ],
+        'displayTime':[
+            { type: 'min', message: 'The display has to be atleast 10 seconds (10000)' },
+            { type: 'required', message: 'the display name is required and has to be atleast 10000' }
+        ]
+    }
+    /**
      * for binding
      */
     data: any = [];
@@ -45,7 +64,7 @@ export class AdminEntranceDetailComponent implements OnInit {
      * regex to check if the url giving matches http(s)://www.example.com
      */
     validUrl = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
-    
+
     /**
      * runs on page load
      * sets this.id too the id in the url
@@ -56,9 +75,9 @@ export class AdminEntranceDetailComponent implements OnInit {
         this.id = this.route.snapshot.params.id;
         this.getData();
         this.form = new FormGroup({
-            name: new FormControl('', [Validators.minLength(5), Validators.required]),
+            name: new FormControl('', [Validators.minLength(3), Validators.required]),
             url: new FormControl('', [Validators.required, Validators.pattern(this.validUrl)]),
-            displayTime: new FormControl('', [Validators.min(1000), Validators.required]),
+            displayTime: new FormControl('', [Validators.min(10000), Validators.required]),
         }, { updateOn: 'change' });
     }
     get f() {
@@ -74,6 +93,7 @@ export class AdminEntranceDetailComponent implements OnInit {
         this.dataService.getWebsite(this.id).subscribe(
             res => {
                 this.data = res;
+                this.form.patchValue(res[0])
             }
         );
     }

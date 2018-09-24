@@ -9,14 +9,13 @@
 -->
 
 <div class="support">
-    <!-- replacing issues with data?.issues consumes the api data-->
-    <div *ngFor="let ticket of data?.issues; index as i;" class="support__item--row">
-        <div *ngIf="currentUrl == ticket?.fields.project.name">
-            
-            <!-- filters by project name-->
-            <div *ngIf="ticket?.fields.issuetype.name != 'Sub-task' && ticket.fields.status.name != 'Done';" class="support__item--row">
-                <!-- filters out subtasks and Done tasks-->
 
+    <div *ngFor="let ticket of data?.issues; index as i;" class="support__item--row">
+        <!--api-->
+        <!-- filters by project name-->
+        <div *ngIf="currentUrl == ticket?.fields.project.name">
+            <!-- filters out subtasks and Done tasks-->
+            <div *ngIf="ticket.fields.status.name != 'Done';" class="support__item--row">
                 <div *ngIf="ticket.fields.project !=null" class="support__item--row">
                     <!-- project name + img-->
                     <div>
@@ -29,6 +28,7 @@
                             Ticket-id: {{ticket?.key}}</div>
                     </div>
                 </div>
+                <!-- issue title-->
                 <div class="support__item">
                     <!-- status if you would like to use the color that matches the status name
                 ('ticket.fields.status.statusCategory.colorName') you cant use [ngStyle],
@@ -36,15 +36,14 @@
                     <span class="support__item--column">
                         {{ticket.fields.status.name}}
                     </span>
-
                 </div>
-                <!-- issue title-->
+                <!-- created date-->
                 <div *ngIf="ticket.fields.created != null" class="support__item--row">
                     <span class="support__item--column">
+
                         Created on: {{ticket?.fields.created.substring(0, 10)}}
                     </span>
                 </div>
-                <!-- created date-->
                 <div *ngIf="ticket.fields.assignee != null" class="support__item--row">
                     <div class="support__item--column">
                         Assigned Too:
@@ -52,21 +51,21 @@
                         <!-- 16x16 24x24 32x32 48x48-->
                         {{ticket?.fields.assignee.displayName}}
                     </div>
-
                 </div>
                 <!-- assignee-->
+                <!--
                 <div class="support__item--row">
                     <div class="support__item--column">
                         Created By:
                         <img [src]="ticket.fields.creator.avatarUrls['48x48']" alt="creator img"> {{ticket?.fields.creator.displayName}}
                     </div>
-                </div>
+                </div>-->
                 <!-- creator-->
                 <div *ngIf="ticket.fields.duedate != null">Due on: {{ticket?.fields.duedate}}</div>
                 <!--duedate (can return null if not set)-->
                 <div class="support__item--row">
                     <div class="support__item--column">
-                        Type: {{ticket?.fields.issuetype.name}}
+                        priority: {{ticket?.fields.priority.name}}
                     </div>
                 </div>
                 <!-- might be better to use ngfor on ticket.fields.labels-->
