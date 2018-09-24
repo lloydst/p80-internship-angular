@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DataService } from '../../../../services/data.service';
-import { Message } from '../../../../models/message';
+
 import * as $ from 'jquery';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 /**
@@ -12,6 +12,26 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
     templateUrl: './admin-event-detail.component.html'
 })
 export class AdminEventDetailComponent implements OnInit {
+    form_validation_messages = {
+        'identifier': [
+            { type: 'required', message: 'A message Id/ Title is required please provide one!' }
+        ],
+        'message': [
+            { type: 'required', message: 'A message is required' },
+        ],
+        'showFrom': [
+            { type: 'required', message: "A start time is required" },
+            { type: 'pattern', message: "please fill out all fields (both time and date" }
+        ],
+        'showTill': [
+            { type: 'required', message: "A end time is required" },
+            { type: 'pattern', message: "please fill out all fields (both time and date" }
+        ],
+        'imgLink': [
+            { type: 'pattern', message: 'the img url has to come from example.com/images/img/image_name' },
+        ]
+        
+    }
     /**
      * for binding
      */
@@ -41,11 +61,12 @@ export class AdminEventDetailComponent implements OnInit {
         this.id = this.route.snapshot.params.id;
         this.getData();
         this.form = new FormGroup({
+            identifier: new FormControl('', [Validators.required, Validators.minLength(5)]),
             message: new FormControl('', [Validators.required]),
             showFrom: new FormControl('', [Validators.required, Validators.pattern(this.validTime)]),
             showTill: new FormControl('', [Validators.required, Validators.pattern(this.validTime)]),
-            imgUrl: new FormControl('', [Validators.pattern(this.validUrl)]),
-            id: new FormControl('', [Validators.required, Validators.minLength(5)])
+            imgLink: new FormControl('', [Validators.pattern(this.validUrl)])
+
         }, { updateOn: 'change' });
     }
     /**
@@ -61,6 +82,7 @@ export class AdminEventDetailComponent implements OnInit {
         this.dataService.getMessage(this.id).subscribe(
             res => {
                 this.data = res;
+                this.form.patchValue(res[0])
             }
         );
     }
@@ -80,12 +102,12 @@ export class AdminEventDetailComponent implements OnInit {
      * @param showTill untill
      * @param imgLink url img can be found at
      * @param img boolean for visability of img
-     * @param id id to update by
+     * @param identifier id to update by
      */
-    update(message, showFrom, showTill, imgLink, img, id) {
+    update(message, showFrom, showTill, imgLink, img, identifier) {
         this.dataService.updateMessage(this.id, {
             message: message, showFrom: showFrom,
-            showTill: showTill, imgLink: imgLink, img: img, identifier: id
+            showTill: showTill, imgLink: imgLink, img: img, identifier: identifier
         }).subscribe( ()=>{
             this.router.navigate(['./admin/components/events']);
         });

@@ -3,7 +3,7 @@
     <section>
         <div class="admin-wrapper-main__card">
             <h2 class="admin-wrapper-main__card--title">Create a Message here</h2>
-            <form class="admin-wrapper-main__card--form" (ngSubmit)="create(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, id.value); form.reset()"
+            <form class="admin-wrapper-main__card--form" (ngSubmit)="create(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, identifier.value); form.reset()"
                 [formGroup]="form">
                 <div class="admin-wrapper-main__card--form-group">
                     <label for="id">message name:
@@ -14,10 +14,10 @@
                             </div>
                         </span>
                     </label>
-                    <input class="admin-wrapper-main__card--form-input" #id type="text" name="identifier" formControlName="id" required>
-                    <div *ngIf="form.get('id').touched">
-                        <div *ngFor="let validation of form_validation_messages.id" class="admin-wrapper-main__card--form-error">
-                            <div *ngIf="form.get('id').hasError(validation.type)">
+                    <input class="admin-wrapper-main__card--form-input" #identifier type="text" name="identifier" formControlName="identifier" required>
+                    <div *ngIf="form.get('identifier').touched">
+                        <div *ngFor="let validation of form_validation_messages.identifier" class="admin-wrapper-main__card--form-error">
+                            <div *ngIf="form.get('identifier').hasError(validation.type)">
                                 {{validation.message}}
                             </div>
                         </div>

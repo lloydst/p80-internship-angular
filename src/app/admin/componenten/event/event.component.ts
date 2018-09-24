@@ -28,7 +28,7 @@ export class AdminEventComponent implements OnInit {
         'imgUrl': [
             { type: 'pattern', message: 'the img url has to come from example.com/images/img/image_name' },
         ],
-        'id': [
+        'identifier': [
             { type: 'required', message: 'A message Id/ Title is required please provide one!' }
         ]
     }
@@ -62,8 +62,8 @@ export class AdminEventComponent implements OnInit {
      * @param imgBoolean
      * @param id
      */
-    newMessage(mssg, from, untill, imgClass, imgBoolean: boolean, id) {
-        this.model = new Message(mssg, from, untill, imgClass, imgBoolean, id);
+    newMessage(mssg, from, untill, imgClass, imgBoolean: boolean, identifier) {
+        this.model = new Message(mssg, from, untill, imgClass, imgBoolean, identifier);
     }
     validUrl = '^\/(([A-z0-9\-\%]+\/)*[A-z0-9\-\%\.]+$)?'
     validTime = '[0-9]{4}-([0-9]|0[0-9]|1[0-9])-([0-9][0-9]|[0-9])T([0-9]|0[0-9]|1[0-9]):[0-9]{2}'
@@ -77,7 +77,7 @@ export class AdminEventComponent implements OnInit {
             showFrom: new FormControl('', [Validators.required, Validators.pattern(this.validTime)]),
             showTill: new FormControl('', [Validators.required, Validators.pattern(this.validTime)]),
             imgUrl: new FormControl('',[Validators.pattern(this.validUrl)]),
-            id: new FormControl('', [Validators.required, Validators.minLength(5)])
+            identifier: new FormControl('', [Validators.required, Validators.minLength(5)])
         }, { updateOn: 'change' });
     }
     /**
@@ -93,9 +93,9 @@ export class AdminEventComponent implements OnInit {
      * @param untill time its can be shown till
      * @param iClass adds a background img if there
      * @param iBoolean boolean whether it has a class
-     * @param id identifier to update/delete
+     * @param identifier identifier to update/delete
      */
-    create(mssg: String, from: String, untill: String, iClass: String, iBoolean: Boolean, id: String) {
+    create(mssg: String, from: String, untill: String, iClass: String, iBoolean: Boolean, identifier: String) {
         // need to add validator to from/untill fields
         const str = /([0-9])/g;
         const untillStr = untill.match(str);
@@ -114,7 +114,7 @@ export class AdminEventComponent implements OnInit {
             showTill: untill,
             imgLink: iClass,
             img: iBoolean,
-            identifier: id
+            identifier: identifier
         }).subscribe(
             data => {
                 // refresh the list
