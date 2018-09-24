@@ -15,9 +15,12 @@
                         </span>
                     </label>
                     <input class="admin-wrapper-main__card--form-input" #id type="text" name="identifier" formControlName="id" required>
-                    <div *ngIf="f.id.touched && f.id.errors" class="admin-wrapper-main__card--form-error">
-                        <div *ngIf="f.id.errors.required">A message name is required</div>
-                        <div *ngIf="f.id.errors.minlength">The message name must be longer then 5 characters</div>
+                    <div *ngIf="form.get('id').touched">
+                        <div *ngFor="let validation of form_validation_messages.id" class="admin-wrapper-main__card--form-error">
+                            <div *ngIf="form.get('id').hasError(validation.type)">
+                                {{validation.message}}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="admin-wrapper-main__card--form-group">
@@ -31,8 +34,12 @@
                     </label>
                     <br>
                     <input class="admin-wrapper-main__card--form-input" #message type="text" required formControlName="message">
-                    <div *ngIf="f.message.touched && f.message.errors" class="admin-wrapper-main__card--form-error">
-                        <div *ngIf="f.message.errors.required">A message has to be set</div>
+                    <div *ngIf="form.get('message').touched">
+                        <div *ngFor="let validation of form_validation_messages.message" class="admin-wrapper-main__card--form-error">
+                            <div *ngIf="form.get('message').hasError(validation.type)">
+                                {{validation.message}}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="admin-wrapper-main__card--form-group">
@@ -46,9 +53,12 @@
                     </label>
                     <input class="admin-wrapper-main__card--form-input" type="datetime-local" name="showFrom" #showFrom id="showFrom" required
                         formControlName="showFrom">
-                        <div *ngIf="f.showFrom.touched && f.showFrom.errors" class="admin-wrapper-main__card--form-error">
-                            <div *ngIf="f.showFrom.errors.required">A start date/time has to be set</div>
-                            <div *ngIf="f.showFrom.errors.pattern">please fill in both time and date currently is {{showFrom.value}}</div>
+                        <div *ngIf="form.get('showFrom').touched">
+                            <div *ngFor="let validation of form_validation_messages.showFrom" class="admin-wrapper-main__card--form-error">
+                                <div *ngIf="form.get('showFrom').hasError(validation.type)">
+                                    {{validation.message}}
+                                </div>
+                            </div>
                         </div>
                 </div>
                 <div class="admin-wrapper-main__card--form-group">
@@ -62,9 +72,12 @@
                     </label>
                     <input class="admin-wrapper-main__card--form-input" type="datetime-local" name="showTill" #showTill id="showTill" required
                         formControlName="showTill">
-                        <div *ngIf="f.showTill.touched && f.showTill.errors" class="admin-wrapper-main__card--form-error">
-                            <div *ngIf="f.showTill.errors.required">A end date/time has to be set</div>
-                            <div *ngIf="f.showTill.errors.pattern">please fill in both time and date</div>
+                        <div *ngIf="form.get('showTill').touched">
+                            <div *ngFor="let validation of form_validation_messages.showTill" class="admin-wrapper-main__card--form-error">
+                                <div *ngIf="form.get('showTill').hasError(validation.type)">
+                                    {{validation.message}}
+                                </div>
+                            </div>
                         </div>
                 </div>
                 <div class="admin-wrapper-main__card--form-group">
@@ -77,8 +90,12 @@
                         </span>
                     </label>
                     <input class="admin-wrapper-main__card--form-input" #imgUrl type="text" formControlName="imgUrl">
-                    <div *ngIf="f.imgUrl.touched && f.imgUrl.errors" class="admin-wrapper-main__card--form-error">
-                        <div *ngIf="f.imgUrl.errors.pattern">the img url has to be relative: /images/img/$name</div>
+                    <div *ngIf="form.get('imgUrl').touched">
+                        <div *ngFor="let validation of form_validation_messages.imgUrl" class="admin-wrapper-main__card--form-error">
+                            <div *ngIf="form.get('imgUrl').hasError(validation.type)">
+                                {{validation.message}}
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="admin-wrapper-main__card--form-group">

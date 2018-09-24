@@ -13,6 +13,25 @@ import * as $ from 'jquery';
 })
 
 export class AdminEventComponent implements OnInit {
+    form_validation_messages = {
+        'message': [
+            { type: 'required', message: 'A message is required' },
+        ],
+        'showFrom': [
+            { type: 'required', message: "A start time is required" },
+            { type: 'pattern', message: "please fill out all fields (both time and date" }
+        ],
+        'showTill': [
+            { type: 'required', message: "A end time is required" },
+            { type: 'pattern', message: "please fill out all fields (both time and date" }
+        ],
+        'imgUrl': [
+            { type: 'pattern', message: 'the img url has to come from example.com/images/img/image_name' },
+        ],
+        'id': [
+            { type: 'required', message: 'A message Id/ Title is required please provide one!' }
+        ]
+    }
     /**
      * binding
      */
@@ -139,7 +158,7 @@ export class AdminEventComponent implements OnInit {
                     return true;
                 },
                 error => {
-                    console.error('Error deleting message!');
+                    console.error(`An error occured trying to delete ${message.identifier}!`);
                     return Observable.throw(error);
                 }
             );
