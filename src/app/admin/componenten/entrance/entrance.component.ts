@@ -12,6 +12,20 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
     templateUrl: './entrance.component.html'
 })
 export class AdminEntranceComponent implements OnInit {
+    form_validation_messages = {
+        'name': [
+            { type: 'required', message: 'A client name is required please provide one' },
+            { type: 'minlength', message: 'The client name has to be atleast 3 characters long' }
+        ],
+        'url': [
+            { type: 'required', message: "A url is required" },
+            { type: 'pattern', message: "can match: https://www.example.com/route but can also be used without 'https://www.'" }
+        ],
+        'displayTime': [
+            { type: 'min', message: 'The display has to be atleast 10 seconds (10000)' },
+            { type: 'required', message: 'the display name is required and has to be atleast 10000' }
+        ]
+    }
     /**
      * for binding
      */
@@ -38,9 +52,9 @@ export class AdminEntranceComponent implements OnInit {
 
         this.getData();
         this.form = new FormGroup({
-            name: new FormControl('', [Validators.minLength(5), Validators.required]),
+            name: new FormControl('', [Validators.minLength(3), Validators.required]),
             url: new FormControl('', [Validators.required, Validators.pattern(this.validUrl)]),
-            displayTime: new FormControl('', [Validators.min(1000), Validators.required]),
+            displayTime: new FormControl('', [Validators.min(10000), Validators.required]),
         }, { updateOn: 'change' });
     }
     get f() { 

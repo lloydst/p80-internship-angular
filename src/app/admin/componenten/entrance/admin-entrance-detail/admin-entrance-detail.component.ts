@@ -14,11 +14,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
  * admin version of entrance
  */
 export class AdminEntranceDetailComponent implements OnInit {
-    /**
-     *  name: new FormControl('', [Validators.minLength(5), Validators.required]),
-            url: new FormControl('', [Validators.required, Validators.pattern(this.validUrl)]),
-            displayTime: new FormControl('', [Validators.min(1000), Validators.required]),
-     */
+
     form_validation_messages ={
         'name': [
             {type:'required', message:'A client name is required please provide one'},
