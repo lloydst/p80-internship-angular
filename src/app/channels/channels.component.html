@@ -2,24 +2,29 @@
     <section>
         <div class="container">
             <div class="margin">
-                <a href="/admin" class="margin-right">
-                    <button class="button primary">admin</button>
-                </a>
-                <a href="/channels" class="margin-right ">
-                    <button class="button danger">stop</button>
-                </a>
-                <div class="margin">
-                    manual select of channel:
-                    <a (click)="redirectTo(c.channel)" *ngFor="let c of channel" class="margin-right">
-                        <button class="button channels" type="button">{{c.channel}}</button>
+                <div>
+                    <a href="/admin" class="channel-navigation__button">
+                        admin
                     </a>
+                    changing settings
                 </div>
-                you are {{ipAddress}}, To make sure it auto selects a channel based on your ip, add this ip too the "algemene settings" in
-                the admin panel
-            </div>
-            <div>
-                <p>If you wish to create a new channel click admin. if you wish to stop a active channel click stop. this page
-                    is meant to be run in full screen mode (f11)</p>
+                <div>
+                    <a href="/channels" class="channel-navigation__button" >
+                        stop
+                    </a>
+                    stop the current channel selection
+                </div>
+
+                <div class="margin">
+                    pick/change the channel
+                    <div>
+                        <a (click)="redirectTo(c.channel)" *ngFor="let c of channel" class="channel-navigation__button margin-left">
+                            {{c.channel}}
+                        </a>
+                    </div>
+
+                </div>
+
             </div>
             <router-outlet></router-outlet>
         </div>

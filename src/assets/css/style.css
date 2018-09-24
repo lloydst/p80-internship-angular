@@ -342,6 +342,43 @@ section {
   color: #f1f1f1;
 }
 
+.channel-navigation__button {
+  padding: 20px 40px;
+  font-size: 32px;
+  font-family: Arial, sans-serif;
+  display: inline-block;
+  position: relative;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.channel-navigation__button:hover {
+  cursor: pointer;
+}
+
+.channel-navigation__button:before {
+  background: green;
+  position: absolute;
+  width: 0%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  transition: 0.3s linear;
+  z-index: -1;
+}
+
+.channel-navigation__button:hover:before {
+  width: 100%;
+}
+
+.margin-left {
+  margin-left: 1em;
+}
+
+.margin-left:first-child {
+  margin-left: 0em;
+}
+
 .weather {
   display: -webkit-box;
   display: -webkit-flex;

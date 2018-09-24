@@ -93,9 +93,6 @@ export class DataService {
     getCalendar() {
         return this.http.get('/api/calendar');
     }
-    /**
-     * checks if logged in if not it displays a button that allows you too
-     */
    
     /**
      * gets all channels

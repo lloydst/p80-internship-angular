@@ -23,7 +23,7 @@ export class AdminEntranceComponent implements OnInit {
         ],
         'displayTime': [
             { type: 'min', message: 'The display has to be atleast 10 seconds (10000)' },
-            { type: 'required', message: 'the display name is required and has to be atleast 10000' }
+            { type: 'required', message: 'the display name is required and has to be atleast 10000 (10 seconds' }
         ]
     }
     /**

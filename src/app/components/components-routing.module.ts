@@ -25,9 +25,6 @@ const routes: Routes = [
       path: 'weather', component: WeatherComponent
     },
     {
-      path: 'build-servers', component: BuildServersComponent
-    },
-    {
       path: 'event', component: EventComponent
     },
     {
@@ -39,18 +36,18 @@ const routes: Routes = [
     {
       path: 'all', component: AllComponent
     },
-    {
+    /*{
       path: 'custom/:componentList', component: CustomComponent
-    },
+    },*/
     {
       path: 'traffic', component: TrafficComponent
     },
     {
       path: 'news', component: NewsComponent
     },
-    {
+    /*{
       path: 'servers', component: BuildServersComponent
-    }
+    }*/
   ]}
 ];
 

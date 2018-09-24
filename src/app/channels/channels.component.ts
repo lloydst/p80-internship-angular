@@ -1,10 +1,11 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy} from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
-import { Title } from '@angular/platform-browser';
+import { Title, SafeUrl, DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { IpService } from '../services/ip.service';
+
 /**
  * channel component
  */
@@ -14,6 +15,7 @@ import { IpService } from '../services/ip.service';
 })
 
 export class ChannelsComponent implements OnInit, OnDestroy {
+    path: SafeUrl = '/admin';
     /**
      * title to set
      */
@@ -43,6 +45,7 @@ export class ChannelsComponent implements OnInit, OnDestroy {
     * @param ipService ip service
     */
     constructor(
+        public sanitizer: DomSanitizer,
         private http: HttpClient,
         public router: Router,
         private data: DataService,
@@ -129,6 +132,9 @@ export class ChannelsComponent implements OnInit, OnDestroy {
             this.ipChannel();
         });
 
+    }
+    updateSrc(url) {
+        this.path = this.sanitizer.bypassSecurityTrustResourceUrl(url)
     }
 }
 
