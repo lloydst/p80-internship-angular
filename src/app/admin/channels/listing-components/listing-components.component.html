@@ -1,74 +1,78 @@
 <div class="admin-wrapper-main__card">
-	<h2 class="admin-wrapper-main__card--title">the following components can be used:</h2>
-	<table class="admin-wrapper-main__card--contents">
-		<thead>
-			<tr>
-				<th>name:</th>
-				<th>components/x:</th>
-				<th>time required:</th>
-				<th>status</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>event</td>
-				<td>event</td>
-				<td>none</td>
-				<td>done</td>
-			</tr>
-			<tr>
-				<td>traffic</td>
-				<td>traffic</td>
-				<td>none</td>
-				<td>styling</td>
-			</tr>
-			<tr>
-				<td>weather</td>
-				<td>weather</td>
-				<td>none</td>
-				<td>done</td>
-			</tr>
+    <h2 class="admin-wrapper-main__card--title">the following components can be used:</h2>
+    <table class="admin-wrapper-main__card--table" style="width: 100%">
+        <thead>
+            <tr>
+                <th>name:</th>
+                <th>components/x:</th>
+                <th>time required:</th>
+                <th>status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>event</td>
+                <td>event</td>
+                <td>any</td>
+                <td>done</td>
+            </tr>
+            <tr>
+                <td>traffic</td>
+                <td>traffic</td>
+                <td>any</td>
+                <td>styling</td>
+            </tr>
+            <tr>
+                <td>weather</td>
+                <td>weather</td>
+                <td>any</td>
+                <td>done</td>
+            </tr>
 
-			<tr>
-				<td>financial</td>
-				<td>financial</td>
-				<td>none</td>
-				<td>done</td>
-			</tr>
-			<tr>
-				<td>meeting</td>
-				<td>meeting</td>
-				<td>none</td>
-				<td>done</td>
-			</tr>
-			<tr>
-				<td>support/:project <sup>*2</sup></td>
-				<td>support:project <sup>*2</sup></td>
-				<td>none</td>
-				<td>styling</td>
-			</tr>
-			<tr>
-				<td>loop</td>
-				<td>loop</td>
-				<td>{{websiteTime / 1000}} seconds <sup>*1</sup></td>
-				<td>done</td>
-			</tr>
-			<tr>
-				<td>news</td>
-				<td>news</td>
-				<td>none</td>
-				<td>done</td>
-			</tr>
-		</tbody>
+            <tr>
+                <td>financial</td>
+                <td>financial</td>
+                <td>any</td>
+                <td>done</td>
+            </tr>
+            <tr>
+                <td>meeting</td>
+                <td>meeting</td>
+                <td>any</td>
+                <td>done</td>
+            </tr>
+            <tr>
+                <td>support/:project <sup>*2</sup></td>
+                <td>support:project</td>
+                <td>any</td>
+                <td>styling</td>
+            </tr>
+            <tr>
+                <td>loop</td>
+                <td>loop</td>
+                <td>{{websiteTime / 1000}} seconds <sup>*1</sup></td>
+                <td>done</td>
+            </tr>
+            <tr>
+                <td>news</td>
+                <td>news</td>
+                <td>any</td>
+                <td>done</td>
+            </tr>
+        </tbody>
 
-	</table>
-	<div>
-<p class="admin-wrapper-main__card--contents"><sup>*1</sup> -
-			This number most likely isn't enough since the number generated here calculates the time each website should be displayed but doesn't take in account the load times.
-		</p>
-<p class="admin-wrapper-main__card--contents"><sup>*2</sup> -
-			Requires the name of a project after the support/. So for instance a url could be: /components/support/pathe. then it would list the issue's of the the pathe jira project
-		</p>
-	</div>
+    </table>
+    <div>
+        <p class="admin-wrapper-main__card--subtext"><sup>*1</sup> -
+            This number most likely isn't enough since the number generated here calculates the time each website
+            should be displayed but doesn't take in account the load times. Which are highly dependant on the browser
+            as well as the the internet speed.
+        </p>
+        <p class="admin-wrapper-main__card--subtext"><sup>*2</sup> -
+            Requires the name of a project after the support/. So for instance a url could be:
+            /components/support/pathe.
+            then it would list the issue's of the the pathe jira project
+        </p>
+    </div>
 
 </div>

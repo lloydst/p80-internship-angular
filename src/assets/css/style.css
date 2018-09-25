@@ -227,6 +227,18 @@ section {
   padding: 10px;
 }
 
+.admin-wrapper-main__card--subtext {
+  font-size: .75em;
+}
+
+.admin-wrapper-main__card--table {
+  width: 100%;
+}
+
+.admin-wrapper-main__card--table thead tr {
+  text-align: left;
+}
+
 .admin-wrapper-main__card-tiny {
   margin: 1em;
   max-width: 80%;
