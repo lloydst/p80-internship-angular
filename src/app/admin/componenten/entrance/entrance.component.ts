@@ -11,7 +11,11 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
     selector: 'app-entrance',
     templateUrl: './entrance.component.html'
 })
+
 export class AdminEntranceComponent implements OnInit {
+    /**
+     * form validation messages
+     */
     form_validation_messages = {
         'name': [
             { type: 'required', message: 'A client name is required please provide one' },
@@ -34,6 +38,7 @@ export class AdminEntranceComponent implements OnInit {
      * constructor
      * @param dataService gets website list from api
      * @param router to navigate
+     * @param formBuilder builds the form
      */
     constructor(
         private dataService: DataService,
@@ -43,13 +48,18 @@ export class AdminEntranceComponent implements OnInit {
      * bindings jai!
      */
     form: FormGroup;
+    /**
+     * default value
+     */
     submitted = false;
+    /**
+     * regex for a valid url (can be http://www. and/or https://www. or just www. or just example.com)
+     */
     validUrl = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
     /**
      * runs on page load
      */
     ngOnInit() {
-
         this.getData();
         this.form = new FormGroup({
             name: new FormControl('', [Validators.minLength(3), Validators.required]),
@@ -100,6 +110,7 @@ export class AdminEntranceComponent implements OnInit {
      * @param site{String}  name of a site/ client
      * @param url the url of the corresponding client/site
      * @param visable a boolean i should delete
+     * @param displayTime the time the component is shown
      * @example
      * // succes
      * create(poort80, Https://poort80.nl, true);

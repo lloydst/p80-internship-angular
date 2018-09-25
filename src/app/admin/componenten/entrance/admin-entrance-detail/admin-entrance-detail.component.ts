@@ -14,17 +14,19 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
  * admin version of entrance
  */
 export class AdminEntranceDetailComponent implements OnInit {
-
-    form_validation_messages ={
+    /**
+     * returns a message for a the correct error type
+     */
+    form_validation_messages = {
         'name': [
-            {type:'required', message:'A client name is required please provide one'},
-            {type:'minlength',message:'The client name has to be atleast 3 characters long'}
+            { type: 'required', message: 'A client name is required please provide one' },
+            { type: 'minlength', message: 'The client name has to be atleast 3 characters long' }
         ],
         'url': [
             { type: 'required', message: "A url is required" },
             { type: 'pattern', message: "can match: https://www.example.com/route but can also be used without 'https://www.'" }
         ],
-        'displayTime':[
+        'displayTime': [
             { type: 'min', message: 'The display has to be atleast 10 seconds (10000)' },
             { type: 'required', message: 'the display name is required and has to be atleast 10000' }
         ]
@@ -76,6 +78,9 @@ export class AdminEntranceDetailComponent implements OnInit {
             displayTime: new FormControl('', [Validators.min(10000), Validators.required]),
         }, { updateOn: 'change' });
     }
+    /**
+     * quick form controls binding for both template and logic
+     */
     get f() {
         return this.form.controls;
     }
@@ -99,7 +104,7 @@ export class AdminEntranceDetailComponent implements OnInit {
      * @param url the (new) url of the "website" that gets updated
      */
     update(name: String, url: String, displayTime: Number) {
-        this.dataService.updateWebsite(this.id, { name: name, url: url, displayTime: displayTime }).subscribe(()=> {
+        this.dataService.updateWebsite(this.id, { name: name, url: url, displayTime: displayTime }).subscribe(() => {
             this.router.navigate(['./admin/components/entrance']);
         });
     }

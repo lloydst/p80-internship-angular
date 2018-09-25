@@ -15,7 +15,7 @@ import { IpService } from '../services/ip.service';
 })
 
 export class ChannelsComponent implements OnInit, OnDestroy {
-    path: SafeUrl = '/admin';
+
     /**
      * title to set
      */
@@ -39,13 +39,12 @@ export class ChannelsComponent implements OnInit, OnDestroy {
    /**
     * constructor
     * @param http http client
-    * @param router angular router
-    * @param data dataservice
-    * @param titleService title service
-    * @param ipService ip service
+    * @param router angular Router
+    * @param data data from dataService
+    * @param titleService sets the title
+    * @param ipService gets ip // temp not being used
     */
     constructor(
-        public sanitizer: DomSanitizer,
         private http: HttpClient,
         public router: Router,
         private data: DataService,
@@ -133,9 +132,7 @@ export class ChannelsComponent implements OnInit, OnDestroy {
         });
 
     }
-    updateSrc(url) {
-        this.path = this.sanitizer.bypassSecurityTrustResourceUrl(url)
-    }
+
 }
 
 

@@ -14,6 +14,9 @@ export class AuthService {
      * @param http http client
      */
     constructor(private http: HttpClient) { }
+    /**
+     * just a function
+     */
     getLoggedIn() {
         return this.http.get('/api/login');
     }

@@ -14,5 +14,8 @@ export interface Website {
      * visable
      */
     visable: boolean;
+    /**
+     * time displayed
+     */
     displayTime: number;
 }

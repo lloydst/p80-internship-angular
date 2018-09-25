@@ -4,6 +4,7 @@ import { DataService } from '../../../../services/data.service';
 
 import * as $ from 'jquery';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 /**
  * message/event detail page
  */
@@ -12,6 +13,9 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
     templateUrl: './admin-event-detail.component.html'
 })
 export class AdminEventDetailComponent implements OnInit {
+    /**
+     * form validation returns the message if the error matches the type
+     */
     form_validation_messages = {
         'identifier': [
             { type: 'required', message: 'A message Id/ Title is required please provide one!' }
@@ -30,7 +34,6 @@ export class AdminEventDetailComponent implements OnInit {
         'imgLink': [
             { type: 'pattern', message: 'the img url has to come from example.com/images/img/image_name' },
         ]
-        
     }
     /**
      * for binding
@@ -40,8 +43,17 @@ export class AdminEventDetailComponent implements OnInit {
      * for binding
      */
     id;
+    /**
+     * for binding and calling it in logic
+     */
     form: FormGroup;
+    /**
+     * valid relative url string
+     */
     validUrl = '^\/(([A-z0-9\-\%]+\/)*[A-z0-9\-\%\.]+$)?'
+    /**
+     * time has to be shaped correctly
+     */
     validTime = '[0-9]{4}-([0-9]|0[0-9]|1[0-9])-([0-9][0-9]|[0-9])T([0-9]|0[0-9]|1[0-9]):[0-9]{2}'
     /**
      * component constructor
@@ -88,7 +100,7 @@ export class AdminEventDetailComponent implements OnInit {
     }
     /**
      * sees if checkbox is checked
-     * @param  $event
+     * @param  $event click event
      */
     check($event) {
         $('#imgBoolean').change(function () {

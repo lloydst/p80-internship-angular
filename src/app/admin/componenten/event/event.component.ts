@@ -13,6 +13,9 @@ import * as $ from 'jquery';
 })
 
 export class AdminEventComponent implements OnInit {
+    /**
+     * form validation returns a message if the errortype equals the type
+     */
     form_validation_messages = {
         'message': [
             { type: 'required', message: 'A message is required' },
@@ -60,12 +63,18 @@ export class AdminEventComponent implements OnInit {
      * @param untill
      * @param imgClass
      * @param imgBoolean
-     * @param id
+     * @param identifier
      */
     newMessage(mssg, from, untill, imgClass, imgBoolean: boolean, identifier) {
         this.model = new Message(mssg, from, untill, imgClass, imgBoolean, identifier);
     }
+    /**
+     * regex for a valid relative url
+     */
     validUrl = '^\/(([A-z0-9\-\%]+\/)*[A-z0-9\-\%\.]+$)?'
+    /**
+     * valid time shape
+     */
     validTime = '[0-9]{4}-([0-9]|0[0-9]|1[0-9])-([0-9][0-9]|[0-9])T([0-9]|0[0-9]|1[0-9]):[0-9]{2}'
     /**
      * on load

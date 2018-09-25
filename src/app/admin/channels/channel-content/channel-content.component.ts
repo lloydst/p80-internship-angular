@@ -11,6 +11,9 @@ import { DataService } from '../../../services/data.service';
     templateUrl: './channel-content.component.html'
 })
 export class ChannelContentComponent implements OnInit {
+    /**
+     * form validation based on type it returns a message
+     */
     form_validation_messages = {
         'channel': [
             { type: 'required', message:'a channel name is required'},
@@ -144,6 +147,9 @@ export class ChannelContentComponent implements OnInit {
         });
         this.reloadData();
     }
+    /**
+     * default for when a path gets added reactivly
+     */
     getPath() {
         // initialize our address
         return this.fb.group({
@@ -206,10 +212,15 @@ export class ChannelContentComponent implements OnInit {
         this.data.saveContent(formWId).subscribe(() => { });
         return { message: 'Saved' };
     }
-
+/**
+ * simple getter
+ */
     get path(): FormArray {
         return this.form.get('path') as FormArray;
     }
+    /**
+     * getter for form controls
+     */
     get f() {
         return this.form.controls;
     }
