@@ -22,11 +22,11 @@ export class AdminEventComponent implements OnInit {
         ],
         'showFrom': [
             { type: 'required', message: "A start time is required" },
-            { type: 'pattern', message: "please fill out all fields (both time and date" }
+            { type: 'pattern', message: "please fill out all fields (both time and date)" }
         ],
         'showTill': [
             { type: 'required', message: "A end time is required" },
-            { type: 'pattern', message: "please fill out all fields (both time and date" }
+            { type: 'pattern', message: "please fill out all fields (both time and date)" }
         ],
         'imgUrl': [
             { type: 'pattern', message: 'the img url has to come from example.com/images/img/image_name' },
@@ -75,7 +75,7 @@ export class AdminEventComponent implements OnInit {
     /**
      * valid time shape
      */
-    validTime = '[0-9]{4}-([0-9]|0[0-9]|1[0-9])-([0-9][0-9]|[0-9])T([0-9]|0[0-9]|1[0-9]):[0-9]{2}'
+    validTime = '[0-9]{4}-([0-9]|0[0-9]|1[0-9])-([0-9][0-9]|[0-9])T([0-9][0-9]):([0-9][0-9])'
     /**
      * on load
      */
@@ -85,7 +85,7 @@ export class AdminEventComponent implements OnInit {
             message: new FormControl('', [Validators.required]),
             showFrom: new FormControl('', [Validators.required, Validators.pattern(this.validTime)]),
             showTill: new FormControl('', [Validators.required, Validators.pattern(this.validTime)]),
-            imgUrl: new FormControl('',[Validators.pattern(this.validUrl)]),
+            imgUrl: new FormControl('', [Validators.pattern(this.validUrl)]),
             identifier: new FormControl('', [Validators.required, Validators.minLength(5)])
         }, { updateOn: 'change' });
     }
@@ -116,7 +116,6 @@ export class AdminEventComponent implements OnInit {
             newFrom = newFrom + fromStr[i];
             newTill = newTill + untillStr[i];
         }
-
         this.dataService.createMessage({
             message: mssg,
             showFrom: from,

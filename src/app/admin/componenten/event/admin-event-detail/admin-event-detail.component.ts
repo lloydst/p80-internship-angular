@@ -71,6 +71,7 @@ export class AdminEventDetailComponent implements OnInit {
      */
     ngOnInit() {
         this.id = this.route.snapshot.params.id;
+       
         this.getData();
         this.form = new FormGroup({
             identifier: new FormControl('', [Validators.required, Validators.minLength(5)]),
@@ -91,7 +92,9 @@ export class AdminEventDetailComponent implements OnInit {
      * gets a single message
      */
     getData() {
-        this.dataService.getMessage(this.id).subscribe(
+        var parsedUrl = encodeURIComponent(this.id.replace(/%20/g, " "))//this.id.replace(/%20/g, " ")
+        console.log(parsedUrl)
+        this.dataService.getMessage(parsedUrl).subscribe(
             res => {
                 this.data = res;
                 this.form.patchValue(res[0])
