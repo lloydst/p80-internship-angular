@@ -101,9 +101,17 @@ export class DataService {
         return this.http.get('/api/content');
     }
     /**
+     * add a channel
+     * @param newContent formdata
+     */
+    createContent(newContent){
+        return this.http.post('/api/content',newContent);
+    }
+    /**
      * saves/ updates the object
      */
     saveContent(obj) {
+        console.log(obj)
         return this.http.put('/api/content', obj);
     }
     /**

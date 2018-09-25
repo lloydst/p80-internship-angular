@@ -127,7 +127,7 @@ export class ChannelNewComponent implements OnInit {
      * @param model channel interface to save it in the right shape
      */
     save(new_channel) {
-        this.data.saveContent(this.form.value).subscribe(() => {
+        this.data.createContent(this.form.value).subscribe(() => {
             this.redirectTo(this.form.value.channel);
         });
     }

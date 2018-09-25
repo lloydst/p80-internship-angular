@@ -20,34 +20,42 @@ router.get('/:channel',function(req,res){
         res.send(channelRoutes)
     })
 })
+router.post('/',function(req,res){
+    Content.create(req.body)
+})
 router.put('/',function(req,res){
-    // checks if channel already exists
     check()
     setTimeout(() => {
         updateCreateGet()
     }, 200);
-    function check() { // sets exists to true if it exists
-        Content.find({channel: req.body.channel}, function(err,doc){
+    /**
+     * checks for the existence of a 'channel' by searching for the _id send with the request
+     */
+    function check() { 
+        // search
+        Content.find({_id: req.body._id}, function(err,doc){
+            // sees if the returned document has fields
             if(doc.length == 0){
-                exists=false
-                return exists
-                //res.send(doc)
+                Content.create(
+                    {channel: req.body.channel,
+                    path:req.body.path}
+                    )
+                return exists = false // default is false already but setting it here again makes it saver.
             }else if (doc[0].channel === req.body.channel){
                 exists = true
                 return exists
             }
-            
         })
     }
     // if it exists it will update
     function updateCreateGet() {
-        
         if(exists){
-            Content.findOneAndUpdate({channel: req.body.channel}, req.body , function(err,doc){
+           
+            Content.findOneAndUpdate({_id: req.body._id}, req.body , function(err, doc){
                 if (err) {
                     console.log(err)
                 }
-                res.json({ message: 'channel updated' });
+                res.send({ message: 'attempted to update' });
             })
             // if it doesn't it wil create
         } else if(!exists){
@@ -55,11 +63,12 @@ router.put('/',function(req,res){
                 if (err){
                     res.send(err)
                 }
-                res.json({ message: 'channel created' });
+                res.send({ message: 'channel created' });
             })
         }
     }
 })
+
 router.delete('/:channel', function(req,res) {
     Content.findOneAndRemove({channel: req.params.channel}, function(err,doc){
         if (err) {

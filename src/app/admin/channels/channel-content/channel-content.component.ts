@@ -1,7 +1,6 @@
-import { Component, OnInit, Inject, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { isNullOrUndefined } from 'util';
 import { DataService } from '../../../services/data.service';
 
 /**
@@ -109,12 +108,7 @@ export class ChannelContentComponent implements OnInit {
             delay: new FormControl(path.delay, [Validators.min(5000)]),
             componentName: new FormControl(path.componentName, [Validators.required, Validators.minLength(4)])
         });
-        return this.fb.group({
-            pathurl: ['/components/', [Validators.required, Validators.minLength(16)]],
-            description: ['', [Validators.required, Validators.minLength(20)]],
-            componentName: ['', [Validators.required, Validators.minLength(4)]],
-            delay: [5000, [Validators.min(5000)]]
-        });
+
     }
     /**
      * on init
@@ -124,7 +118,6 @@ export class ChannelContentComponent implements OnInit {
         this.form = this.fb.group({
             channel: [this.channelName],
             path: this.fb.array([
-                
             ])
         });
         this.reloadData();
@@ -158,7 +151,7 @@ export class ChannelContentComponent implements OnInit {
     initPath() {
         // initialize our address
         return this.fb.group({
-            pathurl: [''],
+            pathurl: ['',Validators.required],
             description: [''],
             componentName: [''],
             delay: [20000]
@@ -169,7 +162,7 @@ export class ChannelContentComponent implements OnInit {
      */
     addPath() {
         // add address to the list
-        const control = <FormArray>this.form.controls['path'];
+        const control = <FormArray>this.form.controls.path;
         control.push(this.initPath());
     }
     /**
@@ -185,8 +178,10 @@ export class ChannelContentComponent implements OnInit {
      * saves the contents of the form
      * @param channel_to_Update channel to update
      */
-    save(channel_to_Update) {
-        this.data.saveContent(this.form.value).subscribe(() => { });
+    save() {
+        console.log(this.channelData[0]._id)
+        var formWId = Object.assign(this.form.value, {_id: this.channelData[0]._id})
+        this.data.saveContent(formWId).subscribe(() => { });
         return { message: 'Saved' };
     }
 
@@ -196,6 +191,7 @@ export class ChannelContentComponent implements OnInit {
     get f() {
         return this.form.controls;
     }
+    
     /**
      * resets form to what it was
      */

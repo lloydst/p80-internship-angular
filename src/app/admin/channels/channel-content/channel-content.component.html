@@ -1,10 +1,10 @@
 <section>
     <div class="admin-wrapper-main__card--fullwidth">
         <h2 class="admin-wrapper-main__card--title">Edit channel</h2>
-        <form [formGroup]="form" (ngSubmit)="save(form)" class="admin-wrapper-main__card--form" #top>
+        <form [formGroup]="form" (ngSubmit)="save()" class="admin-wrapper-main__card--form" #top>
             <div class="admin-wrapper-main__card--form-group">
                 <label>Channel: </label>
-                <input style="border:none" formControlName="channel" readonly="readonly">
+                <input style="border:none" formControlName="channel">
 
             </div>
             <div formArrayName="path">
@@ -101,7 +101,7 @@
                     <!-- End path template -->
                 </div>
                 <div>
-                    <button class="button primary" type="submit" [disabled]="form.pristine" (click)="reloadPage()">Save</button>
+                    <button class="button primary" type="submit" [disabled]="form.pristine" >Save</button> <!--(click)="reloadPage()"-->
                     &nbsp;
                     <button class="button danger" type="button danger" (click)="revert()" [disabled]="form.pristine">undo/reload</button>
                 </div>
