@@ -57,8 +57,8 @@ export class AdminEntranceComponent implements OnInit {
             displayTime: new FormControl('', [Validators.min(10000), Validators.required]),
         }, { updateOn: 'change' });
     }
-    get f() { 
-        return this.form.controls; 
+    get f() {
+        return this.form.controls;
     }
     /**
      * gets all websites from the api

@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormArray } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../../../services/data.service';
 import { Paths } from '../../../models/channel';
@@ -13,6 +13,31 @@ import { Paths } from '../../../models/channel';
     templateUrl: './channel-new.component.html'
 })
 export class ChannelNewComponent implements OnInit {
+    /**
+     * i should really place these somewhere else
+     */
+    form_validation_messages = {
+        'channel': [
+            { type: 'required', message: 'a channel name is required' },
+            { type: 'minlength', message: 'The channel name has to be atleast 4 characters long' }
+        ],
+        'pathUrl': [
+            { type: 'required', message: 'A relative url is required please provide one' },
+            { type: 'minlength', message: 'The client name has to be atleast 16 characters long' }
+        ],
+        'componentName': [
+            { type: 'required', message: "a name is required" },
+            { type: 'minlength', message: "the component name has to be atleast 4 characters long" }
+        ],
+        'description': [
+            { type: 'minlength', message: 'the description has to be atleast 20 characters long, it is best to describe the function it has in the component' },
+            { type: 'required', message: 'the description is required' }
+        ],
+        'delay': [
+            { type: 'min', message: "the component shouldn't be visable shorter then 5000 ticks (5 seconds)" },
+            { type: 'required', message: 'the delay is required, has to be atleast 5seconds (or 5000 ticks) but can also be a very long number' }
+        ]
+    }
     /**
      * preload data
      */
@@ -63,7 +88,7 @@ export class ChannelNewComponent implements OnInit {
         // we will initialize our form here
         
         this.form = this.fb.group({
-            channel: ['', [Validators.required, Validators.minLength(5)]],
+            channel: ['', [Validators.required, Validators.minLength(4)]],
             path: this.fb.array([
                 this.getPath(),
             ])
@@ -86,13 +111,14 @@ export class ChannelNewComponent implements OnInit {
     /**
      * adds a empty 'path'
      */
+    
     getPath() {
         // initialize our address
         return this.fb.group({
-            pathurl: ['/components/', [Validators.required, Validators.minLength(16)]],
-            description: ['', [Validators.required, Validators.minLength(20)]],
-            componentName: ['', [Validators.required, Validators.minLength(4)]],
-            delay: [5000, [Validators.min(5000)]]
+            pathurl: new FormControl('/components', [Validators.required, Validators.minLength(16)]),
+            description: new FormControl('this is where a description would go', [Validators.required, Validators.minLength(20)]),
+            delay: new FormControl('5000', [Validators.required, Validators.min(5000)]),
+            componentName: new FormControl("here you can set a 'custom' component name", [Validators.required, Validators.minLength(4)])
         });
     }
     

@@ -312,6 +312,8 @@ section {
   width: 95%;
   resize: none;
   font-size: 17px;
+  border: none;
+  border-bottom: 1px solid grey;
   font-family: Supernormale, sans-serif;
 }
 

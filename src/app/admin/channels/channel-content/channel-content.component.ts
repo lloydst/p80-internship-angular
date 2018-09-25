@@ -11,6 +11,28 @@ import { DataService } from '../../../services/data.service';
     templateUrl: './channel-content.component.html'
 })
 export class ChannelContentComponent implements OnInit {
+    form_validation_messages = {
+        'channel': [
+            { type: 'required', message:'a channel name is required'},
+            { type: 'minlength', message: 'The client name has to be atleast 3 characters long' }
+        ],
+        'pathUrl': [
+            { type: 'required', message: 'A client name is required please provide one' },
+            { type: 'minlength', message: 'The client name has to be atleast 3 characters long' }
+        ],
+        'componentName': [
+            { type: 'required', message: "a name is required" },
+            { type: 'minlength', message: "the component name has to be atleast 4 characters long" }
+        ],
+        'description': [
+            { type: 'minlength', message: 'the description has to be atleast 20 characters long, it is best to describe the function it has in the component' },
+            { type: 'required', message: 'the description is required' }
+        ],
+        'delay': [
+            {type:'min', message: "the component shouldn't be visable shorter then 5000 ticks (5 seconds)"},
+            { type: 'required', message: 'the delay is required, has to be atleast 5seconds (or 5000 ticks) but can also be a very long number' }
+        ]
+    }
     /**
      * prefil data
      */
@@ -105,7 +127,7 @@ export class ChannelContentComponent implements OnInit {
         return new FormGroup({
             pathurl: new FormControl(path.pathurl, [Validators.required, Validators.minLength(16)]),
             description: new FormControl(path.description, [Validators.required, Validators.minLength(20)]),
-            delay: new FormControl(path.delay, [Validators.min(5000)]),
+            delay: new FormControl(path.delay, [Validators.required, Validators.min(5000)]),
             componentName: new FormControl(path.componentName, [Validators.required, Validators.minLength(4)])
         });
 
@@ -116,7 +138,7 @@ export class ChannelContentComponent implements OnInit {
     ngOnInit() {
         this.getCurrentChannel();
         this.form = this.fb.group({
-            channel: [this.channelName],
+            channel: [this.channelName,Validators.required],
             path: this.fb.array([
             ])
         });

@@ -1,8 +1,7 @@
 <section>
     <div class="admin-wrapper-main__card">
         <h2 class="admin-wrapper-main__card--title">Create a channel</h2>
-        <p class="admin-wrapper-main__card--contents">channels can be made up from components as well as other channels (remember
-            these have their own timings)</p>
+
         <form [formGroup]="form" novalidate (ngSubmit)="save(form)" class="admin-wrapper-main__card--form">
             <div class="admin-wrapper-main__card--form-group">
                 <label>Channel name:
@@ -14,11 +13,11 @@
                     </span>
                 </label>
                 <input type="text" formControlName="channel" class="admin-wrapper-main__card--form-input">
-                <div *ngIf="f.channel.touched && f.channel.errors" class="admin-wrapper-main__card--form-error">
-                    <div *ngIf="f.channel.errors.required"> A Channel name is required</div>
-                    <div *ngIf="f.channel.errors.minlength"> The channel name has to be atleast 5 characters long</div>
+                <div *ngFor="let validation of form_validation_messages.channel" class="admin-wrapper-main__card--form-error">
+                    <div *ngIf="form.get('channel').hasError(validation.type) && form.get('channel').touched">
+                        {{validation.message}}
+                    </div>
                 </div>
-                <!--{{f.channel.errors |json}}-->
             </div>
             <!--paths-->
             <div formArrayName="path">
@@ -38,11 +37,11 @@
                                 </span>
                             </label>
                             <input formControlName="pathurl" class="admin-wrapper-main__card--form-input" />
-                            <div *ngIf="f.path['controls'][i].controls.pathurl.touched && f.path['controls'][i].controls.pathurl.errors" class="admin-wrapper-main__card--form-error">
-                                <div *ngIf="f.path['controls'][i].controls.pathurl.errors.required"> A Channel name is required</div>
-                                <div *ngIf="f.path['controls'][i].controls.pathurl.errors.minlength"> The channel name has to be atleast 20 characters long</div>
+                            <div *ngFor="let validation of form_validation_messages.pathUrl" class="admin-wrapper-main__card--form-error">
+                                <div *ngIf="form.get('path').controls[i].get('pathurl').hasError(validation.type) && form.get('path').controls[i].get('pathurl').touched">
+                                    {{validation.message}}
+                                </div>
                             </div>
-                           <!--{{f.path['controls'][i].controls.pathurl.errors |json}}-->
                         </div>
                         <div class="admin-wrapper-main__card--form-group">
                             <label>description:
@@ -54,10 +53,10 @@
                                 </span>
                             </label>
                             <input type="text" formControlName="description" value="Does this and that" class="admin-wrapper-main__card--form-input"/>
-                            <div *ngIf="f.path['controls'][i].controls.description.touched && f.path['controls'][i].controls.description.errors" class="admin-wrapper-main__card--form-error">
-                                <div *ngIf="f.path['controls'][i].controls.description.errors.required"> A Channel name is required</div>
-                                <div *ngIf="f.path['controls'][i].controls.description.errors.minlength"> The path description has to be atleast 20
-                                    characters long</div>
+                            <div *ngFor="let validation of form_validation_messages.description" class="admin-wrapper-main__card--form-error">
+                                <div *ngIf="form.get('path').controls[i].get('description').hasError(validation.type)">
+                                    {{validation.message}}
+                                </div>
                             </div>
                         </div>
                         <div class="admin-wrapper-main__card--form-group">
@@ -70,12 +69,10 @@
                                 </span>
                             </label>
                             <input type="number" formControlName="delay" class="admin-wrapper-main__card--form-input">
-                            <div *ngIf="f.path['controls'][i].controls.delay.touched && f.path['controls'][i].controls.delay.errors"
-                                class="admin-wrapper-main__card--form-error">
-                                <div *ngIf="f.path['controls'][i].controls.delay.errors.required"> A Delay name is required</div>
-                                <div *ngIf="f.path['controls'][i].controls.delay.errors.min"> The delay has to be atleast 5000 (5seconds)
-                                    20
-                                    characters long</div>
+                            <div *ngFor="let validation of form_validation_messages.delay" class="admin-wrapper-main__card--form-error">
+                                <div *ngIf="form.get('path').controls[i].get('delay').hasError(validation.type)">
+                                    {{validation.message}}
+                                </div>
                             </div>
                         </div>
                         <div class="admin-wrapper-main__card--form-group">
@@ -88,11 +85,10 @@
                                 </span>
                             </label>
                             <input type="text" formControlName="componentName" class="admin-wrapper-main__card--form-input">
-                            <div *ngIf="f.path['controls'][i].controls.componentName.touched && f.path['controls'][i].controls.componentName.errors"
-                                class="admin-wrapper-main__card--form-error">
-                                <div *ngIf="f.path['controls'][i].controls.componentName.errors.required"> A component name is required</div>
-                                <div *ngIf="f.path['controls'][i].controls.componentName.errors.minlength"> The component name has to be atleast 4
-                                    characters long</div>
+                            <div *ngFor="let validation of form_validation_messages.componentName" class="admin-wrapper-main__card--form-error">
+                                <div *ngIf="form.get('path').controls[i].get('componentName').hasError(validation.type)">
+                                    {{validation.message}}
+                                </div>
                             </div>
                         </div>
                         <br>
@@ -110,7 +106,6 @@
             </div>
             <br>
             <div>
-                {{form.status}}
                 <button class="button succes" type="submit" [disabled]="!form.valid">Create</button>
             </div>
         </form>
