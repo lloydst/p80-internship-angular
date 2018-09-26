@@ -92,7 +92,7 @@ export class AdminEventDetailComponent implements OnInit {
      * gets a single message
      */
     getData() {
-        var parsedUrl = encodeURIComponent(this.id.replace(/%20/g, " "))//this.id.replace(/%20/g, " ")
+        const parsedUrl = encodeURIComponent(this.id.replace(/%20/g, " "))//this.id.replace(/%20/g, " ")
         console.log(parsedUrl)
         this.dataService.getMessage(parsedUrl).subscribe(
             res => {

@@ -6,6 +6,6 @@ export class AppPage {
   }
 
   getParagraphText() {
-    return element(by.className('margin-right')).getText();
+    return element(by.className('channel-navigation__button')).getText();
   }
 }
