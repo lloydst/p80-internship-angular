@@ -1,7 +1,4 @@
-//--------------------------------------------------------------------
-// admin layout (uses grid)
-// -------------------------------------------------------------------
-
+// container admin holds the side nav and the child of the router
 .container-admin {
     width: 100%;
     margin-top: 0px;
@@ -10,31 +7,54 @@
     min-height: 100vh;
 }
 
-.admin-wrapper-main {
-    section {
-        background-color: #fff;
+.sidenav {
+    #link {
+        color: black;
     }
 
-    background-color: #fff;
-    margin-top: 1em;
-    min-height: 100%;
+    .side-nav {
+        height: 100vh;
+        display: grid;
+        margin-top: 0px;
+
+        // max-width: 50px;
+        grid-template-rows: repeat(6, 50px);
+        text-align: center;
+        position: fixed;
+        background-color: #111;
+    }
+
+    .side-nav a {
+        // padding: 3px 3px 3px 3px;
+        min-width: 50px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #818181;
+        display: block;
+        padding-top: 1em;
+    }
+
+    .side-nav a:hover {
+        color: #f1f1f1;
+    }
 }
 
-.admin-wrapper-main--no-nav {
-    section {
-        background-color: #fff;
-    }
-
-    background-color: #fff;
+.admin-layout__layout--single-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
     margin-top: 0;
-    min-height: 100%;
 }
 
-//--------------------
-// admin topnav
-// -------------------
-.admin-wrapper-main__topnav {
-    position: fixed;
+.admin-layout__layout--double-col {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
+    margin-top: 0;
+}
+
+.admin-layout__topnav {
+    //position: fixed;
     background-color: darkgrey; //temp
     color: white; //temp
     margin-top: 0;
@@ -43,20 +63,22 @@
     border: 1px solid black;
 }
 
-.admin-wrapper-main__topnav--link {
+.admin-layout__topnav--link {
     padding-left: 5px;
     color: white; //temp
 }
 
-.admin-wrapper-main__topnav--link-remove {
+.admin-layout__topnav--link-remove {
     padding-left: 5px;
     color: red; //temp
 }
 
-//--------------------
-// admin card
-// -------------------
-.admin-wrapper-main__card {
+.admin-layout__topnav--child {
+    background-color: #fff;
+    margin-top: 0;
+}
+
+.admin-layout__card {
     border-radius: 5px;
     background-color: white;
     margin: 1em;
@@ -64,14 +86,15 @@
     transition: 0.3s;
 }
 
-.admin-wrapper-main__card--contents {
+.admin-layout__card--contents {
     padding: 10px;
 }
 
-.admin-wrapper-main__card--subtext {
-    font-size:.75em;
+.admin-layout__card--subtext {
+    font-size: .75em;
 }
-.admin-wrapper-main__card--table {
+
+.admin-layout__card--table {
     width: 100%;
 
     thead {
@@ -81,43 +104,43 @@
     }
 }
 
-.admin-wrapper-main__card-tiny {
+.admin-layout__card-tiny {
     margin: 1em;
-    max-width: 80%;
+    width: 20%;
     float: left;
     background-color: white;
     box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.5);
     transition: 0.3s;
-    width: calc(100% / 6);
 
     // BEM is not a fan of targetting by id
     &#images {
-        min-width: 30%;
+        min-width: 29%;
+        min-height: 25%;
     }
 }
 
-.admin-wrapper-main__card-tiny--contents {
+.admin-layout__card--contents {
     padding-left: 10px;
 }
 
-.admin-wrapper-main__card--fullwidth {
+.admin-layout__card--fullwidth {
     background-color: white;
     box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.5);
     transition: 0.3s;
-    max-width: 80%; //looks better then 100
+    max-width: 100%;
     min-width: 29%;
     margin: 1em;
 }
 
-.admin-wrapper-main__card--halvewidth {
+.admin-layout__card--halvewidth {
     background-color: white;
     box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.5);
     transition: 0.3s;
-    width: 40%;
+    width: 50%;
     padding: 1em;
 }
 
-.admin-wrapper-main__card--title {
+.admin-layout__card--title {
     border-radius: 5px 5px 0 0;
     padding-left: 10px;
     margin: 0;
@@ -125,28 +148,28 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.377);
 }
 
-.admin-wrapper-main__card--form {
+.admin-layout__card--form {
     background-color: white; //temp
     margin: 1em;
 }
 
-.admin-wrapper-main__card--form-group {
+.admin-layout__card--form-group {
     background-color: white; //temp
 }
 
-.admin-wrapper-main__card--form--tooltip {
+.admin-layout__card--form-tooltip {
     position: relative;
     display: inline-block;
 }
 
-.admin-wrapper-main__card--form-error {
+.admin-layout__card--form-error {
     div {
         color: red;
         font-size: small;
     }
 }
 
-.admin-wrapper-main__card--form--tooltiptext {
+.admin-layout__card--form-tooltiptext {
     visibility: hidden;
     max-width: 500px;
     min-width: 250px;
@@ -164,11 +187,11 @@
 //--------------------
 // admin tooltip
 // -------------------
-.admin-wrapper-main__card--form--tooltip:hover .admin-wrapper-main__card--form--tooltiptext {
+.admin-layout__card--form-tooltip:hover .admin-layout__card--form-tooltiptext {
     visibility: visible;
 }
 
-.admin-wrapper-main__card--form-input {
+.admin-layout__card--form-input {
     margin: 5px;
     width: 95%;
     resize: none;

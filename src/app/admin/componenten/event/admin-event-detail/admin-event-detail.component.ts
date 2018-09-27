@@ -4,6 +4,7 @@ import { DataService } from '../../../../services/data.service';
 
 import * as $ from 'jquery';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FileService } from '../../../../services/file.service';
 
 /**
  * message/event detail page
@@ -56,6 +57,10 @@ export class AdminEventDetailComponent implements OnInit {
      */
     validTime = '[0-9]{4}-([0-9]|0[0-9]|1[0-9])-([0-9][0-9]|[0-9])T([0-9]|0[0-9]|1[0-9]):[0-9]{2}'
     /**
+     * binding
+     */
+    image;
+    /**
      * component constructor
      * @param router for navigation
      * @param route for param.id
@@ -64,7 +69,8 @@ export class AdminEventDetailComponent implements OnInit {
     constructor(
         private router: Router,
         private route: ActivatedRoute,
-        private dataService: DataService
+        private dataService: DataService,
+        private fileService: FileService
     ) { }
     /**
      * on load
@@ -81,6 +87,7 @@ export class AdminEventDetailComponent implements OnInit {
             imgLink: new FormControl('', [Validators.pattern(this.validUrl)])
 
         }, { updateOn: 'change' });
+        this.getAllImages();
     }
     /**
      * get form controls
@@ -135,5 +142,28 @@ export class AdminEventDetailComponent implements OnInit {
         if (redirect) {
             this.router.navigate(['./admin/components/events']);
         }
+    }
+    getAllImages() {
+        this.fileService.getImages().subscribe(images => {
+            this.image = images;
+        });
+    }
+    /**
+     * deletes a img
+     * @param delete_me filename of image too delete
+     */
+    deleteImg(delete_me) {
+        // let done = false
+        this.fileService.deleteImg(delete_me).subscribe(image => {
+            this.image = image;
+            console.log('marco');
+        }, () => {
+            this.getAllImages();
+            console.log('polo');
+        });
+    }
+    patchImgLink(filename) {
+        this.form.patchValue({
+            imgLink:'/images/img/'+filename})
     }
 }

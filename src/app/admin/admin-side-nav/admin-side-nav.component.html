@@ -1,12 +1,8 @@
-<!-- Important! classes and id's are used in the ts file -->
-<div class="grid-side-nav" id="Nav" style="width: 50px">
+<!-- Important! classes and id's as well as inline style's are used in the ts file -->
+<div class="side-nav" id="Nav" style="width: 50px"><!-- this inline style is also used in the ts file-->
     <a routerLink="/admin" class="menutext" (click)="toggle('close')">
       <i class="fas fa-home"></i>
-      <span class="text"  style="display:none">dashboard</span>
-    </a>
-    <a [routerLink]="['algemeen']" (click)="toggle('close')" class="menutext">
-      <i class="fas fa-cog"></i>
-      <span class="text"  style="display:none">Algemene settings</span>
+      <span class="text" style="display:none">dashboard</span>
     </a>
     <a [routerLink]="['components/entrance']"  (click)="toggle('close')" class="menutext">
       <i class="fas fa-puzzle-piece"></i>

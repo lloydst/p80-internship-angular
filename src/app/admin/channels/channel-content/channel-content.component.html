@@ -1,11 +1,11 @@
-<section>
-    <div class="admin-wrapper-main__card--fullwidth">
-        <h2 class="admin-wrapper-main__card--title">Edit channel</h2>
-        <form [formGroup]="form" (ngSubmit)="save()" class="admin-wrapper-main__card--form" #top>
-            <div class="admin-wrapper-main__card--form-group">
+<section class="admin-layout__double-col">
+    <div class="admin-layout__card--fullwidth">
+        <h2 class="admin-layout__card--title">Edit channel</h2>
+        <form [formGroup]="form" (ngSubmit)="save()" class="admin-layout__card--form" #top>
+            <div class="admin-layout__card--form-group">
                 <label>Channel: </label>
-                <input formControlName="channel" class="admin-wrapper-main__card--form-input">
-                <div *ngFor="let validation of form_validation_messages.channel" class="admin-wrapper-main__card--form-error">
+                <input formControlName="channel" class="admin-layout__card--form-input">
+                <div *ngFor="let validation of form_validation_messages.channel" class="admin-layout__card--form-error">
                     <div *ngIf="form.get('channel').hasError(validation.type)">
                         {{validation.message}}
                     </div>
@@ -17,18 +17,18 @@
                     <h4>path #{{i + 1}}</h4>
                     <div>
 
-                        <div class="admin-wrapper-main__card--form-group">
+                        <div class="admin-layout__card--form-group">
                             <label>Url:
-                                <span class="admin-wrapper-main__card--form--tooltip">
+                                <span class="admin-layout__card--form-tooltip">
                                     &#9432;
-                                    <div class="admin-wrapper-main__card--form--tooltiptext">
+                                    <div class="admin-layout__card--form-tooltiptext">
                                         the current paths relative url to the selected component
                                     </div>
                                 </span>
                             </label><br>
-                            <input type="text" formControlName="pathurl" class="admin-wrapper-main__card--form-input">
+                            <input type="text" formControlName="pathurl" class="admin-layout__card--form-input">
 
-                            <div *ngFor="let validation of form_validation_messages.pathUrl" class="admin-wrapper-main__card--form-error">
+                            <div *ngFor="let validation of form_validation_messages.pathUrl" class="admin-layout__card--form-error">
                                 <div *ngIf="form.get('path').controls[i].get('pathurl').hasError(validation.type)">
                                     {{validation.message}}
                                 </div>
@@ -38,47 +38,47 @@
 
                         <div class="admin-wrapper-main__card--form-group">
                             <label>Name:
-                                <span class="admin-wrapper-main__card--form--tooltip">
+                                <span class="admin-layout__card--form-tooltip">
                                     &#9432;
-                                    <div class="admin-wrapper-main__card--form--tooltiptext">
+                                    <div class="admin-layout__card--form-tooltiptext">
                                         custom set name
                                     </div>
                                 </span>
                             </label>
-                            <input type="text" formControlName="componentName" class="admin-wrapper-main__card--form-input">
-                            <div *ngFor="let validation of form_validation_messages.componentName" class="admin-wrapper-main__card--form-error">
+                            <input type="text" formControlName="componentName" class="admin-layout__card--form-input">
+                            <div *ngFor="let validation of form_validation_messages.componentName" class="admin-layout__card--form-error">
                                 <div *ngIf="form.get('path').controls[i].get('componentName').hasError(validation.type)">
                                     {{validation.message}}
                                 </div>
                             </div>
                         </div>
-                        <div class="admin-wrapper-main__card--form-group">
+                        <div class="admin-layout__card--form-group">
                             <label>Description:
-                                <span class="admin-wrapper-main__card--form--tooltip">
+                                <span class="admin-layout__card--form-tooltip">
                                     &#9432;
-                                    <div class="admin-wrapper-main__card--form--tooltiptext">
+                                    <div class="admin-layout__card--form-tooltiptext">
                                         a description of what the component does
                                     </div>
                                 </span>
                             </label>
-                            <textarea formControlName="description" class="admin-wrapper-main__card--form-input"></textarea>
-                            <div *ngFor="let validation of form_validation_messages.description" class="admin-wrapper-main__card--form-error">
+                            <textarea formControlName="description" class="admin-layout__card--form-input"></textarea>
+                            <div *ngFor="let validation of form_validation_messages.description" class="admin-layout__card--form-error">
                                 <div *ngIf="form.get('path').controls[i].get('description').hasError(validation.type)">
                                     {{validation.message}}
                                 </div>
                             </div>
                         </div>
-                        <div class="admin-wrapper-main__card--form-group">
+                        <div class="admin-layout__card--form-group">
                             <label>Delay:
-                                <span class="admin-wrapper-main__card--form--tooltip">
+                                <span class="admin-layout__card--form-tooltip">
                                     &#9432;
-                                    <div class="admin-wrapper-main__card--form--tooltiptext">
+                                    <div class="admin-layout__card--form-tooltiptext">
                                         time it takes in ticks to move to the next path
                                     </div>
                                 </span>
                             </label>
-                            <input #delay type="number" formControlName="delay" class="admin-wrapper-main__card--form-input">
-                            <div *ngFor="let validation of form_validation_messages.delay" class="admin-wrapper-main__card--form-error">
+                            <input #delay type="number" formControlName="delay" class="admin-layout__card--form-input">
+                            <div *ngFor="let validation of form_validation_messages.delay" class="admin-layout__card--form-error">
                                 <div *ngIf="form.get('path').controls[i].get('delay').hasError(validation.type)">
                                     {{validation.message}}
                                 </div>

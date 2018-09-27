@@ -1,108 +1,108 @@
 <!-- Important! classes and id's are used in the ts file -->
-<div class="admin-wrapper-main">
-    <section>
-        <div class="admin-wrapper-main__card">
-            <h2 class="admin-wrapper-main__card--title">Create a Message here</h2>
-            <form class="admin-wrapper-main__card--form" (ngSubmit)="create(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, identifier.value); form.reset()"
+
+    <section class="admin-layout__layout--double-col">
+        <div class="admin-layout__card--fullwidth">
+            <h2 class="admin-layout__card--title">Create a Message here</h2>
+            <form class="admin-layout__card--form" (ngSubmit)="create(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, identifier.value); form.reset()"
                 [formGroup]="form">
-                <div class="admin-wrapper-main__card--form-group">
+                <div class="admin-layout__card--form-group">
                     <label for="id">message name:
-                        <span class="admin-wrapper-main__card--form--tooltip">
+                        <span class="admin-layout__card--form-tooltip">
                             &#9432;
-                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                            <div class="admin-layout__card--form-tooltiptext">
                                 doubles as a title and identifier
                             </div>
                         </span>
                     </label>
-                    <input class="admin-wrapper-main__card--form-input" #identifier type="text" name="identifier" formControlName="identifier" required>
+                    <input class="admin-layout__card--form-input" #identifier type="text" name="identifier" formControlName="identifier" required>
                     <div *ngIf="form.get('identifier').touched">
-                        <div *ngFor="let validation of form_validation_messages.identifier" class="admin-wrapper-main__card--form-error">
+                        <div *ngFor="let validation of form_validation_messages.identifier" class="admin-layout__card--form-error">
                             <div *ngIf="form.get('identifier').hasError(validation.type)">
                                 {{validation.message}}
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="admin-wrapper-main__card--form-group">
+                <div class="admin-layout__card--form-group">
                     <label for="message">message:
-                        <span class="admin-wrapper-main__card--form--tooltip">
+                        <span class="admin-layout__card--form-tooltip">
                             &#9432;
-                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                            <div class="admin-layout__card--form-tooltiptext">
                                 the actual message
                             </div>
                         </span>
                     </label>
                     <br>
-                    <input class="admin-wrapper-main__card--form-input" #message type="text" required formControlName="message">
+                    <input class="admin-layout__card--form-input" #message type="text" required formControlName="message">
                     <div *ngIf="form.get('message').touched">
-                        <div *ngFor="let validation of form_validation_messages.message" class="admin-wrapper-main__card--form-error">
+                        <div *ngFor="let validation of form_validation_messages.message" class="admin-layout__card--form-error">
                             <div *ngIf="form.get('message').hasError(validation.type)">
                                 {{validation.message}}
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="admin-wrapper-main__card--form-group">
+                <div class="admin-layout__card--form-group">
                     <label for="showFrom">zichtbaar van af:
-                        <span class="admin-wrapper-main__card--form--tooltip">
+                        <span class="admin-layout__card--form-tooltip">
                             &#9432;
-                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                            <div class="admin-layout__card--form-tooltiptext">
                                 the start date/time the message is visable
                             </div>
                         </span>
                     </label>
-                    <input class="admin-wrapper-main__card--form-input" type="datetime-local" name="showFrom" #showFrom id="showFrom" required
+                    <input class="admin-layout__card--form-input" type="datetime-local" name="showFrom" #showFrom id="showFrom" required
                         formControlName="showFrom">
                         <div *ngIf="form.get('showFrom').touched">
-                            <div *ngFor="let validation of form_validation_messages.showFrom" class="admin-wrapper-main__card--form-error">
+                            <div *ngFor="let validation of form_validation_messages.showFrom" class="admin-layout__card--form-error">
                                 <div *ngIf="form.get('showFrom').hasError(validation.type)">
                                     {{validation.message}}
                                 </div>
                             </div>
                         </div>
                 </div>
-                <div class="admin-wrapper-main__card--form-group">
+                <div class="admin-layout__card--form-group">
                     <label for="showTill">zichtbaar tot:
-                        <span class="admin-wrapper-main__card--form--tooltip">
+                        <span class="admin-layout__card--form-tooltip">
                             &#9432;
-                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                            <div class="admin-layout__card--form-tooltiptext">
                                 the end date/time the message is visable
                             </div>
                         </span>
                     </label>
-                    <input class="admin-wrapper-main__card--form-input" type="datetime-local" name="showTill" #showTill id="showTill" required
+                    <input class="admin-layout__card--form-input" type="datetime-local" name="showTill" #showTill id="showTill" required
                         formControlName="showTill">
                         <div *ngIf="form.get('showTill').touched">
-                            <div *ngFor="let validation of form_validation_messages.showTill" class="admin-wrapper-main__card--form-error">
+                            <div *ngFor="let validation of form_validation_messages.showTill" class="admin-layout__card--form-error">
                                 <div *ngIf="form.get('showTill').hasError(validation.type)">
                                     {{validation.message}}
                                 </div>
                             </div>
                         </div>
                 </div>
-                <div class="admin-wrapper-main__card--form-group">
+                <div class="admin-layout__card--form-group">
                     <label for="imgUrl">achtergrond img:
-                        <span class="admin-wrapper-main__card--form--tooltip">
+                        <span class="admin-layout__card--form-tooltip">
                             &#9432;
-                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                            <div class="admin-layout__card--form-tooltiptext">
                                 a optional background img
                             </div>
                         </span>
                     </label>
-                    <input class="admin-wrapper-main__card--form-input" #imgUrl type="text" formControlName="imgUrl">
+                    <input class="admin-layout__card--form-input" #imgUrl type="text" formControlName="imgUrl">
                     <div *ngIf="form.get('imgUrl').touched">
-                        <div *ngFor="let validation of form_validation_messages.imgUrl" class="admin-wrapper-main__card--form-error">
+                        <div *ngFor="let validation of form_validation_messages.imgUrl" class="admin-layout__card--form-error">
                             <div *ngIf="form.get('imgUrl').hasError(validation.type)">
                                 {{validation.message}}
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="admin-wrapper-main__card--form-group">
+                <div class="admin-layout__card--form-group">
                     <label for="imgBoolean">visable
-                        <span class="admin-wrapper-main__card--form--tooltip">
+                        <span class="admin-layout__card--form-tooltip">
                             &#9432;
-                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                            <div class="admin-layout__card--form-tooltiptext">
                                 manually setting the component to be visable
                             </div>
                         </span>
@@ -112,9 +112,10 @@
                 <button type="submit" class="button succes" [disabled]="!form.valid">Add</button>
             </form>
         </div>
-        <div class="admin-wrapper-main__card--fullwidth" *ngIf="messages?.length > 0">
+        
+        <div class="admin-layout__card--fullwidth" *ngIf="messages?.length > 0">
             <table>
-                <thead class="admin-wrapper-main__card--title">
+                <thead class="admin-layout__card--title">
                     <th>identifier</th>
                     <th>Message</th>
                     <th>show (from-untill)</th>
@@ -123,7 +124,7 @@
                     <th>update</th>
                     <th>delete</th>
                 </thead>
-                <tr class="admin-wrapper-main__card--contents" *ngFor="let message of messages">
+                <tr class="admin-layout__card--contents" *ngFor="let message of messages">
                     <td>{{message.identifier}}</td>
                     <td>{{message.message}}</td>
                     <td>{{message.showFrom.substring(8, 10)}}-{{message.showFrom.substring(5, 7)}}({{message.showFrom.substring(11,
@@ -144,6 +145,6 @@
             </table>
         </div>
     </section>
-</div>
+
 <!-- available images-->
 <app-image-view></app-image-view>

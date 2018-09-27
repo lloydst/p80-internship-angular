@@ -1,20 +1,20 @@
-<div class="admin-wrapper-main">
-    <!-- section acts like a row-->
-    <section>
 
-        <div class="admin-wrapper-main__card--fullwidth">
-            <h2 class="admin-wrapper-main__card--title">Add a new client to the loop</h2>
-            <form [formGroup]="form" class="admin-wrapper-main__card--form" (ngSubmit)="create(website.value, url.value, true, displayTime.value)">
-                <div class="admin-wrapper-main__card--form-group">
+    <!-- section acts like a row-->
+    <section class="admin-layout__layout--double-col">
+
+        <div class="admin-layout__card--fullwidth">
+            <h2 class="admin-layout__card--title">Add a new client to the loop</h2>
+            <form [formGroup]="form" class="admin-layout__card--form" (ngSubmit)="create(website.value, url.value, true, displayTime.value)">
+                <div class="admin-layout__card--form-group">
                     <label for="client">client:
-                        <span class="admin-wrapper-main__card--form--tooltip">
+                        <span class="admin-layout__card--form-tooltip">
                             &#9432;
-                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                            <div class="admin-layout__card--form-tooltiptext">
                                 client name
                             </div>
                         </span>
                     </label>
-                    <input class="admin-wrapper-main__card--form-input" #website name="client" type="text" required
+                    <input class="admin-layout__card--form-input" #website name="client" type="text" required
                         formControlName="name">
                     <div *ngIf="form.get('name').touched">
                         <div *ngFor="let validation of form_validation_messages.name" class="admin-wrapper-main__card--form-error">
@@ -28,17 +28,17 @@
 
                 <div>
                     <label for="url">Website's url:
-                        <span class="admin-wrapper-main__card--form--tooltip">
+                        <span class="admin-layout__card--form-tooltip">
                             &#9432;
-                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                            <div class="admin-layout__card--form-tooltiptext">
                                 the clients website url
                             </div>
                         </span>
                     </label>
-                    <input class="admin-wrapper-main__card--form-input" type="text" name="url" #url required
+                    <input class="admin-layout__card--form-input" type="text" name="url" #url required
                         formControlName="url">
                     <div *ngIf="form.get('url').touched">
-                        <div *ngFor="let validation of form_validation_messages.url" class="admin-wrapper-main__card--form-error">
+                        <div *ngFor="let validation of form_validation_messages.url" class="admin-layout__card--form-error">
                             <div *ngIf="form.get('url').hasError(validation.type)">
                                 {{validation.message}}
                             </div>
@@ -47,17 +47,17 @@
                 </div>
                 <div>
                     <label for="displayTime">Display Time:
-                        <span class="admin-wrapper-main__card--form--tooltip">
+                        <span class="admin-layout__card--form-tooltip">
                             &#9432;
-                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                            <div class="admin-layout__card--form-tooltiptext">
                                 time the clients website is shown
                             </div>
                         </span>
                     </label>
-                    <input class="admin-wrapper-main__card--form-input" type="number" name="displayTime" #displayTime
+                    <input class="admin-layout__card--form-input" type="number" name="displayTime" #displayTime
                         required formControlName="displayTime">
                     <div *ngIf="form.get('displayTime').touched">
-                        <div *ngFor="let validation of form_validation_messages.displayTime" class="admin-wrapper-main__card--form-error">
+                        <div *ngFor="let validation of form_validation_messages.displayTime" class="admin-layout__card--form-error">
                             <div *ngIf="form.get('displayTime').hasError(validation.type)">
                                 {{validation.message}}
                             </div>
@@ -69,16 +69,16 @@
                 <button type="submit" class="button succes" [disabled]="!form.valid">Add</button>
             </form>
         </div>
-        <div class="admin-wrapper-main__card--fullwidth">
-            <h2 class="admin-wrapper-main__card--title">Current websites in loop:</h2>
+        <div class="admin-layout__card--fullwidth">
+            <h2 class="admin-layout__card--title">Current websites in loop:</h2>
 
-            <div *ngFor="let item of data; let i = index;" class="admin-wrapper-main__card-tiny">
-                <h2 class="admin-wrapper-main__card--title">
+            <div *ngFor="let item of data; let i = index;" class="admin-layout__card-tiny">
+                <h2 class="admin-layout__card--title">
                     <strong>company/ client:</strong>
                 </h2>
-                <strong class="admin-wrapper-main__card--contents"> {{item.name}}</strong>
-                <div>displayed: {{item.displayTime /1000}}s</div>
-                <div class="admin-wrapper-main__card--contents">
+                <strong class="admin-layout__card--contents"> {{item.name}}</strong>
+                <div class="admin-layout__card--contents">displayed: {{item.displayTime /1000}}s</div>
+                <div class="admin-layout__card--contents">
                     <a [routerLink]="item.name">
                         <button class="button warning">update</button>
                     </a>
@@ -88,4 +88,3 @@
             </div>
         </div>
     </section>
-</div>

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { SettingComponent } from './setting/setting.component';
 import { AdminComponent } from './admin.component';
 
 import { AdminChannelsComponent } from './componenten/channels.component';
@@ -15,8 +14,6 @@ import { ImageViewComponent } from './image/image-view/image-view.component';
 import { AdminChannelsContentsComponent } from './channels/admin-channels-contents/admin-channels-contents.component';
 import { ChannelNewComponent } from './channels/channel-new/channel-new.component';
 import { ChannelContentComponent } from './channels/channel-content/channel-content.component';
-import { UpdateComponent } from './setting/update/update.component';
-import { CreateComponent } from './setting/create/create.component';
 
 /**
  * defining routes
@@ -28,12 +25,7 @@ const routes = [
                 path: '',
                 component: DashboardComponent // default route
             },
-            {
-                path: 'algemeen', component: SettingComponent, children: [
-                    { path: 'add', component: CreateComponent },
-                    { path: 'detail/:id', component: UpdateComponent }
-                ]
-            },
+            
             {
                 path: 'components',
                 component: AdminChannelsComponent,

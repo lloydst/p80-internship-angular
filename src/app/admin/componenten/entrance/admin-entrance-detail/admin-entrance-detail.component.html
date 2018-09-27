@@ -1,19 +1,19 @@
-<div class="admin-wrapper-main">
-    <section>
-        <div class="admin-wrapper-main__card">
-            <h2 class="admin-wrapper-main__card--title">edit {{data[0]?.name}}</h2>
 
-            <form [formGroup]="form" class="admin-wrapper-main__card--form" (ngSubmit)="update(name.value, url.value, displayTime.value)">
-                <div class="admin-wrapper-main__card--form-group">
+    <section class="admin-layout__layout--single-col">
+        <div class="admin-layout__card">
+            <h2 class="admin-layout__card--title">edit {{data[0]?.name}}</h2>
+
+            <form [formGroup]="form" class="admin-layout__card--form" (ngSubmit)="update(name.value, url.value, displayTime.value)">
+                <div class="admin-layout__card--form-group">
                     <label for="client">client:
-                        <span class="admin-wrapper-main__card--form--tooltip">
+                        <span class="admin-layout__card--form-tooltip">
                             &#9432;
-                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                            <div class="admin-layout__card--form-tooltiptext">
                                 the clients name
                             </div>
                         </span>
                     </label>
-                    <input class="admin-wrapper-main__card--form-input" #name name="name" type="text" required
+                    <input class="admin-layout__card--form-input" #name name="name" type="text" required
                         formControlName="name">
                     <div *ngFor="let validation of form_validation_messages.name" class="admin-wrapper-main__card--form-error">
                         <div *ngIf="form.get('name').hasError(validation.type)" >
@@ -24,16 +24,16 @@
 
                 <div>
                     <label for="url">Website's url:
-                        <span class="admin-wrapper-main__card--form--tooltip">
+                        <span class="admin-layout__card--form-tooltip">
                             &#9432;
-                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                            <div class="admin-layout__card--form-tooltiptext">
                                 The clients website url
                             </div>
                         </span>
                     </label>
 
-                    <input type="text" name="url" #url required formControlName="url" class="admin-wrapper-main__card--form-input">
-                    <div *ngFor="let validation of form_validation_messages.url" class="admin-wrapper-main__card--form-error">
+                    <input type="text" name="url" #url required formControlName="url" class="admin-layout__card--form-input">
+                    <div *ngFor="let validation of form_validation_messages.url" class="admin-layout__card--form-error">
                         <div *ngIf="form.get('url').hasError(validation.type)" >
                             {{validation.message}}
                         </div>
@@ -41,17 +41,17 @@
                 </div>
                 <div>
                     <label for="displayTime">Display Time:
-                        <span class="admin-wrapper-main__card--form--tooltip">
+                        <span class="admin-layout__card--form-tooltip">
                             &#9432;
-                            <div class="admin-wrapper-main__card--form--tooltiptext">
+                            <div class="admin-layout__card--form-tooltiptext">
                                 the time the clients website is displayed in the loop in ticks(1000 = 1 second)
                             </div>
                         </span>
                     </label>
-                    <input class="admin-wrapper-main__card--form-input" required formControlName="displayTime" type="number"
+                    <input class="admin-layout__card--form-input" required formControlName="displayTime" type="number"
                         name="displayTime" #displayTime>
 
-                    <div *ngFor="let validation of form_validation_messages.displayTime" class="admin-wrapper-main__card--form-error">
+                    <div *ngFor="let validation of form_validation_messages.displayTime" class="admin-layout__card--form-error">
                         <div *ngIf="form.get('displayTime').hasError(validation.type)">
                             {{validation.message}}
                         </div>
@@ -62,4 +62,3 @@
             </form>
         </div>
     </section>
-</div>

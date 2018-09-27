@@ -1,11 +1,12 @@
 <!-- Important! classes and id's are used in the ts file -->
 
-
-<div class="admin-wrapper-main__topnav">
-    <a class="admin-wrapper-main__topnav--link" routerLinkActive="active" routerLink="entrance">entrance </a>
-    <a class="admin-wrapper-main__topnav--link" routerLinkActive="active" routerLink="events">event </a>
-</div>
-<div class="admin-wrapper-main">
-    <!-- child routes-->
-    <router-outlet></router-outlet>
+<div class="admin-layout__layout--single-col">
+    <div class="admin-layout__topnav">
+        <a class="admin-layout__topnav--link" routerLinkActive="active" routerLink="entrance">entrance </a>
+        <a class="admin-layout__topnav--link" routerLinkActive="active" routerLink="events">event </a>
+    </div>
+    <div class="admin-layout__topnav--child">
+        <!-- child routes-->
+        <router-outlet></router-outlet>
+    </div>
 </div>

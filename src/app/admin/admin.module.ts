@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AdminSideNavComponent } from './admin-side-nav/admin-side-nav.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { SettingComponent } from './setting/setting.component';
+
 import { AdminComponent } from './admin.component';
 
 import { AdminRoutingModule } from './admin-routing.module';
@@ -20,8 +20,7 @@ import { AdminChannelsContentsComponent } from './channels/admin-channels-conten
 import { ChannelContentComponent } from './channels/channel-content/channel-content.component';
 import { ChannelNewComponent } from './channels/channel-new/channel-new.component';
 import { ListingComponentsComponent } from './channels/listing-components/listing-components.component';
-import { UpdateComponent } from './setting/update/update.component';
-import { CreateComponent } from './setting/create/create.component';
+
 
 
 
@@ -37,7 +36,6 @@ import { CreateComponent } from './setting/create/create.component';
     AdminSideNavComponent,
     AdminChannelsComponent,
     DashboardComponent,
-    SettingComponent,
     AdminComponent,
     AdminEntranceComponent,
     AdminEntranceDetailComponent,
@@ -49,8 +47,6 @@ import { CreateComponent } from './setting/create/create.component';
     ChannelContentComponent,
     ChannelNewComponent,
     ListingComponentsComponent,
-    UpdateComponent,
-    CreateComponent,
   ]
 })
 export class AdminModule { }
