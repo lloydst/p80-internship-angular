@@ -77,7 +77,6 @@ export class AdminEventDetailComponent implements OnInit {
      */
     ngOnInit() {
         this.id = this.route.snapshot.params.id;
-       
         this.getData();
         this.form = new FormGroup({
             identifier: new FormControl('', [Validators.required, Validators.minLength(5)]),

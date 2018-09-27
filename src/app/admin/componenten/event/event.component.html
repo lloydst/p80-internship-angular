@@ -112,7 +112,7 @@
                 <button type="submit" class="button succes" [disabled]="!form.valid">Add</button>
             </form>
         </div>
-        
+
         <div class="admin-layout__card--fullwidth" *ngIf="messages?.length > 0">
             <table>
                 <thead class="admin-layout__card--title">
@@ -147,4 +147,23 @@
     </section>
 
 <!-- available images-->
-<app-image-view></app-image-view>
+<section>
+    <div class="admin-layout__card--fullwidth">
+        <h2 class="admin-layout__card--title">images</h2>
+        <div *ngFor="let i of image" id="images" class="admin-layout__card-tiny">
+
+            <h2 class="admin-layout__card--title">{{i.filename}}</h2>
+            <div *ngIf="i.length > 0" class="admin-layout__card-tiny--contents">
+                <!-- not fully responsive yet-->
+                <div>
+                    <img src="/images/img/{{i.filename}}" alt="image couldnt be loaded from db wich means the db is still online"
+                        srcset="" style="width:125px; height:125px">
+                    <button (click)="patchImgLink(i.filename)">fill in</button>
+                </div>
+            </div>
+            <div *ngIf="image.length < 1">
+                no images currently in db
+            </div>
+        </div>
+    </div>
+</section>

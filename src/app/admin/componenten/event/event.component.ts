@@ -4,6 +4,7 @@ import { Message } from '../../../models/message';
 import { Observable } from 'rxjs';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import * as $ from 'jquery';
+import { FileService } from '../../../services/file.service';
 /**
  * event component: here admin's can add and delete messages or go to the detail page to edit
  */
@@ -52,10 +53,15 @@ export class AdminEventComponent implements OnInit {
      */
     form: FormGroup
     /**
+     * binding
+     */
+    image;
+    /**
      * constructor
      * @param dataService for crud operations
      */
-    constructor(private dataService: DataService) { }
+    constructor(private dataService: DataService,
+        private fileService: FileService) { }
     /**
      * function to create a new message/event
      * @param mssg
@@ -88,6 +94,7 @@ export class AdminEventComponent implements OnInit {
             imgUrl: new FormControl('', [Validators.pattern(this.validUrl)]),
             identifier: new FormControl('', [Validators.required, Validators.minLength(5)])
         }, { updateOn: 'change' });
+        this.getAllImages();
     }
     /**
      * get form controls
@@ -172,4 +179,32 @@ export class AdminEventComponent implements OnInit {
             );
         }
     }
+    /**
+ * gets all the images
+ */
+    getAllImages() {
+        this.fileService.getImages().subscribe(images => {
+            this.image = images;
+        });
+    }
+    /**
+     * deletes a img
+     * @param delete_me filename of image too delete
+     */
+    deleteImg(delete_me) {
+        // let done = false
+        this.fileService.deleteImg(delete_me).subscribe(image => {
+            this.image = image;
+            console.log('marco');
+        }, () => {
+            this.getAllImages();
+            console.log('polo');
+        });
+    }
+    patchImgLink(filename) {
+        this.form.patchValue({
+            imgUrl: '/images/img/' + filename
+        })
+    }
 }
+
