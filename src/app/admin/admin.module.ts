@@ -20,7 +20,7 @@ import { AdminChannelsContentsComponent } from './channels/admin-channels-conten
 import { ChannelContentComponent } from './channels/channel-content/channel-content.component';
 import { ChannelNewComponent } from './channels/channel-new/channel-new.component';
 import { ListingComponentsComponent } from './channels/listing-components/listing-components.component';
-import { DndModule } from '@beyerleinf/ngx-dnd';
+import { SortablejsModule } from 'angular-sortablejs';
 
 
 @NgModule({
@@ -30,7 +30,7 @@ import { DndModule } from '@beyerleinf/ngx-dnd';
     ReactiveFormsModule,
     AdminRoutingModule,
     FileUploadModule,
-    DndModule
+    SortablejsModule,
   ],
   declarations: [
     AdminSideNavComponent,

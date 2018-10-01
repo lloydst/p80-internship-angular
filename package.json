@@ -33,7 +33,6 @@
     "@angular/pwa": "^0.7.1",
     "@angular/router": "6.1.8",
     "@angular/service-worker": "6.1.8",
-    "@beyerleinf/ngx-dnd": "^6.0.0-preview3",
     "@microsoft/microsoft-graph-client": "^1.0.0",
     "@ngrx/effects": "^6.1.0",
     "@ngrx/store": "^6.1.0",
@@ -42,6 +41,7 @@
     "@types/googlemaps": "^3.30.11",
     "@types/jquery": "^3.3.5",
     "@types/webrtc": "0.0.23",
+    "angular-sortablejs": "^2.6.0",
     "body-parser": "^1.18.3",
     "compression": "^1.7.3",
     "cookie-parser": "~1.4.3",
@@ -65,6 +65,7 @@
     "rxjs-compat": "^6.2.2",
     "serve-favicon": "~2.5.0",
     "simple-oauth2": "^1.5.2",
+    "sortablejs": "^1.7.0",
     "yql": "^1.0.2",
     "zone.js": "^0.8.26"
   },

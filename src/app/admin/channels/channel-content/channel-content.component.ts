@@ -204,7 +204,6 @@ export class ChannelContentComponent implements OnInit {
     }
     /**
      * saves the contents of the form
-     * @param channel_to_Update channel to update
      */
     save() {
         var formWId = Object.assign(this.form.value, {_id: this.channelData[0]._id})
@@ -237,4 +236,5 @@ export class ChannelContentComponent implements OnInit {
     testUrl(url) {
         window.open(url)
     }
+    
 }

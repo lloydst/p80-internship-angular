@@ -37,8 +37,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './store/effects/app.effects';
 import { WebsiteEffects } from './store/effects/website.effects';
 import { AuthService } from './services/auth.service';
+import {SortablejsModule} from 'angular-sortablejs'
 
-import { DndModule } from '@beyerleinf/ngx-dnd';
 @NgModule({
     declarations: [
         AppComponent,
@@ -58,7 +58,7 @@ import { DndModule } from '@beyerleinf/ngx-dnd';
         StoreModule.forRoot(reducers, { metaReducers }),
         !environment.production ? StoreDevtoolsModule.instrument() : [],
         EffectsModule.forRoot([AppEffects, WebsiteEffects]),
-        DndModule.forRoot()
+        SortablejsModule.forRoot({ animation: 150 }),
     ],
     providers: [
         DataService,

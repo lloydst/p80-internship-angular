@@ -11,6 +11,7 @@
                         {{validation.message}}
                     </div>
                 </div>
+                {{form.value|json}}
                 <div>
                     <a (click)="addPath()">
                         <input class="button succes" type="button" value="Add slide">
@@ -23,8 +24,8 @@
                     <button class="button danger" type="button danger" (click)="revert()" [disabled]="form.pristine">undo/reload</button>
                 </div>
             </div>
-            <div formArrayName="path" class="admin-layout__layout--triple-col" dnd-sortable-container [sortableData]="path.controls">
-                <div *ngFor="let paths of path.controls; let i=index" [formGroupName]="i" class="admin-layout__card" dnd-sortable [sortableIndex]="i">
+            <div formArrayName="path" class="admin-layout__layout--triple-col" [sortablejs]="path">
+                <div *ngFor="let paths of path.controls; let i=index" [formGroupName]="i" class="admin-layout__card" >
                     <!-- path template -->
                     <h4>slide #{{i + 1}}</h4>
                     <div>
