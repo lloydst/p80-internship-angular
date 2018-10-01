@@ -1,40 +1,43 @@
+@import "~@beyerleinf/ngx-dnd/styles.css";
+
 // ---------------------------------------------
 //  Configuration
 // ---------------------------------------------
-@import
-  "helpers/config",
-  "helpers/mixins",
-  "helpers/flexbox",
-  "helpers/css-grid",
-  "helpers/font";
+
+@import "helpers/config";
+@import "helpers/mixins";
+@import "helpers/flexbox";
+@import "helpers/css-grid";
+@import "helpers/font";
 
 // ---------------------------------------------
 //  Elements
 // ---------------------------------------------
-@import
-  "base/elements";
+
+@import "base/elements";
 
 // ---------------------------------------------
 //  Layout
 // ---------------------------------------------
-@import
-  "layout/wrapper",
-  "layout/container",
-  "layout/section",
-  "layout/admin",
-  "layout/channels";
+
+@import "layout/wrapper";
+@import "layout/container";
+@import "layout/section";
+@import "layout/admin";
+@import "layout/channels";
+
 // ---------------------------------------------
 //  Modules
 // ---------------------------------------------
-@import
-  "modules/weather",
-  "modules/financial",
-  "modules/event",
-  "modules/news",
-  "modules/meeting",
-  "modules/forecast",
-  "modules/icon",
-  "modules/support";
+
+@import "modules/weather";
+@import "modules/financial";
+@import "modules/event";
+@import "modules/news";
+@import "modules/meeting";
+@import "modules/forecast";
+@import "modules/icon";
+@import "modules/support";
 
 // ---------------------------------------------
 // Overrrides
@@ -42,4 +45,3 @@
 
 // @import
 //   "override/weather-icons";
-

@@ -75,6 +75,7 @@
             ],
             "styles": [
               "src/style.scss"
+            
             ],
             "assets": [
               "src/assets",

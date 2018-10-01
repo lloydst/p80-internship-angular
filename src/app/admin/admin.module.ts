@@ -20,8 +20,7 @@ import { AdminChannelsContentsComponent } from './channels/admin-channels-conten
 import { ChannelContentComponent } from './channels/channel-content/channel-content.component';
 import { ChannelNewComponent } from './channels/channel-new/channel-new.component';
 import { ListingComponentsComponent } from './channels/listing-components/listing-components.component';
-
-
+import { DndModule } from '@beyerleinf/ngx-dnd';
 
 
 @NgModule({
@@ -31,6 +30,7 @@ import { ListingComponentsComponent } from './channels/listing-components/listin
     ReactiveFormsModule,
     AdminRoutingModule,
     FileUploadModule,
+    DndModule
   ],
   declarations: [
     AdminSideNavComponent,

@@ -86,7 +86,7 @@ export class ChannelNewComponent implements OnInit {
 
     ngOnInit() {
         // we will initialize our form here
-        
+
         this.form = this.fb.group({
             channel: ['', [Validators.required, Validators.minLength(4)]],
             path: this.fb.array([
@@ -111,7 +111,7 @@ export class ChannelNewComponent implements OnInit {
     /**
      * adds a empty 'path'
      */
-    
+
     getPath() {
         // initialize our address
         return this.fb.group({
@@ -121,7 +121,7 @@ export class ChannelNewComponent implements OnInit {
             componentName: new FormControl("here you can set a 'custom' component name", [Validators.required, Validators.minLength(4)])
         });
     }
-    
+
     /**
      * just a function
      */
@@ -156,5 +156,8 @@ export class ChannelNewComponent implements OnInit {
         this.data.createContent(this.form.value).subscribe(() => {
             this.redirectTo(this.form.value.channel);
         });
+    }
+    testUrl(url) {
+        window.open(url)
     }
 }

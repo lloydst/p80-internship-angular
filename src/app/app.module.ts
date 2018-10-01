@@ -38,6 +38,7 @@ import { AppEffects } from './store/effects/app.effects';
 import { WebsiteEffects } from './store/effects/website.effects';
 import { AuthService } from './services/auth.service';
 
+import { DndModule } from '@beyerleinf/ngx-dnd';
 @NgModule({
     declarations: [
         AppComponent,
@@ -57,6 +58,7 @@ import { AuthService } from './services/auth.service';
         StoreModule.forRoot(reducers, { metaReducers }),
         !environment.production ? StoreDevtoolsModule.instrument() : [],
         EffectsModule.forRoot([AppEffects, WebsiteEffects]),
+        DndModule.forRoot()
     ],
     providers: [
         DataService,

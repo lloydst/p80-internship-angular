@@ -42,6 +42,7 @@
                                 </span>
                             </label>
                             <input formControlName="pathurl" class="admin-layout__card--form-input" />
+                            <button (click)="testUrl(form.get('path').controls[i].get('pathurl').value)">test</button>
                             <div *ngFor="let validation of form_validation_messages.pathUrl" class="admin-layout__card--form-error">
                                 <div *ngIf="form.get('path').controls[i].get('pathurl').hasError(validation.type) && form.get('path').controls[i].get('pathurl').touched">
                                     {{validation.message}}
@@ -110,6 +111,6 @@
             </div>
         </form>
     </div>
-    <!-- lists available components
-    <app-listing-components></app-listing-components>-->
+    <!-- lists available components-->
+    <app-listing-components></app-listing-components>
 </section>

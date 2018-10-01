@@ -1,8 +1,8 @@
-<section class="admin-layout__single-col">
+<section class="admin-layout__layout--single-col">
     <div class="admin-layout__card">
         <h2 class="admin-layout__card--title">Edit channel</h2>
         <form [formGroup]="form" (ngSubmit)="save()" class="admin-layout__layout--double-col" #top>
-            
+
             <div class="admin-layout__card">
                 <label>Channel: </label>
                 <input formControlName="channel" class="admin-layout__card--form-input">
@@ -23,8 +23,8 @@
                     <button class="button danger" type="button danger" (click)="revert()" [disabled]="form.pristine">undo/reload</button>
                 </div>
             </div>
-            <div formArrayName="path" class="admin-layout__layout--triple-col">
-                <div *ngFor="let paths of path.controls; let i=index" [formGroupName]="i" class="admin-layout__card">
+            <div formArrayName="path" class="admin-layout__layout--triple-col" dnd-sortable-container [sortableData]="path.controls">
+                <div *ngFor="let paths of path.controls; let i=index" [formGroupName]="i" class="admin-layout__card" dnd-sortable [sortableIndex]="i">
                     <!-- path template -->
                     <h4>slide #{{i + 1}}</h4>
                     <div>
@@ -108,6 +108,6 @@
             </div>
         </form>
     </div>
-    <!-- listing component gives information on how to use the routes
-    <app-listing-components></app-listing-components>-->
+    <!-- listing component gives information on how to use the routes-->
+    <app-listing-components></app-listing-components>
 </section>
