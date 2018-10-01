@@ -117,7 +117,7 @@ export class ChannelNewComponent implements OnInit {
         return this.fb.group({
             pathurl: new FormControl('/components', [Validators.required, Validators.minLength(16)]),
             description: new FormControl('this is where a description would go', [Validators.required, Validators.minLength(20)]),
-            delay: new FormControl('5000', [Validators.required, Validators.min(5000)]),
+            delay: new FormControl('5', [Validators.required, Validators.min(5)]),
             componentName: new FormControl("here you can set a 'custom' component name", [Validators.required, Validators.minLength(4)])
         });
     }

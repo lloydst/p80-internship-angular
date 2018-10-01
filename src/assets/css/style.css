@@ -216,6 +216,11 @@ section {
   margin-top: 0;
 }
 
+.admin-layout__layout--triple-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
 .admin-layout__topnav {
   background-color: darkgrey;
   color: white;
@@ -246,6 +251,7 @@ section {
   margin: 1em;
   box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.5);
   transition: 0.3s;
+  height: fit-content;
 }
 
 .admin-layout__card--contents {

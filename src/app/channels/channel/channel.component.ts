@@ -179,17 +179,17 @@ export class ChannelComponent implements OnInit {
                     setTimeout(() => {
                         myWindow.close();
                         self.getRoutes();
-                        console.log('done');
+                        console.log(self.do[0].path[self.do[0].path.length - 1].delay * 1000,'done');
                         x = 0;
                         go();
-                    }, self.do[0].path[x].delay);
+                    }, self.do[0].path[self.do[0].path.length - 1].delay * 1000);
 
                 } else if (x++ < self.do[0].path.length-1 ) { // if x < then last path increase x by 1
                     setTimeout(() => {
                         myWindow.close();
                         go();
-                        console.log('increased by 1 ='+x);
-                    }, self.do[0].path[x - 1].delay); // x is already increased by 1 so x -1 = the delay that should be used
+                        console.log('increased by 1 =' + x, self.do[0].path[x - 1].delay * 1000);
+                    }, self.do[0].path[x - 1].delay * 1000); // x is already increased by 1 so x -1 = the delay that should be used
                 }
             }
         }

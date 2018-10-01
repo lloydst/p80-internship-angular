@@ -122,7 +122,7 @@ export class ChannelContentComponent implements OnInit {
             const newpath = {
                 pathurl: '',
                 description: '',
-                delay: 20000,
+                delay: 5,
                 componentName: ''
             };
         }
@@ -130,7 +130,7 @@ export class ChannelContentComponent implements OnInit {
         return new FormGroup({
             pathurl: new FormControl(path.pathurl, [Validators.required, Validators.minLength(16)]),
             description: new FormControl(path.description, [Validators.required, Validators.minLength(20)]),
-            delay: new FormControl(path.delay, [Validators.required, Validators.min(5000)]),
+            delay: new FormControl(path.delay, [Validators.required, Validators.min(5)]),
             componentName: new FormControl(path.componentName, [Validators.required, Validators.minLength(4)])
         });
 
@@ -153,10 +153,10 @@ export class ChannelContentComponent implements OnInit {
     getPath() {
         // initialize our address
         return this.fb.group({
-            pathurl: ['/components/', [Validators.required, Validators.minLength(16)]],
+            pathurl: ['https://p80-internship.herokuapp.com/', [Validators.required, Validators.minLength(16)]],
             description: ['', [Validators.required, Validators.minLength(20)]],
             componentName: ['', [Validators.required, Validators.minLength(4)]],
-            delay: [5000, [Validators.min(5000)]]
+            delay: [5, [Validators.min(5)]]
         });
     }
     /**
@@ -179,10 +179,10 @@ export class ChannelContentComponent implements OnInit {
     initPath() {
         // initialize our address
         return this.fb.group({
-            pathurl: ['',Validators.required],
+            pathurl: ['https://p80-internship.herokuapp.com/',Validators.required],
             description: [''],
             componentName: [''],
-            delay: [20000]
+            delay: [5]
         });
     }
     /**
@@ -207,7 +207,6 @@ export class ChannelContentComponent implements OnInit {
      * @param channel_to_Update channel to update
      */
     save() {
-        console.log(this.channelData[0]._id)
         var formWId = Object.assign(this.form.value, {_id: this.channelData[0]._id})
         this.data.saveContent(formWId).subscribe(() => { });
         return { message: 'Saved' };
@@ -234,5 +233,8 @@ export class ChannelContentComponent implements OnInit {
             path: this.fb.array([])
         });
         this.reloadData();
+    }
+    testUrl(url) {
+        window.open(url)
     }
 }

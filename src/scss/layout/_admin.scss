@@ -53,6 +53,11 @@
     margin-top: 0;
 }
 
+.admin-layout__layout--triple-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    //grid-template-rows: auto;
+}
 .admin-layout__topnav {
     //position: fixed;
     background-color: darkgrey; //temp
@@ -84,6 +89,7 @@
     margin: 1em;
     box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.5);
     transition: 0.3s;
+    height: fit-content;
 }
 
 .admin-layout__card--contents {

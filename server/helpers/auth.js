@@ -24,7 +24,7 @@ const credentials = {
   
   async function getTokenFromCode(auth_code, res) {
     let result = await oauth2.authorizationCode.getToken({
-      code: auth_code,
+        code: auth_code,
       redirect_uri: process.env.REDIRECT_URI,
       scope: process.env.APP_SCOPES
     });
@@ -33,13 +33,13 @@ const credentials = {
     //console.log('Token created: ', token.token);
   
     saveValuesToCookie(token, res);
-  
-    return token.token.access_token;
+     
+      return token.token.access_token;
   }
   
   async function getAccessToken(cookies, res) {
     // Do we have an access token cached?
-    let token = cookies.graph_access_token;
+      let token = cookies.graph_access_token;
   
     if (token) {
       // We have a token, but is it expired?

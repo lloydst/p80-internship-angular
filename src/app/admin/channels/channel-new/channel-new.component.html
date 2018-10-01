@@ -1,9 +1,9 @@
-<section class="admin-layout__layout--double-col">
+<section class="admin-layout__layout--single-col">
     <div class="admin-layout__card">
         <h2 class="admin-layout__card--title">Create a channel</h2>
 
-        <form [formGroup]="form" novalidate (ngSubmit)="save(form)" class="admin-layout__card--form">
-            <div class="admin-layout__card--form-group">
+        <form [formGroup]="form" novalidate (ngSubmit)="save(form)" class="admin-layout__layout--double-col"> <!--class="admin-layout__card--form"-->
+            <div class="admin-layout__card">
                 <label>Channel name:
                     <span class="admin-layout__card--form-tooltip">
                         <span>&#9432;</span>
@@ -18,17 +18,22 @@
                         {{validation.message}}
                     </div>
                 </div>
+                <div>
+                    <a (click)="addPath()">
+                        <input class="button succes" type="button" value="Add slide">
+                    </a>
+                </div>
             </div>
-            <!--paths-->
-            <div formArrayName="path">
-                <div *ngFor="let path of f.path['controls']; let i=index">
+            <!--slides-->
+            <div formArrayName="path" class="admin-layout__layout--triple-col">
+                <div *ngFor="let path of f.path['controls']; let i=index" class="admin-layout__card">
                     <div>
-                        <span>path {{i + 1}}</span>
+                        <span>slide {{i + 1}}</span>
                         <span *ngIf="f.path.controls.length > 1" (click)="removePath(i)"></span>
                     </div>
                     <div [formGroupName]="i">
                         <div class="admin-layout__card--form-group">
-                            <label>path url:
+                            <label>slide url:
                                 <span class="admin-layout__card--form-tooltip">
                                     &#9432;
                                     <div class="admin-layout__card--form-tooltiptext">
@@ -99,17 +104,12 @@
                     <br>
                 </div>
             </div>
-            <div>
-                <a (click)="addPath()">
-                    <input class="button succes" type="button" value="Add route">
-                </a>
-            </div>
             <br>
             <div>
                 <button class="button succes" type="submit" [disabled]="!form.valid">Create</button>
             </div>
         </form>
     </div>
-    <!-- lists available components-->
-    <app-listing-components></app-listing-components>
+    <!-- lists available components
+    <app-listing-components></app-listing-components>-->
 </section>

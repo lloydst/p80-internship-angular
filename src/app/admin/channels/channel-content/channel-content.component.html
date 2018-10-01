@@ -1,8 +1,9 @@
-<section class="admin-layout__double-col">
-    <div class="admin-layout__card--fullwidth">
+<section class="admin-layout__single-col">
+    <div class="admin-layout__card">
         <h2 class="admin-layout__card--title">Edit channel</h2>
-        <form [formGroup]="form" (ngSubmit)="save()" class="admin-layout__card--form" #top>
-            <div class="admin-layout__card--form-group">
+        <form [formGroup]="form" (ngSubmit)="save()" class="admin-layout__layout--double-col" #top>
+            
+            <div class="admin-layout__card">
                 <label>Channel: </label>
                 <input formControlName="channel" class="admin-layout__card--form-input">
                 <div *ngFor="let validation of form_validation_messages.channel" class="admin-layout__card--form-error">
@@ -10,15 +11,26 @@
                         {{validation.message}}
                     </div>
                 </div>
+                <div>
+                    <a (click)="addPath()">
+                        <input class="button succes" type="button" value="Add slide">
+                    </a>
+                </div>
+                <div>
+                    <button class="button primary" type="submit" [disabled]="form.pristine">Save</button>
+                    <!--(click)="reloadPage()"-->
+                    &nbsp;
+                    <button class="button danger" type="button danger" (click)="revert()" [disabled]="form.pristine">undo/reload</button>
+                </div>
             </div>
-            <div formArrayName="path">
-                <div *ngFor="let paths of path.controls; let i=index" [formGroupName]="i">
+            <div formArrayName="path" class="admin-layout__layout--triple-col">
+                <div *ngFor="let paths of path.controls; let i=index" [formGroupName]="i" class="admin-layout__card">
                     <!-- path template -->
-                    <h4>path #{{i + 1}}</h4>
+                    <h4>slide #{{i + 1}}</h4>
                     <div>
 
                         <div class="admin-layout__card--form-group">
-                            <label>Url:
+                            <label>Slide url:
                                 <span class="admin-layout__card--form-tooltip">
                                     &#9432;
                                     <div class="admin-layout__card--form-tooltiptext">
@@ -27,7 +39,7 @@
                                 </span>
                             </label><br>
                             <input type="text" formControlName="pathurl" class="admin-layout__card--form-input">
-
+                            <button (click)="testUrl(form.get('path').controls[i].get('pathurl').value)">test</button>
                             <div *ngFor="let validation of form_validation_messages.pathUrl" class="admin-layout__card--form-error">
                                 <div *ngIf="form.get('path').controls[i].get('pathurl').hasError(validation.type)">
                                     {{validation.message}}
@@ -92,15 +104,10 @@
                     <br>
                     <!-- End path template -->
                 </div>
-                <div>
-                    <button class="button primary" type="submit" [disabled]="form.pristine">Save</button>
-                    <!--(click)="reloadPage()"-->
-                    &nbsp;
-                    <button class="button danger" type="button danger" (click)="revert()" [disabled]="form.pristine">undo/reload</button>
-                </div>
+                
             </div>
         </form>
     </div>
-    <!-- listing component gives information on how to use the routes-->
-    <app-listing-components></app-listing-components>
+    <!-- listing component gives information on how to use the routes
+    <app-listing-components></app-listing-components>-->
 </section>
