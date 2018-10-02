@@ -174,23 +174,114 @@ export class ChannelComponent implements OnInit {
                         }
                     }
                 }
-                // if x = the last path
-                if (x === self.do[0].path.length -1 ) {
-                    setTimeout(() => {
-                        myWindow.close();
-                        self.getRoutes();
-                        console.log(self.do[0].path[self.do[0].path.length - 1].delay * 1000,'done');
-                        x = 0;
-                        go();
-                    }, self.do[0].path[self.do[0].path.length - 1].delay * 1000);
 
-                } else if (x++ < self.do[0].path.length-1 ) { // if x < then last path increase x by 1
-                    setTimeout(() => {
-                        myWindow.close();
-                        go();
-                        console.log('increased by 1 =' + x, self.do[0].path[x - 1].delay * 1000);
-                    }, self.do[0].path[x - 1].delay * 1000); // x is already increased by 1 so x -1 = the delay that should be used
+                /**
+                 * if allways run normal
+                 * if not allways=> if day matches=> if time run normal
+                 * else x++ (skip)
+                 */
+                if (self.do[0].path[x].show.allways) {
+                    console.log('allways =' +self.do[0].path[x].show.allways)
+                    if (x === self.do[0].path.length - 1) {
+                        setTimeout(() => {
+                            myWindow.close();
+                            self.getRoutes();
+                            console.log(self.do[0].path[self.do[0].path.length - 1].delay * 1000, 'done');
+                            x = 0;
+                            go();
+                        }, self.do[0].path[self.do[0].path.length - 1].delay * 1000);
+
+                    } else if (x++ < self.do[0].path.length - 1) { // if x < then last path increase x by 1
+                        setTimeout(() => {
+                            myWindow.close();
+                            go();
+                            console.log('increased by 1 =' + x, self.do[0].path[x - 1].delay * 1000);
+                        }, self.do[0].path[x - 1].delay * 1000); // x is already increased by 1 so x -1 = the delay that should be used
+                    }
+                } else if (!self.do[0].path[x].show.allways) {
+                    console.log('allways =' + !self.do[0].path[x].show.allways)
+                    var today = new Date
+                    var dayOfWeek
+                    //console.log(today.getDay())
+                    switch (today.getDay()) {
+                        case 1:
+                            dayOfWeek = 'monday'
+                            break;
+                        case 2:
+                            dayOfWeek = 'tuesday'
+                            break;
+                        case 3:
+                            dayOfWeek = 'wednesday'
+                            break;
+                        case 4:
+                            dayOfWeek = 'thursday'
+                            break;
+                        case 5:
+                            dayOfWeek = 'friday'
+                            break;
+                        case 6:
+                            dayOfWeek = 'saturday'
+                            break;
+                        case 7:
+                            dayOfWeek = 'sunday'
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (self.do[0].path[x].show.days[dayOfWeek]) {
+                        console.log('today is ' + dayOfWeek + 'and that matches ' + self.do[0].path[x].show.days[dayOfWeek] +'from self.do[0].path[x].show.days[dayOfWeek]' )
+                        //correct day
+                        var timefrom = Number(self.do[0].path[x].show.timefrom.substring(0, 2) + self.do[0].path[x].show.timefrom.substring(3, 5));
+                        var timetill = Number(self.do[0].path[x].show.timetill.substring(0, 2) + self.do[0].path[x].show.timetill.substring(3, 5));
+                        // have to convert these numbers to strings first so '13' + '16' = 1316 instead of 29 since i get strings from the database
+                        var hours = today.getHours().toString()
+                        var minutes = today.getMinutes().toString()
+                        if (minutes.length < 2) {
+                           minutes = '0'+minutes
+                           console.log('new minute value (was less then ten added a 0 in front')
+                        }
+                        
+                        var timeNow = Number(hours + minutes)
+                        //console.log(timefrom, timeNow, timetill)
+
+                        if (timefrom <= timeNow && timetill >= timeNow) {
+                            // comparing 1200 -1259 so that 1259-1302 would work as well
+                            console.log(timefrom, timeNow, timetill)
+                            if (x === self.do[0].path.length - 1) {
+                                setTimeout(() => {
+                                    myWindow.close();
+                                    self.getRoutes();
+                                    console.log(self.do[0].path[self.do[0].path.length - 1].delay * 1000, 'done');
+                                    x = 0;
+                                    go();
+                                }, self.do[0].path[self.do[0].path.length - 1].delay * 1000);
+
+                            } else if (x++ < self.do[0].path.length - 1) { // if x < then last path increase x by 1
+                                setTimeout(() => {
+                                    myWindow.close();
+                                    go();
+                                    console.log('increased by 1 =' + x, self.do[0].path[x - 1].delay * 1000);
+                                }, self.do[0].path[x - 1].delay * 1000); // x is already increased by 1 so x -1 = the delay that should be used
+                            }
+                        } else {
+                            console.log('should not display at this time today')
+                            x++
+                            go()
+                        }
+                    } else {
+                        console.log('should not display today')
+                        x++
+                        go()
+                    }
+
+                } else {
+                    console.log('should not display increasing x by 1 and calling go')
+                    x++
+                    go()
                 }
+
+
             }
         }
         go()
