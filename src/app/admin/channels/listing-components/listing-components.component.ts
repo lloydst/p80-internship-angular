@@ -25,13 +25,13 @@ export class ListingComponentsComponent implements OnInit {
  * on load
  */
   ngOnInit() {
-      this.data.getAllWebsites().subscribe((res: any) => {
+    /*  this.data.getAllWebsites().subscribe((res: any) => {
           this.websiteArray = res
           for (let w = 0; w < this.websiteArray.length; w++) {
               this.websiteTime = this.websiteTime + this.websiteArray[w].displayTime;
 
           }
-      })
+         }) */
   }
 
 }

@@ -56,8 +56,10 @@
 .admin-layout__layout--triple-col {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+
     //grid-template-rows: auto;
 }
+
 .admin-layout__topnav {
     //position: fixed;
     background-color: darkgrey; //temp
@@ -160,7 +162,9 @@
 }
 
 .admin-layout__card--form-group {
-    background-color: white; //temp
+    label{
+        font-size: 18px;
+    }
 }
 
 .admin-layout__card--form-tooltip {
@@ -199,7 +203,7 @@
 
 .admin-layout__card--form-input {
     margin: 5px;
-    width: 95%;
+    width: calc(100% - 37.5px);
     resize: none;
     font-size: 17px;
     border: none;
@@ -207,9 +211,16 @@
     font-family: Supernormale, sans-serif;
 }
 
-//-------------------------------------
-// side-nav (uses grid)
-//-------------------------------------
+.admin-layout__card--form-input-test {
+    margin: 5px;
+    width: 80%;
+    resize: none;
+    font-size: 17px;
+    border: none;
+    border-bottom: 1px solid grey;
+    font-family: Supernormale, sans-serif;
+}
+
 .sidenav {
     #link {
         color: black;

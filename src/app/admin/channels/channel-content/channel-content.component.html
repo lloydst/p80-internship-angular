@@ -11,14 +11,13 @@
                         {{validation.message}}
                     </div>
                 </div>
-                {{form.value|json}}
                 <div>
                     <a (click)="addPath()">
                         <input class="button succes" type="button" value="Add slide">
                     </a>
                 </div>
                 <div>
-                    <button class="button primary" type="submit" [disabled]="form.pristine">Save</button>
+                    <button class="button primary" type="submit" [disabled]="!form.valid">Save</button>
                     <!--(click)="reloadPage()"-->
                     &nbsp;
                     <button class="button danger" type="button danger" (click)="revert()" [disabled]="form.pristine">undo/reload</button>
@@ -39,7 +38,15 @@
                                     </div>
                                 </span>
                             </label><br>
-                            <input type="text" formControlName="pathurl" class="admin-layout__card--form-input">
+                            
+                            <input type="text" formControlName="pathurl" class="admin-layout__card--form-input-test" [value]="form.get('path').controls[i].get('pathurl').value">
+                            <select formControlName="pathurl" >
+                                <option style="display:none" >select a category</option>
+                                <option *ngFor="let item of components"
+                               (click)="form.path[i].controls.patchValue({ pathurl: item.url, componentName:item.name},
+                               {onlySelf: true, emitEvent: true, emitModelToViewChange: true,
+                                 emitViewToModelChange: true})" [value]="item.url" >{{item.name}}</option>
+                            </select>
                             <button (click)="testUrl(form.get('path').controls[i].get('pathurl').value)">test</button>
                             <div *ngFor="let validation of form_validation_messages.pathUrl" class="admin-layout__card--form-error">
                                 <div *ngIf="form.get('path').controls[i].get('pathurl').hasError(validation.type)">
@@ -58,7 +65,7 @@
                                     </div>
                                 </span>
                             </label>
-                            <input type="text" formControlName="componentName" class="admin-layout__card--form-input">
+                            <input type="text" formControlName="componentName" class="admin-layout__card--form-input" [value]="form.get('path').controls[i].get('componentName').value">
                             <div *ngFor="let validation of form_validation_messages.componentName" class="admin-layout__card--form-error">
                                 <div *ngIf="form.get('path').controls[i].get('componentName').hasError(validation.type)">
                                     {{validation.message}}
@@ -74,7 +81,7 @@
                                     </div>
                                 </span>
                             </label>
-                            <textarea formControlName="description" class="admin-layout__card--form-input"></textarea>
+                            <textarea formControlName="description" class="admin-layout__card--form-input" [value]="form.get('path').controls[i].get('description').value"></textarea>
                             <div *ngFor="let validation of form_validation_messages.description" class="admin-layout__card--form-error">
                                 <div *ngIf="form.get('path').controls[i].get('description').hasError(validation.type)">
                                     {{validation.message}}
@@ -96,12 +103,31 @@
                                     {{validation.message}}
                                 </div>
                             </div>
-                            <small>{{delay.value / 1000 | number}} seconds</small>
+                        </div>
+                        <div class="admin-layout--form-group" formGroupName="show">
+                            
+                            <label>show:</label>
+                            <div>
+                                <input type="checkbox" checked="true" formControlName="allways" id=""> show allways
+                                <div *ngIf="!form.get('path').controls[i].get('show.allways').value">
+                                    or between <input type="time" formControlName="timefrom" id="">and <input type="time" formControlName="timetill" id="">
+                                    <div formGroupName="days">
+                                        <input type="checkbox" checked="true" formControlName="monday" id=""> monday
+                                        <input type="checkbox" checked="true" formControlName="tuesday" id=""> tuesday
+                                        <input type="checkbox" checked="true" formControlName="wednesday" id=""> wednesday
+                                        <input type="checkbox" checked="true" formControlName="thursday" id=""> thursday
+                                        <input type="checkbox" checked="true" formControlName="friday" id=""> friday
+                                        <input type="checkbox" checked="true" formControlName="saturday" id=""> saturday
+                                        <input type="checkbox" checked="true" formControlName="sunday" id=""> sunday
+                                    </div>
+                                </div>
+                                
+                            </div>
                         </div>
                     </div>
                     <br>
-                    <button class="button succes" type="submit" (click)="addPath()">Add path</button> &nbsp;
-                    <button class="button danger" type="button danger" (click)="removePath(i)">Remove path</button>
+                    <button class="button succes" type="submit" (click)="addPath()">Add slide</button> &nbsp;
+                    <button class="button danger" type="button danger" (click)="removePath(i)">Remove slide</button>
                     <br>
                     <!-- End path template -->
                 </div>

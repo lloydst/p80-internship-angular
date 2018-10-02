@@ -12,12 +12,23 @@ import { DataService } from '../../../services/data.service';
 })
 export class ChannelContentComponent implements OnInit {
     /**
+     * predivined components
+     */
+    components = [
+        { url: 'components/traffic', name: 'traffic', description:'displays a google map with the traffic layer displaying current traffic jams in the area'},
+        { url: 'components/weather', name: 'weather', description:'displays the current weather pulled from the yahoo weather api'},
+        { url: 'components/financial', name: 'financial', description: 'displays bitcoins stock prices'},
+        { url: 'components/event', name: 'message', description: 'this component can display messages'},
+        { url: 'components/meeting', name: 'meeting', description: 'displays the meetings held in the meeting room'},
+        { url: 'components/news', name: 'news', description: 'displays the latest 2 articles from nu.nl (rss feed)'},
+    ]
+    /**
      * form validation based on type it returns a message
      */
     form_validation_messages = {
         'channel': [
             { type: 'required', message:'a channel name is required'},
-            { type: 'minlength', message: 'The client name has to be atleast 3 characters long' }
+            
         ],
         'pathUrl': [
             { type: 'required', message: 'A client name is required please provide one' },
@@ -128,10 +139,24 @@ export class ChannelContentComponent implements OnInit {
         }
         // console.log(path.pathurl)
         return new FormGroup({
-            pathurl: new FormControl(path.pathurl, [Validators.required, Validators.minLength(16)]),
+            pathurl: new FormControl(path.pathurl, [Validators.required]),
             description: new FormControl(path.description, [Validators.required, Validators.minLength(20)]),
             delay: new FormControl(path.delay, [Validators.required, Validators.min(5)]),
-            componentName: new FormControl(path.componentName, [Validators.required, Validators.minLength(4)])
+            componentName: new FormControl(path.componentName, [Validators.required, Validators.minLength(4)]),
+            show: new FormGroup({
+                allways: new FormControl(path.show.allways, []),
+                timefrom: new FormControl(path.show.timefrom, []),
+                timetill: new FormControl(path.show.timetill, []),
+                days: new FormGroup({
+                    monday: new FormControl(path.show.days.monday, []),
+                    tuesday: new FormControl(path.show.days.tuesday, []),
+                    wednesday: new FormControl(path.show.days.wednesday, []),
+                    thursday: new FormControl(path.show.days.thursday, []),
+                    friday: new FormControl(path.show.days.friday, []),
+                    saturday: new FormControl(path.show.days.saturday, []),
+                    sunday: new FormControl(path.show.days.sunday, []),
+                })
+            })
         });
 
     }
@@ -236,5 +261,8 @@ export class ChannelContentComponent implements OnInit {
     testUrl(url) {
         window.open(url)
     }
-    
+    patchurl(item) {
+        
+        console.log(this.form.value, item)
+    }
 }

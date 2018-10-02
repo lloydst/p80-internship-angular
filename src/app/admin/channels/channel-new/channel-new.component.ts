@@ -13,6 +13,15 @@ import { Paths } from '../../../models/channel';
     templateUrl: './channel-new.component.html'
 })
 export class ChannelNewComponent implements OnInit {
+
+    components = [
+        { url: 'components/traffic', name: 'traffic', description: 'displays a google map with the traffic layer displaying current traffic jams in the area' },
+        { url: 'components/weather', name: 'weather', description: 'displays the current weather pulled from the yahoo weather api' },
+        { url: 'components/financial', name: 'financial', description: 'displays bitcoins stock prices' },
+        { url: 'components/event', name: 'message', description: 'this component can display messages' },
+        { url: 'components/meeting', name: 'meeting', description: 'displays the meetings held in the meeting room' },
+        { url: 'components/news', name: 'news', description: 'displays the latest 2 articles from nu.nl (rss feed)' },
+    ]
     /**
      * i should really place these somewhere else
      */
@@ -115,10 +124,24 @@ export class ChannelNewComponent implements OnInit {
     getPath() {
         // initialize our address
         return this.fb.group({
-            pathurl: new FormControl('/components', [Validators.required, Validators.minLength(16)]),
+            pathurl: new FormControl('http://example.com', [Validators.required, Validators.minLength(16)]),
             description: new FormControl('this is where a description would go', [Validators.required, Validators.minLength(20)]),
             delay: new FormControl('5', [Validators.required, Validators.min(5)]),
-            componentName: new FormControl("here you can set a 'custom' component name", [Validators.required, Validators.minLength(4)])
+            componentName: new FormControl("here you can set a 'custom' component name", [Validators.required, Validators.minLength(4)]),
+            show: new FormGroup({
+                allways: new FormControl(true, []),
+                timefrom: new FormControl('09:00', []),
+                timetill: new FormControl('18:00', []),
+                days: new FormGroup({
+                    monday: new FormControl(false,[]),
+                    tuesday: new FormControl(false, []),
+                    wednesday: new FormControl(false, []),
+                    thursday: new FormControl(false, []),
+                    friday: new FormControl(false, []),
+                    saturday: new FormControl(false, []),
+                    sunday: new FormControl(false, []),
+                })
+            })
         });
     }
 
@@ -160,4 +183,5 @@ export class ChannelNewComponent implements OnInit {
     testUrl(url) {
         window.open(url)
     }
+    
 }

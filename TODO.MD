@@ -6,3 +6,53 @@
  - check up on admin scss
  - change animation on financial component
  - touch up the loading component (index.html file in src)
+
+
+
+ 1.
+Alle content moet in elk channel kunnen.                                                                                    ----
+Eigenlijk moet de channel lijst gewoon slides bevatten (zoals je nu ziet bij loop)                                          ----
+
+Die slides hebben dan:
+-	OF component kiezen uit lijst dus niet zelf url invoeren                                                                ----
+-	OF url die je kan invoeren                                                                                              done
+-	Test knop erachter                                                                                                      done
+-	Invoer display tijd in seconden of afhankelijk van component                                                            done
+-	Radiobutton                                                                                                             ----
+o	Altijd tonen                                                                                                            ----
+o	Alleen tonen tussen [16:30]  - [17:30]                                                                                  ----
+op [ ]ma, [ ]di, [ ]wo, [ ]do, [x]vr , [ ]za, [ ]zo                                                                         ----
+-	Vinkje om aan/uit te zetten                                                                                             ----
+
+De slides moet je op volgorde kunnen zetten, niet met volgnummer in database maar door je JSON volgorde aan te passen.      done
+2.
+Noem alles iets logischer en minder technisch: slides                                                                       done
+
+3.
+Loop functie kan dan straks misschien wel weg, maar maak eerst die andere goed                                              --ne
+
+4.
+Voor agenda:
+-	zorg dat je agenda van vergaderzaal toont                                                                               ----
+-	inlog moet op server niet in browser                                                                                    ----
+-	als er content in staat kijken we nog even naar layout                                                                  ----
+
+5.
+Bij message, image kunnen aanklikken i.p.v. url overtypen                                                                   ----
+
+6.
+Over de basis slider/loop.
+-	Als er een slide mist of loop is afgelopen geen admin tonen en ook geen error                                           ----
+-	De slides moeten steeds in zelfde window/tab starten bij starten van de applicatie, als ik het ding 3 uur laat draaien
+ mag er nog steeds maar 1 tabje geopend zijn en niet 1 tabje per 10 minuten bij komen                                       ----
+-	Test wat er gebeurt op de client/browser als je:
+o	Server down is                                                                                                          pwa
+o	Dingen aanpast in content als het ding draait                                                                           on reload
+o	Kanaal opheft dat nu draait                                                                                             hij lijkt dan op een andere over te gaan
+o	Etc
+Misschien hoef je niet alle scenario’s op te lossen, maar het moet er altijd netjes uitzien zelfs al misgaat. Dit beschrijven en ook opnemen in je verslag.
+
+Kan jij:
+-	Maandag van al deze dingen en planning maken
+-	Bedenken waarvoor je nog vragen/hulp nodig hebt
+-	En dan datum/tijd voor 2e demo prikken

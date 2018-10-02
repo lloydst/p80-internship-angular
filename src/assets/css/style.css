@@ -318,8 +318,8 @@ section {
   margin: 1em;
 }
 
-.admin-layout__card--form-group {
-  background-color: white;
+.admin-layout__card--form-group label {
+  font-size: 18px;
 }
 
 .admin-layout__card--form-tooltip {
@@ -352,7 +352,17 @@ section {
 
 .admin-layout__card--form-input {
   margin: 5px;
-  width: 95%;
+  width: calc(100% - 37.5px);
+  resize: none;
+  font-size: 17px;
+  border: none;
+  border-bottom: 1px solid grey;
+  font-family: Supernormale, sans-serif;
+}
+
+.admin-layout__card--form-input-test {
+  margin: 5px;
+  width: 80%;
   resize: none;
   font-size: 17px;
   border: none;

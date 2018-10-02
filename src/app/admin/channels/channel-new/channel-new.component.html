@@ -2,7 +2,8 @@
     <div class="admin-layout__card">
         <h2 class="admin-layout__card--title">Create a channel</h2>
 
-        <form [formGroup]="form" novalidate (ngSubmit)="save(form)" class="admin-layout__layout--double-col"> <!--class="admin-layout__card--form"-->
+        <form [formGroup]="form" novalidate (ngSubmit)="save(form)" class="admin-layout__layout--double-col">
+            <!--class="admin-layout__card--form"-->
             <div class="admin-layout__card">
                 <label>Channel name:
                     <span class="admin-layout__card--form-tooltip">
@@ -19,6 +20,7 @@
                     </div>
                 </div>
                 <div>
+                    <button class="button succes" type="submit" [disabled]="!form.valid">Create</button>
                     <a (click)="addPath()">
                         <input class="button succes" type="button" value="Add slide">
                     </a>
@@ -37,11 +39,21 @@
                                 <span class="admin-layout__card--form-tooltip">
                                     &#9432;
                                     <div class="admin-layout__card--form-tooltiptext">
-                                        requires a relative url to a component simply pick a component from the right and add its name after the second '/'
+                                        requires a relative url to a component simply pick a component from the right
+                                        and add its name after the second '/'
                                     </div>
                                 </span>
                             </label>
-                            <input formControlName="pathurl" class="admin-layout__card--form-input" />
+
+                            <input type="text" formControlName="pathurl" class="admin-layout__card--form-input-test"
+                                [value]="form.get('path').controls[i].get('pathurl').value">
+                            <select formControlName="pathurl">
+                                <option style="display:none">select a category</option>
+                                <option *ngFor="let item of components" (click)="form.path[i].controls.patchValue({ pathurl: item.url, componentName:item.name},
+                                                           {onlySelf: true, emitEvent: true, emitModelToViewChange: true,
+                                                             emitViewToModelChange: true})"
+                                    [value]="item.url">{{item.name}}</option>
+                            </select>
                             <button (click)="testUrl(form.get('path').controls[i].get('pathurl').value)">test</button>
                             <div *ngFor="let validation of form_validation_messages.pathUrl" class="admin-layout__card--form-error">
                                 <div *ngIf="form.get('path').controls[i].get('pathurl').hasError(validation.type) && form.get('path').controls[i].get('pathurl').touched">
@@ -58,7 +70,7 @@
                                     </div>
                                 </span>
                             </label>
-                            <input type="text" formControlName="description" value="Does this and that" class="admin-layout__card--form-input"/>
+                            <input type="text" formControlName="description" value="Does this and that" class="admin-layout__card--form-input" />
                             <div *ngFor="let validation of form_validation_messages.description" class="admin-layout__card--form-error">
                                 <div *ngIf="form.get('path').controls[i].get('description').hasError(validation.type)">
                                     {{validation.message}}
@@ -97,17 +109,37 @@
                                 </div>
                             </div>
                         </div>
-                        <br>
+                        <div class="admin-layout--form-group" formGroupName="show">
+
+                            <label>show:</label>
+                            <div>
+                                <input type="checkbox" checked="true" formControlName="allways" id=""> show allways
+                                <div *ngIf="!form.get('path').controls[i].get('show.allways').value">
+                                    or between <input type="time" formControlName="timefrom" id="">and <input type="time"
+                                        formControlName="timetill" id="">
+                                    <div formGroupName="days">
+                                        <input type="checkbox" checked="true" formControlName="monday" id=""> monday
+                                        <input type="checkbox" checked="true" formControlName="tuesday" id=""> tuesday
+                                        <input type="checkbox" checked="true" formControlName="wednesday" id="">
+                                        wednesday
+                                        <input type="checkbox" checked="true" formControlName="thursday" id="">
+                                        thursday
+                                        <input type="checkbox" checked="true" formControlName="friday" id=""> friday
+                                        <input type="checkbox" checked="true" formControlName="saturday" id="">
+                                        saturday
+                                        <input type="checkbox" checked="true" formControlName="sunday" id=""> sunday
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
                         <a (click)="removePath(i)">
-                            <input type="button" class="button warning" value="removePath">
+                            <input type="button" class="button warning" value="Remove Slide">
                         </a>
                     </div>
                     <br>
                 </div>
-            </div>
-            <br>
-            <div>
-                <button class="button succes" type="submit" [disabled]="!form.valid">Create</button>
             </div>
         </form>
     </div>
