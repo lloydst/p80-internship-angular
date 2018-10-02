@@ -237,11 +237,11 @@ export class ChannelComponent implements OnInit {
                         // have to convert these numbers to strings first so '13' + '16' = 1316 instead of 29 since i get strings from the database
                         var hours = today.getHours().toString()
                         var minutes = today.getMinutes().toString()
+                        //if minute less then 10 it will only be 4 instead of 04 now thats fixed.
                         if (minutes.length < 2) {
                            minutes = '0'+minutes
                            console.log('new minute value (was less then ten added a 0 in front')
                         }
-                        
                         var timeNow = Number(hours + minutes)
                         //console.log(timefrom, timeNow, timetill)
 

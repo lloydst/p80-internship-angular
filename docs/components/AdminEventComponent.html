@@ -137,6 +137,9 @@
                                 <a href="#form_validation_messages">form_validation_messages</a>
                             </li>
                             <li>
+                                <a href="#image">image</a>
+                            </li>
+                            <li>
                                 <a href="#messages">messages</a>
                             </li>
                             <li>
@@ -170,6 +173,12 @@
                                 <a href="#delete">delete</a>
                             </li>
                             <li>
+                                <a href="#deleteImg">deleteImg</a>
+                            </li>
+                            <li>
+                                <a href="#getAllImages">getAllImages</a>
+                            </li>
+                            <li>
                                 <a href="#getData">getData</a>
                             </li>
                             <li>
@@ -177,6 +186,9 @@
                             </li>
                             <li>
                                 <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#patchImgLink">patchImgLink</a>
                             </li>
                         </ul>
                     </td>
@@ -210,12 +222,12 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
-<code>constructor(dataService: <a href="../injectables/DataService.html">DataService</a>)</code>
+<code>constructor(dataService: <a href="../injectables/DataService.html">DataService</a>, fileService: <a href="../injectables/FileService.html">FileService</a>)</code>
                     </td>
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:53</a></div>
+                                <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:58</a></div>
                             </td>
                         </tr>
 
@@ -248,6 +260,22 @@
                                                     
                                                         <td>
                                                                 <code><p>for crud operations</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>fileService</td>
+                                                  
+                                                        <td>
+                                                                    <code><a href="../injectables/FileService.html" target="_self" >FileService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <code><p>for the images</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -291,7 +319,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="151" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:151</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="158" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:158</a></div>
                             </td>
                         </tr>
 
@@ -358,7 +386,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:107</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="115" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:115</a></div>
                             </td>
                         </tr>
 
@@ -514,7 +542,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="161" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:161</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="168" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:168</a></div>
                             </td>
                         </tr>
 
@@ -568,6 +596,118 @@
             <tbody>
                 <tr>
                     <td class="col-md-4">
+                        <a name="deleteImg"></a>
+                        <span class="name">
+                            <b>
+                            deleteImg
+                            </b>
+                            <a href="#deleteImg"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>deleteImg(delete_me: )</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="195" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:195</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>deletes a img</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>delete_me</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>filename of image too delete</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="getAllImages"></a>
+                        <span class="name">
+                            <b>
+                            getAllImages
+                            </b>
+                            <a href="#getAllImages"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>getAllImages()</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="186" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:186</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>gets all the images</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
                         <a name="getData"></a>
                         <span class="name">
                             <b>
@@ -586,7 +726,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="141" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:141</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="148" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:148</a></div>
                             </td>
                         </tr>
 
@@ -626,7 +766,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="68" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:68</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="75" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:75</a></div>
                             </td>
                         </tr>
 
@@ -752,7 +892,7 @@
 
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="82" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:82</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="89" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:89</a></div>
                             </td>
                         </tr>
 
@@ -766,6 +906,78 @@
                                 <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
 
                             </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="patchImgLink"></a>
+                        <span class="name">
+                            <b>
+                            patchImgLink
+                            </b>
+                            <a href="#patchImgLink"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+<code>patchImgLink(filename: )</code>
+                    </td>
+                </tr>
+
+
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="209" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:209</a></div>
+                            </td>
+                        </tr>
+
+
+                <tr>
+                    <td class="col-md-4">
+                            <div class="io-description"><p>push img to the form</p>
+</div>
+
+                            <div class="io-description">
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>filename</td>
+                                                    
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+
+                                                        <td>
+                                                                <code><p>img to be pushed</p>
+</code>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                            <div>
+                            </div>
+                            <div class="io-description">
+                                <b>Returns : </b>    <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                            </div>
+                                <div class="io-description">
+                                    
+                                </div>
                     </td>
                 </tr>
             </tbody>
@@ -798,7 +1010,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:49</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:50</a></div>
                             </td>
                         </tr>
 
@@ -838,7 +1050,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:53</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:54</a></div>
                             </td>
                         </tr>
 
@@ -884,11 +1096,11 @@
         ],
         &#x27;showFrom&#x27;: [
             { type: &#x27;required&#x27;, message: &quot;A start time is required&quot; },
-            { type: &#x27;pattern&#x27;, message: &quot;please fill out all fields (both time and date&quot; }
+            { type: &#x27;pattern&#x27;, message: &quot;please fill out all fields (both time and date)&quot; }
         ],
         &#x27;showTill&#x27;: [
             { type: &#x27;required&#x27;, message: &quot;A end time is required&quot; },
-            { type: &#x27;pattern&#x27;, message: &quot;please fill out all fields (both time and date&quot; }
+            { type: &#x27;pattern&#x27;, message: &quot;please fill out all fields (both time and date)&quot; }
         ],
         &#x27;imgUrl&#x27;: [
             { type: &#x27;pattern&#x27;, message: &#x27;the img url has to come from example.com/images/img/image_name&#x27; },
@@ -901,13 +1113,47 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:19</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:20</a></div>
                             </td>
                         </tr>
 
                 <tr>
                     <td class="col-md-4">
                         <div class="io-description"><p>form validation returns a message if the errortype equals the type</p>
+</div>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="image"></a>
+                        <span class="name">
+                            <b>
+                            image
+                            </b>
+                            <a href="#image"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <code>image:     <code></code>
+</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:58</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>binding</p>
 </div>
                     </td>
                 </tr>
@@ -935,7 +1181,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="41" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:41</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="42" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:42</a></div>
                             </td>
                         </tr>
 
@@ -969,7 +1215,7 @@
                 </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="45" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:45</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="46" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:46</a></div>
                             </td>
                         </tr>
 
@@ -1009,12 +1255,12 @@
                     </tr>
                     <tr>
                         <td class="col-md-4">
-                            <i>Default value : </i><code>&#x27;[0-9]{4}-([0-9]|0[0-9]|1[0-9])-([0-9][0-9]|[0-9])T([0-9]|0[0-9]|1[0-9]):[0-9]{2}&#x27;</code>
+                            <i>Default value : </i><code>&#x27;[0-9]{4}-([0-9]|0[0-9]|1[0-9])-([0-9][0-9]|[0-9])T([0-9][0-9]):([0-9][0-9])&#x27;</code>
                         </td>
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:78</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="85" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:85</a></div>
                             </td>
                         </tr>
 
@@ -1059,7 +1305,7 @@
                     </tr>
                         <tr>
                             <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:74</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="81" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:81</a></div>
                             </td>
                         </tr>
 
@@ -1094,7 +1340,7 @@
                 </tr>
                             <tr>
                                 <td class="col-md-4">
-                                    <div class="io-line">Defined in <a href="" data-line="95" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:95</a></div>
+                                    <div class="io-line">Defined in <a href="" data-line="103" class="link-to-prism">src/app/admin/componenten/event/event.component.ts:103</a></div>
                                 </td>
                             </tr>
                     <tr>
@@ -1118,6 +1364,7 @@ import { Message } from &#x27;../../../models/message&#x27;;
 import { Observable } from &#x27;rxjs&#x27;;
 import { Validators, FormGroup, FormControl } from &#x27;@angular/forms&#x27;;
 import * as $ from &#x27;jquery&#x27;;
+import { FileService } from &#x27;../../../services/file.service&#x27;;
 /**
  * event component: here admin&#x27;s can add and delete messages or go to the detail page to edit
  */
@@ -1136,11 +1383,11 @@ export class AdminEventComponent implements OnInit {
         ],
         &#x27;showFrom&#x27;: [
             { type: &#x27;required&#x27;, message: &quot;A start time is required&quot; },
-            { type: &#x27;pattern&#x27;, message: &quot;please fill out all fields (both time and date&quot; }
+            { type: &#x27;pattern&#x27;, message: &quot;please fill out all fields (both time and date)&quot; }
         ],
         &#x27;showTill&#x27;: [
             { type: &#x27;required&#x27;, message: &quot;A end time is required&quot; },
-            { type: &#x27;pattern&#x27;, message: &quot;please fill out all fields (both time and date&quot; }
+            { type: &#x27;pattern&#x27;, message: &quot;please fill out all fields (both time and date)&quot; }
         ],
         &#x27;imgUrl&#x27;: [
             { type: &#x27;pattern&#x27;, message: &#x27;the img url has to come from example.com/images/img/image_name&#x27; },
@@ -1166,10 +1413,16 @@ export class AdminEventComponent implements OnInit {
      */
     form: FormGroup
     /**
+     * binding
+     */
+    image;
+    /**
      * constructor
      * @param dataService for crud operations
+     * @param fileService for the images
      */
-    constructor(private dataService: DataService) { }
+    constructor(private dataService: DataService,
+        private fileService: FileService) { }
     /**
      * function to create a new message/event
      * @param mssg
@@ -1189,7 +1442,7 @@ export class AdminEventComponent implements OnInit {
     /**
      * valid time shape
      */
-    validTime &#x3D; &#x27;[0-9]{4}-([0-9]|0[0-9]|1[0-9])-([0-9][0-9]|[0-9])T([0-9]|0[0-9]|1[0-9]):[0-9]{2}&#x27;
+    validTime &#x3D; &#x27;[0-9]{4}-([0-9]|0[0-9]|1[0-9])-([0-9][0-9]|[0-9])T([0-9][0-9]):([0-9][0-9])&#x27;
     /**
      * on load
      */
@@ -1199,9 +1452,10 @@ export class AdminEventComponent implements OnInit {
             message: new FormControl(&#x27;&#x27;, [Validators.required]),
             showFrom: new FormControl(&#x27;&#x27;, [Validators.required, Validators.pattern(this.validTime)]),
             showTill: new FormControl(&#x27;&#x27;, [Validators.required, Validators.pattern(this.validTime)]),
-            imgUrl: new FormControl(&#x27;&#x27;,[Validators.pattern(this.validUrl)]),
+            imgUrl: new FormControl(&#x27;&#x27;, [Validators.pattern(this.validUrl)]),
             identifier: new FormControl(&#x27;&#x27;, [Validators.required, Validators.minLength(5)])
         }, { updateOn: &#x27;change&#x27; });
+        this.getAllImages();
     }
     /**
      * get form controls
@@ -1230,7 +1484,6 @@ export class AdminEventComponent implements OnInit {
             newFrom &#x3D; newFrom + fromStr[i];
             newTill &#x3D; newTill + untillStr[i];
         }
-
         this.dataService.createMessage({
             message: mssg,
             showFrom: from,
@@ -1287,116 +1540,148 @@ export class AdminEventComponent implements OnInit {
             );
         }
     }
+    /**
+ * gets all the images
+ */
+    getAllImages() {
+        this.fileService.getImages().subscribe(images &#x3D;&gt; {
+            this.image &#x3D; images;
+        });
+    }
+    /**
+     * deletes a img
+     * @param delete_me filename of image too delete
+     */
+    deleteImg(delete_me) {
+        // let done &#x3D; false
+        this.fileService.deleteImg(delete_me).subscribe(image &#x3D;&gt; {
+            this.image &#x3D; image;
+            console.log(&#x27;marco&#x27;);
+        }, () &#x3D;&gt; {
+            this.getAllImages();
+            console.log(&#x27;polo&#x27;);
+        });
+    }
+    /**
+     * push img to the form
+     * @param filename img to be pushed
+     */
+    patchImgLink(filename) {
+        this.form.patchValue({
+            imgUrl: &#x27;/images/img/&#x27; + filename
+        })
+    }
 }
+
 </code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;!-- Important! classes and id&#x27;s are used in the ts file --&gt;
-&lt;div class&#x3D;&quot;admin-wrapper-main&quot;&gt;
-    &lt;section&gt;
-        &lt;div class&#x3D;&quot;admin-wrapper-main__card&quot;&gt;
-            &lt;h2 class&#x3D;&quot;admin-wrapper-main__card--title&quot;&gt;Create a Message here&lt;/h2&gt;
-            &lt;form class&#x3D;&quot;admin-wrapper-main__card--form&quot; (ngSubmit)&#x3D;&quot;create(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, identifier.value); form.reset()&quot;
+
+    &lt;section class&#x3D;&quot;admin-layout__layout--double-col&quot;&gt;
+        &lt;div class&#x3D;&quot;admin-layout__card--fullwidth&quot;&gt;
+            &lt;h2 class&#x3D;&quot;admin-layout__card--title&quot;&gt;Create a Message here&lt;/h2&gt;
+            &lt;form class&#x3D;&quot;admin-layout__card--form&quot; (ngSubmit)&#x3D;&quot;create(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, identifier.value); form.reset()&quot;
                 [formGroup]&#x3D;&quot;form&quot;&gt;
-                &lt;div class&#x3D;&quot;admin-wrapper-main__card--form-group&quot;&gt;
+                &lt;div class&#x3D;&quot;admin-layout__card--form-group&quot;&gt;
                     &lt;label for&#x3D;&quot;id&quot;&gt;message name:
-                        &lt;span class&#x3D;&quot;admin-wrapper-main__card--form--tooltip&quot;&gt;
+                        &lt;span class&#x3D;&quot;admin-layout__card--form-tooltip&quot;&gt;
                             &amp;#9432;
-                            &lt;div class&#x3D;&quot;admin-wrapper-main__card--form--tooltiptext&quot;&gt;
+                            &lt;div class&#x3D;&quot;admin-layout__card--form-tooltiptext&quot;&gt;
                                 doubles as a title and identifier
                             &lt;/div&gt;
                         &lt;/span&gt;
                     &lt;/label&gt;
-                    &lt;input class&#x3D;&quot;admin-wrapper-main__card--form-input&quot; #identifier type&#x3D;&quot;text&quot; name&#x3D;&quot;identifier&quot; formControlName&#x3D;&quot;identifier&quot; required&gt;
+                    &lt;input class&#x3D;&quot;admin-layout__card--form-input&quot; #identifier type&#x3D;&quot;text&quot; name&#x3D;&quot;identifier&quot; formControlName&#x3D;&quot;identifier&quot; required&gt;
                     &lt;div *ngIf&#x3D;&quot;form.get(&#x27;identifier&#x27;).touched&quot;&gt;
-                        &lt;div *ngFor&#x3D;&quot;let validation of form_validation_messages.identifier&quot; class&#x3D;&quot;admin-wrapper-main__card--form-error&quot;&gt;
+                        &lt;div *ngFor&#x3D;&quot;let validation of form_validation_messages.identifier&quot; class&#x3D;&quot;admin-layout__card--form-error&quot;&gt;
                             &lt;div *ngIf&#x3D;&quot;form.get(&#x27;identifier&#x27;).hasError(validation.type)&quot;&gt;
                                 {{validation.message}}
                             &lt;/div&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
-                &lt;div class&#x3D;&quot;admin-wrapper-main__card--form-group&quot;&gt;
+                &lt;div class&#x3D;&quot;admin-layout__card--form-group&quot;&gt;
                     &lt;label for&#x3D;&quot;message&quot;&gt;message:
-                        &lt;span class&#x3D;&quot;admin-wrapper-main__card--form--tooltip&quot;&gt;
+                        &lt;span class&#x3D;&quot;admin-layout__card--form-tooltip&quot;&gt;
                             &amp;#9432;
-                            &lt;div class&#x3D;&quot;admin-wrapper-main__card--form--tooltiptext&quot;&gt;
+                            &lt;div class&#x3D;&quot;admin-layout__card--form-tooltiptext&quot;&gt;
                                 the actual message
                             &lt;/div&gt;
                         &lt;/span&gt;
                     &lt;/label&gt;
                     &lt;br&gt;
-                    &lt;input class&#x3D;&quot;admin-wrapper-main__card--form-input&quot; #message type&#x3D;&quot;text&quot; required formControlName&#x3D;&quot;message&quot;&gt;
+                    &lt;input class&#x3D;&quot;admin-layout__card--form-input&quot; #message type&#x3D;&quot;text&quot; required formControlName&#x3D;&quot;message&quot;&gt;
                     &lt;div *ngIf&#x3D;&quot;form.get(&#x27;message&#x27;).touched&quot;&gt;
-                        &lt;div *ngFor&#x3D;&quot;let validation of form_validation_messages.message&quot; class&#x3D;&quot;admin-wrapper-main__card--form-error&quot;&gt;
+                        &lt;div *ngFor&#x3D;&quot;let validation of form_validation_messages.message&quot; class&#x3D;&quot;admin-layout__card--form-error&quot;&gt;
                             &lt;div *ngIf&#x3D;&quot;form.get(&#x27;message&#x27;).hasError(validation.type)&quot;&gt;
                                 {{validation.message}}
                             &lt;/div&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
-                &lt;div class&#x3D;&quot;admin-wrapper-main__card--form-group&quot;&gt;
+                &lt;div class&#x3D;&quot;admin-layout__card--form-group&quot;&gt;
                     &lt;label for&#x3D;&quot;showFrom&quot;&gt;zichtbaar van af:
-                        &lt;span class&#x3D;&quot;admin-wrapper-main__card--form--tooltip&quot;&gt;
+                        &lt;span class&#x3D;&quot;admin-layout__card--form-tooltip&quot;&gt;
                             &amp;#9432;
-                            &lt;div class&#x3D;&quot;admin-wrapper-main__card--form--tooltiptext&quot;&gt;
+                            &lt;div class&#x3D;&quot;admin-layout__card--form-tooltiptext&quot;&gt;
                                 the start date/time the message is visable
                             &lt;/div&gt;
                         &lt;/span&gt;
                     &lt;/label&gt;
-                    &lt;input class&#x3D;&quot;admin-wrapper-main__card--form-input&quot; type&#x3D;&quot;datetime-local&quot; name&#x3D;&quot;showFrom&quot; #showFrom id&#x3D;&quot;showFrom&quot; required
+                    &lt;input class&#x3D;&quot;admin-layout__card--form-input&quot; type&#x3D;&quot;datetime-local&quot; name&#x3D;&quot;showFrom&quot; #showFrom id&#x3D;&quot;showFrom&quot; required
                         formControlName&#x3D;&quot;showFrom&quot;&gt;
                         &lt;div *ngIf&#x3D;&quot;form.get(&#x27;showFrom&#x27;).touched&quot;&gt;
-                            &lt;div *ngFor&#x3D;&quot;let validation of form_validation_messages.showFrom&quot; class&#x3D;&quot;admin-wrapper-main__card--form-error&quot;&gt;
+                            &lt;div *ngFor&#x3D;&quot;let validation of form_validation_messages.showFrom&quot; class&#x3D;&quot;admin-layout__card--form-error&quot;&gt;
                                 &lt;div *ngIf&#x3D;&quot;form.get(&#x27;showFrom&#x27;).hasError(validation.type)&quot;&gt;
                                     {{validation.message}}
                                 &lt;/div&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
                 &lt;/div&gt;
-                &lt;div class&#x3D;&quot;admin-wrapper-main__card--form-group&quot;&gt;
+                &lt;div class&#x3D;&quot;admin-layout__card--form-group&quot;&gt;
                     &lt;label for&#x3D;&quot;showTill&quot;&gt;zichtbaar tot:
-                        &lt;span class&#x3D;&quot;admin-wrapper-main__card--form--tooltip&quot;&gt;
+                        &lt;span class&#x3D;&quot;admin-layout__card--form-tooltip&quot;&gt;
                             &amp;#9432;
-                            &lt;div class&#x3D;&quot;admin-wrapper-main__card--form--tooltiptext&quot;&gt;
+                            &lt;div class&#x3D;&quot;admin-layout__card--form-tooltiptext&quot;&gt;
                                 the end date/time the message is visable
                             &lt;/div&gt;
                         &lt;/span&gt;
                     &lt;/label&gt;
-                    &lt;input class&#x3D;&quot;admin-wrapper-main__card--form-input&quot; type&#x3D;&quot;datetime-local&quot; name&#x3D;&quot;showTill&quot; #showTill id&#x3D;&quot;showTill&quot; required
+                    &lt;input class&#x3D;&quot;admin-layout__card--form-input&quot; type&#x3D;&quot;datetime-local&quot; name&#x3D;&quot;showTill&quot; #showTill id&#x3D;&quot;showTill&quot; required
                         formControlName&#x3D;&quot;showTill&quot;&gt;
                         &lt;div *ngIf&#x3D;&quot;form.get(&#x27;showTill&#x27;).touched&quot;&gt;
-                            &lt;div *ngFor&#x3D;&quot;let validation of form_validation_messages.showTill&quot; class&#x3D;&quot;admin-wrapper-main__card--form-error&quot;&gt;
+                            &lt;div *ngFor&#x3D;&quot;let validation of form_validation_messages.showTill&quot; class&#x3D;&quot;admin-layout__card--form-error&quot;&gt;
                                 &lt;div *ngIf&#x3D;&quot;form.get(&#x27;showTill&#x27;).hasError(validation.type)&quot;&gt;
                                     {{validation.message}}
                                 &lt;/div&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
                 &lt;/div&gt;
-                &lt;div class&#x3D;&quot;admin-wrapper-main__card--form-group&quot;&gt;
+                &lt;div class&#x3D;&quot;admin-layout__card--form-group&quot;&gt;
                     &lt;label for&#x3D;&quot;imgUrl&quot;&gt;achtergrond img:
-                        &lt;span class&#x3D;&quot;admin-wrapper-main__card--form--tooltip&quot;&gt;
+                        &lt;span class&#x3D;&quot;admin-layout__card--form-tooltip&quot;&gt;
                             &amp;#9432;
-                            &lt;div class&#x3D;&quot;admin-wrapper-main__card--form--tooltiptext&quot;&gt;
+                            &lt;div class&#x3D;&quot;admin-layout__card--form-tooltiptext&quot;&gt;
                                 a optional background img
                             &lt;/div&gt;
                         &lt;/span&gt;
                     &lt;/label&gt;
-                    &lt;input class&#x3D;&quot;admin-wrapper-main__card--form-input&quot; #imgUrl type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;imgUrl&quot;&gt;
+                    &lt;input class&#x3D;&quot;admin-layout__card--form-input&quot; #imgUrl type&#x3D;&quot;text&quot; formControlName&#x3D;&quot;imgUrl&quot;&gt;
                     &lt;div *ngIf&#x3D;&quot;form.get(&#x27;imgUrl&#x27;).touched&quot;&gt;
-                        &lt;div *ngFor&#x3D;&quot;let validation of form_validation_messages.imgUrl&quot; class&#x3D;&quot;admin-wrapper-main__card--form-error&quot;&gt;
+                        &lt;div *ngFor&#x3D;&quot;let validation of form_validation_messages.imgUrl&quot; class&#x3D;&quot;admin-layout__card--form-error&quot;&gt;
                             &lt;div *ngIf&#x3D;&quot;form.get(&#x27;imgUrl&#x27;).hasError(validation.type)&quot;&gt;
                                 {{validation.message}}
                             &lt;/div&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
-                &lt;div class&#x3D;&quot;admin-wrapper-main__card--form-group&quot;&gt;
+                &lt;div class&#x3D;&quot;admin-layout__card--form-group&quot;&gt;
                     &lt;label for&#x3D;&quot;imgBoolean&quot;&gt;visable
-                        &lt;span class&#x3D;&quot;admin-wrapper-main__card--form--tooltip&quot;&gt;
+                        &lt;span class&#x3D;&quot;admin-layout__card--form-tooltip&quot;&gt;
                             &amp;#9432;
-                            &lt;div class&#x3D;&quot;admin-wrapper-main__card--form--tooltiptext&quot;&gt;
+                            &lt;div class&#x3D;&quot;admin-layout__card--form-tooltiptext&quot;&gt;
                                 manually setting the component to be visable
                             &lt;/div&gt;
                         &lt;/span&gt;
@@ -1406,9 +1691,10 @@ export class AdminEventComponent implements OnInit {
                 &lt;button type&#x3D;&quot;submit&quot; class&#x3D;&quot;button succes&quot; [disabled]&#x3D;&quot;!form.valid&quot;&gt;Add&lt;/button&gt;
             &lt;/form&gt;
         &lt;/div&gt;
-        &lt;div class&#x3D;&quot;admin-wrapper-main__card--fullwidth&quot; *ngIf&#x3D;&quot;messages?.length &gt; 0&quot;&gt;
+
+        &lt;div class&#x3D;&quot;admin-layout__card--fullwidth&quot; *ngIf&#x3D;&quot;messages?.length &gt; 0&quot;&gt;
             &lt;table&gt;
-                &lt;thead class&#x3D;&quot;admin-wrapper-main__card--title&quot;&gt;
+                &lt;thead class&#x3D;&quot;admin-layout__card--title&quot;&gt;
                     &lt;th&gt;identifier&lt;/th&gt;
                     &lt;th&gt;Message&lt;/th&gt;
                     &lt;th&gt;show (from-untill)&lt;/th&gt;
@@ -1417,7 +1703,7 @@ export class AdminEventComponent implements OnInit {
                     &lt;th&gt;update&lt;/th&gt;
                     &lt;th&gt;delete&lt;/th&gt;
                 &lt;/thead&gt;
-                &lt;tr class&#x3D;&quot;admin-wrapper-main__card--contents&quot; *ngFor&#x3D;&quot;let message of messages&quot;&gt;
+                &lt;tr class&#x3D;&quot;admin-layout__card--contents&quot; *ngFor&#x3D;&quot;let message of messages&quot;&gt;
                     &lt;td&gt;{{message.identifier}}&lt;/td&gt;
                     &lt;td&gt;{{message.message}}&lt;/td&gt;
                     &lt;td&gt;{{message.showFrom.substring(8, 10)}}-{{message.showFrom.substring(5, 7)}}({{message.showFrom.substring(11,
@@ -1438,9 +1724,28 @@ export class AdminEventComponent implements OnInit {
             &lt;/table&gt;
         &lt;/div&gt;
     &lt;/section&gt;
-&lt;/div&gt;
+
 &lt;!-- available images--&gt;
-&lt;app-image-view&gt;&lt;/app-image-view&gt;</code></pre>
+&lt;section&gt;
+    &lt;div class&#x3D;&quot;admin-layout__card--fullwidth&quot;&gt;
+        &lt;h2 class&#x3D;&quot;admin-layout__card--title&quot;&gt;images&lt;/h2&gt;
+        &lt;div *ngFor&#x3D;&quot;let i of image&quot; id&#x3D;&quot;images&quot; class&#x3D;&quot;admin-layout__card-tiny&quot;&gt;
+
+            &lt;h2 class&#x3D;&quot;admin-layout__card--title&quot;&gt;{{i.filename}}&lt;/h2&gt;
+            &lt;div *ngIf&#x3D;&quot;i.length &gt; 0&quot; class&#x3D;&quot;admin-layout__card-tiny--contents&quot;&gt;
+                &lt;!-- not fully responsive yet--&gt;
+                &lt;div&gt;
+                    &lt;img src&#x3D;&quot;/images/img/{{i.filename}}&quot; alt&#x3D;&quot;image couldnt be loaded from db wich means the db is still online&quot;
+                        srcset&#x3D;&quot;&quot; style&#x3D;&quot;width:125px; height:125px&quot;&gt;
+                    &lt;button (click)&#x3D;&quot;patchImgLink(i.filename)&quot;&gt;fill in&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div *ngIf&#x3D;&quot;image.length &lt; 1&quot;&gt;
+                no images currently in db
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -1468,8 +1773,8 @@ export class AdminEventComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Important! classes and id\'s are used in the ts file --><div class="admin-wrapper-main">    <section>        <div class="admin-wrapper-main__card">            <h2 class="admin-wrapper-main__card--title">Create a Message here</h2>            <form class="admin-wrapper-main__card--form" (ngSubmit)="create(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, identifier.value); form.reset()"                [formGroup]="form">                <div class="admin-wrapper-main__card--form-group">                    <label for="id">message name:                        <span class="admin-wrapper-main__card--form--tooltip">                            &#9432;                            <div class="admin-wrapper-main__card--form--tooltiptext">                                doubles as a title and identifier                            </div>                        </span>                    </label>                    <input class="admin-wrapper-main__card--form-input" #identifier type="text" name="identifier" formControlName="identifier" required>                    <div *ngIf="form.get(\'identifier\').touched">                        <div *ngFor="let validation of form_validation_messages.identifier" class="admin-wrapper-main__card--form-error">                            <div *ngIf="form.get(\'identifier\').hasError(validation.type)">                                {{validation.message}}                            </div>                        </div>                    </div>                </div>                <div class="admin-wrapper-main__card--form-group">                    <label for="message">message:                        <span class="admin-wrapper-main__card--form--tooltip">                            &#9432;                            <div class="admin-wrapper-main__card--form--tooltiptext">                                the actual message                            </div>                        </span>                    </label>                    <br>                    <input class="admin-wrapper-main__card--form-input" #message type="text" required formControlName="message">                    <div *ngIf="form.get(\'message\').touched">                        <div *ngFor="let validation of form_validation_messages.message" class="admin-wrapper-main__card--form-error">                            <div *ngIf="form.get(\'message\').hasError(validation.type)">                                {{validation.message}}                            </div>                        </div>                    </div>                </div>                <div class="admin-wrapper-main__card--form-group">                    <label for="showFrom">zichtbaar van af:                        <span class="admin-wrapper-main__card--form--tooltip">                            &#9432;                            <div class="admin-wrapper-main__card--form--tooltiptext">                                the start date/time the message is visable                            </div>                        </span>                    </label>                    <input class="admin-wrapper-main__card--form-input" type="datetime-local" name="showFrom" #showFrom id="showFrom" required                        formControlName="showFrom">                        <div *ngIf="form.get(\'showFrom\').touched">                            <div *ngFor="let validation of form_validation_messages.showFrom" class="admin-wrapper-main__card--form-error">                                <div *ngIf="form.get(\'showFrom\').hasError(validation.type)">                                    {{validation.message}}                                </div>                            </div>                        </div>                </div>                <div class="admin-wrapper-main__card--form-group">                    <label for="showTill">zichtbaar tot:                        <span class="admin-wrapper-main__card--form--tooltip">                            &#9432;                            <div class="admin-wrapper-main__card--form--tooltiptext">                                the end date/time the message is visable                            </div>                        </span>                    </label>                    <input class="admin-wrapper-main__card--form-input" type="datetime-local" name="showTill" #showTill id="showTill" required                        formControlName="showTill">                        <div *ngIf="form.get(\'showTill\').touched">                            <div *ngFor="let validation of form_validation_messages.showTill" class="admin-wrapper-main__card--form-error">                                <div *ngIf="form.get(\'showTill\').hasError(validation.type)">                                    {{validation.message}}                                </div>                            </div>                        </div>                </div>                <div class="admin-wrapper-main__card--form-group">                    <label for="imgUrl">achtergrond img:                        <span class="admin-wrapper-main__card--form--tooltip">                            &#9432;                            <div class="admin-wrapper-main__card--form--tooltiptext">                                a optional background img                            </div>                        </span>                    </label>                    <input class="admin-wrapper-main__card--form-input" #imgUrl type="text" formControlName="imgUrl">                    <div *ngIf="form.get(\'imgUrl\').touched">                        <div *ngFor="let validation of form_validation_messages.imgUrl" class="admin-wrapper-main__card--form-error">                            <div *ngIf="form.get(\'imgUrl\').hasError(validation.type)">                                {{validation.message}}                            </div>                        </div>                    </div>                </div>                <div class="admin-wrapper-main__card--form-group">                    <label for="imgBoolean">visable                        <span class="admin-wrapper-main__card--form--tooltip">                            &#9432;                            <div class="admin-wrapper-main__card--form--tooltiptext">                                manually setting the component to be visable                            </div>                        </span>                    </label>                    <input (click)="check(event)" #imgBoolean type="checkbox">                </div>                <button type="submit" class="button succes" [disabled]="!form.valid">Add</button>            </form>        </div>        <div class="admin-wrapper-main__card--fullwidth" *ngIf="messages?.length > 0">            <table>                <thead class="admin-wrapper-main__card--title">                    <th>identifier</th>                    <th>Message</th>                    <th>show (from-untill)</th>                    <th>img url</th>                    <th>visable</th>                    <th>update</th>                    <th>delete</th>                </thead>                <tr class="admin-wrapper-main__card--contents" *ngFor="let message of messages">                    <td>{{message.identifier}}</td>                    <td>{{message.message}}</td>                    <td>{{message.showFrom.substring(8, 10)}}-{{message.showFrom.substring(5, 7)}}({{message.showFrom.substring(11,                        16)}}) untill {{message.showTill.substring(8, 10)}}-{{message.showTill.substring(5, 7)}}({{message.showTill.substring(11,                        16)}})                    </td>                    <td>{{message.imgLink}}</td>                    <td>{{message.img}}</td>                    <td>                        <a [routerLink]=\'message.identifier\'>                            <button>update</button>                        </a>                    </td>                    <td>                        <button (click)="delete(message)">delete</button>                    </td>                </tr>            </table>        </div>    </section></div><!-- available images--><app-image-view></app-image-view></div>'
-    var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminChannelsContentsComponent', 'selector': 'app-admin-channels-contents'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelComponent', 'selector': 'app-channel'},{'name': 'ChannelContentComponent', 'selector': 'app-channel-content'},{'name': 'ChannelNewComponent', 'selector': 'app-channel-new'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'CreateComponent', 'selector': 'app-create'},{'name': 'CustomComponent', 'selector': 'app-custom'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'ListingComponentsComponent', 'selector': 'app-listing-components'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'SettingComponent', 'selector': 'app-setting'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TrafficComponent', 'selector': 'app-traffic'},{'name': 'UpdateComponent', 'selector': 'app-update'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
+        var COMPONENT_TEMPLATE = '<div><!-- Important! classes and id\'s are used in the ts file -->    <section class="admin-layout__layout--double-col">        <div class="admin-layout__card--fullwidth">            <h2 class="admin-layout__card--title">Create a Message here</h2>            <form class="admin-layout__card--form" (ngSubmit)="create(message.value, showFrom.value, showTill.value, imgUrl.value, imgBoolean.checked, identifier.value); form.reset()"                [formGroup]="form">                <div class="admin-layout__card--form-group">                    <label for="id">message name:                        <span class="admin-layout__card--form-tooltip">                            &#9432;                            <div class="admin-layout__card--form-tooltiptext">                                doubles as a title and identifier                            </div>                        </span>                    </label>                    <input class="admin-layout__card--form-input" #identifier type="text" name="identifier" formControlName="identifier" required>                    <div *ngIf="form.get(\'identifier\').touched">                        <div *ngFor="let validation of form_validation_messages.identifier" class="admin-layout__card--form-error">                            <div *ngIf="form.get(\'identifier\').hasError(validation.type)">                                {{validation.message}}                            </div>                        </div>                    </div>                </div>                <div class="admin-layout__card--form-group">                    <label for="message">message:                        <span class="admin-layout__card--form-tooltip">                            &#9432;                            <div class="admin-layout__card--form-tooltiptext">                                the actual message                            </div>                        </span>                    </label>                    <br>                    <input class="admin-layout__card--form-input" #message type="text" required formControlName="message">                    <div *ngIf="form.get(\'message\').touched">                        <div *ngFor="let validation of form_validation_messages.message" class="admin-layout__card--form-error">                            <div *ngIf="form.get(\'message\').hasError(validation.type)">                                {{validation.message}}                            </div>                        </div>                    </div>                </div>                <div class="admin-layout__card--form-group">                    <label for="showFrom">zichtbaar van af:                        <span class="admin-layout__card--form-tooltip">                            &#9432;                            <div class="admin-layout__card--form-tooltiptext">                                the start date/time the message is visable                            </div>                        </span>                    </label>                    <input class="admin-layout__card--form-input" type="datetime-local" name="showFrom" #showFrom id="showFrom" required                        formControlName="showFrom">                        <div *ngIf="form.get(\'showFrom\').touched">                            <div *ngFor="let validation of form_validation_messages.showFrom" class="admin-layout__card--form-error">                                <div *ngIf="form.get(\'showFrom\').hasError(validation.type)">                                    {{validation.message}}                                </div>                            </div>                        </div>                </div>                <div class="admin-layout__card--form-group">                    <label for="showTill">zichtbaar tot:                        <span class="admin-layout__card--form-tooltip">                            &#9432;                            <div class="admin-layout__card--form-tooltiptext">                                the end date/time the message is visable                            </div>                        </span>                    </label>                    <input class="admin-layout__card--form-input" type="datetime-local" name="showTill" #showTill id="showTill" required                        formControlName="showTill">                        <div *ngIf="form.get(\'showTill\').touched">                            <div *ngFor="let validation of form_validation_messages.showTill" class="admin-layout__card--form-error">                                <div *ngIf="form.get(\'showTill\').hasError(validation.type)">                                    {{validation.message}}                                </div>                            </div>                        </div>                </div>                <div class="admin-layout__card--form-group">                    <label for="imgUrl">achtergrond img:                        <span class="admin-layout__card--form-tooltip">                            &#9432;                            <div class="admin-layout__card--form-tooltiptext">                                a optional background img                            </div>                        </span>                    </label>                    <input class="admin-layout__card--form-input" #imgUrl type="text" formControlName="imgUrl">                    <div *ngIf="form.get(\'imgUrl\').touched">                        <div *ngFor="let validation of form_validation_messages.imgUrl" class="admin-layout__card--form-error">                            <div *ngIf="form.get(\'imgUrl\').hasError(validation.type)">                                {{validation.message}}                            </div>                        </div>                    </div>                </div>                <div class="admin-layout__card--form-group">                    <label for="imgBoolean">visable                        <span class="admin-layout__card--form-tooltip">                            &#9432;                            <div class="admin-layout__card--form-tooltiptext">                                manually setting the component to be visable                            </div>                        </span>                    </label>                    <input (click)="check(event)" #imgBoolean type="checkbox">                </div>                <button type="submit" class="button succes" [disabled]="!form.valid">Add</button>            </form>        </div>        <div class="admin-layout__card--fullwidth" *ngIf="messages?.length > 0">            <table>                <thead class="admin-layout__card--title">                    <th>identifier</th>                    <th>Message</th>                    <th>show (from-untill)</th>                    <th>img url</th>                    <th>visable</th>                    <th>update</th>                    <th>delete</th>                </thead>                <tr class="admin-layout__card--contents" *ngFor="let message of messages">                    <td>{{message.identifier}}</td>                    <td>{{message.message}}</td>                    <td>{{message.showFrom.substring(8, 10)}}-{{message.showFrom.substring(5, 7)}}({{message.showFrom.substring(11,                        16)}}) untill {{message.showTill.substring(8, 10)}}-{{message.showTill.substring(5, 7)}}({{message.showTill.substring(11,                        16)}})                    </td>                    <td>{{message.imgLink}}</td>                    <td>{{message.img}}</td>                    <td>                        <a [routerLink]=\'message.identifier\'>                            <button>update</button>                        </a>                    </td>                    <td>                        <button (click)="delete(message)">delete</button>                    </td>                </tr>            </table>        </div>    </section><!-- available images--><section>    <div class="admin-layout__card--fullwidth">        <h2 class="admin-layout__card--title">images</h2>        <div *ngFor="let i of image" id="images" class="admin-layout__card-tiny">            <h2 class="admin-layout__card--title">{{i.filename}}</h2>            <div *ngIf="i.length > 0" class="admin-layout__card-tiny--contents">                <!-- not fully responsive yet-->                <div>                    <img src="/images/img/{{i.filename}}" alt="image couldnt be loaded from db wich means the db is still online"                        srcset="" style="width:125px; height:125px">                    <button (click)="patchImgLink(i.filename)">fill in</button>                </div>            </div>            <div *ngIf="image.length < 1">                no images currently in db            </div>        </div>    </div></section></div>'
+    var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminChannelsContentsComponent', 'selector': 'app-admin-channels-contents'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelComponent', 'selector': 'app-channel'},{'name': 'ChannelContentComponent', 'selector': 'app-channel-content'},{'name': 'ChannelNewComponent', 'selector': 'app-channel-new'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'CustomComponent', 'selector': 'app-custom'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'ListingComponentsComponent', 'selector': 'app-listing-components'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TrafficComponent', 'selector': 'app-traffic'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AdminEventComponent'};
 </script>

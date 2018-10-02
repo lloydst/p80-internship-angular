@@ -359,6 +359,7 @@ import { EffectsModule } from &#x27;@ngrx/effects&#x27;;
 import { AppEffects } from &#x27;./store/effects/app.effects&#x27;;
 import { WebsiteEffects } from &#x27;./store/effects/website.effects&#x27;;
 import { AuthService } from &#x27;./services/auth.service&#x27;;
+import {SortablejsModule} from &#x27;angular-sortablejs&#x27;
 
 @NgModule({
     declarations: [
@@ -379,6 +380,7 @@ import { AuthService } from &#x27;./services/auth.service&#x27;;
         StoreModule.forRoot(reducers, { metaReducers }),
         !environment.production ? StoreDevtoolsModule.instrument() : [],
         EffectsModule.forRoot([AppEffects, WebsiteEffects]),
+        SortablejsModule.forRoot({ animation: 150 }),
     ],
     providers: [
         DataService,

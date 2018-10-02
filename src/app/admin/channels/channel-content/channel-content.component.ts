@@ -28,7 +28,6 @@ export class ChannelContentComponent implements OnInit {
     form_validation_messages = {
         'channel': [
             { type: 'required', message:'a channel name is required'},
-            
         ],
         'pathUrl': [
             { type: 'required', message: 'A client name is required please provide one' },
@@ -258,11 +257,16 @@ export class ChannelContentComponent implements OnInit {
         });
         this.reloadData();
     }
+    /**
+     * function that opens a window so the user can confirm the url is correct
+     * @param url test me
+     */
     testUrl(url) {
         window.open(url)
     }
-    patchurl(item) {
-        
-        console.log(this.form.value, item)
-    }
+    /**
+     * 
+     * @param item 
+     */
+    
 }

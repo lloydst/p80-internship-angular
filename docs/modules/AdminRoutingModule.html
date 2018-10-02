@@ -76,7 +76,6 @@
 import { RouterModule, Routes } from &#x27;@angular/router&#x27;;
 
 import { DashboardComponent } from &#x27;./dashboard/dashboard.component&#x27;;
-import { SettingComponent } from &#x27;./setting/setting.component&#x27;;
 import { AdminComponent } from &#x27;./admin.component&#x27;;
 
 import { AdminChannelsComponent } from &#x27;./componenten/channels.component&#x27;;
@@ -89,8 +88,6 @@ import { ImageViewComponent } from &#x27;./image/image-view/image-view.component
 import { AdminChannelsContentsComponent } from &#x27;./channels/admin-channels-contents/admin-channels-contents.component&#x27;;
 import { ChannelNewComponent } from &#x27;./channels/channel-new/channel-new.component&#x27;;
 import { ChannelContentComponent } from &#x27;./channels/channel-content/channel-content.component&#x27;;
-import { UpdateComponent } from &#x27;./setting/update/update.component&#x27;;
-import { CreateComponent } from &#x27;./setting/create/create.component&#x27;;
 
 /**
  * defining routes
@@ -102,12 +99,7 @@ const routes &#x3D; [
                 path: &#x27;&#x27;,
                 component: DashboardComponent // default route
             },
-            {
-                path: &#x27;algemeen&#x27;, component: SettingComponent, children: [
-                    { path: &#x27;add&#x27;, component: CreateComponent },
-                    { path: &#x27;detail/:id&#x27;, component: UpdateComponent }
-                ]
-            },
+            
             {
                 path: &#x27;components&#x27;,
                 component: AdminChannelsComponent,

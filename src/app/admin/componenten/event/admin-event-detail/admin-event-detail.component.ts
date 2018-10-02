@@ -65,6 +65,7 @@ export class AdminEventDetailComponent implements OnInit {
      * @param router for navigation
      * @param route for param.id
      * @param dataService crud events
+     * @param fileService needed for the images
      */
     constructor(
         private router: Router,
@@ -142,6 +143,9 @@ export class AdminEventDetailComponent implements OnInit {
             this.router.navigate(['./admin/components/events']);
         }
     }
+    /**
+     * gets the images so i can use them dynamicly
+     */
     getAllImages() {
         this.fileService.getImages().subscribe(images => {
             this.image = images;
@@ -161,6 +165,10 @@ export class AdminEventDetailComponent implements OnInit {
             console.log('polo');
         });
     }
+    /**
+     * function
+     * @param filename pushes the link to the form
+     */
     patchImgLink(filename) {
         this.form.patchValue({
             imgLink:'/images/img/'+filename})

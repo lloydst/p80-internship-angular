@@ -1066,23 +1066,114 @@ export class ChannelComponent implements OnInit {
                         }
                     }
                 }
-                // if x &#x3D; the last path
-                if (x &#x3D;&#x3D;&#x3D; self.do[0].path.length -1 ) {
-                    setTimeout(() &#x3D;&gt; {
-                        myWindow.close();
-                        self.getRoutes();
-                        console.log(&#x27;done&#x27;);
-                        x &#x3D; 0;
-                        go();
-                    }, self.do[0].path[x].delay);
 
-                } else if (x++ &lt; self.do[0].path.length-1 ) { // if x &lt; then last path increase x by 1
-                    setTimeout(() &#x3D;&gt; {
-                        myWindow.close();
-                        go();
-                        console.log(&#x27;increased by 1 &#x3D;&#x27;+x);
-                    }, self.do[0].path[x - 1].delay); // x is already increased by 1 so x -1 &#x3D; the delay that should be used
+                /**
+                 * if allways run normal
+                 * if not allways&#x3D;&gt; if day matches&#x3D;&gt; if time run normal
+                 * else x++ (skip)
+                 */
+                if (self.do[0].path[x].show.allways) {
+                    console.log(&#x27;allways &#x3D;&#x27; +self.do[0].path[x].show.allways)
+                    if (x &#x3D;&#x3D;&#x3D; self.do[0].path.length - 1) {
+                        setTimeout(() &#x3D;&gt; {
+                            myWindow.close();
+                            self.getRoutes();
+                            console.log(self.do[0].path[self.do[0].path.length - 1].delay * 1000, &#x27;done&#x27;);
+                            x &#x3D; 0;
+                            go();
+                        }, self.do[0].path[self.do[0].path.length - 1].delay * 1000);
+
+                    } else if (x++ &lt; self.do[0].path.length - 1) { // if x &lt; then last path increase x by 1
+                        setTimeout(() &#x3D;&gt; {
+                            myWindow.close();
+                            go();
+                            console.log(&#x27;increased by 1 &#x3D;&#x27; + x, self.do[0].path[x - 1].delay * 1000);
+                        }, self.do[0].path[x - 1].delay * 1000); // x is already increased by 1 so x -1 &#x3D; the delay that should be used
+                    }
+                } else if (!self.do[0].path[x].show.allways) {
+                    console.log(&#x27;allways &#x3D;&#x27; + !self.do[0].path[x].show.allways)
+                    var today &#x3D; new Date
+                    var dayOfWeek
+                    //console.log(today.getDay())
+                    switch (today.getDay()) {
+                        case 1:
+                            dayOfWeek &#x3D; &#x27;monday&#x27;
+                            break;
+                        case 2:
+                            dayOfWeek &#x3D; &#x27;tuesday&#x27;
+                            break;
+                        case 3:
+                            dayOfWeek &#x3D; &#x27;wednesday&#x27;
+                            break;
+                        case 4:
+                            dayOfWeek &#x3D; &#x27;thursday&#x27;
+                            break;
+                        case 5:
+                            dayOfWeek &#x3D; &#x27;friday&#x27;
+                            break;
+                        case 6:
+                            dayOfWeek &#x3D; &#x27;saturday&#x27;
+                            break;
+                        case 7:
+                            dayOfWeek &#x3D; &#x27;sunday&#x27;
+                            break;
+                        default:
+                            break;
+                    }
+
+                    if (self.do[0].path[x].show.days[dayOfWeek]) {
+                        console.log(&#x27;today is &#x27; + dayOfWeek + &#x27;and that matches &#x27; + self.do[0].path[x].show.days[dayOfWeek] +&#x27;from self.do[0].path[x].show.days[dayOfWeek]&#x27; )
+                        //correct day
+                        var timefrom &#x3D; Number(self.do[0].path[x].show.timefrom.substring(0, 2) + self.do[0].path[x].show.timefrom.substring(3, 5));
+                        var timetill &#x3D; Number(self.do[0].path[x].show.timetill.substring(0, 2) + self.do[0].path[x].show.timetill.substring(3, 5));
+                        // have to convert these numbers to strings first so &#x27;13&#x27; + &#x27;16&#x27; &#x3D; 1316 instead of 29 since i get strings from the database
+                        var hours &#x3D; today.getHours().toString()
+                        var minutes &#x3D; today.getMinutes().toString()
+                        //if minute less then 10 it will only be 4 instead of 04 now thats fixed.
+                        if (minutes.length &lt; 2) {
+                           minutes &#x3D; &#x27;0&#x27;+minutes
+                           console.log(&#x27;new minute value (was less then ten added a 0 in front&#x27;)
+                        }
+                        var timeNow &#x3D; Number(hours + minutes)
+                        //console.log(timefrom, timeNow, timetill)
+
+                        if (timefrom &lt;&#x3D; timeNow &amp;&amp; timetill &gt;&#x3D; timeNow) {
+                            // comparing 1200 -1259 so that 1259-1302 would work as well
+                            console.log(timefrom, timeNow, timetill)
+                            if (x &#x3D;&#x3D;&#x3D; self.do[0].path.length - 1) {
+                                setTimeout(() &#x3D;&gt; {
+                                    myWindow.close();
+                                    self.getRoutes();
+                                    console.log(self.do[0].path[self.do[0].path.length - 1].delay * 1000, &#x27;done&#x27;);
+                                    x &#x3D; 0;
+                                    go();
+                                }, self.do[0].path[self.do[0].path.length - 1].delay * 1000);
+
+                            } else if (x++ &lt; self.do[0].path.length - 1) { // if x &lt; then last path increase x by 1
+                                setTimeout(() &#x3D;&gt; {
+                                    myWindow.close();
+                                    go();
+                                    console.log(&#x27;increased by 1 &#x3D;&#x27; + x, self.do[0].path[x - 1].delay * 1000);
+                                }, self.do[0].path[x - 1].delay * 1000); // x is already increased by 1 so x -1 &#x3D; the delay that should be used
+                            }
+                        } else {
+                            console.log(&#x27;should not display at this time today&#x27;)
+                            x++
+                            go()
+                        }
+                    } else {
+                        console.log(&#x27;should not display today&#x27;)
+                        x++
+                        go()
+                    }
+
+                } else {
+                    console.log(&#x27;should not display increasing x by 1 and calling go&#x27;)
+                    x++
+                    go()
                 }
+
+
             }
         }
         go()
@@ -1124,7 +1215,7 @@ export class ChannelComponent implements OnInit {
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
         var COMPONENT_TEMPLATE = '<div><p>  channel is doing stuff</p></div>'
-    var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminChannelsContentsComponent', 'selector': 'app-admin-channels-contents'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelComponent', 'selector': 'app-channel'},{'name': 'ChannelContentComponent', 'selector': 'app-channel-content'},{'name': 'ChannelNewComponent', 'selector': 'app-channel-new'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'CreateComponent', 'selector': 'app-create'},{'name': 'CustomComponent', 'selector': 'app-custom'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'ListingComponentsComponent', 'selector': 'app-listing-components'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'SettingComponent', 'selector': 'app-setting'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TrafficComponent', 'selector': 'app-traffic'},{'name': 'UpdateComponent', 'selector': 'app-update'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
+    var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminChannelsContentsComponent', 'selector': 'app-admin-channels-contents'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelComponent', 'selector': 'app-channel'},{'name': 'ChannelContentComponent', 'selector': 'app-channel-content'},{'name': 'ChannelNewComponent', 'selector': 'app-channel-new'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'CustomComponent', 'selector': 'app-custom'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'ListingComponentsComponent', 'selector': 'app-listing-components'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TrafficComponent', 'selector': 'app-traffic'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'ChannelComponent'};
 </script>

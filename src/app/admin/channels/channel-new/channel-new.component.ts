@@ -13,7 +13,9 @@ import { Paths } from '../../../models/channel';
     templateUrl: './channel-new.component.html'
 })
 export class ChannelNewComponent implements OnInit {
-
+/**
+ * list for the options of the select
+ */
     components = [
         { url: 'components/traffic', name: 'traffic', description: 'displays a google map with the traffic layer displaying current traffic jams in the area' },
         { url: 'components/weather', name: 'weather', description: 'displays the current weather pulled from the yahoo weather api' },
@@ -92,7 +94,6 @@ export class ChannelNewComponent implements OnInit {
     /**
      * on load
      */
-
     ngOnInit() {
         // we will initialize our form here
 
@@ -117,10 +118,10 @@ export class ChannelNewComponent implements OnInit {
     log() {
         console.log(this.f)
     }
-    /**
-     * adds a empty 'path'
-     */
 
+    /**
+     * adds a empty 'path' with default value's only
+     */
     getPath() {
         // initialize our address
         return this.fb.group({
@@ -180,6 +181,10 @@ export class ChannelNewComponent implements OnInit {
             this.redirectTo(this.form.value.channel);
         });
     }
+    /**
+     * tests the url by opening a new tab so the user can see if it will load
+     * @param url url to test
+     */
     testUrl(url) {
         window.open(url)
     }

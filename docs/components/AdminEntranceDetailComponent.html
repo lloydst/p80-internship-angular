@@ -959,22 +959,22 @@ export class AdminEntranceDetailComponent implements OnInit {
     </div>
 
     <div class="tab-pane fade " id="c-templateData">
-        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;admin-wrapper-main&quot;&gt;
-    &lt;section&gt;
-        &lt;div class&#x3D;&quot;admin-wrapper-main__card&quot;&gt;
-            &lt;h2 class&#x3D;&quot;admin-wrapper-main__card--title&quot;&gt;edit {{data[0]?.name}}&lt;/h2&gt;
+        <pre class="line-numbers"><code class="language-html">
+    &lt;section class&#x3D;&quot;admin-layout__layout--single-col&quot;&gt;
+        &lt;div class&#x3D;&quot;admin-layout__card&quot;&gt;
+            &lt;h2 class&#x3D;&quot;admin-layout__card--title&quot;&gt;edit {{data[0]?.name}}&lt;/h2&gt;
 
-            &lt;form [formGroup]&#x3D;&quot;form&quot; class&#x3D;&quot;admin-wrapper-main__card--form&quot; (ngSubmit)&#x3D;&quot;update(name.value, url.value, displayTime.value)&quot;&gt;
-                &lt;div class&#x3D;&quot;admin-wrapper-main__card--form-group&quot;&gt;
+            &lt;form [formGroup]&#x3D;&quot;form&quot; class&#x3D;&quot;admin-layout__card--form&quot; (ngSubmit)&#x3D;&quot;update(name.value, url.value, displayTime.value)&quot;&gt;
+                &lt;div class&#x3D;&quot;admin-layout__card--form-group&quot;&gt;
                     &lt;label for&#x3D;&quot;client&quot;&gt;client:
-                        &lt;span class&#x3D;&quot;admin-wrapper-main__card--form--tooltip&quot;&gt;
+                        &lt;span class&#x3D;&quot;admin-layout__card--form-tooltip&quot;&gt;
                             &amp;#9432;
-                            &lt;div class&#x3D;&quot;admin-wrapper-main__card--form--tooltiptext&quot;&gt;
+                            &lt;div class&#x3D;&quot;admin-layout__card--form-tooltiptext&quot;&gt;
                                 the clients name
                             &lt;/div&gt;
                         &lt;/span&gt;
                     &lt;/label&gt;
-                    &lt;input class&#x3D;&quot;admin-wrapper-main__card--form-input&quot; #name name&#x3D;&quot;name&quot; type&#x3D;&quot;text&quot; required
+                    &lt;input class&#x3D;&quot;admin-layout__card--form-input&quot; #name name&#x3D;&quot;name&quot; type&#x3D;&quot;text&quot; required
                         formControlName&#x3D;&quot;name&quot;&gt;
                     &lt;div *ngFor&#x3D;&quot;let validation of form_validation_messages.name&quot; class&#x3D;&quot;admin-wrapper-main__card--form-error&quot;&gt;
                         &lt;div *ngIf&#x3D;&quot;form.get(&#x27;name&#x27;).hasError(validation.type)&quot; &gt;
@@ -985,16 +985,16 @@ export class AdminEntranceDetailComponent implements OnInit {
 
                 &lt;div&gt;
                     &lt;label for&#x3D;&quot;url&quot;&gt;Website&#x27;s url:
-                        &lt;span class&#x3D;&quot;admin-wrapper-main__card--form--tooltip&quot;&gt;
+                        &lt;span class&#x3D;&quot;admin-layout__card--form-tooltip&quot;&gt;
                             &amp;#9432;
-                            &lt;div class&#x3D;&quot;admin-wrapper-main__card--form--tooltiptext&quot;&gt;
+                            &lt;div class&#x3D;&quot;admin-layout__card--form-tooltiptext&quot;&gt;
                                 The clients website url
                             &lt;/div&gt;
                         &lt;/span&gt;
                     &lt;/label&gt;
 
-                    &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;url&quot; #url required formControlName&#x3D;&quot;url&quot; class&#x3D;&quot;admin-wrapper-main__card--form-input&quot;&gt;
-                    &lt;div *ngFor&#x3D;&quot;let validation of form_validation_messages.url&quot; class&#x3D;&quot;admin-wrapper-main__card--form-error&quot;&gt;
+                    &lt;input type&#x3D;&quot;text&quot; name&#x3D;&quot;url&quot; #url required formControlName&#x3D;&quot;url&quot; class&#x3D;&quot;admin-layout__card--form-input&quot;&gt;
+                    &lt;div *ngFor&#x3D;&quot;let validation of form_validation_messages.url&quot; class&#x3D;&quot;admin-layout__card--form-error&quot;&gt;
                         &lt;div *ngIf&#x3D;&quot;form.get(&#x27;url&#x27;).hasError(validation.type)&quot; &gt;
                             {{validation.message}}
                         &lt;/div&gt;
@@ -1002,17 +1002,17 @@ export class AdminEntranceDetailComponent implements OnInit {
                 &lt;/div&gt;
                 &lt;div&gt;
                     &lt;label for&#x3D;&quot;displayTime&quot;&gt;Display Time:
-                        &lt;span class&#x3D;&quot;admin-wrapper-main__card--form--tooltip&quot;&gt;
+                        &lt;span class&#x3D;&quot;admin-layout__card--form-tooltip&quot;&gt;
                             &amp;#9432;
-                            &lt;div class&#x3D;&quot;admin-wrapper-main__card--form--tooltiptext&quot;&gt;
+                            &lt;div class&#x3D;&quot;admin-layout__card--form-tooltiptext&quot;&gt;
                                 the time the clients website is displayed in the loop in ticks(1000 &#x3D; 1 second)
                             &lt;/div&gt;
                         &lt;/span&gt;
                     &lt;/label&gt;
-                    &lt;input class&#x3D;&quot;admin-wrapper-main__card--form-input&quot; required formControlName&#x3D;&quot;displayTime&quot; type&#x3D;&quot;number&quot;
+                    &lt;input class&#x3D;&quot;admin-layout__card--form-input&quot; required formControlName&#x3D;&quot;displayTime&quot; type&#x3D;&quot;number&quot;
                         name&#x3D;&quot;displayTime&quot; #displayTime&gt;
 
-                    &lt;div *ngFor&#x3D;&quot;let validation of form_validation_messages.displayTime&quot; class&#x3D;&quot;admin-wrapper-main__card--form-error&quot;&gt;
+                    &lt;div *ngFor&#x3D;&quot;let validation of form_validation_messages.displayTime&quot; class&#x3D;&quot;admin-layout__card--form-error&quot;&gt;
                         &lt;div *ngIf&#x3D;&quot;form.get(&#x27;displayTime&#x27;).hasError(validation.type)&quot;&gt;
                             {{validation.message}}
                         &lt;/div&gt;
@@ -1023,7 +1023,7 @@ export class AdminEntranceDetailComponent implements OnInit {
             &lt;/form&gt;
         &lt;/div&gt;
     &lt;/section&gt;
-&lt;/div&gt;</code></pre>
+</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -1051,8 +1051,8 @@ export class AdminEntranceDetailComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="admin-wrapper-main">    <section>        <div class="admin-wrapper-main__card">            <h2 class="admin-wrapper-main__card--title">edit {{data[0]?.name}}</h2>            <form [formGroup]="form" class="admin-wrapper-main__card--form" (ngSubmit)="update(name.value, url.value, displayTime.value)">                <div class="admin-wrapper-main__card--form-group">                    <label for="client">client:                        <span class="admin-wrapper-main__card--form--tooltip">                            &#9432;                            <div class="admin-wrapper-main__card--form--tooltiptext">                                the clients name                            </div>                        </span>                    </label>                    <input class="admin-wrapper-main__card--form-input" #name name="name" type="text" required                        formControlName="name">                    <div *ngFor="let validation of form_validation_messages.name" class="admin-wrapper-main__card--form-error">                        <div *ngIf="form.get(\'name\').hasError(validation.type)" >                            {{validation.message}}                        </div>                    </div>                </div>                <div>                    <label for="url">Website\'s url:                        <span class="admin-wrapper-main__card--form--tooltip">                            &#9432;                            <div class="admin-wrapper-main__card--form--tooltiptext">                                The clients website url                            </div>                        </span>                    </label>                    <input type="text" name="url" #url required formControlName="url" class="admin-wrapper-main__card--form-input">                    <div *ngFor="let validation of form_validation_messages.url" class="admin-wrapper-main__card--form-error">                        <div *ngIf="form.get(\'url\').hasError(validation.type)" >                            {{validation.message}}                        </div>                    </div>                </div>                <div>                    <label for="displayTime">Display Time:                        <span class="admin-wrapper-main__card--form--tooltip">                            &#9432;                            <div class="admin-wrapper-main__card--form--tooltiptext">                                the time the clients website is displayed in the loop in ticks(1000 = 1 second)                            </div>                        </span>                    </label>                    <input class="admin-wrapper-main__card--form-input" required formControlName="displayTime" type="number"                        name="displayTime" #displayTime>                    <div *ngFor="let validation of form_validation_messages.displayTime" class="admin-wrapper-main__card--form-error">                        <div *ngIf="form.get(\'displayTime\').hasError(validation.type)">                            {{validation.message}}                        </div>                    </div>                </div>                <br>                <button type="submit" class="button succes" [disabled]="!form.valid">edit</button>            </form>        </div>    </section></div></div>'
-    var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminChannelsContentsComponent', 'selector': 'app-admin-channels-contents'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelComponent', 'selector': 'app-channel'},{'name': 'ChannelContentComponent', 'selector': 'app-channel-content'},{'name': 'ChannelNewComponent', 'selector': 'app-channel-new'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'CreateComponent', 'selector': 'app-create'},{'name': 'CustomComponent', 'selector': 'app-custom'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'ListingComponentsComponent', 'selector': 'app-listing-components'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'SettingComponent', 'selector': 'app-setting'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TrafficComponent', 'selector': 'app-traffic'},{'name': 'UpdateComponent', 'selector': 'app-update'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
+        var COMPONENT_TEMPLATE = '<div>    <section class="admin-layout__layout--single-col">        <div class="admin-layout__card">            <h2 class="admin-layout__card--title">edit {{data[0]?.name}}</h2>            <form [formGroup]="form" class="admin-layout__card--form" (ngSubmit)="update(name.value, url.value, displayTime.value)">                <div class="admin-layout__card--form-group">                    <label for="client">client:                        <span class="admin-layout__card--form-tooltip">                            &#9432;                            <div class="admin-layout__card--form-tooltiptext">                                the clients name                            </div>                        </span>                    </label>                    <input class="admin-layout__card--form-input" #name name="name" type="text" required                        formControlName="name">                    <div *ngFor="let validation of form_validation_messages.name" class="admin-wrapper-main__card--form-error">                        <div *ngIf="form.get(\'name\').hasError(validation.type)" >                            {{validation.message}}                        </div>                    </div>                </div>                <div>                    <label for="url">Website\'s url:                        <span class="admin-layout__card--form-tooltip">                            &#9432;                            <div class="admin-layout__card--form-tooltiptext">                                The clients website url                            </div>                        </span>                    </label>                    <input type="text" name="url" #url required formControlName="url" class="admin-layout__card--form-input">                    <div *ngFor="let validation of form_validation_messages.url" class="admin-layout__card--form-error">                        <div *ngIf="form.get(\'url\').hasError(validation.type)" >                            {{validation.message}}                        </div>                    </div>                </div>                <div>                    <label for="displayTime">Display Time:                        <span class="admin-layout__card--form-tooltip">                            &#9432;                            <div class="admin-layout__card--form-tooltiptext">                                the time the clients website is displayed in the loop in ticks(1000 = 1 second)                            </div>                        </span>                    </label>                    <input class="admin-layout__card--form-input" required formControlName="displayTime" type="number"                        name="displayTime" #displayTime>                    <div *ngFor="let validation of form_validation_messages.displayTime" class="admin-layout__card--form-error">                        <div *ngIf="form.get(\'displayTime\').hasError(validation.type)">                            {{validation.message}}                        </div>                    </div>                </div>                <br>                <button type="submit" class="button succes" [disabled]="!form.valid">edit</button>            </form>        </div>    </section></div>'
+    var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminChannelsContentsComponent', 'selector': 'app-admin-channels-contents'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelComponent', 'selector': 'app-channel'},{'name': 'ChannelContentComponent', 'selector': 'app-channel-content'},{'name': 'ChannelNewComponent', 'selector': 'app-channel-new'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'CustomComponent', 'selector': 'app-custom'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'ListingComponentsComponent', 'selector': 'app-listing-components'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TrafficComponent', 'selector': 'app-traffic'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AdminEntranceDetailComponent'};
 </script>

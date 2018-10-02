@@ -59,6 +59,7 @@ export class AdminEventComponent implements OnInit {
     /**
      * constructor
      * @param dataService for crud operations
+     * @param fileService for the images
      */
     constructor(private dataService: DataService,
         private fileService: FileService) { }
@@ -201,6 +202,10 @@ export class AdminEventComponent implements OnInit {
             console.log('polo');
         });
     }
+    /**
+     * push img to the form
+     * @param filename img to be pushed
+     */
     patchImgLink(filename) {
         this.form.patchValue({
             imgUrl: '/images/img/' + filename
