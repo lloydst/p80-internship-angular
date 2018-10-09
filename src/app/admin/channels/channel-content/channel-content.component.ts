@@ -15,12 +15,12 @@ export class ChannelContentComponent implements OnInit {
      * predivined components
      */
     components = [
-        { url: 'components/traffic', name: 'traffic', description:'displays a google map with the traffic layer displaying current traffic jams in the area'},
-        { url: 'components/weather', name: 'weather', description:'displays the current weather pulled from the yahoo weather api'},
-        { url: 'components/financial', name: 'financial', description: 'displays bitcoins stock prices'},
-        { url: 'components/event', name: 'message', description: 'this component can display messages'},
-        { url: 'components/meeting', name: 'meeting', description: 'displays the meetings held in the meeting room'},
-        { url: 'components/news', name: 'news', description: 'displays the latest 2 articles from nu.nl (rss feed)'},
+        { url: '/components/traffic', name: 'traffic', description:'displays a google map with the traffic layer displaying current traffic jams in the area'},
+        { url: '/components/weather', name: 'weather', description:'displays the current weather pulled from the yahoo weather api'},
+        { url: '/components/financial', name: 'financial', description: 'displays bitcoins stock prices'},
+        { url: '/components/event', name: 'message', description: 'this component can display messages'},
+        { url: '/components/meeting', name: 'meeting', description: 'displays the meetings held in the meeting room'},
+        { url: '/components/news', name: 'news', description: 'displays the latest 2 articles from nu.nl (rss feed)'},
     ]
     /**
      * form validation based on type it returns a message
@@ -46,16 +46,6 @@ export class ChannelContentComponent implements OnInit {
             { type: 'required', message: 'the delay is required, has to be atleast 5seconds (or 5000 ticks) but can also be a very long number' }
         ]
     }
-    /**
-     * prefil data
-     */
-    Components = [
-        {
-            url: '/component/',
-            description: 'Does this and that',
-            name: 'derp'
-        }
-    ];
     /**
      * current channel
      */
@@ -172,18 +162,6 @@ export class ChannelContentComponent implements OnInit {
         this.reloadData();
     }
     /**
-     * default for when a path gets added reactivly
-     */
-    getPath() {
-        // initialize our address
-        return this.fb.group({
-            pathurl: ['https://p80-internship.herokuapp.com/', [Validators.required, Validators.minLength(16)]],
-            description: ['', [Validators.required, Validators.minLength(20)]],
-            componentName: ['', [Validators.required, Validators.minLength(4)]],
-            delay: [5, [Validators.min(5)]]
-        });
-    }
-    /**
      * reloads the page
      */
     reloadPage() {
@@ -202,11 +180,25 @@ export class ChannelContentComponent implements OnInit {
      */
     initPath() {
         // initialize our address
-        return this.fb.group({
-            pathurl: ['https://p80-internship.herokuapp.com/',Validators.required],
-            description: [''],
-            componentName: [''],
-            delay: [5]
+        return new FormGroup({
+            pathurl: new FormControl('https://p80-internship.herokuapp.com/', [Validators.required, Validators.minLength(16)]),
+            description: new FormControl('describe what the purpose is of the slide', [Validators.required, Validators.minLength(20)]),
+            componentName: new FormControl('give the slide a custom name', [Validators.required, Validators.minLength(4)]),
+            delay: new FormControl(5, [Validators.min(5)]),
+            show: new FormGroup({
+                allways: new FormControl(true, []),
+                timefrom: new FormControl('00:00', []),
+                timetill: new FormControl('00:00', []),
+                days: new FormGroup({
+                    monday: new FormControl(false, []),
+                    tuesday: new FormControl(false, []),
+                    wednesday: new FormControl(false, []),
+                    thursday: new FormControl(false, []),
+                    friday: new FormControl(false, []),
+                    saturday: new FormControl(false, []),
+                    sunday: new FormControl(false, []),
+                })
+            })
         });
     }
     /**
@@ -264,9 +256,4 @@ export class ChannelContentComponent implements OnInit {
     testUrl(url) {
         window.open(url)
     }
-    /**
-     * 
-     * @param item 
-     */
-    
 }

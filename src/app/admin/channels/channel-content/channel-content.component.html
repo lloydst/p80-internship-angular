@@ -26,7 +26,7 @@
             <div formArrayName="path" class="admin-layout__layout--triple-col" [sortablejs]="path">
                 <div *ngFor="let paths of path.controls; let i=index" [formGroupName]="i" class="admin-layout__card">
                     <!-- path template -->
-                    <h4>slide #{{i + 1}}</h4>
+                    <h3 class="--dragable">slide #{{i + 1}}</h3>
                     <div>
 
                         <div class="admin-layout__card--form-group">

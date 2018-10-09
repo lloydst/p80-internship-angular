@@ -175,6 +175,10 @@ section {
   min-height: 100vh;
 }
 
+.--dragable {
+  cursor: move;
+}
+
 .sidenav #link {
   color: black;
 }

@@ -52,6 +52,7 @@ export class ChannelComponent implements OnInit {
     /**
      * binding
      */
+    error;
     currentchannel: string;
     /**
      * constructor
@@ -131,17 +132,31 @@ export class ChannelComponent implements OnInit {
         })
     }
     /**
+     * redirect function
+     */
+    redirectTo(uri) {
+            this.router.navigate([uri]);
+    }
+    /**
     * just a function
     */
     openWindow() {
+        this.error
         var x = 0;
         var self = this // REQUIRED FOR CHECK TIME
         var messageArray = this.messages
         let offline = !window.navigator.onLine
         function go() {
+            if (self.do[0].path.length === 0) {
+                console.log('no paths for this channel')
+                self.error = 'you cant run a channel without slides! go to admin to add some' // the return is so it doesnt run the rest of the function
+                alert(self.error)
+                self.redirectTo('channels') // waits for the alert
+            }
             var path = self.do[0].path[x].pathurl
             var myWindow = window.open(path, "channel") // default = 0
             // offline overrule
+            
             if (!window.navigator.onLine) {
                 path = '/components/event'
                 myWindow.location.href = path
@@ -184,7 +199,7 @@ export class ChannelComponent implements OnInit {
                     console.log('allways =' +self.do[0].path[x].show.allways)
                     if (x === self.do[0].path.length - 1) {
                         setTimeout(() => {
-                            myWindow.close();
+                            //myWindow.close();
                             self.getRoutes();
                             console.log(self.do[0].path[self.do[0].path.length - 1].delay * 1000, 'done');
                             x = 0;
@@ -193,13 +208,13 @@ export class ChannelComponent implements OnInit {
 
                     } else if (x++ < self.do[0].path.length - 1) { // if x < then last path increase x by 1
                         setTimeout(() => {
-                            myWindow.close();
+                            //myWindow.close();
                             go();
                             console.log('increased by 1 =' + x, self.do[0].path[x - 1].delay * 1000);
                         }, self.do[0].path[x - 1].delay * 1000); // x is already increased by 1 so x -1 = the delay that should be used
                     }
                 } else if (!self.do[0].path[x].show.allways) {
-                    console.log('allways =' + !self.do[0].path[x].show.allways)
+                    console.log('allways = false or undefined' )
                     var today = new Date
                     var dayOfWeek
                     //console.log(today.getDay())
@@ -250,7 +265,7 @@ export class ChannelComponent implements OnInit {
                             console.log(timefrom, timeNow, timetill)
                             if (x === self.do[0].path.length - 1) {
                                 setTimeout(() => {
-                                    myWindow.close();
+                                    //myWindow.close();
                                     self.getRoutes();
                                     console.log(self.do[0].path[self.do[0].path.length - 1].delay * 1000, 'done');
                                     x = 0;
@@ -259,11 +274,12 @@ export class ChannelComponent implements OnInit {
 
                             } else if (x++ < self.do[0].path.length - 1) { // if x < then last path increase x by 1
                                 setTimeout(() => {
-                                    myWindow.close();
+                                    //myWindow.close();
                                     go();
                                     console.log('increased by 1 =' + x, self.do[0].path[x - 1].delay * 1000);
                                 }, self.do[0].path[x - 1].delay * 1000); // x is already increased by 1 so x -1 = the delay that should be used
                             }
+                            // needs a extra check for the length of the path if 0 and if 1 but not shown and should really split the code up (150 lines...)
                         } else {
                             console.log('should not display at this time today')
                             x++
@@ -274,17 +290,13 @@ export class ChannelComponent implements OnInit {
                         x++
                         go()
                     }
-
                 } else {
                     console.log('should not display increasing x by 1 and calling go')
                     x++
                     go()
                 }
-
-
             }
         }
         go()
     }
-
 }

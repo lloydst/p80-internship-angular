@@ -6,7 +6,9 @@
     grid-template-columns: 50px 0 1fr;
     min-height: 100vh;
 }
-
+.--dragable {
+    cursor: move;
+}
 .sidenav {
     #link {
         color: black;
