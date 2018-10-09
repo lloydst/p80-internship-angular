@@ -179,7 +179,7 @@ export class ChannelContentComponent implements OnInit {
      * adds a blanc path
      */
     initPath() {
-        // initialize our address
+        // initial data
         return new FormGroup({
             pathurl: new FormControl('https://p80-internship.herokuapp.com/', [Validators.required, Validators.minLength(16)]),
             description: new FormControl('describe what the purpose is of the slide', [Validators.required, Validators.minLength(20)]),
