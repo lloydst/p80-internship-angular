@@ -10,7 +10,7 @@
 
 
  1.
-Alle content moet in elk channel kunnen.                                                                                    ----
+Alle content moet in elk channel kunnen
 Eigenlijk moet de channel lijst gewoon slides bevatten (zoals je nu ziet bij loop)                                          done (need styling updates)
 
 Die slides hebben dan:
@@ -22,7 +22,7 @@ Die slides hebben dan:
 o	Altijd tonen                                                                                                            done
 o	Alleen tonen tussen [16:30]  - [17:30]                                                                                  done
 op [ ]ma, [ ]di, [ ]wo, [ ]do, [x]vr , [ ]za, [ ]zo                                                                         done
--	Vinkje om aan/uit te zetten                                                                                             ---- (allways komt erg dichtbij)
+-	Vinkje om aan/uit te zetten                                                                                             done? (allways komt erg dichtbij)
 
 De slides moet je op volgorde kunnen zetten, niet met volgnummer in database maar door je JSON volgorde aan te passen.      done
 2.
@@ -44,10 +44,10 @@ Bij message, image kunnen aanklikken i.p.v. url overtypen                       
 Over de basis slider/loop.
 -	Als er een slide mist of loop is afgelopen geen admin tonen en ook geen error                                           --ne
 -	De slides moeten steeds in zelfde window/tab starten bij starten van de applicatie, als ik het ding 3 uur laat draaien
- mag er nog steeds maar 1 tabje geopend zijn en niet 1 tabje per 10 minuten bij komen                                       done (except for when not logged in for the meeting component that one does open in a new window)
+ mag er nog steeds maar 1 tabje geopend zijn en niet 1 tabje per 10 minuten bij komen                                       done (except for when not logged in for the meeting component that one does open in a new window (everytime not logged in))
 -	Test wat er gebeurt op de client/browser als je:
-o	Server down is                                                                                                          pwa
-o	Dingen aanpast in content als het ding draait                                                                           on reload
+o	Server down is                                                                                                          pwa (api calls get cached)
+o	Dingen aanpast in content als het ding draait                                                                           when the loop restarts the new content is shown
 o	Kanaal opheft dat nu draait                                                                                             hij lijkt dan op een andere over te gaan
 o	Etc
 Misschien hoef je niet alle scenario’s op te lossen, maar het moet er altijd netjes uitzien zelfs al misgaat. Dit beschrijven en ook opnemen in je verslag.

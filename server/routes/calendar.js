@@ -43,7 +43,7 @@ var graph = require('@microsoft/microsoft-graph-client');
   */
 router.get('/', async function(req, res, next) {
   
-  let parms = { title: 'Calendar', active: { calendar: true } };
+  let parms = { title: 'MailBox', active: { calendar: true } };
   const accessToken = await authHelper.getAccessToken(req.cookies, res);
   const userName = req.cookies.graph_user_name;
 
@@ -52,7 +52,6 @@ router.get('/', async function(req, res, next) {
 
     // Initialize Graph client
     const client = graph.Client.init({
-      
       authProvider: (done) => {
         done(null, accessToken);
       }

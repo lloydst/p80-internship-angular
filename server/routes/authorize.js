@@ -66,5 +66,20 @@ router.get('/signout', function(req, res, next) {
   // Redirect to home
   res.redirect(200,'/channels/meeting');
 });
-
+/* GET /authorize/admin */
+ /**
+   * @swagger
+   * /authorize/admin:
+   *   get:
+   *     description: request permissions
+   *     tags: [Authorize]
+   *     produces:
+   *       - token
+   *     responses:
+   *       200:
+   *         description: Destroys token
+   */
+router.get('/admin', function(req,res,next) {
+    res.redirect(authHelper.getConsent())
+})
 module.exports = router;
