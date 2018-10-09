@@ -17,12 +17,12 @@ export class ChannelNewComponent implements OnInit {
  * list for the options of the select
  */
     components = [
-        { url: 'components/traffic', name: 'traffic', description: 'displays a google map with the traffic layer displaying current traffic jams in the area' },
-        { url: 'components/weather', name: 'weather', description: 'displays the current weather pulled from the yahoo weather api' },
-        { url: 'components/financial', name: 'financial', description: 'displays bitcoins stock prices' },
-        { url: 'components/event', name: 'message', description: 'this component can display messages' },
-        { url: 'components/meeting', name: 'meeting', description: 'displays the meetings held in the meeting room' },
-        { url: 'components/news', name: 'news', description: 'displays the latest 2 articles from nu.nl (rss feed)' },
+        { url: '/components/traffic', name: 'traffic', description: 'displays a google map with the traffic layer displaying current traffic jams in the area' },
+        { url: '/components/weather', name: 'weather', description: 'displays the current weather pulled from the yahoo weather api' },
+        { url: '/components/financial', name: 'financial', description: 'displays bitcoins stock prices' },
+        { url: '/components/event', name: 'message', description: 'this component can display messages' },
+        { url: '/components/meeting', name: 'meeting', description: 'displays the meetings held in the meeting room' },
+        { url: '/components/news', name: 'news', description: 'displays the latest 2 articles from nu.nl (rss feed)' },
     ]
     /**
      * i should really place these somewhere else
