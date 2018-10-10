@@ -27,23 +27,22 @@ export class ChannelContentComponent implements OnInit {
      */
     form_validation_messages = {
         'channel': [
-            { type: 'required', message:'a channel name is required'},
+            { type: 'required', message:'A channel name is required'},
         ],
         'pathUrl': [
-            { type: 'required', message: 'A client name is required please provide one' },
-            { type: 'minlength', message: 'The client name has to be atleast 3 characters long' }
+            { type: 'required', message: 'A url is required please provide a relative url or one in the form of: https://www.example.com' }
         ],
         'componentName': [
-            { type: 'required', message: "a name is required" },
-            { type: 'minlength', message: "the component name has to be atleast 4 characters long" }
+            { type: 'required', message: "A name is required" },
+            { type: 'minlength', message: "The component name has to be atleast 4 characters long." }
         ],
         'description': [
-            { type: 'minlength', message: 'the description has to be atleast 20 characters long, it is best to describe the function it has in the component' },
-            { type: 'required', message: 'the description is required' }
+            { type: 'minlength', message: 'The description has to be atleast 20 characters long, it is best to describe the function it has in the component' },
+            { type: 'required', message: 'The description is required, it really is only used for future reference.' }
         ],
         'delay': [
-            {type:'min', message: "the component shouldn't be visable shorter then 5000 ticks (5 seconds)"},
-            { type: 'required', message: 'the delay is required, has to be atleast 5seconds (or 5000 ticks) but can also be a very long number' }
+            {type:'min', message: "The component shouldn't be visable shorter then 5 seconds"},
+            { type: 'required', message: 'the delay is required, has to be atleast 5 seconds but can also be a very long number.' }
         ]
     }
     /**
@@ -181,14 +180,14 @@ export class ChannelContentComponent implements OnInit {
     initPath() {
         // initial data
         return new FormGroup({
-            pathurl: new FormControl('https://p80-internship.herokuapp.com/', [Validators.required, Validators.minLength(16)]),
-            description: new FormControl('describe what the purpose is of the slide', [Validators.required, Validators.minLength(20)]),
+            pathurl: new FormControl('https://example.com/', [Validators.required, Validators.minLength(10)]),
+            description: new FormControl('describe what the purpose is of the slide, mostly for future reference', [Validators.required, Validators.minLength(20)]),
             componentName: new FormControl('give the slide a custom name', [Validators.required, Validators.minLength(4)]),
             delay: new FormControl(5, [Validators.min(5)]),
-            show: new FormGroup({
+            show: new FormGroup({ // simple defaults
                 allways: new FormControl(true, []),
                 timefrom: new FormControl('00:00', []),
-                timetill: new FormControl('00:00', []),
+                timetill: new FormControl('23:59', []),
                 days: new FormGroup({
                     monday: new FormControl(false, []),
                     tuesday: new FormControl(false, []),
@@ -222,6 +221,7 @@ export class ChannelContentComponent implements OnInit {
      * saves the contents of the form
      */
     save() {
+        // form with Id
         var formWId = Object.assign(this.form.value, {_id: this.channelData[0]._id})
         this.data.saveContent(formWId).subscribe(() => { });
         return { message: 'Saved' };
@@ -238,7 +238,6 @@ export class ChannelContentComponent implements OnInit {
     get f() {
         return this.form.controls;
     }
-    
     /**
      * resets form to what it was
      */
@@ -254,6 +253,9 @@ export class ChannelContentComponent implements OnInit {
      * @param url test me
      */
     testUrl(url) {
-        window.open(url)
+        const testwindow = window.open(url)
+        setTimeout(() => {
+            testwindow.close()
+        }, 15000);
     }
 }

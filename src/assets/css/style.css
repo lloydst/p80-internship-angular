@@ -215,14 +215,14 @@ section {
 
 .admin-layout__layout--double-col {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   margin-top: 0;
 }
 
 .admin-layout__layout--triple-col {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
 }
 
 .admin-layout__topnav {
@@ -235,6 +235,7 @@ section {
 }
 
 .admin-layout__topnav--link {
+  display: block;
   padding-left: 5px;
   color: white;
 }
@@ -242,6 +243,21 @@ section {
 .admin-layout__topnav--link-remove {
   padding-left: 5px;
   color: red;
+}
+
+@media (min-width: 768px) {
+  .admin-layout__layout--single-col {
+    grid-template-columns: 1fr;
+  }
+  .admin-layout__layout--double-col {
+    grid-template-columns: auto 1fr;
+  }
+  .admin-layout__layout--triple-col {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .admin-layout__topnav--link {
+    display: inline-block;
+  }
 }
 
 .admin-layout__topnav--child {

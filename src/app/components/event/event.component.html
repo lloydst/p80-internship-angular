@@ -2,18 +2,22 @@
     <div *ngFor="let m of messages">
         <!-- <div class="event-tile" *ngIf="m.img" [ngStyle]="{'background-image':'url( '+m.imgLink +')'}"> -->
         <!-- event tile is preventing multiple messages from being shown (shows them on top of each other-->
-            <div class="event-tile" *ngIf="m.img">
-                <div class="event-tile__background-img" [ngStyle]="{'background-image':'url( '+m.imgLink +')'}"></div>
-                <!-- has a background img (toggled on)-->
-                <div class="event-tile__message">
-                    <h1 class="event-tile__title"> {{m.identifier}} </h1>
-                    <p> {{m.message}} </p>
-                </div>
+        <div class="event-tile" *ngIf="m.img">
+            <div class="event-tile__background-img" [ngStyle]="{'background-image':'url( '+m.imgLink +')'}"></div>
+            <!-- has a background img (toggled on)-->
+            <div class="event-tile__message">
+                <h1 class="event-tile__title"> {{m.identifier}} </h1>
+                <p> {{m.message}} </p>
             </div>
-            <div *ngIf="!m.img">
-                <!-- when it has "messages" but shouldn't be shown yet-->
-                no messages to display
+        </div>
+        <!-- default message when there is a message but it shouldnt be shown-->
+        <div *ngIf="!m.img" class="event-tile">
+            <div class="event-tile__message">
+                <h1 class="event-tile__title"> Welcome </h1>
+                <p> To Poort80! </p>
             </div>
+            <!-- shows only when no messages! -->
+        </div>
     </div>
 
 </div>
@@ -28,3 +32,4 @@
         </div>
         <!-- shows only when no messages! -->
     </div>
+</div>
