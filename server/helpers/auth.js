@@ -15,7 +15,7 @@ const credentials = {
 const oauth2 = require('simple-oauth2').create(credentials);
 const jwt = require('jsonwebtoken');
 function getConsent() {
-    const returnVal = credentials.auth.tokenHost + '/common/adminconsent' + '?client_id=' + credentials.client.id +'&redirect_uri=https://p80-internship.herokuapp.com/channels';
+    const returnVal = credentials.auth.tokenHost + '/common/adminconsent' + '?client_id=' + credentials.client.id +'&redirect_uri=' + process.env.REDIRECT_URI;
     return returnVal
 }
 function getAuthUrl() {
