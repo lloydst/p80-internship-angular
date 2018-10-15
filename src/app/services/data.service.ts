@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 
 /**
@@ -11,7 +12,8 @@ export class DataService {
      * for http calls
      * @param http http
      */
-    constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient,
+        private cookieService:CookieService) { }
     /**
      * returns a single object or "website"
      */
@@ -90,8 +92,9 @@ export class DataService {
     /**
      * gets calendar info
      */
-    getCalendar() {
-        return this.http.get('/api/calendar');
+    getCalendar(cookie) {
+        
+        return this.http.get('/api/calendar?accesstoken='+cookie);
     }
    
     /**

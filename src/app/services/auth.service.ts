@@ -18,7 +18,7 @@ export class AuthService {
      * just a function
      */
     getLoggedIn() {
-        return this.http.get('/api/login');
+        return this.http.get('/api/authorize',{withCredentials:true});
     }
     /**
      * logout of graph

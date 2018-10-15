@@ -1,10 +1,13 @@
+<!--<div >{{meeting[0].value[0].start.dateTime.substring(11,16)}}</div>-->
+
+
 <div class="meeting">
-    <!-- if no events say no more events-->
-    <div class="meeting__top" *ngIf="meeting[0].events.length === 0">
+    <!-- if no value say no more value -->
+    <div class="meeting__top" *ngIf="meeting[0].value.length === 0">
             no more meetings this week
         </div>
-    <!-- if any events show first-->
-    <div class="meeting__top" *ngIf="meeting[0].events.length >= 1">
+    <!-- if any value show first -->
+    <div class="meeting__top" *ngIf="meeting[0].value.length >= 1">
 
         <div class="meeting__top-heading">
             <div class="meeting__top-heading-title">
@@ -12,26 +15,27 @@
                     Next Meeting
                 </h1>
             </div>
+            
             <div class="meeting__top-heading-times">
                 <div class="event-start">
                     <p>Event start:</p>
-                    <h1>{{meeting[0].events[meeting[0].events.length -1].start.dateTime.substring(11,16) }}</h1>
+                    <h1>{{meeting[0].value[0].start.dateTime.substring(11,16) }}</h1>
                     <p>
-                        {{meeting[0].events[meeting[0].events.length -1].start.dateTime.substring(8,10)}} -
-                        {{meeting[0].events[meeting[0].events.length -1].start.dateTime.substring(5,7)}}
+                        {{meeting[0].value[0].start.dateTime.substring(8,10)}} -
+                        {{meeting[0].value[0].start.dateTime.substring(5,7)}}
                     </p>
-                    <p *ngIf="!meeting[0].events[0].location.displayName ==''">Location:</p>
+                    <p *ngIf="!meeting[0].value[0].location.displayName ==''">Location:</p>
                 </div>
                 <div class="event-between"></div>
                 <div class="event-end">
                     <p>Event end:</p>
-                    <h1>{{meeting[0].events[meeting[0].events.length -1].end.dateTime.substring(11,16)}}</h1>
+                    <h1>{{meeting[0].value[0].end.dateTime.substring(11,16)}}</h1>
                     <p>
-                        {{meeting[0].events[meeting[0].events.length -1].end.dateTime.substring(8,10)}} -
-                        {{meeting[0].events[meeting[0].events.length -1].end.dateTime.substring(5,7)}} 
+                        {{meeting[0].value[0].end.dateTime.substring(8,10)}} -
+                        {{meeting[0].value[0].end.dateTime.substring(5,7)}} 
                     </p>
                     <p>
-                        {{meeting[0].events[0].location.displayName}}
+                        {{meeting[0].value[0].location.displayName}}
                     </p>
                 </div>
             </div>
@@ -44,29 +48,29 @@
                 and the second list will load the next. If there are four or less then only show the left
                 list-->
                 <ul class="meeting__top-details-attendees-first">
-                    <li *ngFor="let email of meeting[0].events[meeting[0].events?.length -1]?.attendees; index as i">
+                    <li *ngFor="let email of meeting[0].value[meeting[0].value?.length -1]?.attendees; index as i">
                         <span *ngIf="i<3">{{email.emailAddress.name}}</span>
                         <!-- replacing name with address gives a email address instead of a name-->
                     </li>
                 </ul>
                 <ul class="meeting__top-details-attendees-second">
-                    <li *ngFor="let email of meeting[0].events[meeting[0].events.length -1].attendees; index as i">
+                    <li *ngFor="let email of meeting[0].value[meeting[0].value.length -1].attendees; index as i">
                         <span *ngIf="i>3 && i <7">{{email.emailAddress.name}}</span><!-- displays name 4-8-->
                     </li>
                 </ul>
             </div>
-            <p class="meeting__top-details-description"> {{meeting[0].events[meeting[0].events.length -1].subject}} </p>
+            <p class="meeting__top-details-description"> {{meeting[0].value[meeting[0].value.length -1].subject}} </p>
         </div>
     </div>
     
     <div class="meeting__bottom">
-        <table class="meeting__bottom-list" *ngIf="meeting[0].events.length > 1">
+        <table class="meeting__bottom-list" *ngIf="meeting[0].value.length > 1">
             <tbody>
                 <tr *ngFor="let m of meeting;">
                     <!--this following slice pipe is meant to limit the amount of meetings and has to be checked on a large screen-->
                     <!-- inverting the list returned by the api (returns last meeting first) it might still pose a problem if there are too many meetings-->
-                    <td class="meeting__bottom-list-item" *ngFor="let e of m.events.slice(0, meeting[0].events.length -1).reverse(); index as i"> 
-                        <!--this one would 'overflow' if there are too many events-->
+                    <td class="meeting__bottom-list-item" *ngFor="let e of m.value.slice(0, meeting[0].value.length -1).reverse(); index as i"> 
+                        <!--this one would 'overflow' if there are too many value-->
                         <h1 class="meeting__bottom-list-item-title">Meeting #{{i+2}}</h1>
                         <!--number from 2-->
                         <span class="meeting__bottom-list-item-description">{{e.subject}}</span>

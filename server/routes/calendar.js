@@ -3,7 +3,7 @@ var express = require('express');
 var router = express.Router();
 var authHelper = require('../helpers/auth');
 var graph = require('@microsoft/microsoft-graph-client');
-
+var request = require('request')
 
  /**
  * @swagger
@@ -41,57 +41,36 @@ var graph = require('@microsoft/microsoft-graph-client');
   *           type: object
   *           $ref: '#/definitions/calendar'
   */
-router.get('/', async function(req, res, next) {
-  
-  let parms = { title: 'MailBox', active: { calendar: true } };
-  const accessToken = await authHelper.getAccessToken(req.cookies, res);
-  const userName = req.cookies.graph_user_name;
-
-  if (accessToken && userName) {
-    parms.user = userName;
-
-    // Initialize Graph client
-    const client = graph.Client.init({
-      authProvider: (done) => {
-        done(null, accessToken);
-      }
-    });
-
-    // Set start of the calendar view to today at midnight
-    const start = new Date(new Date().setHours(0,0,0));
+router.get('/', function(req, res, next) {
+    //console.log(req.query.accesstoken)
+  const start = new Date(
+      new Date().setHours(0,0,0)
+      );
     // Set end of the calendar view to 7 days from start
     const end = new Date(
       new Date(start).setDate(start.getDate() + 7)
-      
     );
-    
-    try {
-      // Get the first 10 events for the coming week
-      console.log(start.toISOString())
-      console.log(start)
-      const result = await client
-      
-      .api(`/me/calendarView?startDateTime=${start.toISOString()}&endDateTime=${end.toISOString()}`)
-      .top(10)
-      
-      //.select('subject,start,end,attendees')
-      // gives full object if commented out or can prefilter
-      .orderby('start/dateTime DESC')
-      .get();
-
-      parms.events = result.value;
-      res.send(parms);
-    } catch (err) {
-      parms.message = 'Error retrieving events';
-      parms.error = { status: `${err.code}: ${err.message}` };
-      parms.debug = JSON.stringify(err.body, null, 2);
-      res.send('error',parms);
+    //console.log(req.signedCookies[])
+    // Get auth code
+    var options = {
+        url: 'https://graph.microsoft.com/v1.0/users/Vergaderruimte@poort80.nl/calendarview?startdatetime=' + start.toISOString() + '&enddatetime=' + end.toISOString() +'?$orderby=start/dateTime',
+        headers:{
+            Authorization: 
+                'Bearer ' + req.query.accesstoken
+    }};
+    function callback(error, response, body) {
+        if (!error) {
+            var info = JSON.parse(body);
+            //res.cookie('access_token', res.cookies.access_token)
+           // console.log(req.signedCookies);
+            res.send(info)
+        }
     }
-    
-  } else {
-    // Redirect to home
-    res.redirect('/');
-  }
+    //console.log(request(options, callback))
+    request(options, callback)
+    // Set start of the calendar view to today at midnight
+    //console.log(options, callback)
+    //console.log(request(options, callback))
 });
 
 module.exports = router;

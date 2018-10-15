@@ -1,6 +1,7 @@
 import { Component, OnInit, NO_ERRORS_SCHEMA } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { AuthService } from '../../services/auth.service';
+import { CookieService } from 'ngx-cookie-service';
 
 /**
  * meeting component
@@ -14,41 +15,37 @@ export class MeetingComponent implements OnInit {
     /**
      * for binding
      */
-    meeting: any = [0];
+    meeting: any =[0];
     // firstEvent = this.meeting[0].events[(this.meeting[0].events.length -1)]
     /**
      * for binding
      */
-    loginStatus: any = [];
+    accessToken: any = [];
     /**
      * constructor
      */
     constructor(
         private data: DataService,
-        private auth: AuthService
+        private auth: AuthService,
+        private cookieService: CookieService
     ) { }
     /**
      * on load
      */
     ngOnInit() {
         this.auth.getLoggedIn().subscribe(res => {
-            this.loginStatus = res;
-            console.log(this.loginStatus)
-            this.data.getCalendar().subscribe(resp => {
+            this.accessToken = res;
+           //console.log(this.accessToken)
+            this.cookieService.set('access_token', this.accessToken.access_token);
+            var cookie =this.cookieService.get('access_token')
+            this.data.getCalendar(cookie).subscribe(resp => {
                 this.meeting = [resp];
+                console.log(this.meeting)
             });
+            
         });
-        this.ifNotLoggedIn();
     }
     /**
      * if the signInUrl is there it means no one is logged in, so a window gets opened to login
      */
-    ifNotLoggedIn() {
-        setTimeout(() => {
-            if (this.loginStatus.signInUrl) {
-                const login = window.open(this.loginStatus.signInUrl, 'login');
-                // due to cross origin i cant do more then this need to find a way to auto login
-            }
-        }, 200);
-    }
 }

@@ -2,7 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var authHelper = require('../helpers/auth');
-
+var request = require('request')
 /* GET /authorize. */
  /**
    * @swagger
@@ -27,25 +27,28 @@ var authHelper = require('../helpers/auth');
  */
 router.get('/', async function(req, res, next) {
   // Get auth code
-  const code = req.query.code;
-
-  // If code is present, use it
-  if (code) {
-    let token;
-
-    try {
-      token = await authHelper.getTokenFromCode(code, res);
-    } catch (error) {
-      res.send({ title: 'Error', message: 'Error exchanging code for token', error: error });
+    var options = {
+        url: 'https://login.microsoftonline.com/Poort80.mail.onmicrosoft.com/oauth2/v2.0/token',
+        method: "POST",
+        form: {
+            'grant_type': 'client_credentials',
+            'client_id': process.env.APP_ID,
+            'client_secret': process.env.APP_PASSWORD,
+            'scope': 'https://graph.microsoft.com/.default',
+        }
+    };
+    function callback(error, response, body) {
+        if (!error) {
+            var info = JSON.parse(body);
+            //console.log(info);
+            res.send({'access_token':info.access_token})
+        }
     }
+    //console.log(request(options))
+    request(options, callback)
+})
+  //const code = req.query.code;
 
-    // Redirect to home
-    res.redirect('/');
-  } else {
-    // Otherwise complain
-    res.send( { title: 'Error', message: 'Authorization error, check the Redirect uri in .env to see if it matches  ', error: { status: 'Missing code parameter' } });
-  }
-});
 
 /* GET /authorize/signout */
  /**

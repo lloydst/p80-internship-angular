@@ -38,7 +38,7 @@ import { AppEffects } from './store/effects/app.effects';
 import { WebsiteEffects } from './store/effects/website.effects';
 import { AuthService } from './services/auth.service';
 import {SortablejsModule} from 'angular-sortablejs'
-
+import { CookieService } from 'ngx-cookie-service';
 @NgModule({
     declarations: [
         AppComponent,
@@ -65,7 +65,8 @@ import {SortablejsModule} from 'angular-sortablejs'
         NewsService,
         WeatherService,
         FileService,
-        AuthService
+        AuthService,
+        CookieService
     ],
     bootstrap: [AppComponent]
 })
