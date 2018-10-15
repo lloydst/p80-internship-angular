@@ -53,7 +53,7 @@ router.get('/', function(req, res, next) {
     //console.log(req.signedCookies[])
     // Get auth code
     var options = {
-        url: 'https://graph.microsoft.com/v1.0/users/Vergaderruimte@poort80.nl/calendarview?startdatetime=' + start.toISOString() + '&enddatetime=' + end.toISOString() +'?$orderby=start/dateTime',
+        url: 'https://graph.microsoft.com/v1.0/users/Vergaderruimte@poort80.nl/calendarview?startdatetime=' + start.toISOString() + '&enddatetime=' + end.toISOString() +'',
         headers:{
             Authorization: 
                 'Bearer ' + req.query.accesstoken
