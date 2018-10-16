@@ -1,26 +1,26 @@
 <!-- Important! classes and id's as well as inline style's are used in the ts file -->
-<div class="side-nav" id="Nav" style="width: 50px"><!-- this inline style is also used in the ts file-->
+<div class="side-nav" id="Nav" style="width: 50px">
+    <!-- this inline style is also used in the ts file-->
     <a routerLink="/admin" class="menutext" (click)="toggle('close')">
-      <i class="fas fa-home"></i>
-      <span class="text" style="display:none">dashboard</span>
+        <i class="fas fa-home"></i>
+        <span class="text" style="display:none">dashboard</span>
     </a>
-    <a [routerLink]="['components/events']"  (click)="toggle('close')" class="menutext">
-      <i class="fas fa-envelope"></i>
-      <span class="text"  style="display:none">messages</span>
+    <a [routerLink]="['components/events']" (click)="toggle('close')" class="menutext">
+        <i class="fas fa-envelope"></i>
+        <span class="text" style="display:none">messages</span>
     </a>
-    <a [routerLink]="['channels']"  (click)="toggle('close')" class="menutext">
-      <i class="fas fa-code-branch"></i>
-      <span class="text"  style="display:none">kanalen</span>
+    <a [routerLink]="['channels']" (click)="toggle('close')" class="menutext">
+        <i class="fas fa-code-branch"></i>
+        <span class="text" style="display:none">kanalen</span>
     </a>
     <a [routerLink]="['upload']" (click)="toggle('close')" class="menutext">
-      <i class="fas fa-images"></i>
-      <span class="text"  style="display:none">images</span>
+        <i class="fas fa-images"></i>
+        <span class="text" style="display:none">images</span>
     </a>
     <a href="" class="menutext" (click)="toggle('close')"><i class="fas fa-desktop"></i>
-      <span class="text"  style="display:none">kanaal select</span>
+        <span class="text" style="display:none">kanaal select</span>
     </a>
     <a href="javascript:void(0);" class="menutext">
-      <i class="fas fa-exchange-alt" (click)="toggle()"></i>
+        <i class="fas fa-exchange-alt" (click)="toggle()"></i>
     </a>
-  </div>
-  
+</div>

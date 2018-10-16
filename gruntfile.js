@@ -20,6 +20,7 @@ module.exports = function(grunt) {
             },
         },
          sass: {
+            
             dev: {
                 options: {
                     outputStyle: 'expanded',
