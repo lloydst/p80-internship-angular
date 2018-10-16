@@ -13,7 +13,7 @@ export class DataService {
      * @param http http
      */
     constructor(private http: HttpClient,
-        private cookieService:CookieService) { }
+        private cookieService: CookieService) { }
     /**
      * returns a single object or "website"
      */
@@ -93,10 +93,10 @@ export class DataService {
      * gets calendar info
      */
     getCalendar(cookie) {
-        
-        return this.http.get('/api/calendar?accesstoken='+cookie);
+
+        return this.http.get('/api/calendar?accesstoken=' + cookie);
     }
-   
+
     /**
      * gets all channels
      */
@@ -107,8 +107,8 @@ export class DataService {
      * add a channel
      * @param newContent formdata
      */
-    createContent(newContent){
-        return this.http.post('/api/content',newContent);
+    createContent(newContent) {
+        return this.http.post('/api/content', newContent);
     }
     /**
      * saves/ updates the object

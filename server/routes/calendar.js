@@ -44,7 +44,7 @@ var request = require('request')
 router.get('/', function(req, res, next) {
     //console.log(req.query.accesstoken)
   const start = new Date(
-      new Date().setHours(0,0,0)
+      Date.now()
       );
     // Set end of the calendar view to 7 days from start
     const end = new Date(
