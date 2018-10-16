@@ -55,22 +55,18 @@ router.get('/', function(req, res, next) {
     var options = {
         url: 'https://graph.microsoft.com/v1.0/users/Vergaderruimte@poort80.nl/calendarview?startdatetime=' + start.toISOString() + '&enddatetime=' + end.toISOString() +'',
         headers:{
-            Authorization: 
-                'Bearer ' + req.query.accesstoken
+            Authorization: 'Bearer ' + req.query.accesstoken,
+            Prefer: `outlook.timezone = "Europe/Paris"`
     }};
     function callback(error, response, body) {
         if (!error) {
             var info = JSON.parse(body);
-            //res.cookie('access_token', res.cookies.access_token)
-           // console.log(req.signedCookies);
             res.send(info)
         }
     }
-    //console.log(request(options, callback))
+
     request(options, callback)
-    // Set start of the calendar view to today at midnight
-    //console.log(options, callback)
-    //console.log(request(options, callback))
+
 });
 
 module.exports = router;
