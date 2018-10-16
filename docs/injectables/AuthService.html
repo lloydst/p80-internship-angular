@@ -270,7 +270,7 @@ export class AuthService {
      * just a function
      */
     getLoggedIn() {
-        return this.http.get(&#x27;/api/login&#x27;);
+        return this.http.get(&#x27;/api/authorize&#x27;,{withCredentials:true});
     }
     /**
      * logout of graph

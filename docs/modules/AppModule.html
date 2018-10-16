@@ -360,7 +360,7 @@ import { AppEffects } from &#x27;./store/effects/app.effects&#x27;;
 import { WebsiteEffects } from &#x27;./store/effects/website.effects&#x27;;
 import { AuthService } from &#x27;./services/auth.service&#x27;;
 import {SortablejsModule} from &#x27;angular-sortablejs&#x27;
-
+import { CookieService } from &#x27;ngx-cookie-service&#x27;;
 @NgModule({
     declarations: [
         AppComponent,
@@ -387,7 +387,8 @@ import {SortablejsModule} from &#x27;angular-sortablejs&#x27;
         NewsService,
         WeatherService,
         FileService,
-        AuthService
+        AuthService,
+        CookieService
     ],
     bootstrap: [AppComponent]
 })
