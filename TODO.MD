@@ -2,12 +2,10 @@
  every thing else?
 <h1>Todo</h1>
  - Styling of support(jira) component, and traffic component
- - touch up meeting component (year has been removed)
+ - touch up meeting component (year has been removed and might have to accomodate more meetings then initially tested with (currently 10 max could be limited to less))
  - check up on admin scss
  - change animation on financial component
  - touch up the loading component (index.html file in src)
-
-
 
  1.
 Alle content moet in elk channel kunnen
@@ -20,7 +18,7 @@ Die slides hebben dan:
 -	Invoer display tijd in seconden of afhankelijk van component                                                            done
 -	Radiobutton                                                                                                             done
 o	Altijd tonen                                                                                                            done
-o	Alleen tonen tussen [16:30]  - [17:30]                                                                                  done
+o	Alleen tonen tussen [16:30] - [17:30]                                                                                   done
 op [ ]ma, [ ]di, [ ]wo, [ ]do, [x]vr , [ ]za, [ ]zo                                                                         done
 -	Vinkje om aan/uit te zetten                                                                                             done? (allways komt erg dichtbij)
 
@@ -33,9 +31,9 @@ Loop functie kan dan straks misschien wel weg, maar maak eerst die andere goed  
 
 4.
 Voor agenda:
--	zorg dat je agenda van vergaderzaal toont                                                                               ----
--	inlog moet op server niet in browser                                                                                    ----
--	als er content in staat kijken we nog even naar layout                                                                  ----
+-	zorg dat je agenda van vergaderzaal toont                                                                               done
+-	inlog moet op server niet in browser                                                                                    done
+-	als er content in staat kijken we nog even naar layout                                                                  upcomming 2morrow
 
 5.
 Bij message, image kunnen aanklikken i.p.v. url overtypen                                                                   done
@@ -44,9 +42,9 @@ Bij message, image kunnen aanklikken i.p.v. url overtypen                       
 Over de basis slider/loop.
 -	Als er een slide mist of loop is afgelopen geen admin tonen en ook geen error                                           --ne
 -	De slides moeten steeds in zelfde window/tab starten bij starten van de applicatie, als ik het ding 3 uur laat draaien
- mag er nog steeds maar 1 tabje geopend zijn en niet 1 tabje per 10 minuten bij komen                                       done (except for when not logged in for the meeting component that one does open in a new window (everytime not logged in))
+ mag er nog steeds maar 1 tabje geopend zijn en niet 1 tabje per 10 minuten bij komen                                       done
 -	Test wat er gebeurt op de client/browser als je:
-o	Server down is                                                                                                          pwa (api calls get cached)
+o	Server down is                                                                                                          pwa (api calls gets cached )
 o	Dingen aanpast in content als het ding draait                                                                           when the loop restarts the new content is shown
 o	Kanaal opheft dat nu draait                                                                                             hij lijkt dan op een andere over te gaan
 o	Etc

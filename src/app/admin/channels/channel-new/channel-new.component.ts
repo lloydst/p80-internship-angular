@@ -33,37 +33,23 @@ export class ChannelNewComponent implements OnInit {
             { type: 'minlength', message: 'The channel name has to be atleast 4 characters long' }
         ],
         'pathUrl': [
-            { type: 'required', message: 'A relative url is required please provide one' },
-            { type: 'minlength', message: 'The client name has to be atleast 16 characters long' }
+            { type: 'required', message: 'you can either select a component out of the list or use a url (including https://' },
+            { type: 'minlength', message: 'The pathurl has to be atleast 16 characters long' }
         ],
         'componentName': [
             { type: 'required', message: "a name is required" },
             { type: 'minlength', message: "the component name has to be atleast 4 characters long" }
         ],
         'description': [
-            { type: 'minlength', message: 'the description has to be atleast 20 characters long, it is best to describe the function it has in the component' },
+            { type: 'minlength', message: 'the description has to be atleast 20 characters long, it is best to describe what function the component will serve' },
             { type: 'required', message: 'the description is required' }
         ],
         'delay': [
-            { type: 'min', message: "the component shouldn't be visable shorter then 5000 ticks (5 seconds)" },
-            { type: 'required', message: 'the delay is required, has to be atleast 5seconds (or 5000 ticks) but can also be a very long number' }
+            { type: 'min', message: "the minimum time is 5 seconds)" },
+            { type: 'required', message: 'the delay is required, has to be atleast 5 seconds ' }
         ]
     }
-    /**
-     * preload data
-     */
-    Components = [
-        {
-            url: '/component/CHANGE_THIS_PART',
-            description: 'Does this and that',
-            name: 'name'
-        },
-        {
-            url: '/component/other',
-            description: 'has a description of what the path does',
-            name: 'name'
-        }
-    ];
+    
     /**
      * binding
      */

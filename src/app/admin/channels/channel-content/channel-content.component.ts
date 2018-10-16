@@ -223,8 +223,11 @@ export class ChannelContentComponent implements OnInit {
     save() {
         // form with Id
         var formWId = Object.assign(this.form.value, {_id: this.channelData[0]._id})
-        this.data.saveContent(formWId).subscribe(() => { });
-        return { message: 'Saved' };
+        console.log(this.form.value.channel)
+        this.data.saveContent(formWId).subscribe( ()=> { 
+            this.router.navigate(['/admin/channels/' +this.form.value.channel ])
+            this.reloadData();
+        });
     }
 /**
  * simple getter

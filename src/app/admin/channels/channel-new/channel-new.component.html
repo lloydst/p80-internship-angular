@@ -9,7 +9,7 @@
                     <span class="admin-layout__card--form-tooltip">
                         <span>&#9432;</span>
                         <div class="admin-layout__card--form-tooltiptext">
-                            a easy to identify name
+                            this name is what you will use the select the channel after it is setup so make sure it is descriptive.
                         </div>
                     </span>
                 </label>
@@ -28,9 +28,9 @@
             </div>
             <!--slides-->
             <div formArrayName="path" class="admin-layout__layout--triple-col">
-                <div *ngFor="let path of f.path['controls']; let i=index" class="admin-layout__card">
+                <div *ngFor="let path of f.path['controls']; let i=index" class="admin-layout__card " >
                     <div>
-                        <span>slide {{i + 1}}</span>
+                        <span class="--dragable">slide {{i + 1}}</span>
                         <span *ngIf="f.path.controls.length > 1" (click)="removePath(i)"></span>
                     </div>
                     <div [formGroupName]="i">
@@ -39,8 +39,7 @@
                                 <span class="admin-layout__card--form-tooltip">
                                     &#9432;
                                     <div class="admin-layout__card--form-tooltiptext">
-                                        requires a relative url to a component simply pick a component from the right
-                                        and add its name after the second '/'
+                                        Either use a url like: https:www.example.com or select a component from the dropdown below.
                                     </div>
                                 </span>
                             </label>
@@ -66,7 +65,7 @@
                                 <span class="admin-layout__card--form-tooltip">
                                     &#9432;
                                     <div class="admin-layout__card--form-tooltiptext">
-                                        describe the component you chose
+                                        this step is optional but it is nice to add a short description of what the purpose is of the component
                                     </div>
                                 </span>
                             </label>
@@ -82,7 +81,7 @@
                                 <span class="admin-layout__card--form-tooltip">
                                     &#9432;
                                     <div class="admin-layout__card--form-tooltiptext">
-                                        this is the time the component is shown in ticks (1000=second)
+                                        this is the time the component is shown in seconds
                                     </div>
                                 </span>
                             </label>
@@ -98,7 +97,7 @@
                                 <span class="admin-layout__card--form-tooltip">
                                     &#9432;
                                     <div class="admin-layout__card--form-tooltiptext">
-                                        allows you to customize the default name
+                                        allows you to customize the default name, again a optional step
                                     </div>
                                 </span>
                             </label>
@@ -110,8 +109,7 @@
                             </div>
                         </div>
                         <div class="admin-layout--form-group" formGroupName="show">
-
-                            <label>show:</label>
+                            <label>visable times:</label>
                             <div>
                                 <input type="checkbox" checked="true" formControlName="allways" id=""> show allways
                                 <div *ngIf="!form.get('path').controls[i].get('show.allways').value">
@@ -161,6 +159,4 @@
             </div>
         </form>
     </div>
-    <!-- lists available components-->
-    <app-listing-components></app-listing-components>
 </section>

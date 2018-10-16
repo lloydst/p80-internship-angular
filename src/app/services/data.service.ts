@@ -114,7 +114,6 @@ export class DataService {
      * saves/ updates the object
      */
     saveContent(obj) {
-        console.log(obj)
         return this.http.put('/api/content', obj);
     }
     /**
