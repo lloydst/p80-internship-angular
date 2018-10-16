@@ -12,7 +12,7 @@
     "postinstall": "npm run build",
     "ng": "ng",
     "start": "pm2-runtime start ecosystem.config.js --env production",
-    "build": "ng build --aot --prod --build-optimizer",
+    "build": "ng build --prod",
     "lint": "ng lint",
     "test": "ng e2e",
     "doc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json -d docs --theme stripe",
