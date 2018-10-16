@@ -113,16 +113,10 @@ h1, h2, h3, h4, h5, h6 {
 ================================================ */
 div, p {
   font-family: 'Open Sans', sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   color: #000;
   margin-top: 15px;
   line-height: 1.5;
-}
-
-@media (min-width: 768px) {
-  div, p {
-    font-size: 20px;
-  }
 }
 
 /* Links
@@ -131,7 +125,7 @@ a {
   color: #2A4161;
   font-family: Supernormale, sans-serif;
   outline: none;
-  font-size: 20px;
+  font-size: 25px;
   text-decoration: none;
 }
 
@@ -196,7 +190,6 @@ section {
 .sidenav .side-nav a {
   min-width: 50px;
   text-decoration: none;
-  font-size: 20px;
   color: #818181;
   display: block;
   padding-top: 1em;
@@ -278,10 +271,6 @@ section {
   padding: 10px;
 }
 
-.admin-layout__card--subtext {
-  font-size: .75em;
-}
-
 .admin-layout__card--table {
   width: 100%;
 }
@@ -339,7 +328,7 @@ section {
 }
 
 .admin-layout__card--form-group label {
-  font-size: 18px;
+  font-size: 23px;
 }
 
 .admin-layout__card--form-tooltip {
@@ -374,7 +363,7 @@ section {
   margin: 5px;
   width: calc(100% - 37.5px);
   resize: none;
-  font-size: 17px;
+  font-size: 23px;
   border: none;
   border-bottom: 1px solid grey;
   font-family: Supernormale, sans-serif;
@@ -384,7 +373,7 @@ section {
   margin: 5px;
   width: 80%;
   resize: none;
-  font-size: 17px;
+  font-size: 25px;
   border: none;
   border-bottom: 1px solid grey;
   font-family: Supernormale, sans-serif;
@@ -407,7 +396,7 @@ section {
 .sidenav .grid-side-nav a {
   min-width: 50px;
   text-decoration: none;
-  font-size: 20px;
+  font-size: 23px;
   color: #818181;
   display: block;
   padding-top: 1em;
@@ -1230,3 +1219,5 @@ section {
   justify-content: flex-start;
   align-items: stretch;
 }
+
+/*# sourceMappingURL=style.css.map */

@@ -31,7 +31,7 @@
         // padding: 3px 3px 3px 3px;
         min-width: 50px;
         text-decoration: none;
-        font-size: 20px;
+        //font-size: 23px;
         color: #818181;
         display: block;
         padding-top: 1em;
@@ -115,9 +115,6 @@
     padding: 10px;
 }
 
-.admin-layout__card--subtext {
-    font-size: .75em;
-}
 
 .admin-layout__card--table {
     width: 100%;
@@ -180,7 +177,7 @@
 
 .admin-layout__card--form-group {
     label {
-        font-size: 18px;
+        font-size: 23px;
     }
 }
 
@@ -222,7 +219,7 @@
     margin: 5px;
     width: calc(100% - 37.5px);
     resize: none;
-    font-size: 17px;
+    font-size: 23px;
     border: none;
     border-bottom: 1px solid grey;
     font-family: Supernormale, sans-serif;
@@ -232,7 +229,7 @@
     margin: 5px;
     width: 80%;
     resize: none;
-    font-size: 17px;
+    font-size: 25px;
     border: none;
     border-bottom: 1px solid grey;
     font-family: Supernormale, sans-serif;
@@ -259,7 +256,7 @@
         // padding: 3px 3px 3px 3px;
         min-width: 50px;
         text-decoration: none;
-        font-size: 20px;
+        font-size: 23px;
         color: #818181;
         display: block;
         padding-top: 1em;
