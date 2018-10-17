@@ -20,6 +20,7 @@
         height: 100vh;
         display: grid;
         margin-top: 0px;
+
         // max-width: 50px;
         grid-template-rows: repeat(6, 50px);
         text-align: center;
@@ -31,6 +32,7 @@
         // padding: 3px 3px 3px 3px;
         min-width: 50px;
         text-decoration: none;
+
         //font-size: 23px;
         color: #818181;
         display: block;
@@ -73,6 +75,7 @@
 
 .admin-layout__topnav--link {
     display: block;
+    font-size: 23px;
     padding-left: 5px;
     color: white; //temp
 }
@@ -81,21 +84,26 @@
     padding-left: 5px;
     color: red; //tem
 }
+
 // bigger then tablet
 @media (min-width: 768px) {
     .admin-layout__layout--single-col {
         grid-template-columns: 1fr;
     }
+
     .admin-layout__layout--double-col {
         grid-template-columns: auto 1fr;
     }
+
     .admin-layout__layout--triple-col {
         grid-template-columns: 1fr 1fr 1fr;
     }
+
     .admin-layout__topnav--link {
         display: inline-block;
     }
 }
+
 // content of a page that has a topnav
 .admin-layout__topnav--child {
     background-color: #fff;
@@ -114,7 +122,6 @@
 .admin-layout__card--contents {
     padding: 10px;
 }
-
 
 .admin-layout__card--table {
     width: 100%;
@@ -224,15 +231,16 @@
     border-bottom: 1px solid grey;
     font-family: Supernormale, sans-serif;
 }
+
 .select {
     margin: 5px;
-    
     resize: none;
     font-size: 25px;
     border: none;
     border-bottom: 1px solid grey;
     font-family: Supernormale, sans-serif;
 }
+
 .admin-layout__card--form-input-test {
     margin: 5px;
     width: 80%;
@@ -264,6 +272,7 @@
         // padding: 3px 3px 3px 3px;
         min-width: 50px;
         text-decoration: none;
+
         //font-size: 23px;
         color: #818181;
         display: block;
