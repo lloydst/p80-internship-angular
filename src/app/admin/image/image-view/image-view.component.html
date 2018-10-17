@@ -1,15 +1,17 @@
-
-    <section>
-        <div class="admin-layout__card--fullwidth" >
-            <h2 class="admin-layout__card--title" >images</h2>
-            <div *ngFor="let i of image" id="images" class="admin-layout__card-tiny" >
+<section>
+    <div class="admin-layout__card--fullwidth">
+        <h2 class="admin-layout__card--title">images</h2>
+        <div class="admin-layout__layout--triple-col" >
+            <div *ngFor="let i of image" id="images" class="admin-layout__card">
 
                 <h2 class="admin-layout__card--title">{{i.filename}}</h2>
-                <div *ngIf="i.length > 0" class="admin-layout__card-tiny--contents"><!-- not fully responsive yet-->
+                <div *ngIf="i.length > 0" class="admin-layout__card-tiny--contents">
+                    <!-- not fully responsive yet-->
                     <div>
-                        <img src="/images/img/{{i.filename}}" alt="image couldnt be loaded from db wich means the db is still online" srcset="" style="width:125px; height:125px">
+                        <img src="/images/img/{{i.filename}}" alt="image couldnt be loaded from db wich means the db is still online"
+                            srcset="" style="width:125px; height:125px">
                     </div>
-                    <div >
+                    <div>
                         <br> location: "/images/img/{{i.filename}}"
                         <br>
                         <button class="button warning" (click)="deleteImg(i.filename)">delete</button>
@@ -21,4 +23,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>

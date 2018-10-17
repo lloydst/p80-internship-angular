@@ -97,6 +97,7 @@
 
     .admin-layout__layout--triple-col {
         grid-template-columns: 1fr 1fr 1fr;
+        margin-top: 0;
     }
 
     .admin-layout__topnav--link {
@@ -117,6 +118,9 @@
     box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.5);
     transition: 0.3s;
     height: fit-content;
+    &#images {
+        height: initial;
+    }
 }
 
 .admin-layout__card--contents {
@@ -142,10 +146,6 @@
     transition: 0.3s;
 
     // BEM is not a fan of targetting by id
-    &#images {
-        min-width: 29%;
-        min-height: 25%;
-    }
 }
 
 .admin-layout__card--contents {
@@ -183,6 +183,7 @@
 }
 
 .admin-layout__card--form-group {
+    padding: 5px;
     label {
         font-size: 23px;
     }

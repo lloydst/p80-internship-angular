@@ -252,6 +252,7 @@ section {
   }
   .admin-layout__layout--triple-col {
     grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 0;
   }
   .admin-layout__topnav--link {
     display: inline-block;
@@ -270,6 +271,10 @@ section {
   box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.5);
   transition: 0.3s;
   height: fit-content;
+}
+
+.admin-layout__card#images {
+  height: initial;
 }
 
 .admin-layout__card--contents {
@@ -291,11 +296,6 @@ section {
   background-color: white;
   box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.5);
   transition: 0.3s;
-}
-
-.admin-layout__card-tiny#images {
-  min-width: 29%;
-  min-height: 25%;
 }
 
 .admin-layout__card--contents {
@@ -330,6 +330,10 @@ section {
 .admin-layout__card--form {
   background-color: white;
   margin: 1em;
+}
+
+.admin-layout__card--form-group {
+  padding: 5px;
 }
 
 .admin-layout__card--form-group label {
