@@ -21,6 +21,7 @@
                     <!--(click)="reloadPage()"-->
                     &nbsp;
                     <button class="button danger" type="button danger" (click)="revert()" [disabled]="form.pristine">undo/reload</button>
+                    <div># of slides in this channel:{{form.value.path.length}}</div>
                 </div>
             </div>
             <div formArrayName="path" class="admin-layout__layout--triple-col" [sortablejs]="path">
@@ -41,7 +42,7 @@
 
                             <input type="text" formControlName="pathurl" class="admin-layout__card--form-input-test"
                                 [value]="form.get('path').controls[i].get('pathurl').value"><!-- if url  -->
-                            <select formControlName="pathurl" class="select"> 
+                            <select formControlName="pathurl" class="select">
                                 <option style="display:none">select a category</option>
                                 <option *ngFor="let item of components" (click)="form.path[i].controls.patchValue({ pathurl: item.url, componentName:item.name},
                                {onlySelf: true, emitEvent: true, emitModelToViewChange: true,
@@ -57,7 +58,7 @@
 
                         </div>
 
-                        <div class="admin-wrapper-main__card--form-group">
+                        <div class="admin-layout__card--form-group">
                             <label>Name:
                                 <span class="admin-layout__card--form-tooltip">
                                     &#9432;
@@ -106,7 +107,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="admin-layout--form-group" formGroupName="show">
+                        <div class="admin-layout--form-group-days" formGroupName="show">
 
                             <label>show:</label>
                             <div>
@@ -114,35 +115,48 @@
                                 <div *ngIf="!form.get('path').controls[i].get('show.allways').value">
                                     or between <input type="time" formControlName="timefrom" id="">and <input type="time"
                                         formControlName="timetill" id="">
-                                    <div formGroupName="days">
-                                        <div> <!--divs are just too group them-->
-                                            <input type="checkbox" checked="true" formControlName="monday" id="">
-                                            monday
-                                        </div>
+                                    <div formGroupName="days" class="admin-layout__layout--double-col">
                                         <div>
-                                            <input type="checkbox" checked="true" formControlName="tuesday" id="">
-                                            tuesday
+                                            <div class="admin-layout__card--form-group-days">
+                                                <!--divs are just too group them-->
+                                                <input type="checkbox" checked="true" formControlName="monday" id="">
+                                                monday
+                                            </div>
+                                            <div class="admin-layout__card--form-group-days">
+                                                <input type="checkbox" checked="true" formControlName="wednesday" id="">
+                                                wednesday
+                                            </div>
+                                            <div class="admin-layout__card--form-group-days">
+                                                <input type="checkbox" checked="true" formControlName="friday" id="">
+                                                friday
+                                            </div>
+                                            <div class="admin-layout__card--form-group-days">
+                                                <input type="checkbox" checked="true" formControlName="sunday" id="">
+                                                sunday
+                                            </div>
                                         </div>
+                                        <!-- end col 1 start 2-->
                                         <div>
-                                            <input type="checkbox" checked="true" formControlName="wednesday" id="">
-                                            wednesday
+                                            <div class="admin-layout__card--form-group-days">
+                                                <input type="checkbox" checked="true" formControlName="tuesday" id="">
+                                                tuesday
+                                            </div>
+                                            <div class="admin-layout__card--form-group-days">
+                                                <input type="checkbox" checked="true" formControlName="thursday" id="">
+                                                thursday
+                                            </div>
+                                            <div class="admin-layout__card--form-group-days">
+                                                <input type="checkbox" checked="true" formControlName="saturday" id="">
+                                                saturday
+                                            </div>
                                         </div>
-                                        <div>
-                                            <input type="checkbox" checked="true" formControlName="thursday" id="">
-                                            thursday
-                                        </div>
-                                        <div>
-                                            <input type="checkbox" checked="true" formControlName="friday" id="">
-                                            friday
-                                        </div>
-                                        <div>
-                                            <input type="checkbox" checked="true" formControlName="saturday" id="">
-                                            saturday
-                                        </div>
-                                        <div>
-                                            <input type="checkbox" checked="true" formControlName="sunday" id="">
-                                            sunday
-                                        </div>
+
+
+
+
+
+
+
 
                                     </div>
                                 </div>
@@ -150,10 +164,7 @@
                             </div>
                         </div>
                     </div>
-
-
-                    <button class="button succes" type="submit" (click)="addPath()">Add slide</button> &nbsp;
-                    <button class="button danger" type="button danger" (click)="removePath(i)">Remove slide</button>
+                    <button class="button danger" type="button danger" (click)="removePath(i)">Remove this slide</button>
 
                     <!-- End path template -->
                 </div>

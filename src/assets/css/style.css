@@ -113,7 +113,7 @@ h1, h2, h3, h4, h5, h6 {
 ================================================ */
 div, p {
   font-family: 'Open Sans', sans-serif;
-  font-size: 25px;
+  font-size: 17px;
   color: #000;
   margin-top: 15px;
   line-height: 1.5;
@@ -175,6 +175,7 @@ section {
 
 .--dragable {
   cursor: move;
+  font-size: 30px;
 }
 
 .sidenav #link {
@@ -340,6 +341,19 @@ section {
   font-size: 23px;
 }
 
+.admin-layout--form-group-days {
+  padding: 5px;
+  font-size: 17px;
+}
+
+.admin-layout--form-group-days label {
+  font-size: 23px;
+}
+
+.admin-layout--form-group-days div {
+  font-size: 17px;
+}
+
 .admin-layout__card--form-tooltip {
   position: relative;
   display: inline-block;
@@ -421,6 +435,10 @@ section {
 
 .sidenav .grid-side-nav a:hover {
   color: #f1f1f1;
+}
+
+div input[type="checkbox"] {
+  font-size: 20px;
 }
 
 .channel-navigation__button {

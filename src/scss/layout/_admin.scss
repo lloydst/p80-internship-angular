@@ -9,6 +9,7 @@
 
 .--dragable {
     cursor: move;
+    font-size: 30px;
 }
 
 .sidenav {
@@ -118,6 +119,7 @@
     box-shadow: 1px 4px 8px 1px rgba(0, 0, 0, 0.5);
     transition: 0.3s;
     height: fit-content;
+
     &#images {
         height: initial;
     }
@@ -184,8 +186,20 @@
 
 .admin-layout__card--form-group {
     padding: 5px;
+
     label {
         font-size: 23px;
+    }
+}
+
+.admin-layout--form-group-days {
+    padding: 5px;
+    font-size: 17px;
+    label {
+        font-size: 23px;
+    }
+    div {
+        font-size: 17px
     }
 }
 
@@ -283,4 +297,8 @@
     .grid-side-nav a:hover {
         color: #f1f1f1;
     }
+}
+
+div input[type="checkbox"] {
+    font-size: 20px;
 }
