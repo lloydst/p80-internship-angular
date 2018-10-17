@@ -41,7 +41,7 @@
 
                             <input type="text" formControlName="pathurl" class="admin-layout__card--form-input-test"
                                 [value]="form.get('path').controls[i].get('pathurl').value">
-                            <select formControlName="pathurl">
+                            <select formControlName="pathurl" class="select">
                                 <option style="display:none">select a category</option>
                                 <option *ngFor="let item of components" (click)="form.path[i].controls.patchValue({ pathurl: item.url, componentName:item.name},
                                {onlySelf: true, emitEvent: true, emitModelToViewChange: true,

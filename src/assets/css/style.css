@@ -363,6 +363,16 @@ section {
   margin: 5px;
   width: calc(100% - 37.5px);
   resize: none;
+  font-size: 23px;
+  border: none;
+  border-bottom: 1px solid grey;
+  font-family: Supernormale, sans-serif;
+}
+
+.select {
+  margin: 5px;
+  resize: none;
+  font-size: 25px;
   border: none;
   border-bottom: 1px solid grey;
   font-family: Supernormale, sans-serif;
@@ -372,6 +382,7 @@ section {
   margin: 5px;
   width: 80%;
   resize: none;
+  font-size: 25px;
   border: none;
   border-bottom: 1px solid grey;
   font-family: Supernormale, sans-serif;
