@@ -27,7 +27,7 @@
                 </div>
             </div>
             <!--slides-->
-            <div formArrayName="path" class="admin-layout__layout--triple-col" [sortablejs]="path">
+            <div formArrayName="path" class="admin-layout__layout--triple-col" [sortablejs]="form.value.path">
                 <div *ngFor="let path of f.path['controls']; let i=index" class="admin-layout__card " >
                     <div>
                         <span class="--dragable">slide {{i + 1}}</span>
