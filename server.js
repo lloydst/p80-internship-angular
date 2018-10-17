@@ -6,15 +6,14 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const http = require('http').Server(app);
-
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./server/config/swagger');
+const dotenv = require('dotenv').config(); // not used in production
+    
 var compression = require('compression');
 
 // configs
-if (process.env.NODE_ENV != 'production') {
-    const swaggerUi = require('swagger-ui-express');
-    const swaggerSpec = require('./server/config/swagger')
-    const dotenv = require('dotenv').config(); // not used in production
-}
+
 // routes
 const api = require('./server/routes/index'); //crud routes messages and websites
 const images = require('./server/routes/images')
