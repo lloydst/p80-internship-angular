@@ -10,7 +10,7 @@ const http = require('http').Server(app);
 var compression = require('compression');
 
 // configs
-const swaggerSpec = require('./server/config/swagger')
+
 const dotenv = require('dotenv').config(); // not used in production
 
 // routes
@@ -52,6 +52,7 @@ app.use(morgan('common', {
 // dev only
 if (process.env.NODE_ENV != 'production') {
     const swaggerUi = require('swagger-ui-express');
+    const swaggerSpec = require('./server/config/swagger')
     app.use('/docs', express.static(path.join(__dirname, 'docs')))
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
     app.get('/swagger.json', function (req, res) {
