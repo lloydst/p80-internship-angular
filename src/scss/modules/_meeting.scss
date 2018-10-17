@@ -1,100 +1,108 @@
 .meeting {
     @include flex;
+
     margin-top: 0px;
     background-color: #2a4161;
     min-height: 66vh;
-    padding: 50px;
+    padding: 25px;
 }
 
 .meeting__top {
     margin-top: 0;
-    padding: 50px;
+    padding: 25px;
     background-color: #EEEEEE;
+
     @include flexbox;
     @include flex-direction(column);
 }
 
-.meeting__top-heading{
+.meeting__top-heading {
     @include flex(0, 1, 40%);
     @include flexbox;
+
     margin-top: 0;
 }
 
-.meeting__top-details{
+.meeting__top-details {
     @include flex(0, 1, 60%);
     @include flexbox;
 }
 
-.meeting__top-heading-title{
-
-    h1{
+.meeting__top-heading-title {
+    h1 {
         font-size: 50px;
     }
 
     margin-top: 0;
     padding-right: 30px;
+
     @include flex(0, 1, 50%);
 }
 
-.meeting__top-heading-times{
+.meeting__top-heading-times {
     margin-top: 0;
     background-color: #00b0e9;
+
     @include flex(0, 1, 50%);
     @include flexbox;
     @include justify-content(space-evenly);
     @include align-items(center);
+
     padding: 30px;
 
-    h1{
+    h1 {
         font-size: 50px;
         color: #fff;
     }
-    p{
+
+    p {
         margin: 0;
         color: #fff;
     }
 }
 
-.event-between{
+.event-between {
     width: 25px;
     background-color: white;
     height: 5px;
-
 }
 
-.meeting__top-details-attendees{
+.meeting__top-details-attendees {
     margin-top: 0;
-    li{
+
+    li {
         color: #2a4161;
         list-style-type: none;
     }
+
     @include flex(0, 1, 50%);
     @include flexbox;
+
     padding-right: 30px;
+    font-size: 20px;
 }
 
-.meeting__top-details-attendees-first{
+.meeting__top-details-attendees-first {
     @include flex(0, 1, 50%);
+
     padding-left: 0px;
 }
 
-.meeting__top-details-attendees-second{
+.meeting__top-details-attendees-second {
     padding-left: 0px;
+
     @include flex(0, 1, 50%);
 }
 
-
-.meeting__top-details-description{
+.meeting__top-details-description {
     @include flex(0, 1, 50%);
+
     padding: 30px 0;
     color: #2a4161;
 }
 
-
-
-
 .meeting__bottom {
-    color: #2a4161
+    color: #2a4161;
 }
 
 .meeting__bottom-list {
@@ -103,21 +111,31 @@
 
 .meeting__bottom-list-item {
     background-color: #EEEEEE;
+
     @include flexbox;
+
     margin-bottom: 10px;
     padding: 25px;
+
     @include justify-content(space-between);
 }
 
-.meeting__bottom-list-item-title{
+.meeting__bottom-list-item-title {
     @include flex(0, 1, 10%);
 }
-.meeting__bottom-list-item-description{
+
+.meeting__bottom-list-item-description {
     @include flex(0, 1, 60%);
 }
-.meeting__bottom-list-item-time{
+
+.meeting__bottom-list-item-time {
     @include flex(0, 1, 10%);
 }
-.meeting__bottom-list-item-date{
+
+.meeting__bottom-list-item-date {
     @include flex(0, 1, 10%);
+}
+
+.event-start p, .event-end p {
+    font-size: 20px;
 }
