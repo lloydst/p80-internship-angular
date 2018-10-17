@@ -256,7 +256,7 @@ export class ChannelContentComponent implements OnInit {
      * @param url test me
      */
     testUrl(url) {
-        const testwindow = window.open(url)
+        const testwindow = window.open(url,'testwindow')
         setTimeout(() => {
             testwindow.close()
         }, 15000);
