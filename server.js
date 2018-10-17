@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const http = require('http').Server(app);
-const swaggerUi = require('swagger-ui-express');
+
 var compression = require('compression');
 
 // configs
@@ -51,6 +51,7 @@ app.use(morgan('common', {
 }));
 // dev only
 if (process.env.NODE_ENV != 'production') {
+    const swaggerUi = require('swagger-ui-express');
     app.use('/docs', express.static(path.join(__dirname, 'docs')))
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
     app.get('/swagger.json', function (req, res) {
