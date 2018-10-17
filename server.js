@@ -10,9 +10,11 @@ const http = require('http').Server(app);
 var compression = require('compression');
 
 // configs
-
-const dotenv = require('dotenv').config(); // not used in production
-
+if (process.env.NODE_ENV != 'production') {
+    const swaggerUi = require('swagger-ui-express');
+    const swaggerSpec = require('./server/config/swagger')
+    const dotenv = require('dotenv').config(); // not used in production
+}
 // routes
 const api = require('./server/routes/index'); //crud routes messages and websites
 const images = require('./server/routes/images')
@@ -51,8 +53,7 @@ app.use(morgan('common', {
 }));
 // dev only
 if (process.env.NODE_ENV != 'production') {
-    const swaggerUi = require('swagger-ui-express');
-    const swaggerSpec = require('./server/config/swagger')
+
     app.use('/docs', express.static(path.join(__dirname, 'docs')))
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
     app.get('/swagger.json', function (req, res) {
@@ -70,7 +71,7 @@ app.use('/public', express.static(path.join(__dirname, 'server/public'))) // css
 app.use('*', express.static(path.join(__dirname, 'dist'))) //routes anything not caught by the routes above to your angular project if possible
 
 const port = process.env.PORT || 3000; // PORT is another variable that can be placed in the .env file hosting networks usually set it themselfs
-if(process.env.NODE_ENV == undefined) {
+if (process.env.NODE_ENV == undefined) {
     process.env.NODE_ENV = 'development'
 }
 http.listen(process.env.PORT || 3000, function () {
