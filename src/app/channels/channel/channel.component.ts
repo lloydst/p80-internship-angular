@@ -186,7 +186,7 @@ export class ChannelComponent implements OnInit {
                     // should always be viewed
                     this.pathArray.push(element)
                 }
-                if (element.show.days[this.getToday()]) {
+                else if (element.show.days[this.getToday()]) {
                     console.log('should display today')
                     if (this.getTime(path)) {
                         //console.log('should display at this time')
@@ -195,22 +195,17 @@ export class ChannelComponent implements OnInit {
                     } else {
                         //console.log("shouldn't display at this time")
                     }
-                } else {
-                    // this one shouldnt be viewed
-                    //console.log("shouldn't display today")
-                    if (this.getTime(path)) {
-                        //console.log('should display at this time')
-                    }
-                }
+                } 
             }
         }
+        return this.pathArray;
     }
 
     openWindow() {
         this.error
         var x = 0;
         var self = this // REQUIRED FOR CHECK TIME
-        var messageArray = this.messages
+        //var messageArray = this.messages
         let offline = !window.navigator.onLine
         if (self.pathArray.length === 0) {
             //console.log('no paths for this channel')
@@ -230,14 +225,14 @@ export class ChannelComponent implements OnInit {
                 setTimeout(() => {
                     //myWindow.close();
                     self.getRoutes();
-                    //console.log(x + 1, self.pathArray[x].delay * 1000, 'done');
+                    console.log(x + 1, self.pathArray[x].delay * 1000, 'done');
                     x = 0;
                     go();
                 }, self.pathArray[x - 1].delay * 1000);
 
             } else if (x++ < self.pathArray.length - 1) { // if x < then last path increase x by 1
                 setTimeout(() => {
-                    //console.log(x, self.pathArray[x].delay * 1000)
+                    console.log(x, self.pathArray[x].componentName )
                     go();
                     //console.log(x)//, self.pathArray[x - 1].delay * 1000);
                 }, self.pathArray[x - 1].delay * 1000); // x is already increased by 1 so x -1 = the delay that should be used
