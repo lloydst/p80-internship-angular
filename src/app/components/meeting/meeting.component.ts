@@ -17,6 +17,12 @@ export class MeetingComponent implements OnInit {
      * for binding
      */
     meeting: any = [0];
+    now = new Date
+    hour1 = '0'+this.now.getHours()
+    hours =this.hour1.slice(-2)
+    min1 = '0'+this.now.getMinutes()
+    minutes = this.min1.slice(-2)
+    currentMeeting:boolean
     startTimeArray =[]
     // firstEvent = this.meeting[0].events[(this.meeting[0].events.length -1)]
     /**
@@ -44,6 +50,7 @@ export class MeetingComponent implements OnInit {
                 this.meeting = [resp];
                 this.checkCanceled()
                 this.sortByTimeDate()
+                this.setCurrentMeeting()
             });
 
         });
@@ -72,7 +79,22 @@ export class MeetingComponent implements OnInit {
             console.log(this.meeting)
 
     }
-    
+    setCurrentMeeting() {
+        var current = Number(this.hours + this.minutes)
+        var start = Number(this.meeting[0].value[this.meeting[0].value.length - 1].start.dateTime.substring(11, 13) 
+        + this.meeting[0].value[this.meeting[0].value.length - 1].start.dateTime.substring(14, 16))
+
+        var end = Number(this.meeting[0].value[this.meeting[0].value.length - 1].end.dateTime.substring(11, 13) 
+        + this.meeting[0].value[this.meeting[0].value.length - 1].end.dateTime.substring(14, 16))
+
+        // doesn't take date in account only time
+        if(current > start && current < end) {
+            this.currentMeeting =true
+        } else {
+            this.currentMeeting =false
+        }
+
+    }
 }
 /**
  * check if this.meeting[0].value[x].iscanceled

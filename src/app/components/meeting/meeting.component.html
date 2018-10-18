@@ -11,11 +11,14 @@
 
         <div class="meeting__top-heading">
             <div class="meeting__top-heading-title">
-                <h1>
+                <h1 *ngIf="!currentMeeting">
                     Next Meeting
                 </h1>
+                <h1 *ngIf="currentMeeting">
+                    Current Meeting
+                </h1>
             </div>
-            
+
             <div class="meeting__top-heading-times">
                 <div class="event-start">
                     <p>Event start:</p>

@@ -18,9 +18,9 @@ const routes: Routes = [
     {
       path: 'meeting', component: MeetingComponent
     },
-    {
+    /*{
       path: 'loop', component: WebsiteLoopComponent
-    },
+    },*/
     {
       path: 'weather', component: WeatherComponent
     },
