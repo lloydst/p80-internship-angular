@@ -134,7 +134,7 @@ a:hover, a:active {
 }
 
 button, input[type=button] {
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .wrapper {
@@ -338,7 +338,7 @@ section {
 }
 
 .admin-layout__card--form-group label {
-  font-size: 23px;
+  font-size: 18px;
 }
 
 .admin-layout--form-group-days {
@@ -347,7 +347,7 @@ section {
 }
 
 .admin-layout--form-group-days label {
-  font-size: 23px;
+  font-size: 18px;
 }
 
 .admin-layout--form-group-days div {
@@ -386,7 +386,7 @@ section {
   margin: 5px;
   width: calc(100% - 37.5px);
   resize: none;
-  font-size: 23px;
+  font-size: 17px;
   border: none;
   border-bottom: 1px solid grey;
   font-family: Supernormale, sans-serif;
@@ -395,7 +395,7 @@ section {
 .select {
   margin: 5px;
   resize: none;
-  font-size: 25px;
+  font-size: 17px;
   border: none;
   border-bottom: 1px solid grey;
   font-family: Supernormale, sans-serif;
@@ -405,7 +405,7 @@ section {
   margin: 5px;
   width: 80%;
   resize: none;
-  font-size: 25px;
+  font-size: 17px;
   border: none;
   border-bottom: 1px solid grey;
   font-family: Supernormale, sans-serif;

@@ -1,7 +1,7 @@
 <section class="admin-layout__layout--single-col">
     <div class="admin-layout__card">
         <h2 class="admin-layout__card--title">Edit channel</h2>
-        <form [formGroup]="form" (ngSubmit)="save()" class="admin-layout__layout--double-col" #top>
+        <form [formGroup]="form" class="admin-layout__layout--double-col" #top>
 
             <div class="admin-layout__card">
                 <label>Channel: </label>
@@ -17,7 +17,7 @@
                     </a>
                 </div>
                 <div>
-                    <button class="button primary" type="submit" [disabled]="!form.valid">Save</button>
+                    <button (click)="save()" class="button primary" type="submit" [disabled]="!form.valid">Save</button>
                     <!--(click)="reloadPage()"-->
                     &nbsp;
                     <button class="button danger" type="button danger" (click)="revert()" [disabled]="form.pristine">undo/reload</button>
@@ -50,7 +50,7 @@
                                  emitViewToModelChange: true})"
                                     [value]="item.url">{{item.name}}</option>
                             </select>
-                            <button (click)="testUrl(form.get('path').controls[i].get('pathurl').value)">test</button><!-- for some reason this saves it-->
+                            <button (click)="testUrl(form.get('path').controls[i].get('pathurl').value)">test</button>
                             <div *ngFor="let validation of form_validation_messages.pathUrl" class="admin-layout__card--form-error">
                                 <div *ngIf="form.get('path').controls[i].get('pathurl').hasError(validation.type)">
                                     {{validation.message}}

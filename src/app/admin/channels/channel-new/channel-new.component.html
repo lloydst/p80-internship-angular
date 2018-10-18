@@ -29,7 +29,7 @@
             <!--slides-->
             <div formArrayName="path" class="admin-layout__layout--triple-col" [sortablejs]="form.value.path">
                 <div *ngFor="let path of f.path['controls']; let i=index" class="admin-layout__card " >
-                    <div>
+                    <div class="admin-layout__card--form-group">
                         <span class="--dragable">slide {{i + 1}}</span>
                         <span *ngIf="f.path.controls.length > 1" (click)="removePath(i)"></span>
                     </div>
@@ -92,7 +92,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="admin-layout--form-group">
+                        <div class="admin-layout__card--form-group">
                             <label>component name:
                                 <span class="admin-layout__card--form-tooltip">
                                     &#9432;
@@ -108,7 +108,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="admin-layout--form-group" formGroupName="show">
+                        <div class="admin-layout__card--form-group" formGroupName="show">
                             <label>visable times:</label>
                             <div>
                                 <input type="checkbox" checked="true" formControlName="allways" id=""> show allways
