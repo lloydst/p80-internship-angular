@@ -31,13 +31,14 @@
   "dataGroups":[{
       "name": "api-freshness",
     "urls": [
-      "/api"
+      "/api",
+      "!/api/authorize"
     ],
     "cacheConfig": {
       "strategy": "freshness",
       "maxSize": 100,
       "maxAge": "7d",
-      "timeout": "2s"
+      "timeout": "0s"
     }
   }]
 }
