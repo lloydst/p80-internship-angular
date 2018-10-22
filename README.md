@@ -1,4 +1,5 @@
 # Poort80 internship assignment
+[![Build Status](https://travis-ci.org/lloydst/p80-internship-angular.svg?branch=master)](https://travis-ci.org/lloydst/p80-internship-angular)
 [docs](https://lloydst.github.io/p80-internship-angular/)
 
 ![Doc coverage](https://lloydst.github.io/p80-internship-angular/images/coverage-badge.svg)
