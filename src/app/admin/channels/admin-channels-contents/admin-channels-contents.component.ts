@@ -11,16 +11,16 @@ import { DataService } from '../../../services/data.service';
 })
 export class AdminChannelsContentsComponent implements OnInit {
     /**
-     * for binding
+     * channel: All channel data
      */
     channel;
     /**
-     * for binding
+     * gets the param of the current channel for navigational purposes
      */
     currentChannel;
     /**
      * constructor
-     * @param data data service
+     * @param data data service(channels)
      * @param router the router
      */
     constructor(
@@ -50,7 +50,7 @@ export class AdminChannelsContentsComponent implements OnInit {
         });
     }
     /**
-     * forces reload of child component(wouldnt do that with routerlink)
+     * forces reload of child component(wouldnt do that with routerlink alone)
      * @param uri channel to navigate to to edit or create
      */
     redirectTo(uri: string) {
@@ -58,7 +58,7 @@ export class AdminChannelsContentsComponent implements OnInit {
             this.router.navigate(['admin/channels', uri]));
     }
     /**
-     * delete channel function
+     * delete  a channel function
      * @param obj channel to delete
      */
     delete(obj) {

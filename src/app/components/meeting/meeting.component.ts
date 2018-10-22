@@ -17,20 +17,49 @@ export class MeetingComponent implements OnInit {
      * for binding
      */
     meeting: any = [0];
+    /**
+     * for binding
+     */
     now = new Date
-    hour1 = '0'+this.now.getHours()
-    hours =this.hour1.slice(-2)
-    min1 = '0'+this.now.getMinutes()
+    /**
+     * for binding
+     */
+    hour1 = '0' + this.now.getHours()
+
+    /**
+     * for binding
+     */    
+    hours = this.hour1.slice(-2)
+
+    /**
+     * for binding
+     */    
+    min1 = '0' + this.now.getMinutes()
+
+    /**
+     * for binding
+     */    
     minutes = this.min1.slice(-2)
-    currentMeeting:boolean
-    startTimeArray =[]
-    // firstEvent = this.meeting[0].events[(this.meeting[0].events.length -1)]
+
+    /**
+     * for binding
+     */    
+    currentMeeting: boolean
+
+    /**
+     * for binding
+     */    
+    startTimeArray = []
+
     /**
      * for binding
      */
     accessToken: any = [];
     /**
      * constructor
+     * @param data data service
+     * @param auth auth service (returns api key)
+     * @param cookieService for setting retrieving cookie
      */
     constructor(
         private data: DataService,
@@ -38,7 +67,7 @@ export class MeetingComponent implements OnInit {
         private cookieService: CookieService
     ) { }
     /**
-     * on load
+     * gets auth token then calls the data service to get the calendar
      */
     ngOnInit() {
         this.auth.getLoggedIn().subscribe(res => {
@@ -55,47 +84,52 @@ export class MeetingComponent implements OnInit {
 
         });
     }
+    /**
+     * checks each meeting if it has the status of canceled if true remove it from the array
+     */
     checkCanceled() {
         for (let check = 0; check < this.meeting[0].value.length; check++) {
             const element = this.meeting[0].value[check].isCancelled;
-            if(element){
-                this.meeting[0].value.splice(check,1)
+            if (element) {
+                this.meeting[0].value.splice(check, 1)
             }
         }
-        //console.log(this.meeting)
         return this.meeting // should have removed those with status canceled
-        //console.log(this.meeting[0].value.length)
     }
+    /**
+     * sorts the meeting
+     */
     sortByTimeDate() {
-            this.meeting[0].value.sort(function(a,b){
-                //even though this shows as a error it works
-                let c:any
-                let d:any
-                c = new Date(b.start.dateTime)
-                d = new Date(a.start.dateTime)
-                var tmp = c - d
-                return tmp
-            })
-            console.log(this.meeting)
+        this.meeting[0].value.sort(function (a, b) {
+            //even though this shows as a error it works
+            let c: any
+            let d: any
+            c = new Date(b.start.dateTime)
+            d = new Date(a.start.dateTime)
+            var tmp = c - d
+            return tmp
+        })
+        console.log(this.meeting)
 
     }
+    /**
+     * checks if a meeting is ongoing or has too happen
+     * @returns boolean
+     */
     setCurrentMeeting() {
         var current = Number(this.hours + this.minutes)
-        var start = Number(this.meeting[0].value[this.meeting[0].value.length - 1].start.dateTime.substring(11, 13) 
-        + this.meeting[0].value[this.meeting[0].value.length - 1].start.dateTime.substring(14, 16))
+        var start = Number(this.meeting[0].value[this.meeting[0].value.length - 1].start.dateTime.substring(11, 13)
+            + this.meeting[0].value[this.meeting[0].value.length - 1].start.dateTime.substring(14, 16))
 
-        var end = Number(this.meeting[0].value[this.meeting[0].value.length - 1].end.dateTime.substring(11, 13) 
-        + this.meeting[0].value[this.meeting[0].value.length - 1].end.dateTime.substring(14, 16))
+        var end = Number(this.meeting[0].value[this.meeting[0].value.length - 1].end.dateTime.substring(11, 13)
+            + this.meeting[0].value[this.meeting[0].value.length - 1].end.dateTime.substring(14, 16))
 
         // doesn't take date in account only time
-        if(current > start && current < end) {
-            this.currentMeeting =true
+        if (current > start && current < end) {
+            this.currentMeeting = true
         } else {
-            this.currentMeeting =false
+            this.currentMeeting = false
         }
 
     }
 }
-/**
- * check if this.meeting[0].value[x].iscanceled
- */

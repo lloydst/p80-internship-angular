@@ -15,10 +15,6 @@ export class ChannelComponent implements OnInit {
     /**
      * for binding
      */
-    messages;
-    /**
-     * for binding
-     */
     today = new Date()
     /**
      * for binding
@@ -54,7 +50,13 @@ export class ChannelComponent implements OnInit {
      * binding
      */
     error;
-    pathArray = []
+    /**
+     * for binding
+     */
+    pathArray=[]
+    /**
+     * for binding
+     */
     currentchannel: string;
     /**
      * constructor
@@ -72,19 +74,19 @@ export class ChannelComponent implements OnInit {
         };
     }
     /**
-     * just a function
+     * getting the current channel out of the url
      */
     log() {
         var url = this.router.url.split('/');
         this.currentchannel = url[2];
     }
     /**
-     * on load
+     * gets current channel
+     * openWindow()
      */
     ngOnInit() {
         this.log();
         this.getRoutes();
-        this.getMessages();
         setTimeout(() => {
             this.openWindow();
         }, 200);
@@ -100,14 +102,6 @@ export class ChannelComponent implements OnInit {
             this.setPathArray() // makes shure that on init as well as when done it resets the pathArray
         })
 
-    }
-    /**
-     * get request
-     */
-    getMessages() { // this one is temporaraly not used should most likely be taken in account when path is /components/event
-        this.data.getAllMessage().subscribe(result => {
-            this.messages = result
-        })
     }
     /**
      * redirect function
@@ -149,6 +143,10 @@ export class ChannelComponent implements OnInit {
         }
         return dayOfWeek
     }
+    /**
+     * checks if the path[x] should be visable
+     * @param x number
+     */
     getTime(x) {
         var timefrom = Number(this.do[0].path[x].show.timefrom.substring(0, 2) + this.do[0].path[x].show.timefrom.substring(3, 5));
         var timetill = Number(this.do[0].path[x].show.timetill.substring(0, 2) + this.do[0].path[x].show.timetill.substring(3, 5));
@@ -200,7 +198,9 @@ export class ChannelComponent implements OnInit {
         }
         return this.pathArray;
     }
-
+    /**
+     * opens the window then opens the next then restarts
+     */
     openWindow() {
         this.error
         var x = 0;

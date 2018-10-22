@@ -13,12 +13,12 @@ export class AdminSideNavComponent implements OnInit {
      */
     constructor() { }
     /**
-     * on load
+     * on load (currently empty)
      */
     ngOnInit() {
     }
     /**
-     * toggle's sidenav and hides red x's on channels
+     * toggle the sidenav and hides red x's on topnav
      */
     toggle(opt?) {
         const navwidth = document.getElementById('Nav');

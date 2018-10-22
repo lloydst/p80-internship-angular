@@ -209,7 +209,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>on load</p>
+                            <div class="io-description"><p>on load (currently empty)</p>
 </div>
 
                             <div class="io-description">
@@ -249,7 +249,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>toggle&#39;s sidenav and hides red x&#39;s on channels</p>
+                            <div class="io-description"><p>toggle the sidenav and hides red x&#39;s on topnav</p>
 </div>
 
                             <div class="io-description">
@@ -309,12 +309,12 @@ export class AdminSideNavComponent implements OnInit {
      */
     constructor() { }
     /**
-     * on load
+     * on load (currently empty)
      */
     ngOnInit() {
     }
     /**
-     * toggle&#x27;s sidenav and hides red x&#x27;s on channels
+     * toggle the sidenav and hides red x&#x27;s on topnav
      */
     toggle(opt?) {
         const navwidth &#x3D; document.getElementById(&#x27;Nav&#x27;);
@@ -366,32 +366,31 @@ export class AdminSideNavComponent implements OnInit {
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;!-- Important! classes and id&#x27;s as well as inline style&#x27;s are used in the ts file --&gt;
-&lt;div class&#x3D;&quot;side-nav&quot; id&#x3D;&quot;Nav&quot; style&#x3D;&quot;width: 50px&quot;&gt;&lt;!-- this inline style is also used in the ts file--&gt;
+&lt;div class&#x3D;&quot;side-nav&quot; id&#x3D;&quot;Nav&quot; style&#x3D;&quot;width: 50px&quot;&gt; &lt;!-- inline style used in code--&gt;
+    &lt;!-- this inline style is also used in the ts file--&gt;
     &lt;a routerLink&#x3D;&quot;/admin&quot; class&#x3D;&quot;menutext&quot; (click)&#x3D;&quot;toggle(&#x27;close&#x27;)&quot;&gt;
-      &lt;i class&#x3D;&quot;fas fa-home&quot;&gt;&lt;/i&gt;
-      &lt;span class&#x3D;&quot;text&quot; style&#x3D;&quot;display:none&quot;&gt;dashboard&lt;/span&gt;
+        &lt;i class&#x3D;&quot;fas fa-home&quot;&gt;&lt;/i&gt;
+        &lt;span class&#x3D;&quot;text&quot; style&#x3D;&quot;display:none&quot;&gt;dashboard&lt;/span&gt;
     &lt;/a&gt;
-    &lt;a [routerLink]&#x3D;&quot;[&#x27;components/entrance&#x27;]&quot;  (click)&#x3D;&quot;toggle(&#x27;close&#x27;)&quot; class&#x3D;&quot;menutext&quot;&gt;
-      &lt;i class&#x3D;&quot;fas fa-puzzle-piece&quot;&gt;&lt;/i&gt;
-      &lt;span class&#x3D;&quot;text&quot;  style&#x3D;&quot;display:none&quot;&gt;componenten&lt;/span&gt;
+    &lt;a [routerLink]&#x3D;&quot;[&#x27;components/events&#x27;]&quot; (click)&#x3D;&quot;toggle(&#x27;close&#x27;)&quot; class&#x3D;&quot;menutext&quot;&gt;
+        &lt;i class&#x3D;&quot;fas fa-envelope&quot;&gt;&lt;/i&gt;
+        &lt;span class&#x3D;&quot;text&quot; style&#x3D;&quot;display:none&quot;&gt;messages&lt;/span&gt;
     &lt;/a&gt;
-    &lt;a [routerLink]&#x3D;&quot;[&#x27;channels&#x27;]&quot;  (click)&#x3D;&quot;toggle(&#x27;close&#x27;)&quot; class&#x3D;&quot;menutext&quot;&gt;
-      &lt;i class&#x3D;&quot;fas fa-code-branch&quot;&gt;&lt;/i&gt;
-      &lt;span class&#x3D;&quot;text&quot;  style&#x3D;&quot;display:none&quot;&gt;kanalen&lt;/span&gt;
+    &lt;a [routerLink]&#x3D;&quot;[&#x27;channels&#x27;]&quot; (click)&#x3D;&quot;toggle(&#x27;close&#x27;)&quot; class&#x3D;&quot;menutext&quot;&gt;
+        &lt;i class&#x3D;&quot;fas fa-code-branch&quot;&gt;&lt;/i&gt;
+        &lt;span class&#x3D;&quot;text&quot; style&#x3D;&quot;display:none&quot;&gt;kanalen&lt;/span&gt;
     &lt;/a&gt;
     &lt;a [routerLink]&#x3D;&quot;[&#x27;upload&#x27;]&quot; (click)&#x3D;&quot;toggle(&#x27;close&#x27;)&quot; class&#x3D;&quot;menutext&quot;&gt;
-      &lt;i class&#x3D;&quot;fas fa-images&quot;&gt;&lt;/i&gt;
-      &lt;span class&#x3D;&quot;text&quot;  style&#x3D;&quot;display:none&quot;&gt;images&lt;/span&gt;
+        &lt;i class&#x3D;&quot;fas fa-images&quot;&gt;&lt;/i&gt;
+        &lt;span class&#x3D;&quot;text&quot; style&#x3D;&quot;display:none&quot;&gt;images&lt;/span&gt;
     &lt;/a&gt;
     &lt;a href&#x3D;&quot;&quot; class&#x3D;&quot;menutext&quot; (click)&#x3D;&quot;toggle(&#x27;close&#x27;)&quot;&gt;&lt;i class&#x3D;&quot;fas fa-desktop&quot;&gt;&lt;/i&gt;
-      &lt;span class&#x3D;&quot;text&quot;  style&#x3D;&quot;display:none&quot;&gt;kanaal select&lt;/span&gt;
+        &lt;span class&#x3D;&quot;text&quot; style&#x3D;&quot;display:none&quot;&gt;kanaal select&lt;/span&gt;
     &lt;/a&gt;
     &lt;a href&#x3D;&quot;javascript:void(0);&quot; class&#x3D;&quot;menutext&quot;&gt;
-      &lt;i class&#x3D;&quot;fas fa-exchange-alt&quot; (click)&#x3D;&quot;toggle()&quot;&gt;&lt;/i&gt;
+        &lt;i class&#x3D;&quot;fas fa-exchange-alt&quot; (click)&#x3D;&quot;toggle()&quot;&gt;&lt;/i&gt;
     &lt;/a&gt;
-  &lt;/div&gt;
-  
-</code></pre>
+&lt;/div&gt;</code></pre>
     </div>
 
     <div class="tab-pane fade " id="c-tree">
@@ -419,7 +418,7 @@ export class AdminSideNavComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><!-- Important! classes and id\'s as well as inline style\'s are used in the ts file --><div class="side-nav" id="Nav" style="width: 50px"><!-- this inline style is also used in the ts file-->    <a routerLink="/admin" class="menutext" (click)="toggle(\'close\')">      <i class="fas fa-home"></i>      <span class="text" style="display:none">dashboard</span>    </a>    <a [routerLink]="[\'components/entrance\']"  (click)="toggle(\'close\')" class="menutext">      <i class="fas fa-puzzle-piece"></i>      <span class="text"  style="display:none">componenten</span>    </a>    <a [routerLink]="[\'channels\']"  (click)="toggle(\'close\')" class="menutext">      <i class="fas fa-code-branch"></i>      <span class="text"  style="display:none">kanalen</span>    </a>    <a [routerLink]="[\'upload\']" (click)="toggle(\'close\')" class="menutext">      <i class="fas fa-images"></i>      <span class="text"  style="display:none">images</span>    </a>    <a href="" class="menutext" (click)="toggle(\'close\')"><i class="fas fa-desktop"></i>      <span class="text"  style="display:none">kanaal select</span>    </a>    <a href="javascript:void(0);" class="menutext">      <i class="fas fa-exchange-alt" (click)="toggle()"></i>    </a>  </div>  </div>'
+        var COMPONENT_TEMPLATE = '<div><!-- Important! classes and id\'s as well as inline style\'s are used in the ts file --><div class="side-nav" id="Nav" style="width: 50px"> <!-- inline style used in code-->    <!-- this inline style is also used in the ts file-->    <a routerLink="/admin" class="menutext" (click)="toggle(\'close\')">        <i class="fas fa-home"></i>        <span class="text" style="display:none">dashboard</span>    </a>    <a [routerLink]="[\'components/events\']" (click)="toggle(\'close\')" class="menutext">        <i class="fas fa-envelope"></i>        <span class="text" style="display:none">messages</span>    </a>    <a [routerLink]="[\'channels\']" (click)="toggle(\'close\')" class="menutext">        <i class="fas fa-code-branch"></i>        <span class="text" style="display:none">kanalen</span>    </a>    <a [routerLink]="[\'upload\']" (click)="toggle(\'close\')" class="menutext">        <i class="fas fa-images"></i>        <span class="text" style="display:none">images</span>    </a>    <a href="" class="menutext" (click)="toggle(\'close\')"><i class="fas fa-desktop"></i>        <span class="text" style="display:none">kanaal select</span>    </a>    <a href="javascript:void(0);" class="menutext">        <i class="fas fa-exchange-alt" (click)="toggle()"></i>    </a></div></div>'
     var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminChannelsContentsComponent', 'selector': 'app-admin-channels-contents'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelComponent', 'selector': 'app-channel'},{'name': 'ChannelContentComponent', 'selector': 'app-channel-content'},{'name': 'ChannelNewComponent', 'selector': 'app-channel-new'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'CustomComponent', 'selector': 'app-custom'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'ListingComponentsComponent', 'selector': 'app-listing-components'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TrafficComponent', 'selector': 'app-traffic'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AdminSideNavComponent'};

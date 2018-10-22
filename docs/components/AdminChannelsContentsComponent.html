@@ -215,7 +215,7 @@
                                                     </td>
                                                     
                                                         <td>
-                                                                <code><p>data service</p>
+                                                                <code><p>data service(channels)</p>
 </code>
                                                         </td>
                                                 </tr>
@@ -282,7 +282,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>delete channel function</p>
+                            <div class="io-description"><p>delete  a channel function</p>
 </div>
 
                             <div class="io-description">
@@ -474,7 +474,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                            <div class="io-description"><p>forces reload of child component(wouldnt do that with routerlink)</p>
+                            <div class="io-description"><p>forces reload of child component(wouldnt do that with routerlink alone)</p>
 </div>
 
                             <div class="io-description">
@@ -555,7 +555,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>for binding</p>
+                        <div class="io-description"><p>channel: All channel data</p>
 </div>
                     </td>
                 </tr>
@@ -589,7 +589,7 @@
 
                 <tr>
                     <td class="col-md-4">
-                        <div class="io-description"><p>for binding</p>
+                        <div class="io-description"><p>gets the param of the current channel for navigational purposes</p>
 </div>
                     </td>
                 </tr>
@@ -615,16 +615,16 @@ import { DataService } from &#x27;../../../services/data.service&#x27;;
 })
 export class AdminChannelsContentsComponent implements OnInit {
     /**
-     * for binding
+     * channel: All channel data
      */
     channel;
     /**
-     * for binding
+     * gets the param of the current channel for navigational purposes
      */
     currentChannel;
     /**
      * constructor
-     * @param data data service
+     * @param data data service(channels)
      * @param router the router
      */
     constructor(
@@ -654,7 +654,7 @@ export class AdminChannelsContentsComponent implements OnInit {
         });
     }
     /**
-     * forces reload of child component(wouldnt do that with routerlink)
+     * forces reload of child component(wouldnt do that with routerlink alone)
      * @param uri channel to navigate to to edit or create
      */
     redirectTo(uri: string) {
@@ -662,7 +662,7 @@ export class AdminChannelsContentsComponent implements OnInit {
             this.router.navigate([&#x27;admin/channels&#x27;, uri]));
     }
     /**
-     * delete channel function
+     * delete  a channel function
      * @param obj channel to delete
      */
     delete(obj) {

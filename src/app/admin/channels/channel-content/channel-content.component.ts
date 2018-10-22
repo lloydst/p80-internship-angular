@@ -12,7 +12,7 @@ import { DataService } from '../../../services/data.service';
 })
 export class ChannelContentComponent implements OnInit {
     /**
-     * predivined components
+     * predivined components: used for the select from list
      */
     components = [
         { url: '/components/traffic', name: 'traffic', description:'displays a google map with the traffic layer displaying current traffic jams in the area'},
@@ -23,7 +23,7 @@ export class ChannelContentComponent implements OnInit {
         { url: '/components/news', name: 'news', description: 'displays the latest 2 articles from nu.nl (rss feed)'},
     ]
     /**
-     * form validation based on type it returns a message
+     * form validation based on type of error it returns a message
      */
     form_validation_messages = {
         'channel': [
@@ -46,7 +46,7 @@ export class ChannelContentComponent implements OnInit {
         ]
     }
     /**
-     * current channel
+     * current channel (by router)
      */
     currentChannel;
     /**
@@ -54,11 +54,11 @@ export class ChannelContentComponent implements OnInit {
      */
     channelName;
     /**
-     * channel data
+     * used to set data and reload data
      */
     channelData;
     /**
-     * pathdata
+     * represents res[0].path;
      */
     preloadPath;
     /**
@@ -117,6 +117,7 @@ export class ChannelContentComponent implements OnInit {
      * @param path used for preloading data as well as adding/removing paths
      */
     initSection(path) {
+        /*
         if (!path) {
             const newpath = {
                 pathurl: '',
@@ -124,7 +125,7 @@ export class ChannelContentComponent implements OnInit {
                 delay: 5,
                 componentName: ''
             };
-        }
+        }*/
         // console.log(path.pathurl)
         return new FormGroup({
             pathurl: new FormControl(path.pathurl, [Validators.required]),
@@ -154,7 +155,7 @@ export class ChannelContentComponent implements OnInit {
     ngOnInit() {
         this.getCurrentChannel();
         this.form = this.fb.group({
-            channel: [this.channelName,Validators.required],
+            channel: [this.channelName, Validators.required],
             path: this.fb.array([
             ])
         });
@@ -175,7 +176,7 @@ export class ChannelContentComponent implements OnInit {
         control.push(this.initSection(path));
     }
     /**
-     * adds a blanc path
+     * default for adding a new path
      */
     initPath() {
         // initial data
