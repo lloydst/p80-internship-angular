@@ -10,11 +10,11 @@
 
 ## contents
  - [getting started](#getting-started-)
- - [docker](#docker)
  - [styling](#styling)
  - [sources](#sources-)
  - [description](#description)
  - [Development](#development)
+ - [Production](#production)
  - [quick component gen (angular cli)](#quick-component-gen-angular-cli-)
  - [structure](#structure)
  - [database](#database)
@@ -22,15 +22,16 @@
  - [docs](#docs)
 
 ## getting started:
-`git clone https://github.com/lloydst/p80-internship-angular.git .` (replace the '.' with a directory if you would want it in a new folder).
-then use `npm i` in the project root, this will install all the dependencies and do a single production-ready build,
+ - mutual:
+    `git clone https://github.com/lloydst/p80-internship-angular.git .` (replace the '.' with a directory if you would want it in a new folder).
+ - dev: create a .env file with the same fields as the .env-example. you will just have too request the api keys your self
 
-## styling
-scss files are stored in the angular root (src folder) in a scss map and are being converted to css using grunt and then stored in the assets folder in the angular root.
-`grunt watch` watches the scss folder for changes and updates the assets/css with changes
+ - production: instead of a .env file set the same variables but this time in the actual environment instead of just a file.
+    and replace them with your own api keys
 
-## sources:
-This project was started up with [Mean-boilerplate](https://github.com/lloydst/mean-boilerplate) , which is heavely based on the angular-cli and express-gen for the front and backend respectively.
+then use `npm install` in the project root, this will install all the dependencies and do a single production-ready build.
+then if you are 
+
 
 ## Description
 
@@ -39,9 +40,9 @@ This project is my internship project at Poort80. The project is supposed to be 
   - channels
   - components
 
-In the admin module the content of the components can be changed as well as the order and time a components is displayed on a channel.
-The components module displays components based on the url. So  ${host}/components/weather will display the current weather forecast --*depricated and ${host}/components/weather-traffic-news will display 3 components(weather,traffic,news) *depricated--.
-The channels module, opens a extra tab to navigate to a (custom) component and will display said component for the time defined for the path. After that time/delay is done it will close the tab and open a new one with the next tab and thus next component. once it has finished all the paths it will quickly check the database for changes and will start over again.
+In the admin module the content of certain components can be changed as well as the order and time a components is displayed on a channel.
+The components module displays components based on the url. So  ${host}/components/weather will display the current weather forecast (--*depricated and ${host}/components/weather-traffic-news will display 3 components(weather,traffic,news) *depricated--).
+The channels module, opens a extra tab to navigate to a (custom) component and will display said component for the time defined for the path. After that time/delay is done it will open the next 'slide' in the same windownext tab and thus next component. once it has finished all the paths it will quickly check the database for changes and will start over again.
 
 ## Development
 
@@ -79,25 +80,9 @@ prod: ${host}= example.com
 ## docs
 docs can be found at [https://lloydst.github.io/p80-internship-angular/](https://lloydst.github.io/p80-internship-angular/) though there is a big chance they are outdated to view the most recent you need to clone the project and run ```npm run doc:watch``` (after the npm install ofc) this will generate it in the docs folder and you can acces it at (local)host(:port)/docs
 
-## docker
-docker tends to fail on npm install scripts due to it starting up with the wrong proxy, set this to 8.8.8.8 if you havn't. if it is set to this port and still fails make shure to restart docker. i currently have it setup so that docker cloud builds it since linux containers doesnt seem to be working.
+## styling
+scss files are stored in the angular root (src folder) in a scss map and are being converted to css using grunt and then stored in the assets folder in the angular root.
+`grunt watch` watches the scss folder for changes and updates the assets/css with changes
 
-build initial image (auto-updates front-end for production)
-
-`docker-compose build` 
-
-start containers(local)
-
-`docker-compose up` -d for detached mode run & `docker-compose down` to close it
-
-when you have made changes force a clean build of docker-images
-
-`docker-compose up --build` 
-
-push images to their repository
-
-`docker-compose push`
-
-run the img on a port (3000 in example below)
-`docker run -p 3000:3000 lloydst/p80-tool`
-
+## sources:
+This project was started up with [Mean-boilerplate](https://github.com/lloydst/mean-boilerplate) , which is heavely based on the angular-cli and express-gen for the front and backend respectively.

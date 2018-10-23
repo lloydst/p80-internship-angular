@@ -2,7 +2,7 @@
     <div class="admin-layout__card">
         <h2 class="admin-layout__card--title">Create a channel</h2>
 
-        <form [formGroup]="form" novalidate (ngSubmit)="save(form)" class="admin-layout__layout--double-col">
+        <form [formGroup]="form" novalidate class="admin-layout__layout--double-col">
             <!--class="admin-layout__card--form"-->
             <div class="admin-layout__card">
                 <label>Channel name:
@@ -20,7 +20,7 @@
                     </div>
                 </div>
                 <div>
-                    <button class="button succes" type="submit" [disabled]="!form.valid">Create</button>
+                    <button class="button succes" (click)="save(form)" type="submit" [disabled]="!form.valid">Create</button>
                     <a (click)="addPath()">
                         <input class="button succes" type="button" value="Add slide">
                     </a>
