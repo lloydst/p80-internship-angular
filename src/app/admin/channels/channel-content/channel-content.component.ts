@@ -247,11 +247,12 @@ export class ChannelContentComponent implements OnInit {
      * resets form to what it was
      */
     revert() {
-        this.form.reset({
+        location.reload()
+        /*this.form.reset({
             channel: [this.currentChannel],
             path: this.fb.array([])
         });
-        this.reloadData();
+        this.reloadData();*/
     }
     /**
      * function that opens a window so the user can confirm the url is correct

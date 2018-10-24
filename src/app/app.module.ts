@@ -30,12 +30,6 @@ import { ComponentsModule } from './components/components.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './store/reducers';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { EffectsModule } from '@ngrx/effects';
-import { AppEffects } from './store/effects/app.effects';
-import { WebsiteEffects } from './store/effects/website.effects';
 import { AuthService } from './services/auth.service';
 import {SortablejsModule} from 'angular-sortablejs'
 import { CookieService } from 'ngx-cookie-service';
@@ -55,9 +49,6 @@ import { CookieService } from 'ngx-cookie-service';
         ReactiveFormsModule,
         BrowserAnimationsModule,
         ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
-        StoreModule.forRoot(reducers, { metaReducers }),
-        !environment.production ? StoreDevtoolsModule.instrument() : [],
-        EffectsModule.forRoot([AppEffects, WebsiteEffects]),
         SortablejsModule.forRoot({ animation: 150 }),
     ],
     providers: [
