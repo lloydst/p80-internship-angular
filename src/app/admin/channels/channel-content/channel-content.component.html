@@ -17,7 +17,7 @@
                     </a>
                 </div>
                 <div>
-                    <button (click)="save()" class="button primary" type="submit" [disabled]="!form.valid">Save</button>
+                    <button (click)="save()" class="button primary" type="button" [disabled]="!form.valid">Save</button>
                     <!--(click)="reloadPage()"-->
                     &nbsp;
                     <button class="button danger" type="button danger" (click)="revert()" [disabled]="form.pristine">undo/reload</button>

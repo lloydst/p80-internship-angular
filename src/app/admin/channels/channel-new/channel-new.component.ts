@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormArray, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -89,7 +88,6 @@ export class ChannelNewComponent implements OnInit {
                 this.getPath(),
             ])
         });
-        this.log()
     }
 
     /**
@@ -97,12 +95,6 @@ export class ChannelNewComponent implements OnInit {
      */
     get f() {
         return this.form.controls;
-    }
-    /**
-     * path controls helper
-     */
-    log() {
-        console.log(this.f)
     }
 
     /**
@@ -113,18 +105,18 @@ export class ChannelNewComponent implements OnInit {
         return this.fb.group({
             pathurl: new FormControl('http://example.com', [Validators.required, Validators.minLength(16)]),
             description: new FormControl('this is where a description would go', [Validators.required, Validators.minLength(20)]),
-            delay: new FormControl('5', [Validators.required, Validators.min(5)]),
+            delay: new FormControl('10', [Validators.required, Validators.min(5)]),
             componentName: new FormControl("here you can set a 'custom' component name", [Validators.required, Validators.minLength(4)]),
             show: new FormGroup({
                 allways: new FormControl(true, []),
                 timefrom: new FormControl('09:00', []),
                 timetill: new FormControl('18:00', []),
                 days: new FormGroup({
-                    monday: new FormControl(false,[]),
-                    tuesday: new FormControl(false, []),
-                    wednesday: new FormControl(false, []),
-                    thursday: new FormControl(false, []),
-                    friday: new FormControl(false, []),
+                    monday: new FormControl(true,[]),
+                    tuesday: new FormControl(true, []),
+                    wednesday: new FormControl(true, []),
+                    thursday: new FormControl(true, []),
+                    friday: new FormControl(true, []),
                     saturday: new FormControl(false, []),
                     sunday: new FormControl(false, []),
                 })
@@ -139,7 +131,7 @@ export class ChannelNewComponent implements OnInit {
         // add address to the list
         const control = <FormArray>this.form.controls['path'];
         control.push(this.getPath());
-        this.log()
+
     }
     /**
      * path to remove
@@ -162,7 +154,8 @@ export class ChannelNewComponent implements OnInit {
      * just a function
      * @param model channel interface to save it in the right shape
      */
-    save(new_channel) {
+    save() {
+        console.log('saved')
         this.data.createContent(this.form.value).subscribe(() => {
             this.redirectTo(this.form.value.channel);
         });
