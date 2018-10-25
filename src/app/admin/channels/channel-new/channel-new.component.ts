@@ -86,6 +86,7 @@ export class ChannelNewComponent implements OnInit {
             channel: ['', [Validators.required, Validators.minLength(4)]],
             path: this.fb.array([
                 this.getPath(),
+                this.getPath()
             ])
         });
     }
