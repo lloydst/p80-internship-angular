@@ -13,7 +13,8 @@
         "/**/*.css",
         "/assets/font/*",
         "/assets/img/icon/*",
-        "/*.js"
+        "/*.js",
+        "/components/event"
       ]
     }
   }, {
