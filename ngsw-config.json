@@ -1,45 +1,50 @@
 {
-  "index": "/index.html",
-  "request-options": {
-    "credentials" : "include"
-  },
-  "assetGroups": [{
-    "name": "app",
-    "installMode": "prefetch",
-    "resources": {
-      "files": [
-        "/favicon.ico",
-        "/index.html",
-        "/**/*.css",
-        "/assets/font/*",
-        "/assets/img/icon/*",
-        "/*.js",
-        "/components/event"
-      ]
-    }
-  }, {
-    "name": "assets",
-    "installMode": "lazy",
-    "updateMode": "prefetch",
-    "resources": {
-      "files": [
-        "/assets/img/**",
-        "/images/img/*",
-        "/public/assets"
-      ]
-    }
-  }],
-  "dataGroups":[{
-      "name": "api-freshness",
-    "urls": [
-      "/api",
-      "!/api/authorize"
+    "index": "/index.html",
+    "request-options": {
+        "credentials": "include"
+    },
+    "assetGroups": [
+        {
+            "name": "app",
+            "installMode": "prefetch",
+            "resources": {
+                "files": [
+                    "/favicon.ico",
+                    "/index.html",
+                    "/**/*.css",
+                    "/assets/font/*",
+                    "/assets/img/icon/*",
+                    "/*.js",
+                    "/components/event"
+                ]
+            }
+        },
+        {
+            "name": "assets",
+            "installMode": "lazy",
+            "updateMode": "prefetch",
+            "resources": {
+                "files": [
+                    "/assets/img/**",
+                    "/images/img/*",
+                    "/public/assets"
+                ]
+            }
+        }
     ],
-    "cacheConfig": {
-      "strategy": "freshness",
-      "maxSize": 100,
-      "maxAge": "7d",
-      "timeout": "0s"
-    }
-  }]
+    "dataGroups": [
+        {
+            "name": "api-freshness",
+            "urls": [
+                "/api",
+                "!/api/authorize"
+            ],
+            "cacheConfig": {
+                "strategy": "freshness",
+                "maxSize": 100,
+                "maxAge": "7d",
+                "timeout": "0s"
+            }
+        }
+    ]
 }

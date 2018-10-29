@@ -1,32 +1,28 @@
 <div class="wrapper">
     <section>
         <div class="container">
-            <div class="margin">
-                <div>
+            <div class="container__background">
+                <h1 class="channel__top-heading-title">Poort80 ScreenTool</h1>
+                <div class="channel__layout--double-col">
                     <a href="/admin" class="channel-navigation__button">
                         admin
                     </a>
-                    changing settings
-                </div>
-                <div>
-                    <a href="/channels" class="channel-navigation__button" >
+                    <a href="/channels" class="channel-navigation__button">
                         stop
                     </a>
-                    stop the current channel selection
                 </div>
 
-                <div class="margin">
-                    pick/change the channel
-                    <div>
-                        <a (click)="redirectTo(c.channel)" *ngFor="let c of channel" class="channel-navigation__button margin-left">
-                            {{c.channel}}
-                        </a>
-                    </div>
-
+                <h2 class="channel__top-heading-title2">pick/change the channel</h2>
+                <div class="channel__layout--triple-col">
+                    <a (click)="redirectTo(c.channel)" *ngFor="let c of channel" class="channel-navigation__button button__margin--top">
+                        {{c.channel.toLowerCase()}}
+                        <!--allways lower case-->
+                    </a>
                 </div>
 
             </div>
             <router-outlet></router-outlet>
+            <div class="center">Created by Lloyd Stumpel, 10-29-2018</div>
         </div>
     </section>
 </div>
