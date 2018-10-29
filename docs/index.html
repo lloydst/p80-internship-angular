@@ -49,11 +49,11 @@
 <h2 id="contents">contents</h2>
 <ul>
 <li><a href="#getting-started-">getting started</a></li>
-<li><a href="#docker">docker</a></li>
 <li><a href="#styling">styling</a></li>
 <li><a href="#sources-">sources</a></li>
 <li><a href="#description">description</a></li>
 <li><a href="#development">Development</a></li>
+<li><a href="#production">Production</a></li>
 <li><a href="#quick-component-gen-angular-cli-">quick component gen (angular cli)</a></li>
 <li><a href="#structure">structure</a></li>
 <li><a href="#database">database</a></li>
@@ -61,13 +61,17 @@
 <li><a href="#docs">docs</a></li>
 </ul>
 <h2 id="getting-started-">getting started:</h2>
-<p><code>git clone https://github.com/lloydst/p80-internship-angular.git .</code> (replace the &#39;.&#39; with a directory if you would want it in a new folder).
-then use <code>npm i</code> in the project root, this will install all the dependencies and do a single production-ready build,</p>
-<h2 id="styling">styling</h2>
-<p>scss files are stored in the angular root (src folder) in a scss map and are being converted to css using grunt and then stored in the assets folder in the angular root.
-<code>grunt watch</code> watches the scss folder for changes and updates the assets/css with changes</p>
-<h2 id="sources-">sources:</h2>
-<p>This project was started up with <a href="https://github.com/lloydst/mean-boilerplate">Mean-boilerplate</a> , which is heavely based on the angular-cli and express-gen for the front and backend respectively.</p>
+<ul>
+<li>mutual:
+ <code>git clone https://github.com/lloydst/p80-internship-angular.git .</code> (replace the &#39;.&#39; with a directory if you would want it in a new folder).</li>
+<li><p>dev: create a .env file with the same fields as the .env-example. you will just have too request the api keys your self</p>
+</li>
+<li><p>production: instead of a .env file set the same variables but this time in the actual environment instead of just a file.
+ and replace them with your own api keys</p>
+</li>
+</ul>
+<p>then use <code>npm install</code> in the project root, this will install all the dependencies and do a single production-ready build.
+then if you are </p>
 <h2 id="description">Description</h2>
 <p>This project is my internship project at Poort80. The project is supposed to be displayed in a fullscreen browser and to be hosted on a local network, thus removing the need for logging in to admin. The project exists of three &#39;main&#39; modules:</p>
 <ul>
@@ -75,9 +79,9 @@ then use <code>npm i</code> in the project root, this will install all the depen
 <li>channels</li>
 <li>components</li>
 </ul>
-<p>In the admin module the content of the components can be changed as well as the order and time a components is displayed on a channel.
-The components module displays components based on the url. So  ${host}/components/weather will display the current weather forecast --*depricated and ${host}/components/weather-traffic-news will display 3 components(weather,traffic,news) *depricated--.
-The channels module, opens a extra tab to navigate to a (custom) component and will display said component for the time defined for the path. After that time/delay is done it will close the tab and open a new one with the next tab and thus next component. once it has finished all the paths it will quickly check the database for changes and will start over again.</p>
+<p>In the admin module the content of certain components can be changed as well as the order and time a components is displayed on a channel.
+The components module displays components based on the url. So  ${host}/components/weather will display the current weather forecast (--*depricated and ${host}/components/weather-traffic-news will display 3 components(weather,traffic,news) *depricated--).
+The channels module, opens a extra tab to navigate to a (custom) component and will display said component for the time defined for the path. After that time/delay is done it will open the next &#39;slide&#39; in the same windownext tab and thus next component. once it has finished all the paths it will quickly check the database for changes and will start over again.</p>
 <h2 id="development">Development</h2>
 <p>run <code>ng build --watch</code> for rebuilding on changes to any of the angular part of the website.
 and run <code>npm run server</code> (in an other cmd)so that node restarts the express server on changes made to the server (this includes staticly server folders like dist)
@@ -108,18 +112,11 @@ prod: ${host}= example.com</p>
 </ul>
 <h2 id="docs">docs</h2>
 <p>docs can be found at <a href="https://lloydst.github.io/p80-internship-angular/">https://lloydst.github.io/p80-internship-angular/</a> though there is a big chance they are outdated to view the most recent you need to clone the project and run <code>npm run doc:watch</code> (after the npm install ofc) this will generate it in the docs folder and you can acces it at (local)host(:port)/docs</p>
-<h2 id="docker">docker</h2>
-<p>docker tends to fail on npm install scripts due to it starting up with the wrong proxy, set this to 8.8.8.8 if you havn&#39;t. if it is set to this port and still fails make shure to restart docker. i currently have it setup so that docker cloud builds it since linux containers doesnt seem to be working.</p>
-<p>build initial image (auto-updates front-end for production)</p>
-<p><code>docker-compose build</code> </p>
-<p>start containers(local)</p>
-<p><code>docker-compose up</code> -d for detached mode run &amp; <code>docker-compose down</code> to close it</p>
-<p>when you have made changes force a clean build of docker-images</p>
-<p><code>docker-compose up --build</code> </p>
-<p>push images to their repository</p>
-<p><code>docker-compose push</code></p>
-<p>run the img on a port (3000 in example below)
-<code>docker run -p 3000:3000 lloydst/p80-tool</code></p>
+<h2 id="styling">styling</h2>
+<p>scss files are stored in the angular root (src folder) in a scss map and are being converted to css using grunt and then stored in the assets folder in the angular root.
+<code>grunt watch</code> watches the scss folder for changes and updates the assets/css with changes</p>
+<h2 id="sources-">sources:</h2>
+<p>This project was started up with <a href="https://github.com/lloydst/mean-boilerplate">Mean-boilerplate</a> , which is heavely based on the angular-cli and express-gen for the front and backend respectively.</p>
 
 
 

@@ -217,6 +217,10 @@ export class ChannelComponent implements OnInit {
             //console.log(self.pathArray) // just to check it resets every time it doesnt get longer
             // defined here or else it would open a blank page
             var path = self.pathArray[x].pathurl
+            if (!window.navigator.onLine) {
+                console.log('offline')
+                path = '/components/event'
+            }
             var myWindow = window.open(path, "channel")
             // created a new array of objects that should be viewed
             //console.log(self.pathArray)

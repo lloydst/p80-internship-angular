@@ -253,7 +253,32 @@ export class DashboardComponent implements OnInit {
     &lt;section&gt;
         &lt;div class&#x3D;&quot;admin-layout__card&quot;&gt;
             &lt;h2 class&#x3D;&quot;admin-layout__card--title&quot;&gt;Welcome!&lt;/h2&gt;
-            &lt;p class&#x3D;&quot;admin-layout__card--contents&quot;&gt;some kind of welcome message your generic dashboard screen&lt;/p&gt;
+            &lt;p class&#x3D;&quot;admin-layout__card--contents&quot;&gt;here you can &lt;/p&gt;
+            &lt;p class&#x3D;&quot;admin-layout__card--contents&quot;&gt;this is the dashboard where you can setup/edit channels&lt;/p&gt;
+            &lt;p class&#x3D;&quot;admin-layout__card--contents&quot;&gt;
+                &lt;span class&#x3D;&quot;fas fa-envelope&quot;&gt;&lt;/span&gt;
+                here you can edit the message shown by the &#x27;event component&#x27; this component has the ability to display
+                a message between x day/time and y day time.
+                for instance when a client from pathe comes over for a meeting the screen can &#x27;greet&#x27; him.
+            &lt;/p&gt;
+            &lt;p class&#x3D;&quot;admin-layout__card--contents&quot;&gt;
+                 &lt;span class&#x3D;&quot;fas fa-images&quot;&gt;&lt;/span&gt;
+                here you can add images used really only for the greeter for instance when it almost xmas it can show a
+                xmassy themed background image
+            &lt;/p&gt;
+            &lt;p class&#x3D;&quot;admin-layout__card--contents&quot;&gt;
+                &lt;span class&#x3D;&quot;fas fa-code-branch&quot;&gt;&lt;/span&gt;
+                this is where you can setup the channels you can choose from either the 6 specialised components:
+            &lt;/p&gt;
+            &lt;ul&gt;
+                &lt;li&gt;meeting&lt;/li&gt;
+                &lt;li&gt;news&lt;/li&gt;
+                &lt;li&gt;event (greeter)&lt;/li&gt;
+                &lt;li&gt;traffic&lt;/li&gt;
+                &lt;li&gt;weather&lt;/li&gt;
+                &lt;li&gt;bitcoin(financial)&lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;p class&#x3D;&quot;admin-layout__card--contents&quot;&gt;or just go to a website created by poort 80 by adding the url&lt;/p&gt;
         &lt;/div&gt;
     &lt;/section&gt;
 &lt;/div&gt;</code></pre>
@@ -284,7 +309,7 @@ export class DashboardComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><div class="admin-layout--no-nav">    <section>        <div class="admin-layout__card">            <h2 class="admin-layout__card--title">Welcome!</h2>            <p class="admin-layout__card--contents">some kind of welcome message your generic dashboard screen</p>        </div>    </section></div></div>'
+        var COMPONENT_TEMPLATE = '<div><div class="admin-layout--no-nav">    <section>        <div class="admin-layout__card">            <h2 class="admin-layout__card--title">Welcome!</h2>            <p class="admin-layout__card--contents">here you can </p>            <p class="admin-layout__card--contents">this is the dashboard where you can setup/edit channels</p>            <p class="admin-layout__card--contents">                <span class="fas fa-envelope"></span>                here you can edit the message shown by the \'event component\' this component has the ability to display                a message between x day/time and y day time.                for instance when a client from pathe comes over for a meeting the screen can \'greet\' him.            </p>            <p class="admin-layout__card--contents">                 <span class="fas fa-images"></span>                here you can add images used really only for the greeter for instance when it almost xmas it can show a                xmassy themed background image            </p>            <p class="admin-layout__card--contents">                <span class="fas fa-code-branch"></span>                this is where you can setup the channels you can choose from either the 6 specialised components:            </p>            <ul>                <li>meeting</li>                <li>news</li>                <li>event (greeter)</li>                <li>traffic</li>                <li>weather</li>                <li>bitcoin(financial)</li>            </ul>            <p class="admin-layout__card--contents">or just go to a website created by poort 80 by adding the url</p>        </div>    </section></div></div>'
     var COMPONENTS = [{'name': 'AdminChannelsComponent', 'selector': 'app-channels'},{'name': 'AdminChannelsContentsComponent', 'selector': 'app-admin-channels-contents'},{'name': 'AdminComponent', 'selector': 'app-admin'},{'name': 'AdminEntranceComponent', 'selector': 'app-entrance'},{'name': 'AdminEntranceDetailComponent', 'selector': 'app-admin-entrance-detail'},{'name': 'AdminEventComponent', 'selector': 'app-event'},{'name': 'AdminEventDetailComponent', 'selector': 'app-admin-event-detail'},{'name': 'AdminSideNavComponent', 'selector': 'app-admin-side-nav'},{'name': 'AllComponent', 'selector': 'app-all'},{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BuildServersComponent', 'selector': 'app-build-servers'},{'name': 'ChannelComponent', 'selector': 'app-channel'},{'name': 'ChannelContentComponent', 'selector': 'app-channel-content'},{'name': 'ChannelNewComponent', 'selector': 'app-channel-new'},{'name': 'ChannelsComponent', 'selector': 'app-channels'},{'name': 'ComponentsComponent', 'selector': 'app-components'},{'name': 'CustomComponent', 'selector': 'app-custom'},{'name': 'DashboardComponent', 'selector': 'app-dashboard'},{'name': 'EventComponent', 'selector': 'app-event'},{'name': 'FinancialComponent', 'selector': 'app-financial'},{'name': 'ImageUploadComponent', 'selector': 'app-image-upload'},{'name': 'ImageViewComponent', 'selector': 'app-image-view'},{'name': 'ListingComponentsComponent', 'selector': 'app-listing-components'},{'name': 'MeetingComponent', 'selector': 'app-meeting'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'SupportComponent', 'selector': 'app-support'},{'name': 'TrafficComponent', 'selector': 'app-traffic'},{'name': 'WeatherComponent', 'selector': 'app-weather'},{'name': 'WebsiteLoopComponent', 'selector': 'app-website-loop'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'DashboardComponent'};
