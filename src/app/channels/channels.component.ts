@@ -4,7 +4,6 @@ import { DataService } from '../services/data.service';
 import { Title, SafeUrl, DomSanitizer } from '@angular/platform-browser';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { IpService } from '../services/ip.service';
 
 /**
  * channel component
@@ -42,21 +41,13 @@ export class ChannelsComponent implements OnInit, OnDestroy {
     * @param router angular Router
     * @param data data from dataService
     * @param titleService sets the title
-    * @param ipService gets ip // temp not being used
     */
     constructor(
         private http: HttpClient,
         public router: Router,
         private data: DataService,
-        private titleService: Title,
-        private ipService: IpService
+        private titleService: Title
     ) {
-        this.http.get<{ ip?: string }>('https://jsonip.com')
-            .subscribe(ipdata => {
-                this.ipAddress = ipdata.ip;
-                // console.log(this.ipAddress)
-                this.getSingleIp(ipdata.ip);
-            });
     }
     /**
      * gets the channels from db
@@ -108,30 +99,7 @@ export class ChannelsComponent implements OnInit, OnDestroy {
     stop() {
         this.router.navigateByUrl('');
     }
-    /**
-     * only if the environment is undefined this function will run due it not being fully implemented
-     * (it doesn't get a computers network ip but gets the modem ip)
-     */
-    ipChannel() {  // first setup for routing in production
-        if (environment.production === undefined) {
-            if (this.singleIp.ip === this.ipAddress) { // if config exists got to channel
-                this.redirectTo(this.singleIp.channel);
-            } else {
-                return `this ip doesn't have a config yet`;
-            }
-        }
-    }
-/**
- * gets a single ip form the database and if the env. = production route to the channel related to it if it excists
- * @param ip ip to get
- */
-    getSingleIp(ip) {
-        this.ipService.selectByIp(ip).subscribe(ipFromDb => {
-            this.singleIp = ipFromDb;
-            this.ipChannel();
-        });
-
-    }
+ 
 
 }
 
