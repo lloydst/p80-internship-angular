@@ -18,6 +18,9 @@
                     <div *ngIf="form.get('channel').hasError(validation.type) && form.get('channel').touched">
                         {{validation.message}}
                     </div>
+                    <div *ngIf="form.get('path').invalid">
+                        each channel requires at least 2 slides.
+                    </div>
                 </div>
                 <div>
                     <button class="button succes" (click)="save()" type="button" [disabled]="!form.valid">Create</button>

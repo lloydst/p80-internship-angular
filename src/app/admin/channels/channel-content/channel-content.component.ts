@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormArray, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormArray, FormControl, MinLengthValidator } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DataService } from '../../../services/data.service';
 
@@ -157,7 +157,7 @@ export class ChannelContentComponent implements OnInit {
         this.form = this.fb.group({
             channel: [this.channelName, Validators.required],
             path: this.fb.array([
-            ])
+            ], Validators.minLength(2) )
         });
         this.reloadData();
     }

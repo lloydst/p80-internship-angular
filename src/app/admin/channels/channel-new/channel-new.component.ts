@@ -87,7 +87,7 @@ export class ChannelNewComponent implements OnInit {
             path: this.fb.array([
                 this.getPath(),
                 this.getPath()
-            ])
+            ],Validators.minLength(2))
         });
     }
 

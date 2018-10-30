@@ -10,6 +10,9 @@
                     <div *ngIf="form.get('channel').hasError(validation.type)">
                         {{validation.message}}
                     </div>
+                    <div *ngIf="form.get('path').invalid">
+                        each channel requires at least 2 slides.
+                    </div>
                 </div>
                 <div>
                     <a (click)="addPath()">
@@ -96,7 +99,7 @@
                                 <span class="admin-layout__card--form-tooltip">
                                     &#9432;
                                     <div class="admin-layout__card--form-tooltiptext">
-                                        time it takes in ticks to move to the next path
+                                        time it takes in seconds to move to the next slide
                                     </div>
                                 </span>
                             </label>
